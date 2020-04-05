@@ -20,4 +20,7 @@ A list of possible useful resources:
 - Study KGE and analyse their training pipeline + investigate effects of different trainign components (could take inspiration here to obtain better neural predictors). Different training objectives/negative sampling have different effects in accuracy and scalability 
 - **TriVec** model: multiple vectors to model embedding interactions
 - When comparing with other SOTA models he uses **MRR and Hits10** metrics. When comparing for the biological tasks, he uses the **AUC** metric.
-- 
+- Suggests improvements have concentrated on scoring functions but not so much on loss functions, negative sampling etc
+- KGE models are extremely sensitive to the different trainign parameters
+- TriVec model extend tensor factorisation from ComplEX and DistMult - changes embedding representation and embedding interaction
+- mostly inspired by ComplEX - but does not use complex parts - but rather embeddings of three different parts
