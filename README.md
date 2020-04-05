@@ -15,3 +15,9 @@ A list of possible useful resources:
 9. [Predicting Adverse Drug-Drug Interactions with Neural Embedding of Semantic Predications](https://www.biorxiv.org/content/10.1101/752022v2.full#ref-16)
 10. [Realistic Re-evaluation of Knowledge Graph Completion Methods: An Experimental Study](https://arxiv.org/abs/2003.08001)
 11. [Knowledge Graph Completion to Predict Polypharmacy Side Effects](https://arxiv.org/abs/1810.09227)
+
+12. Sameh's Thesis
+- Study KGE and analyse their training pipeline + investigate effects of different trainign components (could take inspiration here to obtain better neural predictors). Different training objectives/negative sampling have different effects in accuracy and scalability 
+- **TriVec** model: multiple vectors to model embedding interactions
+- When comparing with other SOTA models he uses **MRR and Hits10** metrics. When comparing for the biological tasks, he uses the **AUC** metric.
+- 
