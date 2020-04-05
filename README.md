@@ -15,4 +15,4 @@ A list of possible useful resources:
 9. [Predicting Adverse Drug-Drug Interactions with Neural Embedding of Semantic Predications](https://www.biorxiv.org/content/10.1101/752022v2.full#ref-16)
 10. [Realistic Re-evaluation of Knowledge Graph Completion Methods: An Experimental Study](https://arxiv.org/abs/2003.08001)
 11. [Knowledge Graph Completion to Predict Polypharmacy Side Effects](https://arxiv.org/abs/1810.09227)
-12. 12. [Realistic Re-evaluation of Knowledge Graph Completion Methods: An Experimental Study](https://arxiv.org/abs/2003.08001)
+12. [Realistic Re-evaluation of Knowledge Graph Completion Methods: An Experimental Study](https://arxiv.org/abs/2003.08001)
