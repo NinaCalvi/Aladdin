@@ -24,3 +24,5 @@ A list of possible useful resources:
 - KGE models are extremely sensitive to the different trainign parameters
 - TriVec model extend tensor factorisation from ComplEX and DistMult - changes embedding representation and embedding interaction
 - mostly inspired by ComplEX - but does not use complex parts - but rather embeddings of three different parts
+- interaction of 3 part embeddings: one symmetric interaction, and two asymmetric ones
+- showed that squared loss can enhance ComplEX performance on multiple tasks
