@@ -26,3 +26,6 @@ A list of possible useful resources:
 - mostly inspired by ComplEX - but does not use complex parts - but rather embeddings of three different parts
 - interaction of 3 part embeddings: one symmetric interaction, and two asymmetric ones
 - showed that squared loss can enhance ComplEX performance on multiple tasks
+
+
+13. [Modelin Polypharmacy Side Effects Using Graph CNN (DECAGON PAPER)](https://academic.oup.com/bioinformatics/article/34/13/i457/5045770)
