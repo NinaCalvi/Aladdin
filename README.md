@@ -29,3 +29,10 @@ A list of possible useful resources:
 
 
 13. [Modelin Polypharmacy Side Effects Using Graph CNN (DECAGON PAPER)](https://academic.oup.com/bioinformatics/article/34/13/i457/5045770)
+
+14. [Survey of different KG completion methods](https://persagen.com/files/misc/Wang2017Knowledge.pdf)
+15. [Evaluation of knowledge graph embedding approaches for drug-drug interaction prediction in realistic settings](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3284-5) 
+This could be interesting to read with respect to the realistic re-evaluation of kg datasets.
+16. [GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures](GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures)
+17. [ELPKG: A High-Accuracy Link Prediction Approach for Knowledge Graph Completion](https://www.semanticscholar.org/paper/ELPKG%3A-A-High-Accuracy-Link-Prediction-Approach-for-Ma-Qiao/f9a26d39947c90f7ca432e79f4ce1668061197f9)
+18. [Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction](https://arxiv.org/pdf/1911.09419.pdf)
