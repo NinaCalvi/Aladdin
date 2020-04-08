@@ -49,3 +49,13 @@ This could be interesting to read with respect to the realistic re-evaluation of
 16. [GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures](GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures)
 17. [ELPKG: A High-Accuracy Link Prediction Approach for Knowledge Graph Completion](https://www.semanticscholar.org/paper/ELPKG%3A-A-High-Accuracy-Link-Prediction-Approach-for-Ma-Qiao/f9a26d39947c90f7ca432e79f4ce1668061197f9)
 18. [Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction](https://arxiv.org/pdf/1911.09419.pdf)
+19. [Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2163-9)
+- looks at evaluating how embeddings from DeepWalk, node2vec, LINE, etc perform as input to neural link predictor
+- does so by evaluating on more *realistic* graphs - where in terms of *realistic settings* it introduces *time-slicing* - it's an interesting area of reasearch, but unsure how this would be relevnat to polypharmacy
+- evaluates also on what it believe to be *better evaluation metrics*: weigh performance at each node equally as well as not, to illustrate the different aspects of predictor's performance
+- from what I gather though its always a single relationship (homogenous graphs) rather than heteorgenous graphs
+- metrics = AUPR - how increasing recall affects precision. Serves to help calculate *link-equality* metrics. AUC - also linke equality. Measures values across all recall levels (guess it means all thresholds). Precision@K (ercentage of true positives among only the top k ranked links.)- also link equality; *mean average precision* - given ranked list of predicted links for partiuclar node, calculates the precision after each true positive. The average of this gives average precision for a node. Take mean overa all nodes. *node-equality* measures; Average relevant precision (similar thing) - also node equality. 
+
+20.[Systematic Biases in Link Prediction: comparing
+heuristic and graph embedding based methods](https://arxiv.org/pdf/1811.12159.pdf) 
+Potentially may be interesting for a deeper exmaination of the type of predictions created
