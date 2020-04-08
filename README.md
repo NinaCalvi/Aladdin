@@ -42,6 +42,10 @@ This could be interesting to read with respect to the realistic re-evaluation of
 - traditional CV: test pair may share components with training pairs. This could lead to overfitting
 - disjoint cv = separates data into grouping according to 'first component of the pair'. Done such as to evaluate predictions on drugs that have no DDI information in the training set (cold start drugs)
 - test both for prediciton of interaction between a cold start drug and existing drug, as well as interaction between two cold start drugs
+
+
+- DrugBANK, KEGG, PharmaGKB were used as background KG. Removed DDI links.
+
 16. [GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures](GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures)
 17. [ELPKG: A High-Accuracy Link Prediction Approach for Knowledge Graph Completion](https://www.semanticscholar.org/paper/ELPKG%3A-A-High-Accuracy-Link-Prediction-Approach-for-Ma-Qiao/f9a26d39947c90f7ca432e79f4ce1668061197f9)
 18. [Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction](https://arxiv.org/pdf/1911.09419.pdf)
