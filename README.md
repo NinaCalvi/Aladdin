@@ -59,3 +59,15 @@ This could be interesting to read with respect to the realistic re-evaluation of
 20.[Systematic Biases in Link Prediction: comparing
 heuristic and graph embedding based methods](https://arxiv.org/pdf/1811.12159.pdf) 
 Potentially may be interesting for a deeper exmaination of the type of predictions created
+
+21. [Canonical Tensor Decomposition in KC]()
+- uses broaded hyperparams search dueto hyperparameter sensitivity
+- evaluates effect of regularisation: introduce **nuclear-p norms** for more principled regularisers
+- learns and predicts with the **inverse of predicates** and this seems to improve performance - don't think sameh tested this. Unsure also as to why they would test it this way - but then again somehow this may be affected by their leakage?
+- **tensor representation**: N X P X N tensor with N being the number of entities, P the number of predicates. Its binary, with 1 where a certain relation exists. 
+- **canonical decomposition tensors**
+- both DistMult and ComplEX have the subject and object entities share the same factors (except with complex representing one as the complext conjugat of the other): slightly confused as to what **sharing the same factors** means.
+- uses **full multi-class log-loss** rather than sampled multi-class or binary logistic regression
+- trace norm has been proposed as a convex relaxation of the rank for matrix completion - when samples are not taken unifromly at random other norms may be preferable than the nuclear norm ''weighted trace norm reweights elements of the factorsbased on the marginal rows and columns sampling probabil-ities, which can improve sample complexity bounds whensampling is non-uniform''
+- **tensor trace norm** - but costly with multiclass log loss. But because nuclear norms have been succesfull for matrices - they attempt to create similar ones for tensors
+- they create a concatenation of the reciprocal of the predicate with the predicate **I don't understand why - is this not suggesting symmetric relationships/or assuming that predicate reciprocals acutally exist?** - but makes it invariant to existene of reciprocal in the KG or not
