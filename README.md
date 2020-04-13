@@ -71,3 +71,9 @@ Potentially may be interesting for a deeper exmaination of the type of predictio
 - trace norm has been proposed as a convex relaxation of the rank for matrix completion - when samples are not taken unifromly at random other norms may be preferable than the nuclear norm ''weighted trace norm reweights elements of the factorsbased on the marginal rows and columns sampling probabil-ities, which can improve sample complexity bounds whensampling is non-uniform''
 - **tensor trace norm** - but costly with multiclass log loss. But because nuclear norms have been succesfull for matrices - they attempt to create similar ones for tensors
 - they create a concatenation of the reciprocal of the predicate with the predicate **I don't understand why - is this not suggesting symmetric relationships/or assuming that predicate reciprocals acutally exist?** - but makes it invariant to existene of reciprocal in the KG or not
+
+
+22. [Knowledge Graph Embedding: A Survey of
+Approaches and Applications](https://persagen.com/files/misc/Wang2017Knowledge.pdf)
+23. [Network embedding in biomedical data science 
+](https://academic.oup.com/bib/article/21/1/182/5228144#198666838)
