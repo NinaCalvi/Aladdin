@@ -12,7 +12,27 @@ A list of possible useful resources:
 6. [dt12](https://www.frontiersin.org/articles/10.3389/fphar.2018.01134/full)
 7. [Poster: Knowledge Graph Completion to Predict Polypharmacy Side Effects](https://arxiv.org/pdf/1810.09227.pdf)
 8. [You CAN Teach an Old Dog New Tricks! On Training Knowledge Graph Embeddings](https://openreview.net/forum?id=BkxSmlBFvr)
-9. [Predicting Adverse Drug-Drug Interactions with Neural Embedding of Semantic Predications](https://www.biorxiv.org/content/10.1101/752022v2.full#ref-16)
+9. [Predicting Adverse Drug-Drug Interactions with Neural Embedding of Semantic Predications](https://www.biorxiv.org/content/10.1101/752022v3.full)
+
+- **Embedding Semantic Predications**: deriving distributed vector representations from structured biomedical knowledge
+- Identifying side effects using link prediction problem as done by Decagon = *multi realtional link prediciton task*.
+- not only predicts the **presence** of an interaction, but also the **nature** of the interaction (i.e. side effect) --> decagon was the first to model *different* polypharmacy side effects
+- Decagon models drugs as vectors, side effects as matrices, hence they exist in a different space - making them challenging to reuse?
+- ESP uses a **neural network** to generate biomedical concepts from concet-relation-concept triples that they call **predications**
+- uses transient embeddings for **composite** concepts from their component vectors(?)
+- during training embeddings are updated such that vectors for concepts appearing in predications with similar  predicate-argument pairs become more similar (closer in vector space) to each other. Dissimlar vectors will approach orthogonality. 
+- binding operator used is elementwise XOR
+- binary vectors? - **bit vectors**
+- superposition vector between multiple vectors retains the most common element (1 or 0) amongst all vectors
+- linearly decreasing learning rate
+- non-negative normalised hamming distance
+- optimisation objective is the cross-entropy function
+- **question** - they are defining how updates are made to the weight vectors representing the subject, predicate and object. However they have an objective which they achieve through gradient descent - therefore the weigths should ideally be updated by backpropagation? - unless the update that is written is indeed tue to the backpropagation
+- the **bound product** of the contexta and semantic embeddings of the two drugs invovled in polypharmacy side effect, should be similar to the side effect they produce
+- they create semantic and context embeddings for each drug - i.e. depending wehtehr they appear as predicate or object in the triple
+
+
+
 10. [Realistic Re-evaluation of Knowledge Graph Completion Methods: An Experimental Study](https://arxiv.org/abs/2003.08001)
 11. [Knowledge Graph Completion to Predict Polypharmacy Side Effects](https://arxiv.org/abs/1810.09227)
 
