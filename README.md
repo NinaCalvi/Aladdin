@@ -97,3 +97,14 @@ Potentially may be interesting for a deeper exmaination of the type of predictio
 Approaches and Applications](https://persagen.com/files/misc/Wang2017Knowledge.pdf)
 23. [Network embedding in biomedical data science 
 ](https://academic.oup.com/bib/article/21/1/182/5228144#198666838)
+
+24. [A Re-Evaluation of KGC methods](https://arxiv.org/pdf/1911.03903.pdf)
+- evaluation protocol gives perfect score if they output a constant
+- create protocol for comparison across **all score functions**
+- highest conentration on NN embedding methods - they appear to be outputting the same score for a lot of valid and invalid triplets - due to the fact that aftet the ReLu activation function a lot of the neurons get set to 0 
+25. [Toward Understanding The Effect Of Loss function On Then
+Performance Of Knowledge Graph Embedding](https://arxiv.org/pdf/1909.00519.pdf)
+- TransE has known to have limitation due to its inability to encode certian patterns e.g. symmetric, reflexive etc
+- People have attempted to fix this by changing the **scoring** funciton and making variations of the model
+- However this paper concentrates on improving it based on the **loss** function: selection of loss functions affect the boundary of the scorign function and hence the limitations that were mentioned in previous research could be deemed as inaccurate because they failed in taking the loss funciton into consideration
+- They also suggest **TransComplEx** that translate head entities to the conjugate of the tail entity using relation in complex space - allows for less limitations in relation patterns; the conjugate tail vector allows for distinguishing between the role of an entity as subject or object. Appears to improve ComplEX method 
