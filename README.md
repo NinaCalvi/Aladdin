@@ -108,3 +108,6 @@ Performance Of Knowledge Graph Embedding](https://arxiv.org/pdf/1909.00519.pdf)
 - People have attempted to fix this by changing the **scoring** funciton and making variations of the model
 - However this paper concentrates on improving it based on the **loss** function: selection of loss functions affect the boundary of the scorign function and hence the limitations that were mentioned in previous research could be deemed as inaccurate because they failed in taking the loss funciton into consideration
 - They also suggest **TransComplEx** that translate head entities to the conjugate of the tail entity using relation in complex space - allows for less limitations in relation patterns; the conjugate tail vector allows for distinguishing between the role of an entity as subject or object. Appears to improve ComplEX method 
+
+26. [Investigating Robustness and Interpretability of Link Prediction
+via Adversarial Modifications](https://arxiv.org/pdf/1905.00563.pdf)
