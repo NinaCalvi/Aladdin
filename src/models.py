@@ -9,6 +9,7 @@ from abc import ABC, abstractmethod
 from typing import Tuple, List, Dict
 import torch
 from torch import nn
+from losses import compute_kge_loss
 
 
 class KBCModel(nn.Module, ABC):
@@ -25,8 +26,12 @@ class KBCModel(nn.Module, ABC):
         pass
 
     @abstractmethod
-    def compute_loss(self, scores: torch.Tensor,
+    def compute_loss(self, scores: torch.Tensor, targets: torch.Tensor,
         reduction_type: string = 'avg'):
+        '''
+        scores: (batch, num_classes) scores matrix)
+        targets: indeces of correct prediction
+        '''
         pass
 
     def get_ranking(
@@ -133,8 +138,8 @@ class CP(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, reduction_type):
-        return compute_kge_loss(scores, self.loss, reduction_type)
+    def compute_loss(self, scores, targets, reduction_type):
+        return compute_kge_loss(scores, targets, self.loss, reduction_type)
 
 
 class TransE(KBCModel):
@@ -218,6 +223,8 @@ class TransE(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data + self.rel(queries[:, 1]).data
 
+    def compute_loss(self, scores, targets, reduction_type):
+        return compute_kge_loss(scores, targets, self.loss, reduction_type)
 
 
 
@@ -296,3 +303,6 @@ class ComplEx(KBCModel):
             lhs[0] * rel[0] - lhs[1] * rel[1],
             lhs[0] * rel[1] + lhs[1] * rel[0]
         ], 1)
+
+    def compute_loss(self, scores, targets, reduction_type):
+        return compute_kge_loss(scores, targets, self.loss, reduction_type)

@@ -9,9 +9,10 @@ from abc import ABC, abstractmethod
 from typing import Tuple, List, Dict
 import torch
 from torch import nn
+from losses import mc_log_loss
 
 
-class KBCModel(nn.Module, ABC):
+class KBCModelMCL(nn.Module, ABC):
     @abstractmethod
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         pass
@@ -24,10 +25,14 @@ class KBCModel(nn.Module, ABC):
     def score(self, x: torch.Tensor):
         pass
 
-    @abstractmethod
-    def compute_loss(self, scores: torch.Tensor,
-        reduction_type: string = 'avg'):
-        pass
+
+    def compute_loss(self, predictions: Tuple[torch.Tensor, torch.Tensor],
+        obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: string = 'avg'):
+        '''
+        obj_idx, subj_idx: all indeces in the training for subject/object needed to compute neg lloss
+        '''
+        return mc_log_loss(scores, subj_idx, obj_idx,  reduction_type)
+
 
     def get_ranking(
             self, queries: torch.Tensor,
@@ -87,7 +92,7 @@ class KBCModel(nn.Module, ABC):
         return ranks
 
 
-class CP(KBCModel):
+class CP_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3,
@@ -135,11 +140,7 @@ class CP(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, reduction_type):
-        return compute_kge_loss(scores, self.loss, reduction_type)
-
-
-class TransE(KBCModel):
+class TransE_MC(KBCModelMCL):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3, norm_: string = 'l1',
@@ -226,7 +227,7 @@ class TransE(KBCModel):
 
 
 
-class ComplEx(KBCModel):
+class ComplEx_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3,
@@ -275,10 +276,7 @@ class ComplEx(KBCModel):
         to_score = to_score[:, :self.rank], to_score[:, self.rank:]
         score_sp =  (
             (lhs[0] * rel[0] - lhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
-            (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
-        )
-
-
+            (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1))
 
         score_po = (
             (rhs[0] * rel[0] + rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
