@@ -123,7 +123,9 @@ class CP(KBCModel):
         #score subject predicate
         score_sp =  (lhs * rel) @ self.rhs.weight.t()
 
-        return score_sp, (lhs, rel, rhs)
+        #score predicate object
+        score_po = (rhs * rel) @ self.lhs.weight.t()
+        return score_sp, score_po, (lhs, rel, rhs)
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.rhs.weight.data[
@@ -195,16 +197,19 @@ class TransE(KBCModel):
         #TODO: FINISH THIS!!
         #adding new vertical dimension
         interactions_sp = (lhs + rel) - self.rhs.weight
+        interactions_po = (self.lhs.weight + rel - rhs)
+
         #should take the norm across each row of matrix
         if self.norm_ == 'l1':
             scores_sp = torch.norm(interactions_sp, 1, dim=0)
+            scores_po = torch.norm(interactions_po, 1, dim=0)
         if self.norm_ == 'l2':
             scores_sp = torch.norm(interactions_sp, 2, dim=0)
+            scores_po = torch.norm(interactions_po, 2, dim=0)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
-
-        return scores_sp, (lhs, rel, rhs)
+        return scores_sp, scores_po, (lhs, rel, rhs)
 
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
@@ -274,7 +279,12 @@ class ComplEx(KBCModel):
         )
 
 
-        return score_sp, (
+
+        score_po = (
+            (rhs[0] * rel[0] + rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+            (rhs[0] * rel[1] - rhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
+        )
+        return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
             torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
