@@ -24,6 +24,11 @@ class KBCModel(nn.Module, ABC):
     def score(self, x: torch.Tensor):
         pass
 
+    @abstractmethod
+    def compute_loss(self, scores: torch.Tensor,
+        reduction_type: string = 'avg'):
+        pass
+
     def get_ranking(
             self, queries: torch.Tensor,
             filters: Dict[Tuple[int, int], List[int]],
@@ -84,12 +89,13 @@ class KBCModel(nn.Module, ABC):
 
 class CP(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int,
+            self, sizes: Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3,
             multi_class: bool = False
     ):
     '''
     multi_class: bool - True when calculate multi class loss
+    loss - what type of loss
     '''
         super(CP, self).__init__()
         self.sizes = sizes
@@ -102,6 +108,9 @@ class CP(KBCModel):
         self.lhs.weight.data *= init_size
         self.rel.weight.data *= init_size
         self.rhs.weight.data *= init_size
+
+        self.multi_class = multi_class
+        self.loss = loss
 
     def score(self, x):
         lhs = self.lhs(x[:, 0])
@@ -116,7 +125,7 @@ class CP(KBCModel):
         rhs = self.rhs(x[:, 2])
         #score subject predicate
         score_sp =  (lhs * rel) @ self.rhs.weight.t()
-        if not multi_class:
+        if not self.multi_class:
             return score_sp, (lhs, rel, rhs)
         else:
             #score predicate object
@@ -131,9 +140,13 @@ class CP(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
+    def compute_loss(self, scores, reduction_type):
+        return compute_kge_loss(scores, self.loss, reduction_type)
+
+
 class TransE(KBCModel):
     def __init__(
-            self, sizes:Tuple[int, int, int], rank: int,
+            self, sizes:Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3, norm_: string = 'l1',
             multi_class: bool = False
     ):
@@ -158,6 +171,8 @@ class TransE(KBCModel):
         self.rhs.weight.data *= init_size
 
         self.norm_ = norm_
+        self.multi_class = multi_class
+        self.loss = loss
 
     def score(self, x):
         """
@@ -200,7 +215,7 @@ class TransE(KBCModel):
         if not self.multi_class:
             return scores_sp, (lhs, rel, rhs)
         else:
-            interactions_po = (rhs + rel) - self.lhs.weight
+            interactions_po = (self.lhs.weight + rel - rhs)
             #should take the norm across each row of matrix
             if self.norm_ == 'l1':
                 scores_po = torch.norm(interactions_po, 1, dim=0)
@@ -227,12 +242,13 @@ class TransE(KBCModel):
 
 class ComplEx(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int,
+            self, sizes: Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3,
             multi_class: bool = False
     ):
         '''
         multi_class: bool - True when calculate multi class loss
+        loss - what type of loss to use
         '''
         super(ComplEx, self).__init__()
         self.sizes = sizes
@@ -244,6 +260,9 @@ class ComplEx(KBCModel):
         ])
         self.embeddings[0].weight.data *= init_size
         self.embeddings[1].weight.data *= init_size
+
+        self.multi_class = multi_class
+        self.loss = loss
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])
@@ -276,7 +295,7 @@ class ComplEx(KBCModel):
             (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
         )
 
-        if not multi_class:
+        if not self.multi_class:
             return score_sp, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
             torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
@@ -284,8 +303,8 @@ class ComplEx(KBCModel):
         )
         else:
             score_po = (
-                (rhs[0] * rel[0] - rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
-                (rhs[0] * rel[1] + rhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
+                (rhs[0] * rel[0] + rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+                (rhs[0] * rel[1] - rhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
             )
             return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
