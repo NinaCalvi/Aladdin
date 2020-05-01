@@ -85,8 +85,12 @@ class KBCModel(nn.Module, ABC):
 class CP(KBCModel):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3
+            init_size: float = 1e-3,
+            multi_class: bool = False
     ):
+    '''
+    multi_class: bool - True when calculate multi class loss
+    '''
         super(CP, self).__init__()
         self.sizes = sizes
         self.rank = rank
@@ -110,7 +114,14 @@ class CP(KBCModel):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
-        return (lhs * rel) @ self.rhs.weight.t(), (lhs, rel, rhs)
+        #score subject predicate
+        score_sp =  (lhs * rel) @ self.rhs.weight.t()
+        if not multi_class:
+            return score_sp, (lhs, rel, rhs)
+        else:
+            #score predicate object
+            score_po = (rhs * rel) @ self.lhs.weight.t()
+            return score_sp, score_po, (lhs, rel, rhs)
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.rhs.weight.data[
@@ -123,7 +134,8 @@ class CP(KBCModel):
 class TransE(KBCModel):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3, norm_: string = 'l1'
+            init_size: float = 1e-3, norm_: string = 'l1',
+            multi_class: bool = False
     ):
         """
         Parameters
@@ -176,16 +188,28 @@ class TransE(KBCModel):
         #need to compute the difference with each
         #TODO: FINISH THIS!!
         #adding new vertical dimension
-        interactions = (lhs + rel) - self.rhs.weight
+        interactions_sp = (lhs + rel) - self.rhs.weight
         #should take the norm across each row of matrix
         if self.norm_ == 'l1':
-            scores = torch.norm(interactions, 1, dim=0)
+            scores_sp = torch.norm(interactions_sp, 1, dim=0)
         if self.norm_ == 'l2':
-            scores = torch.norm(interactions, 2, dim=0)
+            scores_sp = torch.norm(interactions_sp, 2, dim=0)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
-        return scores, (lhs, rel, rhs)
+        if not self.multi_class:
+            return scores_sp, (lhs, rel, rhs)
+        else:
+            interactions_po = (rhs + rel) - self.lhs.weight
+            #should take the norm across each row of matrix
+            if self.norm_ == 'l1':
+                scores_po = torch.norm(interactions_po, 1, dim=0)
+            if self.norm_ == 'l2':
+                scores_po = torch.norm(interactions_po, 2, dim=0)
+            else:
+                raise ValueError("Unknwon norm type given (%s)" % self.norm_)
+            return scores_sp, scores_po, (lhs, rel, rhs)
+
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         """
@@ -204,8 +228,12 @@ class TransE(KBCModel):
 class ComplEx(KBCModel):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3
+            init_size: float = 1e-3,
+            multi_class: bool = False
     ):
+        '''
+        multi_class: bool - True when calculate multi class loss
+        '''
         super(ComplEx, self).__init__()
         self.sizes = sizes
         self.rank = rank
@@ -243,14 +271,28 @@ class ComplEx(KBCModel):
 
         to_score = self.embeddings[0].weight
         to_score = to_score[:, :self.rank], to_score[:, self.rank:]
-        return (
+        score_sp =  (
             (lhs[0] * rel[0] - lhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
             (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
-        ), (
+        )
+
+        if not multi_class:
+            return score_sp, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
             torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
+        else:
+            score_po = (
+                (rhs[0] * rel[0] - rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+                (rhs[0] * rel[1] + rhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
+            )
+            return score_sp, score_po, (
+            torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
+            torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
+        )
+
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.embeddings[0].weight.data[
