@@ -175,11 +175,13 @@ class TransE(KBCModel):
 
         #need to compute the difference with each
         #TODO: FINISH THIS!!
-        interactions = lhs + rel - self.rhs.weight
+        #adding new vertical dimension
+        interactions = (lhs + rel) - self.rhs.weight
+        #should take the norm across each row of matrix
         if self.norm_ == 'l1':
-            scores = torch.norm(interactions, 1, -1)
+            scores = torch.norm(interactions, 1, dim=0)
         if self.norm_ == 'l2':
-            scores = torch.norm(interactions, 2, -1)
+            scores = torch.norm(interactions, 2, dim=0)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
@@ -192,6 +194,9 @@ class TransE(KBCModel):
         return self.rhs.weight.data[
             chunk_begin:chunk_begin + chunk_size
         ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        return self.lhs(queries[:, 0]).data + self.rel(queries[:, 1]).data
 
 
 
