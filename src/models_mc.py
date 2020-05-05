@@ -94,7 +94,7 @@ class KBCModelMCL(nn.Module, ABC):
 
 class CP_MC(KBCModelMCL):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: string,
+            self, sizes: Tuple[int, int, int], rank: int,
             init_size: float = 1e-3,
     ):
     '''
@@ -111,8 +111,6 @@ class CP_MC(KBCModelMCL):
         self.lhs.weight.data *= init_size
         self.rel.weight.data *= init_size
         self.rhs.weight.data *= init_size
-
-        self.loss = loss
 
     def score(self, x):
         lhs = self.lhs(x[:, 0])
@@ -142,7 +140,7 @@ class CP_MC(KBCModelMCL):
 
 class TransE_MC(KBCModelMCL):
     def __init__(
-            self, sizes:Tuple[int, int, int], rank: int, loss: string,
+            self, sizes:Tuple[int, int, int], rank: int,
             init_size: float = 1e-3, norm_: string = 'l1',
     ):
         """
@@ -166,7 +164,6 @@ class TransE_MC(KBCModelMCL):
         self.rhs.weight.data *= init_size
 
         self.norm_ = norm_
-        self.loss = loss
 
     def score(self, x):
         """
@@ -229,12 +226,8 @@ class TransE_MC(KBCModelMCL):
 
 class ComplEx_MC(KBCModelMCL):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: string,
-            init_size: float = 1e-3,
-    ):
-        '''
-        loss - what type of loss to use
-        '''
+            self, sizes: Tuple[int, int, int], rank: int,
+            init_size: float = 1e-3):
         super(ComplEx, self).__init__()
         self.sizes = sizes
         self.rank = rank
@@ -246,7 +239,6 @@ class ComplEx_MC(KBCModelMCL):
         self.embeddings[0].weight.data *= init_size
         self.embeddings[1].weight.data *= init_size
 
-        self.loss = loss
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])
