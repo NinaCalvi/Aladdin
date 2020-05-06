@@ -47,4 +47,20 @@ def auc_roc(y_pred, true_idx):
     true_idx: np array of idx of true labels - 1d, (num_labels, )
     '''
     #first is to translate the ture label idx in matrix of num_instance x num_labels
-    #this matrix will be binary, 1 at the label index and 0 everywhere else. 
+    #this matrix will be binary, 1 at the label index and 0 everywhere else.
+
+    labels = np.zeros_like(y_pred)
+    labels[np.arange(len(lables)), true_idx] = 1
+    return roc_auc_score(labels, y_pred)
+
+def auc_pr(y_pred, true_idx):
+    '''
+    Compute the area under the precision-recall curve. The outcome summarizes a precision-recall curve as the
+    weighted mean of precisions achieved at each threshold
+
+    y_pred: np.array 2-dim of predictions - num instances x num labels
+    true_idx: np array of idx of true labels - 1d, (num_labels, )
+    '''
+    labels = np.zeros_like(y_pred)
+    labels[np.arange(len(lables)), true_idx] = 1
+    return average_precision_score(labels, y_pred)
