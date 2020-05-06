@@ -1,8 +1,9 @@
 #contains possible different metrics
 from sklearn.metrics import roc_auc_score, average_precision_score
+import numpy as np
 
 
-def rank(y_pred, true_idx):
+def rank(y_pred: np.array, true_idx: np.array):
 
     '''
     y_pred: np.array 2-dim of predictions - num instances x num labels
@@ -18,7 +19,7 @@ def rank(y_pred, true_idx):
     rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
     return rank
 
-def mean_rank(y_pred, true_idx):
+def mean_rank(y_pred: np.array, true_idx: np.array):
     '''
     Compute the mean ranks
 
@@ -28,7 +29,7 @@ def mean_rank(y_pred, true_idx):
     ranks = rank(y_pred, true_idx)
     return np.mean(ranks)
 
-def mrr(y_pred, true_idx):
+def mrr(y_pred: np.array, true_idx: np.array):
     '''
     Compute the mean reciprocal rank
 
@@ -39,7 +40,7 @@ def mrr(y_pred, true_idx):
     return np.mean(reciprocal)
 
 
-def auc_roc(y_pred, true_idx):
+def auc_roc(y_pred: np.array, true_idx: np.array):
     '''
     Compute the area under the ROC curve
 
@@ -53,7 +54,7 @@ def auc_roc(y_pred, true_idx):
     labels[np.arange(len(lables)), true_idx] = 1
     return roc_auc_score(labels, y_pred)
 
-def auc_pr(y_pred, true_idx):
+def auc_pr(y_pred: np.array, true_idx: np.array):
     '''
     Compute the area under the precision-recall curve. The outcome summarizes a precision-recall curve as the
     weighted mean of precisions achieved at each threshold
