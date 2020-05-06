@@ -9,10 +9,9 @@ def reduce_loss(loss: torch.Tensor, reduction_type: string):
         return torch.mean(loss, dim=0)
 
 
-def compute_kge_loss(predictions: torch.Tensor, targets: torch.Tensor, loss: string, reduction_type: string = "avg"):
+def compute_kge_loss(predictions: torch.Tensor, loss: string, reduction_type: string = "avg"):
     '''
     predictions: (N,) scores vector of a triple
-    targets: (N,) binary 1, 0 whether a postivie sample or not (i.e. should score 1 if right, 0 otherwise)
     loss: type of loss function
     reduction_type: type of reduction
     '''
@@ -22,9 +21,19 @@ def compute_kge_loss(predictions: torch.Tensor, targets: torch.Tensor, loss: str
     #essentially the predictions are equally split between positive and negative predictions
     #through the middle
 
+    #assuming that the positive and negative samples are perfectly balanced
+    pos_scores, neg_scores = torch.split(predictions, 2, dim=0)
+    #setting the targets in this way is needed for the different losses we will be workign with
+    targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
+
+
     if loss == 'pw_hinge':
         return pointwise_hinge_loss(predictions, targets, reduction_type)
-    elif loss == 'pw_square:'
+    elif loss == 'pw_square':
+        #targets need to be bingary
+        targets = (targets + 1)/2
+        return pointwise_square_loss(predictions, targets, reduction_type)
+
 
     pass
 
@@ -32,7 +41,7 @@ def compute_kge_loss(predictions: torch.Tensor, targets: torch.Tensor, loss: str
 def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: string, margin_value: float: 1.0):
     '''
     Point hinge loss: (1-f(x)*l(x))
-    l(x) is the label - 1 for positive, 0 for negative sample
+    l(x) is the label: 1 for positive, -1 for negative sample
     '''
 
     losses = nn.relu(margin - predictions * targets)
@@ -41,6 +50,8 @@ def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduc
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: string):
     '''
     Pointwise square loss: (f(x)-l(x))^2
+    l(x) is the label : 1 for positive, 0 for negative sample
+
     '''
     losses = torch.pow(predictions - targets, 2)
     return reduce_loss(losses, reduction_type)
