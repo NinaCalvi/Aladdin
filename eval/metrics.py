@@ -67,7 +67,7 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
     return average_precision_score(labels, y_pred)
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
-def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.Tensor,
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
             batch_size: int, deivce: torch.device):
     '''
     Evaluation method immediately returns the metrics wanted
@@ -83,7 +83,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
     #store all the different metrics
     complete_metrcis = {}
 
-    for training_instance in train_triples:
+    for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance
         sp_key = (s_idx, p_idx)
         po_key = (p_idx, o_idx)
