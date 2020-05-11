@@ -1,4 +1,4 @@
-from embeddings import KBCModel, KBCModelMCL
+from embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
 from torch import nn
 from torch import optim
 from argparse import Namespace
@@ -30,9 +30,23 @@ def train(model: nn.Module,
 def train_not_mc():
     pass
 
-def train_mc(model: KBCModel, regulariser: string, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
+def get_regulariser(regulariser_str: string, reg_weight: int):
+    '''
+    Return the regulariser wanted
+    '''
+    if regulariser_str == 'n3':
+        return regulariser.N3(reg_weight)
+    elif regulariser_str == 'f2':
+        return regulariser.F2(reg_weight)
+    else:
+        raise ValueError("Incorrect regulariser name given (%s)" %regulariser_str)
 
 
+def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
+
+    '''
+    Training method for MC models
+    '''
     nb_negs = args.nb_negs
 
     if torch.cuda.is_available():
@@ -44,20 +58,32 @@ def train_mc(model: KBCModel, regulariser: string, optimiser: optim.Optimizer, d
     emb_size = args.emb_size
     nb_epochs = args.nb_epochs
     seed = args.seed
+    reg_weight = args.reg_weight
 
     #set seed
     np.random.seed(seed)
     random_state = np.random.RandomState(seed)
     torch.manual_seed(seed)
 
-    #the embeddings should be initialised with the model that has been passed on
+    #the embedding matrices should be initialised with the model that has been passed on
     inputs = data[torch.randperm(data.shape[0]),:]
     for epoch in range(nb_epochs):
         batch_start = 0
         while batch_start < data.shape[0]:
             batch_end = min(batch_start + batch_size, data.shape[0])
             input_batch = input[batch_start:batch_end].to(device)
-            
+            pred_sp, pred_po, factors = model.forward(input_batch)
+
+            loss = mc_log_loss((pred_sp, pred_po), input_batch[:, 2], input_batch[:, 0])
+            reg = get_regulariser(regulariser_str, reg_weight).forward(factors)
+            loss += reg
+
+            optimiser.zero_grad()
+            loss.backward()
+            optimiser.step()
+
+            batch_start += batch_size
+
 
 
 
