@@ -65,3 +65,31 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
     labels = np.zeros_like(y_pred)
     labels[np.arange(len(lables)), true_idx] = 1
     return average_precision_score(labels, y_pred)
+
+#   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
+def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.Tensor):
+    '''
+    Evaluation method immediately returns the metrics wanted
+    '''
+
+    #store the labels for subject_predicate and predicte_object that were seen in training
+    #some sp and po situations may have more than one label assigned to it (i.e. may link to different entitites)
+    #when calculating the score we would like to filter them out
+
+    sp_to_o = {}
+    po_to_s = {}
+
+    for training_instance in train_triples:
+        s_idx, p_idx, o_idx = training_instance
+        sp_key = (s_idx, p_idx)
+        po_key = (p_idx, o_idx)
+
+        if sp_key not in sp_to_o:
+            sp_to_o[sp_key] = [o_idx]
+        else:
+            sp_to_o[sp_key].append(o_idx)
+
+        if po_key not in po_to_s:
+            po_to_s[po_key] = [s_idx]
+        else:
+            po_to_s.append(s_idx)
