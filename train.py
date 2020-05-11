@@ -50,6 +50,11 @@ def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optim
 
     '''
     Training method for MC models
+
+    Parameters:
+    ----------------
+    data: training data
+
     '''
     nb_negs = args.nb_negs
 
@@ -99,13 +104,3 @@ def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optim
         logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 
     #should evaluate after the trianing is done
-
-
-
-
-
-
-
-
-
-    pass

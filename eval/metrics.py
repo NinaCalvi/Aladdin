@@ -71,6 +71,9 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             batch_size: int, deivce: torch.device):
     '''
     Evaluation method immediately returns the metrics wanted
+    Parameters:
+    ---------------
+    all_triples: all triples in train/test/dev for calculaing filtered options
     '''
 
     #store the labels for subject_predicate and predicte_object that were seen in training
