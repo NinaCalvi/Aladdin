@@ -102,6 +102,14 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
     batch_start = 0
     mrr = 0.0
     counter = 0
+
+
+    prediction_subject = None
+    prediction_object = None
+
+    prediction_subject_filtered = None
+    prediction_object_filtered = None
+
     while batch_start < test_triples.shape[0]:
         counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
@@ -113,6 +121,13 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
+
+        if prediction_subject is not None:
+            prediction_subject = np.hstack((prediction_subject, scores_po))
+            prediction_object = np.hstack((prediction_object, scores_sp))
+        else:
+            prediction_subject = scores_po
+            prediction_object = scores_sp
 
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
@@ -131,6 +146,14 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
 
+        if prediction_subject_filtered is not None:
+            prediction_subject_filtered = np.hstack((prediction_subject_filtered, scores_po))
+            prediction_object_filtered = np.hstack((prediction_object_filtered, scores_sp))
+        else:
+            prediction_subject_filtered = scores_po
+            prediction_object_filtered = scores_sp
+
+
         #calculate the two mrr
         mrr_object = mrr(scores_sp, batch_input[:, 2])
         mrr_subject = mrr(scores_po, batch_input[:, 0])
@@ -139,3 +162,12 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
     mrr /= counter
 
     metrics['MRR'] = mrr
+
+    auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
+    auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
+
+    auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
+    auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
+
+    metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
+    metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
