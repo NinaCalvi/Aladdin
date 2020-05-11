@@ -67,7 +67,8 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
     return average_precision_score(labels, y_pred)
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
-def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.Tensor):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.Tensor,
+            batch_size: int, deivce: torch.device):
     '''
     Evaluation method immediately returns the metrics wanted
     '''
@@ -78,6 +79,9 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
 
     sp_to_o = {}
     po_to_s = {}
+
+    #store all the different metrics
+    complete_metrcis = {}
 
     for training_instance in train_triples:
         s_idx, p_idx, o_idx = training_instance
@@ -93,3 +97,45 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
             po_to_s[po_key] = [s_idx]
         else:
             po_to_s.append(s_idx)
+
+
+    batch_start = 0
+    mrr = 0.0
+    counter = 0
+    while batch_start < test_triples.shape[0]:
+        counter += 2
+        batch_end = min(batch_start + batch_size, test_triples.shape[0])
+        batch_input = test_triples[batch_start:batch_end]
+        with torch.no_grad():
+            batch_tensor = batch_input.to(device)
+            scores_sp, scores_po, factors = model.forward(batch_tensor)
+            #remove them from device
+            scores_sp = scores_sp.cpu().numpy()
+            scores_po = scores_po.cpu().numpy()
+
+
+        #remove scores given to filtered labels
+        for i, el in enumerate(batch_input):
+            s_idx, p_idx, o_idx = el
+            sp_key = (s_idx, p_idx)
+            po_key = (p_idx, o_idx)
+
+            o_to_remove = sp_to_o[sp_key]
+            s_to_remove = po_to_s[po_key]
+
+            for tmp_o_idx in o_to_remove:
+                if tmp_o_idx != o_idx:
+                    scores_sp[i, tmp_o_idx] = - np.infty
+
+            for tmp_s_idx in s_to_remove:
+                if tmp_s_idx != s_idx:
+                    scores_po[i, tmp_s_idx] = - np.infty
+
+        #calculate the two mrr
+        mrr_object = mrr(scores_sp, batch_input[:, 2])
+        mrr_subject = mrr(scores_po, batch_input[:, 0])
+        mrr += mrr_object
+        mrr += mrr_subject
+    mrr /= counter
+
+    metrics['MRR'] = mrr
