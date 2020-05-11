@@ -171,3 +171,5 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, train_triples: torch.
 
     metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
     metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
+
+    return metrics
