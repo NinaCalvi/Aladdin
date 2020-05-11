@@ -3,6 +3,10 @@ from torch import nn
 from torch import optim
 from argparse import Namespace
 import numpy as np
+import logging
+
+logger = logging.getLogger(os.path.basename(sys.argv[0]))
+np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 def train(model: nn.Module,
         regulariser: string,
@@ -53,12 +57,14 @@ def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optim
         torch.cuda.manual_seed(seed)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    logger.info(f'Device: {device}')
 
     batch_size = args.batch_size
     emb_size = args.emb_size
     nb_epochs = args.nb_epochs
     seed = args.seed
     reg_weight = args.reg_weight
+    is_quiet = args.quiet
 
     #set seed
     np.random.seed(seed)
@@ -67,6 +73,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optim
 
     #the embedding matrices should be initialised with the model that has been passed on
     inputs = data[torch.randperm(data.shape[0]),:]
+    epoch_loss = []
     for epoch in range(nb_epochs):
         batch_start = 0
         while batch_start < data.shape[0]:
@@ -82,7 +89,20 @@ def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optim
             loss.backward()
             optimiser.step()
 
+            epoch_loss.append(loss)
+            if not is_quiet:
+                logger.info(f'Epoch {epoch_no}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss_value:.6f}')
+
             batch_start += batch_size
+
+        loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
+        logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
+
+    #should evaluate after the trianing is done
+
+
+
+
 
 
 
