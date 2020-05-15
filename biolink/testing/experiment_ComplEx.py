@@ -58,19 +58,19 @@ def main(argv):
     args = parser.parse_args(argv)
 
 
-    data = parser.data
-    emb_size = parser.embedding_size
-    batch_size = parser.batch_size
+    data = args.data
+    emb_size = args.embedding_size
+    batch_size = args.batch_size
 
-    nb_epochs = parser.epochs
-    lr = parser.learning_rate
-    optimizer_name = parser.optimizer
-    loss = parser.loss
-    regulariser = parser.regulariser
-    reg_weight = parser.reg_weight
+    nb_epochs = args.epochs
+    lr = args.learning_rate
+    optimizer_name = args.optimizer
+    loss = args.loss
+    regulariser = args.regulariser
+    reg_weight = args.reg_weight
 
-    seed = praser.seed
-    quiet = parser.quiet
+    seed = args.seed
+    quiet = args.quiet
 
 
 
