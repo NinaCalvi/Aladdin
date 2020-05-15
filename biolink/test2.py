@@ -1,4 +1,5 @@
 from testing import experiment_ComplEx
+import biolink
 
 def main(argv):
     experiment_ComplEx.main(argv)

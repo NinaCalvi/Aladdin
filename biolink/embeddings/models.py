@@ -97,9 +97,9 @@ class CP(KBCModel):
             self, sizes: Tuple[int, int, int], rank: int, loss: string,
             init_size: float = 1e-3,
     ):
-    '''
-    loss - what type of loss
-    '''
+        '''
+        loss - what type of loss
+        '''
         super(CP, self).__init__()
         self.sizes = sizes
         self.rank = rank

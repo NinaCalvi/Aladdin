@@ -6,7 +6,7 @@ import numpy as np
 from tqdm import tqdm
 
 import argparse
-from ..utility import utils, train
+from biolink.utility import utils, train
 
 from ..embeddings import *
 from ..eval import evaluate

@@ -1,4 +1,4 @@
 from .utility import *
 from .testing import *
-from .evl import *
+from .eval import *
 from .embeddings import *
