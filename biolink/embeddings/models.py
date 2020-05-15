@@ -9,7 +9,7 @@ from abc import ABC, abstractmethod
 from typing import Tuple, List, Dict
 import torch
 from torch import nn
-from losses import compute_kge_loss
+from .losses import compute_kge_loss
 
 
 class KBCModel(nn.Module, ABC):
