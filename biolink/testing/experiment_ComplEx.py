@@ -53,8 +53,12 @@ def main(argv):
     parser.add_argument('--regulariser', '-r', action='store', type=str, default='n3')
     parser.add_argument('--reg-weight', action='store', type=float, required=True)
 
+    parser.add_argument('--nb-negs', action='store', default=6)
+
     parser.add_argument('--seed', action='store', type=int, default=1234)
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
+
+
 
     args = parser.parse_args(argv)
 
