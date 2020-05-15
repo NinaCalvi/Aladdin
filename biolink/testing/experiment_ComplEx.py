@@ -55,6 +55,8 @@ def main(argv):
     parser.add_argument('--seed', action='store', type=int, default=1234)
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
 
+    args = parser.parse_args(argv)
+
 
     data = parser.data
     emb_size = parser.embedding_size
@@ -70,7 +72,7 @@ def main(argv):
     seed = praser.seed
     quiet = parser.quiet
 
-    args = parser.parse_args(argv)
+
 
     # set the seeds
     np.random.seed(seed)
