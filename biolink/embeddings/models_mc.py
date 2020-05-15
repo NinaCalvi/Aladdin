@@ -100,7 +100,7 @@ class CP_MC(KBCModelMCL):
         '''
         loss - what type of loss
         '''
-        super(CP, self).__init__()
+        super(CP_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
 
@@ -151,7 +151,7 @@ class TransE_MC(KBCModelMCL):
         init_size: value to initialize embeddings
         norm_: how to normalise the scoring function
         """
-        super(TransE, self).__init__()
+        super(TransE_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
 
@@ -228,7 +228,7 @@ class ComplEx_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
             init_size: float = 1e-3):
-        super(ComplEx, self).__init__()
+        super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
 
