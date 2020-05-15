@@ -68,7 +68,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     logger.info(f'Device: {device}')
 
     batch_size = args.batch_size
-    emb_size = args.emb_size
+    emb_size = args.embedding_size
     nb_epochs = args.nb_epochs
     seed = args.seed
     reg_weight = args.reg_weight
