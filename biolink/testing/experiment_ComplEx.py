@@ -43,7 +43,7 @@ def main(argv):
 
     # training params
     parser.add_argument('--epochs', '-e', action='store', type=int, default=100)
-    parser.add_argument('--learning-rate', '-l', action='store', type=float, default=0.01)
+    parser.add_argument('--learning-rate', '-lr', action='store', type=float, default=0.01)
 
     parser.add_argument('--optimizer', '-o', action='store', type=str, default='adagrad',
                         choices=['adagrad', 'adam', 'sgd'])
