@@ -106,7 +106,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             epoch_loss_values.append(loss)
             batch_no += 1
             if not is_quiet:
-                logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss_value:.6f}')
+                logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss:.6f}')
 
             batch_start += batch_size
 
