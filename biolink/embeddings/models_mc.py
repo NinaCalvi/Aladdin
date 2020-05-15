@@ -27,7 +27,7 @@ class KBCModelMCL(nn.Module, ABC):
 
 
     def compute_loss(self, predictions: Tuple[torch.Tensor, torch.Tensor],
-        obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: string = 'avg'):
+        obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: str = 'avg'):
         '''
         obj_idx, subj_idx: all indeces in the training for subject/object needed to compute neg lloss
         '''
@@ -141,7 +141,7 @@ class CP_MC(KBCModelMCL):
 class TransE_MC(KBCModelMCL):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3, norm_: string = 'l1',
+            init_size: float = 1e-3, norm_: str = 'l1',
     ):
         """
         Parameters

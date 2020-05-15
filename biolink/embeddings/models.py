@@ -27,7 +27,7 @@ class KBCModel(nn.Module, ABC):
 
     @abstractmethod
     def compute_loss(self, scores: torch.Tensor, targets: torch.Tensor,
-        reduction_type: string = 'avg'):
+        reduction_type: str = 'avg'):
         '''
         scores: (batch, num_classes) scores matrix)
         targets: indeces of correct prediction
@@ -94,7 +94,7 @@ class KBCModel(nn.Module, ABC):
 
 class CP(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: string,
+            self, sizes: Tuple[int, int, int], rank: int, loss: str,
             init_size: float = 1e-3,
     ):
         '''
@@ -144,8 +144,8 @@ class CP(KBCModel):
 
 class TransE(KBCModel):
     def __init__(
-            self, sizes:Tuple[int, int, int], rank: int, loss: string,
-            init_size: float = 1e-3, norm_: string = 'l1',
+            self, sizes:Tuple[int, int, int], rank: int, loss: str,
+            init_size: float = 1e-3, norm_: str = 'l1',
     ):
         """
         Parameters
@@ -230,7 +230,7 @@ class TransE(KBCModel):
 
 class ComplEx(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: string,
+            self, sizes: Tuple[int, int, int], rank: int, loss: str,
             init_size: float = 1e-3,
     ):
         '''

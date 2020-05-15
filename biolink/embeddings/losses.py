@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-def reduce_loss(loss: torch.Tensor, reduction_type: string):
+def reduce_loss(loss: torch.Tensor, reduction_type: str):
     print('loss shape', loss.size)
     if reduction_type == 'sum':
         return torch.sum(loss, dim=0)
@@ -9,7 +9,7 @@ def reduce_loss(loss: torch.Tensor, reduction_type: string):
         return torch.mean(loss, dim=0)
 
 
-def compute_kge_loss(predictions: torch.Tensor, loss: string, reduction_type: string = "avg"):
+def compute_kge_loss(predictions: torch.Tensor, loss: str, reduction_type: str = "avg"):
     '''
     predictions: (N,) scores vector of a triple
     loss: type of loss function
@@ -38,7 +38,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: string, reduction_type: st
     pass
 
 
-def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: string, margin_value: float = 1.0):
+def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, margin_value: float = 1.0):
     '''
     Point hinge loss: (1-f(x)*l(x))
     l(x) is the label: 1 for positive, -1 for negative sample
@@ -47,7 +47,7 @@ def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduc
     losses = nn.relu(margin - predictions * targets)
     return reduce_loss(losses, reduction_type)
 
-def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: string):
+def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
     '''
     Pointwise square loss: (f(x)-l(x))^2
     l(x) is the label : 1 for positive, 0 for negative sample
@@ -57,7 +57,7 @@ def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, redu
     return reduce_loss(losses, reduction_type)
 
 
-def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: string ="avg"):
+def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: str ="avg"):
     '''
     Compute the multi class log loss as defined in CP
     predictions: Tuple (sp_prediction tensor, po_prediction tensor).

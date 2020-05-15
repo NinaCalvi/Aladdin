@@ -9,7 +9,7 @@ logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 def train(model: nn.Module,
-        regulariser: string,
+        regulariser: str,
         optimiser: optim.Optimizer,
         data: torch.Tensor,
         args: Namespace):
@@ -34,7 +34,7 @@ def train(model: nn.Module,
 def train_not_mc():
     pass
 
-def get_regulariser(regulariser_str: string, reg_weight: int):
+def get_regulariser(regulariser_str: str, reg_weight: int):
     '''
     Return the regulariser wanted
     '''
@@ -46,7 +46,7 @@ def get_regulariser(regulariser_str: string, reg_weight: int):
         raise ValueError("Incorrect regulariser name given (%s)" %regulariser_str)
 
 
-def train_mc(model: KBCModelMCL, regulariser_str: string, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
+def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
 
     '''
     Training method for MC models
