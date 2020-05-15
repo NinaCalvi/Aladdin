@@ -12,6 +12,7 @@ from biolink.embeddings import *
 from biolink.eval import evaluate
 # from biolink.utility train import *
 from libkge import KgDataset
+from torch import optim
 
 
 import logging
