@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+from typing import Tuple, List, Dict
 
 def reduce_loss(loss: torch.Tensor, reduction_type: str):
     print('loss shape', loss.size)

@@ -9,7 +9,7 @@ from abc import ABC, abstractmethod
 from typing import Tuple, List, Dict
 import torch
 from torch import nn
-from losses import mc_log_loss
+from .losses import mc_log_loss
 
 
 class KBCModelMCL(nn.Module, ABC):
@@ -97,9 +97,9 @@ class CP_MC(KBCModelMCL):
             self, sizes: Tuple[int, int, int], rank: int,
             init_size: float = 1e-3,
     ):
-    '''
-    loss - what type of loss
-    '''
+        '''
+        loss - what type of loss
+        '''
         super(CP, self).__init__()
         self.sizes = sizes
         self.rank = rank

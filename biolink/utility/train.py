@@ -1,9 +1,10 @@
-from embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
+from ..embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
 from torch import nn
 from torch import optim
 from argparse import Namespace
 import numpy as np
 import logging
+import os
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
