@@ -109,9 +109,9 @@ def main(argv):
     model = model_dict[args.model]()
 
     optimizer_factory = {
-        'adagrad': lambda: optim.Adagrad(model.parameters(), lr=learning_rate),
-        'adam': lambda: optim.Adam(model.parameters(), lr=learning_rate),
-        'sgd': lambda: optim.SGD(model.parameters(), lr=learning_rate)
+        'adagrad': lambda: optim.Adagrad(model.parameters(), lr=lr),
+        'adam': lambda: optim.Adam(model.parameters(), lr=lr),
+        'sgd': lambda: optim.SGD(model.parameters(), lr=lr)
     }
 
     assert optimizer_name in optimizer_factory
