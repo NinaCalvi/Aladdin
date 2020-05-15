@@ -99,27 +99,28 @@ def main(argv):
     #THIS MAY BE ALSO BE DUE TO THE SYMMETRIC/AUGMENTATION SITUATION
 
     bench_idx_data = np.concatenate([train_data, valid_data, test_data])
-
-    optimizer_factory = {
-        'adagrad': lambda: optim.Adagrad(parameter_lst, lr=learning_rate),
-        'adam': lambda: optim.Adam(parameter_lst, lr=learning_rate),
-        'sgd': lambda: optim.SGD(parameter_lst, lr=learning_rate)
-    }
-
-    assert optimizer_name in optimizer_factory
-    optimizer = optimizer_factory[optimizer_name]()
-
     #need to pass size of embeddings
-    if parser.model == 'complex':
-        if parser.mcl:
-            model = ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size)
-        else:
-            model = ComplEx((nb_nets, nb_rels_, nb_ents), emb_size)
+    # if parser.model == 'complex':
+    if parser.mcl:
+        model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size)}
+    else:
+        model_dict = {'complex': lambda: ComplEx((nb_nets, nb_rels_, nb_ents), emb_size)}
+
+    model = model_dict[parser.model]()
 
     if parser.mcl:
         train.train_mc(model, regulariser, optimizer, train_data, args)
     else:
         train.train_not_mc(model, regulariser, optimizer, train_data, args)
+
+    optimizer_factory = {
+        'adagrad': lambda: optim.Adagrad(model.parameters(), lr=learning_rate),
+        'adam': lambda: optim.Adam(model.parameters(), lr=learning_rate),
+        'sgd': lambda: optim.SGD(model.parameters(), lr=learning_rate)
+    }
+
+    assert optimizer_name in optimizer_factory
+    optimizer = optimizer_factory[optimizer_name]()
 
     for dataset_name, data in dataset.data:
         metrics = evaluate(model, data, bench_idx_data, batch_size, device)

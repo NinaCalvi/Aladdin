@@ -11,7 +11,7 @@ def load_pse_dataset():
     data_name = "pse"
     print('curr directory' ,os.getcwd())
     #THIS SHOULD BE FIXED WITH CORRECT PATH
-    kg_dp_path = "/Users/nina/Documents/UCL/Aladdin/biolink/testing/data/"
+    kg_dp_path = os.path.join(os.getcwd(),'testing/data/' )
 
     #getting entity mappings
     se_map_raw = [l.strip().split("\t") for l in open(os.path.join(kg_dp_path, "se_maps.txt")).readlines()]
