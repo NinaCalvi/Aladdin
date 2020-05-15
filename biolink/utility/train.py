@@ -80,11 +80,15 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     torch.manual_seed(seed)
 
     #the embedding matrices should be initialised with the model that has been passed on
+    print('data type', type(data))
     inputs = data[torch.randperm(data.shape[0]),:]
+    print('inputs type', type(inputs))
+
 
     for epoch in range(nb_epochs):
         batch_start = 0
         epoch_loss_values = []
+        batch_no = 1
         while batch_start < data.shape[0]:
             batch_end = min(batch_start + batch_size, data.shape[0])
             input_batch = inputs[batch_start:batch_end].to(device)
@@ -99,13 +103,14 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             optimiser.step()
 
             epoch_loss_values.append(loss)
+            batch_no += 1
             if not is_quiet:
-                logger.info(f'Epoch {epoch_no}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss_value:.6f}')
+                logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss_value:.6f}')
 
             batch_start += batch_size
 
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
-        logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
+        logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 
     #should evaluate after the trianing is done
     #evaluate on all dev, test, and train?

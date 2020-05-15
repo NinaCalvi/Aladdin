@@ -13,6 +13,7 @@ from biolink.eval import evaluate
 # from biolink.utility train import *
 from libkge import KgDataset
 from torch import optim
+import torch
 
 
 import logging
@@ -93,9 +94,10 @@ def main(argv):
     if data == 'pse':
         dataset = utils.load_pse_dataset()
 
-    train_data = dataset.data["bench_train"]
-    valid_data = dataset.data["bench_valid"]
-    test_data = dataset.data["bench_test"]
+    train_data = torch.tensor(dataset.data["bench_train"])
+    print('train data type', train_data)
+    valid_data = torch.tensor(dataset.data["bench_valid"])
+    test_data = torch.tensor(dataset.data["bench_test"])
 
     nb_ents = dataset.get_ents_count()
     nb_rels = dataset.get_rels_count()
