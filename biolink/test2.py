@@ -1,5 +1,8 @@
 from testing import experiment_ComplEx
 import biolink
+import logging
+
+logger = logging.getLogger(os.path.basename(sys.argv[0]))
 
 def main(argv):
     experiment_ComplEx.main(argv)

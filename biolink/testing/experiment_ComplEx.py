@@ -8,9 +8,9 @@ from tqdm import tqdm
 import argparse
 from biolink.utility import utils, train
 
-from ..embeddings import *
-from ..eval import evaluate
-from ..train import *
+from biolink.embeddings import *
+from biolink.eval import evaluate
+# from biolink.utility train import *
 from libkge import KgDataset
 
 
@@ -114,9 +114,9 @@ def main(argv):
             model = ComplEx((nb_nets, nb_rels_, nb_ents), emb_size)
 
     if parser.mcl:
-        train_mc(model, regulariser, optimizer, train_data, args)
+        train.train_mc(model, regulariser, optimizer, train_data, args)
     else:
-        train_not_mc(model, regulariser, optimizer, train_data, args)
+        train.train_not_mc(model, regulariser, optimizer, train_data, args)
 
     for dataset_name, data in dataset.data:
         metrics = evaluate(model, data, bench_idx_data, batch_size, device)

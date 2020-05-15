@@ -1,6 +1,8 @@
 #contains possible different metrics
 from sklearn.metrics import roc_auc_score, average_precision_score
 import numpy as np
+import torch
+from torch import nn
 
 
 def rank(y_pred: np.array, true_idx: np.array):

@@ -1,4 +1,4 @@
-from ..embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
+from biolink.embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
 from torch import nn
 from torch import optim
 from argparse import Namespace
