@@ -10,7 +10,21 @@ import argparse
 import utils
 
 from ..embeddings import *
+from ..eval import evaluate
+from ..train import *
 from libkge import KgDataset
+
+
+import logging
+
+
+logger = logging.getLogger(os.path.basename(sys.argv[0]))
+np.set_printoptions(linewidth=48, precision=5, suppress=True)
+
+
+def metrics_to_str(metrics):
+    return f'MRR {metrics["MRR"]:.6f}\tAU-ROC_raw {metrics["'AU-ROC_raw'"]:.6f}\tAU-ROC_fil {metrics["AU-ROC_fil'"]:.6f}'
+
 
 
 def main(argv):
@@ -58,6 +72,17 @@ def main(argv):
 
     args = parser.parse_args(argv)
 
+    # set the seeds
+    np.random.seed(seed)
+    random_state = np.random.RandomState(seed)
+    torch.manual_seed(seed)
+
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    logger.info(f'Device: {device}')
+
     if data == 'pse':
         dataset = utils.load_pse_dataset()
 
@@ -87,3 +112,17 @@ def main(argv):
             model = ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size)
         else:
             model = ComplEx((nb_nets, nb_rels_ nb_ents), emb_size)
+
+    if parser.mcl:
+        train_mc(model, regulariser, optimizer, train_data, args)
+    else:
+        train_not_mc(model, regulariser, optimizer, train_data, args)
+
+    for dataset_name, data in dataset.data:
+        metrics = evaluate(model, data, bench_idx_data, batch_size, device)
+        logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics))}')
+
+if __name__ == '__main__':
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    print(' '.join(sys.argv))
+    main(sys.argv[1:])

@@ -68,7 +68,7 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
 def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
-            batch_size: int, deivce: torch.device):
+            batch_size: int, device: torch.device):
     '''
     Evaluation method immediately returns the metrics wanted
     Parameters:
