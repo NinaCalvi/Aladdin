@@ -1,0 +1,9 @@
+from testing import experiment_ComplEx
+
+def main(argv):
+    experiment_ComplEx.main(argv)
+
+if __name__ == '__main__':
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    print(' '.join(sys.argv))
+    main(sys.argv[1:])
