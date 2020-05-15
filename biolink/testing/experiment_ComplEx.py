@@ -101,14 +101,14 @@ def main(argv):
     bench_idx_data = np.concatenate([train_data, valid_data, test_data])
     #need to pass size of embeddings
     # if parser.model == 'complex':
-    if parser.mcl:
+    if args.mcl:
         model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size)}
     else:
         model_dict = {'complex': lambda: ComplEx((nb_nets, nb_rels_, nb_ents), emb_size)}
 
-    model = model_dict[parser.model]()
+    model = model_dict[args.model]()
 
-    if parser.mcl:
+    if args.mcl:
         train.train_mc(model, regulariser, optimizer, train_data, args)
     else:
         train.train_not_mc(model, regulariser, optimizer, train_data, args)
