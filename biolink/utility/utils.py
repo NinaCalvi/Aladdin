@@ -9,7 +9,9 @@ from libkge import KgDataset
 
 def load_pse_dataset():
     data_name = "pse"
-    kg_dp_path = "../data/"
+    print('curr directory' ,os.getcwd())
+    #THIS SHOULD BE FIXED WITH CORRECT PATH
+    kg_dp_path = "/Users/nina/Documents/UCL/Aladdin/biolink/testing/data/"
 
     #getting entity mappings
     se_map_raw = [l.strip().split("\t") for l in open(os.path.join(kg_dp_path, "se_maps.txt")).readlines()]
@@ -25,8 +27,8 @@ def load_pse_dataset():
     benchmark_test = np.array([l.strip().split() for l in benchmark_test_fd.readlines()])
 
 
-    pse_drugs = list(set(list(np.concatenate([benchmark_triples[:, 0], benchmark_triples[:, 2]]))))
-    pse_list = set(list(benchmark_triples[:, 1]))
+    # pse_drugs = list(set(list(np.concatenate([benchmark_triples[:, 0], benchmark_triples[:, 2]]))))
+    # pse_list = set(list(benchmark_triples[:, 1]))
 
 
     dataset = KgDataset(name=data_name)
