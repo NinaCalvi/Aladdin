@@ -6,6 +6,7 @@ import numpy as np
 import logging
 import os
 import sys
+import torch
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
