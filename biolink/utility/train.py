@@ -80,10 +80,11 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     torch.manual_seed(seed)
 
     #the embedding matrices should be initialised with the model that has been passed on
-    print('data type', type(data))
+    # print('data type', type(data))
     inputs = data[torch.randperm(data.shape[0]),:]
-    print('inputs type', type(inputs))
+    # print('inputs type', type(inputs))
 
+    nb_batches = np.ceil(data.shape[0]/batch_size)
 
     for epoch in range(nb_epochs):
         batch_start = 0
