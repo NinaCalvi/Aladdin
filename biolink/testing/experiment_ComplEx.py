@@ -15,6 +15,7 @@ from libkge import KgDataset
 
 
 import logging
+import sys
 
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
