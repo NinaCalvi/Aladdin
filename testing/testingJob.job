@@ -1,0 +1,17 @@
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/array.out
+#$ -e $HOME/array.err
+#$ -t 1-10
+#$ -l tmem=15G
+#$ -l h_rt=12:00:00
+#$ -l gpu=true
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+
+conda activate libkge
+
+cd ${HOME}/Dissertation/pse-kge/src
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./experiment_ComplEx.py --data pse --model complex --mcl True --regulariser n3 --reg-weight 0.03
