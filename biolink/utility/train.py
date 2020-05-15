@@ -69,7 +69,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
     batch_size = args.batch_size
     emb_size = args.embedding_size
-    nb_epochs = args.nb_epochs
+    nb_epochs = args.epochs
     seed = args.seed
     reg_weight = args.reg_weight
     is_quiet = args.quiet
@@ -87,7 +87,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
         epoch_loss_values = []
         while batch_start < data.shape[0]:
             batch_end = min(batch_start + batch_size, data.shape[0])
-            input_batch = input[batch_start:batch_end].to(device)
+            input_batch = inputs[batch_start:batch_end].to(device)
             pred_sp, pred_po, factors = model.forward(input_batch)
 
             loss = mc_log_loss((pred_sp, pred_po), input_batch[:, 2], input_batch[:, 0])
