@@ -108,11 +108,6 @@ def main(argv):
 
     model = model_dict[args.model]()
 
-    if args.mcl:
-        train.train_mc(model, regulariser, optimizer, train_data, args)
-    else:
-        train.train_not_mc(model, regulariser, optimizer, train_data, args)
-
     optimizer_factory = {
         'adagrad': lambda: optim.Adagrad(model.parameters(), lr=learning_rate),
         'adam': lambda: optim.Adam(model.parameters(), lr=learning_rate),
@@ -121,6 +116,12 @@ def main(argv):
 
     assert optimizer_name in optimizer_factory
     optimizer = optimizer_factory[optimizer_name]()
+
+    if args.mcl:
+        train.train_mc(model, regulariser, optimizer, train_data, args)
+    else:
+        train.train_not_mc(model, regulariser, optimizer, train_data, args)
+
 
     for dataset_name, data in dataset.data:
         metrics = evaluate(model, data, bench_idx_data, batch_size, device)
