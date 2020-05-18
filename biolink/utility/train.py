@@ -60,6 +60,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
     '''
     nb_negs = args.nb_negs
+    seed = args.seed
 
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
@@ -70,7 +71,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     batch_size = args.batch_size
     emb_size = args.embedding_size
     nb_epochs = args.epochs
-    seed = args.seed
+    # seed = args.seed
     reg_weight = args.reg_weight
     is_quiet = args.quiet
 
