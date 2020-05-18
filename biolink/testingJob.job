@@ -10,7 +10,7 @@
 export LANG="en_US.utf8"
 export LANGUAGE="en_US:en"
 
-conda activate libkge
+conda activate libkge_new
 
 cd ${HOME}/Dissertation/Aladdin/biolink/
 
