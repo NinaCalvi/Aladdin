@@ -113,6 +113,7 @@ def main(argv):
         model_dict = {'complex': lambda: ComplEx((nb_nets, nb_rels_, nb_ents), emb_size)}
 
     model = model_dict[args.model]()
+    model.to(device)
 
     optimizer_factory = {
         'adagrad': lambda: optim.Adagrad(model.parameters(), lr=lr),
