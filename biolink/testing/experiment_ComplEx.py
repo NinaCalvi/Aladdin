@@ -130,7 +130,7 @@ def main(argv):
         train.train_not_mc(model, regulariser, optimizer, train_data, args)
 
 
-    for dataset_name, data in dataset.data:
+    for dataset_name, data in dataset.data.items():
         metrics = evaluate(model, data, bench_idx_data, batch_size, device)
         logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
 
