@@ -101,7 +101,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         if po_key not in po_to_s:
             po_to_s[po_key] = [s_idx]
         else:
-            po_to_s.append(s_idx)
+            po_to_s[po_key].append(s_idx)
 
 
     batch_start = 0
