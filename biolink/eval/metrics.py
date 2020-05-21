@@ -91,6 +91,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance
         sp_key = (s_idx, p_idx)
+        print('sp_key', sp_key)
         po_key = (p_idx, o_idx)
 
         if sp_key not in sp_to_o:
