@@ -108,6 +108,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     mrr = 0.0
     counter = 0
 
+    print('test triples type', type(test_triples))
+
 
     prediction_subject = None
     prediction_object = None

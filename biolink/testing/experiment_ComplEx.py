@@ -104,7 +104,7 @@ def main(argv):
     #NUMBER OF ENTITIES IS GIVEN SAME AS BETWEEN OBJECTS AND SUBJECTS
     #THIS MAY BE ALSO BE DUE TO THE SYMMETRIC/AUGMENTATION SITUATION
 
-    bench_idx_data = np.concatenate([train_data, valid_data, test_data])
+    bench_idx_data = torch.cat((train_data, valid_data, test_data), 0)
     #need to pass size of embeddings
     # if parser.model == 'complex':
     if args.mcl:
