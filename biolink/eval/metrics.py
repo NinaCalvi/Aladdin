@@ -106,7 +106,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
 
     batch_start = 0
-    mrr = 0.0
+    mrr_val = 0.0
     counter = 0
 
     print('test triples type', type(test_triples))
@@ -165,11 +165,11 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         #calculate the two mrr
         mrr_object = mrr(scores_sp, batch_input[:, 2])
         mrr_subject = mrr(scores_po, batch_input[:, 0])
-        mrr += mrr_object
-        mrr += mrr_subject
-    mrr /= counter
+        mrr_val += mrr_object
+        mrr_val += mrr_subject
+    mrr_val /= counter
 
-    metrics['MRR'] = mrr
+    metrics['MRR'] = mrr_val
 
     auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
     auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
