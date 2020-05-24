@@ -4,6 +4,13 @@ import numpy as np
 import torch
 from torch import nn
 
+import logging
+import os
+import sys
+
+
+logger = logging.getLogger(os.path.basename(sys.argv[0]))
+np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 def rank(y_pred: np.array, true_idx: np.array):
 
@@ -88,6 +95,9 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     #store all the different metrics
     complete_metrcis = {}
 
+    logger.info(f'all tiples \t{all_triples.size()}')
+
+
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance.numpy()
         sp_key = (s_idx, p_idx)
@@ -109,7 +119,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     mrr_val = 0.0
     counter = 0
 
-    print('test triples type', type(test_triples))
+    logger.info(f'test triples type \t{type(test_triples)}')
 
 
     prediction_subject = None
@@ -129,7 +139,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
-
+        logger.info(f'in evaluate:')
         if prediction_subject is not None:
             prediction_subject = np.hstack((prediction_subject, scores_po))
             prediction_object = np.hstack((prediction_object, scores_sp))
@@ -153,6 +163,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
+        logger.info(f'gone through batch input')
 
         if prediction_subject_filtered is not None:
             prediction_subject_filtered = np.hstack((prediction_subject_filtered, scores_po))

@@ -129,8 +129,10 @@ def main(argv):
     else:
         train.train_not_mc(model, regulariser, optimizer, train_data, args)
 
+    logger.info(f'Done training')
 
     for dataset_name, data in dataset.data.items():
+        logger.info(f'in evalute for dataset: \t{dataset_name}')
         metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device)
         logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
 
