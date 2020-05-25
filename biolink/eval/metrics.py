@@ -178,6 +178,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         mrr_subject = mrr(scores_po, batch_input[:, 0])
         mrr_val += mrr_object
         mrr_val += mrr_subject
+
+        batch_start += batch_size
     mrr_val /= counter
 
     metrics['MRR'] = mrr_val
