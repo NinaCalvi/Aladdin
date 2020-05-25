@@ -139,7 +139,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
-        logger.info(f'in evaluate:')
+        # logger.info(f'in evaluate:')
         if prediction_subject is not None:
             prediction_subject = np.hstack((prediction_subject, scores_po))
             prediction_object = np.hstack((prediction_object, scores_sp))
@@ -163,7 +163,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
-        logger.info(f'gone through batch input')
+        # logger.info(f'gone through batch input')
 
         if prediction_subject_filtered is not None:
             prediction_subject_filtered = np.hstack((prediction_subject_filtered, scores_po))
@@ -180,6 +180,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         mrr_val += mrr_subject
 
         batch_start += batch_size
+        logger.info(f'batch start \t{batch_start}')
     mrr_val /= counter
 
     metrics['MRR'] = mrr_val
