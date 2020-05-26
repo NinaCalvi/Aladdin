@@ -120,6 +120,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     counter = 0
 
     logger.info(f'test triples type \t{type(test_triples)}')
+    logger.info(f'test triples shape \t{test_triples.shape}')
 
 
     prediction_subject = None
