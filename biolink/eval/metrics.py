@@ -142,8 +142,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
         # logger.info(f'in evaluate:')
         if prediction_subject is not None:
-            prediction_subject = np.hstack((prediction_subject, scores_po))
-            prediction_object = np.hstack((prediction_object, scores_sp))
+            prediction_subject = np.vstack((prediction_subject, scores_po))
+            prediction_object = np.vstack((prediction_object, scores_sp))
         else:
             prediction_subject = scores_po
             prediction_object = scores_sp
@@ -167,8 +167,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         # logger.info(f'gone through batch input')
 
         if prediction_subject_filtered is not None:
-            prediction_subject_filtered = np.hstack((prediction_subject_filtered, scores_po))
-            prediction_object_filtered = np.hstack((prediction_object_filtered, scores_sp))
+            prediction_subject_filtered = np.vstack((prediction_subject_filtered, scores_po))
+            prediction_object_filtered = np.vstack((prediction_object_filtered, scores_sp))
         else:
             prediction_subject_filtered = scores_po
             prediction_object_filtered = scores_sp
