@@ -91,6 +91,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
     sp_to_o = {}
     po_to_s = {}
+    metrics = {}
 
     #store all the different metrics
     complete_metrcis = {}
