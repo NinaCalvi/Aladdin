@@ -60,7 +60,7 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     #this matrix will be binary, 1 at the label index and 0 everywhere else.
 
     labels = np.zeros_like(y_pred)
-    labels[np.arange(len(lables)), true_idx] = 1
+    labels[np.arange(len(labels)), true_idx] = 1
     return roc_auc_score(labels, y_pred)
 
 def auc_pr(y_pred: np.array, true_idx: np.array):
@@ -72,7 +72,7 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
     true_idx: np array of idx of true labels - 1d, (num_labels, )
     '''
     labels = np.zeros_like(y_pred)
-    labels[np.arange(len(lables)), true_idx] = 1
+    labels[np.arange(len(labels)), true_idx] = 1
     return average_precision_score(labels, y_pred)
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
