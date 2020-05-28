@@ -4,7 +4,7 @@
 #$ -e $HOME/array.err
 #$ -t 1-10
 #$ -l tmem=15G
-#$ -l h_rt=15:00:00
+#$ -l h_rt=18:00:00
 #$ -l gpu=true
 
 export LANG="en_US.utf8"

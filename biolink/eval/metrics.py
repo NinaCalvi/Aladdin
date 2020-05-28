@@ -59,6 +59,8 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     #first is to translate the ture label idx in matrix of num_instance x num_labels
     #this matrix will be binary, 1 at the label index and 0 everywhere else.
 
+    logger.info('auc_roc')
+
     labels = np.zeros_like(y_pred)
     labels[np.arange(len(labels)), true_idx] = 1
     return roc_auc_score(labels, y_pred)
@@ -182,10 +184,12 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         mrr_val += mrr_subject
 
         batch_start += batch_size
-        logger.info(f'batch start \t{batch_start}')
+        if (batch_start % 10000) == 0:
+            logger.info(f'batch start \t{batch_start}')
     mrr_val /= counter
 
     metrics['MRR'] = mrr_val
+    logger.info('done')
 
     auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
     auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
@@ -195,5 +199,6 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
     metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
     metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
+    logger.info('metrics done')
 
     return metrics
