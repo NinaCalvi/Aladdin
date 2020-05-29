@@ -60,8 +60,8 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     #this matrix will be binary, 1 at the label index and 0 everywhere else.
 
     logger.info('auc_roc')
-    logger.info(f'auc_roc shape ypred \t{y_pred.shape()}')
-    logger.info(f'auc_roc shape ypred \t{true_idx.shape()}')
+    logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
+    logger.info(f'auc_roc shape ypred \t{true_idx.shape}')
 
     labels = np.zeros_like(y_pred)
     labels[np.arange(len(labels)), true_idx] = 1
