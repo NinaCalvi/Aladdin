@@ -132,9 +132,10 @@ def main(argv):
     logger.info(f'Done training')
 
     for dataset_name, data in dataset.data.items():
-        logger.info(f'in evalute for dataset: \t{dataset_name}')
-        metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device)
-        logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
+        if dataset_name == 'bench_test':
+            logger.info(f'in evalute for dataset: \t{dataset_name}')
+            metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device)
+            logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
