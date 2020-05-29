@@ -61,7 +61,9 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
 
     logger.info('auc_roc')
     logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
-    logger.info(f'auc_roc shape ypred \t{true_idx.shape}')
+    logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]})
+    # logger.in
+    logger.info(f'auc_roc shape ytrue \t{true_idx.shape}')
 
     labels = np.zeros_like(y_pred)
     labels[np.arange(len(labels)), true_idx] = 1
