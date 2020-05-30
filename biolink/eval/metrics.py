@@ -61,7 +61,7 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
 
     logger.info('auc_roc')
     logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
-    logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]})
+    logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]}')
     # logger.in
     logger.info(f'auc_roc shape ytrue \t{true_idx.shape}')
 
@@ -197,6 +197,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
     auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
     auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
+
+    logger.info('done not filtered aucroc')
 
     auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
     auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])

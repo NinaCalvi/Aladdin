@@ -209,7 +209,7 @@ class TransE(KBCModel):
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
 
-        return scores_sp, (lhs, rel, rhs)
+        return -scores_sp, (lhs, rel, rhs)
 
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
