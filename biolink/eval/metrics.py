@@ -162,7 +162,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
         # logger.info(f'in evaluate:')
         if prediction_subject is not None:
-            prediction_subject = np.vstack((prediction_subject, sprob_cores_po))
+            prediction_subject = np.vstack((prediction_subject, prob_scores_po))
             prediction_object = np.vstack((prediction_object, prob_scores_sp))
         else:
             prediction_subject = prob_scores_po
