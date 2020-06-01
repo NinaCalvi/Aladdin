@@ -155,7 +155,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             #remove them from device
             #need to have probability scores for auc calculations
             prob_scores_sp = softmax(scores_sp.cpu()).numpy()
-            prob_scores_po = softmax(scores_po.cpy()).numpy()
+            prob_scores_po = softmax(scores_po.cpu()).numpy()
 
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
