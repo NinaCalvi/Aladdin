@@ -65,6 +65,10 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     # logger.in
     logger.info(f'auc_roc shape ytrue \t{true_idx.shape}')
 
+
+    m = nn.Softmax(dim=1)
+
+
     labels = np.zeros_like(y_pred)
     labels[np.arange(len(labels)), true_idx] = 1
     return roc_auc_score(labels, y_pred)
@@ -77,6 +81,7 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
     y_pred: np.array 2-dim of predictions - num instances x num labels
     true_idx: np array of idx of true labels - 1d, (num_labels, )
     '''
+
     labels = np.zeros_like(y_pred)
     labels[np.arange(len(labels)), true_idx] = 1
     return average_precision_score(labels, y_pred)
@@ -136,6 +141,10 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     prediction_subject_filtered = None
     prediction_object_filtered = None
 
+    eps = 1-10
+
+    softmax = nn.Softmax(dim=1)
+
     while batch_start < test_triples.shape[0]:
         counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
@@ -144,16 +153,20 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             batch_tensor = batch_input.to(device)
             scores_sp, scores_po, factors = model.forward(batch_tensor)
             #remove them from device
+            #need to have probability scores for auc calculations
+            prob_scores_sp = softmax(scores_sp.cpu()).numpy()
+            prob_scores_po = softmax(scores_po.cpy()).numpy()
+
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
         # logger.info(f'in evaluate:')
         if prediction_subject is not None:
-            prediction_subject = np.vstack((prediction_subject, scores_po))
-            prediction_object = np.vstack((prediction_object, scores_sp))
+            prediction_subject = np.vstack((prediction_subject, sprob_cores_po))
+            prediction_object = np.vstack((prediction_object, prob_scores_sp))
         else:
-            prediction_subject = scores_po
-            prediction_object = scores_sp
+            prediction_subject = prob_scores_po
+            prediction_object = prob_scores_sp
 
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
@@ -167,18 +180,21 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             for tmp_o_idx in o_to_remove:
                 if tmp_o_idx != o_idx:
                     scores_sp[i, tmp_o_idx] = - np.infty
+                    prob_scores_sp[i, tmp_o_idx] = 0
+                    # clipped_sp[i, tmp_o_idx] = - np.infty
 
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
+                    prob_scores_po[i, tmp_s_idx] = 0
         # logger.info(f'gone through batch input')
 
         if prediction_subject_filtered is not None:
-            prediction_subject_filtered = np.vstack((prediction_subject_filtered, scores_po))
-            prediction_object_filtered = np.vstack((prediction_object_filtered, scores_sp))
+            prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
+            prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
         else:
-            prediction_subject_filtered = scores_po
-            prediction_object_filtered = scores_sp
+            prediction_subject_filtered = prob_scores_po
+            prediction_object_filtered = prob_scores_sp
 
 
         #calculate the two mrr
