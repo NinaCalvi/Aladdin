@@ -23,6 +23,10 @@ def rank(y_pred: np.array, true_idx: np.array):
     #we want biggest first (i.e. highest score)
 
     #applying argsort again will undo the sort done before
+    #multiplying by -1 because we want the most likely thing to be sorted earlier
+    #and since argsort puts -ve value before the rest, this makes sense
+
+    
     #an assign to each element in the list its rank within the sorted stuff
     order_rank  = np.argsort(np.argsort(-y_pred))
     rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
