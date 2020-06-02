@@ -61,17 +61,18 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
 
     logger.info('auc_roc')
     logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
-    logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]}')
+    # logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]}')
     # logger.in
     logger.info(f'auc_roc shape ytrue \t{true_idx.shape}')
 
-
-    m = nn.Softmax(dim=1)
-
-
     labels = np.zeros_like(y_pred)
+
+    logger.info(f'labels shape \t{labels.shape}')
     labels[np.arange(len(labels)), true_idx] = 1
-    return roc_auc_score(labels, y_pred)
+
+    logger.info(f'\t{labels[0]}')
+
+    return roc_auc_score(labels, y_pred, average='micro')
 
 def auc_pr(y_pred: np.array, true_idx: np.array):
     '''
