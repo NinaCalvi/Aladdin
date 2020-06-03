@@ -26,7 +26,7 @@ def rank(y_pred: np.array, true_idx: np.array):
     #multiplying by -1 because we want the most likely thing to be sorted earlier
     #and since argsort puts -ve value before the rest, this makes sense
 
-    
+
     #an assign to each element in the list its rank within the sorted stuff
     order_rank  = np.argsort(np.argsort(-y_pred))
     rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
@@ -47,7 +47,7 @@ def mrr(y_pred: np.array, true_idx: np.array):
     Compute the mean reciprocal rank
 
     y_pred: np.array 2-dim of predictions - num instances x num labels
-    true_idx: np array of idx of true labels - 1d, (num_labels, )
+    true_idx: np array of idx of true labels - 1d, (num_instances, )
     '''
     reciprocal = 1/rank(y_pred, true_idx)
     return np.mean(reciprocal)
