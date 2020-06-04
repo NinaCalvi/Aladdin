@@ -173,6 +173,12 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             prediction_subject = prob_scores_po
             prediction_object = prob_scores_sp
 
+        #calculate the two mrr
+        mrr_object = mrr(scores_sp, batch_input[:, 2])
+        mrr_subject = mrr(scores_po, batch_input[:, 0])
+        mrr_val += mrr_object
+        mrr_val += mrr_subject
+
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
             s_idx, p_idx, o_idx = el.numpy()
@@ -202,11 +208,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             prediction_object_filtered = prob_scores_sp
 
 
-        #calculate the two mrr
-        mrr_object = mrr(scores_sp, batch_input[:, 2])
-        mrr_subject = mrr(scores_po, batch_input[:, 0])
-        mrr_val += mrr_object
-        mrr_val += mrr_subject
+
 
         batch_start += batch_size
         if (batch_start % 10000) == 0:

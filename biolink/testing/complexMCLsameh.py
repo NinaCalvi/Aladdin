@@ -122,7 +122,7 @@ def main():
 
 
 
-    nb_test = len(test_triples)
+    nb_test = len(test_data)
     sub_ranks = np.zeros(nb_test, dtype=np.int32)
     sub_ranks_fl = np.zeros(nb_test, dtype=np.int32)
     obj_ranks = np.zeros(nb_test, dtype=np.int32)
