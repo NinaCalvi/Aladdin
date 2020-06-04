@@ -201,8 +201,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
                     scores_po[i, tmp_s_idx] = - np.infty
                     prob_scores_po[i, tmp_s_idx] = 0
 
-            rank_l = 1 + np.argsort(np.argsort(- scores_po[el, :]))[s_idx]
-            rank_r = 1 + np.argsort(np.argsort(- scores_sp[el, :]))[o_idx]
+            rank_l = 1 + np.argsort(np.argsort(- scores_po[i, :]))[s_idx]
+            rank_r = 1 + np.argsort(np.argsort(- scores_sp[i, :]))[o_idx]
 
             mrr_pasquale += 1.0 / rank_l
             mrr_pasquale += 1.0 / rank_r
