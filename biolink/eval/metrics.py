@@ -152,13 +152,30 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
 
     softmax = nn.Softmax(dim=1)
 
+    #get whole rhs
+    whole_rhs = model.embeddings[0].weight.data.transpose(0,1)
+    logger.info(f'whole_rh shape \t{whole_rhs.shape}')
+
     while batch_start < test_triples.shape[0]:
         counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
         batch_input = test_triples[batch_start:batch_end]
         with torch.no_grad():
             batch_tensor = batch_input.to(device)
-            scores_sp, scores_po, factors = model.forward(batch_tensor)
+
+            #score triples
+            queries_sp = model.get_queries(batch_tensor)
+            queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor[2,1,0]))
+
+            scores_sp = queries_sp @ rhs
+            scores_po = queries_po @ rhs
+
+            #CHANGED THE FOLLOWING LINE
+            # scores_sp, scores_po, factors = model.forward(batch_tensor)
+
+
+            logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
+
             #remove them from device
             #need to have probability scores for auc calculations
             prob_scores_sp = softmax(scores_sp.cpu()).numpy()
