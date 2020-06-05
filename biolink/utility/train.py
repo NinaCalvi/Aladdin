@@ -62,8 +62,8 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     nb_negs = args.nb_negs
     seed = args.seed
 
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed(seed)
+    # if torch.cuda.is_available():
+    #     torch.cuda.manual_seed(seed)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
@@ -76,9 +76,10 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     is_quiet = args.quiet
 
     #set seed
-    np.random.seed(seed)
-    random_state = np.random.RandomState(seed)
-    torch.manual_seed(seed)
+    # np.random.seed(seed)
+    # random_state = np.random.RandomState(seed)
+    # torch.manual_seed(seed)
+
 
     #the embedding matrices should be initialised with the model that has been passed on
     # print('data type', type(data))
@@ -110,7 +111,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             epoch_loss_values.append(loss.item())
             batch_no += 1
             if not is_quiet:
-                logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss:.6f}')
+                logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss.item():.6f}')
 
             batch_start += batch_size
 
