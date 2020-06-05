@@ -25,13 +25,13 @@ np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 
 def metrics_to_str(metrics):
-    return f'MRR {metrics["MRR"]:.6f}\tMRR_pasquale{metrics['mrr_pasquale']}\tAU-ROC_raw {metrics["AU-ROC_raw"]:.6f}\tAU-ROC_fil {metrics["AU-ROC_fil"]:.6f}'
+    return f'MRR {metrics["MRR"]:.6f}\tMRR_pasquale {metrics["mrr_pasquale"]:.6f}\tAU-ROC_raw {metrics["AU-ROC_raw"]:.6f}\tAU-ROC_fil {metrics["AU-ROC_fil"]:.6f}'
 
 
 
 def main(argv):
     parser = argparse.ArgumentParser('BioLinkPred', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--data', action='store', required=True, type=str)
+    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15'])
 
     #model params
     parser.add_argument('--model', '-m', action='store', type=str, default='complex',
@@ -91,8 +91,8 @@ def main(argv):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
 
-    if data == 'pse':
-        dataset = utils.load_pse_dataset(data)
+    dataset = utils.load_pse_dataset(data)
+
 
     train_data = torch.tensor(dataset.data["train"])
     print('train data type', train_data)

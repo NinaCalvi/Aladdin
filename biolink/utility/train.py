@@ -82,22 +82,25 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
     #the embedding matrices should be initialised with the model that has been passed on
     # print('data type', type(data))
-    inputs = data[torch.randperm(data.shape[0]),:]
+
     # print('inputs type', type(inputs))
 
     nb_batches = np.ceil(data.shape[0]/batch_size)
+    regulariser = get_regulariser(regulariser_str, reg_weight)
 
     for epoch in range(nb_epochs):
         batch_start = 0
         epoch_loss_values = []
         batch_no = 1
+        #always have a random permutation
+        inputs = data[torch.randperm(data.shape[0]),:]
         while batch_start < data.shape[0]:
             batch_end = min(batch_start + batch_size, data.shape[0])
             input_batch = inputs[batch_start:batch_end].to(device)
             pred_sp, pred_po, factors = model.forward(input_batch)
 
             loss = mc_log_loss((pred_sp, pred_po), input_batch[:, 2], input_batch[:, 0])
-            reg = get_regulariser(regulariser_str, reg_weight).forward(factors)
+            reg = regulariser.forward(factors)
             loss += reg
 
             optimiser.zero_grad()
