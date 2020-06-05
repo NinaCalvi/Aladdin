@@ -92,12 +92,12 @@ def main(argv):
     logger.info(f'Device: {device}')
 
     if data == 'pse':
-        dataset = utils.load_pse_dataset()
+        dataset = utils.load_pse_dataset(data)
 
-    train_data = torch.tensor(dataset.data["bench_train"])
+    train_data = torch.tensor(dataset.data["train"])
     print('train data type', train_data)
-    valid_data = torch.tensor(dataset.data["bench_valid"])
-    test_data = torch.tensor(dataset.data["bench_test"])
+    valid_data = torch.tensor(dataset.data["valid"])
+    test_data = torch.tensor(dataset.data["test"])
 
     nb_ents = dataset.get_ents_count()
     nb_rels = dataset.get_rels_count()
@@ -132,7 +132,7 @@ def main(argv):
     logger.info(f'Done training')
 
     for dataset_name, data in dataset.data.items():
-        if dataset_name == 'bench_test':
+        if dataset_name == 'test':
             logger.info(f'in evalute for dataset: \t{dataset_name}')
             metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device)
             logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')

@@ -4,37 +4,45 @@ import os
 import numpy as np
 import gzip
 from libkge import KgDataset
+from libkge import datasets
 
 
 
-def load_pse_dataset():
-    data_name = "pse"
-    print('curr directory' ,os.getcwd())
-    #THIS SHOULD BE FIXED WITH CORRECT PATH
-    kg_dp_path = os.path.join(os.getcwd(),'testing/data/' )
+def load_pse_dataset(data_name):
+    if data_name == "pse":
+        print('curr directory' ,os.getcwd())
+        #THIS SHOULD BE FIXED WITH CORRECT PATH
+        kg_dp_path = os.path.join(os.getcwd(),'testing/data/pse/' )
 
-    #getting entity mappings
-    se_map_raw = [l.strip().split("\t") for l in open(os.path.join(kg_dp_path, "se_maps.txt")).readlines()]
-    se_mapping = {k: v for k, v in se_map_raw}
+        #getting entity mappings
+        se_map_raw = [l.strip().split("\t") for l in open(os.path.join(kg_dp_path, "se_maps.txt")).readlines()]
+        se_mapping = {k: v for k, v in se_map_raw}
 
-    print("Importing dataset files ... ")
-    benchmark_train_fd = gzip.open(os.path.join(kg_dp_path, "ploypharmacy_facts_train.txt.gz"), "rt")
-    benchmark_valid_fd = gzip.open(os.path.join(kg_dp_path, "ploypharmacy_facts_valid.txt.gz"), "rt")
-    benchmark_test_fd = gzip.open(os.path.join(kg_dp_path, "ploypharmacy_facts_test.txt.gz"), "rt")
+        print("Importing dataset files ... ")
+        benchmark_train_fd = gzip.open(os.path.join(kg_dp_path, "ploypharmacy_facts_train.txt.gz"), "rt")
+        benchmark_valid_fd = gzip.open(os.path.join(kg_dp_path, "ploypharmacy_facts_valid.txt.gz"), "rt")
+        benchmark_test_fd = gzip.open(os.path.join(kg_dp_path, "ploypharmacy_facts_test.txt.gz"), "rt")
 
-    benchmark_train = np.array([l.strip().split() for l in benchmark_train_fd.readlines()])
-    benchmark_valid = np.array([l.strip().split() for l in benchmark_valid_fd.readlines()])
-    benchmark_test = np.array([l.strip().split() for l in benchmark_test_fd.readlines()])
+        benchmark_train = np.array([l.strip().split() for l in benchmark_train_fd.readlines()])
+        benchmark_valid = np.array([l.strip().split() for l in benchmark_valid_fd.readlines()])
+        benchmark_test = np.array([l.strip().split() for l in benchmark_test_fd.readlines()])
+
+        dataset = KgDataset(name=data_name)
+        dataset.load_triples(benchmark_train, tag="train")
+        dataset.load_triples(benchmark_valid, tag="valid")
+        dataset.load_triples(benchmark_test, tag="test")
+
+
+    else:
+        kg_dp_path = os.path.join(os.getcwd(), 'testing/data/{}/'.format(data_name))
+        dataset = datasets.load_dataset_from_dir(kg_dp_path)
 
 
     # pse_drugs = list(set(list(np.concatenate([benchmark_triples[:, 0], benchmark_triples[:, 2]]))))
     # pse_list = set(list(benchmark_triples[:, 1]))
 
 
-    dataset = KgDataset(name=data_name)
-    dataset.load_triples(benchmark_train, tag="bench_train")
-    dataset.load_triples(benchmark_valid, tag="bench_valid")
-    dataset.load_triples(benchmark_test, tag="bench_test")
+
 
     # del benchmark_train
     # del benchmark_valid

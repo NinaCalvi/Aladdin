@@ -58,9 +58,9 @@ def main():
     # delete raw polypharmacy data
     del benchmark_triples
     dataset = KgDataset(name=data_name)
-    dataset.load_triples(benchmark_train, tag="bench_train")
-    dataset.load_triples(benchmark_valid, tag="bench_valid")
-    dataset.load_triples(benchmark_test, tag="bench_test")
+    dataset.load_triples(benchmark_train, tag="train")
+    dataset.load_triples(benchmark_valid, tag="valid")
+    dataset.load_triples(benchmark_test, tag="test")
 
     del benchmark_train
     del benchmark_valid
@@ -77,9 +77,9 @@ def main():
     del d2
 
     # grouping side effect information by the side effect type
-    train_data = dataset.data["bench_train"]
-    valid_data = dataset.data["bench_valid"]
-    test_data = dataset.data["bench_test"]
+    train_data = dataset.data["train"]
+    valid_data = dataset.data["valid"]
+    test_data = dataset.data["test"]
 
     bench_idx_data = np.concatenate([train_data, valid_data, test_data])
     se_facts_full_dict = {se: set() for se in pse_indices}
@@ -96,9 +96,9 @@ def main():
     model_params = {
         'kge_model__em_size': 100,
         'kge_model__lr': 0.01,
-        'kge_model__optimiser': "AMSgrad",
+        'kge_model__optimiser': "adagrad",
         'kge_model__reg_wt': 0.03,
-        'kge_model__dropout': 0.2,
+        'kge_model__dropout': 0.0,
         'kge_model__log_interval': 10,
         'kge_model__nb_epochs': 100,
         'kge_model__batch_size': 5000,
@@ -129,6 +129,7 @@ def main():
     obj_ranks_fl = np.zeros(nb_test, dtype=np.int32)
     data_hash = hash(test_triples.data.tobytes())
 
+    known_triples = None
 
     print("=====Evaluating mrr =========")
     for idx, (sub_id, rel_id, obj_id) in enumerate(test_data):
