@@ -266,14 +266,14 @@ class ComplEx_MC(KBCModelMCL):
 
         to_score = self.embeddings[0].weight
         to_score = to_score[:, :self.rank], to_score[:, self.rank:]
-        
+
         score_sp =  (
             (lhs[0] * rel[0] - lhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
             (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1))
 
         score_po = (
             (rhs[0] * rel[0] + rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
-            (rhs[0] * rel[1] - rhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
+            (rhs[1] * rel[0] - rhs[0] * rel[1]) @ to_score[1].transpose(0, 1)
         )
         return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),

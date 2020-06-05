@@ -89,7 +89,7 @@ def main():
 
     print("Initializing the knowledge graph embedding model... ")
     # model pipeline definition
-    model = ComplExMCL(seed=seed, verbose=2)
+    model = ComplEx_MCL(seed=seed, verbose=2)
     pipe_model = Pipeline([('kge_model', model)])
 
     # set model parameters
