@@ -167,8 +167,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             queries_sp = model.get_queries(batch_tensor)
             queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0]).to(device)))
 
-            scores_sp = queries_sp @ rhs
-            scores_po = queries_po @ rhs
+            scores_sp = queries_sp @ whole_rhs
+            scores_po = queries_po @ whole_rhs
 
             #CHANGED THE FOLLOWING LINE
             # scores_sp, scores_po, factors = model.forward(batch_tensor)
