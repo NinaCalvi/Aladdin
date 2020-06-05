@@ -164,8 +164,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             batch_tensor = batch_input.to(device)
 
             #score triples
-            queries_sp = model.get_queries(batch_tensor)
-            queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0])))
+            queries_sp = model.get_queries(batch_tensor).to(device)
+            queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0]))).to(device)
 
             scores_sp = queries_sp @ rhs
             scores_po = queries_po @ rhs
