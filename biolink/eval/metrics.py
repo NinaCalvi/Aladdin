@@ -164,8 +164,8 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             batch_tensor = batch_input.to(device)
 
             #score triples
-            queries_sp = model.get_queries(batch_tensor).to(device)
-            queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0]))).to(device)
+            queries_sp = model.get_queries(batch_tensor)
+            queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0]).to(device)))
 
             scores_sp = queries_sp @ rhs
             scores_po = queries_po @ rhs
@@ -192,11 +192,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             prediction_subject = prob_scores_po
             prediction_object = prob_scores_sp
 
-        #calculate the two mrr
-        mrr_object = mrr(scores_sp, batch_input[:, 2])
-        mrr_subject = mrr(scores_po, batch_input[:, 0])
-        mrr_val += mrr_object
-        mrr_val += mrr_subject
+
 
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
@@ -232,7 +228,11 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             prediction_subject_filtered = prob_scores_po
             prediction_object_filtered = prob_scores_sp
 
-
+        #calculate the two mrr
+        mrr_object = mrr(scores_sp, batch_input[:, 2])
+        mrr_subject = mrr(scores_po, batch_input[:, 0])
+        mrr_val += mrr_object
+        mrr_val += mrr_subject
 
 
         batch_start += batch_size
