@@ -31,7 +31,7 @@ def metrics_to_str(metrics):
 
 def main(argv):
     parser = argparse.ArgumentParser('BioLinkPred', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2'])
+    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2', 'wn18rr'])
 
     #model params
     parser.add_argument('--model', '-m', action='store', type=str, default='complex',
