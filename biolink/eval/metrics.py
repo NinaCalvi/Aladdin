@@ -74,7 +74,7 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     logger.info(f'labels shape \t{labels.shape}')
     labels[np.arange(len(labels)), true_idx] = 1
 
-    logger.info(f'\t{labels[0]}')
+    # logger.info(f'\t{labels[0]}')
 
     return roc_auc_score(labels, y_pred, average='micro')
 
@@ -135,8 +135,6 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     batch_start = 0
     mrr_val = 0.0
     counter = 0
-
-    mrr_pasquale = 0.0
 
     logger.info(f'test triples type \t{type(test_triples)}')
     logger.info(f'test triples shape \t{test_triples.shape}')
@@ -214,12 +212,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
                     scores_po[i, tmp_s_idx] = - np.infty
                     prob_scores_po[i, tmp_s_idx] = 0
 
-            rank_l = 1 + np.argsort(np.argsort(- scores_po[i, :]))[s_idx]
-            rank_r = 1 + np.argsort(np.argsort(- scores_sp[i, :]))[o_idx]
-
-            mrr_pasquale += 1.0 / rank_l
-            mrr_pasquale += 1.0 / rank_r
-        # logger.info(f'gone through batch input')
+         # logger.info(f'gone through batch input')
 
         if prediction_subject_filtered is not None:
             prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
@@ -238,11 +231,12 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         batch_start += batch_size
         if (batch_start % 10000) == 0:
             logger.info(f'batch start \t{batch_start}')
-    mrr_val /= counter
-    mrr_pasquale /= (test_triples.shape[0]*2)
+            
 
+
+    mrr_val /= counter
     metrics['MRR'] = mrr_val
-    metrics['mrr_pasquale'] = mrr_pasquale
+
     logger.info('done')
 
     auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
