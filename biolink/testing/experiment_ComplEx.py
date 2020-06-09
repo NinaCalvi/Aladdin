@@ -25,7 +25,8 @@ np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 
 def metrics_to_str(metrics):
-    return f'MRR {metrics["MRR"]:.6f}\tAU-ROC_raw {metrics["AU-ROC_raw"]:.6f}\tAU-ROC_fil {metrics["AU-ROC_fil"]:.6f}'
+    return f'MRR {metrics["MRR"]:.6f}\tH@1{metrics["H@1"]}\tH@3{metrics["H@3"]}\tH@10{metrics["H@10"]}\t
+    AU-ROC_raw {metrics["AU-ROC_raw"]:.6f}\tAU-ROC_fil {metrics["AU-ROC_fil"]:.6f}'
 
 
 

@@ -53,6 +53,17 @@ def mrr(y_pred: np.array, true_idx: np.array):
     return np.mean(reciprocal)
 
 
+def hits_rate(ranked_values: np.array, hits: dict, hist_at: list):
+    '''
+    ranked_values = ranked predictions
+    hits = dictionary which counts the hits
+    hits_at = list of which hits to consider
+    '''
+
+    for n in hist_at:
+        tot_ranks = np.sum(ranked_values <= n)
+        hits[n] += tot_ranks
+
 def auc_roc(y_pred: np.array, true_idx: np.array):
     '''
     Compute the area under the ROC curve
@@ -132,9 +143,18 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             po_to_s[po_key].append(s_idx)
 
 
+    hits = dict()
+    hits_at = [1, 3, 10]
+    # hits_at = [1, 3, 5, 10, 50, 100]
+
+    for hits_at_value in hits_at:
+        hits[hits_at_value] = 0.0
+
+
     batch_start = 0
     mrr_val = 0.0
     counter = 0
+    counter_hits = 0
 
     logger.info(f'test triples type \t{type(test_triples)}')
     logger.info(f'test triples shape \t{test_triples.shape}')
@@ -157,6 +177,7 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
     while batch_start < test_triples.shape[0]:
         counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
+        counter_hits += 2*min(batch_size, batch_end - batch_start)
         batch_input = test_triples[batch_start:batch_end]
         with torch.no_grad():
             batch_tensor = batch_input.to(device)
@@ -222,8 +243,17 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
             prediction_object_filtered = prob_scores_sp
 
         #calculate the two mrr
-        mrr_object = mrr(scores_sp, batch_input[:, 2])
-        mrr_subject = mrr(scores_po, batch_input[:, 0])
+        rank_object = rank(scores_sp, batch_input[:, 2])
+        mrr_object = np.mean(1/rank_object)
+        # mrr_object = mrr(scores_sp, batch_input[:, 2])
+        rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
+        hits_rate(rank_object, hits, hits_at)
+
+        rank_subject = rank(scores_po, batch_input[:, 0])
+        mrr_subject = np.mean(1/rank_subject)
+        # mrr_subject = mrr(scores_po, batch_input[:, 0])
+        hits_rate(rank_subject, hits, hits_at)
+
         mrr_val += mrr_object
         mrr_val += mrr_subject
 
@@ -231,11 +261,16 @@ def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Te
         batch_start += batch_size
         if (batch_start % 10000) == 0:
             logger.info(f'batch start \t{batch_start}')
-            
+
 
 
     mrr_val /= counter
+    for n in hits_at:
+        hits[n] /= counter_hits
     metrics['MRR'] = mrr_val
+    metrics['H@1'] = hits[1]
+    metrics['H@3'] = hits[3]
+    metrics['H@10'] = hits[10]
 
     logger.info('done')
 
