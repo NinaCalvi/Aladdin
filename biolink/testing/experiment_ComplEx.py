@@ -110,7 +110,7 @@ def main(argv):
     if args.mcl:
         model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size)}
     else:
-        model_dict = {'complex': lambda: ComplEx((nb_nets, nb_rels_, nb_ents), emb_size)}
+        model_dict = {'complex': lambda: ComplEx((nb_ents, nb_rels_, nb_ents), emb_size)}
 
     model = model_dict[args.model]()
     model.to(device)
