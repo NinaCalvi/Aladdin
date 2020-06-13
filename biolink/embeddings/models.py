@@ -121,14 +121,16 @@ class CP(KBCModel):
 
         return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs)
 
-    def forward(self, x):
+    def forward(self, x, predict_lhs = False):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
         #score subject predicate
         score_sp =  (lhs * rel) @ self.rhs.weight.t()
 
-        return score_sp, (lhs, rel, rhs)
+        score_po = (rhs * rel) @ self.lhs.weight.t()
+
+        return score_sp, scores_po, (lhs, rel, rhs)
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.rhs.weight.data[
@@ -191,7 +193,7 @@ class TransE(KBCModel):
         #from sameh he does this to comply with loss objective?
         return -scores, (lhs, rel, rhs)
 
-    def forward(self, x):
+    def forward(self, x,  predict_lhs = False):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
@@ -200,16 +202,20 @@ class TransE(KBCModel):
         #TODO: FINISH THIS!!
         #adding new vertical dimension
         interactions_sp = (lhs + rel) - self.rhs.weight
+
+        interactions_po = (self.lhs.weight + rel) - rhs
         #should take the norm across each row of matrix
         if self.norm_ == 'l1':
             scores_sp = torch.norm(interactions_sp, 1, dim=0)
+            scores_po = torch.norm(interactions_po, 1, dim=0)
         if self.norm_ == 'l2':
             scores_sp = torch.norm(interactions_sp, 2, dim=0)
+            scores_po = torch.norm(interactions_po, 2, dim=0)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
 
-        return -scores_sp, (lhs, rel, rhs)
+        return -scores_sp, -scores_po, (lhs, rel, rhs)
 
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
@@ -279,13 +285,19 @@ class ComplEx(KBCModel):
 
         to_score = self.embeddings[0].weight
         to_score = to_score[:, :self.rank], to_score[:, self.rank:]
+
         score_sp =  (
-            (lhs[0] * rel[0] - lhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
-            (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
-        )
+                (lhs[0] * rel[0] - lhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+                (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1)
+            )
+
+        score_po = (
+                (rhs[0] * rel[0] + rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+                (rhs[1] * rel[0] - rhs[0] * rel[1]) @ to_score[1].transpose(0, 1)
+            )
 
 
-        return score_sp, (
+        return score_sp, scores_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
             torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)

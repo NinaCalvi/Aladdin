@@ -178,7 +178,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
             # scores_po = queries_po @ whole_rhs
 
             #CHANGED THE FOLLOWING LINE
-            scores, factors = model.forward(batch_tensor)
+            scores_sp, scores_po, factors = model.forward(batch_tensor)
             #slightly confused as to whether I should be attempting to score
 
 
@@ -276,8 +276,6 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     logger.info('metrics done')
 
     return metrics
-
-    pass
 
 
 
