@@ -124,10 +124,13 @@ def main(argv):
     assert optimizer_name in optimizer_factory
     optimizer = optimizer_factory[optimizer_name]()
 
-    if args.mcl:
-        train.train_mc(model, regulariser, optimizer, train_data, args)
-    else:
-        train.train_not_mc(model, regulariser, optimizer, train_data, args)
+
+    train.train(model, regulariser, optimizer, train_data, args)
+
+    # if args.mcl:
+    #     train.train_mc(model, regulariser, optimizer, train_data, args)
+    # else:
+    #     train.train_not_mc(model, regulariser, optimizer, train_data, args)
 
     logger.info(f'Done training')
 

@@ -26,7 +26,7 @@ class KBCModel(nn.Module, ABC):
         pass
 
     @abstractmethod
-    def compute_loss(self, scores: torch.Tensor, targets: torch.Tensor,
+    def compute_loss(self, scores: torch.Tensor,
         reduction_type: str = 'avg'):
         '''
         scores: (batch, num_classes) scores matrix)
@@ -119,7 +119,7 @@ class CP(KBCModel):
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
 
-        return torch.sum(lhs * rel * rhs, 1, keepdim=True)
+        return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs)
 
     def forward(self, x):
         lhs = self.lhs(x[:, 0])
@@ -138,8 +138,8 @@ class CP(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, targets, reduction_type):
-        return compute_kge_loss(scores, targets, self.loss, reduction_type)
+    def compute_loss(self, scores,reduction_type='avg'):
+        return compute_kge_loss(scores, self.loss, reduction_type)
 
 
 class TransE(KBCModel):
@@ -189,7 +189,7 @@ class TransE(KBCModel):
 
         #NOTE: am returning negative score
         #from sameh he does this to comply with loss objective?
-        return -scores
+        return -scores, (lhs, rel, rhs)
 
     def forward(self, x):
         lhs = self.lhs(x[:, 0])
@@ -223,8 +223,8 @@ class TransE(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data + self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, targets, reduction_type):
-        return compute_kge_loss(scores, targets, self.loss, reduction_type)
+    def compute_loss(self, scores, reduction_type='avg'):
+        return compute_kge_loss(scores, self.loss, reduction_type)
 
 
 
@@ -262,6 +262,10 @@ class ComplEx(KBCModel):
             (lhs[0] * rel[0] - lhs[1] * rel[1]) * rhs[0] +
             (lhs[0] * rel[1] + lhs[1] * rel[0]) * rhs[1],
             1, keepdim=True
+        ), (
+            torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
+            torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
     def forward(self, x):
@@ -304,5 +308,5 @@ class ComplEx(KBCModel):
             lhs[0] * rel[1] + lhs[1] * rel[0]
         ], 1)
 
-    def compute_loss(self, scores, targets, reduction_type):
-        return compute_kge_loss(scores, targets, self.loss, reduction_type)
+    def compute_loss(self, scores, reduction_type='avg'):
+        return compute_kge_loss(scores,self.loss, reduction_type)

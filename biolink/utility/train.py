@@ -7,6 +7,7 @@ import logging
 import os
 import sys
 import torch
+from utils import generate_neg_instances
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
@@ -34,8 +35,66 @@ def train(model: nn.Module,
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
 
-def train_not_mc():
-    pass
+def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
+    '''
+    Training method for not MC models
+    '''
+    #for each positive generate some negatives
+    nb_negs = args.nb_negs
+    seed = args.seed
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    logger.info(f'Device: {device}')
+
+    batch_size = args.batch_size
+    emb_size = args.embedding_size
+    nb_epochs = args.epochs
+    # seed = args.seed
+    reg_weight = args.reg_weight
+    is_quiet = args.quiet
+
+    nb_ents = model.sizes[0]
+
+    nb_batches = np.ceil(data.shape[0]/batch_size)
+    regulariser = get_regulariser(regulariser_str, reg_weight)
+
+    for epoch in range(nb_epochs):
+        batch_start = 0
+        epoch_loss_values = []
+        batch_no = 1
+        #always have a random permutation
+        inputs = data[torch.randperm(data.shape[0]),:]
+        while batch_start < data.shape[0]:
+            batch_end = min(batch_start + batch_size, data.shape[0])
+            input_batch = inputs[batch_start:batch_end]
+
+            #need to generate negatives
+
+            corruptions = generate_neg_instances(input_batch, nb_negs, nb_ents, seed)
+            #ensuring you can split between positive and negative examples through the middle
+            input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
+
+
+            scores, factors = model.score(input_all)
+            loss = model.compute_loss(scores)
+
+            reg = regulariser.forward(factors)
+            loss += reg
+
+            optimiser.zero_grad()
+            loss.backward()
+            optimiser.step()
+
+            epoch_loss_values.append(loss.item())
+            batch_no += 1
+            if not is_quiet:
+                logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss.item():.6f}')
+
+            batch_start += batch_size
+
+        # print(epoch_loss_values)
+        # print(type(epoch_loss_values))
+        loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
+        logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 
 def get_regulariser(regulariser_str: str, reg_weight: int):
     '''

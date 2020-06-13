@@ -107,9 +107,9 @@ def generate_neg_instances(triples: torch.Tensor, nb_corrs: int, nb_ents: int, s
     '''
 
     #create split
-    nb_corrs /= 2
+    nb_corrs /= 2 #number of corruptions
     obj_corruptions = triples.repeat(ceil(nb_corrs), 1)
-    subj_corruptions = triples.repeat(florr(nb_corrs), 1)
+    subj_corruptions = triples.repeat(floor(nb_corrs), 1)
 
     #split tensors to isolate subject or object for corruption purposes
     sub_pred, obj = torch.split(obj_corruptions, [2, 1], dim=1)
