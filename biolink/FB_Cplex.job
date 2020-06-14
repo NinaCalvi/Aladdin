@@ -1,7 +1,7 @@
 #$ -cwd
 #$ -S /bin/bash
-#$ -o $HOME/fb15k2.out
-#$ -e $HOME/fb152.err
+#$ -o $HOME/complex_fb.out
+#$ -e $HOME/complex_fb.err
 #$ -t 1-10
 #$ -l tmem=15G
 #$ -l h_rt=18:00:00
