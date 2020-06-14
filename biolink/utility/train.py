@@ -46,6 +46,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
     nb_negs = args.nb_negs
     seed = args.seed
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    logger.info(f'NOT MC')
     logger.info(f'Device: {device}')
 
     batch_size = args.batch_size
@@ -58,6 +59,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
     nb_ents = model.sizes[0]
     valid_every = args.valid_stp
     valid = args.valid #boolean
+    logger.info(f'valid: {valid}')
 
     nb_batches = np.ceil(data.shape[0]/batch_size)
     regulariser = get_regulariser(regulariser_str, reg_weight)
