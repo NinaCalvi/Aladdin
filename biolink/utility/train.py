@@ -7,7 +7,7 @@ import logging
 import os
 import sys
 import torch
-from utils import generate_neg_instances
+from biolink.utility.utils import generate_neg_instances
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
