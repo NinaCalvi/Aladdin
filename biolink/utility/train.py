@@ -1,5 +1,5 @@
 from biolink.embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
-from biolink.evl import evaluate
+from biolink.eval import evaluate
 from torch import nn
 from torch import optim
 from argparse import Namespace
