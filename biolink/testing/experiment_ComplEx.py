@@ -83,6 +83,9 @@ def main(argv):
     seed = args.seed
     quiet = args.quiet
 
+    print(args.mcl)
+    
+
     logger.info(f'Valid: {args.valid}')
 
 

@@ -32,12 +32,12 @@ def train(model: nn.Module,
     args: arguments of input
     '''
     print(type(model))
-    if isinstance(model, KBCModelMCL):
+    if args.mcl:
         train_mc(model, regulariser, optimiser, data, valid_data, all_data, args)
-    elif isinstance(model, KBCModel):
-        train_not_mc(model,regulariser, optimiser, data,  valid_data, all_data, args)
     else:
-        raise ValueError("Incorrect model instance given (%s)" %type(model))
+        train_not_mc(model,regulariser, optimiser, data,  valid_data, all_data, args)
+    # else:
+    #     raise ValueError("Incorrect model instance given (%s)" %type(model))
 
 def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, valid_data: torch.Tensor, all_data: torch.Tensor, args: Namespace):
     '''
