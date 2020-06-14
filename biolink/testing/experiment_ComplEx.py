@@ -83,6 +83,8 @@ def main(argv):
     seed = args.seed
     quiet = args.quiet
 
+    logger.info(f'Valid: {args.valid}')
+
 
 
     # set the seeds
@@ -100,7 +102,6 @@ def main(argv):
 
 
     train_data = torch.tensor(dataset.data["train"])
-    print('train data type', train_data)
     valid_data = torch.tensor(dataset.data["valid"])
     test_data = torch.tensor(dataset.data["test"])
 

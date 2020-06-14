@@ -31,6 +31,7 @@ def train(model: nn.Module,
     data: the training data
     args: arguments of input
     '''
+    print(type(model))
     if isinstance(model, KBCModelMCL):
         train_mc(model, regulariser, optimiser, data, valid_data, all_data, args)
     elif isinstance(model, KBCModel):
@@ -106,7 +107,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
         logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 
 
-        if (epoch % valid_every) == 0 and valid:
+        if ((epoch % valid_every) == 0) and valid:
             logger.info(f'Validating')
             val_metrics = evaluate(model, val_data, all_data, batch_size, device)
             if best_val_mrr is None:
