@@ -1,4 +1,5 @@
 from biolink.embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
+from biolink.evl import evaluate
 from torch import nn
 from torch import optim
 from argparse import Namespace
@@ -16,6 +17,8 @@ def train(model: nn.Module,
         regulariser: str,
         optimiser: optim.Optimizer,
         data: torch.Tensor,
+        valid_data: torch.Tensor,
+        all_data: torch.Tensor,
         args: Namespace):
     '''
     Method that instantiates the trianing of the model
@@ -29,13 +32,13 @@ def train(model: nn.Module,
     args: arguments of input
     '''
     if isinstance(model, KBCModelMCL):
-        train_mc(model, regulariser, optimiser, data, args)
+        train_mc(model, regulariser, optimiser, data, valid_data, all_data, args)
     elif isinstance(model, KBCModel):
-        train_not_mc(model,regulariser, optimiser, data, args)
+        train_not_mc(model,regulariser, optimiser, data,  valid_data, all_data, args)
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
 
-def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
+def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, valid_data: torch.Tensor, all_data: torch.Tensor, args: Namespace):
     '''
     Training method for not MC models
     '''
@@ -53,9 +56,13 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
     is_quiet = args.quiet
 
     nb_ents = model.sizes[0]
+    valid_every = args.valid_stp
+    valid = args.valid #boolean
 
     nb_batches = np.ceil(data.shape[0]/batch_size)
     regulariser = get_regulariser(regulariser_str, reg_weight)
+
+    best_val_mrr = None
 
     for epoch in range(nb_epochs):
         batch_start = 0
@@ -96,6 +103,20 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
         logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 
+
+        if (epoch % valid_every) == 0 and valid:
+            logger.info(f'Validating')
+            val_metrics = evaluate(model, val_data, all_data, batch_size, device)
+            if best_val_mrr is None:
+                best_val_mrr = val_metrics['MRR']
+            elif best_val_mrr > val_metrics['MRR']:
+                logger.info(f'Filtered MRR validation decreased, therefore stop')
+                break
+            else:
+                best_val_mrr = val_metrics['MRR']
+
+
+
 def get_regulariser(regulariser_str: str, reg_weight: int):
     '''
     Return the regulariser wanted
@@ -108,7 +129,7 @@ def get_regulariser(regulariser_str: str, reg_weight: int):
         raise ValueError("Incorrect regulariser name given (%s)" %regulariser_str)
 
 
-def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, args: Namespace):
+def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, valid_data: torch.Tensor, all_data: torch.Tensor, args: Namespace):
 
     '''
     Training method for MC models

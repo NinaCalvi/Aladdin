@@ -57,6 +57,11 @@ def main(argv):
     parser.add_argument('--nb-negs', action='store', default=6)
 
     parser.add_argument('--seed', action='store', type=int, default=1234)
+    parser.add_argument('--valid', action='store_true', default=False)
+    parser.add_argument('--valid-stp', action='store', type='int', default=50)
+
+
+
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
 
 
@@ -125,7 +130,7 @@ def main(argv):
     optimizer = optimizer_factory[optimizer_name]()
 
 
-    train.train(model, regulariser, optimizer, train_data, args)
+    train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args)
 
     # if args.mcl:
     #     train.train_mc(model, regulariser, optimizer, train_data, args)
