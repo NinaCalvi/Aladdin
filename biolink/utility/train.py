@@ -29,9 +29,9 @@ def train(model: nn.Module,
     args: arguments of input
     '''
     if isinstance(model, KBCModelMCL):
-        train_mc(model, regulariser, optimiser)
+        train_mc(model, regulariser, optimiser, data, args)
     elif isinstance(model, KBCModel):
-        train_not_mc(model,regulariser, optimiser)
+        train_not_mc(model,regulariser, optimiser, data, args)
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
 
