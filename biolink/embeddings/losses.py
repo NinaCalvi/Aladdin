@@ -47,7 +47,7 @@ def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, re
     targets = label: 1 for ositive, -1 for negative
     score = raw scores
     '''
-    losses = nn.Softplus(-targets * predictions)
+    losses = nn.Softplus(-targets * predictions.cpu())
     return reduce_loss(losses, reduction_type)
 
 def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, margin_value: float = 1.0):
@@ -56,7 +56,7 @@ def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduc
     l(x) is the label: 1 for positive, -1 for negative sample
     '''
 
-    losses = nn.relu(margin - predictions * targets)
+    losses = nn.relu(margin - predictions.cpu() * targets)
     return reduce_loss(losses, reduction_type)
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
@@ -65,7 +65,7 @@ def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, redu
     l(x) is the label : 1 for positive, 0 for negative sample
 
     '''
-    losses = torch.pow(predictions - targets, 2)
+    losses = torch.pow(predictions.cpu() - targets, 2)
     return reduce_loss(losses, reduction_type)
 
 

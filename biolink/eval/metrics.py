@@ -106,9 +106,9 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device):
-    if isinstance(nn.Module, KBCModelMCL):
+    if isinstance(model, KBCModelMCL):
         return evaluate_mc(model, test_triples, all_triples, batch_size, device)
-    elif isinstance(nn.Module, KBCModel):
+    elif isinstance(model, KBCModel):
         return evaluate_non_mc(model, test_triples, all_triples, batch_size, device)
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
