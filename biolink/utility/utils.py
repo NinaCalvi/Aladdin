@@ -6,6 +6,7 @@ import gzip
 from libkge import KgDataset
 from libkge import datasets
 import logging
+import sys
 
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
