@@ -30,14 +30,22 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, reduction_type: str =
 
     if loss == 'pw_hinge':
         return pointwise_hinge_loss(predictions, targets, reduction_type)
+    elif loss == 'pw_logistic':
+        return pointwise_logistic_loss(predictions, targets, reduction_type)
     elif loss == 'pw_square':
         #targets need to be bingary
         targets = (targets + 1)/2
         return pointwise_square_loss(predictions, targets, reduction_type)
 
 
-    pass
-
+def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
+    '''
+    Pointwise log loss softplus(- targets * score)
+    targets = label: 1 for ositive, -1 for negative
+    score = raw scores
+    '''
+    losses = nn.softplus(-targets * predictions)
+    return reduce_loss(losses, reduction_type)
 
 def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, margin_value: float = 1.0):
     '''
