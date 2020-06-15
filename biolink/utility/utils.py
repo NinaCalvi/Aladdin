@@ -5,8 +5,10 @@ import numpy as np
 import gzip
 from libkge import KgDataset
 from libkge import datasets
+import logging
 
 
+logger = logging.getLogger(os.path.basename(sys.argv[0]))
 
 def load_pse_dataset(data_name):
     if data_name == "pse":
