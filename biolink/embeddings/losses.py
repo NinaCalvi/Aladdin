@@ -10,7 +10,7 @@ def reduce_loss(loss: torch.Tensor, reduction_type: str):
         return torch.mean(loss, dim=0)
 
 
-def compute_kge_loss(predictions: torch.Tensor, loss: str, reduction_type: str = "avg"):
+def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device, reduction_type: str = "avg"):
     '''
     predictions: (N,) scores vector of a triple
     loss: type of loss function
@@ -34,14 +34,14 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, reduction_type: str =
     if loss == 'pw_hinge':
         return pointwise_hinge_loss(predictions, targets, reduction_type)
     elif loss == 'pw_logistic':
-        return pointwise_logistic_loss(predictions, targets, reduction_type)
+        return pointwise_logistic_loss(predictions, targets, reduction_type, device)
     elif loss == 'pw_square':
         #targets need to be bingary
         targets = (targets + 1)/2
         return pointwise_square_loss(predictions, targets, reduction_type)
 
 
-def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
+def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, device: torch.device, reduction_type: str):
     '''
     Pointwise log loss softplus(- targets * score)
     targets = label: 1 for ositive, -1 for negative

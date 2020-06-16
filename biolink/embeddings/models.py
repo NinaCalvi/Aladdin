@@ -236,8 +236,7 @@ class TransE(KBCModel):
 
 class ComplEx(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: str,
-            init_size: float = 1e-3,
+            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, init_size: float = 1e-3,
     ):
         '''
         loss - what type of loss to use
@@ -254,6 +253,7 @@ class ComplEx(KBCModel):
         self.embeddings[1].weight.data *= init_size
 
         self.loss = loss
+        self.device = device
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])
@@ -321,4 +321,4 @@ class ComplEx(KBCModel):
         ], 1)
 
     def compute_loss(self, scores, reduction_type='avg'):
-        return compute_kge_loss(scores,self.loss, reduction_type)
+        return compute_kge_loss(scores,self.loss, self.device, reduction_type)
