@@ -48,8 +48,8 @@ def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, de
     score = raw scores
     '''
 
-    print('max pred', torch.max(predictions))
-    softplus = nn.Softplus(threshold=75)
+    # print('max pred', torch.max(predictions))
+    softplus = nn.Softplus()
     predictions = torch.clamp(predictions, -75.0, 75.0) #applying clipping avoid expl gradients
 
     losses = softplus(-targets.to(device) * predictions)
