@@ -187,7 +187,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
             #slightly confused as to whether I should be attempting to score
 
 
-            logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
+            # logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
 
             #remove them from device
             #need to have probability scores for auc calculations

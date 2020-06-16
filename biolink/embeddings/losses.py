@@ -23,7 +23,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     #through the middle
 
     #assuming that the positive and negative samples are perfectly balanced
-    print(predictions.shape)
+    # print(predictions.shape)
     scrs = torch.split(predictions, int(predictions.shape[0]/2), dim=0)
     pos_scores = scrs[0]
     neg_scores = scrs[1]
