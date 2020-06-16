@@ -91,7 +91,6 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             reg = regulariser.forward(factors)
             loss += reg
 
-
             loss.backward()
             optimiser.step()
 
