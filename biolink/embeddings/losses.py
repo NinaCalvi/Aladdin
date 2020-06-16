@@ -50,7 +50,7 @@ def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, re
 
     softplus = nn.Softplus()
 
-    losses = softplus(-targets * predictions.cpu())
+    losses = softplus(-targets.to(device) * predictions)
     return reduce_loss(losses, reduction_type)
 
 def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, margin_value: float = 1.0):
