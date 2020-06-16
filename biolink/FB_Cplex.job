@@ -1,11 +1,11 @@
 #$ -cwd
 #$ -S /bin/bash
-#$ -o $HOME/no_gp_complex_fb.out
-#$ -e $HOME/no_gp_complex_fb.err
+#$ -o $HOME/complex_fb.out
+#$ -e $HOME/complex_fb.err
 #$ -t 1-10
 #$ -l tmem=15G
 #$ -l h_rt=18:00:00
-#$ -l gpu=false
+#$ -l gpu=true
 
 export LANG="en_US.utf8"
 export LANGUAGE="en_US:en"
