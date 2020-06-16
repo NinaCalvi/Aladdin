@@ -3,7 +3,7 @@ from torch import nn
 from typing import Tuple, List, Dict
 
 def reduce_loss(loss: torch.Tensor, reduction_type: str):
-    print('loss shape', loss.size)
+    # print('loss shape', loss.size)
     if reduction_type == 'sum':
         return torch.sum(loss, dim=0)
     if reduction_type == 'avg':
