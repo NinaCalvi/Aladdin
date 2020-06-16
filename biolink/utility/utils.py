@@ -110,8 +110,8 @@ def generate_neg_instances(triples: torch.Tensor, nb_corrs: int, nb_ents: int, s
     '''
 
     #create split
-    logger.info(f'Number of corruptions {nb_corrs}')
-    logger.info(type(nb_corrs))
+    # logger.info(f'Number of corruptions {nb_corrs}')
+    # logger.info(type(nb_corrs))
     nb_corrs /= 2 #number of corruptions
     obj_corruptions = triples.repeat(int(np.ceil(nb_corrs)), 1)
     subj_corruptions = triples.repeat(int(np.floor(nb_corrs)), 1)
