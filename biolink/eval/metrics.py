@@ -128,6 +128,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance.numpy()
         sp_key = (s_idx, p_idx)
+        po_key = (p_idx, o_idx)
 
         if sp_key not in sp_to_o:
             sp_to_o[sp_key] = [o_idx]
