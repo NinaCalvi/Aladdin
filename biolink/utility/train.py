@@ -84,13 +84,14 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
 
 
+            optimiser.zero_grad()
             scores, factors = model.score(input_all)
             loss = model.compute_loss(scores)
 
             reg = regulariser.forward(factors)
             loss += reg
 
-            optimiser.zero_grad()
+
             loss.backward()
             optimiser.step()
 

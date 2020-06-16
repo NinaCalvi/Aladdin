@@ -76,6 +76,7 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     #this matrix will be binary, 1 at the label index and 0 everywhere else.
 
     logger.info('auc_roc')
+    print(y_pred)
     # logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
     # logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]}')
     # logger.in
@@ -174,13 +175,6 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
         #need to create negative instances
         with torch.no_grad():
             batch_tensor = batch_input.to(device)
-
-            #score triples
-            # queries_sp = model.get_queries(batch_tensor)
-            # queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0]).to(device)))
-            #
-            # scores_sp = queries_sp @ whole_rhs
-            # scores_po = queries_po @ whole_rhs
 
             #CHANGED THE FOLLOWING LINE
             scores_sp, scores_po, factors = model.forward(batch_tensor)

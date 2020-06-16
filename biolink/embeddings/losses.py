@@ -52,7 +52,7 @@ def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, de
     predictions = torch.clamp(predictions, -75.0, 75.0) #applying clipping avoid expl gradients
 
     losses = softplus(-targets.to(device) * predictions)
-    print('loss', losses)
+    # print('loss', losses)
     return reduce_loss(losses, reduction_type)
 
 def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, device: torch.device, margin_value: float = 1.0):
