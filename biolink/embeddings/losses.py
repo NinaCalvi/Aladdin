@@ -32,7 +32,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 
 
     if loss == 'pw_hinge':
-        return pointwise_hinge_loss(predictions, targets, reduction_type)
+        return pointwise_hinge_loss(predictions, targets, device, reduction_type)
     elif loss == 'pw_logistic':
         return pointwise_logistic_loss(predictions, targets, device, reduction_type)
     elif loss == 'pw_square':
@@ -49,17 +49,18 @@ def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, de
     '''
 
     softplus = nn.Softplus()
+    predictions = torch.clamp(predictions, -75.0, 75.0) #applying clipping avoid expl gradients
 
     losses = softplus(-targets.to(device) * predictions)
     return reduce_loss(losses, reduction_type)
 
-def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, margin_value: float = 1.0):
+def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, device: torch.device, margin_value: float = 1.0):
     '''
     Point hinge loss: (1-f(x)*l(x))
     l(x) is the label: 1 for positive, -1 for negative sample
     '''
 
-    losses = nn.relu(margin - predictions.cpu() * targets)
+    losses = nn.relu(margin - predictions * targets.to(device))
     return reduce_loss(losses, reduction_type)
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
