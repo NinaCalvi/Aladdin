@@ -76,14 +76,14 @@ def auc_roc(y_pred: np.array, true_idx: np.array):
     #this matrix will be binary, 1 at the label index and 0 everywhere else.
 
     logger.info('auc_roc')
-    logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
+    # logger.info(f'auc_roc shape ypred \t{y_pred.shape}')
     # logger.info(f'predicted values \t{y_pred[0]}, \t{y_pred[10]}')
     # logger.in
-    logger.info(f'auc_roc shape ytrue \t{true_idx.shape}')
+    # logger.info(f'auc_roc shape ytrue \t{true_idx.shape}')
 
     labels = np.zeros_like(y_pred)
 
-    logger.info(f'labels shape \t{labels.shape}')
+    # logger.info(f'labels shape \t{labels.shape}')
     labels[np.arange(len(labels)), true_idx] = 1
 
     # logger.info(f'\t{labels[0]}')
