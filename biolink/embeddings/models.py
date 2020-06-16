@@ -130,7 +130,7 @@ class CP(KBCModel):
 
         score_po = (rhs * rel) @ self.lhs.weight.t()
 
-        return score_sp, scores_po, (lhs, rel, rhs)
+        return score_sp, score_po, (lhs, rel, rhs)
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.rhs.weight.data[
@@ -297,7 +297,7 @@ class ComplEx(KBCModel):
             )
 
 
-        return score_sp, scores_po, (
+        return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
             torch.sqrt(rel[0] ** 2 + rel[1] ** 2),
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
