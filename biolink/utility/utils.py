@@ -121,7 +121,7 @@ def generate_neg_instances(triples: torch.Tensor, nb_corrs: int, nb_ents: int, s
     sub, obj_pred = torch.split(subj_corruptions, [1,2], dim=1)
 
     #corrupt
-    obj.random_(0, nb_ents)
-    sub.random_(0, nb_ents)
+    obj_corr = torch.randint(0, nb_ents, obj.shape)
+    sub_corr = torch.randint(0, nb_ents, sub.shape)
 
-    return torch.cat((torch.cat((sub_pred, obj), axis=1), torch.cat((sub ,obj_pred), axis=1)), axis=0)
+    return torch.cat((torch.cat((sub_pred, obj_corr), axis=1), torch.cat((sub_corr ,obj_pred), axis=1)), axis=0)
