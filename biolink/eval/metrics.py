@@ -157,14 +157,18 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     prediction_object = None
     prediction_object_filtered = None
 
+    prediction_subject = None
+    prediction_subject_filtered = None
+
+
     eps = 1-10
     softmax = nn.Softmax(dim=1)
 
 
     while batch_start < test_triples.shape[0]:
-        counter += 1
+        counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
-        counter_hits += min(batch_size, batch_end - batch_start)
+        counter_hits += 2*min(batch_size, batch_end - batch_start)
         batch_input = test_triples[batch_start:batch_end]
 
         #need to create negative instances
