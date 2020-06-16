@@ -34,7 +34,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     if loss == 'pw_hinge':
         return pointwise_hinge_loss(predictions, targets, reduction_type)
     elif loss == 'pw_logistic':
-        return pointwise_logistic_loss(predictions, targets, reduction_type, device)
+        return pointwise_logistic_loss(predictions, targets, device, reduction_type)
     elif loss == 'pw_square':
         #targets need to be bingary
         targets = (targets + 1)/2
