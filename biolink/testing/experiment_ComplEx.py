@@ -130,8 +130,6 @@ def main(argv):
         'sgd': lambda: optim.SGD(model.parameters(), lr=lr)
     }
 
-    print('model parameters', model.parameters())
-
     assert optimizer_name in optimizer_factory
     optimizer = optimizer_factory[optimizer_name]()
 

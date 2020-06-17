@@ -250,8 +250,8 @@ class ComplEx(KBCModel):
             for s in sizes[:2]
         ])
 
-        nn.init.xavier_normal(self.embeddings[0].weight)
-        nn.init.xavier_normal(self.embeddings[1].weight)
+        # nn.init.xavier_normal(self.embeddings[0].weight)
+        # nn.init.xavier_normal(self.embeddings[1].weight)
 
         # self.embeddings[0].weight.data *= init_size
         # self.embeddings[1].weight.data *= init_size
@@ -324,5 +324,5 @@ class ComplEx(KBCModel):
             lhs[0] * rel[1] + lhs[1] * rel[0]
         ], 1)
 
-    def compute_loss(self, scores, pos_size, reduction_type='avg'):
+    def compute_loss(self, scores, pos_size, reduction_type='sum'):
         return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type)
