@@ -90,7 +90,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
             scores, factors = model.score(input_all)
             loss = model.compute_loss(scores, input_batch.shape[0])
-
+            print(model.embeddings[0].weight.data)
             reg = regulariser.forward(factors)
             loss += reg
 
