@@ -10,7 +10,7 @@ def reduce_loss(loss: torch.Tensor, reduction_type: str):
         return torch.mean(loss, dim=0)
 
 
-def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device, reduction_type: str = "avg"):
+def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device, pos_size: int, reduction_type: str = "avg"):
     '''
     predictions: (N,) scores vector of a triple
     loss: type of loss function
@@ -24,7 +24,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 
     #assuming that the positive and negative samples are perfectly balanced
     # print(predictions.shape)
-    scrs = torch.split(predictions, int(predictions.shape[0]/2), dim=0)
+    scrs = torch.split(predictions, [pos_size, int(predictions.shape[0]-pos_size)], dim=0)
     pos_scores = scrs[0]
     neg_scores = scrs[1]
     #setting the targets in this way is needed for the different losses we will be workign with

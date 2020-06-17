@@ -26,7 +26,7 @@ class KBCModel(nn.Module, ABC):
         pass
 
     @abstractmethod
-    def compute_loss(self, scores: torch.Tensor,
+    def compute_loss(self, scores: torch.Tensor, pos_size: int,
         reduction_type: str = 'avg'):
         '''
         scores: (batch, num_classes) scores matrix)
@@ -140,8 +140,8 @@ class CP(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores,reduction_type='avg'):
-        return compute_kge_loss(scores, self.loss, reduction_type)
+    def compute_loss(self, scores, pos_size, reduction_type='avg'):
+        return compute_kge_loss(scores, self.loss, pos_size, reduction_type)
 
 
 class TransE(KBCModel):
@@ -229,8 +229,8 @@ class TransE(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data + self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, reduction_type='avg'):
-        return compute_kge_loss(scores, self.loss, reduction_type)
+    def compute_loss(self, scores, pos_size, reduction_type='avg'):
+        return compute_kge_loss(scores, self.loss, pos_size, reduction_type)
 
 
 
@@ -320,5 +320,5 @@ class ComplEx(KBCModel):
             lhs[0] * rel[1] + lhs[1] * rel[0]
         ], 1)
 
-    def compute_loss(self, scores, reduction_type='avg'):
-        return compute_kge_loss(scores,self.loss, self.device, reduction_type)
+    def compute_loss(self, scores, pos_size, reduction_type='avg'):
+        return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type)
