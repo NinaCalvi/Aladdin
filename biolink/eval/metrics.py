@@ -106,16 +106,16 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 
-def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False):
     if isinstance(model, KBCModelMCL):
         return evaluate_mc(model, test_triples, all_triples, batch_size, device)
     elif isinstance(model, KBCModel):
-        return evaluate_non_mc(model, test_triples, all_triples, batch_size, device)
+        return evaluate_non_mc(model, test_triples, all_triples, batch_size, device, validate)
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
 
 
-def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device):
+def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool):
     '''
     Evaluation method immediately returns the metrics wanted for non mc
     Parameters:
@@ -185,19 +185,21 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
             #remove them from device
             #need to have probability scores for auc calculations
-            prob_scores_sp = softmax(scores_sp.cpu()).numpy()
-            prob_scores_po = softmax(scores_po.cpu()).numpy()
+            if not validate:
+                prob_scores_sp = softmax(scores_sp.cpu()).numpy()
+                prob_scores_po = softmax(scores_po.cpu()).numpy()
 
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
         # logger.info(f'in evaluate:')
-        if prediction_subject is not None:
-            prediction_subject = np.vstack((prediction_subject, prob_scores_po))
-            prediction_object = np.vstack((prediction_object, prob_scores_sp))
-        else:
-            prediction_subject = prob_scores_po
-            prediction_object = prob_scores_sp
+        if not validate:
+            if prediction_subject is not None:
+                prediction_subject = np.vstack((prediction_subject, prob_scores_po))
+                prediction_object = np.vstack((prediction_object, prob_scores_sp))
+            else:
+                prediction_subject = prob_scores_po
+                prediction_object = prob_scores_sp
 
 
 
@@ -213,22 +215,25 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
             for tmp_o_idx in o_to_remove:
                 if tmp_o_idx != o_idx:
                     scores_sp[i, tmp_o_idx] = - np.infty
-                    prob_scores_sp[i, tmp_o_idx] = 0
+                    if not validate:
+                        prob_scores_sp[i, tmp_o_idx] = 0
                     # clipped_sp[i, tmp_o_idx] = - np.infty
 
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
-                    prob_scores_po[i, tmp_s_idx] = 0
+                    if not validate:
+                        prob_scores_po[i, tmp_s_idx] = 0
 
          # logger.info(f'gone through batch input')
 
-        if prediction_subject_filtered is not None:
-            prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
-            prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
-        else:
-            prediction_subject_filtered = prob_scores_po
-            prediction_object_filtered = prob_scores_sp
+        if not validate:
+            if prediction_subject_filtered is not None:
+                prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
+                prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
+            else:
+                prediction_subject_filtered = prob_scores_po
+                prediction_object_filtered = prob_scores_sp
 
         #calculate the two mrr
         rank_object = rank(scores_sp, batch_input[:, 2])
@@ -262,16 +267,17 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
     logger.info('done')
 
-    auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
-    auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
+    if not validate:
+        auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
+        auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
 
-    logger.info('done not filtered aucroc')
+        logger.info('done not filtered aucroc')
 
-    auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
-    auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
+        auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
+        auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
 
-    metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
-    metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
+        metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
+        metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
     logger.info('metrics done')
 
     return metrics
