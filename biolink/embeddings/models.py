@@ -246,7 +246,7 @@ class ComplEx(KBCModel):
         self.rank = rank
 
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 2 * rank, sparse=True)
+            nn.Embedding(s, 2 * rank) #REMOVED SPARSE TRUE
             for s in sizes[:2]
         ])
         # self.embeddings[0].weight.data *= init_size
