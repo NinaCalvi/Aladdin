@@ -249,6 +249,10 @@ class ComplEx(KBCModel):
             nn.Embedding(s, 2 * rank, sparse  = True) #REMOVED SPARSE TRUE
             for s in sizes[:2]
         ])
+
+        nn.init.xavier_normal(self.embeddings[0].weight)
+        nn.init.xavier_normal(self.embeddings[1].weight)
+
         # self.embeddings[0].weight.data *= init_size
         # self.embeddings[1].weight.data *= init_size
 
