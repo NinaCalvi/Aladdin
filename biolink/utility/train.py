@@ -85,7 +85,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
 
             optimiser.zero_grad()
-            
+
             scores, factors = model.score(input_all)
             loss = model.compute_loss(scores)
 
@@ -110,7 +110,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
         if (((epoch+1) % valid_every) == 0) and valid:
             logger.info(f'Validating')
-            val_metrics = evaluate(model, valid_data, all_data, batch_size, device)
+            val_metrics = evaluate(model, valid_data, all_data, batch_size, device, valid=True)
             if best_val_mrr is None:
                 best_val_mrr = val_metrics['MRR']
             elif best_val_mrr > val_metrics['MRR']:
