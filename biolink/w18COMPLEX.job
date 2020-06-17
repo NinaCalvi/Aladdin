@@ -1,0 +1,17 @@
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/original_complex_w18.out
+#$ -e $HOME/original_complex_w18.err
+#$ -t 1-10
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+
+conda activate libkge_new
+
+cd ${HOME}/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py  --data wn18 --model complex --epochs 1000 --batch-size 141 --embedding-size 150 --learning-rate 0.5 --regulariser f2 --reg-weight 0.03 --nb-negs 1 --valid --quiet
