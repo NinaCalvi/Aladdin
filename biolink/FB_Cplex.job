@@ -14,4 +14,4 @@ conda activate libkge_new
 
 cd ${HOME}/Dissertation/Aladdin/biolink/
 
-test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py  --data fb15 --model complex --epochs 1000 --batch-size 4831 --embedding-size 200 --learning-rate 0.5 --regulariser f2 --reg-weight 0.01 --nb-negs 10 --valid --quiet
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py  --data fb15 --model complex --epochs 1000 --batch-size 4831 --embedding-size 200 --learning-rate 0.1 --regulariser f2 --reg-weight 0.01 --nb-negs 10 --valid --quiet
