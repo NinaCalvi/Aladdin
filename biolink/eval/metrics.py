@@ -267,6 +267,9 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
     logger.info('done')
 
+    metrics['AU-ROC_raw'] = -1
+    metrics['AU-ROC_fil'] = -1
+
     # if not validate:
     #     auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
     #     auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
