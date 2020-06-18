@@ -239,7 +239,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
         rank_object = rank(scores_sp, batch_input[:, 2])
         mrr_object = np.mean(1/rank_object)
         # mrr_object = mrr(scores_sp, batch_input[:, 2])
-        rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
+        # rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
         hits_rate(rank_object, hits, hits_at)
 
         rank_subject = rank(scores_po, batch_input[:, 0])
@@ -428,7 +428,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
         rank_object = rank(scores_sp, batch_input[:, 2])
         mrr_object = np.mean(1/rank_object)
         # mrr_object = mrr(scores_sp, batch_input[:, 2])
-        rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
+        # rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
         hits_rate(rank_object, hits, hits_at)
 
         rank_subject = rank(scores_po, batch_input[:, 0])

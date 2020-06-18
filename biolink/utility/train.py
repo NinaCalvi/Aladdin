@@ -81,8 +81,8 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
             corruptions = generate_neg_instances(input_batch, nb_negs, nb_ents, seed)
             #ensuring you can split between positive and negative examples through the middle
-            # input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
-            input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
+            input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
+            # input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
 
 
 
@@ -115,8 +115,9 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             val_metrics = evaluate(model, valid_data, all_data, batch_size, device, validate=True)
             if best_val_mrr is None:
                 best_val_mrr = val_metrics['MRR']
-            elif best_val_mrr > val_metrics['MRR']:
+            elif best_val_mrr >= val_metrics['MRR']:
                 logger.info(f'Filtered MRR validation decreased, therefore stop')
+                logger.info(f'Best validation metrics {best_val_mrr}')
                 break
             else:
                 best_val_mrr = val_metrics['MRR']
