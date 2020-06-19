@@ -1,7 +1,7 @@
 #$ -cwd
 #$ -S /bin/bash
-#$ -o $HOME/repeats_cplex_fb.out
-#$ -e $HOME/repeats_cplex_fb.err
+#$ -o $HOME/sparse_repeats_cplex_fb.out
+#$ -e $HOME/sparse_repeats_cplex_fb.err
 #$ -t 1-10
 #$ -l tmem=15G
 #$ -l h_rt=18:00:00
