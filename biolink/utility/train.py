@@ -122,6 +122,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 break
             else:
                 best_val_mrr = val_metrics['MRR']
+                logger.info(f'Best validation metrics {best_val_mrr}')
 
 
 

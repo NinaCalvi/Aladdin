@@ -56,7 +56,7 @@ def main(argv):
 
     parser.add_argument('--nb-negs', action='store', type=int, default=6)
 
-    parser.add_argument('--seed', action='store', type=int, default=1234)
+    parser.add_argument('--seed', action='store', type=int, default=5)
     parser.add_argument('--valid', action='store_true', default=False)
     parser.add_argument('--valid-stp', action='store', type=int, default=50)
 
