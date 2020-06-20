@@ -1,5 +1,5 @@
 import numpy as np
-from ampligraph.datasets import load_wn18
+from ampligraph.datasets import load_fb15k
 from ampligraph.latent_features import ComplEx
 from ampligraph.evaluation import evaluate_performance, mrr_score, hits_at_n_score
 
