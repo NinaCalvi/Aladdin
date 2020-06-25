@@ -109,5 +109,42 @@ Performance Of Knowledge Graph Embedding](https://arxiv.org/pdf/1909.00519.pdf)
 - However this paper concentrates on improving it based on the **loss** function: selection of loss functions affect the boundary of the scorign function and hence the limitations that were mentioned in previous research could be deemed as inaccurate because they failed in taking the loss funciton into consideration
 - They also suggest **TransComplEx** that translate head entities to the conjugate of the tail entity using relation in complex space - allows for less limitations in relation patterns; the conjugate tail vector allows for distinguishing between the role of an entity as subject or object. Appears to improve ComplEX method 
 
-26. [Investigating Robustness and Interpretability of Link Prediction
+26. [Benchmark and Best Practices for Biomedical Knowledge Graph
+Embeddings] (https://arxiv.org/pdf/2006.13774.pdf)
+- suggests **mean quantile** as being more robust than MRR and MR but haven't seen this anywehre else (?)
+-  mention *relation prediction* as a potential way of evaluating the model's relation representation directly - ComplEX and DistMult perfom worse thant SimplE and RotatE.
+- encouage analysis beyond standard evaluation metrics - e.g. visualisations, reporting metrics for different relation groupings (e.g. many-to-many, many-to-one etc)
+
+
+
+**Interpretability/explainability of knowledge graphs**
+Believe this could be useful given the setting in which this link prediction etc is set. Would be nice to give, other than quantitative information, also qualitative information. 
+
+1. [Investigating Robustness and Interpretability of Link Prediction
 via Adversarial Modifications](https://arxiv.org/pdf/1905.00563.pdf)
+2. [A Simple Approach to Case-Based Reaoning in Knowledge Bases] (https://openreview.net/pdf?id=AEY9tRqlU7)
+- no training
+- finds mutliple graph patterns that connect similar source entities through the given relation and looks for pattern matches starting from the query source
+- CASE BASED REASONING IS DIVIDED IN:
+    1. *retrieve*: retrieve similar cases to the given problem
+    2. previous solutions are *reused* for problem at hand
+    3. sometimes retrieves solutions can not be immediately reused, and therefore may have to be *revised*
+    4. if solutions are useful they are *retained*
+- How it works:
+    1. Given an entity and query relation (e_q, r_q), it retrieves K entities which are similar to e_q and for which we observe the relation r_q. These entities are not restricted to be in the proximity of the query entity. 
+    2. Similarity measured on relations that entities participate in 
+    3. Find reasoning paths that connect similar entities to the query entity via the query relation r_q
+    4. Check if similar reasoning paths exist starting from the query entity
+    5. if similar paths exist, then answer is found by traversing the KG with such reaosning path 
+    6. essentially - finds multiple reasoning paths that lead to different entities. **Ranks** such entities by the **number of reasoning paths that lead to them**. 
+- Note that they are adding **inverse** relations - this tbh is something I don't understand why people tend to do. It is not true that a -> b, then b -> a... but for some reason appears to improve results?
+- only stores a random sample of paths connecting two entities - storing all paths would be intractable. They looked at paths of length 3.
+2. [Investigating Robustness and Interpretability of Link Prediction via Adversarial Modifications](https://www.aclweb.org/anthology/N19-1337.pdf)
+- add in or remove links such that the prediction of the model changes
+- helps identify the most important relations 
+**Attacts**:
+  - remove neighrbouring link from target, thus identifying most important related link
+  - add new fake fact
+  https://github.com/pouyapez/criage
+
+
