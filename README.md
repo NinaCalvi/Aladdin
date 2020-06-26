@@ -122,7 +122,9 @@ Believe this could be useful given the setting in which this link prediction etc
 
 1. [Investigating Robustness and Interpretability of Link Prediction
 via Adversarial Modifications](https://arxiv.org/pdf/1905.00563.pdf)
-2. [A Simple Approach to Case-Based Reaoning in Knowledge Bases] (https://openreview.net/pdf?id=AEY9tRqlU7)
+2. [Modeling Paths for Explainable Knowledge Base Completion](https://pdfs.semanticscholar.org/6666/235c98c0926322ba501592fed30a585e6603.pdf)
+3. [OXKBC: Outcome Explanation for Factorization Based Knowledge Base Completion](https://pdfs.semanticscholar.org/7cbc/9da236434bdbce325baed7a2806f248efa33.pdf)
+3. [A Simple Approach to Case-Based Reaoning in Knowledge Bases] (https://openreview.net/pdf?id=AEY9tRqlU7)
 - no training
 - finds mutliple graph patterns that connect similar source entities through the given relation and looks for pattern matches starting from the query source
 - CASE BASED REASONING IS DIVIDED IN:
@@ -142,7 +144,7 @@ via Adversarial Modifications](https://arxiv.org/pdf/1905.00563.pdf)
 2. [Investigating Robustness and Interpretability of Link Prediction via Adversarial Modifications](https://www.aclweb.org/anthology/N19-1337.pdf)
 - add in or remove links such that the prediction of the model changes
 - helps identify the most important relations 
-**Attacts**:
+**Attacks**:
   - remove neighrbouring link from target, thus identifying most important related link
   - add new fake fact
   https://github.com/pouyapez/criage
