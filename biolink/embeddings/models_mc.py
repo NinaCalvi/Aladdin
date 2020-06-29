@@ -191,25 +191,19 @@ class TransE_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
 
-
-        print('lhs shape', lhs.shape)
-        print('rel shape', rel.shape)
-        print('rhs shape', rhs.shape)
-        print('rhs weights shape', self.rhs.weigth.shape)
-
         #need to compute the difference with each
         #TODO: FINISH THIS!!
         #adding new vertical dimension
-        interactions_sp = (lhs + rel) - self.rhs.weight
-        interactions_po = (self.lhs.weight + rel - rhs)
+        interactions_sp = ((lhs + rel)[:, None]  - self.rhs.weight)
+        interactions_po = (self.lhs.weight + rel[:,None] - rhs[:,None]) 
 
         #should take the norm across each row of matrix
         if self.norm_ == 'l1':
-            scores_sp = torch.norm(interactions_sp, 1, dim=0)
-            scores_po = torch.norm(interactions_po, 1, dim=0)
+            scores_sp = torch.norm(interactions_sp, 1, dim=2)
+            scores_po = torch.norm(interactions_po, 1, dim=2)
         if self.norm_ == 'l2':
-            scores_sp = torch.norm(interactions_sp, 2, dim=0)
-            scores_po = torch.norm(interactions_po, 2, dim=0)
+            scores_sp = torch.norm(interactions_sp, 2, dim=2)
+            scores_po = torch.norm(interactions_po, 2, dim=2)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
