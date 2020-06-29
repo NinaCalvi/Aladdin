@@ -1,6 +1,6 @@
 import numpy as np
 from ampligraph.datasets import load_fb15k
-from ampligraph.latent_features import ComplEx
+from ampligraph.latent_features import ComplEx, TransE
 from ampligraph.evaluation import evaluate_performance, mrr_score, hits_at_n_score
 
 def main():
@@ -10,11 +10,19 @@ def main():
 
     # Initialize a ComplEx neural embedding model with pairwise loss function:
     # The model will be trained for 300 epochs.
-    model = ComplEx(batches_count=100, seed=3, epochs=1000, k=200, eta=10,
-                    # Use adam optimizer with learning rate 1e-3
-                    optimizer='adagrad', optimizer_params={'lr':0.5},
+    # model = ComplEx(batches_count=100, seed=3, epochs=1000, k=200, eta=10,
+    #                 optimizer='adagrad', optimizer_params={'lr':0.5},
+    #                 # Use pairwise loss with margin 0.5
+    #                 loss='nll',
+    #                 # Use L2 regularizer with regularizer weight 1e-5
+    #                 regularizer='LP', regularizer_params={'p':2, 'lambda':0.01},
+    #                 # Enable stdout messages (set to false if you don't want to display)
+    #                 verbose=True)
+
+    model = TransE(batches_count=100, seed=0, epochs=1000, k=50, eta=10,
+                    optimizer='sgd', optimizer_params={'lr':0.01},
                     # Use pairwise loss with margin 0.5
-                    loss='nll',
+                    loss='pairwise',
                     # Use L2 regularizer with regularizer weight 1e-5
                     regularizer='LP', regularizer_params={'p':2, 'lambda':0.01},
                     # Enable stdout messages (set to false if you don't want to display)

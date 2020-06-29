@@ -10,7 +10,7 @@ def reduce_loss(loss: torch.Tensor, reduction_type: str):
         return torch.mean(loss, dim=0)
 
 
-def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device, pos_size: int, reduction_type: str = "avg"):
+def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device, pos_size: int, reduction_type: str = "avg", margin_value: float =1.0):
     '''
     predictions: (N,) scores vector of a triple
     loss: type of loss function
@@ -33,6 +33,8 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 
     if loss == 'pw_hinge':
         return pointwise_hinge_loss(predictions, targets, device, reduction_type)
+    elif loss == 'pair_hing':
+        return pairwise_hinge_loss(pos_scores, neg_scores, reduction_type, device, margin_value,)
     elif loss == 'pw_logistic':
         return pointwise_logistic_loss(predictions, targets, device, reduction_type)
     elif loss == 'pw_square':
@@ -64,6 +66,17 @@ def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduc
 
     losses = nn.relu(margin - predictions * targets.to(device))
     return reduce_loss(losses, reduction_type)
+
+def pairwise_hinge_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Tensor, reduction_type: str, device: torch.device, margin_value: float=1.0):
+    '''
+    pos_socres = scores for positive instances
+    neg_scores = scores for neg instances (i.e.)
+    pariwise hing loss: relu(margin + positive_scores - negative_scores)
+    '''
+    res = 0
+    for p in pos_predictions:
+        res += torch.relu(margin_value + neg_predictions - pos_predictions)
+    return res
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
     '''

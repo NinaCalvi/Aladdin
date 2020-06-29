@@ -1,0 +1,17 @@
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/transE_fb.out
+#$ -e $HOME/transE_fb.err
+#$ -t 1-10
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+
+conda activate libkge_new
+
+cd ${HOME}/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ../test2.py  --data fb15 --model transe --epochs 1000 --batch-size 4831 --embedding-size 50 --optimizer sgd --learning-rate 0.01 --loss-margin 1 --transe-norm l1 --regulariser f2 --reg-weight 0.01 --nb-negs 10 --valid --quiet

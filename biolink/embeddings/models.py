@@ -95,7 +95,7 @@ class KBCModel(nn.Module, ABC):
 class CP(KBCModel):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: str,
-            init_size: float = 1e-3,
+            device: torch.device, init_size: float = 1e-3,
     ):
         '''
         loss - what type of loss
@@ -113,6 +113,7 @@ class CP(KBCModel):
         self.rhs.weight.data *= init_size
 
         self.loss = loss
+        self.device = device
 
     def score(self, x):
         lhs = self.lhs(x[:, 0])
@@ -141,13 +142,13 @@ class CP(KBCModel):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
     def compute_loss(self, scores, pos_size, reduction_type='avg'):
-        return compute_kge_loss(scores, self.loss, pos_size, reduction_type)
+        return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type)
 
 
 class TransE(KBCModel):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int, loss: str,
-            init_size: float = 1e-3, norm_: str = 'l1',
+            device: torch.device, init_size: float = 1e-3, norm_: str = 'l1', *args
     ):
         """
         Parameters
@@ -156,6 +157,7 @@ class TransE(KBCModel):
         rank: size of embeddings
         init_size: value to initialize embeddings
         norm_: how to normalise the scoring function
+        *args: should ideally just be the argument parser object
         """
         super(TransE, self).__init__()
         self.sizes = sizes
@@ -171,6 +173,8 @@ class TransE(KBCModel):
 
         self.norm_ = norm_
         self.loss = loss
+
+        self.device = device
 
     def score(self, x):
         """
@@ -230,14 +234,13 @@ class TransE(KBCModel):
         return self.lhs(queries[:, 0]).data + self.rel(queries[:, 1]).data
 
     def compute_loss(self, scores, pos_size, reduction_type='avg'):
-        return compute_kge_loss(scores, self.loss, pos_size, reduction_type)
+        return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, args[0].loss_margin)
 
 
 
 class ComplEx(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, init_size: float = 1e-3,
-    ):
+            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, init_size: float = 1e-3, *args):
         '''
         loss - what type of loss to use
         '''
@@ -325,4 +328,4 @@ class ComplEx(KBCModel):
         ], 1)
 
     def compute_loss(self, scores, pos_size, reduction_type='sum'):
-        return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type)
+        return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type, args[0].loss_margin)

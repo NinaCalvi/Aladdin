@@ -1,7 +1,7 @@
 #$ -cwd
 #$ -S /bin/bash
-#$ -o $HOME/ampligraph.out
-#$ -e $HOME/ampligrpah.err
+#$ -o $HOME/ampligraph_transe.out
+#$ -e $HOME/ampligrpah_transe.err
 #$ -t 1-10
 #$ -l tmem=15G
 #$ -l h_rt=18:00:00
@@ -14,4 +14,4 @@ export LANGUAGE="en_US:en"
 
 cd ${HOME}/Dissertation/Aladdin/biolink/
 
-test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./testAmpli.py
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ../testAmpli.py
