@@ -33,10 +33,12 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 
     if loss == 'pw_hinge':
         return pointwise_hinge_loss(predictions, targets, device, reduction_type)
-    elif loss == 'pair_hing':
-        return pairwise_hinge_loss(pos_scores, neg_scores, reduction_type, device, margin_value,)
+    elif loss == 'pair_hinge':
+        return pairwise_hinge_loss(pos_scores, neg_scores, reduction_type, device, margin_value)
     elif loss == 'pw_logistic':
         return pointwise_logistic_loss(predictions, targets, device, reduction_type)
+    elif loss == 'pair_logistic':
+        return pairwise_logistic_loss(pos_socres, neg_scores, reduction_type, device)
     elif loss == 'pw_square':
         #targets need to be bingary
         targets = (targets + 1)/2
@@ -58,6 +60,18 @@ def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, de
 
     return reduce_loss(losses, reduction_type)
 
+def pairwise_logistic_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Tensor, reduction_type: str, device: torch.device):
+    softplus = nn.Softplus()
+    pos_predictions = torch.clamp(pos_predictions, -75.0, 75.0)
+    neg_predictions = torch.clamp(neg_predictions, -75.0, 75.0)
+
+    res = 0
+    for p in pos_predictions:
+        res += torch.sum(softplus(neg_predictions - p), dim=0)
+    return res
+
+
+
 def pointwise_hinge_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, device: torch.device, margin_value: float = 1.0):
     '''
     Point hinge loss: (1-f(x)*l(x))
@@ -75,7 +89,7 @@ def pairwise_hinge_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Te
     '''
     res = 0
     for p in pos_predictions:
-        res += torch.relu(margin_value + neg_predictions - pos_predictions)
+        res += torch.sum(torch.relu(margin_value + neg_predictions - p, dim=0)
     return res
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
