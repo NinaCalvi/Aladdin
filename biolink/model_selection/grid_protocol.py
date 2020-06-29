@@ -46,21 +46,17 @@ def select_best_model(model, model_params_options, X_train, X_val, X_test, nb_en
 
         optimizer = choose(model_params, 'optimizer', cn.OPTIMIZER)
         loss = choose(model_params, 'loss', cn.LOSS)
+        regulariser = choose(model_params, 'regulariser', cn.REG)
+        reg_weight = choose(model_params, 'reg_weight', cn.REG_WEIGHT)
 
-        optimizer_name = args.optimizer
-        loss = args.loss
-        regulariser = args.regulariser
-        reg_weight = args.reg_weight
+        seed = choose(model_params, 'seed', cn.SEED)
 
-        seed = args.seed
-        quiet = args.quiet
+        transe_norm = choose(model_params, 'transe_norm', cn.TRANSE_NORM)
 
+        quiet = True
 
-        print('MCL', args.mcl)
-
-
-        logger.info(f'Valid: {args.valid}')
-
+        mcl = choose(model_params, 'mcl', cn.MCL)
+        valid = True
 
 
         # set the seeds
@@ -74,20 +70,12 @@ def select_best_model(model, model_params_options, X_train, X_val, X_test, nb_en
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         logger.info(f'Device: {device}')
 
-
-
-        #NUMBER OF ENTITIES IS GIVEN SAME AS BETWEEN OBJECTS AND SUBJECTS
-        #THIS MAY BE ALSO BE DUE TO THE SYMMETRIC/AUGMENTATION SITUATION
-
-        bench_idx_data = torch.cat((train_data, valid_data, test_data), 0)
-        #need to pass size of embeddings
-        # if parser.model == 'complex':
-        if args.mcl:
+        if mcl:
             model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size),
-            'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, norm_ = args.transe_norm)
+            'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, norm_ = transe_norm)
         else:
             model_dict = {'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args),
-            'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, norm_=args.transe_norm, args)
+            'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args, norm_=transe_norm)
 
         model = model_dict[args.model]()
         model.to(device)

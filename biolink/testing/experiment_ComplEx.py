@@ -57,7 +57,7 @@ def main(argv):
     parser.add_argument('--nb-negs', action='store', type=int, default=6)
     parser.add_argument('--transe-norm', action='store', type=str, default='l1')
 
-    parser.add_argument('--loss-margin', action='store', type='float', default=1.0)
+    parser.add_argument('--loss-margin', action='store', type=float, default=1.0)
 
     parser.add_argument('--seed', action='store', type=int, default=5)
     parser.add_argument('--valid', action='store_true', default=False)
