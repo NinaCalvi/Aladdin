@@ -55,7 +55,7 @@ def main(argv):
     parser.add_argument('--reg-weight', action='store', type=float, required=True)
 
     parser.add_argument('--nb-negs', action='store', type=int, default=6)
-    parser.add_argument('--transe-norm', action='store', type='str', default='l1')
+    parser.add_argument('--transe-norm', action='store', type=str, default='l1')
 
     parser.add_argument('--loss-margin', action='store', type='float', default=1.0)
 
