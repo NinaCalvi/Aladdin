@@ -72,6 +72,9 @@ def select_best_model(model_params_options, X_train, X_val, X_test, nb_ents, nb_
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         logger.info(f'Device: {device}')
 
+
+        #PROBLEM THAT I WOULD INITIALLY BE ADDING ARGS - BUT THIS IS NOT IDEAL 
+
         if mcl:
             model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size),
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, norm_ = transe_norm)
