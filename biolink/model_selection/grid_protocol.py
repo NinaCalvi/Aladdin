@@ -31,13 +31,15 @@ def choose(dictionary, parameter_key, parameter_constant):
     else:
         return parameter_constant
 
-def select_best_model(model, model_params_options, X_train, X_val, X_test, nb_ents, nb_rels, filter=True):
+def select_best_model(model_params_options, X_train, X_val, X_test, nb_ents, nb_rels, filter=True):
     bench_idx_data = torch.cat((train_data, valid_data, test_data), 0)
     model_params_grid = list(ParameterGrid(model_params_options))
 
     for model_params in model_params_grid:
 
         logger.info(f'model parameters \t{model_params}')
+
+        model = choose(model_params, 'model', cn.MODEL)
 
         emb_size = choose(model_params, 'embedding_size', cn.EMB_SIZE)
         batch_size = choose(model_params, 'batch_size', cn.BATCH_SIZE)
@@ -77,7 +79,7 @@ def select_best_model(model, model_params_options, X_train, X_val, X_test, nb_en
             model_dict = {'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args),
             'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args, norm_=transe_norm)
 
-        model = model_dict[args.model]()
+        model = model_dict[model]()
         model.to(device)
 
         optimizer_factory = {

@@ -14,3 +14,5 @@ SEED = 3
 MCL = True
 
 TRANSE_NORM = 'l1'
+
+MODEL = 'complex'

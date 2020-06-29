@@ -191,6 +191,12 @@ class TransE_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
 
+
+        logger.info(f'lhs shape \t{lhs.shape}')
+        logger.info(f'rel shape \t{rel.shape}')
+        logger.info(f'rhs shape \t{rhs.shape}')
+        logger.info(f'rhs weights shape \t{self.rhs.weigth.shape}')
+
         #need to compute the difference with each
         #TODO: FINISH THIS!!
         #adding new vertical dimension
