@@ -122,10 +122,10 @@ def main(argv):
     # if parser.model == 'complex':
     if args.mcl:
         model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size),
-        'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, norm_ = args.transe_norm}
+        'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, norm_ = args.transe_norm)
     else:
         model_dict = {'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args),
-        'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, norm_=args.transe_norm, args)}
+        'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, norm_=args.transe_norm, args)
 
     model = model_dict[args.model]()
     model.to(device)
