@@ -128,7 +128,7 @@ def main(argv):
     else:
         model_dict = {
             'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args),
-            'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, norm_=args.transe_norm, args)
+            'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, args, norm_=args.transe_norm)
         }
 
     model = model_dict[args.model]()

@@ -148,7 +148,7 @@ class CP(KBCModel):
 class TransE(KBCModel):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int, loss: str,
-            device: torch.device, init_size: float = 1e-3, norm_: str = 'l1', *args
+            device: torch.device, *args,  init_size: float = 1e-3, norm_: str = 'l1'
     ):
         """
         Parameters
@@ -240,7 +240,7 @@ class TransE(KBCModel):
 
 class ComplEx(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, init_size: float = 1e-3, *args):
+            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, *args, init_size: float = 1e-3):
         '''
         loss - what type of loss to use
         '''
