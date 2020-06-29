@@ -19,7 +19,7 @@ def main():
     #                 # Enable stdout messages (set to false if you don't want to display)
     #                 verbose=True)
 
-    model = TransE(batches_count=100, seed=0, epochs=1000, k=50, eta=1,
+    model = TransE(batches_count=100, seed=0, epochs=1000, k=50, eta=10,
                     optimizer='sgd', optimizer_params={'lr':0.01},
                     # Use pairwise loss with margin 0.5
                     loss='pairwise',
