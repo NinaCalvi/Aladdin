@@ -89,7 +89,7 @@ def pairwise_hinge_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Te
     '''
     res = 0
     for p in pos_predictions:
-        res += torch.sum(torch.relu(margin_value + neg_predictions - p, dim=0)
+        res += torch.sum(torch.relu(margin_value + neg_predictions - p, dim=0))
     return res
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
