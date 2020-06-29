@@ -73,7 +73,9 @@ def select_best_model(model_params_options, X_train, X_val, X_test, nb_ents, nb_
         logger.info(f'Device: {device}')
 
 
-        #PROBLEM THAT I WOULD INITIALLY BE ADDING ARGS - BUT THIS IS NOT IDEAL 
+        #PROBLEM THAT I WOULD INITIALLY BE ADDING ARGS - BUT THIS IS NOT IDEAL
+        #could switch args to dctionary
+        #dict = vars(args) transforms argparse to dictionary
 
         if mcl:
             model_dict = {'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size),
@@ -96,11 +98,6 @@ def select_best_model(model_params_options, X_train, X_val, X_test, nb_ents, nb_
 
 
         train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args)
-
-        # if args.mcl:
-        #     train.train_mc(model, regulariser, optimizer, train_data, args)
-        # else:
-        #     train.train_not_mc(model, regulariser, optimizer, train_data, args)
 
         logger.info(f'Done training')
 
