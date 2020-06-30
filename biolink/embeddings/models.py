@@ -143,7 +143,7 @@ class CP(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, pos_size, reduction_type='avg'):
+    def compute_loss(self, scores, pos_size, reduction_type='sum'):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
 

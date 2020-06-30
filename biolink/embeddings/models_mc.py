@@ -138,6 +138,51 @@ class CP_MC(KBCModelMCL):
     def get_queries(self, queries: torch.Tensor):
         return self.lhs(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
+
+class DistMult_MC(KBCModelMCL):
+    def __init__(
+            self, sizes: Tuple[int, int, int], rank: int,
+            init_size: float = 1e-3,
+    ):
+        '''
+        loss - what type of loss
+        '''
+        super(DistMult_MC, self).__init__()
+        self.sizes = sizes
+        self.rank = rank
+
+        self.emb = nn.Embedding(sizes[0], rank, sparse=True)
+        self.rel = nn.Embedding(sizes[1], rank, sparse=True)
+
+        self.emb.weight.data *= init_size
+        self.rel.weight.data *= init_size
+
+    def score(self, x):
+        lhs = self.emb(x[:, 0])
+        rel = self.rel(x[:, 1])
+        rhs = self.emb(x[:, 2])
+
+        return torch.sum(lhs * rel * rhs, 1, keepdim=True)
+
+    def forward(self, x):
+        lhs = self.emb(x[:, 0])
+        rel = self.rel(x[:, 1])
+        rhs = self.emb(x[:, 2])
+        #score subject predicate
+        score_sp =  (lhs * rel) @ self.rhs.weight.t()
+
+        #score predicate object
+        score_po = (rhs * rel) @ self.lhs.weight.t()
+        return score_sp, score_po, (lhs, rel, rhs)
+
+    def get_rhs(self, chunk_begin: int, chunk_size: int):
+        return self.rhs.weight.data[
+            chunk_begin:chunk_begin + chunk_size
+        ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        return self.emb(queries[:, 0]).data * self.rel(queries[:, 1]).data
+
 class TransE_MC(KBCModelMCL):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int,
