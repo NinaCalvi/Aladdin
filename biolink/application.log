@@ -1,0 +1,98 @@
+INFO - Note: NumExpr detected 40 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO - NumExpr defaulting to 8 threads.
+INFO - Note: NumExpr detected 24 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO - NumExpr defaulting to 8 threads.
+INFO - 
+--------- Loss ---------
+INFO - Name : nll
+INFO - eta : 10
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.01
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.5
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - Early stopping at epoch:150
+INFO - Best mrr:   0.002010
+INFO - Note: NumExpr detected 40 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO - NumExpr defaulting to 8 threads.
+INFO - 
+--------- Loss ---------
+INFO - Name : nll
+INFO - eta : 10
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.01
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adagrad
+INFO - lr : 0.5
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - Early stopping at epoch:150
+INFO - Best mrr:   0.428496
+INFO - Note: NumExpr detected 24 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO - NumExpr defaulting to 8 threads.
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 10
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.01
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : sgd
+INFO - lr : 0.01
+INFO - decay_cycle : 0
+INFO - cosine_decay : False
+INFO - expand_factor : 1
+INFO - decay_lr_rate : 2
+INFO - end_lr : 1e-08
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - Early stopping at epoch:350
+INFO - Best mrr:   0.116269
+INFO - Note: NumExpr detected 40 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO - NumExpr defaulting to 8 threads.
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 10
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.01
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : sgd
+INFO - lr : 0.01
+INFO - decay_cycle : 0
+INFO - cosine_decay : False
+INFO - expand_factor : 1
+INFO - decay_lr_rate : 2
+INFO - end_lr : 1e-08
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - Early stopping at epoch:250
+INFO - Best mrr:   0.111301
