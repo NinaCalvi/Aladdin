@@ -187,9 +187,9 @@ class TransE_MC(KBCModelMCL):
         return -scores
 
     def forward(self, x):
-        lhs = torch.split(self.lhs(x[:, 0]), 30)
-        rel = torch.split(self.rel(x[:, 1]), 30)
-        rhs = torch.split(self.rhs(x[:, 2]), 30)
+        lhs = torch.split(self.lhs(x[:, 0]), 100)
+        rel = torch.split(self.rel(x[:, 1]), 100)
+        rhs = torch.split(self.rhs(x[:, 2]), 100)
 
         #need to compute the difference with each
         #TODO: FINISH THIS!!
@@ -232,7 +232,7 @@ class TransE_MC(KBCModelMCL):
                 scores_po = torch.cat((scores_po, scores_po_tmp), 0)
                 scores_sp = torch.cat((scores_sp, scores_sp_tmp), 0)
             del scores_sp_tmp
-            del scrose_po_tmp
+            del scores_po_tmp
             torch.cuda.empty_cache()
 
             print(scores_sp.shape)
