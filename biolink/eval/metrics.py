@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from biolink.embeddings import KBCModel, KBCModelMCL
+from biolink.embeddings import KBCModel, KBCModelMCL, TransE
 import logging
 import os
 import sys
@@ -127,6 +127,9 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     metrics = {}
     sp_to_o = {}
     po_to_s = {}
+
+    if isinstance(model, TransE):
+        batch_size = 90
 
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance.numpy()
