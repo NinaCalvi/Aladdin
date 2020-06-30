@@ -187,9 +187,9 @@ class TransE_MC(KBCModelMCL):
         return -scores
 
     def forward(self, x):
-        lhs = torch.split(self.lhs(x[:, 0]), 300)
-        rel = torch.split(self.rel(x[:, 1]), 300)
-        rhs = torch.split(self.rhs(x[:, 2]), 300)
+        lhs = torch.split(self.lhs(x[:, 0]), 30)
+        rel = torch.split(self.rel(x[:, 1]), 30)
+        rhs = torch.split(self.rhs(x[:, 2]), 30)
 
         #need to compute the difference with each
         #TODO: FINISH THIS!!
@@ -207,6 +207,7 @@ class TransE_MC(KBCModelMCL):
         for l, rl, rh in zip(rhs, rel, rhs):
             # interactions_sp = (l + rl)[:,None] - self.rhs.weight
             scores_sp_tmp = torch.norm((l + rl)[:,None] - self.rhs.weight, norm, dim=2)
+            print(scores_sp_shape)
 
             # print(torch.cuda.memory_allocated())
             # scores_sp_tmp = torch.norm(interactions_sp, norm, dim=2)
