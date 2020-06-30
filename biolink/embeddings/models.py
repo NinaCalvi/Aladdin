@@ -198,9 +198,9 @@ class TransE(KBCModel):
         return -scores, (lhs, rel, rhs)
 
     def forward(self, x):
-        lhs = torch.split(self.lhs(x[:, 0]), 300)
-        rel = torch.split(self.rel(x[:, 1]), 300)
-        rhs = torch.split(self.rhs(x[:, 2]), 300)
+        lhs = self.lhs(x[:, 0])
+        rel = self.rel(x[:, 1])
+        rhs = self.rhs(x[:, 2])
 
         #need to compute the difference with each
         #TODO: FINISH THIS!!
@@ -208,26 +208,33 @@ class TransE(KBCModel):
         scores_sp = None
         scores_po = None
 
-        for l, rl, rh in zip(rhs, rel, rhs):
-            interactions_sp = (l + rl)[:,None] - self.rhs.weight
+        if self.norm_ == 'l1':
+            norm = 1
+        elif self.norm_ == 'l2':
+            norm = 2
+        else:
+            raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
-            interactions_po = (self.lhs.weight + rl[:,None]) - rh[:,None]
+
+        # interactions_sp = (l + rl)[:,None] - self.rhs.weight
+        scores_sp_tmp = torch.norm((lhs + rel)[:,None] - self.rhs.weight, norm, dim=2)
+
+        scores_po_tmp = torch.norm((self.lhs.weight + rel[:,None]) - rhs[:,None], norm, dim=2)
+            # scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
+            # del interactions_po
+            # torch.cuda.empty_cache()
             #should take the norm across each row of matrix
-            if self.norm_ == 'l1':
-                scores_sp_tmp = torch.norm(interactions_sp, 1, dim=2)
-                scores_po_tmp = torch.norm(interactions_po, 1, dim=2)
-            if self.norm_ == 'l2':
-                scores_sp_tmp = torch.norm(interactions_sp, 2, dim=2)
-                scores_po_tmp = torch.norm(interactions_po, 2, dim=2)
-            else:
-                raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
-            if scores_po is None:
-                scores_po = scores_po_tmp
-                scores_sp = scores_sp_tmp
-            else:
-                scores_po = torch.cat((scores_po, scores_po_tmp), 0)
-                scores_sp = torch.cat((scores_sp, scores_sp_tmp), 0)
+        if scores_po is None:
+            scores_po = scores_po_tmp
+            scores_sp = scores_sp_tmp
+        else:
+            scores_po = torch.cat((scores_po, scores_po_tmp), 0)
+            scores_sp = torch.cat((scores_sp, scores_sp_tmp), 0)
+        del scores_sp_tmp
+        del scores_po_tmp
+        torch.cuda.empty_cache()
+
 
         return -scores_sp, -scores_po, (lhs, rel, rhs)
 
