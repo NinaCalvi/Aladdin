@@ -202,6 +202,8 @@ class TransE_MC(KBCModelMCL):
 
             interactions_po = (self.lhs.weight + rl[:,None]) - rh[:,None]
             #should take the norm across each row of matrix
+            print('norm', self.norm_)
+            print(self.norm_ == 'l1')
             if self.norm_ == 'l1':
                 scores_sp_tmp = torch.norm(interactions_sp, 1, dim=2)
                 scores_po_tmp = torch.norm(interactions_po, 1, dim=2)
@@ -210,6 +212,10 @@ class TransE_MC(KBCModelMCL):
                 scores_po_tmp = torch.norm(interactions_po, 2, dim=2)
             else:
                 raise ValueError("Unknwon norm type given (%s)" % self.norm_)
+
+            del interactions_sp
+            del interactions_po
+            torch.cuda.empty_cache()
 
             if scores_po is None:
                 scores_po = scores_po_tmp
@@ -220,7 +226,7 @@ class TransE_MC(KBCModelMCL):
             del scores_sp_tmp
             del scrose_po_tmp
             torch.cuda.empty_cache()
-            
+
             print(scores_sp.shape)
             print(scores_po.shape)
 
