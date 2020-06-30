@@ -163,9 +163,9 @@ class TransE(KBCModel):
         self.sizes = sizes
         self.rank = rank
 
-        self.lhs = nn.Embedding(sizes[0], rank, sparse=True)
-        self.rel = nn.Embedding(sizes[1], rank, sparse=True)
-        self.rhs = nn.Embedding(sizes[2], rank, sparse=True)
+        self.lhs = nn.Embedding(sizes[0], rank) #removed sparse
+        self.rel = nn.Embedding(sizes[1], rank)
+        self.rhs = nn.Embedding(sizes[2], rank)
 
         self.lhs.weight.data *= init_size
         self.rel.weight.data *= init_size
