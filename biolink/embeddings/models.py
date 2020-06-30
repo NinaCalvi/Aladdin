@@ -185,6 +185,10 @@ class TransE(KBCModel):
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
 
+        print(self.norm_)
+        print(self.norm_ == 'l1')
+        print('l1' == 'l1')
+
         interactions = lhs + rel - rhs
         if self.norm_ == 'l1':
             scores = torch.norm(interactions, 1, -1)
@@ -218,7 +222,7 @@ class TransE(KBCModel):
 
         # interactions_sp = (l + rl)[:,None] - self.rhs.weight
         scores_sp = torch.norm((lhs + rel)[:,None] - self.rhs.weight, norm, dim=2)
-        
+
         scores_po = torch.norm((self.lhs.weight + rel[:,None]) - rhs[:,None], norm, dim=2)
             # scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
             # del interactions_po
