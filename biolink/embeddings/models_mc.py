@@ -205,19 +205,22 @@ class TransE_MC(KBCModelMCL):
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
         for l, rl, rh in zip(rhs, rel, rhs):
-            interactions_sp = (l + rl)[:,None] - self.rhs.weight
-            print(torch.cuda.memory_allocated())
-            scores_sp_tmp = torch.norm(interactions_sp, norm, dim=2)
+            # interactions_sp = (l + rl)[:,None] - self.rhs.weight
+            scores_sp_tmp = torch.norm((l + rl)[:,None] - self.rhs.weight, norm, dim=2)
 
-            del interactions_sp
-            torch.cuda.empty_cache()
-            print(torch.cuda.memory_allocated())
+            # print(torch.cuda.memory_allocated())
+            # scores_sp_tmp = torch.norm(interactions_sp, norm, dim=2)
+
+            # del interactions_sp
+            # torch.cuda.empty_cache()
+            # print(torch.cuda.memory_allocated())
 
 
-            interactions_po = (self.lhs.weight + rl[:,None]) - rh[:,None]
-            scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
-            del interactions_po
-            torch.cuda.empty_cache()
+            # interactions_po = (self.lhs.weight + rl[:,None]) - rh[:,None]
+            scores_po_tmp = torch.norm((self.lhs.weight + rl[:,None]) - rh[:,None], norm, dim=2)
+            # scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
+            # del interactions_po
+            # torch.cuda.empty_cache()
 
             #should take the norm across each row of matrix
 
