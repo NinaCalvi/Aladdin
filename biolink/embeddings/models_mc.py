@@ -157,11 +157,11 @@ class TransE_MC(KBCModelMCL):
 
         self.lhs = nn.Embedding(sizes[0], rank) #removed sparse - ADAM does not accept this should add option
         self.rel = nn.Embedding(sizes[1], rank) #removed sparse - ADAM does not accept this should add option
-        self.rhs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
+        # self.hs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
 
         self.lhs.weight.data *= init_size
         self.rel.weight.data *= init_size
-        self.rhs.weight.data *= init_size
+        # self.rhs.weight.data *= init_size
 
         self.norm_ = norm_
 
@@ -189,7 +189,7 @@ class TransE_MC(KBCModelMCL):
     def forward(self, x):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
-        rhs = self.rhs(x[:, 2])
+        rhs = self.lhs(x[:, 2]) #corrected initially has rhs
 
         #need to compute the difference with each
         #TODO: FINISH THIS!!
@@ -205,7 +205,7 @@ class TransE_MC(KBCModelMCL):
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
 
         # interactions_sp = (l + rl)[:,None] - self.rhs.weight
-        scores_sp = torch.norm((lhs + rel)[:,None] - self.rhs.weight, norm, dim=2)
+        scores_sp = torch.norm((lhs + rel)[:,None] - self.lhs.weight, norm, dim=2)
 
         scores_po = torch.norm((self.lhs.weight + rel[:,None]) - rhs[:,None], norm, dim=2)
             # scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
@@ -222,7 +222,7 @@ class TransE_MC(KBCModelMCL):
         """
         Get the chunk of the target vars
         """
-        return self.rhs.weight.data[
+        return self.lhs.weight.data[
             chunk_begin:chunk_begin + chunk_size
         ].transpose(0, 1)
 

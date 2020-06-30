@@ -165,11 +165,11 @@ class TransE(KBCModel):
 
         self.lhs = nn.Embedding(sizes[0], rank) #removed sparse
         self.rel = nn.Embedding(sizes[1], rank)
-        self.rhs = nn.Embedding(sizes[2], rank)
+        # self.rhs = nn.Embedding(sizes[2], rank)
 
-        self.lhs.weight.data *= init_size
-        self.rel.weight.data *= init_size
-        self.rhs.weight.data *= init_size
+        # self.lhs.weight.data *= init_size
+        # self.rel.weight.data *= init_size
+        # self.rhs.weight.data *= init_size
 
         self.norm_ = norm_
         self.loss = loss
@@ -184,7 +184,7 @@ class TransE(KBCModel):
 
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
-        rhs = self.rhs(x[:, 2])
+        rhs = self.lhs(x[:, 2])
 
         interactions = lhs + rel - rhs
         if self.norm_ == 'l1':
@@ -201,7 +201,7 @@ class TransE(KBCModel):
     def forward(self, x):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
-        rhs = self.rhs(x[:, 2])
+        rhs = self.lhs(x[:, 2])
 
         #need to compute the difference with each
         #TODO: FINISH THIS!!
@@ -218,7 +218,7 @@ class TransE(KBCModel):
 
 
         # interactions_sp = (l + rl)[:,None] - self.rhs.weight
-        scores_sp = torch.norm((lhs + rel)[:,None] - self.rhs.weight, norm, dim=2)
+        scores_sp = torch.norm((lhs + rel)[:,None] - self.lhs.weight, norm, dim=2)
 
         scores_po = torch.norm((self.lhs.weight + rel[:,None]) - rhs[:,None], norm, dim=2)
             # scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
@@ -233,7 +233,7 @@ class TransE(KBCModel):
         """
         Get the chunk of the target vars
         """
-        return self.rhs.weight.data[
+        return self.lhs.weight.data[
             chunk_begin:chunk_begin + chunk_size
         ].transpose(0, 1)
 
@@ -243,7 +243,83 @@ class TransE(KBCModel):
     def compute_loss(self, scores, pos_size, reduction_type='avg'):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
+class DistMult(KBCModel):
+    """
+    The DistMult Embedding model (DistMult)
+    """
 
+    def __init__(self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, *args, init_size: float = 1e-3):
+        """ Initialise new instance of the class DistMult
+        Parameters
+        ----------
+        size:
+            number of entites and relations
+        loss:
+            what loss to use
+        rank:
+            dimension of embedding
+        device:
+            cuda device
+        init size:
+            initialising embeddings (NEED TO ASK PASQUALE WHA THIS DOES)
+
+        """
+        super(ComplEx, self).__init__()
+        self.sizes = sizes
+        self.rank = rank
+
+        self.lhs = nn.Embedding(sizes[0], rank) #removed sparse
+        self.rel = nn.Embedding(sizes[1], rank)
+        self.rhs = nn.Embedding(sizes[2], rank)
+
+        self.lhs.weight.data *= init_size
+        self.rel.weight.data *= init_size
+        self.rhs.weight.data *= init_size
+
+
+        self.loss = loss
+        self.device = device
+        self.args = args
+
+    def score(self, x):
+        """ Compute DistMult scores for a set of triples given their component _embeddings
+        Returns
+        -------
+        Tensor
+            model scores for the original triples of the given _embeddings
+        """
+
+        lhs = self.lhs(x[:, 0])
+        rel = self.rel(x[:, 1])
+        rhs = self.rhs(x[:, 2])
+
+
+        em_interactions = lhs * rel * rhs
+        scores = torch.sum(em_interactions, axis=1)
+        return scores
+
+    def compute_loss(self, scores, *args, **kwargs):
+        """ Compute TransE training loss using the pairwise hinge loss
+        Parameters
+        ----------
+        scores: tf.Tenor
+            scores tensor
+        args: list
+            Non-Key arguments
+        kwargs: dict
+            Key arguments
+        Returns
+        -------
+        tf.float32
+            model loss value
+        """
+        # run the pointwise hinge loss as a default loss
+        if self.loss == "default":
+            pos_scores, neg_scores = tf.split(scores, num_or_size_splits=2)
+            targets = tf.concat((tf.ones(tf.shape(pos_scores)), -1 * tf.ones(tf.shape(neg_scores))), axis=0)
+            return pointwise_square_error_loss(scores, targets=targets, margin=self.margin, reduction_type="avg")
+        else:
+            return compute_kge_loss(scores, self.loss, reduction_type="avg")
 
 class ComplEx(KBCModel):
     def __init__(
