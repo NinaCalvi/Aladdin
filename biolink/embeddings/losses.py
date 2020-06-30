@@ -65,7 +65,7 @@ def pairwise_logistic_loss(pos_predictions: torch.Tensor, neg_predictions: torch
     pos_predictions = torch.clamp(pos_predictions, -75.0, 75.0)
     neg_predictions = torch.clamp(neg_predictions, -75.0, 75.0)
 
-    loss = softplus(neg_predictions - p)
+    loss = softplus(neg_predictions - pos_predictions)
     return reduce_loss(loss, reduction_type)
 
 
@@ -85,7 +85,7 @@ def pairwise_hinge_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Te
     neg_scores = scores for neg instances (i.e.)
     pariwise hing loss: relu(margin + positive_scores - negative_scores)
     '''
-    loss = torch.relu(margin_value + neg_predictions - p)
+    loss = torch.relu(margin_value + neg_predictions - pos_predictions)
     return reduce_loss(loss, reduction_type)
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, device: torch.device):
