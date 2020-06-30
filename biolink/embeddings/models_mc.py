@@ -350,3 +350,86 @@ class ComplEx_MC(KBCModelMCL):
             lhs[0] * rel[0] - lhs[1] * rel[1],
             lhs[0] * rel[1] + lhs[1] * rel[0]
         ], 1)
+
+
+class TriVec_MC(KBCModelMCL):
+    def __init__(
+            self, sizes: Tuple[int, int, int], rank: int,
+            init_size: float = 1e-3):
+        super(ComplEx_MC, self).__init__()
+        self.sizes = sizes
+        self.rank = rank
+
+        self.embeddings = nn.ModuleList([
+            nn.Embedding(s, 3 * rank, sparse=True)
+            for s in sizes[:2]
+        ])
+        self.embeddings[0].weight.data *= init_size
+        self.embeddings[1].weight.data *= init_size
+
+
+    def score(self, x):
+        lhs = self.embeddings[0](x[:, 0])
+        rel = self.embeddings[1](x[:, 1])
+        rhs = self.embeddings[0](x[:, 2])
+
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:self.rank*2], lhs[:, self.rank*2:]
+        rel = rel[:, :self.rank], rel[:, self.rank:self.rank*2], rel[:, self.rank*2:]
+        rhs = rhs[:, :self.rank], rhs[:, self.rank:self.rank*2], rhs[:, self.rank*2:]
+
+
+        return torch.sum(
+            lhs[0] * rel[0] * rhs[2] +
+            lhs[1] * rel[1] * rhs[1] +
+            lhs[2] * rel[2] * rhs[0],
+            1, keepdim=True
+        )
+
+    def forward(self, x):
+        lhs = self.embeddings[0](x[:, 0])
+        rel = self.embeddings[1](x[:, 1])
+        rhs = self.embeddings[0](x[:, 2])
+
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:self.rank*2], lhs[:, self.rank*2:]
+        rel = rel[:, :self.rank], rel[:, self.rank:self.rank*2], rel[:, self.rank*2:]
+        rhs = rhs[:, :self.rank], rhs[:, self.rank:self.rank*2], rhs[:, self.rank*2:]
+
+        to_score = self.embeddings[0].weight
+        to_score = to_score[:, :self.rank], to_score[:, self.rank:self.rank*2], to_score[:, self.rank*2:]
+
+        score_sp =  (
+                lhs[0] * rel[0] @ to_score[2].transpose(0, 1) +
+                lhs[1] * rel[1] @ to_score[1].transpose(0, 1) +
+                lhs[2] * rel[2] @ to_score[0].transpose(0, 1)
+            )
+
+        score_po = (
+                rhs[2] * rel[0] @ to_score[0].transpose(0, 1) +
+                rel[1] * rhs[1] @ to_score[1].transpose(0, 1) +
+                rel[2] * rhs[0] @ to_score[2].transpose(0, 1)
+            )
+
+
+        return score_sp, score_po, (
+            torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2 + lhs[2] ** 2),
+            torch.sqrt(rel[0] ** 2 + rel[1] ** 2 + rel[2] ** 2),
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2 + rhs[2] ** 2)
+        )
+
+
+    def get_rhs(self, chunk_begin: int, chunk_size: int):
+        return self.embeddings[0].weight.data[
+            chunk_begin:chunk_begin + chunk_size
+        ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        lhs = self.embeddings[0](queries[:, 0])
+        rel = self.embeddings[1](queries[:, 1])
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:self.rank*2], lhs[:, self.rank*2:]
+        rel = rel[:, :self.rank], rel[:, self.rank:self.rank*2], rel[:, self.rank*2:]
+
+        return torch.cat([
+            lhs[2] * rel[2],
+            lhs[1] * rel[1],
+            lhs[0] * rel[0]
+        ], 1)
