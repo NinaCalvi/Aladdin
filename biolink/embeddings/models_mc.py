@@ -207,17 +207,7 @@ class TransE_MC(KBCModelMCL):
         for l, rl, rh in zip(rhs, rel, rhs):
             # interactions_sp = (l + rl)[:,None] - self.rhs.weight
             scores_sp_tmp = torch.norm((l + rl)[:,None] - self.rhs.weight, norm, dim=2)
-            print(scores_sp_tmp.shape)
-
-            # print(torch.cuda.memory_allocated())
-            # scores_sp_tmp = torch.norm(interactions_sp, norm, dim=2)
-
-            # del interactions_sp
-            # torch.cuda.empty_cache()
-            # print(torch.cuda.memory_allocated())
-
-
-            # interactions_po = (self.lhs.weight + rl[:,None]) - rh[:,None]
+            
             scores_po_tmp = torch.norm((self.lhs.weight + rl[:,None]) - rh[:,None], norm, dim=2)
             # scores_po_tmp = torch.norm(interactions_po, norm, dim=2)
             # del interactions_po
