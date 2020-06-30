@@ -217,6 +217,10 @@ class TransE_MC(KBCModelMCL):
             else:
                 scores_po = torch.cat((scores_po, scores_po_tmp), 0)
                 scores_sp = torch.cat((scores_sp, scores_sp_tmp), 0)
+            del scores_sp_tmp
+            del scrose_po_tmp
+            torch.cuda.empty_cache()
+            
             print(scores_sp.shape)
             print(scores_po.shape)
 
