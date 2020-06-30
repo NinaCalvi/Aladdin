@@ -177,7 +177,7 @@ class TransE_MC(KBCModelMCL):
         interactions = lhs + rel - rhs
         if self.norm_ == 'l1':
             scores = torch.norm(interactions, 1, -1)
-        if self.norm_ == 'l2':
+        elif self.norm_ == 'l2':
             scores = torch.norm(interactions, 2, -1)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
@@ -214,7 +214,7 @@ class TransE_MC(KBCModelMCL):
 
             #should take the norm across each row of matrix
 
-        
+
         return -scores_sp, -scores_po, (lhs, rel, rhs)
 
 

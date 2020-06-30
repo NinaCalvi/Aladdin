@@ -184,15 +184,11 @@ class TransE(KBCModel):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
-
-        print(self.norm_)
-        print(self.norm_ == 'l1')
-        print('l1' == 'l1')
-
+        
         interactions = lhs + rel - rhs
         if self.norm_ == 'l1':
             scores = torch.norm(interactions, 1, -1)
-        if self.norm_ == 'l2':
+        elif self.norm_ == 'l2':
             scores = torch.norm(interactions, 2, -1)
         else:
             raise ValueError("Unknwon norm type given (%s)" % self.norm_)
