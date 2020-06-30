@@ -175,6 +175,7 @@ class TransE(KBCModel):
         self.loss = loss
 
         self.device = device
+        self.args = args
 
     def score(self, x):
         """
@@ -184,7 +185,7 @@ class TransE(KBCModel):
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.rhs(x[:, 2])
-        
+
         interactions = lhs + rel - rhs
         if self.norm_ == 'l1':
             scores = torch.norm(interactions, 1, -1)
@@ -240,7 +241,7 @@ class TransE(KBCModel):
         return self.lhs(queries[:, 0]).data + self.rel(queries[:, 1]).data
 
     def compute_loss(self, scores, pos_size, reduction_type='avg'):
-        return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, args[0].loss_margin)
+        return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
 
 
@@ -267,6 +268,7 @@ class ComplEx(KBCModel):
 
         self.loss = loss
         self.device = device
+        self.args = args
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])
@@ -334,4 +336,4 @@ class ComplEx(KBCModel):
         ], 1)
 
     def compute_loss(self, scores, pos_size, reduction_type='sum'):
-        return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type, args[0].loss_margin)
+        return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
