@@ -95,7 +95,7 @@ class KBCModel(nn.Module, ABC):
 class CP(KBCModel):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: str,
-            device: torch.device, *args, init_size: float = 1e-3,
+            device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3,
     ):
         '''
         loss - what type of loss
@@ -104,9 +104,16 @@ class CP(KBCModel):
         self.sizes = sizes
         self.rank = rank
 
-        self.lhs = nn.Embedding(sizes[0], rank, sparse=True)
-        self.rel = nn.Embedding(sizes[1], rank, sparse=True)
-        self.rhs = nn.Embedding(sizes[2], rank, sparse=True)
+
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+
+        self.lhs = nn.Embedding(sizes[0], rank, sparse=sparse_)
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_)
+        self.rhs = nn.Embedding(sizes[2], rank, sparse=sparse_)
 
         self.lhs.weight.data *= init_size
         self.rel.weight.data *= init_size
@@ -150,7 +157,7 @@ class CP(KBCModel):
 class TransE(KBCModel):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int, loss: str,
-            device: torch.device, *args,  init_size: float = 1e-3, norm_: str = 'l1'
+            device: torch.device, optimiser_name: str, *args,  init_size: float = 1e-3, norm_: str = 'l1'
     ):
         """
         Parameters
@@ -165,8 +172,14 @@ class TransE(KBCModel):
         self.sizes = sizes
         self.rank = rank
 
-        self.lhs = nn.Embedding(sizes[0], rank) #removed sparse
-        self.rel = nn.Embedding(sizes[1], rank)
+
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+        self.lhs = nn.Embedding(sizes[0], rank, sparse=sparse_) #removed sparse
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_)
         # self.rhs = nn.Embedding(sizes[2], rank)
 
         # self.lhs.weight.data *= init_size
@@ -252,7 +265,7 @@ class DistMult(KBCModel):
 
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: str,
-            device: torch.device, *args, init_size: float = 1e-3,
+            device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3,
     ):
         '''
         loss - what type of loss
@@ -261,8 +274,13 @@ class DistMult(KBCModel):
         self.sizes = sizes
         self.rank = rank
 
-        self.ent = nn.Embedding(sizes[0], rank, sparse=True)
-        self.rel = nn.Embedding(sizes[1], rank, sparse=True)
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+        self.ent = nn.Embedding(sizes[0], rank, sparse=sparse_)
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_)
 
         self.ent.weight.data *= init_size
         self.rel.weight.data *= init_size
@@ -303,7 +321,7 @@ class DistMult(KBCModel):
 
 class ComplEx(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, *args, init_size: float = 1e-3):
+            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3):
         '''
         loss - what type of loss to use
         '''
@@ -311,8 +329,14 @@ class ComplEx(KBCModel):
         self.sizes = sizes
         self.rank = rank
 
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 2 * rank) #REMOVED SPARSE TRUE
+            nn.Embedding(s, 2 * rank, sparse=sparse_) #REMOVED SPARSE TRUE
             for s in sizes[:2]
         ])
 
@@ -399,7 +423,7 @@ class ComplEx(KBCModel):
 #STILL NEEDS TO BE FINISHED
 class TriVec(KBCModel):
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, *args, init_size: float = 1e-3):
+            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3):
         '''
         loss - what type of loss to use
         '''
@@ -407,8 +431,13 @@ class TriVec(KBCModel):
         self.sizes = sizes
         self.rank = rank
 
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 3 * rank) #REMOVED SPARSE TRUE
+            nn.Embedding(s, 3 * rank, sparse=sparse_) #REMOVED SPARSE TRUE
             for s in sizes[:2]
         ])
 

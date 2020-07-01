@@ -95,7 +95,7 @@ class KBCModelMCL(nn.Module, ABC):
 class CP_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3,
+            optimiser_name: str, init_size: float = 1e-3,
     ):
         '''
         loss - what type of loss
@@ -104,9 +104,14 @@ class CP_MC(KBCModelMCL):
         self.sizes = sizes
         self.rank = rank
 
-        self.lhs = nn.Embedding(sizes[0], rank, sparse=True)
-        self.rel = nn.Embedding(sizes[1], rank, sparse=True)
-        self.rhs = nn.Embedding(sizes[2], rank, sparse=True)
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+        self.lhs = nn.Embedding(sizes[0], rank, sparse=sparse_)
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_)
+        self.rhs = nn.Embedding(sizes[2], rank, sparse=sparse_)
 
         self.lhs.weight.data *= init_size
         self.rel.weight.data *= init_size
@@ -142,7 +147,7 @@ class CP_MC(KBCModelMCL):
 class DistMult_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3,
+            optimiser_name: str, init_size: float = 1e-3,
     ):
         '''
         loss - what type of loss
@@ -153,9 +158,13 @@ class DistMult_MC(KBCModelMCL):
 
         # self.emb = nn.Embedding(sizes[0], rank, sparse=True)
         # self.rel = nn.Embedding(sizes[1], rank, sparse=True)
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
 
-        self.emb = nn.Embedding(sizes[0], rank)
-        self.rel = nn.Embedding(sizes[1], rank) #adam does not supposrt sparse
+        self.emb = nn.Embedding(sizes[0], rank, sparse=sparse_)
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_) #adam does not supposrt sparse
 
         self.emb.weight.data *= init_size
         self.rel.weight.data *= init_size
@@ -189,7 +198,7 @@ class DistMult_MC(KBCModelMCL):
 class TransE_MC(KBCModelMCL):
     def __init__(
             self, sizes:Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3, norm_: str = 'l1',
+            optimiser_name: str, init_size: float = 1e-3, norm_: str = 'l1',
     ):
         """
         Parameters
@@ -203,8 +212,13 @@ class TransE_MC(KBCModelMCL):
         self.sizes = sizes
         self.rank = rank
 
-        self.lhs = nn.Embedding(sizes[0], rank) #removed sparse - ADAM does not accept this should add option
-        self.rel = nn.Embedding(sizes[1], rank) #removed sparse - ADAM does not accept this should add option
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+        self.lhs = nn.Embedding(sizes[0], rank, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
         # self.hs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
 
         self.lhs.weight.data *= init_size
@@ -283,13 +297,18 @@ class TransE_MC(KBCModelMCL):
 class ComplEx_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3):
+            optimiser_name: str, init_size: float = 1e-3):
         super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
 
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 2 * rank, sparse=True)
+            nn.Embedding(s, 2 * rank, sparse=sparse_)
             for s in sizes[:2]
         ])
         self.embeddings[0].weight.data *= init_size
@@ -358,13 +377,18 @@ class ComplEx_MC(KBCModelMCL):
 class TriVec_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            init_size: float = 1e-3):
+            optimiser_name: str, init_size: float = 1e-3):
         super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
 
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 3 * rank, sparse=True)
+            nn.Embedding(s, 3 * rank, sparse=sparse_)
             for s in sizes[:2]
         ])
         self.embeddings[0].weight.data *= init_size
