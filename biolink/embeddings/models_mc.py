@@ -151,8 +151,11 @@ class DistMult_MC(KBCModelMCL):
         self.sizes = sizes
         self.rank = rank
 
-        self.emb = nn.Embedding(sizes[0], rank, sparse=True)
-        self.rel = nn.Embedding(sizes[1], rank, sparse=True)
+        # self.emb = nn.Embedding(sizes[0], rank, sparse=True)
+        # self.rel = nn.Embedding(sizes[1], rank, sparse=True)
+
+        self.emb = nn.Embedding(sizes[0], rank)
+        self.rel = nn.Embedding(sizes[1], rank)
 
         self.emb.weight.data *= init_size
         self.rel.weight.data *= init_size

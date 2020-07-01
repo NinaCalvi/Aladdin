@@ -1,0 +1,17 @@
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/distmul_fb.out
+#$ -e $HOME/distmul_fb.err
+#$ -t 1-2
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+
+conda activate libkge_new
+
+cd ${HOME}/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py  --data fb15k2 --model distmult --epochs 100 --mcl True --batch-size 100 --embedding-size 300 --optimizer adam --learning-rate 0.00005--regulariser n3 --reg-weight 0.0001 --quiet
