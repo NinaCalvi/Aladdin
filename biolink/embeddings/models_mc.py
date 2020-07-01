@@ -172,14 +172,14 @@ class DistMult_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.emb(x[:, 2])
         #score subject predicate
-        score_sp =  (lhs * rel) @ self.rhs.weight.t()
+        score_sp =  (lhs * rel) @ self.emb.weight.t()
 
         #score predicate object
-        score_po = (rhs * rel) @ self.lhs.weight.t()
+        score_po = (rhs * rel) @ self.emb.weight.t()
         return score_sp, score_po, (lhs, rel, rhs)
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
-        return self.rhs.weight.data[
+        return self.emb.weight.data[
             chunk_begin:chunk_begin + chunk_size
         ].transpose(0, 1)
 
@@ -220,7 +220,7 @@ class TransE_MC(KBCModelMCL):
 
         lhs = self.lhs(x[:, 0])
         rel = self.rel(x[:, 1])
-        rhs = self.rhs(x[:, 2])
+        rhs = self.lhs(x[:, 2])
 
         interactions = lhs + rel - rhs
         if self.norm_ == 'l1':
