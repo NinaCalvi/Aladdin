@@ -474,3 +474,83 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     logger.info('metrics done')
 
     return metrics
+
+
+
+
+#   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
+def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
+            batch_size: int, device: torch.device):
+    '''
+    Evaluation method immediately returns the metrics wanted
+    Parameters:
+    ---------------
+    all_triples: all triples in train/test/dev for calculaing filtered options
+    '''
+
+    #store the labels for subject_predicate and predicte_object that were seen in training
+    #some sp and po situations may have more than one label assigned to it (i.e. may link to different entitites)
+    #when calculating the score we would like to filter them out
+
+    sp_to_o = {}
+    po_to_s = {}
+    metrics = {}
+
+    predicate_indeces = set(all_triples[:, 1])
+    se_facts_full_dict = {se: set() for se in predicate_indices}
+
+    for s, p, o in all_triples:
+        se_facts_full_dict[p].add((s, p, o))
+
+
+    logger.info(f'all tiples \t{all_triples.size()}')
+
+
+    batch_start = 0
+
+    predicate_ap_list = []
+    predicate_auc_roc_list = []
+    predicate_auc_pr_list = []
+    predicate_p50_list = []
+
+    entities = list(set(list(np.concatenate([all_triples[:, 0], all_triples[:, 2]]))))
+    ents_combinations =  np.array([[d1, d2] for d1, d2 in list(itertools.product(entities, entities)) if d1 != d2])
+
+    eps = 1-10
+
+    softmax = nn.Softmax(dim=1)
+
+
+    for pred in predicate_indeces:
+        predicate_all_facts_set = se_facts_full_dict[se]
+        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == se])
+        predicate_test_facts_pos_size = len(predicate_test_facts_pos)
+
+        #get negative samples
+        se_test_facts_neg = np.array([[d1, se, d2] for d1, d2 in ents_combinations
+                                      if (d1, se, d2) not in predicate_all_facts_set
+                                      and (d2, se, d1) not in predicate_all_facts_set])
+
+        #ensure it's 1:1 positive to negative
+        np.random.shuffle(se_test_facts_neg)
+        se_test_facts_neg = se_test_facts_neg[:se_test_facts_pos_size, :]
+
+        se_test_facts_all = np.concatenate([se_test_facts_pos, se_test_facts_neg])
+        se_test_facts_labels = np.concatenate([np.ones([len(se_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
+        with torch.no_grad():
+            se_test_facts_all = se_test_facts_all.to(device)
+            se_test_facts_scores = model.score(set_test_facts_all)
+            se_test_facts_scores = softmax(se_test_facts_scores.cpu()).numpy()
+
+
+        # se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
+        se_auc_roc = roc_auc_score(se_test_facts_labels, se_test_facts_scores)
+        predicate_auc_roc_list.append(se_auc_roc)
+
+    logger.info('done')
+
+    metrics['AU-ROC'] = np.mean(predicate_auc_roc_list)
+    logger.info('metrics done')
+    logger.info(metrics['AUC-ROC'])
+
+    return metrics

@@ -1,0 +1,20 @@
+#!/bin/bash -l
+
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/cbr.out
+#$ -e $HOME/cbr.err
+#$ -t 1-1
+#$ -l tmem=8G
+#$ -l h_rt=8:00:00
+#$ -l gpu=false
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+
+source ${HOME}/libkge_new
+
+cd ${HOME}/Dissertation/CBR-AKBC
+
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=.  python code/cbr.py --dataset_name pse --test --k_adj 5 --max_num_programs 15
