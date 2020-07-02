@@ -35,7 +35,7 @@ def main(argv):
 
     configurations = list(cartesian_product(hyp_space))
 
-    path = 'logs/cbr/'
+    path = 'logs/cbr'
     is_rc = False
 
     # Check that we are on the UCLCS cluster first
