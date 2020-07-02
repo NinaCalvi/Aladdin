@@ -72,7 +72,7 @@ def main(argv):
 #$ -cwd
 #$ -S /bin/bash
 #$ -o /dev/null
-#$ -e /dev/null
+#$ -e $HOME/GRIDCB.err
 #$ -t 1-{}
 #$ -l tmem=8G
 #$ -l h_rt=8:00:00
