@@ -79,7 +79,7 @@ def main(argv):
 conda activate libkge_new
 export LANG="en_US.utf8"
 export LANGUAGE="en_US:en"
-cd ${HOME}/Dissertation/CBR-AKBC
+cd $HOME/Dissertation/CBR-AKBC
 """.format(nb_jobs)
 
     print(header)
