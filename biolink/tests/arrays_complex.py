@@ -34,18 +34,18 @@ def to_logfile(c, path):
 
 def main(argv):
     hyp_space = dict(
-        batch=[500, 1000],
-        epoch=[100, 300, 500],
+        batch=[25, 50, 100],
+        epoch=[100],
         emb_size=[50, 100, 150, 200],
         lr=[0.1, 0.001, 0.01],
         optim=['adagrad'],
-        reg=['f2', 'n3'],
-        reg_weight=[0.1, 0.3, 0.35, 0.01, 0.03, 0.035]
+        reg=['n3'],
+        reg_weight=[0.001, 0.005, 0.001, 0.05, 0.1, 0.5]
     )
 
     configurations = list(cartesian_product(hyp_space))
 
-    path = '/home/acalvi/Dissertation/Aladdin/covid/'
+    path = '/home/acalvi/Dissertation/Aladdin/covid'
     is_rc = False
 
     # Check that we are on the UCLCS cluster first
