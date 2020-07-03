@@ -16,7 +16,7 @@ def summary(configuration):
 
 
 def to_cmd(c, _path=None):
-    command = f'PYTHONPATH=. python ./code/data/get_paths.py ' \
+    command = f'PYTHONPATH=. python ./code/cbr.py ' \
         f'--dataset_name covid_data ' \
         f'-k_adj {c["k"]} -max_num_programs {c["n"]} '
     return command
