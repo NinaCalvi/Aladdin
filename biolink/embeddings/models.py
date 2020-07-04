@@ -11,6 +11,9 @@ import torch
 from torch import nn
 from .losses import compute_kge_loss
 
+from torch.nn.init import xavier_normal_
+
+
 
 class KBCModel(nn.Module, ABC):
     @abstractmethod
@@ -257,6 +260,100 @@ class TransE(KBCModel):
 
     def compute_loss(self, scores, pos_size, reduction_type='sum'):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
+
+
+class TuckEr(KBCModel):
+    """
+    The Tucker Embedding model
+    """
+
+    def __init__(
+            self, sizes: Tuple[int, int, int], rank: int, loss: str,
+            device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3,
+    ):
+        '''
+        loss - what type of loss
+        '''
+        super(DistMult, self).__init__()
+        self.sizes = sizes
+        self.rank = rank
+
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+
+        #suggests that relations and entities have different ranks as well potentailly
+        self.ent = nn.Embedding(sizes[0], rank)
+        self.rel = nn.Embedding(sizes[1], rank)
+
+        xavier_normal_(self.ent.weight.data)
+        xavier_normal_(self.rel.weight.data)
+
+
+        self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank, rank, rank)), dtype=torch.float, device="cuda", requires_grad=True))
+
+        self.bn0 = nn.BatchNorm1d(rank)
+        self.bn1 = nn.BatchNorm1d(rank)
+
+        self.loss = loss
+        self.device = device
+
+        self.args = args
+
+    def score(self, x):
+        lhs = self.ent(x[:, 0])
+        rel = self.rel(x[:, 1])
+        rhs = self.ent(x[:, 2])
+
+        return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs)
+
+    def forward(self, x, predict_lhs = False):
+        lhs = self.ent(x[:, 0])
+        rel = self.rel(x[:, 1])
+        rhs = self.ent(x[:, 2])
+
+        x = self.bn0(lhs)
+        x2 = self.bn0(rhs)
+        x = x.view(-1, 1, lhs.size(1))
+        x2 = x2.view(-1, rhs.size(1), 1)
+
+        W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
+        W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
+
+        x = torch.bmm(x, W_mat)
+        x2 = torch.bmm(W_mat, x2)
+
+        x = x.view(-1, lhs.size(1))
+        x2 = x2.view(-1, rhs.size(1))
+
+        x = self.bn1(x)
+        x2 = self.bn1(x2)
+
+        x = torch.mm(x, self.ent.weight.transpose(1,0))
+        x2 = torch.mm(x2, self.ent.weight.transpose(1,0))
+
+        pred_sp = torch.sigmoid(x)
+        pred_po = torch.sigmoid(x2)
+
+
+        return pred_sp, pred_po, (lsh, rel, rhs) #unsure whether should add w?
+
+    def get_rhs(self, chunk_begin: int, chunk_size: int):
+        return self.ent.weight.data[
+            chunk_begin:chunk_begin + chunk_size
+        ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        return self.ent(queries[:, 0]).data * self.rel(queries[:, 1]).data
+
+    def compute_loss(self, scores, pos_size, reduction_type='sum'):
+        return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
+
+
+
+
 
 class DistMult(KBCModel):
     """
