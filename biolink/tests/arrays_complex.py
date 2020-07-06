@@ -16,13 +16,13 @@ def summary(configuration):
 
 
 def to_cmd(c, _path=None):
-    command = f'PYTHONPATH=. python ./test2.py' \
+    command = f'PYTHONPATH=. python ./test2.py ' \
         f'--data covid ' \
         f'--mcl True ' \
-        f'--batch-size {c["batch"]} --epoch-size {c["epoch"]} '\
+        f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
-        f'--optimiser {c['optim']}'
+        f'--optimizer {c['optim']}'
         f'--quiet'
     return command
 
@@ -37,7 +37,7 @@ def main(argv):
         batch=[25, 50, 100],
         epoch=[100],
         emb_size=[50, 100, 150, 200],
-        lr=[0.1, 0.001, 0.01],
+        lr=[0.1, 0.01],
         optim=['adagrad'],
         reg=['n3'],
         reg_weight=[0.001, 0.005, 0.001, 0.05, 0.1, 0.5]

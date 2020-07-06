@@ -307,6 +307,9 @@ class TuckEr(KBCModel):
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
+        W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
+        W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
+
         return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs)
 
     def forward(self, x, predict_lhs = False):

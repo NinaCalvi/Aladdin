@@ -460,17 +460,21 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     metrics['H@10'] = hits[10]
 
     logger.info('done')
-
-    auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
-    auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
+    #
+    # auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
+    # auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
 
     logger.info('done not filtered aucroc')
 
-    auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
-    auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
+    # auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
+    # auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
+    # #
+    # metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
+    # metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
 
-    metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
-    metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
+        #
+    metrics['AU-ROC_raw'] = -1
+    metrics['AU-ROC_fil'] =  -1
     logger.info('metrics done')
 
     return metrics
