@@ -29,10 +29,10 @@ def rank(y_pred: np.array, true_idx: np.array):
 
 
     #an assign to each element in the list its rank within the sorted stuff
-    scored_true = y_pred[np.arange(len(y_pred)), true_idx]
-    rank = 1 + np.sum(y_pred >= scored_true.reshape(-1,1), axis=1)
-    # order_rank  = np.argsort(np.argsort(-y_pred))
-    # rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
+    #scored_true = y_pred[np.arange(len(y_pred)), true_idx]
+    #rank = 1 + np.sum(y_pred > scored_true.reshape(-1,1), axis=1)
+    order_rank  = np.argsort(np.argsort(-y_pred))
+    rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
     return rank
 
 def mean_rank(y_pred: np.array, true_idx: np.array):

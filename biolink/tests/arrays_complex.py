@@ -16,13 +16,13 @@ def summary(configuration):
 
 
 def to_cmd(c, _path=None):
-    command = f'PYTHONPATH=. python ./test2.py' \
+    command = f'PYTHONPATH=. python ./test2.py ' \
         f'--data covid ' \
         f'--mcl True ' \
-        f'--batch-size {c["batch"]} --epoch-size {c["epoch"]} '\
+        f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
-        f'--optimiser {c["optim"]} ' \
+        f'--optimizer {c["optim"]} ' \
         f'--quiet'
     return command
 
