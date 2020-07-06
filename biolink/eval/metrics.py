@@ -28,18 +28,11 @@ def rank(y_pred: np.array, true_idx: np.array):
     #and since argsort puts -ve value before the rest, this makes sense
 
 
-    #an assign to each element in the list its rank within the sorted stuff
-<<<<<<< HEAD
-    scored_true = y_pred[np.arange(len(y_pred)), true_idx]
-    rank = 1 + np.sum(y_pred > scored_true.reshape(-1,1), axis=1)
-    # order_rank  = np.argsort(np.argsort(-y_pred))
-    # rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
-=======
+
     #scored_true = y_pred[np.arange(len(y_pred)), true_idx]
     #rank = 1 + np.sum(y_pred > scored_true.reshape(-1,1), axis=1)
     order_rank  = np.argsort(np.argsort(-y_pred))
     rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
->>>>>>> b2a2a7aef45adda31c0ac018fbe6b2691b9966f0
     return rank
 
 def mean_rank(y_pred: np.array, true_idx: np.array):
