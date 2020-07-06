@@ -108,7 +108,10 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 
-def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False):
+    if auc:
+        return evaluate_auc(model, test_triples, all_triples, batch_size, device)
+
     if isinstance(model, KBCModelMCL):
         return evaluate_mc(model, test_triples, all_triples, batch_size, device)
     elif isinstance(model, KBCModel):

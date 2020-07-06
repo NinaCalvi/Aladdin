@@ -61,6 +61,7 @@ def main(argv):
 
     parser.add_argument('--seed', action='store', type=int, default=5)
     parser.add_argument('--valid', action='store_true', default=False)
+    parser.add_argument('--auc', action='store_true', default=False)
     parser.add_argument('--valid-stp', action='store', type=int, default=50)
 
 
@@ -158,7 +159,7 @@ def main(argv):
     for dataset_name, data in dataset.data.items():
         if dataset_name == 'test':
             logger.info(f'in evalute for dataset: \t{dataset_name}')
-            metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device)
+            metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
             logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
 
 if __name__ == '__main__':

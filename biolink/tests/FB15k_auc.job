@@ -1,0 +1,17 @@
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/fb15k_auc.out
+#$ -e $HOME/fb15k_auc.err
+#$ -t 1-2
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+
+conda activate libkge_new
+
+cd ${HOME}/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py  --data fb15k2 --model complex --mcl True --epochs 100 --batch-size 100 --embedding-size 100 --learning-rate 0.1 --regulariser n3 --reg-weight 5e-2 --auc --quiet
