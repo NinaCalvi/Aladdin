@@ -507,7 +507,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     se_facts_full_dict = {se: set() for se in predicate_indeces}
 
     for s, p, o in all_triples:
-        se_facts_full_dict[p].add((s, p, o))
+        se_facts_full_dict[p.item()].add((s, p, o))
 
 
     logger.info(f'all tiples \t{all_triples.size()}')
