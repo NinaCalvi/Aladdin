@@ -558,6 +558,6 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     metrics['AU-ROC'] = np.mean(predicate_auc_roc_list)
     logger.info('metrics done')
-    logger.info(metrics['AUC-ROC'])
+    logger.info(f'AUCO_ROC \t{metrics['AUC-ROC']}')
 
     return metrics
