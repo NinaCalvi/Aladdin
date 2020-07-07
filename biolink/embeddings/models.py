@@ -274,7 +274,7 @@ class TuckEr(KBCModel):
         '''
         loss - what type of loss
         '''
-        super(DistMult, self).__init__()
+        super(TuckEr, self).__init__()
         self.sizes = sizes
         self.rank = rank
 

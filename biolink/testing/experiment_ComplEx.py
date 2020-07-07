@@ -35,7 +35,7 @@ def main(argv):
 
     #model params
     parser.add_argument('--model', '-m', action='store', type=str, default='complex',
-                        choices=['distmult', 'complex', 'transe', 'cp'])
+                        choices=['distmult', 'complex', 'transe', 'cp', 'trivec'])
     parser.add_argument('--mcl', action='store', type=bool, default=False)
 
     parser.add_argument('--embedding-size', '-k', action='store', type=int, default=100)
