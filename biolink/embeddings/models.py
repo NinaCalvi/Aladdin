@@ -527,7 +527,7 @@ class TriVec(KBCModel):
         '''
         loss - what type of loss to use
         '''
-        super(ComplEx, self).__init__()
+        super(TriVec, self).__init__()
         self.sizes = sizes
         self.rank = rank
 
@@ -541,8 +541,8 @@ class TriVec(KBCModel):
             for s in sizes[:2]
         ])
 
-        # nn.init.xavier_normal(self.embeddings[0].weight)
-        # nn.init.xavier_normal(self.embeddings[1].weight)
+        nn.init.xavier_normal(self.embeddings[0].weight)
+        nn.init.xavier_normal(self.embeddings[1].weight)
         #
         # self.embeddings[0].weight.data *= init_size
         # self.embeddings[1].weight.data *= init_size

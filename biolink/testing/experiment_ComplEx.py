@@ -125,13 +125,15 @@ def main(argv):
         model_dict = {
             'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
-            'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name)
+            'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
+            'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name)
         }
     else:
         model_dict = {
             'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
             'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, norm_=args.transe_norm),
-            'distmult': lambda: DistMult((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args)
+            'distmult': lambda: DistMult((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
+            'tivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args)
         }
 
     model = model_dict[args.model]()
