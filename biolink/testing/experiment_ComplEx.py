@@ -133,7 +133,7 @@ def main(argv):
             'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
             'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, norm_=args.transe_norm),
             'distmult': lambda: DistMult((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
-            'tivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args)
+            'trivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args)
         }
 
     model = model_dict[args.model]()
