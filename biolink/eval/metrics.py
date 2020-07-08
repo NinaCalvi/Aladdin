@@ -3,6 +3,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 import numpy as np
 import torch
 from torch import nn
+import itertools
 
 from biolink.embeddings import KBCModel, KBCModelMCL, TransE
 import logging
