@@ -374,7 +374,7 @@ class ComplEx_MC(KBCModelMCL):
         ], 1)
 
 
-class TuckEr_MC(KBCModel):
+class TuckEr_MC(KBCModelMCL):
     """
     The Tucker Embedding model
     """
