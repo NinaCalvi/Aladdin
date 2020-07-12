@@ -488,7 +488,7 @@ class TuckEr_MC(KBCModelMCL):
         pred_po = torch.sigmoid(x2)
 
 
-        return pred_sp, pred_po, (lsh, rel, rhs) #unsure whether should add w?
+        return pred_sp, pred_po, (lhs, rel, rhs) #unsure whether should add w?
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.ent.weight.data[
