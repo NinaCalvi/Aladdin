@@ -314,7 +314,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     po_to_s = {}
     metrics = {}
 
-    logger.info(f'all tiples \t{all_triples.size()}')
+    # logger.info(f'all tiples \t{all_triples.size()}')
 
 
     for training_instance in all_triples:
@@ -346,9 +346,9 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     mrr_val = 0.0
     counter = 0
     counter_hits = 0
-
-    logger.info(f'test triples type \t{type(test_triples)}')
-    logger.info(f'test triples shape \t{test_triples.shape}')
+    #
+    # logger.info(f'test triples type \t{type(test_triples)}')
+    # logger.info(f'test triples shape \t{test_triples.shape}')
 
 
     prediction_subject = None
@@ -533,14 +533,14 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
 
     for pred in predicate_indeces:
-        predicate_all_facts_set = se_facts_full_dict[se]
-        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == se])
+        predicate_all_facts_set = se_facts_full_dict[pred]
+        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
-        se_test_facts_neg = np.array([[d1, se, d2] for d1, d2 in ents_combinations
-                                      if (d1, se, d2) not in predicate_all_facts_set
-                                      and (d2, se, d1) not in predicate_all_facts_set])
+        se_test_facts_neg = np.array([[d1, pred, d2] for d1, d2 in ents_combinations
+                                      if (d1, pred, d2) not in predicate_all_facts_set
+                                      and (d2, pred, d1) not in predicate_all_facts_set])
 
         #ensure it's 1:1 positive to negative
         np.random.shuffle(se_test_facts_neg)

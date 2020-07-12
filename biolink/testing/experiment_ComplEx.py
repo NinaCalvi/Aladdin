@@ -63,8 +63,11 @@ def main(argv):
     parser.add_argument('--valid', action='store_true', default=False)
     parser.add_argument('--auc', action='store_true', default=False)
     parser.add_argument('--valid-stp', action='store', type=int, default=50)
+    parser.add_argument('--label-smoothing', action='store', type=float, default=0.0)
 
-
+    parser.add_argument('--input-dropout', action='store', type=float, default=0.3)
+    parser.add_argument('--hidden-dropout1', action='store', type=float, default=0.4)
+    parser.add_argument('--hidden-dropout2', action='store', type=float, default=0.5)
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
 
@@ -126,14 +129,17 @@ def main(argv):
             'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
             'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
-            'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name)
+            'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
+            'tucker': lambda: TuckEr_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
+
         }
     else:
         model_dict = {
             'complex': lambda: ComplEx((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
             'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, norm_=args.transe_norm),
             'distmult': lambda: DistMult((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
-            'trivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args)
+            'trivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
+            'tucker': lambda: TuckEr((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
         }
 
     model = model_dict[args.model]()
@@ -159,7 +165,7 @@ def main(argv):
     logger.info(f'Done training')
 
     for dataset_name, data in dataset.data.items():
-        if dataset_name == 'test' or dataset_name == 'valid':
+        if dataset_name == 'test' or (dataset_name == 'valid' and args.valid):
             logger.info(f'in evalute for dataset: \t{dataset_name}')
             metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
             logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')

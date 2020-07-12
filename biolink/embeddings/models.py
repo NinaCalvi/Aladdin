@@ -269,7 +269,7 @@ class TuckEr(KBCModel):
 
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: str,
-            device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3,
+            device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3, **kwargs,
     ):
         '''
         loss - what type of loss
@@ -300,6 +300,10 @@ class TuckEr(KBCModel):
         self.loss = loss
         self.device = device
 
+        self.input_dropout = nn.Dropout(kwargs["input_dropout"])
+        self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
+        self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+
         self.args = args
 
     def score(self, x):
@@ -319,11 +323,19 @@ class TuckEr(KBCModel):
 
         x = self.bn0(lhs)
         x2 = self.bn0(rhs)
+
+        x = self.input_dropout(x)
+        x2 = self.input_dropout(x2)
+
         x = x.view(-1, 1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1), 1)
 
         W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
+
+        #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
+        W_mat = self.hidden_dropout1(W_mat)
+
 
         x = torch.bmm(x, W_mat)
         x2 = torch.bmm(W_mat, x2)
@@ -333,6 +345,9 @@ class TuckEr(KBCModel):
 
         x = self.bn1(x)
         x2 = self.bn1(x2)
+
+        x = self.hidden_dropout2(x)
+        x2 = self.hidden_dropout2(x2)
 
         x = torch.mm(x, self.ent.weight.transpose(1,0))
         x2 = torch.mm(x2, self.ent.weight.transpose(1,0))
@@ -351,7 +366,7 @@ class TuckEr(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.ent(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, pos_size, reduction_type='sum'):
+    def compute_loss(self, scores, pos_size, reduction_type='avg'):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
 

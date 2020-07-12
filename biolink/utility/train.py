@@ -1,4 +1,4 @@
-from biolink.embeddings import KBCModel, KBCModelMCL, mc_log_loss, regulariser
+from biolink.embeddings import KBCModel, KBCModelMCL, TuckEr_MC, mc_log_loss, regulariser
 from biolink.eval import evaluate
 from torch import nn
 from torch import optim
@@ -154,6 +154,11 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     # if torch.cuda.is_available():
     #     torch.cuda.manual_seed(seed)
 
+    if isinstance(model, TuckEr_MC):
+        tucker = True
+    else:
+        tucker = False
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
 
@@ -189,7 +194,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             input_batch = inputs[batch_start:batch_end].to(device)
             pred_sp, pred_po, factors = model.forward(input_batch)
 
-            loss = mc_log_loss((pred_sp, pred_po), input_batch[:, 2], input_batch[:, 0])
+            loss = mc_log_loss((pred_sp, pred_po), input_batch[:, 2], input_batch[:, 0], istucker=tucker, label_smoothing=args.label_smoothing)
             reg = regulariser.forward(factors)
             loss += reg
 

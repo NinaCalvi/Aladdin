@@ -43,6 +43,22 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
         #targets need to be bingary
         targets = (targets + 1)/2
         return pointwise_square_loss(predictions, targets, reduction_type)
+    elif loss == 'bce':
+        targets = (targets + 1)/2
+        return bce_loss(predictions, targets, reduction_type)
+
+def bce_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
+    loss = nn.BCELoss()
+    if reduction_type == 'avg':
+        loss = nn.BCELoss(reduction='mean')
+    elif reduction_type == 'sum':
+        loss = nn.BCELoss(reduction='sum')
+    else:
+        raise ValueError('Unknown reduction type (%s)' % reduction_type)
+    label_smoothing = 0.1
+    targets = ((1.0-label_smoothing)*targets) + (1.0/targets.size(1))
+    return loss(predictions, targets)
+
 
 
 def pointwise_logistic_loss(predictions: torch.Tensor, targets: torch.Tensor, device: torch.device, reduction_type: str):
@@ -98,7 +114,7 @@ def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, redu
     return reduce_loss(losses, reduction_type)
 
 
-def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: str ="avg"):
+def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Tensor, subj_idx: torch.Tensor, reduction_type: str ="avg", istucker: bool = False, label_smoothing: float =0.0):
     '''
     Compute the multi class log loss as defined in CP
     predictions: Tuple (sp_prediction tensor, po_prediction tensor).
@@ -115,16 +131,39 @@ def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Te
     loss value
 
     '''
-    if reduction_type == 'avg':
-        loss = nn.CrossEntropyLoss(reduction='mean')
-    elif reduction_type == 'sum':
-        loss = nn.CrossEntropyLoss(reduction='sum')
-    else:
-        raise ValueError('Unknown reduction type (%s)' % reduction_type)
+    if not istucker:
+        if reduction_type == 'avg':
+            loss = nn.CrossEntropyLoss(reduction='mean')
+        elif reduction_type == 'sum':
+            loss = nn.CrossEntropyLoss(reduction='sum')
+        else:
+            raise ValueError('Unknown reduction type (%s)' % reduction_type)
 
-    sp_prediction, po_prediction = predictions
-    sp_loss = loss(sp_prediction, obj_idx)
-    po_loss = loss(po_prediction, subj_idx)
+        sp_prediction, po_prediction = predictions
+        sp_loss = loss(sp_prediction, obj_idx)
+        po_loss = loss(po_prediction, subj_idx)
+    else:
+        if reduction_type == 'avg':
+            loss = nn.BCELoss(reduction='mean')
+        elif reduction_type == 'sum':
+            loss = nn.BCELoss(reduction='sum')
+        else:
+            raise ValueError('Unknown reduction type (%s)' % reduction_type)
+
+        sp_prediction, po_prediction = predictions
+
+        obj_targets = torch.zeros_like(sp_prediction)
+        subj_targets = torch.zeros_like(po_prediction)
+
+        obj_targets[torch.arange(len(obj_targets)), obj_idx.long()]=1
+        subj_targets[torch.arange(len(subj_targets)), subj_idx.long()]=1
+
+        #label smoothing
+        obj_targets = ((1.0-label_smoothing)*obj_targets) + (1.0/obj_targets.size(1))
+        subj_targets = ((1.0-label_smoothing)*subj_targets) + (1.0/subj_targets.size(1))
+
+        sp_loss = loss(sp_prediction, obj_targets)
+        po_loss = loss(po_prediction, subj_targets)
 
     total_loss = sp_loss + po_loss
 
