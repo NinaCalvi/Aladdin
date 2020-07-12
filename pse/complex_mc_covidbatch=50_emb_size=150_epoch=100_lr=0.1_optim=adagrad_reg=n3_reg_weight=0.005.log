@@ -1,0 +1,29 @@
+./test2.py --data pse --mcl True --batch-size 50 --epochs 100 --embedding-size 150 --learning-rate 0.1 --regulariser n3 --reg-weight 0.005 --optimizer adagrad --quiet
+MCL True
+INFO:test2.py:Valid: False
+INFO:test2.py:Device: cpu
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+<class 'biolink.embeddings.models_mc.ComplEx_MC'>
+INFO:test2.py:Device: cpu
+INFO:test2.py:Epoch 1/100	Loss 10.7057 ± 0.3363
+INFO:test2.py:Epoch 2/100	Loss 10.4016 ± 0.1858
+INFO:test2.py:Epoch 3/100	Loss 10.3290 ± 0.1860
+INFO:test2.py:Epoch 4/100	Loss 10.2917 ± 0.1879
+INFO:test2.py:Epoch 5/100	Loss 10.2687 ± 0.1880
+INFO:test2.py:Epoch 6/100	Loss 10.2530 ± 0.1887
+INFO:test2.py:Epoch 7/100	Loss 10.2414 ± 0.1894
+INFO:test2.py:Epoch 8/100	Loss 10.2324 ± 0.1897
+INFO:test2.py:Epoch 9/100	Loss 10.2252 ± 0.1906
+INFO:test2.py:Epoch 10/100	Loss 10.2192 ± 0.1899
+INFO:test2.py:Epoch 11/100	Loss 10.2142 ± 0.1900
+INFO:test2.py:Epoch 12/100	Loss 10.2099 ± 0.1908
+INFO:test2.py:Epoch 13/100	Loss 10.2062 ± 0.1898
+INFO:test2.py:Epoch 14/100	Loss 10.2029 ± 0.1912
+INFO:test2.py:Epoch 15/100	Loss 10.1999 ± 0.1911
+INFO:test2.py:Epoch 16/100	Loss 10.1972 ± 0.1907
+INFO:test2.py:Epoch 17/100	Loss 10.1948 ± 0.1914
+INFO:test2.py:Epoch 18/100	Loss 10.1926 ± 0.1901
+INFO:test2.py:Epoch 19/100	Loss 10.1905 ± 0.1908
+INFO:test2.py:Epoch 20/100	Loss 10.1886 ± 0.1905
+INFO:test2.py:Epoch 21/100	Loss 10.1869 ± 0.1904

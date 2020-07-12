@@ -1,0 +1,11 @@
+./test2.py --data pse --mcl True --batch-size 25 --epochs 100 --embedding-size 100 --learning-rate 0.01 --regulariser n3 --reg-weight 0.5 --optimizer adagrad --quiet
+MCL True
+INFO:test2.py:Valid: False
+INFO:test2.py:Device: cpu
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+<class 'biolink.embeddings.models_mc.ComplEx_MC'>
+INFO:test2.py:Device: cpu
+INFO:test2.py:Epoch 1/100	Loss 13.1201 ± 2.3462
+INFO:test2.py:Epoch 2/100	Loss 13.0431 ± 2.1819
+INFO:test2.py:Epoch 3/100	Loss 13.0176 ± 2.1159

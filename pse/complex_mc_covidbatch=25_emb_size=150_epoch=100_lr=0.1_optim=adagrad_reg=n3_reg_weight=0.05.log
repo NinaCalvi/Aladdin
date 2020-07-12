@@ -1,0 +1,96 @@
+./test2.py --data pse --mcl True --batch-size 25 --epochs 100 --embedding-size 150 --learning-rate 0.1 --regulariser n3 --reg-weight 0.05 --optimizer adagrad --quiet
+MCL True
+INFO:test2.py:Valid: False
+INFO:test2.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+<class 'biolink.embeddings.models_mc.ComplEx_MC'>
+INFO:test2.py:Device: cuda
+INFO:test2.py:Epoch 1/100	Loss 11.5773 ± 0.4600
+INFO:test2.py:Epoch 2/100	Loss 11.4530 ± 0.2668
+INFO:test2.py:Epoch 3/100	Loss 11.4308 ± 0.2513
+INFO:test2.py:Epoch 4/100	Loss 11.4137 ± 0.2490
+INFO:test2.py:Epoch 5/100	Loss 11.4051 ± 0.2427
+INFO:test2.py:Epoch 6/100	Loss 11.4007 ± 0.2392
+INFO:test2.py:Epoch 7/100	Loss 11.3982 ± 0.2350
+INFO:test2.py:Epoch 8/100	Loss 11.3965 ± 0.2333
+INFO:test2.py:Epoch 9/100	Loss 11.3952 ± 0.2318
+INFO:test2.py:Epoch 10/100	Loss 11.3942 ± 0.2309
+INFO:test2.py:Epoch 11/100	Loss 11.3933 ± 0.2297
+INFO:test2.py:Epoch 12/100	Loss 11.3920 ± 0.2284
+INFO:test2.py:Epoch 13/100	Loss 11.3910 ± 0.2274
+INFO:test2.py:Epoch 14/100	Loss 11.3902 ± 0.2270
+INFO:test2.py:Epoch 15/100	Loss 11.3895 ± 0.2267
+INFO:test2.py:Epoch 16/100	Loss 11.3888 ± 0.2255
+INFO:test2.py:Epoch 17/100	Loss 11.3879 ± 0.2248
+INFO:test2.py:Epoch 18/100	Loss 11.3873 ± 0.2231
+INFO:test2.py:Epoch 19/100	Loss 11.3868 ± 0.2238
+INFO:test2.py:Epoch 20/100	Loss 11.3863 ± 0.2234
+INFO:test2.py:Epoch 21/100	Loss 11.3860 ± 0.2233
+INFO:test2.py:Epoch 22/100	Loss 11.3857 ± 0.2240
+INFO:test2.py:Epoch 23/100	Loss 11.3855 ± 0.2224
+INFO:test2.py:Epoch 24/100	Loss 11.3852 ± 0.2224
+INFO:test2.py:Epoch 25/100	Loss 11.3850 ± 0.2218
+INFO:test2.py:Epoch 26/100	Loss 11.3848 ± 0.2220
+INFO:test2.py:Epoch 27/100	Loss 11.3846 ± 0.2219
+INFO:test2.py:Epoch 28/100	Loss 11.3844 ± 0.2217
+INFO:test2.py:Epoch 29/100	Loss 11.3842 ± 0.2222
+INFO:test2.py:Epoch 30/100	Loss 11.3841 ± 0.2215
+INFO:test2.py:Epoch 31/100	Loss 11.3840 ± 0.2215
+INFO:test2.py:Epoch 32/100	Loss 11.3838 ± 0.2215
+INFO:test2.py:Epoch 33/100	Loss 11.3837 ± 0.2219
+INFO:test2.py:Epoch 34/100	Loss 11.3836 ± 0.2209
+INFO:test2.py:Epoch 35/100	Loss 11.3835 ± 0.2214
+INFO:test2.py:Epoch 36/100	Loss 11.3834 ± 0.2219
+INFO:test2.py:Epoch 37/100	Loss 11.3833 ± 0.2208
+INFO:test2.py:Epoch 38/100	Loss 11.3832 ± 0.2203
+INFO:test2.py:Epoch 39/100	Loss 11.3831 ± 0.2206
+INFO:test2.py:Epoch 40/100	Loss 11.3830 ± 0.2211
+INFO:test2.py:Epoch 41/100	Loss 11.3829 ± 0.2212
+INFO:test2.py:Epoch 42/100	Loss 11.3828 ± 0.2202
+INFO:test2.py:Epoch 43/100	Loss 11.3827 ± 0.2200
+INFO:test2.py:Epoch 44/100	Loss 11.3826 ± 0.2203
+INFO:test2.py:Epoch 45/100	Loss 11.3824 ± 0.2205
+INFO:test2.py:Epoch 46/100	Loss 11.3823 ± 0.2206
+INFO:test2.py:Epoch 47/100	Loss 11.3821 ± 0.2198
+INFO:test2.py:Epoch 48/100	Loss 11.3819 ± 0.2203
+INFO:test2.py:Epoch 49/100	Loss 11.3818 ± 0.2197
+INFO:test2.py:Epoch 50/100	Loss 11.3816 ± 0.2197
+INFO:test2.py:Epoch 51/100	Loss 11.3814 ± 0.2203
+INFO:test2.py:Epoch 52/100	Loss 11.3813 ± 0.2204
+INFO:test2.py:Epoch 53/100	Loss 11.3811 ± 0.2195
+INFO:test2.py:Epoch 54/100	Loss 11.3810 ± 0.2197
+INFO:test2.py:Epoch 55/100	Loss 11.3808 ± 0.2201
+INFO:test2.py:Epoch 56/100	Loss 11.3807 ± 0.2193
+INFO:test2.py:Epoch 57/100	Loss 11.3806 ± 0.2201
+INFO:test2.py:Epoch 58/100	Loss 11.3805 ± 0.2195
+INFO:test2.py:Epoch 59/100	Loss 11.3804 ± 0.2180
+INFO:test2.py:Epoch 60/100	Loss 11.3803 ± 0.2205
+INFO:test2.py:Epoch 61/100	Loss 11.3802 ± 0.2198
+INFO:test2.py:Epoch 62/100	Loss 11.3801 ± 0.2199
+INFO:test2.py:Epoch 63/100	Loss 11.3800 ± 0.2195
+INFO:test2.py:Epoch 64/100	Loss 11.3799 ± 0.2196
+INFO:test2.py:Epoch 65/100	Loss 11.3799 ± 0.2188
+INFO:test2.py:Epoch 66/100	Loss 11.3798 ± 0.2193
+INFO:test2.py:Epoch 67/100	Loss 11.3797 ± 0.2197
+INFO:test2.py:Epoch 68/100	Loss 11.3796 ± 0.2194
+INFO:test2.py:Epoch 69/100	Loss 11.3796 ± 0.2195
+INFO:test2.py:Epoch 70/100	Loss 11.3795 ± 0.2183
+INFO:test2.py:Epoch 71/100	Loss 11.3795 ± 0.2186
+INFO:test2.py:Epoch 72/100	Loss 11.3794 ± 0.2194
+INFO:test2.py:Epoch 73/100	Loss 11.3793 ± 0.2186
+INFO:test2.py:Epoch 74/100	Loss 11.3793 ± 0.2191
+INFO:test2.py:Epoch 75/100	Loss 11.3792 ± 0.2193
+INFO:test2.py:Epoch 76/100	Loss 11.3792 ± 0.2197
+INFO:test2.py:Epoch 77/100	Loss 11.3791 ± 0.2193
+INFO:test2.py:Epoch 78/100	Loss 11.3791 ± 0.2194
+INFO:test2.py:Epoch 79/100	Loss 11.3790 ± 0.2192
+INFO:test2.py:Epoch 80/100	Loss 11.3790 ± 0.2193
+INFO:test2.py:Epoch 81/100	Loss 11.3789 ± 0.2186
+INFO:test2.py:Epoch 82/100	Loss 11.3789 ± 0.2184
+INFO:test2.py:Epoch 83/100	Loss 11.3788 ± 0.2191
+INFO:test2.py:Epoch 84/100	Loss 11.3788 ± 0.2184
+INFO:test2.py:Epoch 85/100	Loss 11.3788 ± 0.2186
+INFO:test2.py:Epoch 86/100	Loss 11.3787 ± 0.2196
+INFO:test2.py:Epoch 87/100	Loss 11.3787 ± 0.2193
+INFO:test2.py:Epoch 88/100	Loss 11.3786 ± 0.2184

@@ -1,0 +1,82 @@
+./test2.py --data pse --mcl True --batch-size 25 --epochs 100 --embedding-size 200 --learning-rate 0.1 --regulariser n3 --reg-weight 0.5 --optimizer adagrad --quiet
+MCL True
+INFO:test2.py:Valid: False
+INFO:test2.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+<class 'biolink.embeddings.models_mc.ComplEx_MC'>
+INFO:test2.py:Device: cuda
+INFO:test2.py:Epoch 1/100	Loss 14.5018 ± 15.3525
+INFO:test2.py:Epoch 2/100	Loss 13.4595 ± 11.5273
+INFO:test2.py:Epoch 3/100	Loss 13.2919 ± 10.2480
+INFO:test2.py:Epoch 4/100	Loss 13.2128 ± 9.4278
+INFO:test2.py:Epoch 5/100	Loss 13.1657 ± 8.8082
+INFO:test2.py:Epoch 6/100	Loss 13.1341 ± 8.3113
+INFO:test2.py:Epoch 7/100	Loss 13.1112 ± 7.8932
+INFO:test2.py:Epoch 8/100	Loss 13.0936 ± 7.5350
+INFO:test2.py:Epoch 9/100	Loss 13.0797 ± 7.2193
+INFO:test2.py:Epoch 10/100	Loss 13.0683 ± 6.9380
+INFO:test2.py:Epoch 11/100	Loss 13.0588 ± 6.6845
+INFO:test2.py:Epoch 12/100	Loss 13.0507 ± 6.4537
+INFO:test2.py:Epoch 13/100	Loss 13.0460 ± 6.2770
+INFO:test2.py:Epoch 14/100	Loss 13.0326 ± 6.3441
+INFO:test2.py:Epoch 15/100	Loss 13.0221 ± 6.1209
+INFO:test2.py:Epoch 16/100	Loss 13.0153 ± 5.9339
+INFO:test2.py:Epoch 17/100	Loss 13.0097 ± 5.7625
+INFO:test2.py:Epoch 18/100	Loss 13.0049 ± 5.6030
+INFO:test2.py:Epoch 19/100	Loss 13.0006 ± 5.4550
+INFO:test2.py:Epoch 20/100	Loss 12.9968 ± 5.3155
+INFO:test2.py:Epoch 21/100	Loss 12.9933 ± 5.1849
+INFO:test2.py:Epoch 22/100	Loss 12.9902 ± 5.0605
+INFO:test2.py:Epoch 23/100	Loss 12.9873 ± 4.9429
+INFO:test2.py:Epoch 24/100	Loss 12.9846 ± 4.8309
+INFO:test2.py:Epoch 25/100	Loss 12.9821 ± 4.7246
+INFO:test2.py:Epoch 26/100	Loss 12.9797 ± 4.6227
+INFO:test2.py:Epoch 27/100	Loss 12.9776 ± 4.5267
+INFO:test2.py:Epoch 28/100	Loss 12.9755 ± 4.4370
+INFO:test2.py:Epoch 29/100	Loss 12.9736 ± 4.3443
+INFO:test2.py:Epoch 30/100	Loss 12.9718 ± 4.2588
+INFO:test2.py:Epoch 31/100	Loss 12.9701 ± 4.1778
+INFO:test2.py:Epoch 32/100	Loss 12.9685 ± 4.0980
+INFO:test2.py:Epoch 33/100	Loss 12.9670 ± 4.0223
+INFO:test2.py:Epoch 34/100	Loss 12.9655 ± 3.9532
+INFO:test2.py:Epoch 35/100	Loss 12.9641 ± 3.8792
+INFO:test2.py:Epoch 36/100	Loss 12.9628 ± 3.8117
+INFO:test2.py:Epoch 37/100	Loss 12.9616 ± 3.7452
+INFO:test2.py:Epoch 38/100	Loss 12.9604 ± 3.6822
+INFO:test2.py:Epoch 39/100	Loss 12.9592 ± 3.6208
+INFO:test2.py:Epoch 40/100	Loss 12.9581 ± 3.5612
+INFO:test2.py:Epoch 41/100	Loss 12.9571 ± 3.5032
+INFO:test2.py:Epoch 42/100	Loss 12.9561 ± 3.4477
+INFO:test2.py:Epoch 43/100	Loss 12.9551 ± 3.3935
+INFO:test2.py:Epoch 44/100	Loss 12.9542 ± 3.3410
+INFO:test2.py:Epoch 45/100	Loss 12.9533 ± 3.2944
+INFO:test2.py:Epoch 46/100	Loss 12.9524 ± 3.2402
+INFO:test2.py:Epoch 47/100	Loss 12.9516 ± 3.1934
+INFO:test2.py:Epoch 48/100	Loss 12.9508 ± 3.1452
+INFO:test2.py:Epoch 49/100	Loss 12.9500 ± 3.0997
+INFO:test2.py:Epoch 50/100	Loss 12.9493 ± 3.0553
+INFO:test2.py:Epoch 51/100	Loss 12.9486 ± 3.0122
+INFO:test2.py:Epoch 52/100	Loss 12.9479 ± 2.9704
+INFO:test2.py:Epoch 53/100	Loss 12.9472 ± 2.9296
+INFO:test2.py:Epoch 54/100	Loss 12.9466 ± 2.8897
+INFO:test2.py:Epoch 55/100	Loss 12.9459 ± 2.8509
+INFO:test2.py:Epoch 56/100	Loss 12.9453 ± 2.8132
+INFO:test2.py:Epoch 57/100	Loss 12.9447 ± 2.7764
+INFO:test2.py:Epoch 58/100	Loss 12.9441 ± 2.7401
+INFO:test2.py:Epoch 59/100	Loss 12.9436 ± 2.7050
+INFO:test2.py:Epoch 60/100	Loss 12.9430 ± 2.6706
+INFO:test2.py:Epoch 61/100	Loss 12.9425 ± 2.6372
+INFO:test2.py:Epoch 62/100	Loss 12.9420 ± 2.6048
+INFO:test2.py:Epoch 63/100	Loss 12.9415 ± 2.5724
+INFO:test2.py:Epoch 64/100	Loss 12.9410 ± 2.5412
+INFO:test2.py:Epoch 65/100	Loss 12.9405 ± 2.5108
+INFO:test2.py:Epoch 66/100	Loss 12.9401 ± 2.4806
+INFO:test2.py:Epoch 67/100	Loss 12.9396 ± 2.4514
+INFO:test2.py:Epoch 68/100	Loss 12.9392 ± 2.4228
+INFO:test2.py:Epoch 69/100	Loss 12.9388 ± 2.3951
+INFO:test2.py:Epoch 70/100	Loss 12.9383 ± 2.3676
+INFO:test2.py:Epoch 71/100	Loss 12.9379 ± 2.3405
+INFO:test2.py:Epoch 72/100	Loss 12.9375 ± 2.3140
+INFO:test2.py:Epoch 73/100	Loss 12.9371 ± 2.2882
+INFO:test2.py:Epoch 74/100	Loss 12.9368 ± 2.2627

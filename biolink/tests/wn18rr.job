@@ -2,7 +2,7 @@
 #$ -S /bin/bash
 #$ -o $HOME/wn18rr.out
 #$ -e $HOME/wn18rr.err
-#$ -t 1-10
+#$ -t 1-2
 #$ -l tmem=15G
 #$ -l h_rt=18:00:00
 #$ -l gpu=true
