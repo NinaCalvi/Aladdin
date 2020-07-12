@@ -293,8 +293,11 @@ class TuckEr(KBCModel):
         xavier_normal_(self.ent.weight.data)
         xavier_normal_(self.rel.weight.data)
 
+        if torch.cuda.is_available():
+            self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, device="cuda", requires_grad=True))
+        else:
+            self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, requires_grad=True))
 
-        self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, device="cuda", requires_grad=True))
 
         self.bn0 = nn.BatchNorm1d(rank_e)
         self.bn1 = nn.BatchNorm1d(rank_e)
