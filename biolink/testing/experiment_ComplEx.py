@@ -39,6 +39,8 @@ def main(argv):
     parser.add_argument('--mcl', action='store', type=bool, default=False)
 
     parser.add_argument('--embedding-size', '-k', action='store', type=int, default=100)
+    parser.add_argument('--rel-emb-size', action='store', type=int, default=100)
+
     parser.add_argument('--batch-size', '-b', action='store', type=int, default=100)
 
     parser.add_argument('--eval-batch-size', '-B', action='store', type=int, default=None)
@@ -130,7 +132,7 @@ def main(argv):
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
             'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
-            'tucker': lambda: TuckEr_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
+            'tucker': lambda: TuckEr_MC((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, optimizer_name, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
 
         }
     else:
@@ -139,7 +141,7 @@ def main(argv):
             'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, norm_=args.transe_norm),
             'distmult': lambda: DistMult((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
             'trivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
-            'tucker': lambda: TuckEr((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
+            'tucker': lambda: TuckEr((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, loss, device, optimizer_name, args, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
         }
 
     model = model_dict[args.model]()

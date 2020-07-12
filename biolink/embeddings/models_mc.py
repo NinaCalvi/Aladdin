@@ -380,15 +380,15 @@ class TuckEr_MC(KBCModelMCL):
     """
 
     def __init__(
-            self, sizes: Tuple[int, int, int], rank: int, optimiser_name: str, init_size: float = 1e-3, **kwargs,
+            self, sizes: Tuple[int, int, int], rank_e: int, rank_rel: int, optimiser_name: str, init_size: float = 1e-3, **kwargs,
     ):
         '''
         loss - what type of loss
         '''
         super(TuckEr_MC, self).__init__()
         self.sizes = sizes
-        self.rank = rank
-
+        self.rank_e = rank_e
+        self.rank_r = rank_rel
         if optimiser_name == 'adam':
             sparse_ = False
         else:
@@ -396,17 +396,17 @@ class TuckEr_MC(KBCModelMCL):
 
 
         #suggests that relations and entities have different ranks as well potentailly
-        self.ent = nn.Embedding(sizes[0], rank)
-        self.rel = nn.Embedding(sizes[1], rank)
+        self.ent = nn.Embedding(sizes[0], rank_e)
+        self.rel = nn.Embedding(sizes[1], rank_rel)
 
         xavier_normal_(self.ent.weight.data)
         xavier_normal_(self.rel.weight.data)
 
 
-        self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank, rank, rank)), dtype=torch.float, device="cuda", requires_grad=True))
+        self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, device="cuda", requires_grad=True))
 
-        self.bn0 = nn.BatchNorm1d(rank)
-        self.bn1 = nn.BatchNorm1d(rank)
+        self.bn0 = nn.BatchNorm1d(rank_e)
+        self.bn1 = nn.BatchNorm1d(rank_e)
 
         self.loss = loss
         self.device = device
