@@ -12,7 +12,7 @@ from torch import nn
 from .losses import compute_kge_loss
 
 from torch.nn.init import xavier_normal_
-
+import numpy as np
 
 
 class KBCModel(nn.Module, ABC):

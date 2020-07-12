@@ -12,6 +12,7 @@ from torch import nn
 from .losses import mc_log_loss
 
 from torch.nn.init import xavier_normal_
+import numpy as np
 
 
 class KBCModelMCL(nn.Module, ABC):
