@@ -505,8 +505,8 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     metrics = {}
 
     predicate_indeces = list(set(all_triples[:, 1].numpy()))
-    print(predicate_indeces)
-    print(type(predicate_indeces[0]))
+    # print(predicate_indeces)
+    # print(type(predicate_indeces[0]))
     se_facts_full_dict = {se: set() for se in predicate_indeces}
 
     for instance in all_triples:
@@ -544,7 +544,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
         #ensure it's 1:1 positive to negative
         np.random.shuffle(se_test_facts_neg)
-        se_test_facts_neg = se_test_facts_neg[:se_test_facts_pos_size, :]
+        se_test_facts_neg = se_test_facts_neg[:predicate_test_facts_pos_size, :]
 
         se_test_facts_all = np.concatenate([se_test_facts_pos, se_test_facts_neg])
         se_test_facts_labels = np.concatenate([np.ones([len(se_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
