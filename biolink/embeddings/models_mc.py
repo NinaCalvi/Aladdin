@@ -420,8 +420,6 @@ class TuckEr_MC(KBCModelMCL):
         self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
         self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
 
-        self.args = args
-
     def score(self, x):
 
         lhs = self.ent(x[:, 0])
