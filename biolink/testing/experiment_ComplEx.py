@@ -14,6 +14,8 @@ from biolink.eval import evaluate
 from libkge import KgDataset
 from torch import optim
 import torch
+from torch.optim.lr_scheduler import ExponentialLR
+
 
 
 import logging
@@ -70,6 +72,7 @@ def main(argv):
     parser.add_argument('--input-dropout', action='store', type=float, default=0.3)
     parser.add_argument('--hidden-dropout1', action='store', type=float, default=0.4)
     parser.add_argument('--hidden-dropout2', action='store', type=float, default=0.5)
+    parser.add_argument('--lr_decay', action='store', type=float, default=0.0)
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
 
@@ -84,6 +87,8 @@ def main(argv):
 
     nb_epochs = args.epochs
     lr = args.learning_rate
+    lr_decay = args.lr_decay
+
     optimizer_name = args.optimizer
     loss = args.loss
     regulariser = args.regulariser
@@ -156,8 +161,13 @@ def main(argv):
     assert optimizer_name in optimizer_factory
     optimizer = optimizer_factory[optimizer_name]()
 
+    if lr_decay > 0:
+        scheduler = ExponentialLR(optimizer, lr_decay)
+    else:
+        scheduler = None
 
-    train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args)
+
+    train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args, scheduler=scheduler)
 
     # if args.mcl:
     #     train.train_mc(model, regulariser, optimizer, train_data, args)

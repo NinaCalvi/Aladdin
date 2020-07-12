@@ -10,6 +10,7 @@ import sys
 import torch
 from biolink.utility.utils import generate_neg_instances
 
+
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
@@ -19,7 +20,8 @@ def train(model: nn.Module,
         data: torch.Tensor,
         valid_data: torch.Tensor,
         all_data: torch.Tensor,
-        args: Namespace):
+        args: Namespace,
+        scheduler: optim.lr_scheduler = None):
     '''
     Method that instantiates the trianing of the model
 
@@ -33,7 +35,7 @@ def train(model: nn.Module,
     '''
     print(type(model))
     if isinstance(model, KBCModelMCL):
-        train_mc(model, regulariser, optimiser, data, valid_data, all_data, args)
+        train_mc(model, regulariser, optimiser, data, valid_data, all_data, args, scheduler=scheduler)
     elif isinstance(model, KBCModel):
         train_not_mc(model,regulariser, optimiser, data,  valid_data, all_data, args)
     else:
@@ -138,7 +140,7 @@ def get_regulariser(regulariser_str: str, reg_weight: int):
         raise ValueError("Incorrect regulariser name given (%s)" %regulariser_str)
 
 
-def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, valid_data: torch.Tensor, all_data: torch.Tensor, args: Namespace):
+def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimizer, data: torch.Tensor, valid_data: torch.Tensor, all_data: torch.Tensor, args: Namespace, scheduler=None):
 
     '''
     Training method for MC models
@@ -211,6 +213,8 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
         # print(epoch_loss_values)
         # print(type(epoch_loss_values))
+        if scheduler is not None:
+            scheduler.step()
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
         logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 
