@@ -415,8 +415,6 @@ class TuckEr_MC(KBCModelMCL):
         self.bn0 = nn.BatchNorm1d(rank_e)
         self.bn1 = nn.BatchNorm1d(rank_e)
 
-        self.loss = loss
-        self.device = device
 
         self.input_dropout = nn.Dropout(kwargs["input_dropout"])
         self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
