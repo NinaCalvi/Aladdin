@@ -22,7 +22,7 @@ def to_cmd(c, _path=None):
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
         f'--optimizer {c["optim"]} --transe_norm {c["transe_norm"]} ' \
-        f'--loss_margin {c["loss_margin"]} --loss pair_hinge } ' \
+        f'--loss_margin {c["loss_margin"]} --loss pair_hinge ' \
         f'--nb_negs {c["nb_negs"]} '\
         f'--valid --quiet'
     return command
