@@ -42,7 +42,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     elif loss == 'pw_square':
         #targets need to be bingary
         targets = (targets + 1)/2
-        return pointwise_square_loss(predictions, targets, reduction_type)
+        return pointwise_square_loss(predictions, targets, reduction_type, device)
     elif loss == 'bce':
         targets = (targets + 1)/2
         return bce_loss(predictions, targets, reduction_type)
