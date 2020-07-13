@@ -48,6 +48,10 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
     Training method for not MC models
     '''
     #for each positive generate some negatives
+
+    global BAD_PERFORMING
+
+
     nb_negs = args.nb_negs
     seed = args.seed
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -131,6 +135,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 if best_val_mrr <= 0.05:
                     logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
                     BAD_PERFORMING = True
+                    break
 
 
 def get_regulariser(regulariser_str: str, reg_weight: int):
