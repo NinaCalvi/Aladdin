@@ -17,7 +17,7 @@ def summary(configuration):
 
 def to_cmd(c, _path=None):
     command = f'PYTHONPATH=. python ./test2.py ' \
-        f'--data covid, --model transe ' \
+        f'--data covid --model transe ' \
         f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
