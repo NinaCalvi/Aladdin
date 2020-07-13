@@ -364,7 +364,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     #get whole rhs
     # whole_rhs = model.embeddings[0].weight.data.transpose(0,1)
     # logger.info(f'whole_rh shape \t{whole_rhs.shape}')
-
+    model.eval()
     while batch_start < test_triples.shape[0]:
         counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
