@@ -17,13 +17,13 @@ def summary(configuration):
 
 def to_cmd(c, _path=None):
     command = f'PYTHONPATH=. python ./code/cbr.py ' \
-        f'--dataset_name covid_data ' \
+        f'--dataset_name pse ' \
         f'--k_adj {c["k"]} --max_num_programs {c["n"]} '
     return command
 
 
 def to_logfile(c, path):
-    outfile = "{}/cbr{}.log".format(path, summary(c).replace("/", "_"))
+    outfile = "{}/cbr_pse{}.log".format(path, summary(c).replace("/", "_"))
     return outfile
 
 
@@ -35,7 +35,7 @@ def main(argv):
 
     configurations = list(cartesian_product(hyp_space))
 
-    path = '/home/acalvi/Dissertation/CBR-AKBC/logs/cbr'
+    path = '/home/acalvi/Dissertation/CBR-AKBC/logs/cbr_pse'
     is_rc = False
 
     # Check that we are on the UCLCS cluster first
@@ -72,7 +72,7 @@ def main(argv):
 #$ -cwd
 #$ -S /bin/bash
 #$ -o /dev/null
-#$ -e $HOME/GRIDCB.err
+#$ -e $HOME/GRIDCpse.err
 #$ -t 1-{}
 #$ -l tmem=8G
 #$ -l h_rt=8:00:00
