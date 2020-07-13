@@ -14,6 +14,8 @@ from biolink.utility.utils import generate_neg_instances
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
+BAD_PERFORMING = False
+
 def train(model: nn.Module,
         regulariser: str,
         optimiser: optim.Optimizer,
@@ -125,7 +127,10 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             else:
                 best_val_mrr = val_metrics['MRR']
                 logger.info(f'Best validation metrics {best_val_mrr}')
-
+            if (epoch+1) == 50:
+                if best_val_mrr <= 0.05:
+                    logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
+                    BAD_PERFORMING = True
 
 
 def get_regulariser(regulariser_str: str, reg_weight: int):

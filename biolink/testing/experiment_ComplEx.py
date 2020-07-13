@@ -168,6 +168,7 @@ def main(argv):
 
 
     train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args, scheduler=scheduler)
+    logger.info(f'is bad performing {train.BAD_PERFORMING}')
 
     # if args.mcl:
     #     train.train_mc(model, regulariser, optimizer, train_data, args)
@@ -175,12 +176,14 @@ def main(argv):
     #     train.train_not_mc(model, regulariser, optimizer, train_data, args)
 
     logger.info(f'Done training')
-
-    for dataset_name, data in dataset.data.items():
-        if dataset_name == 'test' or (dataset_name == 'valid' and args.valid):
-            logger.info(f'in evalute for dataset: \t{dataset_name}')
-            metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
-            logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
+    if not train.BAD_PERFORMING:
+        for dataset_name, data in dataset.data.items():
+            if dataset_name == 'test' or (dataset_name == 'valid' and args.valid):
+                logger.info(f'in evalute for dataset: \t{dataset_name}')
+                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
+                logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
+    else:
+        logger.info(f'Not checking test, since interrupted')
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
