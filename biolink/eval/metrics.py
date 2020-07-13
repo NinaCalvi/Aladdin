@@ -384,7 +384,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
             scores_sp, scores_po, factors = model.forward(batch_tensor)
 
 
-            logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
+            # logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
 
             #remove them from device
             #need to have probability scores for auc calculations
