@@ -547,7 +547,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         se_test_facts_neg = se_test_facts_neg[:predicate_test_facts_pos_size, :]
 
         se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
-        se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_poss)]), np.zeros([len(se_test_facts_neg)])])
+        se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
         with torch.no_grad():
             se_test_facts_all = se_test_facts_all.to(device)
             se_test_facts_scores = model.score(set_test_facts_all)
