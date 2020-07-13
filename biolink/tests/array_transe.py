@@ -43,7 +43,8 @@ def main(argv):
         optim=['adagrad'],
         reg=['n3', 'f2'],
         reg_weight=[0.001, 0.005, 0.01, 0.05, 0.1, 0.5],
-        nb_negs=[10, 15, 100]
+        nb_negs=[10, 15, 100],
+        loss_margin=[1, 5, 9]
     )
 
     configurations = list(cartesian_product(hyp_space))
