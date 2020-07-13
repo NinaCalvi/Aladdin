@@ -2,8 +2,8 @@
 #$ -cwd
 #$ -S /bin/bash
 #$ -o /dev/null
-#$ -e $HOME/GRIDcovid.err
-#$ -t 1-180
+#$ -e $HOME/GRIDcovid_NEW.err
+#$ -t 1-39
 #$ -l tmem=15G
 #$ -l h_rt=48:00:00
 #$ -l gpu=true
