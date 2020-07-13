@@ -17,12 +17,12 @@ def summary(configuration):
 
 def to_cmd(c, _path=None):
     command = f'PYTHONPATH=. python ./test2.py ' \
-        f'--data pse ' \
+        f'--data covid ' \
         f'--mcl True ' \
         f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
-        f'--optimizer {c["optim"]} ' \
+        f'--optimizer {c['optim']}'
         f'--quiet'
     return command
 
@@ -40,12 +40,12 @@ def main(argv):
         lr=[0.1, 0.01],
         optim=['adagrad'],
         reg=['n3'],
-        reg_weight=[0.001, 0.005, 0.01, 0.05, 0.1, 0.5]
+
     )
 
     configurations = list(cartesian_product(hyp_space))
 
-    path = '/home/acalvi/Dissertation/Aladdin/pse'
+    path = '/home/acalvi/Dissertation/Aladdin/covid'
     is_rc = False
 
     # Check that we are on the UCLCS cluster first
@@ -82,7 +82,7 @@ def main(argv):
 #$ -cwd
 #$ -S /bin/bash
 #$ -o /dev/null
-#$ -e $HOME/GRIDcovidpse.err
+#$ -e $HOME/GRIDcovid.err
 #$ -t 1-{}
 #$ -l tmem=15G
 #$ -l h_rt=18:00:00
