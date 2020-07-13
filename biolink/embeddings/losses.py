@@ -158,6 +158,8 @@ def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Te
         obj_targets[torch.arange(len(obj_targets)), obj_idx.long()]=1
         subj_targets[torch.arange(len(subj_targets)), subj_idx.long()]=1
 
+        label_smoothing = 0.1
+
         #label smoothing
         obj_targets = ((1.0-label_smoothing)*obj_targets) + (1.0/obj_targets.size(1))
         subj_targets = ((1.0-label_smoothing)*subj_targets) + (1.0/subj_targets.size(1))
