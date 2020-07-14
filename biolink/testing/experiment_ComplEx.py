@@ -167,6 +167,7 @@ def main(argv):
         scheduler = None
 
 
+    model.train()
     train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args, scheduler=scheduler)
     logger.info(f'is bad performing {train.BAD_PERFORMING}')
 
