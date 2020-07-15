@@ -397,8 +397,8 @@ class TuckEr_MC(KBCModelMCL):
         else:
             sparse_ = True
 
-        self.ent = nn.Embedding(sizes[0], rank, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
-        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
+        self.ent = nn.Embedding(sizes[0], rank_e, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
+        self.rel = nn.Embedding(sizes[1], rank_rel, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
         # self.hs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
 
         self.ent.weight.data *= init_size
