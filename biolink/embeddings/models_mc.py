@@ -438,6 +438,9 @@ class TuckEr_MC(KBCModelMCL):
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
 
+        x = lhs
+        x2 = rhs
+
         x = x.view(-1, 1, lhs.size(1))
 
         W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
@@ -466,6 +469,9 @@ class TuckEr_MC(KBCModelMCL):
 
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
+
+        x = lhs
+        x2 = rhs
 
         x = x.view(-1, 1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1), 1)
