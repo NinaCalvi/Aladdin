@@ -172,6 +172,8 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
         tucker = False
 
     logger.info(f'is tucker {tucker}')
+    logger.info(f'settin tucker to FALSE')
+    tucker=False
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')

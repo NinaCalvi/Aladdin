@@ -397,13 +397,19 @@ class TuckEr_MC(KBCModelMCL):
         else:
             sparse_ = True
 
+        self.ent = nn.Embedding(sizes[0], rank, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
+        self.rel = nn.Embedding(sizes[1], rank, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
+        # self.hs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
 
-        #suggests that relations and entities have different ranks as well potentailly
-        self.ent = nn.Embedding(sizes[0], rank_e)
-        self.rel = nn.Embedding(sizes[1], rank_rel)
+        self.ent.weight.data *= init_size
+        self.rel.weight.data *= init_size
 
-        xavier_normal_(self.ent.weight.data)
-        xavier_normal_(self.rel.weight.data)
+        # #suggests that relations and entities have different ranks as well potentailly
+        # self.ent = nn.Embedding(sizes[0], rank_e)
+        # self.rel = nn.Embedding(sizes[1], rank_rel)
+        #
+        # xavier_normal_(self.ent.weight.data)
+        # xavier_normal_(self.rel.weight.data)
 
 
         if torch.cuda.is_available():
@@ -412,13 +418,13 @@ class TuckEr_MC(KBCModelMCL):
             self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, requires_grad=True))
 
 
-        self.bn0 = nn.BatchNorm1d(rank_e)
-        self.bn1 = nn.BatchNorm1d(rank_e)
+        # self.bn0 = nn.BatchNorm1d(rank_e)
+        # self.bn1 = nn.BatchNorm1d(rank_e)
 
-
-        self.input_dropout = nn.Dropout(kwargs["input_dropout"])
-        self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
-        self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+        #
+        # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
+        # self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
+        # self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
 
     def score(self, x):
 
@@ -426,11 +432,11 @@ class TuckEr_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
-        x = self.bn0(lhs)
-        x2 = self.bn0(rhs)
-
-        x = self.input_dropout(x)
-        x2 = self.input_dropout(x2)
+        # x = self.bn0(lhs)
+        # x2 = self.bn0(rhs)
+        #
+        # x = self.input_dropout(x)
+        # x2 = self.input_dropout(x2)
 
         x = x.view(-1, 1, lhs.size(1))
 
@@ -438,26 +444,28 @@ class TuckEr_MC(KBCModelMCL):
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
         #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
-        W_mat = self.hidden_dropout1(W_mat)
+        # W_mat = self.hidden_dropout1(W_mat)
 
         x = torch.bmm(x, W_mat)
         x = x.view(-1, lhs.size(1))
-        x = self.bn1(x)
-        x = self.hidden_dropout2(x)
+        # x = self.bn1(x)
+        # x = self.hidden_dropout2(x)
         x = torch.sum(x * x2, 1, keepdim=True)
 
         return torch.sigmoid(x)
+
+        # return torch.sigmoid(x)
 
     def forward(self, x, predict_lhs = False):
         lhs = self.ent(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
-        x = self.bn0(lhs)
-        x2 = self.bn0(rhs)
+        # x = self.bn0(lhs)
+        # x2 = self.bn0(rhs)
 
-        x = self.input_dropout(x)
-        x2 = self.input_dropout(x2)
+        # x = self.input_dropout(x)
+        # x2 = self.input_dropout(x2)
 
         x = x.view(-1, 1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1), 1)
@@ -466,7 +474,7 @@ class TuckEr_MC(KBCModelMCL):
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
         #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
-        W_mat = self.hidden_dropout1(W_mat)
+        # W_mat = self.hidden_dropout1(W_mat)
 
 
         x = torch.bmm(x, W_mat)
@@ -475,17 +483,20 @@ class TuckEr_MC(KBCModelMCL):
         x = x.view(-1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1))
 
-        x = self.bn1(x)
-        x2 = self.bn1(x2)
+        # x = self.bn1(x)
+        # x2 = self.bn1(x2)
 
-        x = self.hidden_dropout2(x)
-        x2 = self.hidden_dropout2(x2)
+        # x = self.hidden_dropout2(x)
+        # x2 = self.hidden_dropout2(x2)
 
         x = torch.mm(x, self.ent.weight.transpose(1,0))
         x2 = torch.mm(x2, self.ent.weight.transpose(1,0))
 
-        pred_sp = torch.sigmoid(x)
-        pred_po = torch.sigmoid(x2)
+        pred_sp = x
+        pred_po = x2
+
+        # pred_sp = torch.sigmoid(x)
+        # pred_po = torch.sigmoid(x2)
 
 
         return pred_sp, pred_po, (lhs, rel, rhs) #unsure whether should add w?
