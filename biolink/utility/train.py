@@ -229,6 +229,17 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
         # print(type(epoch_loss_values))
         if scheduler is not None:
             scheduler.step()
+
+
+        if (((epoch+1) == 50) and valid:
+            logger.info(f'Validating')
+            val_metrics = evaluate(model, valid_data, all_data, batch_size, device, validate=True)
+
+            mrr = val_metrics['MRR']
+            if mrr <= 0.05:
+                logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
+                BAD_PERFORMING = True
+                break
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
         logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
 

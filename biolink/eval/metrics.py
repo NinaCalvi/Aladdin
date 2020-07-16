@@ -373,34 +373,28 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
         with torch.no_grad():
             batch_tensor = batch_input.to(device)
 
-            #score triples
-            # queries_sp = model.get_queries(batch_tensor)
-            # queries_po = model.get_queries(torch.index_select(batch_tensor, 1, torch.LongTensor([2,1,0]).to(device)))
-            #
-            # scores_sp = queries_sp @ whole_rhs
-            # scores_po = queries_po @ whole_rhs
 
             #CHANGED THE FOLLOWING LINE
             scores_sp, scores_po, factors = model.forward(batch_tensor)
 
 
-            # logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
-
-            #remove them from device
-            #need to have probability scores for auc calculations
-            prob_scores_sp = softmax(scores_sp.cpu()).numpy()
-            prob_scores_po = softmax(scores_po.cpu()).numpy()
+            # # logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
+            #
+            # #remove them from device
+            # #need to have probability scores for auc calculations
+            # prob_scores_sp = softmax(scores_sp.cpu()).numpy()
+            # prob_scores_po = softmax(scores_po.cpu()).numpy()
 
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
-        # logger.info(f'in evaluate:')
-        if prediction_subject is not None:
-            prediction_subject = np.vstack((prediction_subject, prob_scores_po))
-            prediction_object = np.vstack((prediction_object, prob_scores_sp))
-        else:
-            prediction_subject = prob_scores_po
-            prediction_object = prob_scores_sp
+        # # logger.info(f'in evaluate:')
+        # if prediction_subject is not None:
+        #     prediction_subject = np.vstack((prediction_subject, prob_scores_po))
+        #     prediction_object = np.vstack((prediction_object, prob_scores_sp))
+        # else:
+        #     prediction_subject = prob_scores_po
+        #     prediction_object = prob_scores_sp
 
 
 
@@ -416,22 +410,22 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
             for tmp_o_idx in o_to_remove:
                 if tmp_o_idx != o_idx:
                     scores_sp[i, tmp_o_idx] = - np.infty
-                    prob_scores_sp[i, tmp_o_idx] = 0
+                    # prob_scores_sp[i, tmp_o_idx] = 0
                     # clipped_sp[i, tmp_o_idx] = - np.infty
 
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
-                    prob_scores_po[i, tmp_s_idx] = 0
+                    # prob_scores_po[i, tmp_s_idx] = 0
 
          # logger.info(f'gone through batch input')
-
-        if prediction_subject_filtered is not None:
-            prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
-            prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
-        else:
-            prediction_subject_filtered = prob_scores_po
-            prediction_object_filtered = prob_scores_sp
+        #
+        # if prediction_subject_filtered is not None:
+        #     prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
+        #     prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
+        # else:
+        #     prediction_subject_filtered = prob_scores_po
+        #     prediction_object_filtered = prob_scores_sp
 
         #calculate the two mrr
         rank_object = rank(scores_sp, batch_input[:, 2])
@@ -468,7 +462,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     # auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
     # auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
 
-    logger.info('done not filtered aucroc')
+    # logger.info('done not filtered aucroc')
 
     # auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
     # auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
