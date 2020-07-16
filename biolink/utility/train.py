@@ -162,6 +162,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     '''
     nb_negs = args.nb_negs
     seed = args.seed
+    valid = args.valid
 
     global BAD_PERFORMING
 
