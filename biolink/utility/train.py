@@ -163,6 +163,8 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     nb_negs = args.nb_negs
     seed = args.seed
 
+    global BAD_PERFORMING
+
     # if torch.cuda.is_available():
     #     torch.cuda.manual_seed(seed)
 
