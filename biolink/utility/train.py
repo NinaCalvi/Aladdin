@@ -233,7 +233,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             scheduler.step()
 
 
-        if (((epoch+1) == 50) and valid:
+        if ((epoch+1) == 50) and valid:
             logger.info(f'Validating')
             val_metrics = evaluate(model, valid_data, all_data, batch_size, device, validate=True)
 
