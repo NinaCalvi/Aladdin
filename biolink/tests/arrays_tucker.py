@@ -20,7 +20,7 @@ def to_cmd(c, _path=None):
         f'--data covid --model tucker ' \
         f'--mcl True ' \
         f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
-        f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
+        f'--embedding-size {c["emb_size"]} --rel-emb-size {c["rel_emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
         f'--optimizer {c["optim"]} ' \
         f'--valid --quiet'
@@ -37,6 +37,7 @@ def main(argv):
         batch=[25, 50, 100],
         epoch=[100],
         emb_size=[50, 100, 150, 200],
+        rel_emb_size = [50, 100, 150, 200],
         lr=[0.1, 0.01],
         optim=['adagrad'],
         reg=['n3'],
