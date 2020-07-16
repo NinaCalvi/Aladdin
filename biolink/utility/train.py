@@ -240,7 +240,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
             mrr = val_metrics['MRR']
             if mrr <= 0.05:
-                logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
+                logger.info(f'Applying old dog tricks, ending training. MRR is {mrr}')
                 BAD_PERFORMING = True
                 break
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
