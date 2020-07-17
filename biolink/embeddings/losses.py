@@ -104,6 +104,15 @@ def pairwise_hinge_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Te
     loss = torch.relu(margin_value + neg_predictions - pos_predictions)
     return reduce_loss(loss, reduction_type)
 
+
+def cross_entropy_neg_sampling(predictions: torch.Tensor, reduction_type: str, device: torch.device):
+    '''
+    predictions: (B, T) = B is the numebr of original test triples, T = 1 + num_neg_samples
+    '''
+    labels = torch.zeros_like(predictions)
+    labels[:, 0] = 1
+    return 
+
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, device: torch.device):
     '''
     Pointwise square loss: (f(x)-l(x))^2
