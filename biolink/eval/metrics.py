@@ -499,6 +499,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     metrics = {}
 
     predicate_indeces = list(set(all_triples[:, 1].numpy()))
+    logger.info(f'length predicate_instanes {predicate_indeces}')
     # print(predicate_indeces)
     # print(type(predicate_indeces[0]))
     se_facts_full_dict = {se: set() for se in predicate_indeces}
@@ -525,10 +526,11 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     softmax = nn.Softmax(dim=1)
 
+    logger.info('about to start predicting')
 
     for pred in predicate_indeces:
         predicate_all_facts_set = se_facts_full_dict[pred]
-        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
+        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples.numpy() if p == pred])
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
@@ -545,7 +547,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         with torch.no_grad():
             se_test_facts_all = torch.from_numpy(se_test_facts_all).to(device)
             se_test_facts_scores = model.score(se_test_facts_all)
-            se_test_facts_scores = softmax(se_test_facts_scores.cpu()).numpy()
+            se_test_facts_scores = softmax(se_test_facts_scores).cpu().numpy()
 
 
         # se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
@@ -554,7 +556,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     logger.info('done')
 
-    metrics['AU-ROC'] = np.mean(predicate_auc_roc_list)
+    metrics['AUC-ROC'] = np.mean(predicate_auc_roc_list)
     logger.info('metrics done')
     logger.info(f'AUC_ROC \t{metrics["AUC-ROC"]}')
 
