@@ -499,7 +499,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     metrics = {}
 
     predicate_indeces = list(set(all_triples[:, 1].numpy()))
-    logger.info(f'length predicate_instanes {predicate_indeces}')
+    logger.info(f'length predicate_instanes {len(predicate_indeces)}')
     # print(predicate_indeces)
     # print(type(predicate_indeces[0]))
     se_facts_full_dict = {se: set() for se in predicate_indeces}
@@ -510,6 +510,8 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
 
     logger.info(f'all tiples \t{all_triples.size()}')
+    test_triples = test_triples.numpy()
+    logger.info('make test triples numpy')
 
 
     batch_start = 0
@@ -530,10 +532,11 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     for pred in predicate_indeces:
         predicate_all_facts_set = se_facts_full_dict[pred]
-        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples.numpy() if p == pred])
+        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
+        print('length pred pos', predicate_test_facts_pos_size)
         se_test_facts_neg = np.array([[d1, pred, d2] for d1, d2 in ents_combinations
                                       if (d1, pred, d2) not in predicate_all_facts_set
                                       and (d2, pred, d1) not in predicate_all_facts_set])
