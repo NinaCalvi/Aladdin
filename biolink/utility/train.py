@@ -239,7 +239,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             val_metrics = evaluate(model, valid_data, all_data, batch_size, device, validate=True)
 
             mrr = val_metrics['MRR']
-            if mrr <= 0.05:
+            if mrr < 0.06:
                 logger.info(f'Applying old dog tricks, ending training. MRR is {mrr}')
                 BAD_PERFORMING = True
                 break
