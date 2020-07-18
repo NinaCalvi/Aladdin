@@ -13,6 +13,14 @@ output_file = None
 iteration = 0
 
 
+import logging
+import sys
+
+
+logger = logging.getLogger(os.path.basename(sys.argv[0]))
+np.set_printoptions(linewidth=48, precision=5, suppress=True)
+
+
 
 
 space = {'model': hp.choice('model', ['tucker']), \
@@ -30,7 +38,7 @@ space = {'model': hp.choice('model', ['tucker']), \
 
 def do_hyperopt(parameter_space, num_eval):
     trials = Trials()
-    bp = fmin(add_params, parameter_space, algo=tpe.suggest, max_evals=2, trials=trials)
+    bp = fmin(add_params, parameter_space, algo=tpe.suggest, max_evals=num_eval, trials=trials)
     print(bp)
     return trials
 
