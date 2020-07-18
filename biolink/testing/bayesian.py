@@ -14,12 +14,14 @@ iteration = 0
 
 
 
-space = {'model': hp.choice('model', ['complex']), \
+space = {'model': hp.choice('model', ['tucker']), \
         'mcl': hp.choice('mcl', [True]), \
+        'data': hp.choice('data', ['pse']), \
         'learning-rate': hp.uniform('learning-rate', 0.0003, 1), \
         'batch-size': hp.choice('batch-size', [128, 268, 512]), \
         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-20), np.log(1.0e-01)), \
         'emb-size': hp.uniform('emb-size', 50, 200), \
+        'rel-emb-size': hp.uniform('emb-size', 50, 200), \
         'quiet', hp.choice('quiet', [True]), \
         'valid', hp.choice('valid', [True])}
 
