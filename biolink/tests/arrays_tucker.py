@@ -17,7 +17,7 @@ def summary(configuration):
 
 def to_cmd(c, _path=None):
     command = f'PYTHONPATH=. python ./test2.py ' \
-        f'--data covid --model tucker ' \
+        f'--data pse --model tucker ' \
         f'--mcl True ' \
         f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --rel-emb-size {c["rel_emb_size"]} --learning-rate {c["lr"]} ' \
@@ -28,7 +28,7 @@ def to_cmd(c, _path=None):
 
 
 def to_logfile(c, path):
-    outfile = "{}/tucker_mc_covid{}.log".format(path, summary(c).replace("/", "_"))
+    outfile = "{}/tucker_mc_pse{}.log".format(path, summary(c).replace("/", "_"))
     return outfile
 
 
@@ -46,7 +46,7 @@ def main(argv):
 
     configurations = list(cartesian_product(hyp_space))
 
-    path = '/home/acalvi/Dissertation/Aladdin/tucker_covid'
+    path = '/home/acalvi/Dissertation/Aladdin/tucker_pse'
     is_rc = False
 
     # Check that we are on the UCLCS cluster first
