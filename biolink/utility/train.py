@@ -15,6 +15,7 @@ logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 BAD_PERFORMING = False
+bad_mrr = 0
 
 def train(model: nn.Module,
         regulariser: str,
@@ -50,6 +51,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
     #for each positive generate some negatives
 
     global BAD_PERFORMING
+    global bad_mrr
 
 
     nb_negs = args.nb_negs
@@ -135,6 +137,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 if best_val_mrr <= 0.05:
                     logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
                     BAD_PERFORMING = True
+                    bad_mrr = best_val_mrr
                     break
 
 
@@ -165,6 +168,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     valid = args.valid
 
     global BAD_PERFORMING
+    global bad_mrr
 
     # if torch.cuda.is_available():
     #     torch.cuda.manual_seed(seed)
@@ -242,6 +246,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
             if mrr < 0.06:
                 logger.info(f'Applying old dog tricks, ending training. MRR is {mrr}')
                 BAD_PERFORMING = True
+                bad_mrr = mrr
                 break
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
         logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')

@@ -31,7 +31,7 @@ def metrics_to_str(metrics):
 
 
 
-def main(argv):
+def main(argv, bayesian=False):
     parser = argparse.ArgumentParser('BioLinkPred', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2', 'wn18rr', 'wn18', 'covid'])
 
@@ -183,8 +183,13 @@ def main(argv):
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
+                if dataset_name == 'valid':
+                    if bayesian:
+                        return metrics
     else:
         logger.info(f'Not checking test, since interrupted')
+        if bayesian:
+            return {'MRR': train.bad_mrr, 'H@1': -1, 'H@3': -1, 'H@10': -1}
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
