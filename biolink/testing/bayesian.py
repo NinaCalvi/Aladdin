@@ -39,7 +39,7 @@ def add_params(ps):
 
     args = []
     for key, value in ps.items():
-        if key == 'quiet' or key == 'valid' or key == 'auc' or key == 'mcl':
+        if key == 'quiet' or key == 'valid' or key == 'auc':
             args.append('--' + key)
         else:
             args.append('--' + key)
@@ -69,7 +69,7 @@ def main(name_file):
     of_connection.close()
 
 
-    num_eval = 2
+    num_eval = 50
     # trials = Trials()
     trials = do_hyperopt(space, num_eval)
     mrr = -1 * trials.best_trial['result']['loss']
