@@ -6,6 +6,7 @@ from hyperopt import hp
 from hyperopt import STATUS_OK
 from hyperopt import tpe
 from hyperopt import Trials, fmin
+from hyperopt.pyll import scope
 import csv
 
 output_file = None
@@ -20,8 +21,8 @@ space = {'model': hp.choice('model', ['tucker']), \
         'learning-rate': hp.uniform('learning-rate', 0.0003, 1), \
         'batch-size': hp.choice('batch-size', [128, 268, 512]), \
         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-20), np.log(1.0e-01)), \
-        'emb-size': hp.quniform('emb-size', 50, 200), \
-        'rel-emb-size': hp.quniform('real-emb-size', 50, 200), \
+        'emb-size': scope.int(hp.quniform('emb-size', 50, 200,1)), \
+        'rel-emb-size': scope.int(hp.quniform('real-emb-size', 50, 200,1)), \
         'quiet': hp.choice('quiet', [True]), \
         'valid': hp.choice('valid', [True])}
 
