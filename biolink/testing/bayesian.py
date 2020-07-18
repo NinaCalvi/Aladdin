@@ -49,7 +49,7 @@ def add_params(ps):
     print(args)
     metrics = experiment_ComplEx.main(args, bayesian=True)
 
-    with open(output_file, 'w') as f:
+    with open(output_file, 'a+') as f:
         writer = csv.writer(f)
         writer.writerow(-metrics['MRR'], metrics['H@1'], metrics['H@3'], metrics['H@10'], \
         iteration, args)
