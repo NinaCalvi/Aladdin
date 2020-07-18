@@ -22,8 +22,8 @@ space = {'model': hp.choice('model', ['tucker']), \
         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-20), np.log(1.0e-01)), \
         'emb-size': hp.uniform('emb-size', 50, 200), \
         'rel-emb-size': hp.uniform('emb-size', 50, 200), \
-        'quiet', hp.choice('quiet', [True]), \
-        'valid', hp.choice('valid', [True])}
+        'quiet': hp.choice('quiet', [True]), \
+        'valid': hp.choice('valid', [True])}
 
 
 
