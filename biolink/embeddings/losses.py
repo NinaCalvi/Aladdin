@@ -43,6 +43,8 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
         #targets need to be bingary
         targets = (targets + 1)/2
         return pointwise_square_loss(predictions, targets, reduction_type, device)
+    elif loss == 'ce':
+        return cross_entropy_neg_sampling(predictions, reduction_type, device)
     elif loss == 'bce':
         targets = (targets + 1)/2
         return bce_loss(predictions, targets, reduction_type)
@@ -109,9 +111,15 @@ def cross_entropy_neg_sampling(predictions: torch.Tensor, reduction_type: str, d
     '''
     predictions: (B, T) = B is the numebr of original test triples, T = 1 + num_neg_samples
     '''
-    labels = torch.zeros_like(predictions)
-    labels[:, 0] = 1
-    return 
+    labels = torch.ones(predictions.size(0))
+    # labels[:, 0] = 1
+
+    if reduction_type == 'avg':
+        loss = nn.CrossEntropyLoss(reduction='mean')
+    elif reduction_type == 'sum':
+        loss = nn.CrossEntropyLoss(reduction='sum')
+
+    return loss(predictions, labels)
 
 def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str, device: torch.device):
     '''

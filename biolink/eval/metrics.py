@@ -504,8 +504,16 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     # print(type(predicate_indeces[0]))
     se_facts_full_dict = {se: set() for se in predicate_indeces}
 
+
+    test_triples_pred = {}
+
     for instance in all_triples:
         s, p, o = instance.numpy()
+        if instance in test_triples:
+            if p in test_triples_pred:
+                test_triples_pred[p] = np.vstack(test_triples_pred[p], instance.numpy())
+            else:
+                test_triples_pred[p] = instance.numpy()
         se_facts_full_dict[p].add((s, p, o))
 
 
@@ -533,6 +541,10 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     for pred in predicate_indeces:
         predicate_all_facts_set = se_facts_full_dict[pred]
         predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
+        if pred in test_triples_pred:
+            predicate_test_facts_pos = test_triples_pred[pred]
+        else:
+            logger.info(f'{pred} not in test_triples_pred')
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
