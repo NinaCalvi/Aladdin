@@ -63,7 +63,7 @@ def main(name_file):
     global output_file
     output_file = name_file + '.csv'
 
-    of_connection = open(out_file, 'w')
+    of_connection = open(output_file, 'w')
     writer = csv.writer(of_connection)
     writer.writerow(['MRR', 'h@1', 'h@3', 'h@10', 'iteration', 'params'])
     of_connection.close()
