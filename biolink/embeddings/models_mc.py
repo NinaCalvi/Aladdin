@@ -432,8 +432,8 @@ class TuckEr_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
-        x = self.bn0(lhs)
-        x2 = self.bn0(rhs)
+        # x = self.bn0(lhs)
+        # x2 = self.bn0(rhs)
         #
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
@@ -451,7 +451,7 @@ class TuckEr_MC(KBCModelMCL):
 
         x = torch.bmm(x, W_mat)
         x = x.view(-1, lhs.size(1))
-        x = self.bn1(x)
+        # x = self.bn1(x)
         # x = self.hidden_dropout2(x)
         x = torch.sum(x * x2, 1, keepdim=True)
 
@@ -470,8 +470,8 @@ class TuckEr_MC(KBCModelMCL):
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
 
-        x = lhs
-        x2 = rhs
+        # x = lhs
+        # x2 = rhs
 
         x = x.view(-1, 1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1), 1)
