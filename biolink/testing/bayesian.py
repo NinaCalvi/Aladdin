@@ -15,6 +15,7 @@ iteration = 0
 
 import logging
 import sys
+import os
 
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
@@ -97,4 +98,5 @@ def main(name_file):
 
 
 if __name__ == '__main__':
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     main(sys.argv[1])
