@@ -418,8 +418,8 @@ class TuckEr_MC(KBCModelMCL):
             self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, requires_grad=True))
 
 
-        # self.bn0 = nn.BatchNorm1d(rank_e)
-        # self.bn1 = nn.BatchNorm1d(rank_e)
+        self.bn0 = nn.BatchNorm1d(rank_e)
+        self.bn1 = nn.BatchNorm1d(rank_e)
 
         #
         # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
@@ -432,8 +432,8 @@ class TuckEr_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
-        # x = self.bn0(lhs)
-        # x2 = self.bn0(rhs)
+        x = self.bn0(lhs)
+        x2 = self.bn0(rhs)
         #
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
@@ -451,7 +451,7 @@ class TuckEr_MC(KBCModelMCL):
 
         x = torch.bmm(x, W_mat)
         x = x.view(-1, lhs.size(1))
-        # x = self.bn1(x)
+        x = self.bn1(x)
         # x = self.hidden_dropout2(x)
         x = torch.sum(x * x2, 1, keepdim=True)
 
@@ -464,8 +464,8 @@ class TuckEr_MC(KBCModelMCL):
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
-        # x = self.bn0(lhs)
-        # x2 = self.bn0(rhs)
+        x = self.bn0(lhs)
+        x2 = self.bn0(rhs)
 
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
@@ -489,8 +489,8 @@ class TuckEr_MC(KBCModelMCL):
         x = x.view(-1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1))
 
-        # x = self.bn1(x)
-        # x2 = self.bn1(x2)
+        x = self.bn1(x)
+        x2 = self.bn1(x2)
 
         # x = self.hidden_dropout2(x)
         # x2 = self.hidden_dropout2(x2)
