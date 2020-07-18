@@ -1,5 +1,5 @@
 import sys
-import .experiment_ComplEx
+import experiment_ComplEx
 
 import numpy as np
 from hyperopt import hp
