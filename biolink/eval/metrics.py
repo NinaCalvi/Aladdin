@@ -511,7 +511,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         s, p, o = instance.numpy()
         if instance in test_triples:
             if p in test_triples_pred:
-                test_triples_pred[p] = np.vstack(test_triples_pred[p], instance.numpy())
+                test_triples_pred[p] = np.vstack()(test_triples_pred[p], instance.numpy()))
             else:
                 test_triples_pred[p] = instance.numpy()
         se_facts_full_dict[p].add((s, p, o))
