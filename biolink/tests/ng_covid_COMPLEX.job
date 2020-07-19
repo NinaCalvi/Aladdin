@@ -1,0 +1,17 @@
+#!/bin/bash -l
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/complex_ng_covid.out
+#$ -e $HOME/GRIDcovid.err
+#$ -t 1-180
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+conda activate libkge_new
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+cd $HOME/Dissertation/Aladdin/biolink/
+
+
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py --data covid --batch-size 1024 --epochs 100 --embedding-size 100 --learning-rate 0.01 --regulariser n3 --reg-weight 0.001 --optimizer adagrad --nb-negs 200 --valid --quiet

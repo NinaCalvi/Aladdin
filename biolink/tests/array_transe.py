@@ -36,7 +36,7 @@ def to_logfile(c, path):
 def main(argv):
     hyp_space = dict(
         batch=[1024, 4308],
-        epoch=[1000],
+        epoch=[400],
         emb_size=[50, 100, 150, 200],
         lr=[0.1, 0.01],
         transe_norm=['l1', 'l2'],
