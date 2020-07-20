@@ -26,7 +26,7 @@ np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 space = {'model': hp.choice('model', ['tucker']), \
         'mcl': hp.choice('mcl', [True]), \
-        'data': hp.choice('data', ['pse']), \
+        'data': hp.choice('data', ['covid']), \
         'learning-rate': hp.uniform('learning-rate', 0.0003, 1), \
         'batch-size': hp.choice('batch-size', [128, 268, 512]), \
         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
