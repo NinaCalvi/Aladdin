@@ -181,6 +181,8 @@ def main(argv, bayesian=False):
         for dataset_name, data in dataset.data.items():
             if dataset_name == 'test' or (dataset_name == 'valid' and args.valid):
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
+                if data == 'pse':
+                    batch_size = 1024
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
                 if dataset_name == 'valid':
