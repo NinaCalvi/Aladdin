@@ -61,8 +61,8 @@ def add_params(ps):
 
     with open(output_file, 'a+') as f:
         writer = csv.writer(f)
-        writer.writerow(-metrics['MRR'], metrics['H@1'], metrics['H@3'], metrics['H@10'], \
-        iteration, args)
+        writer.writerow([-metrics['MRR'], metrics['H@1'], metrics['H@3'], metrics['H@10'], \
+        iteration, args])
 
     #taking negative since we acutally want to maximise mrr
     return {'loss': -metrics['MRR'], 'H@1': metrics['H@1'], 'H@3': metrics['H@3'], \
