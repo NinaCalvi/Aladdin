@@ -304,6 +304,7 @@ class ComplEx_MC(KBCModelMCL):
         super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
+        self.init_size = init_size
 
         if optimiser_name == 'adam':
             sparse_ = False
@@ -316,8 +317,8 @@ class ComplEx_MC(KBCModelMCL):
         ])
 
     def init(self):
-        self.embeddings[0].weight.data *= init_size
-        self.embeddings[1].weight.data *= init_size
+        self.embeddings[0].weight.data *= self.init_size
+        self.embeddings[1].weight.data *= self.init_size
 
 
 
@@ -395,6 +396,7 @@ class TuckEr_MC(KBCModelMCL):
         self.sizes = sizes
         self.rank_e = rank_e
         self.rank_r = rank_rel
+        self.init_size = init_size
         if optimiser_name == 'adam':
             sparse_ = False
         else:
@@ -430,8 +432,8 @@ class TuckEr_MC(KBCModelMCL):
 
 
     def init(self):
-        self.ent.weight.data *= init_size
-        self.rel.weight.data *= init_size
+        self.ent.weight.data *= self.init_size
+        self.rel.weight.data *= self.init_size
 
 
     def score(self, x):
