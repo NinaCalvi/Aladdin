@@ -522,8 +522,6 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     logger.info('make test triples numpy')
 
 
-    batch_start = 0
-
     predicate_ap_list = []
     predicate_auc_roc_list = []
     predicate_auc_pr_list = []
@@ -532,15 +530,13 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     entities = list(set(list(np.concatenate([all_triples[:, 0], all_triples[:, 2]]))))
     ents_combinations =  np.array([[d1, d2] for d1, d2 in list(itertools.product(entities, entities)) if d1 != d2])
 
-    eps = 1-10
-
-    softmax = nn.Softmax(dim=1)
+    # softmax = nn.Softmax(dim=1)
 
     logger.info('about to start predicting')
 
     for pred in predicate_indeces:
         predicate_all_facts_set = se_facts_full_dict[pred]
-        predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
+        # predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
         if pred in test_triples_pred:
             predicate_test_facts_pos = test_triples_pred[pred]
         else:
@@ -562,16 +558,29 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         with torch.no_grad():
             se_test_facts_all = torch.from_numpy(se_test_facts_all).to(device)
             se_test_facts_scores = model.score(se_test_facts_all)
-            se_test_facts_scores = softmax(se_test_facts_scores).cpu().numpy()
+            se_test_facts_scores = se_test_facts_scores.cpu().numpy()
 
 
         # se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
+
+        se_ap = average_precision(se_test_facts_labels, se_test_facts_scores)
+        se_p50 = precision_at_k(se_test_facts_labels, se_test_facts_scores, k=50)
+        se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
         se_auc_roc = roc_auc_score(se_test_facts_labels, se_test_facts_scores)
         predicate_auc_roc_list.append(se_auc_roc)
+
+        predicate_ap_list.append(se_ap)
+        predicate_auc_pr_list.append(se_auc_pr)
+        predicate_p50_list.append(se_p50)
 
     logger.info('done')
 
     metrics['AUC-ROC'] = np.mean(predicate_auc_roc_list)
+    metrics['AP'] = np.mean(se_ap)
+    metrics['P@50'] = np.mean(se_p50)
+    metrics['AUC_PR'] = np.mean(se_auc_pr)
+
+
     logger.info('metrics done')
     logger.info(f'AUC_ROC \t{metrics["AUC-ROC"]}')
 
