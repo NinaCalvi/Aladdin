@@ -21,7 +21,7 @@ def to_cmd(c, _path=None):
         f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
-        f'--optimizer {c["optim"]} --loss pw_square ' \
+        f'--optimizer {c["optim"]} --loss pw_square --nb-negs {c["nb_negs"]}' \
         f'--quiet --valid'
     return command
 
@@ -33,12 +33,13 @@ def to_logfile(c, path):
 
 def main(argv):
     hyp_space = dict(
-        batch=[128, 268, 512],
+        batch=[268, 512, 1024],
         epoch=[100],
         emb_size=[50, 100, 150, 200],
         lr=[0.1, 0.01],
         optim=['adagrad'],
         reg=['n3'],
+        nb_negs=[10, 200,400],
         reg_weight=[0.001, 0.005, 0.01, 0.05, 0.0001, 0.0005]
     )
 
