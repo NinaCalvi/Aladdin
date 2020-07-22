@@ -1,0 +1,91 @@
+./test2.py --data pse --mcl True --batch-size 512 --epochs 100 --embedding-size 100 --learning-rate 0.1 --regulariser n3 --reg-weight 0.5 --optimizer adagrad --valid --quiet
+MCL True
+INFO:test2.py:Valid: True
+INFO:test2.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+<class 'biolink.embeddings.models_mc.ComplEx_MC'>
+INFO:test2.py:is tucker False
+INFO:test2.py:settin tucker to FALSE
+INFO:test2.py:Device: cuda
+INFO:test2.py:Epoch 1/100	Loss 13.2022 ± 2.6179
+INFO:test2.py:Epoch 2/100	Loss 13.0445 ± 2.3880
+INFO:test2.py:Epoch 3/100	Loss 13.0207 ± 2.2716
+INFO:test2.py:Epoch 4/100	Loss 13.0092 ± 2.1855
+INFO:test2.py:Epoch 5/100	Loss 13.0021 ± 2.1152
+INFO:test2.py:Epoch 6/100	Loss 12.9970 ± 2.0552
+INFO:test2.py:Epoch 7/100	Loss 12.9930 ± 2.0025
+INFO:test2.py:Epoch 8/100	Loss 12.9899 ± 1.9551
+INFO:test2.py:Epoch 9/100	Loss 12.9843 ± 1.9135
+INFO:test2.py:Epoch 10/100	Loss 12.9676 ± 1.9271
+INFO:test2.py:Epoch 11/100	Loss 12.9638 ± 1.8876
+INFO:test2.py:Epoch 12/100	Loss 12.9613 ± 1.8527
+INFO:test2.py:Epoch 13/100	Loss 12.9593 ± 1.8178
+INFO:test2.py:Epoch 14/100	Loss 12.9576 ± 1.7867
+INFO:test2.py:Epoch 15/100	Loss 12.9560 ± 1.7573
+INFO:test2.py:Epoch 16/100	Loss 12.9547 ± 1.7290
+INFO:test2.py:Epoch 17/100	Loss 12.9534 ± 1.7030
+INFO:test2.py:Epoch 18/100	Loss 12.9523 ± 1.6771
+INFO:test2.py:Epoch 19/100	Loss 12.9513 ± 1.6529
+INFO:test2.py:Epoch 20/100	Loss 12.9503 ± 1.6299
+INFO:test2.py:Epoch 21/100	Loss 12.9494 ± 1.6073
+INFO:test2.py:Epoch 22/100	Loss 12.9486 ± 1.5858
+INFO:test2.py:Epoch 23/100	Loss 12.9478 ± 1.5654
+INFO:test2.py:Epoch 24/100	Loss 12.9470 ± 1.5457
+INFO:test2.py:Epoch 25/100	Loss 12.9463 ± 1.5270
+INFO:test2.py:Epoch 26/100	Loss 12.9457 ± 1.5080
+INFO:test2.py:Epoch 27/100	Loss 12.9451 ± 1.4900
+INFO:test2.py:Epoch 28/100	Loss 12.9445 ± 1.4727
+INFO:test2.py:Epoch 29/100	Loss 12.9439 ± 1.4556
+INFO:test2.py:Epoch 30/100	Loss 12.9433 ± 1.4391
+INFO:test2.py:Epoch 31/100	Loss 12.9428 ± 1.4232
+INFO:test2.py:Epoch 32/100	Loss 12.9423 ± 1.4084
+INFO:test2.py:Epoch 33/100	Loss 12.9418 ± 1.3928
+INFO:test2.py:Epoch 34/100	Loss 12.9414 ± 1.3780
+INFO:test2.py:Epoch 35/100	Loss 12.9410 ± 1.3638
+INFO:test2.py:Epoch 36/100	Loss 12.9405 ± 1.3499
+INFO:test2.py:Epoch 37/100	Loss 12.9401 ± 1.3361
+INFO:test2.py:Epoch 38/100	Loss 12.9397 ± 1.3227
+INFO:test2.py:Epoch 39/100	Loss 12.9393 ± 1.3098
+INFO:test2.py:Epoch 40/100	Loss 12.9390 ± 1.2973
+INFO:test2.py:Epoch 41/100	Loss 12.9386 ± 1.2844
+INFO:test2.py:Epoch 42/100	Loss 12.9383 ± 1.2725
+INFO:test2.py:Epoch 43/100	Loss 12.9379 ± 1.2606
+INFO:test2.py:Epoch 44/100	Loss 12.9376 ± 1.2495
+INFO:test2.py:Epoch 45/100	Loss 12.9373 ± 1.2374
+INFO:test2.py:Epoch 46/100	Loss 12.9370 ± 1.2262
+INFO:test2.py:Epoch 47/100	Loss 12.9367 ± 1.2157
+INFO:test2.py:Epoch 48/100	Loss 12.9364 ± 1.2053
+INFO:test2.py:Epoch 49/100	Loss 12.9361 ± 1.1939
+INFO:test2.py:Validating
+INFO:test2.py:batch start 	320000
+INFO:test2.py:done
+INFO:test2.py:metrics done
+INFO:test2.py:Applying old dog tricks, ending training. MRR is 0.05950484119037381
+INFO:test2.py:is bad performing True
+INFO:test2.py:Done training
+INFO:test2.py:Not checking test, since interrupted
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])

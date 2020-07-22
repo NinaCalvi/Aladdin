@@ -35,7 +35,7 @@ def main(argv):
 
     configurations = list(cartesian_product(hyp_space))
 
-    path = '/home/acalvi/Dissertation/CBR-AKBC/logs/cbr_pse'
+    path = '/home/acalvi/Dissertation/CBR-AKBC/logs/cbr_pse_auc'
     is_rc = False
 
     # Check that we are on the UCLCS cluster first
@@ -72,7 +72,7 @@ def main(argv):
 #$ -cwd
 #$ -S /bin/bash
 #$ -o /dev/null
-#$ -e $HOME/GRIDCpse.err
+#$ -e $HOME/GRIDCpse_auc.err
 #$ -t 1-{}
 #$ -l tmem=8G
 #$ -l h_rt=8:00:00

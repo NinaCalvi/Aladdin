@@ -2,9 +2,9 @@
 #$ -S /bin/bash
 #$ -o $HOME/tucker.out
 #$ -e $HOME/tucker.err
-#$ -t 1-2
-#$ -l tmem=15G
-#$ -l h_rt=10:00:00
+#$ -t 1-1
+#$ -l tmem=8G
+#$ -l h_rt=6:00:00
 #$ -l gpu=true
 
 export LANG="en_US.utf8"

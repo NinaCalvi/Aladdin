@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/firsttucker.out
+#$ -e $HOME/firsttucker.err
+#$ -t 1-1
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+conda activate libkge_new
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+cd $HOME/Dissertation/Aladdin/biolink/
+
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py --data covid --model tucker --mcl True --batch-size 100 --epochs 100 --embedding-size 50 --learning-rate 0.1 --regulariser n3 --reg-weight 0.05 --optimizer adagrad --valid --quiet

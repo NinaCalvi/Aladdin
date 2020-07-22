@@ -1,0 +1,152 @@
+./test2.py --data pse --mcl True --batch-size 512 --epochs 100 --embedding-size 200 --learning-rate 0.01 --regulariser n3 --reg-weight 0.01 --optimizer adagrad --valid --quiet
+MCL True
+INFO:test2.py:Valid: True
+INFO:test2.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+<class 'biolink.embeddings.models_mc.ComplEx_MC'>
+INFO:test2.py:is tucker False
+INFO:test2.py:settin tucker to FALSE
+INFO:test2.py:Device: cuda
+INFO:test2.py:Epoch 1/100	Loss 11.1003 ± 0.3666
+INFO:test2.py:Epoch 2/100	Loss 10.8011 ± 0.0617
+INFO:test2.py:Epoch 3/100	Loss 10.7386 ± 0.0554
+INFO:test2.py:Epoch 4/100	Loss 10.7065 ± 0.0553
+INFO:test2.py:Epoch 5/100	Loss 10.6853 ± 0.0562
+INFO:test2.py:Epoch 6/100	Loss 10.6693 ± 0.0555
+INFO:test2.py:Epoch 7/100	Loss 10.6567 ± 0.0550
+INFO:test2.py:Epoch 8/100	Loss 10.6461 ± 0.0553
+INFO:test2.py:Epoch 9/100	Loss 10.6369 ± 0.0558
+INFO:test2.py:Epoch 10/100	Loss 10.6289 ± 0.0551
+INFO:test2.py:Epoch 11/100	Loss 10.6217 ± 0.0565
+INFO:test2.py:Epoch 12/100	Loss 10.6153 ± 0.0550
+INFO:test2.py:Epoch 13/100	Loss 10.6093 ± 0.0551
+INFO:test2.py:Epoch 14/100	Loss 10.6039 ± 0.0552
+INFO:test2.py:Epoch 15/100	Loss 10.5989 ± 0.0550
+INFO:test2.py:Epoch 16/100	Loss 10.5941 ± 0.0550
+INFO:test2.py:Epoch 17/100	Loss 10.5898 ± 0.0545
+INFO:test2.py:Epoch 18/100	Loss 10.5857 ± 0.0552
+INFO:test2.py:Epoch 19/100	Loss 10.5818 ± 0.0550
+INFO:test2.py:Epoch 20/100	Loss 10.5781 ± 0.0557
+INFO:test2.py:Epoch 21/100	Loss 10.5747 ± 0.0550
+INFO:test2.py:Epoch 22/100	Loss 10.5714 ± 0.0552
+INFO:test2.py:Epoch 23/100	Loss 10.5683 ± 0.0551
+INFO:test2.py:Epoch 24/100	Loss 10.5653 ± 0.0555
+INFO:test2.py:Epoch 25/100	Loss 10.5625 ± 0.0556
+INFO:test2.py:Epoch 26/100	Loss 10.5598 ± 0.0560
+INFO:test2.py:Epoch 27/100	Loss 10.5573 ± 0.0551
+INFO:test2.py:Epoch 28/100	Loss 10.5548 ± 0.0548
+INFO:test2.py:Epoch 29/100	Loss 10.5525 ± 0.0534
+INFO:test2.py:Epoch 30/100	Loss 10.5501 ± 0.0551
+INFO:test2.py:Epoch 31/100	Loss 10.5480 ± 0.0549
+INFO:test2.py:Epoch 32/100	Loss 10.5459 ± 0.0538
+INFO:test2.py:Epoch 33/100	Loss 10.5439 ± 0.0551
+INFO:test2.py:Epoch 34/100	Loss 10.5420 ± 0.0550
+INFO:test2.py:Epoch 35/100	Loss 10.5401 ± 0.0542
+INFO:test2.py:Epoch 36/100	Loss 10.5383 ± 0.0544
+INFO:test2.py:Epoch 37/100	Loss 10.5366 ± 0.0543
+INFO:test2.py:Epoch 38/100	Loss 10.5349 ± 0.0548
+INFO:test2.py:Epoch 39/100	Loss 10.5333 ± 0.0545
+INFO:test2.py:Epoch 40/100	Loss 10.5317 ± 0.0549
+INFO:test2.py:Epoch 41/100	Loss 10.5302 ± 0.0550
+INFO:test2.py:Epoch 42/100	Loss 10.5287 ± 0.0550
+INFO:test2.py:Epoch 43/100	Loss 10.5273 ± 0.0556
+INFO:test2.py:Epoch 44/100	Loss 10.5259 ± 0.0551
+INFO:test2.py:Epoch 45/100	Loss 10.5245 ± 0.0553
+INFO:test2.py:Epoch 46/100	Loss 10.5233 ± 0.0548
+INFO:test2.py:Epoch 47/100	Loss 10.5220 ± 0.0534
+INFO:test2.py:Epoch 48/100	Loss 10.5208 ± 0.0544
+INFO:test2.py:Epoch 49/100	Loss 10.5196 ± 0.0548
+INFO:test2.py:Validating
+INFO:test2.py:batch start 	320000
+INFO:test2.py:done
+INFO:test2.py:metrics done
+INFO:test2.py:Epoch 50/100	Loss 10.5184 ± 0.0549
+INFO:test2.py:Epoch 51/100	Loss 10.5173 ± 0.0549
+INFO:test2.py:Epoch 52/100	Loss 10.5162 ± 0.0547
+INFO:test2.py:Epoch 53/100	Loss 10.5151 ± 0.0547
+INFO:test2.py:Epoch 54/100	Loss 10.5140 ± 0.0548
+INFO:test2.py:Epoch 55/100	Loss 10.5130 ± 0.0540
+INFO:test2.py:Epoch 56/100	Loss 10.5120 ± 0.0560
+INFO:test2.py:Epoch 57/100	Loss 10.5110 ± 0.0540
+INFO:test2.py:Epoch 58/100	Loss 10.5101 ± 0.0545
+INFO:test2.py:Epoch 59/100	Loss 10.5092 ± 0.0541
+INFO:test2.py:Epoch 60/100	Loss 10.5082 ± 0.0550
+INFO:test2.py:Epoch 61/100	Loss 10.5074 ± 0.0549
+INFO:test2.py:Epoch 62/100	Loss 10.5065 ± 0.0547
+INFO:test2.py:Epoch 63/100	Loss 10.5056 ± 0.0546
+INFO:test2.py:Epoch 64/100	Loss 10.5048 ± 0.0549
+INFO:test2.py:Epoch 65/100	Loss 10.5040 ± 0.0542
+INFO:test2.py:Epoch 66/100	Loss 10.5032 ± 0.0543
+INFO:test2.py:Epoch 67/100	Loss 10.5024 ± 0.0541
+INFO:test2.py:Epoch 68/100	Loss 10.5017 ± 0.0544
+INFO:test2.py:Epoch 69/100	Loss 10.5009 ± 0.0545
+INFO:test2.py:Epoch 70/100	Loss 10.5002 ± 0.0546
+INFO:test2.py:Epoch 71/100	Loss 10.4995 ± 0.0554
+INFO:test2.py:Epoch 72/100	Loss 10.4988 ± 0.0552
+INFO:test2.py:Epoch 73/100	Loss 10.4981 ± 0.0541
+INFO:test2.py:Epoch 74/100	Loss 10.4974 ± 0.0552
+INFO:test2.py:Epoch 75/100	Loss 10.4968 ± 0.0551
+INFO:test2.py:Epoch 76/100	Loss 10.4961 ± 0.0550
+INFO:test2.py:Epoch 77/100	Loss 10.4954 ± 0.0558
+INFO:test2.py:Epoch 78/100	Loss 10.4948 ± 0.0547
+INFO:test2.py:Epoch 79/100	Loss 10.4942 ± 0.0545
+INFO:test2.py:Epoch 80/100	Loss 10.4936 ± 0.0543
+INFO:test2.py:Epoch 81/100	Loss 10.4930 ± 0.0543
+INFO:test2.py:Epoch 82/100	Loss 10.4924 ± 0.0543
+INFO:test2.py:Epoch 83/100	Loss 10.4918 ± 0.0542
+INFO:test2.py:Epoch 84/100	Loss 10.4913 ± 0.0549
+INFO:test2.py:Epoch 85/100	Loss 10.4908 ± 0.0550
+INFO:test2.py:Epoch 86/100	Loss 10.4902 ± 0.0544
+INFO:test2.py:Epoch 87/100	Loss 10.4897 ± 0.0552
+INFO:test2.py:Epoch 88/100	Loss 10.4891 ± 0.0543
+INFO:test2.py:Epoch 89/100	Loss 10.4886 ± 0.0554
+INFO:test2.py:Epoch 90/100	Loss 10.4881 ± 0.0546
+INFO:test2.py:Epoch 91/100	Loss 10.4876 ± 0.0549
+INFO:test2.py:Epoch 92/100	Loss 10.4871 ± 0.0549
+INFO:test2.py:Epoch 93/100	Loss 10.4866 ± 0.0545
+INFO:test2.py:Epoch 94/100	Loss 10.4861 ± 0.0546
+INFO:test2.py:Epoch 95/100	Loss 10.4856 ± 0.0548
+INFO:test2.py:Epoch 96/100	Loss 10.4852 ± 0.0541
+INFO:test2.py:Epoch 97/100	Loss 10.4847 ± 0.0548
+INFO:test2.py:Epoch 98/100	Loss 10.4842 ± 0.0548
+INFO:test2.py:Epoch 99/100	Loss 10.4838 ± 0.0545
+INFO:test2.py:Epoch 100/100	Loss 10.4834 ± 0.0542
+INFO:test2.py:is bad performing False
+INFO:test2.py:Done training
+INFO:test2.py:in evalute for dataset: 	valid
+INFO:test2.py:batch start 	320000
+INFO:test2.py:done
+INFO:test2.py:metrics done
+INFO:test2.py:Error 	valid results	MRR 0.130952	H@1 0.052621	H@3 0.123726	H@10 0.285305	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:test2.py:in evalute for dataset: 	test
+INFO:test2.py:batch start 	320000
+INFO:test2.py:done
+INFO:test2.py:metrics done
+INFO:test2.py:Error 	test results	MRR 0.131341	H@1 0.052985	H@3 0.124292	H@10 0.285819	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/acalvi/anaconda3/envs/libkge_new/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/home/acalvi/Dissertation/Aladdin/biolink/testing/experiment_ComplEx.py:184: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if data == 'pse':
