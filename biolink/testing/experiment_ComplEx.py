@@ -174,7 +174,7 @@ def main(argv, bayesian=False):
     logger.info(f'is bad performing {train.BAD_PERFORMING}')
 
     if args.save_model_name != 'Empty':
-        torch.save(model.state_dict(), SAVE_PATH + args.save_model_name)
+        torch.save(model.state_dict(), SAVE_PATH + args.save_model_name + '.pt')
         logger.info(f'Save model in {SAVE_PATH + args.save_model_name}')
         return
 
