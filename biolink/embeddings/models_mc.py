@@ -423,8 +423,8 @@ class TuckEr_MC(KBCModelMCL):
 
         #
         # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
-        # self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
-        # self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+        self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
+        self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
 
     def score(self, x):
 
@@ -447,15 +447,15 @@ class TuckEr_MC(KBCModelMCL):
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
         #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
-        # W_mat = self.hidden_dropout1(W_mat)
+        W_mat = self.hidden_dropout1(W_mat)
 
         x = torch.bmm(x, W_mat)
         x = x.view(-1, lhs.size(1))
         # x = self.bn1(x)
         # x = self.hidden_dropout2(x)
         x = torch.sum(x * x2, 1, keepdim=True)
-
-        return torch.sigmoid(x)
+        return x
+        #return torch.sigmoid(x)
 
         # return torch.sigmoid(x)
 
@@ -480,7 +480,7 @@ class TuckEr_MC(KBCModelMCL):
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
         #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
-        # W_mat = self.hidden_dropout1(W_mat)
+        W_mat = self.hidden_dropout1(W_mat)
 
 
         x = torch.bmm(x, W_mat)
