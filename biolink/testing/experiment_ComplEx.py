@@ -77,7 +77,7 @@ def main(argv, bayesian=False):
     parser.add_argument('--lr_decay', action='store', type=float, default=0.0)
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
-    parser.add_argument('--load', '-q', action='store_true', default=False)
+    parser.add_argument('--load', action='store_true', default=False)
     parser.add_argument('--save_model_name', action='store', type=str, default='Empty')
 
 
