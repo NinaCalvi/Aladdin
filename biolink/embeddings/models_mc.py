@@ -314,8 +314,11 @@ class ComplEx_MC(KBCModelMCL):
             nn.Embedding(s, 2 * rank, sparse=sparse_)
             for s in sizes[:2]
         ])
+
+    def init(self):
         self.embeddings[0].weight.data *= init_size
         self.embeddings[1].weight.data *= init_size
+
 
 
     def score(self, x):
@@ -401,8 +404,7 @@ class TuckEr_MC(KBCModelMCL):
         self.rel = nn.Embedding(sizes[1], rank_rel, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
         # self.hs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
 
-        self.ent.weight.data *= init_size
-        self.rel.weight.data *= init_size
+
 
         # #suggests that relations and entities have different ranks as well potentailly
         # self.ent = nn.Embedding(sizes[0], rank_e)
@@ -423,8 +425,12 @@ class TuckEr_MC(KBCModelMCL):
 
         #
         # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
-        # self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
-        # self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+        self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
+        self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+
+    def init(self):
+        self.ent.weight.data *= init_size
+        self.rel.weight.data *= init_size
 
     def score(self, x):
 
