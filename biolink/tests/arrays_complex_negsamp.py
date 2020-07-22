@@ -21,7 +21,7 @@ def to_cmd(c, _path=None):
         f'--batch-size {c["batch"]} --epochs {c["epoch"]} '\
         f'--embedding-size {c["emb_size"]} --learning-rate {c["lr"]} ' \
         f'--regulariser {c["reg"]} --reg-weight {c["reg_weight"]} ' \
-        f'--optimizer {c["optim"]} --loss pw_square --nb-negs 200' \
+        f'--optimizer {c["optim"]} --loss pw_square --nb-negs 200 ' \
         f'--quiet --valid'
     return command
 
