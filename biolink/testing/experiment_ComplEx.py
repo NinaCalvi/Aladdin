@@ -75,11 +75,13 @@ def main(argv, bayesian=False):
     parser.add_argument('--lr_decay', action='store', type=float, default=0.0)
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
+    parser.add_argument('--save_model_name', action='store', type=str, default='Empty')
 
 
 
     args = parser.parse_args(argv)
 
+    SAVE_PATH = os.path.join(os.getcwd(),f'best_models/{data}/' )
 
     data = args.data
     emb_size = args.embedding_size
@@ -170,6 +172,11 @@ def main(argv, bayesian=False):
     model.train()
     train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args, scheduler=scheduler)
     logger.info(f'is bad performing {train.BAD_PERFORMING}')
+
+    if args.save_model_name != 'Empty':
+        torch.save(model.state_dict(), SAVE_PATH + args.save_model_name)
+        logger.info(f'Save model in {SAVE_PATH + args.save_model_name}')
+        return
 
     # if args.mcl:
     #     train.train_mc(model, regulariser, optimizer, train_data, args)
