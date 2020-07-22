@@ -471,8 +471,8 @@ class ComplEx(KBCModel):
         self.args = args
 
     def init(self):
-        nn.init.xavier_normal(self.embeddings[0].weight)
-        nn.init.xavier_normal(self.embeddings[1].weight)
+        nn.init.xavier_normal_(self.embeddings[0].weight)
+        nn.init.xavier_normal_(self.embeddings[1].weight)
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])

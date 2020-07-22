@@ -532,6 +532,8 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     # softmax = nn.Softmax(dim=1)
 
+    metrics_per_se = dict()
+
     logger.info('about to start predicting')
 
     for pred in predicate_indeces:
@@ -567,8 +569,14 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         se_p50 = precision_at_k(se_test_facts_labels, se_test_facts_scores, k=50)
         se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
         se_auc_roc = roc_auc_score(se_test_facts_labels, se_test_facts_scores)
-        predicate_auc_roc_list.append(se_auc_roc)
 
+
+
+        metrics_per_se[se] = {"ap": se_ap, "auc-roc": se_auc_roc, "auc-pr": se_auc_pr, "p@50": se_p50}
+        print("AP: %1.4f - AUC-ROC: %1.4f - AUC-PR: %1.4f - P@50: %1.4f > %s" %
+              (se_ap, se_auc_roc, se_auc_pr, se_p50, se), flush=True)
+
+        predicate_auc_roc_list.append(se_auc_roc)
         predicate_ap_list.append(se_ap)
         predicate_auc_pr_list.append(se_auc_pr)
         predicate_p50_list.append(se_p50)

@@ -134,7 +134,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 best_val_mrr = val_metrics['MRR']
                 logger.info(f'Best validation metrics {best_val_mrr}')
             if (epoch+1) == 50:
-                if best_val_mrr <= 0.05:
+                if best_val_mrr < 0.06:
                     logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
                     BAD_PERFORMING = True
                     bad_mrr = best_val_mrr
