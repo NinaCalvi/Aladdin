@@ -80,10 +80,11 @@ def main(argv, bayesian=False):
 
 
     args = parser.parse_args(argv)
+    
+    data = args.data
 
     SAVE_PATH = os.path.join(os.getcwd(),f'best_models/{data}/' )
 
-    data = args.data
     emb_size = args.embedding_size
     batch_size = args.batch_size
 
