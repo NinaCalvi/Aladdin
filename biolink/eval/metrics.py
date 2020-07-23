@@ -479,6 +479,74 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
 
 
 
+def precision_at_k(y_true: np.array, y_pred: np.array, k: int, pos_label=1.0):
+    """ Compute the mean precision at k of a rank of predicted scores
+        Parameters
+        ----------
+        y_true: np.ndarray
+            true labels
+        y_pred: np.ndarray
+            predicted scores
+        k: int
+            the position `k`
+        pos_label: float
+            label of the positive true instances
+        Returns
+        -------
+        float
+            the mean reciprocal rank of the true labels in the rank
+    """
+    if k < 1 or k > len(y_true):
+        raise ValueError('Invalid k value: %s' % k)
+
+    rank_order = np.argsort(y_pred)[::-1]
+    y_true_k_sorted = y_true[rank_order[:k]]
+    return np.count_nonzero(y_true_k_sorted == pos_label) / k
+
+
+def ranks_for_precision(y_true, y_pred, pos_label=1.0):
+    """ Compute ranks of the true labels in a rank
+    Parameters
+    ----------
+    y_true: np.ndarray
+        true labels
+    y_pred: np.ndarray
+        predicted scores
+    pos_label: float
+        label of the positive true instances
+    Returns
+    -------
+    np.ndarray
+        ranks of the true labels in the rank
+    """
+    rank_order = np.argsort(y_pred)[::-1]
+    y_true_sorted = y_true[rank_order]
+    pos_label_mask = y_true_sorted == pos_label
+    return np.nonzero(pos_label_mask)[0] + 1
+
+def average_precision(y_true: np.array, y_pred:np.array, pos_label=1.0):
+    """ Compute the average precision of a rank of predicted scores
+        Parameters
+        ----------
+        y_true: np.ndarray
+            true labels
+        y_pred: np.ndarray
+            predicted scores
+        pos_label: float
+            label of the positive true instances
+        Returns
+        -------
+        float
+            the mean reciprocal rank of the true labels in the rank
+    """
+    ranks_array = ranks_for_precision(y_true, y_pred, pos_label=1.0)
+
+    pk_list = []
+    for k in ranks_array:
+        pk_list.append(precision_at_k(y_true, y_pred, k, pos_label=pos_label))
+    return np.mean(pk_list)
+
+
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
 def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
@@ -499,11 +567,12 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     metrics = {}
 
     predicate_indeces = list(set(all_triples[:, 1].numpy()))
-    logger.info(f'length predicate_instanes {len(predicate_indeces)}')
+    logger.info(f'length predicate_instanes \t{len(predicate_indeces)}')
     # print(predicate_indeces)
     # print(type(predicate_indeces[0]))
     se_facts_full_dict = {se: set() for se in predicate_indeces}
 
+    logger.info('predicate instances done')
 
     test_triples_pred = {}
 
@@ -542,7 +611,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         if pred in test_triples_pred:
             predicate_test_facts_pos = test_triples_pred[pred]
         else:
-            logger.info(f'{pred} not in test_triples_pred')
+            logger.info(f'\t{pred} not in test_triples_pred')
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
@@ -567,7 +636,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
         se_ap = average_precision(se_test_facts_labels, se_test_facts_scores)
         se_p50 = precision_at_k(se_test_facts_labels, se_test_facts_scores, k=50)
-        se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
+        se_auc_pr = average_precision_score(se_test_facts_labels, se_test_facts_scores)
         se_auc_roc = roc_auc_score(se_test_facts_labels, se_test_facts_scores)
 
 
