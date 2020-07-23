@@ -641,7 +641,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
 
 
-        metrics_per_se[se] = {"ap": se_ap, "auc-roc": se_auc_roc, "auc-pr": se_auc_pr, "p@50": se_p50}
+        metrics_per_se[pred] = {"ap": se_ap, "auc-roc": se_auc_roc, "auc-pr": se_auc_pr, "p@50": se_p50}
         print("AP: %1.4f - AUC-ROC: %1.4f - AUC-PR: %1.4f - P@50: %1.4f > %s" %
               (se_ap, se_auc_roc, se_auc_pr, se_p50, se), flush=True)
 
