@@ -3,3 +3,4 @@
 biolink/testing/data/*
 covid/*
 biolink/best_models/pse/*
+amie_results/*
