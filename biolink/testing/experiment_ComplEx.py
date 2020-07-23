@@ -158,7 +158,7 @@ def main(argv, bayesian=False):
 
     model = model_dict[args.model]()
     if args.load:
-        model = model.load_state_dict(torch.load(SAVE_PATH + args.save_model_name + '.pt'))
+        model.load_state_dict(torch.load(SAVE_PATH + args.save_model_name + '.pt'))
     else:
         model.init()
 
