@@ -166,14 +166,16 @@ def main(argv, bayesian=False):
 
     ###if AUC then we are just testing to see this performance##
     if args.auc and args.load:
+        logger.info('auc and lod happening')
         for dataset_name, data in dataset.data.items():
+            logger.info('dataset name \t{dataset_name}')
             if dataset_name == 'test':
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
                 if data == 'pse':
                     batch_size = 5000
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
-            return
+                return
 
 
 
