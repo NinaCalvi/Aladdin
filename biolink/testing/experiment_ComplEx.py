@@ -165,9 +165,9 @@ def main(argv, bayesian=False):
     model.to(device)
 
     ###if AUC then we are just testing to see this performance##
-    if args.auc:
+    if args.auc and args.load:
         for dataset_name, data in dataset.data.items():
-            if dataset_name == 'test' or (dataset_name == 'valid' and args.valid):
+            if dataset_name == 'test':
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
                 if data == 'pse':
                     batch_size = 5000
