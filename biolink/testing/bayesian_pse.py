@@ -30,7 +30,7 @@ space = {'model': hp.choice('model', ['tucker']), \
         'learning-rate': hp.loguniform('learning-rate', np.log(0.003), np.log(1)), \
         'batch-size': hp.choice('batch-size', [128, 268, 512, 1024]), \
         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
-        'tucker-reg-weight': hp.loguniform('tucker-reg-weight', p.log(1.0e-10), np.log(1.0e-01)), \
+        'tucker-reg-weight': hp.loguniform('tucker-reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
         'embedding-size': scope.int(hp.quniform('embedding-size', 50, 200,1)), \
         'rel-emb-size': scope.int(hp.quniform('real-emb-size', 50, 200,1)), \
         'quiet': hp.choice('quiet', [True]), \
