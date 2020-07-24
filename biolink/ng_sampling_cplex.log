@@ -28,3 +28,7 @@ INFO:bayesian.py:Epoch 15/100	Loss 315498.3359 ± 63784.5303
 INFO:bayesian.py:Epoch 16/100	Loss 286614.1458 ± 60860.2609
 INFO:bayesian.py:Epoch 17/100	Loss 262452.0252 ± 54628.0118
 INFO:bayesian.py:Epoch 18/100	Loss 242368.2369 ± 55787.9969
+INFO:bayesian.py:Epoch 19/100	Loss 225018.7466 ± 50077.7138
+INFO:bayesian.py:Epoch 20/100	Loss 210062.4218 ± 47846.6500
+INFO:bayesian.py:Epoch 21/100	Loss 197161.4594 ± 45109.1208
+INFO:bayesian.py:Epoch 22/100	Loss 186055.4705 ± 42817.4821
