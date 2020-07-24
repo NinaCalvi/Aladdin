@@ -1,0 +1,63 @@
+  0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:hyperopt.tpe:build_posterior_wrapper took 0.006879 seconds
+INFO:hyperopt.tpe:TPE using 0 trials
+                                                                                                                             ['--batch-size', '128', '--data', 'covid', '--embedding-size', '194', '--learning-rate', '0.34710171616176944', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '400', '--quiet', '--reg-weight', '0.06511944423471853']
+  0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                                                                             MCL
+  0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                                                                             False
+  0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                                                                             <class 'biolink.embeddings.models.ComplEx'>
+  0%|                                                                                 | 0/50 [00:17<?, ?trial/s, best loss=?]INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+ERROR:hyperopt.fmin:job exception: CUDA out of memory. Tried to allocate 152.00 MiB (GPU 0; 23.65 GiB total capacity; 48.25 MiB already allocated; 117.44 MiB free; 70.00 MiB reserved in total by PyTorch)
+  0%|                                                                                 | 0/50 [00:17<?, ?trial/s, best loss=?]/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+
+Traceback (most recent call last):
+  File "testing/bayesian.py", line 110, in <module>
+    main(sys.argv[1])
+  File "testing/bayesian.py", line 92, in main
+    trials = do_hyperopt(space, num_eval)
+  File "testing/bayesian.py", line 50, in do_hyperopt
+    bp = fmin(add_params, parameter_space, algo=tpe.suggest, max_evals=num_eval, trials=trials)
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/fmin.py", line 482, in fmin
+    show_progressbar=show_progressbar,
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/base.py", line 686, in fmin
+    show_progressbar=show_progressbar,
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/fmin.py", line 509, in fmin
+    rval.exhaust()
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/fmin.py", line 330, in exhaust
+    self.run(self.max_evals - n_done, block_until_done=self.asynchronous)
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/fmin.py", line 286, in run
+    self.serial_evaluate()
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/fmin.py", line 165, in serial_evaluate
+    result = self.domain.evaluate(spec, ctrl)
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/hyperopt/base.py", line 894, in evaluate
+    rval = self.fn(pyll_rval)
+  File "testing/bayesian.py", line 68, in add_params
+    metrics = experiment_ComplEx.main(args, bayesian=True)
+  File "/app/Antonia/Aladdin/biolink/testing/experiment_ComplEx.py", line 174, in main
+    train.train(model, regulariser, optimizer, train_data, valid_data, bench_idx_data, args, scheduler=scheduler)
+  File "/app/Antonia/Aladdin/biolink/utility/train.py", line 43, in train
+    train_not_mc(model,regulariser, optimiser, data,  valid_data, all_data, args)
+  File "/app/Antonia/Aladdin/biolink/utility/train.py", line 102, in train_not_mc
+    scores, factors = model.score(input_all)
+  File "/app/Antonia/Aladdin/biolink/embeddings/models.py", line 474, in score
+    lhs = self.embeddings[0](x[:, 0])
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/torch/nn/modules/sparse.py", line 114, in forward
+    self.norm_type, self.scale_grad_by_freq, self.sparse)
+  File "/opt/miniconda/envs/nina/lib/python3.7/site-packages/torch/nn/functional.py", line 1724, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: CUDA out of memory. Tried to allocate 152.00 MiB (GPU 0; 23.65 GiB total capacity; 48.25 MiB already allocated; 117.44 MiB free; 70.00 MiB reserved in total by PyTorch)
