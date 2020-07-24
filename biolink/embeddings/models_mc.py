@@ -427,8 +427,8 @@ class TuckEr_MC(KBCModelMCL):
 
         #
         # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
-        self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
-        self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+        # self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
+        # self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
 
 
     def init(self):
@@ -457,7 +457,7 @@ class TuckEr_MC(KBCModelMCL):
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
         #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
-        W_mat = self.hidden_dropout1(W_mat)
+        # W_mat = self.hidden_dropout1(W_mat)
 
         x = torch.bmm(x, W_mat)
         x = x.view(-1, lhs.size(1))
@@ -515,7 +515,7 @@ class TuckEr_MC(KBCModelMCL):
         # pred_po = torch.sigmoid(x2)
 
 
-        return pred_sp, pred_po, (lhs, rel, rhs) #unsure whether should add w?
+        return pred_sp, pred_po, (lhs, rel, rhs, W_mat) #unsure whether should add w?
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.ent.weight.data[

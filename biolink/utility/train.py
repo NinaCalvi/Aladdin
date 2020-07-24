@@ -141,12 +141,12 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                     break
 
 
-def get_regulariser(regulariser_str: str, reg_weight: int):
+def get_regulariser(regulariser_str: str, reg_weight: float, tucker_reg_weight: float = None):
     '''
     Return the regulariser wanted
     '''
     if regulariser_str == 'n3':
-        return regulariser.N3(reg_weight)
+        return regulariser.N3(reg_weight, tucker_reg_weight)
     elif regulariser_str == 'f2':
         return regulariser.F2(reg_weight)
     else:
@@ -190,6 +190,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     nb_epochs = args.epochs
     # seed = args.seed
     reg_weight = args.reg_weight
+    tucker_reg_weight = args.tucker_reg_weight
     is_quiet = args.quiet
 
     #set seed
@@ -204,7 +205,10 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     # print('inputs type', type(inputs))
 
     nb_batches = np.ceil(data.shape[0]/batch_size)
-    regulariser = get_regulariser(regulariser_str, reg_weight)
+    if tucker_reg_weight > -1:
+        regulariser = get_regulariser(regulariser_str, reg_weight, tucker_reg_weight)
+    else:
+        regulariser = get_regulariser(regulariser_str, reg_weight)
 
     for epoch in range(nb_epochs):
         batch_start = 0

@@ -59,6 +59,7 @@ def main(argv, bayesian=False):
     parser.add_argument('--loss', '-l', action='store', type=str, default='pw_logistic')
     parser.add_argument('--regulariser', '-r', action='store', type=str, default='n3')
     parser.add_argument('--reg-weight', action='store', type=float, required=True)
+    parser.add_argument('--tucker-reg-weight', action='store', type=float, default=-1.0)
 
     parser.add_argument('--nb-negs', action='store', type=int, default=6)
     parser.add_argument('--transe-norm', action='store', type=str, default='l1')
