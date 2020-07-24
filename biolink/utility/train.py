@@ -103,7 +103,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             optimiser.zero_grad()
 
             scores_pos, factors_pos = model.score(pos_input)
-            socres_neg, factors_neg = model.score(pos_neg)
+            socres_neg, factors_neg = model.score(neg_input)
             scores_pos = scores_pos.repeat(nb_negs, 1)
             factors_pos = factors_pos.repeat(nb_negs, 1)
 
