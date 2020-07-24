@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/auc_best_pse_cplex.out
+#$ -e $HOME/auc_best_pse_cplex.err
+#$ -t 1-1
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+conda activate libkge_new
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+cd $HOME/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py --data pse --mcl True --batch-size 128 --epochs 100 --embedding-size 200 --learning-rate 0.1 --regulariser n3 --reg-weight 0.001 --optimizer adagrad --load --auc --save_model_name cplex_batch128_es_200_reg_n3_rw_0.001_pse

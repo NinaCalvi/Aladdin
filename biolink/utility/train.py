@@ -91,18 +91,29 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
             corruptions = generate_neg_instances(input_batch, nb_negs, nb_ents, seed)
             #ensuring you can split between positive and negative examples through the middle
-            input_batch = input_batch.repeat(nb_negs, 1)
+            # input_batch = input_batch.repeat(nb_negs, 1)
             # input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
             input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
+
+            pos_input = input_batch.to(device)
+            neg_input = corruptions.to(device)
 
 
 
             optimiser.zero_grad()
 
-            scores, factors = model.score(input_all)
-            loss = model.compute_loss(scores, input_batch.shape[0])
+            scores_pos, factors_pos = model.score(pos_input)
+            socres_neg, factors_neg = model.score(pos_neg)
+            scores_pos = scores_pos.repeat(nb_negs, 1)
+            factors_pos = factors_pos.repeat(nb_negs, 1)
+
+
+            # scores, factors = model.score(input_all)
+            loss = model.compute_loss(torch.cat((scores_pos, scores_neg), axis=0), scores_pos.shape[0])
+
+            # loss = model.compute_loss(scores, input_batch.shape[0])
             # print(model.embeddings[0].weight.data)
-            reg = regulariser.forward(factors)
+            reg = regulariser.forward(torch.cat((factors_pos, factors_neg), axis=0))
             loss += reg
 
             loss.backward()
@@ -134,19 +145,19 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 best_val_mrr = val_metrics['MRR']
                 logger.info(f'Best validation metrics {best_val_mrr}')
             if (epoch+1) == 50:
-                if best_val_mrr <= 0.05:
+                if best_val_mrr < 0.06:
                     logger.info(f'Applying old dog tricks, ending training. MRR is {best_val_mrr}')
                     BAD_PERFORMING = True
                     bad_mrr = best_val_mrr
                     break
 
 
-def get_regulariser(regulariser_str: str, reg_weight: int):
+def get_regulariser(regulariser_str: str, reg_weight: float, tucker_reg_weight: float = None):
     '''
     Return the regulariser wanted
     '''
     if regulariser_str == 'n3':
-        return regulariser.N3(reg_weight)
+        return regulariser.N3(reg_weight, tucker_reg_weight)
     elif regulariser_str == 'f2':
         return regulariser.F2(reg_weight)
     else:
@@ -190,6 +201,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     nb_epochs = args.epochs
     # seed = args.seed
     reg_weight = args.reg_weight
+    tucker_reg_weight = args.tucker_reg_weight
     is_quiet = args.quiet
 
     #set seed
@@ -204,7 +216,10 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     # print('inputs type', type(inputs))
 
     nb_batches = np.ceil(data.shape[0]/batch_size)
-    regulariser = get_regulariser(regulariser_str, reg_weight)
+    if tucker_reg_weight > -1:
+        regulariser = get_regulariser(regulariser_str, reg_weight, tucker_reg_weight)
+    else:
+        regulariser = get_regulariser(regulariser_str, reg_weight)
 
     for epoch in range(nb_epochs):
         batch_start = 0

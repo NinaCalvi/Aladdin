@@ -470,6 +470,10 @@ class ComplEx(KBCModel):
         self.device = device
         self.args = args
 
+    def init(self):
+        nn.init.xavier_normal_(self.embeddings[0].weight)
+        nn.init.xavier_normal_(self.embeddings[1].weight)
+
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])
         rel = self.embeddings[1](x[:, 1])

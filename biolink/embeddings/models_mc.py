@@ -304,6 +304,7 @@ class ComplEx_MC(KBCModelMCL):
         super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
+        self.init_size = init_size
 
         if optimiser_name == 'adam':
             sparse_ = False
@@ -314,8 +315,11 @@ class ComplEx_MC(KBCModelMCL):
             nn.Embedding(s, 2 * rank, sparse=sparse_)
             for s in sizes[:2]
         ])
-        self.embeddings[0].weight.data *= init_size
-        self.embeddings[1].weight.data *= init_size
+
+    def init(self):
+        self.embeddings[0].weight.data *= self.init_size
+        self.embeddings[1].weight.data *= self.init_size
+
 
 
     def score(self, x):
@@ -392,6 +396,7 @@ class TuckEr_MC(KBCModelMCL):
         self.sizes = sizes
         self.rank_e = rank_e
         self.rank_r = rank_rel
+        self.init_size = init_size
         if optimiser_name == 'adam':
             sparse_ = False
         else:
@@ -401,8 +406,7 @@ class TuckEr_MC(KBCModelMCL):
         self.rel = nn.Embedding(sizes[1], rank_rel, sparse=sparse_) #removed sparse - ADAM does not accept this should add option
         # self.hs = nn.Embedding(sizes[2], rank) #removed sparse - ADAM does not accept this should add option
 
-        self.ent.weight.data *= init_size
-        self.rel.weight.data *= init_size
+
 
         # #suggests that relations and entities have different ranks as well potentailly
         # self.ent = nn.Embedding(sizes[0], rank_e)
@@ -425,6 +429,12 @@ class TuckEr_MC(KBCModelMCL):
         # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
         # self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
         # self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+
+
+    def init(self):
+        self.ent.weight.data *= self.init_size
+        self.rel.weight.data *= self.init_size
+
 
     def score(self, x):
 
@@ -454,8 +464,8 @@ class TuckEr_MC(KBCModelMCL):
         # x = self.bn1(x)
         # x = self.hidden_dropout2(x)
         x = torch.sum(x * x2, 1, keepdim=True)
-
-        return torch.sigmoid(x)
+        return x
+        #return torch.sigmoid(x)
 
         # return torch.sigmoid(x)
 
@@ -505,7 +515,7 @@ class TuckEr_MC(KBCModelMCL):
         # pred_po = torch.sigmoid(x2)
 
 
-        return pred_sp, pred_po, (lhs, rel, rhs) #unsure whether should add w?
+        return pred_sp, pred_po, (lhs, rel, rhs, W_mat) #unsure whether should add w?
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.ent.weight.data[
