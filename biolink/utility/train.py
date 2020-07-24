@@ -91,18 +91,29 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
             corruptions = generate_neg_instances(input_batch, nb_negs, nb_ents, seed)
             #ensuring you can split between positive and negative examples through the middle
-            input_batch = input_batch.repeat(nb_negs, 1)
+            # input_batch = input_batch.repeat(nb_negs, 1)
             # input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
             input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
+
+            pos_input = input_batch.to(device)
+            neg_input = corruptions.to(device)
 
 
 
             optimiser.zero_grad()
 
-            scores, factors = model.score(input_all)
-            loss = model.compute_loss(scores, input_batch.shape[0])
+            scores_pos, factors_pos = model.score(pos_input)
+            socres_neg, factors_neg = model.score(pos_neg)
+            scores_pos = scores_pos.repeat(nb_negs, 1)
+            factors_pos = factors_pos.repeat(nb_negs, 1)
+
+
+            # scores, factors = model.score(input_all)
+            loss = model.compute_loss(torch.cat((scores_pos, scores_neg), axis=0), scores_pos.shape[0])
+
+            # loss = model.compute_loss(scores, input_batch.shape[0])
             # print(model.embeddings[0].weight.data)
-            reg = regulariser.forward(factors)
+            reg = regulariser.forward(torch.cat((factors_pos, factors_neg), axis=0))
             loss += reg
 
             loss.backward()
