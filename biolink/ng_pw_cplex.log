@@ -1,21 +1,16 @@
-  0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:hyperopt.tpe:build_posterior_wrapper took 0.003001 seconds
+  0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:hyperopt.tpe:build_posterior_wrapper took 0.002908 seconds
 INFO:hyperopt.tpe:TPE using 0 trials
-                                                                                                                             ['--batch-size', '128', '--data', 'covid', '--embedding-size', '103', '--learning-rate', '0.36623233785365017', '--loss', 'pw_logistic', '--model', 'complex', '--nb-negs', '200', '--quiet', '--reg-weight', '1.9595276087096488e-05', '--valid']
+                                                                                                                             ['--batch-size', '128', '--data', 'covid', '--embedding-size', '105', '--learning-rate', '0.3042877863305139', '--loss', 'pw_logistic', '--model', 'complex', '--nb-negs', '50', '--quiet', '--reg-weight', '0.01883932592497674', '--valid']
   0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                                                                             MCL
   0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                                                                             False
   0%|                                                                                 | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:bayesian.py:Valid: True
 INFO:bayesian.py:Device: cuda
                                                                                                                              <class 'biolink.embeddings.models.ComplEx'>
-  0%|                                                                                 | 0/50 [00:13<?, ?trial/s, best loss=?]INFO:bayesian.py:NOT MC
+  0%|                                                                                 | 0/50 [00:15<?, ?trial/s, best loss=?]INFO:bayesian.py:NOT MC
 INFO:bayesian.py:Device: cuda
 INFO:bayesian.py:valid: True
-INFO:bayesian.py:Epoch 1/100	Loss 1750.7563 ± 6509.3844
-INFO:bayesian.py:Epoch 2/100	Loss 894.4883 ± 15.4069
-INFO:bayesian.py:Epoch 3/100	Loss 877.1153 ± 9.0466
-INFO:bayesian.py:Epoch 4/100	Loss 870.3043 ± 6.7996
-INFO:bayesian.py:Epoch 5/100	Loss 866.8304 ± 5.7192
-INFO:bayesian.py:Epoch 6/100	Loss 864.6115 ± 4.9475
-INFO:bayesian.py:Epoch 7/100	Loss 862.9969 ± 4.3228
-INFO:bayesian.py:Epoch 8/100	Loss 861.6250 ± 3.9549
-INFO:bayesian.py:Epoch 9/100	Loss 860.3211 ± 3.6305
-INFO:bayesian.py:Epoch 10/100	Loss 858.9927 ± 3.4069
+INFO:bayesian.py:Epoch 1/100	Loss 6234.8277 ± 2127.1602
+INFO:bayesian.py:Epoch 2/100	Loss 3149.0435 ± 296.1672
+INFO:bayesian.py:Epoch 3/100	Loss 2087.2276 ± 145.6784
+INFO:bayesian.py:Epoch 4/100	Loss 1573.8225 ± 107.2262
+INFO:bayesian.py:Epoch 5/100	Loss 1268.7277 ± 90.9737
