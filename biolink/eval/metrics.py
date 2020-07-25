@@ -132,6 +132,8 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     sp_to_o = {}
     po_to_s = {}
 
+    batch_size=1024
+
     if isinstance(model, TransE):
         batch_size = 90
 
@@ -194,21 +196,21 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
             #remove them from device
             #need to have probability scores for auc calculations
-            if not validate:
-                prob_scores_sp = softmax(scores_sp.cpu()).numpy()
-                prob_scores_po = softmax(scores_po.cpu()).numpy()
+            # if not validate:
+            #     prob_scores_sp = softmax(scores_sp.cpu()).numpy()
+            #     prob_scores_po = softmax(scores_po.cpu()).numpy()
 
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
-        # logger.info(f'in evaluate:')
-        if not validate:
-            if prediction_subject is not None:
-                prediction_subject = np.vstack((prediction_subject, prob_scores_po))
-                prediction_object = np.vstack((prediction_object, prob_scores_sp))
-            else:
-                prediction_subject = prob_scores_po
-                prediction_object = prob_scores_sp
+        # # logger.info(f'in evaluate:')
+        # if not validate:
+        #     if prediction_subject is not None:
+        #         prediction_subject = np.vstack((prediction_subject, prob_scores_po))
+        #         prediction_object = np.vstack((prediction_object, prob_scores_sp))
+        #     else:
+        #         prediction_subject = prob_scores_po
+        #         prediction_object = prob_scores_sp
 
 
 
@@ -224,25 +226,25 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
             for tmp_o_idx in o_to_remove:
                 if tmp_o_idx != o_idx:
                     scores_sp[i, tmp_o_idx] = - np.infty
-                    if not validate:
-                        prob_scores_sp[i, tmp_o_idx] = 0
-                    # clipped_sp[i, tmp_o_idx] = - np.infty
+                    # if not validate:
+                    #     prob_scores_sp[i, tmp_o_idx] = 0
+                    # # clipped_sp[i, tmp_o_idx] = - np.infty
 
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
-                    if not validate:
-                        prob_scores_po[i, tmp_s_idx] = 0
+                    # if not validate:
+                    #     prob_scores_po[i, tmp_s_idx] = 0
 
          # logger.info(f'gone through batch input')
-
-        if not validate:
-            if prediction_subject_filtered is not None:
-                prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
-                prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
-            else:
-                prediction_subject_filtered = prob_scores_po
-                prediction_object_filtered = prob_scores_sp
+        #
+        # if not validate:
+        #     if prediction_subject_filtered is not None:
+        #         prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
+        #         prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
+        #     else:
+        #         prediction_subject_filtered = prob_scores_po
+        #         prediction_object_filtered = prob_scores_sp
 
         #calculate the two mrr
         rank_object = rank(scores_sp, batch_input[:, 2])
