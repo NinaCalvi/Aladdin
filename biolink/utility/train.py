@@ -93,7 +93,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             #ensuring you can split between positive and negative examples through the middle
             # input_batch = input_batch.repeat(nb_negs, 1)
             # input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
-            input_all = torch.cat(input_batch, corruptions), axis=0).to(device)
+            input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
 
             # input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
 
