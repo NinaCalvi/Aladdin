@@ -456,7 +456,7 @@ class ComplEx(KBCModel):
 
 
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 2 * rank, sparse=sparse_) #REMOVED SPARSE TRUE
+            nn.Embedding(s, 2 * rank) #REMOVED SPARSE TRUE
             for s in sizes[:2]
         ])
 

@@ -25,8 +25,10 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     #assuming that the positive and negative samples are perfectly balanced
     # print(predictions.shape)
     scrs = torch.split(predictions, [pos_size, int(predictions.shape[0]-pos_size)], dim=0)
-    pos_scores = scrs[0]
+
+    pos_scores = scrs[0].repeat(int(predictions.shape[0]-pos_size), 1)
     neg_scores = scrs[1]
+    predictions = torch.cat((pos_scores, neg_scores),dim=1)
     #setting the targets in this way is needed for the different losses we will be workign with
     targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
 
@@ -127,7 +129,7 @@ def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, redu
     l(x) is the label : 1 for positive, 0 for negative sample
 
     '''
-    print(predictions[0])
+    # print(predictions[0])
     losses = torch.pow(predictions - targets.to(device), 2)
     return reduce_loss(losses, reduction_type)
 
