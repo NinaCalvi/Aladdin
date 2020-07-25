@@ -1,0 +1,787 @@
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:hyperopt.tpe:build_posterior_wrapper took 0.002693 seconds
+INFO:hyperopt.tpe:TPE using 0 trials
+                                                                               ['--batch-size', '512', '--data', 'covid', '--embedding-size', '101', '--learning-rate', '0.5967537250589446', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '200', '--quiet', '--reg-weight', '1.7431508211371046e-09']
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                               MCL
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                               False
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+  0%|                                   | 0/50 [00:16<?, ?trial/s, best loss=?]INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 148586.7640 ± 783121.9024
+INFO:bayesian.py:Epoch 2/100	Loss 11346.1331 ± 108285.2683
+INFO:bayesian.py:Epoch 3/100	Loss 6502.5081 ± 83194.1008
+INFO:bayesian.py:Epoch 4/100	Loss 1202.5597 ± 6757.1299
+INFO:bayesian.py:Epoch 5/100	Loss 651.9106 ± 1333.3618
+INFO:bayesian.py:Epoch 6/100	Loss 565.7845 ± 344.9944
+INFO:bayesian.py:Epoch 7/100	Loss 544.4444 ± 179.0343
+INFO:bayesian.py:Epoch 8/100	Loss 538.9473 ± 133.1886
+INFO:bayesian.py:Epoch 9/100	Loss 538.0558 ± 119.8484
+INFO:bayesian.py:Epoch 10/100	Loss 535.2526 ± 112.4049
+INFO:bayesian.py:Epoch 11/100	Loss 533.1818 ± 100.4803
+INFO:bayesian.py:Epoch 12/100	Loss 532.2829 ± 95.7077
+INFO:bayesian.py:Epoch 13/100	Loss 530.9977 ± 86.5414
+INFO:bayesian.py:Epoch 14/100	Loss 529.0207 ± 76.2052
+INFO:bayesian.py:Epoch 15/100	Loss 528.3103 ± 72.3080
+INFO:bayesian.py:Epoch 16/100	Loss 527.7578 ± 66.9740
+INFO:bayesian.py:Epoch 17/100	Loss 526.8850 ± 62.9408
+INFO:bayesian.py:Epoch 18/100	Loss 526.0413 ± 59.1477
+INFO:bayesian.py:Epoch 19/100	Loss 525.2917 ± 55.0775
+INFO:bayesian.py:Epoch 20/100	Loss 524.7056 ± 52.2758
+INFO:bayesian.py:Epoch 21/100	Loss 524.2733 ± 51.1137
+INFO:bayesian.py:Epoch 22/100	Loss 523.8290 ± 45.9114
+INFO:bayesian.py:Epoch 23/100	Loss 524.2859 ± 43.6861
+INFO:bayesian.py:Epoch 24/100	Loss 522.7235 ± 41.7503
+INFO:bayesian.py:Epoch 25/100	Loss 522.4135 ± 37.9354
+INFO:bayesian.py:Epoch 26/100	Loss 522.3404 ± 36.5675
+INFO:bayesian.py:Epoch 27/100	Loss 521.5056 ± 32.8584
+INFO:bayesian.py:Epoch 28/100	Loss 521.3413 ± 31.7671
+INFO:bayesian.py:Epoch 29/100	Loss 520.9789 ± 28.6230
+INFO:bayesian.py:Epoch 30/100	Loss 520.7010 ± 27.8923
+INFO:bayesian.py:Epoch 31/100	Loss 520.7908 ± 27.4768
+INFO:bayesian.py:Epoch 32/100	Loss 520.2668 ± 25.3945
+INFO:bayesian.py:Epoch 33/100	Loss 520.2736 ± 23.6370
+INFO:bayesian.py:Epoch 34/100	Loss 519.6524 ± 22.3659
+INFO:bayesian.py:Epoch 35/100	Loss 519.8708 ± 22.4892
+INFO:bayesian.py:Epoch 36/100	Loss 520.4110 ± 22.8182
+INFO:bayesian.py:Epoch 37/100	Loss 519.1875 ± 19.9714
+INFO:bayesian.py:Epoch 38/100	Loss 519.1089 ± 19.8586
+INFO:bayesian.py:Epoch 39/100	Loss 518.8979 ± 18.7219
+INFO:bayesian.py:Epoch 40/100	Loss 518.7203 ± 17.3386
+INFO:bayesian.py:Epoch 41/100	Loss 519.9989 ± 19.9080
+INFO:bayesian.py:Epoch 42/100	Loss 518.4962 ± 16.5539
+INFO:bayesian.py:Epoch 43/100	Loss 518.6058 ± 15.8056
+INFO:bayesian.py:Epoch 44/100	Loss 518.1325 ± 15.5175
+INFO:bayesian.py:Epoch 45/100	Loss 518.2495 ± 15.1738
+INFO:bayesian.py:Epoch 46/100	Loss 518.4084 ± 15.3824
+INFO:bayesian.py:Epoch 47/100	Loss 517.9521 ± 14.1469
+INFO:bayesian.py:Epoch 48/100	Loss 518.0369 ± 13.7805
+INFO:bayesian.py:Epoch 49/100	Loss 517.7166 ± 13.2046
+INFO:bayesian.py:Epoch 50/100	Loss 518.3958 ± 14.0288
+INFO:bayesian.py:Epoch 51/100	Loss 517.7045 ± 12.6204
+INFO:bayesian.py:Epoch 52/100	Loss 517.6143 ± 12.2360
+INFO:bayesian.py:Epoch 53/100	Loss 517.4791 ± 12.2006
+INFO:bayesian.py:Epoch 54/100	Loss 517.4419 ± 11.8051
+INFO:bayesian.py:Epoch 55/100	Loss 517.6117 ± 11.5112
+INFO:bayesian.py:Epoch 56/100	Loss 517.2471 ± 11.6132
+INFO:bayesian.py:Epoch 57/100	Loss 517.2427 ± 11.2464
+INFO:bayesian.py:Epoch 58/100	Loss 517.8805 ± 8.3080
+INFO:bayesian.py:Epoch 59/100	Loss 517.4905 ± 11.3320
+INFO:bayesian.py:Epoch 60/100	Loss 517.1253 ± 10.6405
+INFO:bayesian.py:Epoch 61/100	Loss 517.0576 ± 10.8753
+INFO:bayesian.py:Epoch 62/100	Loss 517.1329 ± 10.7038
+INFO:bayesian.py:Epoch 63/100	Loss 516.8425 ± 10.3249
+INFO:bayesian.py:Epoch 64/100	Loss 517.0472 ± 10.4940
+INFO:bayesian.py:Epoch 65/100	Loss 516.7832 ± 10.1239
+INFO:bayesian.py:Epoch 66/100	Loss 516.9786 ± 10.1040
+INFO:bayesian.py:Epoch 67/100	Loss 517.0655 ± 10.3897
+INFO:bayesian.py:Epoch 68/100	Loss 516.7842 ± 9.8530
+INFO:bayesian.py:Epoch 69/100	Loss 516.7640 ± 9.8814
+INFO:bayesian.py:Epoch 70/100	Loss 516.8382 ± 10.1309
+INFO:bayesian.py:Epoch 71/100	Loss 517.0144 ± 9.9409
+INFO:bayesian.py:Epoch 72/100	Loss 516.6739 ± 9.6946
+INFO:bayesian.py:Epoch 73/100	Loss 516.9700 ± 9.6881
+INFO:bayesian.py:Epoch 74/100	Loss 517.0458 ± 10.3320
+INFO:bayesian.py:Epoch 75/100	Loss 518.2480 ± 14.2392
+INFO:bayesian.py:Epoch 76/100	Loss 516.6263 ± 9.6594
+INFO:bayesian.py:Epoch 77/100	Loss 517.0123 ± 9.9624
+INFO:bayesian.py:Epoch 78/100	Loss 516.5463 ± 9.4309
+INFO:bayesian.py:Epoch 79/100	Loss 516.4808 ± 9.4600
+INFO:bayesian.py:Epoch 80/100	Loss 516.6040 ± 9.4437
+INFO:bayesian.py:Epoch 81/100	Loss 519.7199 ± 30.3366
+INFO:bayesian.py:Epoch 82/100	Loss 516.5355 ± 9.4540
+INFO:bayesian.py:Epoch 83/100	Loss 516.4403 ± 9.3379
+INFO:bayesian.py:Epoch 84/100	Loss 516.5005 ± 9.3358
+INFO:bayesian.py:Epoch 85/100	Loss 519.3166 ± 32.7765
+INFO:bayesian.py:Epoch 86/100	Loss 516.3745 ± 9.2669
+INFO:bayesian.py:Epoch 87/100	Loss 516.3996 ± 9.2640
+INFO:bayesian.py:Epoch 88/100	Loss 516.4784 ± 9.2559
+INFO:bayesian.py:Epoch 89/100	Loss 516.3439 ± 9.2371
+INFO:bayesian.py:Epoch 90/100	Loss 516.2696 ± 9.1840
+INFO:bayesian.py:Epoch 91/100	Loss 516.3661 ± 9.1977
+INFO:bayesian.py:Epoch 92/100	Loss 516.3435 ± 9.1523
+INFO:bayesian.py:Epoch 93/100	Loss 516.2888 ± 9.1571
+INFO:bayesian.py:Epoch 94/100	Loss 516.2188 ± 9.1469
+INFO:bayesian.py:Epoch 95/100	Loss 516.5880 ± 9.5663
+INFO:bayesian.py:Epoch 96/100	Loss 516.2396 ± 9.1390
+INFO:bayesian.py:Epoch 97/100	Loss 516.2027 ± 9.1115
+INFO:bayesian.py:Epoch 98/100	Loss 522.7973 ± 71.5010
+INFO:bayesian.py:Epoch 99/100	Loss 517.7349 ± 14.7786
+INFO:bayesian.py:Epoch 100/100	Loss 577.9844 ± 831.7228
+INFO:bayesian.py:is bad performing False
+INFO:bayesian.py:Done training
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.001287	H@1 0.000297	H@3 0.000752	H@10 0.001913	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+  2%| | 1/50 [3:01:32<148:15:15, 10892.14s/trial, best loss: -0.001287364652994INFO:hyperopt.tpe:build_posterior_wrapper took 0.003405 seconds
+INFO:hyperopt.tpe:TPE using 1/1 trials with best loss -0.001287
+                                                                               ['--batch-size', '268', '--data', 'covid', '--embedding-size', '131', '--learning-rate', '0.2035751849556829', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '200', '--quiet', '--reg-weight', '0.0658478132310053']
+  2%| | 1/50 [3:01:32<148:15:15, 10892.14s/trial, best loss: -0.001287364652994                                                                               MCL
+  2%| | 1/50 [3:01:32<148:15:15, 10892.14s/trial, best loss: -0.001287364652994                                                                               False
+  2%| | 1/50 [3:01:32<148:15:15, 10892.14s/trial, best loss: -0.001287364652994INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+  2%| | 1/50 [3:01:40<148:15:15, 10892.14s/trial, best loss: -0.001287364652994INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 595.8933 ± 1807.1493
+INFO:bayesian.py:Epoch 2/100	Loss 299.5465 ± 523.9422
+INFO:bayesian.py:Epoch 3/100	Loss 283.4087 ± 173.0895
+INFO:bayesian.py:Epoch 4/100	Loss 273.9148 ± 30.8496
+INFO:bayesian.py:Epoch 5/100	Loss 272.1347 ± 8.7997
+INFO:bayesian.py:Epoch 6/100	Loss 271.6208 ± 3.3288
+INFO:bayesian.py:Epoch 7/100	Loss 271.4741 ± 3.1746
+INFO:bayesian.py:Epoch 8/100	Loss 271.3806 ± 3.1469
+INFO:bayesian.py:Epoch 9/100	Loss 271.2803 ± 3.1343
+INFO:bayesian.py:Epoch 10/100	Loss 271.2005 ± 3.1187
+INFO:bayesian.py:Epoch 11/100	Loss 271.1277 ± 3.1182
+INFO:bayesian.py:Epoch 12/100	Loss 271.0635 ± 3.1151
+INFO:bayesian.py:Epoch 13/100	Loss 271.0048 ± 3.1141
+INFO:bayesian.py:Epoch 14/100	Loss 270.9444 ± 3.1070
+INFO:bayesian.py:Epoch 15/100	Loss 270.8891 ± 3.1034
+INFO:bayesian.py:Epoch 16/100	Loss 270.8378 ± 3.1038
+INFO:bayesian.py:Epoch 17/100	Loss 270.7827 ± 3.0993
+INFO:bayesian.py:Epoch 18/100	Loss 270.7343 ± 3.1010
+INFO:bayesian.py:Epoch 19/100	Loss 270.6954 ± 3.0973
+INFO:bayesian.py:Epoch 20/100	Loss 270.6502 ± 3.0930
+INFO:bayesian.py:Epoch 21/100	Loss 270.6141 ± 3.0940
+INFO:bayesian.py:Epoch 22/100	Loss 270.5682 ± 3.0896
+INFO:bayesian.py:Epoch 23/100	Loss 270.5339 ± 3.0898
+INFO:bayesian.py:Epoch 24/100	Loss 270.4979 ± 3.0881
+INFO:bayesian.py:Epoch 25/100	Loss 270.4648 ± 3.0844
+INFO:bayesian.py:Epoch 26/100	Loss 270.4310 ± 3.0850
+INFO:bayesian.py:Epoch 27/100	Loss 270.3997 ± 3.0809
+INFO:bayesian.py:Epoch 28/100	Loss 270.3671 ± 3.0807
+INFO:bayesian.py:Epoch 29/100	Loss 270.3406 ± 3.0807
+INFO:bayesian.py:Epoch 30/100	Loss 270.3113 ± 3.0820
+INFO:bayesian.py:Epoch 31/100	Loss 270.2781 ± 3.0781
+INFO:bayesian.py:Epoch 32/100	Loss 270.2572 ± 3.0780
+INFO:bayesian.py:Epoch 33/100	Loss 270.2322 ± 3.0820
+INFO:bayesian.py:Epoch 34/100	Loss 270.2019 ± 3.0799
+INFO:bayesian.py:Epoch 35/100	Loss 270.1769 ± 3.0805
+INFO:bayesian.py:Epoch 36/100	Loss 270.1534 ± 3.0806
+INFO:bayesian.py:Epoch 37/100	Loss 270.1332 ± 3.0743
+INFO:bayesian.py:Epoch 38/100	Loss 270.1087 ± 3.0750
+INFO:bayesian.py:Epoch 39/100	Loss 270.0871 ± 3.0767
+INFO:bayesian.py:Epoch 40/100	Loss 270.0664 ± 3.0785
+INFO:bayesian.py:Epoch 41/100	Loss 270.0414 ± 3.0771
+INFO:bayesian.py:Epoch 42/100	Loss 270.0265 ± 3.0750
+INFO:bayesian.py:Epoch 43/100	Loss 270.0054 ± 3.0717
+INFO:bayesian.py:Epoch 44/100	Loss 269.9824 ± 3.0759
+INFO:bayesian.py:Epoch 45/100	Loss 269.9667 ± 3.0704
+INFO:bayesian.py:Epoch 46/100	Loss 269.9451 ± 3.0746
+INFO:bayesian.py:Epoch 47/100	Loss 269.9262 ± 3.0711
+INFO:bayesian.py:Epoch 48/100	Loss 269.9104 ± 3.0727
+INFO:bayesian.py:Epoch 49/100	Loss 269.8909 ± 3.0721
+INFO:bayesian.py:Epoch 50/100	Loss 269.8756 ± 3.0721
+INFO:bayesian.py:Epoch 51/100	Loss 269.8577 ± 3.0731
+INFO:bayesian.py:Epoch 52/100	Loss 269.8420 ± 3.0727
+INFO:bayesian.py:Epoch 53/100	Loss 269.8269 ± 3.0743
+INFO:bayesian.py:Epoch 54/100	Loss 269.8092 ± 3.0705
+INFO:bayesian.py:Epoch 55/100	Loss 269.7950 ± 3.0734
+INFO:bayesian.py:Epoch 56/100	Loss 269.7754 ± 3.0734
+INFO:bayesian.py:Epoch 57/100	Loss 269.7621 ± 3.0693
+INFO:bayesian.py:Epoch 58/100	Loss 269.7477 ± 3.0578
+INFO:bayesian.py:Epoch 59/100	Loss 269.7328 ± 3.0708
+INFO:bayesian.py:Epoch 60/100	Loss 269.7189 ± 3.0699
+INFO:bayesian.py:Epoch 61/100	Loss 269.7043 ± 3.0723
+INFO:bayesian.py:Epoch 62/100	Loss 269.6919 ± 3.0725
+INFO:bayesian.py:Epoch 63/100	Loss 269.6767 ± 3.0717
+INFO:bayesian.py:Epoch 64/100	Loss 269.6618 ± 3.0718
+INFO:bayesian.py:Epoch 65/100	Loss 269.6476 ± 3.0702
+INFO:bayesian.py:Epoch 66/100	Loss 269.6366 ± 3.0722
+INFO:bayesian.py:Epoch 67/100	Loss 269.6228 ± 3.0703
+INFO:bayesian.py:Epoch 68/100	Loss 269.6109 ± 3.0694
+INFO:bayesian.py:Epoch 69/100	Loss 269.5968 ± 3.0695
+INFO:bayesian.py:Epoch 70/100	Loss 269.5845 ± 3.0686
+INFO:bayesian.py:Epoch 71/100	Loss 269.5714 ± 3.0676
+INFO:bayesian.py:Epoch 72/100	Loss 269.5602 ± 3.0681
+INFO:bayesian.py:Epoch 73/100	Loss 269.5470 ± 3.0719
+INFO:bayesian.py:Epoch 74/100	Loss 269.5346 ± 3.0716
+INFO:bayesian.py:Epoch 75/100	Loss 269.5227 ± 3.0685
+INFO:bayesian.py:Epoch 76/100	Loss 269.5096 ± 3.0683
+INFO:bayesian.py:Epoch 77/100	Loss 269.4969 ± 3.0697
+INFO:bayesian.py:Epoch 78/100	Loss 269.4865 ± 3.0687
+INFO:bayesian.py:Epoch 79/100	Loss 269.4736 ± 3.0703
+INFO:bayesian.py:Epoch 80/100	Loss 269.4612 ± 3.0598
+INFO:bayesian.py:Epoch 81/100	Loss 269.4494 ± 3.0695
+INFO:bayesian.py:Epoch 82/100	Loss 269.4358 ± 3.0683
+INFO:bayesian.py:Epoch 83/100	Loss 269.4241 ± 3.0652
+INFO:bayesian.py:Epoch 84/100	Loss 269.4112 ± 3.0665
+INFO:bayesian.py:Epoch 85/100	Loss 269.3986 ± 3.0694
+INFO:bayesian.py:Epoch 86/100	Loss 269.3847 ± 3.0700
+INFO:bayesian.py:Epoch 87/100	Loss 269.3721 ± 3.0694
+INFO:bayesian.py:Epoch 88/100	Loss 269.3581 ± 3.0665
+INFO:bayesian.py:Epoch 89/100	Loss 269.3459 ± 3.0684
+INFO:bayesian.py:Epoch 90/100	Loss 269.3315 ± 3.0665
+INFO:bayesian.py:Epoch 91/100	Loss 269.3166 ± 3.0674
+INFO:bayesian.py:Epoch 92/100	Loss 269.3012 ± 3.0674
+INFO:bayesian.py:Epoch 93/100	Loss 269.2877 ± 3.0678
+INFO:bayesian.py:Epoch 94/100	Loss 269.2685 ± 3.0678
+INFO:bayesian.py:Epoch 95/100	Loss 269.2542 ± 3.0683
+INFO:bayesian.py:Epoch 96/100	Loss 269.2370 ± 3.0689
+INFO:bayesian.py:Epoch 97/100	Loss 269.2208 ± 3.0662
+INFO:bayesian.py:Epoch 98/100	Loss 269.2005 ± 3.0688
+INFO:bayesian.py:Epoch 99/100	Loss 269.1824 ± 3.0642
+INFO:bayesian.py:Epoch 100/100	Loss 269.1638 ± 3.0676
+INFO:bayesian.py:is bad performing False
+INFO:bayesian.py:Done training
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.002852	H@1 0.001105	H@3 0.002052	H@10 0.004234	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+  4%| | 2/50 [6:57:34<158:18:36, 11873.25s/trial, best loss: -0.002852335923092INFO:hyperopt.tpe:build_posterior_wrapper took 0.002870 seconds
+INFO:hyperopt.tpe:TPE using 2/2 trials with best loss -0.002852
+                                                                               ['--batch-size', '128', '--data', 'covid', '--embedding-size', '145', '--learning-rate', '0.8294644019310145', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '6', '--quiet', '--reg-weight', '5.5883496557999775e-06']
+  4%| | 2/50 [6:57:34<158:18:36, 11873.25s/trial, best loss: -0.002852335923092                                                                               MCL
+  4%| | 2/50 [6:57:34<158:18:36, 11873.25s/trial, best loss: -0.002852335923092                                                                               False
+  4%| | 2/50 [6:57:34<158:18:36, 11873.25s/trial, best loss: -0.002852335923092INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+  4%| | 2/50 [6:57:43<158:18:36, 11873.25s/trial, best loss: -0.002852335923092INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 63920.2677 ± 246038.3362
+INFO:bayesian.py:Epoch 2/100	Loss 3497.4388 ± 61083.6025
+INFO:bayesian.py:Epoch 3/100	Loss 943.3683 ± 14598.2402
+INFO:bayesian.py:Epoch 4/100	Loss 289.7128 ± 2884.9552
+INFO:bayesian.py:Epoch 5/100	Loss 171.8722 ± 507.0414
+INFO:bayesian.py:Epoch 6/100	Loss 156.9324 ± 156.2195
+INFO:bayesian.py:Epoch 7/100	Loss 151.7107 ± 88.0692
+INFO:bayesian.py:Epoch 8/100	Loss 152.7639 ± 113.7124
+INFO:bayesian.py:Epoch 9/100	Loss 152.0519 ± 98.2924
+INFO:bayesian.py:Epoch 10/100	Loss 151.3849 ± 95.6098
+INFO:bayesian.py:Epoch 11/100	Loss 151.1559 ± 94.9226
+INFO:bayesian.py:Epoch 12/100	Loss 150.2237 ± 83.9198
+INFO:bayesian.py:Epoch 13/100	Loss 151.4673 ± 109.3998
+INFO:bayesian.py:Epoch 14/100	Loss 150.8852 ± 96.5014
+INFO:bayesian.py:Epoch 15/100	Loss 148.6359 ± 61.8215
+INFO:bayesian.py:Epoch 16/100	Loss 148.5623 ± 60.5765
+INFO:bayesian.py:Epoch 17/100	Loss 148.6984 ± 71.5077
+INFO:bayesian.py:Epoch 18/100	Loss 148.1235 ± 64.8593
+INFO:bayesian.py:Epoch 19/100	Loss 146.8661 ± 46.2608
+INFO:bayesian.py:Epoch 20/100	Loss 148.5067 ± 69.7643
+INFO:bayesian.py:Epoch 21/100	Loss 147.3334 ± 61.8674
+INFO:bayesian.py:Epoch 22/100	Loss 147.0073 ± 53.5251
+INFO:bayesian.py:Epoch 23/100	Loss 147.5785 ± 62.7784
+INFO:bayesian.py:Epoch 24/100	Loss 146.7372 ± 57.3939
+INFO:bayesian.py:Epoch 25/100	Loss 146.7915 ± 57.8717
+INFO:bayesian.py:Epoch 26/100	Loss 146.2037 ± 45.7884
+INFO:bayesian.py:Epoch 27/100	Loss 145.4482 ± 36.4950
+INFO:bayesian.py:Epoch 28/100	Loss 145.6088 ± 39.6661
+INFO:bayesian.py:Epoch 29/100	Loss 145.9787 ± 46.5348
+INFO:bayesian.py:Epoch 30/100	Loss 145.8481 ± 44.1599
+INFO:bayesian.py:Epoch 31/100	Loss 145.2972 ± 36.4100
+INFO:bayesian.py:Epoch 32/100	Loss 146.1504 ± 57.2548
+INFO:bayesian.py:Epoch 33/100	Loss 145.2351 ± 39.3026
+INFO:bayesian.py:Epoch 34/100	Loss 144.5239 ± 29.5282
+INFO:bayesian.py:Epoch 35/100	Loss 144.2919 ± 25.1456
+INFO:bayesian.py:Epoch 36/100	Loss 144.6049 ± 34.9726
+INFO:bayesian.py:Epoch 37/100	Loss 144.1936 ± 30.6530
+INFO:bayesian.py:Epoch 38/100	Loss 144.0453 ± 27.6822
+INFO:bayesian.py:Epoch 39/100	Loss 144.6449 ± 36.3292
+INFO:bayesian.py:Epoch 40/100	Loss 144.3029 ± 29.9769
+INFO:bayesian.py:Epoch 41/100	Loss 143.8441 ± 26.6919
+INFO:bayesian.py:Epoch 42/100	Loss 144.1883 ± 31.7660
+INFO:bayesian.py:Epoch 43/100	Loss 143.8773 ± 27.2158
+INFO:bayesian.py:Epoch 44/100	Loss 143.3825 ± 21.2097
+INFO:bayesian.py:Epoch 45/100	Loss 143.2023 ± 22.2869
+INFO:bayesian.py:Epoch 46/100	Loss 143.3684 ± 22.6266
+INFO:bayesian.py:Epoch 47/100	Loss 143.0154 ± 20.0768
+INFO:bayesian.py:Epoch 48/100	Loss 143.0935 ± 19.5504
+INFO:bayesian.py:Epoch 49/100	Loss 143.2942 ± 24.7751
+INFO:bayesian.py:Epoch 50/100	Loss 142.8978 ± 18.8101
+INFO:bayesian.py:Epoch 51/100	Loss 142.6505 ± 16.8005
+INFO:bayesian.py:Epoch 52/100	Loss 143.0141 ± 23.6327
+INFO:bayesian.py:Epoch 53/100	Loss 142.6925 ± 20.2210
+INFO:bayesian.py:Epoch 54/100	Loss 142.6535 ± 18.1114
+INFO:bayesian.py:Epoch 55/100	Loss 142.4631 ± 17.5776
+INFO:bayesian.py:Epoch 56/100	Loss 142.3633 ± 13.4382
+INFO:bayesian.py:Epoch 57/100	Loss 142.1299 ± 12.3798
+INFO:bayesian.py:Epoch 58/100	Loss 142.1649 ± 13.2502
+INFO:bayesian.py:Epoch 59/100	Loss 142.1506 ± 14.0442
+INFO:bayesian.py:Epoch 60/100	Loss 141.9787 ± 12.0490
+INFO:bayesian.py:Epoch 61/100	Loss 141.9033 ± 11.0036
+INFO:bayesian.py:Epoch 62/100	Loss 141.7073 ± 10.1162
+INFO:bayesian.py:Epoch 63/100	Loss 141.9461 ± 12.4901
+INFO:bayesian.py:Epoch 64/100	Loss 141.6268 ± 9.1132
+INFO:bayesian.py:Epoch 65/100	Loss 141.6136 ± 9.7607
+INFO:bayesian.py:Epoch 66/100	Loss 141.5921 ± 10.3276
+INFO:bayesian.py:Epoch 67/100	Loss 141.4964 ± 9.5201
+INFO:bayesian.py:Epoch 68/100	Loss 141.3826 ± 8.7474
+INFO:bayesian.py:Epoch 69/100	Loss 141.3651 ± 9.2632
+INFO:bayesian.py:Epoch 70/100	Loss 141.4313 ± 9.9638
+INFO:bayesian.py:Epoch 71/100	Loss 141.3758 ± 10.3982
+INFO:bayesian.py:Epoch 72/100	Loss 141.3019 ± 9.0046
+INFO:bayesian.py:Epoch 73/100	Loss 141.1099 ± 7.1078
+INFO:bayesian.py:Epoch 74/100	Loss 141.1082 ± 7.8198
+INFO:bayesian.py:Epoch 75/100	Loss 141.0769 ± 7.3179
+INFO:bayesian.py:Epoch 76/100	Loss 141.1855 ± 8.9414
+INFO:bayesian.py:Epoch 77/100	Loss 141.0979 ± 7.5845
+INFO:bayesian.py:Epoch 78/100	Loss 140.9882 ± 7.7373
+INFO:bayesian.py:Epoch 79/100	Loss 140.8147 ± 6.3060
+INFO:bayesian.py:Epoch 80/100	Loss 141.0136 ± 7.5303
+INFO:bayesian.py:Epoch 81/100	Loss 140.8098 ± 6.2022
+INFO:bayesian.py:Epoch 82/100	Loss 140.7139 ± 6.1638
+INFO:bayesian.py:Epoch 83/100	Loss 140.7429 ± 5.9933
+INFO:bayesian.py:Epoch 84/100	Loss 140.7054 ± 6.4821
+INFO:bayesian.py:Epoch 85/100	Loss 140.7325 ± 6.1493
+INFO:bayesian.py:Epoch 86/100	Loss 140.6830 ± 6.7909
+INFO:bayesian.py:Epoch 87/100	Loss 140.5289 ± 5.8354
+INFO:bayesian.py:Epoch 88/100	Loss 140.3912 ± 5.2408
+INFO:bayesian.py:Epoch 89/100	Loss 140.4655 ± 4.7850
+INFO:bayesian.py:Epoch 90/100	Loss 140.6033 ± 6.8655
+INFO:bayesian.py:Epoch 91/100	Loss 140.3997 ± 4.8856
+INFO:bayesian.py:Epoch 92/100	Loss 140.3602 ± 4.7763
+INFO:bayesian.py:Epoch 93/100	Loss 140.2797 ± 4.3124
+INFO:bayesian.py:Epoch 94/100	Loss 140.3241 ± 4.6412
+INFO:bayesian.py:Epoch 95/100	Loss 140.3138 ± 5.2573
+INFO:bayesian.py:Epoch 96/100	Loss 140.3878 ± 4.9853
+INFO:bayesian.py:Epoch 97/100	Loss 140.1556 ± 4.2300
+INFO:bayesian.py:Epoch 98/100	Loss 140.1812 ± 4.1464
+INFO:bayesian.py:Epoch 99/100	Loss 140.0283 ± 4.4310
+INFO:bayesian.py:Epoch 100/100	Loss 140.0586 ± 4.0471
+INFO:bayesian.py:is bad performing False
+INFO:bayesian.py:Done training
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.001771	H@1 0.000706	H@3 0.001281	H@10 0.002693	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+  6%| | 3/50 [9:37:14<146:01:47, 11185.27s/trial, best loss: -0.002852335923092INFO:hyperopt.tpe:build_posterior_wrapper took 0.004021 seconds
+INFO:hyperopt.tpe:TPE using 3/3 trials with best loss -0.002852
+                                                                               ['--batch-size', '128', '--data', 'covid', '--embedding-size', '51', '--learning-rate', '0.17791279805820523', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '6', '--quiet', '--reg-weight', '1.3874046735058789e-08']
+  6%| | 3/50 [9:37:14<146:01:47, 11185.27s/trial, best loss: -0.002852335923092                                                                               MCL
+  6%| | 3/50 [9:37:14<146:01:47, 11185.27s/trial, best loss: -0.002852335923092                                                                               False
+  6%| | 3/50 [9:37:14<146:01:47, 11185.27s/trial, best loss: -0.002852335923092INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+  6%| | 3/50 [9:37:23<146:01:47, 11185.27s/trial, best loss: -0.002852335923092INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 118.2751 ± 8.6734
+INFO:bayesian.py:Epoch 2/100	Loss 111.0639 ± 0.4202
+INFO:bayesian.py:Epoch 3/100	Loss 110.1940 ± 0.2611
+INFO:bayesian.py:Epoch 4/100	Loss 109.8192 ± 0.2290
+INFO:bayesian.py:Epoch 5/100	Loss 109.6003 ± 0.2151
+INFO:bayesian.py:Epoch 6/100	Loss 109.4369 ± 0.2031
+INFO:bayesian.py:Epoch 7/100	Loss 109.3069 ± 0.2000
+INFO:bayesian.py:Epoch 8/100	Loss 109.1960 ± 0.1916
+INFO:bayesian.py:Epoch 9/100	Loss 109.0931 ± 0.1853
+INFO:bayesian.py:Epoch 10/100	Loss 109.0084 ± 0.1809
+INFO:bayesian.py:Epoch 11/100	Loss 108.9279 ± 0.1750
+INFO:bayesian.py:Epoch 12/100	Loss 108.8553 ± 0.1735
+INFO:bayesian.py:Epoch 13/100	Loss 108.7982 ± 0.1688
+INFO:bayesian.py:Epoch 14/100	Loss 108.7410 ± 0.1678
+INFO:bayesian.py:Epoch 15/100	Loss 108.6916 ± 0.1612
+INFO:bayesian.py:Epoch 16/100	Loss 108.6462 ± 0.1593
+INFO:bayesian.py:Epoch 17/100	Loss 108.6077 ± 0.1569
+INFO:bayesian.py:Epoch 18/100	Loss 108.5641 ± 0.1574
+INFO:bayesian.py:Epoch 19/100	Loss 108.5345 ± 0.1533
+INFO:bayesian.py:Epoch 20/100	Loss 108.4949 ± 0.1552
+INFO:bayesian.py:Epoch 21/100	Loss 108.4713 ± 0.1488
+INFO:bayesian.py:Epoch 22/100	Loss 108.4493 ± 0.1503
+INFO:bayesian.py:Epoch 23/100	Loss 108.4224 ± 0.1501
+INFO:bayesian.py:Epoch 24/100	Loss 108.3993 ± 0.1468
+INFO:bayesian.py:Epoch 25/100	Loss 108.3845 ± 0.1457
+INFO:bayesian.py:Epoch 26/100	Loss 108.3623 ± 0.1432
+INFO:bayesian.py:Epoch 27/100	Loss 108.3441 ± 0.1475
+INFO:bayesian.py:Epoch 28/100	Loss 108.3291 ± 0.1409
+INFO:bayesian.py:Epoch 29/100	Loss 108.3114 ± 0.1387
+INFO:bayesian.py:Epoch 30/100	Loss 108.2981 ± 0.1393
+INFO:bayesian.py:Epoch 31/100	Loss 108.2835 ± 0.1416
+INFO:bayesian.py:Epoch 32/100	Loss 108.2709 ± 0.1390
+INFO:bayesian.py:Epoch 33/100	Loss 108.2587 ± 0.1401
+INFO:bayesian.py:Epoch 34/100	Loss 108.2493 ± 0.1408
+INFO:bayesian.py:Epoch 35/100	Loss 108.2355 ± 0.1380
+INFO:bayesian.py:Epoch 36/100	Loss 108.2273 ± 0.1397
+INFO:bayesian.py:Epoch 37/100	Loss 108.2190 ± 0.1354
+INFO:bayesian.py:Epoch 38/100	Loss 108.2126 ± 0.1374
+INFO:bayesian.py:Epoch 39/100	Loss 108.2015 ± 0.1392
+INFO:bayesian.py:Epoch 40/100	Loss 108.1937 ± 0.1357
+INFO:bayesian.py:Epoch 41/100	Loss 108.1883 ± 0.1372
+INFO:bayesian.py:Epoch 42/100	Loss 108.1773 ± 0.1342
+INFO:bayesian.py:Epoch 43/100	Loss 108.1675 ± 0.1335
+INFO:bayesian.py:Epoch 44/100	Loss 108.1666 ± 0.1339
+INFO:bayesian.py:Epoch 45/100	Loss 108.1566 ± 0.1324
+INFO:bayesian.py:Epoch 46/100	Loss 108.1515 ± 0.1333
+INFO:bayesian.py:Epoch 47/100	Loss 108.1493 ± 0.1334
+INFO:bayesian.py:Epoch 48/100	Loss 108.1449 ± 0.1315
+INFO:bayesian.py:Epoch 49/100	Loss 108.1380 ± 0.1325
+INFO:bayesian.py:Epoch 50/100	Loss 108.1278 ± 0.1303
+INFO:bayesian.py:Epoch 51/100	Loss 108.1247 ± 0.1323
+INFO:bayesian.py:Epoch 52/100	Loss 108.1215 ± 0.1308
+INFO:bayesian.py:Epoch 53/100	Loss 108.1178 ± 0.1319
+INFO:bayesian.py:Epoch 54/100	Loss 108.1165 ± 0.1305
+INFO:bayesian.py:Epoch 55/100	Loss 108.1078 ± 0.1333
+INFO:bayesian.py:Epoch 56/100	Loss 108.1075 ± 0.1325
+INFO:bayesian.py:Epoch 57/100	Loss 108.1032 ± 0.1318
+INFO:bayesian.py:Epoch 58/100	Loss 108.0963 ± 0.1321
+INFO:bayesian.py:Epoch 59/100	Loss 108.0951 ± 0.1288
+INFO:bayesian.py:Epoch 60/100	Loss 108.0905 ± 0.1337
+INFO:bayesian.py:Epoch 61/100	Loss 108.0868 ± 0.1289
+INFO:bayesian.py:Epoch 62/100	Loss 108.0853 ± 0.1327
+INFO:bayesian.py:Epoch 63/100	Loss 108.0798 ± 0.1316
+INFO:bayesian.py:Epoch 64/100	Loss 108.0756 ± 0.1305
+INFO:bayesian.py:Epoch 65/100	Loss 108.0741 ± 0.1283
+INFO:bayesian.py:Epoch 66/100	Loss 108.0706 ± 0.1317
+INFO:bayesian.py:Epoch 67/100	Loss 108.0681 ± 0.1291
+INFO:bayesian.py:Epoch 68/100	Loss 108.0690 ± 0.1281
+INFO:bayesian.py:Epoch 69/100	Loss 108.0652 ± 0.1314
+INFO:bayesian.py:Epoch 70/100	Loss 108.0633 ± 0.1314
+INFO:bayesian.py:Epoch 71/100	Loss 108.0540 ± 0.1296
+INFO:bayesian.py:Epoch 72/100	Loss 108.0557 ± 0.1286
+INFO:bayesian.py:Epoch 73/100	Loss 108.0564 ± 0.1284
+INFO:bayesian.py:Epoch 74/100	Loss 108.0536 ± 0.1263
+INFO:bayesian.py:Epoch 75/100	Loss 108.0509 ± 0.1283
+INFO:bayesian.py:Epoch 76/100	Loss 108.0462 ± 0.1296
+INFO:bayesian.py:Epoch 77/100	Loss 108.0415 ± 0.1286
+INFO:bayesian.py:Epoch 78/100	Loss 108.0421 ± 0.1290
+INFO:bayesian.py:Epoch 79/100	Loss 108.0402 ± 0.1280
+INFO:bayesian.py:Epoch 80/100	Loss 108.0390 ± 0.1270
+INFO:bayesian.py:Epoch 81/100	Loss 108.0351 ± 0.1269
+INFO:bayesian.py:Epoch 82/100	Loss 108.0360 ± 0.1295
+INFO:bayesian.py:Epoch 83/100	Loss 108.0363 ± 0.1309
+INFO:bayesian.py:Epoch 84/100	Loss 108.0313 ± 0.1257
+INFO:bayesian.py:Epoch 85/100	Loss 108.0316 ± 0.1275
+INFO:bayesian.py:Epoch 86/100	Loss 108.0272 ± 0.1273
+INFO:bayesian.py:Epoch 87/100	Loss 108.0265 ± 0.1292
+INFO:bayesian.py:Epoch 88/100	Loss 108.0212 ± 0.1298
+INFO:bayesian.py:Epoch 89/100	Loss 108.0206 ± 0.1275
+INFO:bayesian.py:Epoch 90/100	Loss 108.0218 ± 0.1254
+INFO:bayesian.py:Epoch 91/100	Loss 108.0187 ± 0.1284
+INFO:bayesian.py:Epoch 92/100	Loss 108.0183 ± 0.1265
+INFO:bayesian.py:Epoch 93/100	Loss 108.0152 ± 0.1268
+INFO:bayesian.py:Epoch 94/100	Loss 108.0122 ± 0.1254
+INFO:bayesian.py:Epoch 95/100	Loss 108.0091 ± 0.1252
+INFO:bayesian.py:Epoch 96/100	Loss 108.0111 ± 0.1254
+INFO:bayesian.py:Epoch 97/100	Loss 108.0098 ± 0.1269
+INFO:bayesian.py:Epoch 98/100	Loss 108.0065 ± 0.1254
+INFO:bayesian.py:Epoch 99/100	Loss 108.0085 ± 0.1247
+INFO:bayesian.py:Epoch 100/100	Loss 108.0054 ± 0.1284
+INFO:bayesian.py:is bad performing False
+INFO:bayesian.py:Done training
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.055280	H@1 0.018745	H@3 0.046376	H@10 0.114998	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+  8%| | 4/50 [11:45:54<129:38:24, 10145.74s/trial, best loss: -0.05527960879479INFO:hyperopt.tpe:build_posterior_wrapper took 0.003052 seconds
+INFO:hyperopt.tpe:TPE using 4/4 trials with best loss -0.055280
+                                                                               ['--batch-size', '1024', '--data', 'covid', '--embedding-size', '145', '--learning-rate', '0.898893955942194', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '6', '--quiet', '--reg-weight', '6.457861253202426e-07']
+  8%| | 4/50 [11:45:54<129:38:24, 10145.74s/trial, best loss: -0.05527960879479                                                                               MCL
+  8%| | 4/50 [11:45:54<129:38:24, 10145.74s/trial, best loss: -0.05527960879479                                                                               False
+  8%| | 4/50 [11:45:54<129:38:24, 10145.74s/trial, best loss: -0.05527960879479INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+  8%| | 4/50 [11:46:03<129:38:24, 10145.74s/trial, best loss: -0.05527960879479INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 451100.8368 ± 1467513.1160
+INFO:bayesian.py:Epoch 2/100	Loss 60026.5699 ± 445874.9778
+INFO:bayesian.py:Epoch 3/100	Loss 18957.4362 ± 126122.6371
+INFO:bayesian.py:Epoch 4/100	Loss 4012.5149 ± 18432.1445
+INFO:bayesian.py:Epoch 5/100	Loss 2083.0546 ± 3046.5672
+INFO:bayesian.py:Epoch 6/100	Loss 1609.5454 ± 1183.5766
+INFO:bayesian.py:Epoch 7/100	Loss 1509.6531 ± 885.5893
+INFO:bayesian.py:Epoch 8/100	Loss 1514.2653 ± 869.7436
+INFO:bayesian.py:Epoch 9/100	Loss 1478.4108 ± 848.0154
+INFO:bayesian.py:Epoch 10/100	Loss 1489.4067 ± 696.5473
+INFO:bayesian.py:Epoch 11/100	Loss 1499.7273 ± 958.3414
+INFO:bayesian.py:Epoch 12/100	Loss 1415.9198 ± 540.5313
+INFO:bayesian.py:Epoch 13/100	Loss 1408.5814 ± 562.9389
+INFO:bayesian.py:Epoch 14/100	Loss 1525.4918 ± 908.9555
+INFO:bayesian.py:Epoch 15/100	Loss 1413.1626 ± 626.8819
+INFO:bayesian.py:Epoch 16/100	Loss 1398.8876 ± 612.7434
+INFO:bayesian.py:Epoch 17/100	Loss 1401.2096 ± 749.7930
+INFO:bayesian.py:Epoch 18/100	Loss 1395.5632 ± 555.6693
+INFO:bayesian.py:Epoch 19/100	Loss 1464.5232 ± 977.0985
+INFO:bayesian.py:Epoch 20/100	Loss 1381.0442 ± 592.9392
+INFO:bayesian.py:Epoch 21/100	Loss 1380.0150 ± 475.6231
+INFO:bayesian.py:Epoch 22/100	Loss 1397.2520 ± 693.4436
+INFO:bayesian.py:Epoch 23/100	Loss 1350.6088 ± 452.2824
+INFO:bayesian.py:Epoch 24/100	Loss 1836.6828 ± 5014.9443
+INFO:bayesian.py:Epoch 25/100	Loss 1337.5361 ± 435.2062
+INFO:bayesian.py:Epoch 26/100	Loss 1322.6411 ± 380.7230
+INFO:bayesian.py:Epoch 27/100	Loss 1327.8533 ± 420.7826
+INFO:bayesian.py:Epoch 28/100	Loss 1315.1121 ± 344.6013
+INFO:bayesian.py:Epoch 29/100	Loss 1310.9962 ± 335.3617
+INFO:bayesian.py:Epoch 30/100	Loss 1328.7564 ± 470.7389
+INFO:bayesian.py:Epoch 31/100	Loss 1299.6630 ± 308.3415
+INFO:bayesian.py:Epoch 32/100	Loss 1285.3063 ± 276.7150
+INFO:bayesian.py:Epoch 33/100	Loss 1295.3592 ± 341.0155
+INFO:bayesian.py:Epoch 34/100	Loss 1293.5721 ± 357.5994
+INFO:bayesian.py:Epoch 35/100	Loss 1287.0171 ± 314.0894
+INFO:bayesian.py:Epoch 36/100	Loss 1287.3283 ± 310.4149
+INFO:bayesian.py:Epoch 37/100	Loss 1325.5598 ± 686.4716
+INFO:bayesian.py:Epoch 38/100	Loss 1277.5006 ± 272.3384
+INFO:bayesian.py:Epoch 39/100	Loss 1270.2320 ± 274.6188
+INFO:bayesian.py:Epoch 40/100	Loss 1264.9271 ± 237.3539
+INFO:bayesian.py:Epoch 41/100	Loss 1270.3023 ± 262.7850
+INFO:bayesian.py:Epoch 42/100	Loss 1259.7410 ± 270.7223
+INFO:bayesian.py:Epoch 43/100	Loss 1264.4716 ± 237.5020
+INFO:bayesian.py:Epoch 44/100	Loss 1258.4910 ± 254.9472
+INFO:bayesian.py:Epoch 45/100	Loss 1261.7774 ± 261.9998
+INFO:bayesian.py:Epoch 46/100	Loss 1255.5812 ± 211.5294
+INFO:bayesian.py:Epoch 47/100	Loss 1250.7941 ± 217.1430
+INFO:bayesian.py:Epoch 48/100	Loss 1251.9819 ± 223.5208
+INFO:bayesian.py:Epoch 49/100	Loss 1250.2790 ± 234.2629
+INFO:bayesian.py:Epoch 50/100	Loss 1254.0500 ± 248.9359
+INFO:bayesian.py:Epoch 51/100	Loss 1240.4523 ± 188.8379
+INFO:bayesian.py:Epoch 52/100	Loss 1239.9953 ± 203.3697
+INFO:bayesian.py:Epoch 53/100	Loss 1239.1566 ± 201.4389
+INFO:bayesian.py:Epoch 54/100	Loss 1244.5467 ± 198.9353
+INFO:bayesian.py:Epoch 55/100	Loss 1236.8732 ± 201.2872
+INFO:bayesian.py:Epoch 56/100	Loss 1233.3673 ± 213.2257
+INFO:bayesian.py:Epoch 57/100	Loss 1224.8238 ± 156.6974
+INFO:bayesian.py:Epoch 58/100	Loss 1225.7085 ± 179.6566
+INFO:bayesian.py:Epoch 59/100	Loss 1222.8999 ± 172.9149
+INFO:bayesian.py:Epoch 60/100	Loss 1227.7734 ± 197.6440
+INFO:bayesian.py:Epoch 61/100	Loss 1224.1705 ± 152.9847
+INFO:bayesian.py:Epoch 62/100	Loss 1221.2479 ± 174.6809
+INFO:bayesian.py:Epoch 63/100	Loss 1213.1125 ± 127.9029
+INFO:bayesian.py:Epoch 64/100	Loss 1224.4220 ± 171.2223
+INFO:bayesian.py:Epoch 65/100	Loss 1211.4349 ± 133.5061
+INFO:bayesian.py:Epoch 66/100	Loss 1211.0712 ± 127.7766
+INFO:bayesian.py:Epoch 67/100	Loss 1210.3993 ± 127.0728
+INFO:bayesian.py:Epoch 68/100	Loss 1203.2245 ± 95.1996
+INFO:bayesian.py:Epoch 69/100	Loss 1207.9500 ± 153.1620
+INFO:bayesian.py:Epoch 70/100	Loss 1216.3935 ± 149.6611
+INFO:bayesian.py:Epoch 71/100	Loss 1204.7922 ± 117.5102
+INFO:bayesian.py:Epoch 72/100	Loss 1203.2007 ± 114.3058
+INFO:bayesian.py:Epoch 73/100	Loss 1212.6563 ± 124.7157
+INFO:bayesian.py:Epoch 74/100	Loss 1202.1600 ± 116.1541
+INFO:bayesian.py:Epoch 75/100	Loss 1202.1857 ± 123.6465
+INFO:bayesian.py:Epoch 76/100	Loss 1205.1979 ± 167.7471
+INFO:bayesian.py:Epoch 77/100	Loss 1206.1205 ± 157.3162
+INFO:bayesian.py:Epoch 78/100	Loss 1197.7928 ± 104.8701
+INFO:bayesian.py:Epoch 79/100	Loss 1199.7236 ± 111.5430
+INFO:bayesian.py:Epoch 80/100	Loss 1193.5277 ± 97.1519
+INFO:bayesian.py:Epoch 81/100	Loss 1194.9579 ± 98.8286
+INFO:bayesian.py:Epoch 82/100	Loss 1191.8950 ± 113.6204
+INFO:bayesian.py:Epoch 83/100	Loss 1192.1342 ± 110.7245
+INFO:bayesian.py:Epoch 84/100	Loss 1187.2630 ± 86.2396
+INFO:bayesian.py:Epoch 85/100	Loss 1196.2798 ± 102.3105
+INFO:bayesian.py:Epoch 86/100	Loss 1189.0493 ± 95.1853
+INFO:bayesian.py:Epoch 87/100	Loss 1183.0617 ± 74.4724
+INFO:bayesian.py:Epoch 88/100	Loss 1182.1667 ± 71.5300
+INFO:bayesian.py:Epoch 89/100	Loss 1184.0472 ± 82.7599
+INFO:bayesian.py:Epoch 90/100	Loss 1182.0988 ± 74.8402
+INFO:bayesian.py:Epoch 91/100	Loss 1180.7445 ± 73.7452
+INFO:bayesian.py:Epoch 92/100	Loss 1185.2976 ± 94.1547
+INFO:bayesian.py:Epoch 93/100	Loss 1182.7552 ± 88.4630
+INFO:bayesian.py:Epoch 94/100	Loss 1179.0817 ± 78.2033
+INFO:bayesian.py:Epoch 95/100	Loss 1180.2951 ± 88.8941
+INFO:bayesian.py:Epoch 96/100	Loss 1179.5724 ± 80.1880
+INFO:bayesian.py:Epoch 97/100	Loss 1178.7677 ± 85.3494
+INFO:bayesian.py:Epoch 98/100	Loss 1191.7746 ± 118.7652
+INFO:bayesian.py:Epoch 99/100	Loss 1177.2865 ± 74.9069
+INFO:bayesian.py:Epoch 100/100	Loss 1176.4268 ± 73.5555
+INFO:bayesian.py:is bad performing False
+INFO:bayesian.py:Done training
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.001022	H@1 0.000241	H@3 0.000557	H@10 0.001346	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+ 10%| | 5/50 [12:15:25<95:24:52, 7633.16s/trial, best loss: -0.0552796087947973INFO:hyperopt.tpe:build_posterior_wrapper took 0.003904 seconds
+INFO:hyperopt.tpe:TPE using 5/5 trials with best loss -0.055280
+                                                                               ['--batch-size', '128', '--data', 'covid', '--embedding-size', '198', '--learning-rate', '0.2590444956391682', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '6', '--quiet', '--reg-weight', '6.107075939152593e-10']
+ 10%| | 5/50 [12:15:25<95:24:52, 7633.16s/trial, best loss: -0.0552796087947973                                                                               MCL
+ 10%| | 5/50 [12:15:25<95:24:52, 7633.16s/trial, best loss: -0.0552796087947973                                                                               False
+ 10%| | 5/50 [12:15:25<95:24:52, 7633.16s/trial, best loss: -0.0552796087947973INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+ 10%| | 5/50 [12:15:34<95:24:52, 7633.16s/trial, best loss: -0.0552796087947973INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 256.4024 ± 413.0497
+INFO:bayesian.py:Epoch 2/100	Loss 140.9370 ± 146.2720
+INFO:bayesian.py:Epoch 3/100	Loss 134.2101 ± 32.5831
+INFO:bayesian.py:Epoch 4/100	Loss 131.5854 ± 5.3690
+INFO:bayesian.py:Epoch 5/100	Loss 128.6140 ± 2.0495
+INFO:bayesian.py:Epoch 6/100	Loss 119.7582 ± 2.7416
+INFO:bayesian.py:Epoch 7/100	Loss 113.6986 ± 0.9030
+INFO:bayesian.py:Epoch 8/100	Loss 112.3436 ± 0.4306
+INFO:bayesian.py:Epoch 9/100	Loss 111.9240 ± 0.3728
+INFO:bayesian.py:Epoch 10/100	Loss 111.6739 ± 0.3447
+INFO:bayesian.py:Epoch 11/100	Loss 111.4978 ± 0.3212
+INFO:bayesian.py:Epoch 12/100	Loss 111.3706 ± 0.3250
+INFO:bayesian.py:Epoch 13/100	Loss 111.2756 ± 0.3163
+INFO:bayesian.py:Epoch 14/100	Loss 111.1957 ± 0.3170
+INFO:bayesian.py:Epoch 15/100	Loss 111.1154 ± 0.3086
+INFO:bayesian.py:Epoch 16/100	Loss 111.0535 ± 0.3054
+INFO:bayesian.py:Epoch 17/100	Loss 110.9898 ± 0.2898
+INFO:bayesian.py:Epoch 18/100	Loss 110.9340 ± 0.2876
+INFO:bayesian.py:Epoch 19/100	Loss 110.8932 ± 0.2892
+INFO:bayesian.py:Epoch 20/100	Loss 110.8355 ± 0.2769
+INFO:bayesian.py:Epoch 21/100	Loss 110.7863 ± 0.2837
+INFO:bayesian.py:Epoch 22/100	Loss 110.7451 ± 0.2623
+INFO:bayesian.py:Epoch 23/100	Loss 110.6961 ± 0.2719
+INFO:bayesian.py:Epoch 24/100	Loss 110.6572 ± 0.2660
+INFO:bayesian.py:Epoch 25/100	Loss 110.6119 ± 0.2623
+INFO:bayesian.py:Epoch 26/100	Loss 110.5747 ± 0.2580
+INFO:bayesian.py:Epoch 27/100	Loss 110.5401 ± 0.2522
+INFO:bayesian.py:Epoch 28/100	Loss 110.4982 ± 0.2498
+INFO:bayesian.py:Epoch 29/100	Loss 110.4629 ± 0.2508
+INFO:bayesian.py:Epoch 30/100	Loss 110.4296 ± 0.2494
+INFO:bayesian.py:Epoch 31/100	Loss 110.3951 ± 0.2485
+INFO:bayesian.py:Epoch 32/100	Loss 110.3667 ± 0.2476
+INFO:bayesian.py:Epoch 33/100	Loss 110.3272 ± 0.2442
+INFO:bayesian.py:Epoch 34/100	Loss 110.3015 ± 0.2492
+INFO:bayesian.py:Epoch 35/100	Loss 110.2645 ± 0.2507
+INFO:bayesian.py:Epoch 36/100	Loss 110.2339 ± 0.2401
+INFO:bayesian.py:Epoch 37/100	Loss 110.2044 ± 0.2337
+INFO:bayesian.py:Epoch 38/100	Loss 110.1781 ± 0.2313
+INFO:bayesian.py:Epoch 39/100	Loss 110.1526 ± 0.2320
+INFO:bayesian.py:Epoch 40/100	Loss 110.1201 ± 0.2356
+INFO:bayesian.py:Epoch 41/100	Loss 110.0965 ± 0.2338
+INFO:bayesian.py:Epoch 42/100	Loss 110.0660 ± 0.2333
+INFO:bayesian.py:Epoch 43/100	Loss 110.0415 ± 0.2303
+INFO:bayesian.py:Epoch 44/100	Loss 110.0188 ± 0.2208
+INFO:bayesian.py:Epoch 45/100	Loss 109.9927 ± 0.2214
+INFO:bayesian.py:Epoch 46/100	Loss 109.9664 ± 0.2251
+INFO:bayesian.py:Epoch 47/100	Loss 109.9420 ± 0.2222
+INFO:bayesian.py:Epoch 48/100	Loss 109.9203 ± 0.2178
+INFO:bayesian.py:Epoch 49/100	Loss 109.8958 ± 0.2209
+INFO:bayesian.py:Epoch 50/100	Loss 109.8708 ± 0.2248
+INFO:bayesian.py:Epoch 51/100	Loss 109.8429 ± 0.2173
+INFO:bayesian.py:Epoch 52/100	Loss 109.8202 ± 0.2128
+INFO:bayesian.py:Epoch 53/100	Loss 109.7956 ± 0.2120
+INFO:bayesian.py:Epoch 54/100	Loss 109.7729 ± 0.2116
+INFO:bayesian.py:Epoch 55/100	Loss 109.7475 ± 0.2147
+INFO:bayesian.py:Epoch 56/100	Loss 109.7269 ± 0.2131
+INFO:bayesian.py:Epoch 57/100	Loss 109.7082 ± 0.2073
+INFO:bayesian.py:Epoch 58/100	Loss 109.6836 ± 0.2101
+INFO:bayesian.py:Epoch 59/100	Loss 109.6618 ± 0.2087
+INFO:bayesian.py:Epoch 60/100	Loss 109.6373 ± 0.2059
+INFO:bayesian.py:Epoch 61/100	Loss 109.6177 ± 0.2071
+INFO:bayesian.py:Epoch 62/100	Loss 109.5910 ± 0.2058
+INFO:bayesian.py:Epoch 63/100	Loss 109.5665 ± 0.2080
+INFO:bayesian.py:Epoch 64/100	Loss 109.5557 ± 0.2014
+INFO:bayesian.py:Epoch 65/100	Loss 109.5334 ± 0.1990
+INFO:bayesian.py:Epoch 66/100	Loss 109.5121 ± 0.1996
+INFO:bayesian.py:Epoch 67/100	Loss 109.4914 ± 0.1976
+INFO:bayesian.py:Epoch 68/100	Loss 109.4716 ± 0.1991
+INFO:bayesian.py:Epoch 69/100	Loss 109.4527 ± 0.1983
+INFO:bayesian.py:Epoch 70/100	Loss 109.4332 ± 0.1966
+INFO:bayesian.py:Epoch 71/100	Loss 109.4172 ± 0.1974
+INFO:bayesian.py:Epoch 72/100	Loss 109.3996 ± 0.1949
+INFO:bayesian.py:Epoch 73/100	Loss 109.3780 ± 0.1940
+INFO:bayesian.py:Epoch 74/100	Loss 109.3629 ± 0.1931
+INFO:bayesian.py:Epoch 75/100	Loss 109.3492 ± 0.1904
+INFO:bayesian.py:Epoch 76/100	Loss 109.3347 ± 0.1913
+INFO:bayesian.py:Epoch 77/100	Loss 109.3163 ± 0.1956
+INFO:bayesian.py:Epoch 78/100	Loss 109.3038 ± 0.1876
+INFO:bayesian.py:Epoch 79/100	Loss 109.2877 ± 0.1862
+INFO:bayesian.py:Epoch 80/100	Loss 109.2751 ± 0.1909
+INFO:bayesian.py:Epoch 81/100	Loss 109.2553 ± 0.1851
+INFO:bayesian.py:Epoch 82/100	Loss 109.2413 ± 0.1843
+INFO:bayesian.py:Epoch 83/100	Loss 109.2276 ± 0.1818
+INFO:bayesian.py:Epoch 84/100	Loss 109.2160 ± 0.1852
+INFO:bayesian.py:Epoch 85/100	Loss 109.2066 ± 0.1836
+INFO:bayesian.py:Epoch 86/100	Loss 109.1922 ± 0.1855
+INFO:bayesian.py:Epoch 87/100	Loss 109.1795 ± 0.1759
+INFO:bayesian.py:Epoch 88/100	Loss 109.1686 ± 0.1777
+INFO:bayesian.py:Epoch 89/100	Loss 109.1522 ± 0.1791
+INFO:bayesian.py:Epoch 90/100	Loss 109.1486 ± 0.1748
+INFO:bayesian.py:Epoch 91/100	Loss 109.1290 ± 0.1808
+INFO:bayesian.py:Epoch 92/100	Loss 109.1221 ± 0.1770
+INFO:bayesian.py:Epoch 93/100	Loss 109.1112 ± 0.1760
+INFO:bayesian.py:Epoch 94/100	Loss 109.1041 ± 0.1762
+INFO:bayesian.py:Epoch 95/100	Loss 109.0933 ± 0.1795
+INFO:bayesian.py:Epoch 96/100	Loss 109.0837 ± 0.1790
+INFO:bayesian.py:Epoch 97/100	Loss 109.0733 ± 0.1776
+INFO:bayesian.py:Epoch 98/100	Loss 109.0614 ± 0.1772
+INFO:bayesian.py:Epoch 99/100	Loss 109.0580 ± 0.1756
+INFO:bayesian.py:Epoch 100/100	Loss 109.0430 ± 0.1764
+INFO:bayesian.py:is bad performing False
+INFO:bayesian.py:Done training
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.033685	H@1 0.012776	H@3 0.029571	H@10 0.062810	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+ 12%| | 6/50 [14:51:01<99:32:25, 8144.22s/trial, best loss: -0.0552796087947973INFO:hyperopt.tpe:build_posterior_wrapper took 0.002759 seconds
+INFO:hyperopt.tpe:TPE using 6/6 trials with best loss -0.055280
+                                                                               ['--batch-size', '1024', '--data', 'covid', '--embedding-size', '131', '--learning-rate', '0.0038654324162151043', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '50', '--quiet', '--reg-weight', '0.0002090430101434691']
+ 12%| | 6/50 [14:51:01<99:32:25, 8144.22s/trial, best loss: -0.0552796087947973                                                                               MCL
+ 12%| | 6/50 [14:51:01<99:32:25, 8144.22s/trial, best loss: -0.0552796087947973                                                                               False
+ 12%| | 6/50 [14:51:01<99:32:25, 8144.22s/trial, best loss: -0.0552796087947973INFO:bayesian.py:Valid: False
+INFO:bayesian.py:Device: cuda
+                                                                               <class 'biolink.embeddings.models.ComplEx'>
+ 12%| | 6/50 [14:51:10<99:32:25, 8144.22s/trial, best loss: -0.0552796087947973INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: False
+INFO:bayesian.py:Epoch 1/100	Loss 1016.9035 ± 37.7661
+INFO:bayesian.py:Epoch 2/100	Loss 1005.7277 ± 36.8997
+INFO:bayesian.py:Epoch 3/100	Loss 1004.4778 ± 36.8391
+INFO:bayesian.py:Epoch 4/100	Loss 1004.0489 ± 36.8219
+INFO:bayesian.py:Epoch 5/100	Loss 1003.7923 ± 36.8141
+INFO:bayesian.py:Epoch 6/100	Loss 1003.6116 ± 36.8075
+INFO:bayesian.py:Epoch 7/100	Loss 1003.4735 ± 36.8027
+INFO:bayesian.py:Epoch 8/100	Loss 1003.3643 ± 36.7975
+INFO:bayesian.py:Epoch 9/100	Loss 1003.2769 ± 36.7950
+INFO:bayesian.py:Epoch 10/100	Loss 1003.2039 ± 36.7909
+INFO:bayesian.py:Epoch 11/100	Loss 1003.1434 ± 36.7888
+INFO:bayesian.py:Epoch 12/100	Loss 1003.0915 ± 36.7870
+INFO:bayesian.py:Epoch 13/100	Loss 1003.0471 ± 36.7863
+INFO:bayesian.py:Epoch 14/100	Loss 1003.0091 ± 36.7841
+INFO:bayesian.py:Epoch 15/100	Loss 1002.9772 ± 36.7830
+INFO:bayesian.py:Epoch 16/100	Loss 1002.9471 ± 36.7827
+INFO:bayesian.py:Epoch 17/100	Loss 1002.9213 ± 36.7802
+INFO:bayesian.py:Epoch 18/100	Loss 1002.8997 ± 36.7801
+INFO:bayesian.py:Epoch 19/100	Loss 1002.8779 ± 36.7796
+INFO:bayesian.py:Epoch 20/100	Loss 1002.8599 ± 36.7791
+INFO:bayesian.py:Epoch 21/100	Loss 1002.8429 ± 36.7787
+INFO:bayesian.py:Epoch 22/100	Loss 1002.8266 ± 36.7780
+INFO:bayesian.py:Epoch 23/100	Loss 1002.8126 ± 36.7767
+INFO:bayesian.py:Epoch 24/100	Loss 1002.8005 ± 36.7769
+INFO:bayesian.py:Epoch 25/100	Loss 1002.7889 ± 36.7761
+INFO:bayesian.py:Epoch 26/100	Loss 1002.7774 ± 36.7760
+INFO:bayesian.py:Epoch 27/100	Loss 1002.7671 ± 36.7749
+INFO:bayesian.py:Epoch 28/100	Loss 1002.7579 ± 36.7753
+INFO:bayesian.py:Epoch 29/100	Loss 1002.7489 ± 36.7751
+INFO:bayesian.py:Epoch 30/100	Loss 1002.7395 ± 36.7752
+INFO:bayesian.py:Epoch 31/100	Loss 1002.7319 ± 36.7743
+INFO:bayesian.py:Epoch 32/100	Loss 1002.7248 ± 36.7735
+INFO:bayesian.py:Epoch 33/100	Loss 1002.7181 ± 36.7734
+INFO:bayesian.py:Epoch 34/100	Loss 1002.7102 ± 36.7730
+INFO:bayesian.py:Epoch 35/100	Loss 1002.7043 ± 36.7730
+INFO:bayesian.py:Epoch 36/100	Loss 1002.6985 ± 36.7725
+INFO:bayesian.py:Epoch 37/100	Loss 1002.6927 ± 36.7723
+INFO:bayesian.py:Epoch 38/100	Loss 1002.6873 ± 36.7723
+INFO:bayesian.py:Epoch 39/100	Loss 1002.6823 ± 36.7723
+INFO:bayesian.py:Epoch 40/100	Loss 1002.6762 ± 36.7728
+INFO:bayesian.py:Epoch 41/100	Loss 1002.6714 ± 36.7714
+INFO:bayesian.py:Epoch 42/100	Loss 1002.6676 ± 36.7716
+INFO:bayesian.py:Epoch 43/100	Loss 1002.6638 ± 36.7720
+INFO:bayesian.py:Epoch 44/100	Loss 1002.6601 ± 36.7720
+INFO:bayesian.py:Epoch 45/100	Loss 1002.6558 ± 36.7711
+INFO:bayesian.py:Epoch 46/100	Loss 1002.6515 ± 36.7711
+INFO:bayesian.py:Epoch 47/100	Loss 1002.6469 ± 36.7711
+INFO:bayesian.py:Epoch 48/100	Loss 1002.6435 ± 36.7713
+INFO:bayesian.py:Epoch 49/100	Loss 1002.6412 ± 36.7709
+INFO:bayesian.py:Epoch 50/100	Loss 1002.6384 ± 36.7705
+INFO:bayesian.py:Epoch 51/100	Loss 1002.6336 ± 36.7702
+INFO:bayesian.py:Epoch 52/100	Loss 1002.6306 ± 36.7703
+INFO:bayesian.py:Epoch 53/100	Loss 1002.6283 ± 36.7701
+INFO:bayesian.py:Epoch 54/100	Loss 1002.6247 ± 36.7706
+INFO:bayesian.py:Epoch 55/100	Loss 1002.6220 ± 36.7698
+INFO:bayesian.py:Epoch 56/100	Loss 1002.6189 ± 36.7702
+INFO:bayesian.py:Epoch 57/100	Loss 1002.6167 ± 36.7702
+INFO:bayesian.py:Epoch 58/100	Loss 1002.6139 ± 36.7698
+INFO:bayesian.py:Epoch 59/100	Loss 1002.6111 ± 36.7697
+INFO:bayesian.py:Epoch 60/100	Loss 1002.6090 ± 36.7691
+INFO:bayesian.py:Epoch 61/100	Loss 1002.6062 ± 36.7694
+INFO:bayesian.py:Epoch 62/100	Loss 1002.6038 ± 36.7695
+INFO:bayesian.py:Epoch 63/100	Loss 1002.6021 ± 36.7702
+INFO:bayesian.py:Epoch 64/100	Loss 1002.5997 ± 36.7691
+INFO:bayesian.py:Epoch 65/100	Loss 1002.5971 ± 36.7691
+INFO:bayesian.py:Epoch 66/100	Loss 1002.5962 ± 36.7692
+INFO:bayesian.py:Epoch 67/100	Loss 1002.5929 ± 36.7686
+INFO:bayesian.py:Epoch 68/100	Loss 1002.5918 ± 36.7691
+INFO:bayesian.py:Epoch 69/100	Loss 1002.5887 ± 36.7685
+INFO:bayesian.py:Epoch 70/100	Loss 1002.5874 ± 36.7688
+INFO:bayesian.py:Epoch 71/100	Loss 1002.5859 ± 36.7681
+INFO:bayesian.py:Epoch 72/100	Loss 1002.5831 ± 36.7683
+INFO:bayesian.py:Epoch 73/100	Loss 1002.5813 ± 36.7688
+INFO:bayesian.py:Epoch 74/100	Loss 1002.5809 ± 36.7685

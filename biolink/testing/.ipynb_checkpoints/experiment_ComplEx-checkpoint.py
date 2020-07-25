@@ -33,6 +33,8 @@ os.environ["CUDA_VISIBLE_DEVICES"]="2"
 def metrics_to_str(metrics):
     return f'MRR {metrics["MRR"]:.6f}\tH@1 {metrics["H@1"]:.6f}\tH@3 {metrics["H@3"]:.6f}\tH@10 {metrics["H@10"]:.6f}\tAU-ROC_raw {metrics["AU-ROC_raw"]:.6f}\tAU-ROC_fil {metrics["AU-ROC_fil"]:.6f}'
 
+def metrics_str_auc(metrics):
+    return f'AUC-ROC {metrics["AUC-ROC"]:.6f}\tAP {metrics["AP"]:.6f}\tP@50 {metrics["P@50"]:.6f}\tAUC_PR {metrics["AUC_PR"]:.6f}'
 
 
 def main(argv, bayesian=False):
@@ -61,6 +63,7 @@ def main(argv, bayesian=False):
     parser.add_argument('--loss', '-l', action='store', type=str, default='pw_logistic')
     parser.add_argument('--regulariser', '-r', action='store', type=str, default='n3')
     parser.add_argument('--reg-weight', action='store', type=float, required=True)
+    parser.add_argument('--tucker-reg-weight', action='store', type=float, default=-1.0)
 
     parser.add_argument('--nb-negs', action='store', type=int, default=6)
     parser.add_argument('--transe-norm', action='store', type=str, default='l1')
@@ -79,12 +82,13 @@ def main(argv, bayesian=False):
     parser.add_argument('--lr_decay', action='store', type=float, default=0.0)
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
+    parser.add_argument('--load', action='store_true', default=False)
     parser.add_argument('--save_model_name', action='store', type=str, default='Empty')
 
 
 
     args = parser.parse_args(argv)
-    
+
     data = args.data
 
     SAVE_PATH = os.path.join(os.getcwd(),f'best_models/{data}/' )
@@ -156,8 +160,29 @@ def main(argv, bayesian=False):
             'tucker': lambda: TuckEr((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, loss, device, optimizer_name, args, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
         }
 
+
     model = model_dict[args.model]()
+    if args.load:
+        model.load_state_dict(torch.load(SAVE_PATH + args.save_model_name + '.pt'))
+    else:
+        model.init()
+
     model.to(device)
+
+    ###if AUC then we are just testing to see this performance##
+    if args.auc and args.load:
+        logger.info('auc and lod happening')
+        for dataset_name, data in dataset.data.items():
+            logger.info('dataset name \t{dataset_name}')
+            if dataset_name == 'test':
+                logger.info(f'in evalute for dataset: \t{dataset_name}')
+                if data == 'pse':
+                    batch_size = 5000
+                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
+                logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
+                return
+
+
 
     optimizer_factory = {
         'adagrad': lambda: optim.Adagrad(model.parameters(), lr=lr),
