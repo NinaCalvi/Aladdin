@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/Dissertation/Aladdin/biolink/baselines/baseline_result.out
+#$ -e $HOME/Dissertation/Aladdin/biolink/baselines/baseline_result.err
+#$ -t 1-1
+#$ -l tmem=15G
+#$ -l h_rt=8:00:00
+#$ -l gpu=true
+conda activate libkge_new
+
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+cd $HOME/Dissertation/Aladdin/biolink/baselines
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./baseline_pse.py
