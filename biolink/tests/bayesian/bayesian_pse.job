@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/tucker_pse_bayesian.out
+#$ -e $HOME/tucker_pse_bayesian.err
+#$ -t 1-1
+#$ -l tmem=15G
+#$ -l h_rt=48:00:00
+#$ -l gpu=true
+
+conda activate libkge_new
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+cd $HOME/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 30 && PYTHONPATH=. python testing/bayesian_pse.py tucker_pse_bayesian_fixedW
