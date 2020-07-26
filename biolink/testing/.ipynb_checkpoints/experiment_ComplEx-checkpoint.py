@@ -27,7 +27,7 @@ np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
-os.environ["CUDA_VISIBLE_DEVICES"]="2"
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 
 def metrics_to_str(metrics):

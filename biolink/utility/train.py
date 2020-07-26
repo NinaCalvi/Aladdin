@@ -8,6 +8,7 @@ import logging
 import os
 import sys
 import torch
+from datetime import datetime
 from biolink.utility.utils import generate_neg_instances
 
 
@@ -88,21 +89,28 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             input_batch = inputs[batch_start:batch_end]
 
             #need to generate negatives
-
+          
             corruptions = generate_neg_instances(input_batch, nb_negs, nb_ents, seed)
+         
+            
             #ensuring you can split between positive and negative examples through the middle
             # input_batch = input_batch.repeat(nb_negs, 1)
             # input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
+            
             input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
-
+            
             # input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
 
             # pos_input = input_batch.to(device)
             # neg_input = corruptions.to(device)
 
-            optimiser.zero_grad()
-
+           
+           
             scores, factors = model.score(input_all)
+           
+
+            
+            
             if torch.sum(torch.isnan(scores)) > 0:
                 break
             # scores_pos, factors_pos = model.score(pos_input)
@@ -119,7 +127,8 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             reg = regulariser.forward(factors)
             # reg = regulariser.forward(torch.cat((factors_pos, factors_neg), axis=0))
             loss += reg
-
+            
+            optimiser.zero_grad()
             loss.backward()
             optimiser.step()
 

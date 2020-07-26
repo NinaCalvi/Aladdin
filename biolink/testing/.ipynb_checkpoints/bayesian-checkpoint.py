@@ -36,10 +36,11 @@ np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 space = {'model': hp.choice('model', ['complex']), \
         'data': hp.choice('data', ['covid']), \
-        'loss': hp.choice('loss', ['pw_square']), \
+        'loss': hp.choice('loss', ['pw_logistic']), \
+        'epochs': hp.choice('epochs', [400]), \
         'nb-negs': hp.choice('nb-negs', [6, 50, 200]), \
         'learning-rate': hp.uniform('learning-rate', 0.003, 1), \
-        'batch-size': hp.choice('batch-size', [128, 268, 512, 1024]), \
+        'batch-size': hp.choice('batch-size', [512, 1024, 2048]), \
         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
         'embedding-size': scope.int(hp.quniform('embedding-size', 50, 200,1)), \
         'quiet': hp.choice('quiet', [True]), \
