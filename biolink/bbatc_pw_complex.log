@@ -1,0 +1,13 @@
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:hyperopt.tpe:build_posterior_wrapper took 0.003077 seconds
+INFO:hyperopt.tpe:TPE using 0 trials
+                                                                               ['--batch-size', '2048', '--data', 'covid', '--embedding-size', '114', '--epochs', '600', '--learning-rate', '0.9011883450558777', '--loss', 'pw_logistic', '--model', 'complex', '--nb-negs', '50', '--quiet', '--reg-weight', '5.2090201030525835e-05', '--valid']
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                               MCL
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                               False
+  0%|                                   | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:bayesian.py:Valid: True
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: True
+INFO:bayesian.py:Epoch 1/600	Loss 358145.7531 ± 337831.8663
+INFO:bayesian.py:Epoch 2/600	Loss 104323.3321 ± 7936.9117
+INFO:bayesian.py:Epoch 3/600	Loss 88796.0038 ± 3121.0191
