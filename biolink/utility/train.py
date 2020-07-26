@@ -37,7 +37,9 @@ def train(model: nn.Module,
     data: the training data
     args: arguments of input
     '''
-    print(type(model))
+    # print(type(model))
+    global BAD_PERFORMING
+    BAD_PERFORMING = False
     if isinstance(model, KBCModelMCL):
         train_mc(model, regulariser, optimiser, data, valid_data, all_data, args, scheduler=scheduler)
     elif isinstance(model, KBCModel):
