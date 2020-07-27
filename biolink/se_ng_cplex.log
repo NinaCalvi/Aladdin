@@ -1,0 +1,188 @@
+  0%|                                                           | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:hyperopt.tpe:build_posterior_wrapper took 0.010677 seconds
+INFO:hyperopt.tpe:TPE using 0 trials
+                                                                                                       ['--batch-size', '1024', '--data', 'covid', '--embedding-size', '81', '--epochs', '600', '--learning-rate', '0.9886993595688012', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '50', '--quiet', '--reg-weight', '0.03759065926367288', '--valid']
+  0%|                                                           | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                                                       MCL
+  0%|                                                           | 0/50 [00:00<?, ?trial/s, best loss=?]                                                                                                       False
+  0%|                                                           | 0/50 [00:00<?, ?trial/s, best loss=?]INFO:bayesian-SE.py:Valid: True
+INFO:bayesian-SE.py:Device: cuda
+INFO:bayesian-SE.py:NOT MC
+INFO:bayesian-SE.py:Device: cuda
+INFO:bayesian-SE.py:valid: True
+INFO:bayesian-SE.py:Epoch 1/600	Loss 17.8703 ± 45.1540
+INFO:bayesian-SE.py:Epoch 2/600	Loss 2.7292 ± 1.1344
+INFO:bayesian-SE.py:Epoch 3/600	Loss 1.5558 ± 0.7458
+INFO:bayesian-SE.py:Epoch 4/600	Loss 0.9693 ± 0.1589
+INFO:bayesian-SE.py:Epoch 5/600	Loss 0.6219 ± 0.0566
+INFO:bayesian-SE.py:Epoch 6/600	Loss 0.4852 ± 0.0298
+INFO:bayesian-SE.py:Epoch 7/600	Loss 0.4062 ± 0.0188
+INFO:bayesian-SE.py:Epoch 8/600	Loss 0.3540 ± 0.0137
+INFO:bayesian-SE.py:Epoch 9/600	Loss 0.3175 ± 0.0104
+INFO:bayesian-SE.py:Epoch 10/600	Loss 0.2906 ± 0.0082
+INFO:bayesian-SE.py:Epoch 11/600	Loss 0.2704 ± 0.0063
+INFO:bayesian-SE.py:Epoch 12/600	Loss 0.2547 ± 0.0054
+INFO:bayesian-SE.py:Epoch 13/600	Loss 0.2423 ± 0.0048
+INFO:bayesian-SE.py:Epoch 14/600	Loss 0.2323 ± 0.0040
+INFO:bayesian-SE.py:Epoch 15/600	Loss 0.2241 ± 0.0037
+INFO:bayesian-SE.py:Epoch 16/600	Loss 0.2173 ± 0.0034
+INFO:bayesian-SE.py:Epoch 17/600	Loss 0.2115 ± 0.0032
+INFO:bayesian-SE.py:Epoch 18/600	Loss 0.2066 ± 0.0029
+INFO:bayesian-SE.py:Epoch 19/600	Loss 0.2025 ± 0.0028
+INFO:bayesian-SE.py:Epoch 20/600	Loss 0.1988 ± 0.0026
+INFO:bayesian-SE.py:Epoch 21/600	Loss 0.1957 ± 0.0026
+INFO:bayesian-SE.py:Epoch 22/600	Loss 0.1929 ± 0.0025
+INFO:bayesian-SE.py:Epoch 23/600	Loss 0.1905 ± 0.0025
+INFO:bayesian-SE.py:Epoch 24/600	Loss 0.1883 ± 0.0023
+INFO:bayesian-SE.py:Epoch 25/600	Loss 0.1864 ± 0.0023
+INFO:bayesian-SE.py:Epoch 26/600	Loss 0.1847 ± 0.0022
+INFO:bayesian-SE.py:Epoch 27/600	Loss 0.1831 ± 0.0021
+INFO:bayesian-SE.py:Epoch 28/600	Loss 0.1817 ± 0.0021
+INFO:bayesian-SE.py:Epoch 29/600	Loss 0.1804 ± 0.0022
+INFO:bayesian-SE.py:Epoch 30/600	Loss 0.1792 ± 0.0020
+INFO:bayesian-SE.py:Epoch 31/600	Loss 0.1782 ± 0.0021
+INFO:bayesian-SE.py:Epoch 32/600	Loss 0.1772 ± 0.0020
+INFO:bayesian-SE.py:Epoch 33/600	Loss 0.1763 ± 0.0020
+INFO:bayesian-SE.py:Epoch 34/600	Loss 0.1755 ± 0.0020
+INFO:bayesian-SE.py:Epoch 35/600	Loss 0.1748 ± 0.0020
+INFO:bayesian-SE.py:Epoch 36/600	Loss 0.1740 ± 0.0020
+INFO:bayesian-SE.py:Epoch 37/600	Loss 0.1734 ± 0.0020
+INFO:bayesian-SE.py:Epoch 38/600	Loss 0.1728 ± 0.0020
+INFO:bayesian-SE.py:Epoch 39/600	Loss 0.1722 ± 0.0019
+INFO:bayesian-SE.py:Epoch 40/600	Loss 0.1717 ± 0.0019
+INFO:bayesian-SE.py:Epoch 41/600	Loss 0.1713 ± 0.0020
+INFO:bayesian-SE.py:Epoch 42/600	Loss 0.1708 ± 0.0020
+INFO:bayesian-SE.py:Epoch 43/600	Loss 0.1704 ± 0.0019
+INFO:bayesian-SE.py:Epoch 44/600	Loss 0.1700 ± 0.0019
+INFO:bayesian-SE.py:Epoch 45/600	Loss 0.1697 ± 0.0019
+INFO:bayesian-SE.py:Epoch 46/600	Loss 0.1693 ± 0.0019
+INFO:bayesian-SE.py:Epoch 47/600	Loss 0.1690 ± 0.0019
+INFO:bayesian-SE.py:Epoch 48/600	Loss 0.1687 ± 0.0019
+INFO:bayesian-SE.py:Epoch 49/600	Loss 0.1684 ± 0.0021
+INFO:bayesian-SE.py:Epoch 50/600	Loss 0.1681 ± 0.0020
+INFO:bayesian-SE.py:Validating
+INFO:bayesian-SE.py:done
+INFO:bayesian-SE.py:metrics done
+INFO:bayesian-SE.py:Applying old dog tricks, ending training. MRR is 0.05182075598030534
+INFO:bayesian-SE.py:is bad performing True
+INFO:bayesian-SE.py:Done training
+INFO:bayesian-SE.py:Not checking test, since interrupted
+  2%|▌                           | 1/50 [11:33<9:26:44, 693.97s/trial, best loss: -0.05182075598030534]INFO:hyperopt.tpe:build_posterior_wrapper took 0.005710 seconds
+INFO:hyperopt.tpe:TPE using 1/1 trials with best loss -0.051821
+                                                                                                       ['--batch-size', '2048', '--data', 'covid', '--embedding-size', '106', '--epochs', '600', '--learning-rate', '0.20871286102632916', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '200', '--quiet', '--reg-weight', '3.304016284948371e-10', '--valid']
+  2%|▌                           | 1/50 [11:33<9:26:44, 693.97s/trial, best loss: -0.05182075598030534]                                                                                                       MCL
+  2%|▌                           | 1/50 [11:33<9:26:44, 693.97s/trial, best loss: -0.05182075598030534]                                                                                                       False
+  2%|▌                           | 1/50 [11:33<9:26:44, 693.97s/trial, best loss: -0.05182075598030534]INFO:bayesian-SE.py:Valid: True
+INFO:bayesian-SE.py:Device: cuda
+INFO:bayesian-SE.py:NOT MC
+INFO:bayesian-SE.py:Device: cuda
+INFO:bayesian-SE.py:valid: True
+INFO:bayesian-SE.py:Epoch 1/600	Loss 0.1944 ± 0.1603
+INFO:bayesian-SE.py:Epoch 2/600	Loss 0.0740 ± 0.0028
+INFO:bayesian-SE.py:Epoch 3/600	Loss 0.0609 ± 0.0010
+INFO:bayesian-SE.py:Epoch 4/600	Loss 0.0538 ± 0.0006
+INFO:bayesian-SE.py:Epoch 5/600	Loss 0.0488 ± 0.0006
+INFO:bayesian-SE.py:Epoch 6/600	Loss 0.0450 ± 0.0005
+INFO:bayesian-SE.py:Epoch 7/600	Loss 0.0420 ± 0.0006
+INFO:bayesian-SE.py:Epoch 8/600	Loss 0.0396 ± 0.0006
+INFO:bayesian-SE.py:Epoch 9/600	Loss 0.0376 ± 0.0006
+INFO:bayesian-SE.py:Epoch 10/600	Loss 0.0359 ± 0.0005
+INFO:bayesian-SE.py:Epoch 11/600	Loss 0.0345 ± 0.0005
+INFO:bayesian-SE.py:Epoch 12/600	Loss 0.0333 ± 0.0005
+INFO:bayesian-SE.py:Epoch 13/600	Loss 0.0323 ± 0.0005
+INFO:bayesian-SE.py:Epoch 14/600	Loss 0.0314 ± 0.0005
+INFO:bayesian-SE.py:Epoch 15/600	Loss 0.0306 ± 0.0005
+INFO:bayesian-SE.py:Epoch 16/600	Loss 0.0299 ± 0.0005
+INFO:bayesian-SE.py:Epoch 17/600	Loss 0.0293 ± 0.0005
+INFO:bayesian-SE.py:Epoch 18/600	Loss 0.0287 ± 0.0005
+INFO:bayesian-SE.py:Epoch 19/600	Loss 0.0282 ± 0.0005
+INFO:bayesian-SE.py:Epoch 20/600	Loss 0.0278 ± 0.0004
+INFO:bayesian-SE.py:Epoch 21/600	Loss 0.0274 ± 0.0004
+INFO:bayesian-SE.py:Epoch 22/600	Loss 0.0270 ± 0.0005
+INFO:bayesian-SE.py:Epoch 23/600	Loss 0.0266 ± 0.0004
+INFO:bayesian-SE.py:Epoch 24/600	Loss 0.0263 ± 0.0004
+INFO:bayesian-SE.py:Epoch 25/600	Loss 0.0260 ± 0.0004
+INFO:bayesian-SE.py:Epoch 26/600	Loss 0.0257 ± 0.0004
+INFO:bayesian-SE.py:Epoch 27/600	Loss 0.0255 ± 0.0004
+INFO:bayesian-SE.py:Epoch 28/600	Loss 0.0252 ± 0.0004
+INFO:bayesian-SE.py:Epoch 29/600	Loss 0.0250 ± 0.0004
+INFO:bayesian-SE.py:Epoch 30/600	Loss 0.0248 ± 0.0004
+INFO:bayesian-SE.py:Epoch 31/600	Loss 0.0246 ± 0.0004
+INFO:bayesian-SE.py:Epoch 32/600	Loss 0.0244 ± 0.0004
+INFO:bayesian-SE.py:Epoch 33/600	Loss 0.0242 ± 0.0004
+INFO:bayesian-SE.py:Epoch 34/600	Loss 0.0240 ± 0.0004
+INFO:bayesian-SE.py:Epoch 35/600	Loss 0.0239 ± 0.0004
+INFO:bayesian-SE.py:Epoch 36/600	Loss 0.0237 ± 0.0004
+INFO:bayesian-SE.py:Epoch 37/600	Loss 0.0236 ± 0.0004
+INFO:bayesian-SE.py:Epoch 38/600	Loss 0.0235 ± 0.0004
+INFO:bayesian-SE.py:Epoch 39/600	Loss 0.0233 ± 0.0004
+INFO:bayesian-SE.py:Epoch 40/600	Loss 0.0232 ± 0.0004
+INFO:bayesian-SE.py:Epoch 41/600	Loss 0.0230 ± 0.0003
+INFO:bayesian-SE.py:Epoch 42/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 43/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 44/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 45/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 46/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 47/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 48/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 49/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 50/600	Loss nan ± nan
+INFO:bayesian-SE.py:Validating
+INFO:bayesian-SE.py:done
+INFO:bayesian-SE.py:metrics done
+INFO:bayesian-SE.py:Epoch 51/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 52/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 53/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 54/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 55/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 56/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 57/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 58/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 59/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 60/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 61/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 62/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 63/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 64/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 65/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 66/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 67/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 68/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 69/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 70/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 71/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 72/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 73/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 74/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 75/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 76/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 77/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 78/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 79/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 80/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 81/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 82/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 83/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 84/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 85/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 86/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 87/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 88/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 89/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 90/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 91/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 92/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 93/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 94/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 95/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 96/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 97/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 98/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 99/600	Loss nan ± nan
+INFO:bayesian-SE.py:Epoch 100/600	Loss nan ± nan
+INFO:bayesian-SE.py:Validating
+INFO:bayesian-SE.py:done
+INFO:bayesian-SE.py:metrics done
+INFO:bayesian-SE.py:Filtered MRR validation decreased, therefore stop
+INFO:bayesian-SE.py:Best validation metrics 0.06892660577218968
+INFO:bayesian-SE.py:is bad performing False
+INFO:bayesian-SE.py:Done training
+INFO:bayesian-SE.py:in evalute for dataset: 	valid

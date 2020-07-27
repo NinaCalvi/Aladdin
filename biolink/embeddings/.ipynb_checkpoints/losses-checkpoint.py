@@ -27,11 +27,15 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     scrs = torch.split(predictions, [pos_size, int(predictions.shape[0]-pos_size)], dim=0)
 
 #     print(scrs[0].shape)
+
+    pw_targets = torch.cat((torch.ones(scrs[0].shape), -1*torch.ones(scrs[1].shape)), dim=0)
+
     pos_scores = scrs[0].repeat(int(predictions.shape[0]/pos_size)-1, 1)
     neg_scores = scrs[1]
+#     assert pos_scores == neg_scores
 #     print(pos_scores.shape)
 #     print(neg_scores.shape)
-    predictions = torch.cat((pos_scores, neg_scores),dim=0)
+#     predictions = torch.cat((pos_scores, neg_scores),dim=0)
 #     print(predictions.shape)
     
     #setting the targets in this way is needed for the different losses we will be workign with
@@ -40,22 +44,22 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 
 
     if loss == 'pw_hinge':
-        return pointwise_hinge_loss(predictions, targets, device, reduction_type)
+        return pointwise_hinge_loss(predictions, pw_targets, device, reduction_type)
     elif loss == 'pair_hinge':
         return pairwise_hinge_loss(pos_scores, neg_scores, reduction_type, device, margin_value)
     elif loss == 'pw_logistic':
-        return pointwise_logistic_loss(predictions, targets, device, reduction_type)
+        return pointwise_logistic_loss(predictions, pw_targets, device, reduction_type)
     elif loss == 'pair_logistic':
         return pairwise_logistic_loss(pos_socres, neg_scores, reduction_type, device)
     elif loss == 'pw_square':
         #targets need to be bingary
-        targets = (targets + 1)/2
-        return pointwise_square_loss(predictions, targets, reduction_type, device)
+        pw_targets = (pw_targets + 1)/2
+        return pointwise_square_loss(predictions, pw_targets, reduction_type, device)
     elif loss == 'ce':
         return cross_entropy_neg_sampling(predictions, reduction_type, device)
     elif loss == 'bce':
         targets = (targets + 1)/2
-        return bce_loss(predictions, targets, reduction_type)
+        return bce_loss(predictions, pw_targets, reduction_type)
 
 def bce_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
     loss = nn.BCELoss()
@@ -135,7 +139,8 @@ def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, redu
     l(x) is the label : 1 for positive, 0 for negative sample
 
     '''
-    # print(predictions[0])
+    print(predictions[0:10])
+    reduction_type = 'avg'
     losses = torch.pow(predictions - targets.to(device), 2)
     return reduce_loss(losses, reduction_type)
 

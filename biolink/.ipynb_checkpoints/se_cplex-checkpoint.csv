@@ -1,0 +1,2 @@
+MRR,h@1,h@3,h@10,iteration,params
+-0.05182075598030534,-1,-1,-1,1,"['--batch-size', '1024', '--data', 'covid', '--embedding-size', '81', '--epochs', '600', '--learning-rate', '0.9886993595688012', '--loss', 'pw_square', '--model', 'complex', '--nb-negs', '50', '--quiet', '--reg-weight', '0.03759065926367288', '--valid']"

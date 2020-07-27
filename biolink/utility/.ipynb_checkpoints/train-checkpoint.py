@@ -37,7 +37,9 @@ def train(model: nn.Module,
     data: the training data
     args: arguments of input
     '''
-    print(type(model))
+    # print(type(model))
+    global BAD_PERFORMING
+    BAD_PERFORMING = False
     if isinstance(model, KBCModelMCL):
         train_mc(model, regulariser, optimiser, data, valid_data, all_data, args, scheduler=scheduler)
     elif isinstance(model, KBCModel):
@@ -111,8 +113,8 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
             
             
-            if torch.sum(torch.isnan(scores)) > 0:
-                break
+#             if torch.sum(torch.isnan(scores)) > 0:
+#                 break
             # scores_pos, factors_pos = model.score(pos_input)
             # socres_neg, factors_neg = model.score(neg_input)
             # scores_pos = scores_pos.repeat(nb_negs, 1)
@@ -130,6 +132,8 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             
             optimiser.zero_grad()
             loss.backward()
+            if args.loss == 'pw_square':
+                torch.nn.utils.clip_grad_norm(model.parameters(), 0.1)
             optimiser.step()
 
             epoch_loss_values.append(loss.item())
