@@ -1,5 +1,5 @@
 import sys
-import experiment_ComplEx_diffGPU
+import experiment_ComplEx
 
 import numpy as np
 from hyperopt import hp
@@ -20,44 +20,21 @@ import os
 
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 
 
-# space = {'model': hp.choice('model', ['complex']), \
-#         'mcl': hp.choice('mcl', [True]), \
-#         'data': hp.choice('data', ['covid']), \
-#         'learning-rate': hp.loguniform('learning-rate', np.log(0.003), np.log(1)), \
-#         'batch-size': hp.choice('batch-size', [128, 268, 512, 1024]), \
-#         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
-#         'embedding-size': scope.int(hp.quniform('embedding-size', 50, 200,1)), \
-#         'quiet': hp.choice('quiet', [True])}
 
-
-# space = {'model': hp.choice('model', ['complex']), \
-#         'data': hp.choice('data', ['covid']), \
-#         'loss': hp.choice('loss', ['pw_square']), \
-#         'epochs': hp.choice('epochs', [600]), \
-#         'nb-negs': hp.choice('nb-negs', [6, 50, 200]), \
-#         'learning-rate': hp.uniform('learning-rate', 0.003, 1), \
-#         'batch-size': hp.choice('batch-size', [512, 1024, 2048]), \
-#         'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
-#         'embedding-size': scope.int(hp.quniform('embedding-size', 50, 200,1)), \
-#         'quiet': hp.choice('quiet', [True]), \
-#         'valid': hp.choice('valid', [True])}
-
-space = {'model': hp.choice('model', ['complex']), \
-        'data': hp.choice('data', ['covid']), \
-        'loss': hp.choice('loss', ['pw_square']), \
-        'epochs': hp.choice('epochs', [100]), \
-        'nb-negs': hp.choice('nb-negs', [200]), \
-        'learning-rate': hp.choice('learning-rate', [0.20871]), \
-        'batch-size': hp.choice('batch-size', [2048]), \
-        'reg-weight': hp.choice('reg-weight', [3.304e-10]), \
-        'embedding-size': hp.choice('embedding-size', [106]), \
+space = {'model': hp.choice('model', ['tucker']), \
+        'mcl': hp.choice('mcl', [True]), \
+        'data': hp.choice('data', ['pse']), \
+        'learning-rate': hp.loguniform('learning-rate', np.log(0.003), np.log(1)), \
+        'batch-size': hp.choice('batch-size', [128, 268, 512]), \
+        'reg-weight': hp.loguniform('reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
+        'tucker-reg-weight': hp.loguniform('tucker-reg-weight', np.log(1.0e-10), np.log(1.0e-01)), \
+        'embedding-size': scope.int(hp.quniform('embedding-size', 50, 200,1)), \
+        'rel-emb-size': scope.int(hp.quniform('real-emb-size', 50, 200,1)), \
+        'quiet': hp.choice('quiet', [True]), \
         'valid': hp.choice('valid', [True])}
-
 
 
 
@@ -81,7 +58,7 @@ def add_params(ps):
 
     #need to make this output the MRR scores
     print(args)
-    metrics = experiment_ComplEx_diffGPU.main(args, bayesian=True)
+    metrics = experiment_ComplEx.main(args, bayesian=True)
 
     with open(output_file, 'a+') as f:
         writer = csv.writer(f)
@@ -103,7 +80,7 @@ def main(name_file):
     of_connection.close()
 
 
-    num_eval = 1
+    num_eval = 50
     # trials = Trials()
     trials = do_hyperopt(space, num_eval)
     mrr = -1 * trials.best_trial['result']['loss']

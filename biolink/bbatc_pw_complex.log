@@ -5138,3 +5138,38 @@ INFO:bayesian.py:Best validation metrics 0.08632424553879656
 INFO:bayesian.py:is bad performing False
 INFO:bayesian.py:Done training
 INFO:bayesian.py:in evalute for dataset: 	valid
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	valid results	MRR 0.086324	H@1 0.027928	H@3 0.089377	H@10 0.197965	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:bayesian.py:in evalute for dataset: 	test
+INFO:bayesian.py:done
+INFO:bayesian.py:metrics done
+INFO:bayesian.py:Error 	test results	MRR 0.095301	H@1 0.035810	H@3 0.098973	H@10 0.210090	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+ 20%|▏| 10/50 [24:21:20<87:35:00, 7882.52s/trial, best loss: -0.144255276852580INFO:hyperopt.tpe:build_posterior_wrapper took 0.003153 seconds
+INFO:hyperopt.tpe:TPE using 10/10 trials with best loss -0.144255
+                                                                               ['--batch-size', '2048', '--data', 'covid', '--embedding-size', '172', '--epochs', '600', '--learning-rate', '0.10143734261577655', '--loss', 'pw_logistic', '--model', 'complex', '--nb-negs', '200', '--quiet', '--reg-weight', '4.8317966814872456e-05', '--valid']
+ 20%|▏| 10/50 [24:21:20<87:35:00, 7882.52s/trial, best loss: -0.144255276852580                                                                               MCL
+ 20%|▏| 10/50 [24:21:20<87:35:00, 7882.52s/trial, best loss: -0.144255276852580                                                                               False
+ 20%|▏| 10/50 [24:21:20<87:35:00, 7882.52s/trial, best loss: -0.144255276852580INFO:bayesian.py:Valid: True
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:NOT MC
+INFO:bayesian.py:Device: cuda
+INFO:bayesian.py:valid: True
+INFO:bayesian.py:Epoch 1/600	Loss 289190.0562 ± 106541.9990
+INFO:bayesian.py:Epoch 2/600	Loss 109767.5955 ± 9432.7880
+INFO:bayesian.py:Epoch 3/600	Loss 68181.4819 ± 2877.0657
+INFO:bayesian.py:Epoch 4/600	Loss 51614.2370 ± 1660.9686
+INFO:bayesian.py:Epoch 5/600	Loss 43038.6401 ± 1345.5463
+INFO:bayesian.py:Epoch 6/600	Loss 37807.6966 ± 1192.5504
+INFO:bayesian.py:Epoch 7/600	Loss 34229.7947 ± 1114.7326
+INFO:bayesian.py:Epoch 8/600	Loss 31641.0120 ± 1068.2433
+INFO:bayesian.py:Epoch 9/600	Loss 29703.7593 ± 1048.3763
+INFO:bayesian.py:Epoch 10/600	Loss 28083.4263 ± 1024.3124
+INFO:bayesian.py:Epoch 11/600	Loss 26799.9058 ± 977.7150
+INFO:bayesian.py:Epoch 12/600	Loss 25768.7389 ± 953.3066
+INFO:bayesian.py:Epoch 13/600	Loss 24838.5653 ± 860.4050
+INFO:bayesian.py:Epoch 14/600	Loss 24048.9131 ± 847.3936
+INFO:bayesian.py:Epoch 15/600	Loss 23361.8789 ± 924.0694
+INFO:bayesian.py:Epoch 16/600	Loss 22780.7539 ± 811.6726
+INFO:bayesian.py:Epoch 17/600	Loss 22243.5599 ± 836.5377
+INFO:bayesian.py:Epoch 18/600	Loss 21773.1177 ± 855.6765

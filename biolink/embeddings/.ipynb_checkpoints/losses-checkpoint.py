@@ -182,6 +182,8 @@ def mc_log_loss(predictions: Tuple[torch.Tensor, torch.Tensor],obj_idx: torch.Te
             raise ValueError('Unknown reduction type (%s)' % reduction_type)
 
         sp_prediction, po_prediction = predictions
+        sp_prediction = torch.sigmoid(sp_prediction)
+        po_prediction = torch.sigmoid(po_prediction)
 
         obj_targets = torch.zeros_like(sp_prediction)
         subj_targets = torch.zeros_like(po_prediction)

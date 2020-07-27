@@ -50,7 +50,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="1"
 space = {'model': hp.choice('model', ['complex']), \
         'data': hp.choice('data', ['covid']), \
         'loss': hp.choice('loss', ['pw_square']), \
-        'epochs': hp.choice('epochs', [12]), \
+        'epochs': hp.choice('epochs', [100]), \
         'nb-negs': hp.choice('nb-negs', [200]), \
         'learning-rate': hp.choice('learning-rate', [0.20871]), \
         'batch-size': hp.choice('batch-size', [2048]), \
