@@ -4,7 +4,7 @@ import itertools
 import gzip
 import numpy as np
 from tqdm import tqdm
-
+import time
 import argparse
 from biolink.utility import utils, train
 
@@ -26,8 +26,10 @@ logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 
-#os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-#os.environ["CUDA_VISIBLE_DEVICES"]="1"
+
+#os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
+#os.environ["CUDA_VISIBLE_DEVICES"]="0"
+
 
 
 def metrics_to_str(metrics):
@@ -223,7 +225,7 @@ def main(argv, bayesian=False):
                     batch_size = 1024
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
-                if dataset_name == 'test':
+                if dataset_name == 'valid':
                     if bayesian:
                         return metrics
     else:
