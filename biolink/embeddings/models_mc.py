@@ -402,7 +402,7 @@ class RotatE_MC(KBCModelMCL):
         # ])
 
         self.embeddings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
-        self.rels = nn.Embedding(sizes[0], rank, sparse=sparse_)
+        self.rels = nn.Embedding(sizes[1], rank, sparse=sparse_)
 
     def init(self):
         self.embeddings.weight.data *= self.init_size
