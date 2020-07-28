@@ -386,7 +386,7 @@ class RotatE_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
             optimiser_name: str, init_size: float = 1e-3):
-        super(ComplEx_MC, self).__init__()
+        super(RotatE_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
         self.init_size = init_size
@@ -468,6 +468,22 @@ class RotatE_MC(KBCModelMCL):
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
+
+    def get_rhs(self, chunk_begin: int, chunk_size: int):
+        return self.embeddings[0].weight.data[
+            chunk_begin:chunk_begin + chunk_size
+        ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        lhs = self.embeddings[0](queries[:, 0])
+        rel = self.embeddings[1](queries[:, 1])
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        rel = rel[:, :self.rank], rel[:, self.rank:]
+
+        return torch.cat([
+            lhs[0] * rel[0] - lhs[1] * rel[1],
+            lhs[0] * rel[1] + lhs[1] * rel[0]
+        ], 1)
 
 
 
