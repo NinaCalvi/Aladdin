@@ -26,7 +26,7 @@ logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 
-#os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
+#os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 #os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 
@@ -43,7 +43,7 @@ def main(argv, bayesian=False):
 
     #model params
     parser.add_argument('--model', '-m', action='store', type=str, default='complex',
-                        choices=['distmult', 'complex', 'transe', 'cp', 'trivec', 'tucker'])
+                        choices=['distmult', 'complex', 'transe', 'cp', 'trivec', 'tucker', 'rotate'])
     parser.add_argument('--mcl', action='store', type=bool, default=False)
 
     parser.add_argument('--embedding-size', '-k', action='store', type=int, default=100)
@@ -148,7 +148,8 @@ def main(argv, bayesian=False):
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
             'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
-            'tucker': lambda: TuckEr_MC((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, optimizer_name, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
+            'tucker': lambda: TuckEr_MC((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, optimizer_name, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2),
+            'rotate': lambda: RotatE_MC((nb_ents, nb_rels, nb_ents), emb_size,optimizer_name)
 
         }
     else:
