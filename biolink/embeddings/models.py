@@ -469,10 +469,15 @@ class ComplEx(KBCModel):
         self.loss = loss
         self.device = device
         self.args = args
+        self.init_size = init_size
 
     def init(self):
-        nn.init.xavier_normal_(self.embeddings[0].weight)
-        nn.init.xavier_normal_(self.embeddings[1].weight)
+        if self.loss == 'pw_square':
+            self.embeddings[0].weight.data *= self.init_size
+            self.embeddings[1].weight.data *= self.init_size
+        else:
+            nn.init.xavier_normal_(self.embeddings[0].weight)
+            nn.init.xavier_normal_(self.embeddings[1].weight)
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])

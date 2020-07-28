@@ -139,7 +139,7 @@ def pointwise_square_loss(predictions: torch.Tensor, targets: torch.Tensor, redu
     l(x) is the label : 1 for positive, 0 for negative sample
 
     '''
-    print(predictions[0:10])
+#     print(predictions[0:10])
     reduction_type = 'avg'
     losses = torch.pow(predictions - targets.to(device), 2)
     return reduce_loss(losses, reduction_type)
