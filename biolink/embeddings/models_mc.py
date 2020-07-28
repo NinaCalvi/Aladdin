@@ -401,7 +401,7 @@ class RotatE_MC(KBCModelMCL):
         #     for s in sizes[:2]
         # ])
 
-        self.embedings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
+        self.embeddings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
         self.rels = nn.Embedding(sizes[0], rank, sparse=sparse_)
 
     def init(self):
