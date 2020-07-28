@@ -381,6 +381,96 @@ class ComplEx_MC(KBCModelMCL):
         ], 1)
 
 
+
+class RotatE_MC(KBCModelMCL):
+    def __init__(
+            self, sizes: Tuple[int, int, int], rank: int,
+            optimiser_name: str, init_size: float = 1e-3):
+        super(ComplEx_MC, self).__init__()
+        self.sizes = sizes
+        self.rank = rank
+        self.init_size = init_size
+
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+        # self.embeddings = nn.ModuleList([
+        #     nn.Embedding(s, 2 * rank, sparse=sparse_)
+        #     for s in sizes[:2]
+        # ])
+
+        self.embedings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
+        self.rels = nn.Embedding(sizes[0], rank, sparse=sparse_)
+
+    def init(self):
+        self.embeddings[0].weight.data *= self.init_size
+        self.embeddings[1].weight.data *= self.init_size
+
+
+
+    def score(self, x):
+        lhs = self.embeddings(x[:, 0])
+        rel = self.rels(x[:, 1])
+        rhs = self.embeddings(x[:, 2])
+
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        rel = rel[:, :self.rank], rel[:, self.rank:]
+        rhs = rhs[:, :self.rank], rhs[:, self.rank:]
+
+        return torch.sum(
+            (lhs[0] * rel[0] - lhs[1] * rel[1]) * rhs[0] +
+            (lhs[0] * rel[1] + lhs[1] * rel[0]) * rhs[1],
+            1, keepdim=True
+        )
+
+    def forward(self, x):
+
+        lhs = self.embeddings(x[:, 0])
+        rel = self.rels(x[:, 1])
+        rhs = self.embeddings(x[:, 2])
+
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        # rel = rel[:, :self.rank], rel[:, self.rank:]
+        rhs = rhs[:, :self.rank], rhs[:, self.rank:]
+
+        rel_re, rel_im = torch.cos(rel), torch.sin(rel)
+
+        # phase_relation = rel/(self.embedding_range.item()/pi)
+
+        to_score = self.embeddings.weight[:, :self.rank], self.embeddings.weight[:, self.rank:]
+
+        score_sp_re = lhs[0] * rel_re - lhs[1] * rel_im
+        score_sp_im = lhs[0] * rel_im + lhs[1] * rel_re
+        print('sc sp shape', score_sp_re.shape)
+        score_sp_re = score_sp_re - to_score[0]
+        score_sp_im = score_sp_im - to_score[1]
+        print('sc sp shape after toscore', score_sp_re.shape)
+        score_sp = torch.stack([score_sp_re, score_sp_im], dim=0)
+        score_sp = torch.norm(score_sp, dim=0).sum(dim=1).t()
+
+
+        print('score_sp shape', score_sp.shape)
+
+        score_po_re = to_score[0] * rel_re - to_score[1] * rel_im
+        score_po_im = to_score[0] * rel_im + to_score[1] * rel_re
+        print('sc po shape', score_po_re)
+        score_po_re = score_po_re - rhs[0]
+        score_po_im = score_po_im - rhs[1]
+        print('sc po after diff', score_po_re.shape)
+        score_po = torch.stack([score_po_re, score_po_im], dim=0)
+        score_po = torch.norm(score_po, dim=0).sum(dim=1).t()
+
+        return score_sp, score_po, (
+            torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
+            torch.sqrt(rel_re ** 2 + rel_im ** 2),
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
+        )
+
+
+
+
 class TuckEr_MC(KBCModelMCL):
     """
     The Tucker Embedding model
