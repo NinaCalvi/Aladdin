@@ -443,25 +443,25 @@ class RotatE_MC(KBCModelMCL):
 
         score_sp_re = lhs[0] * rel_re - lhs[1] * rel_im
         score_sp_im = lhs[0] * rel_im + lhs[1] * rel_re
-        print('sc sp shape', score_sp_re.shape)
+        # print('sc sp shape', score_sp_re.shape)
         score_sp_re = score_sp_re.unsqueeze(1) - to_score[0]
         score_sp_im = score_sp_im.unsqueeze(1) - to_score[1]
-        print('sc sp shape after toscore', score_sp_re.shape)
+        # print('sc sp shape after toscore', score_sp_re.shape)
         score_sp = torch.stack([score_sp_re, score_sp_im], dim=0)
         score_sp = torch.norm(torch.norm(score_sp, dim=0), dim=2, p=2)
 
-        print('score_sp shape', score_sp.shape)
+        # print('score_sp shape', score_sp.shape)
 
         score_po_re = to_score[0].unsqueeze(1) * rel_re - to_score[1].unsqueeze(1) * rel_im
         score_po_im = to_score[0].unsqueeze(1) * rel_im + to_score[1].unsqueeze(1) * rel_re
-        print('sc po shape', score_po_re)
+        # print('sc po shape', score_po_re.shape)
         score_po_re = score_po_re - rhs[0]
         score_po_im = score_po_im - rhs[1]
-        print('sc po after diff', score_po_re.shape)
+        # print('sc po after diff', score_po_re.shape)
         score_po = torch.stack([score_po_re, score_po_im], dim=0)
-        score_po = torch.norm(torch.norm(score_po, dim=0), dim=2, p=2)
+        score_po = torch.norm(torch.norm(score_po, dim=0), dim=2, p=2).t()
 
-        print('score po, ', score_po.shape)
+        # print('score po, ', score_po.shape)
 
         return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
