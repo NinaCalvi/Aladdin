@@ -23,7 +23,7 @@ class MLP(nn.Module):
         return x
 
 
-def create_x(row, mat_x):
+def create_x(row, mat_x, adj_matrix):
     first_ = adj_matrix[entities_dict[row[0]]]
     second_ =  adj_matrix[entities_dict[row[2]]]
     #conc = np.concatenate((first_, second_))
@@ -56,7 +56,7 @@ def main():
 
     train_y = train[1].apply(lambda x: se_dict[x]).values
     train_x = np.zeros((train.shape[0], 645))
-    train.apply(lambda x: create_x(x, train_x), axis=1)
+    train.apply(lambda x: create_x(x, train_x, adj_matrix), axis=1)
 
     train_x=torch.from_numpy(train_x).float()
     train_y=torch.from_numpy(train_y).long()
@@ -65,7 +65,7 @@ def main():
 
     test_y = test[1].apply(lambda x: se_dict[x]).values
     test_x = np.zeros((test.shape[0], 645))
-    test.apply(lambda x: create_x(x, test_x), axis=1)
+    test.apply(lambda x: create_x(x, test_x, adj_matrix), axis=1)
 
     test_y=torch.from_numpy(test_y).long()
     test_x=torch.from_numpy(test_x).float()
