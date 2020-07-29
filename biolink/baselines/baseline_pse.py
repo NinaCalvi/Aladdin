@@ -6,6 +6,10 @@ from biolink.eval import rank, hits_rate
 from torch import nn
 import torch
 
+entities_dict = None
+se_dict = None
+
+
 
 class MLP(nn.Module):
     def __init__(self):
@@ -41,6 +45,9 @@ def main():
 
 
     print('kind of working')
+
+    global entities_dict
+    global se_dict
 
     test = pd.read_csv('ploypharmacy_facts_test.txt', sep='\t', header=None)
     train = pd.read_csv('ploypharmacy_facts_train.txt', sep='\t', header=None)
