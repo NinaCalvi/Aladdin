@@ -318,7 +318,7 @@ class RotatE(KBCModel):
 
         return torch.norm(score_sp_re, dim=1, p=2), (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
-            torch.sqrt(rel_re ** 2 + rel_im ** 2),
+            rel,
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
@@ -362,7 +362,7 @@ class RotatE(KBCModel):
 
         return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
-            torch.sqrt(rel_re ** 2 + rel_im ** 2),
+            rel,
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
