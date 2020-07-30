@@ -13,4 +13,4 @@ export LANG="en_US.utf8"
 export LANGUAGE="en_US:en"
 cd $HOME/Dissertation/Aladdin/biolink/
 
-test $SGE_TASK_ID -eq 1 && sleep 30 && PYTHONPATH=. python testing/bayesian_pse.py tucker_pse_bayesian_fixedW
+test $SGE_TASK_ID -eq 1 && sleep 40 && PYTHONPATH=. python testing/bayesian_pse.py tucker_pse_bayesian_fixedW

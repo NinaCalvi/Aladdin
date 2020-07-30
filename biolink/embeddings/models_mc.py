@@ -386,7 +386,7 @@ class RotatE_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
             optimiser_name: str, init_size: float = 1e-3):
-        super(ComplEx_MC, self).__init__()
+        super(RotatE_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
         self.init_size = init_size
@@ -401,12 +401,12 @@ class RotatE_MC(KBCModelMCL):
         #     for s in sizes[:2]
         # ])
 
-        self.embedings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
-        self.rels = nn.Embedding(sizes[0], rank, sparse=sparse_)
+        self.embeddings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
+        self.rels = nn.Embedding(sizes[1], rank, sparse=sparse_)
 
     def init(self):
-        self.embeddings[0].weight.data *= self.init_size
-        self.embeddings[1].weight.data *= self.init_size
+        self.embeddings.weight.data *= self.init_size
+        self.rels.weight.data *= self.init_size
 
 
 
@@ -443,24 +443,25 @@ class RotatE_MC(KBCModelMCL):
 
         score_sp_re = lhs[0] * rel_re - lhs[1] * rel_im
         score_sp_im = lhs[0] * rel_im + lhs[1] * rel_re
-        print('sc sp shape', score_sp_re.shape)
-        score_sp_re = score_sp_re - to_score[0]
-        score_sp_im = score_sp_im - to_score[1]
-        print('sc sp shape after toscore', score_sp_re.shape)
+        # print('sc sp shape', score_sp_re.shape)
+        score_sp_re = score_sp_re.unsqueeze(1) - to_score[0]
+        score_sp_im = score_sp_im.unsqueeze(1) - to_score[1]
+        # print('sc sp shape after toscore', score_sp_re.shape)
         score_sp = torch.stack([score_sp_re, score_sp_im], dim=0)
-        score_sp = torch.norm(score_sp, dim=0).sum(dim=1).t()
+        score_sp = torch.norm(torch.norm(score_sp, dim=0), dim=2, p=2)
 
+        # print('score_sp shape', score_sp.shape)
 
-        print('score_sp shape', score_sp.shape)
-
-        score_po_re = to_score[0] * rel_re - to_score[1] * rel_im
-        score_po_im = to_score[0] * rel_im + to_score[1] * rel_re
-        print('sc po shape', score_po_re)
+        score_po_re = to_score[0].unsqueeze(1) * rel_re - to_score[1].unsqueeze(1) * rel_im
+        score_po_im = to_score[0].unsqueeze(1) * rel_im + to_score[1].unsqueeze(1) * rel_re
+        # print('sc po shape', score_po_re.shape)
         score_po_re = score_po_re - rhs[0]
         score_po_im = score_po_im - rhs[1]
-        print('sc po after diff', score_po_re.shape)
+        # print('sc po after diff', score_po_re.shape)
         score_po = torch.stack([score_po_re, score_po_im], dim=0)
-        score_po = torch.norm(score_po, dim=0).sum(dim=1).t()
+        score_po = torch.norm(torch.norm(score_po, dim=0), dim=2, p=2).t()
+
+        # print('score po, ', score_po.shape)
 
         return score_sp, score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
@@ -468,6 +469,22 @@ class RotatE_MC(KBCModelMCL):
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
+
+    def get_rhs(self, chunk_begin: int, chunk_size: int):
+        return self.embeddings[0].weight.data[
+            chunk_begin:chunk_begin + chunk_size
+        ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        lhs = self.embeddings[0](queries[:, 0])
+        rel = self.embeddings[1](queries[:, 1])
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        rel = rel[:, :self.rank], rel[:, self.rank:]
+
+        return torch.cat([
+            lhs[0] * rel[0] - lhs[1] * rel[1],
+            lhs[0] * rel[1] + lhs[1] * rel[0]
+        ], 1)
 
 
 
