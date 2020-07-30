@@ -4,7 +4,7 @@ import itertools
 import gzip
 import numpy as np
 from tqdm import tqdm
-import time
+
 import argparse
 from biolink.utility import utils, train
 
@@ -26,10 +26,8 @@ logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
 
-
-#os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
-#os.environ["CUDA_VISIBLE_DEVICES"]="0"
-
+#os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+#os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 
 def metrics_to_str(metrics):
@@ -152,7 +150,6 @@ def main(argv, bayesian=False):
             'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'tucker': lambda: TuckEr_MC((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, optimizer_name, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2),
             'rotate': lambda: RotatE_MC((nb_ents, nb_rels, nb_ents), emb_size,optimizer_name)
-
         }
     else:
         model_dict = {
@@ -160,7 +157,8 @@ def main(argv, bayesian=False):
             'transe': lambda: TransE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args, norm_=args.transe_norm),
             'distmult': lambda: DistMult((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
             'trivec': lambda: TriVec((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args),
-            'tucker': lambda: TuckEr((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, loss, device, optimizer_name, args, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2)
+            'tucker': lambda: TuckEr((nb_ents, nb_rels, nb_ents), emb_size, args.rel_emb_size, loss, device, optimizer_name, args, input_dropout=args.input_dropout, hidden_dropout1=args.hidden_dropout1, hidden_dropout2=args.hidden_dropout2),
+            'rotate': lambda: RotatE((nb_ents, nb_rels, nb_ents), emb_size, loss, device, optimizer_name, args)
         }
 
 
@@ -225,7 +223,7 @@ def main(argv, bayesian=False):
                     batch_size = 1024
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
-                if dataset_name == 'valid':
+                if dataset_name == 'test':
                     if bayesian:
                         return metrics
     else:
