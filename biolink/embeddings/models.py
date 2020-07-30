@@ -262,6 +262,132 @@ class TransE(KBCModel):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
 
+
+class RotatE(KBCModel):
+
+    def __init__(
+            self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device,
+            optimiser_name: str,  *args, init_size: float = 1e-3):
+        super(RotatE, self).__init__()
+        self.sizes = sizes
+        self.rank = rank
+        self.init_size = init_size
+
+        if optimiser_name == 'adam':
+            sparse_ = False
+        else:
+            sparse_ = True
+
+        # self.embeddings = nn.ModuleList([
+        #     nn.Embedding(s, 2 * rank, sparse=sparse_)
+        #     for s in sizes[:2]
+        # ])
+
+        self.embeddings = nn.Embedding(sizes[0], 2* rank, sparse=sparse_)
+        self.rels = nn.Embedding(sizes[1], rank, sparse=sparse_)
+
+        self.args =args
+        self.device = device
+        self.loss = loss
+
+    def init(self):
+        xavier_normal_(self.embeddings.weight.data)
+        xavier_normal_(self.rels.weight.data)
+
+
+
+    def score(self, x):
+        lhs = self.embeddings(x[:, 0])
+        rel = self.rels(x[:, 1])
+        rhs = self.embeddings(x[:, 2])
+
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        rhs = rhs[:, :self.rank], rhs[:, self.rank:]
+
+        rel_re, rel_im = torch.cos(rel), torch.sin(rel)
+
+        score_sp_re = lhs[0] * rel_re - lhs[1] * rel_im
+        score_sp_im = lhs[0] * rel_im + lhs[1] * rel_re
+
+        score_sp_re = score_sp_re - rhs[0]
+        score_sp_im = score_sp_im - rhs[1]
+
+        score_sp_re = torch.stack((score_sp_re, score_sp_im), dim=0)
+        score_sp_re = torch.norm(score_sp_re, dim=0)
+
+
+        return torch.norm(score_sp_re, dim=1, p=2), (
+            torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
+            torch.sqrt(rel_re ** 2 + rel_im ** 2),
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
+        )
+
+    def forward(self, x):
+
+        lhs = self.embeddings(x[:, 0])
+        rel = self.rels(x[:, 1])
+        rhs = self.embeddings(x[:, 2])
+
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        # rel = rel[:, :self.rank], rel[:, self.rank:]
+        rhs = rhs[:, :self.rank], rhs[:, self.rank:]
+
+        rel_re, rel_im = torch.cos(rel), torch.sin(rel)
+
+        # phase_relation = rel/(self.embedding_range.item()/pi)
+
+        to_score = self.embeddings.weight[:, :self.rank], self.embeddings.weight[:, self.rank:]
+
+        score_sp_re = lhs[0] * rel_re - lhs[1] * rel_im
+        score_sp_im = lhs[0] * rel_im + lhs[1] * rel_re
+        # print('sc sp shape', score_sp_re.shape)
+        score_sp_re = score_sp_re.unsqueeze(1) - to_score[0]
+        score_sp_im = score_sp_im.unsqueeze(1) - to_score[1]
+        # print('sc sp shape after toscore', score_sp_re.shape)
+        score_sp = torch.stack([score_sp_re, score_sp_im], dim=0)
+        score_sp = torch.norm(torch.norm(score_sp, dim=0), dim=2, p=2)
+
+        # print('score_sp shape', score_sp.shape)
+
+        score_po_re = to_score[0].unsqueeze(1) * rel_re - to_score[1].unsqueeze(1) * rel_im
+        score_po_im = to_score[0].unsqueeze(1) * rel_im + to_score[1].unsqueeze(1) * rel_re
+        # print('sc po shape', score_po_re.shape)
+        score_po_re = score_po_re - rhs[0]
+        score_po_im = score_po_im - rhs[1]
+        # print('sc po after diff', score_po_re.shape)
+        score_po = torch.stack([score_po_re, score_po_im], dim=0)
+        score_po = torch.norm(torch.norm(score_po, dim=0), dim=2, p=2).t()
+
+        # print('score po, ', score_po.shape)
+
+        return score_sp, score_po, (
+            torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
+            torch.sqrt(rel_re ** 2 + rel_im ** 2),
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
+        )
+
+
+    def get_rhs(self, chunk_begin: int, chunk_size: int):
+        return self.embeddings[0].weight.data[
+            chunk_begin:chunk_begin + chunk_size
+        ].transpose(0, 1)
+
+    def get_queries(self, queries: torch.Tensor):
+        lhs = self.embeddings[0](queries[:, 0])
+        rel = self.embeddings[1](queries[:, 1])
+        lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+        rel = rel[:, :self.rank], rel[:, self.rank:]
+
+        return torch.cat([
+            lhs[0] * rel[0] - lhs[1] * rel[1],
+            lhs[0] * rel[1] + lhs[1] * rel[0]
+        ], 1)
+
+    def compute_loss(self, scores, pos_size, reduction_type='sum'):
+        return compute_kge_loss(scores,self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
+
+
+
 class TuckEr(KBCModel):
     """
     The Tucker Embedding model
@@ -290,8 +416,7 @@ class TuckEr(KBCModel):
         self.ent = nn.Embedding(sizes[0], rank_e)
         self.rel = nn.Embedding(sizes[1], rank_rel)
 
-        xavier_normal_(self.ent.weight.data)
-        xavier_normal_(self.rel.weight.data)
+
 
         if torch.cuda.is_available():
             self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, device="cuda", requires_grad=True))
@@ -299,17 +424,22 @@ class TuckEr(KBCModel):
             self.W = nn.Parameter(torch.tensor(np.random.uniform(-1, 1, (rank_rel, rank_e, rank_e)), dtype=torch.float, requires_grad=True))
 
 
-        self.bn0 = nn.BatchNorm1d(rank_e)
-        self.bn1 = nn.BatchNorm1d(rank_e)
+        # self.bn0 = nn.BatchNorm1d(rank_e)
+        # self.bn1 = nn.BatchNorm1d(rank_e)
 
         self.loss = loss
         self.device = device
 
-        self.input_dropout = nn.Dropout(kwargs["input_dropout"])
-        self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
-        self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
+        # self.input_dropout = nn.Dropout(kwargs["input_dropout"])
+        # self.hidden_dropout1 = nn.Dropout(kwargs["hidden_dropout1"])
+        # self.hidden_dropout2 = nn.Dropout(kwargs["hidden_dropout2"])
 
         self.args = args
+
+
+    def init(self):
+        xavier_normal_(self.ent.weight.data)
+        xavier_normal_(self.rel.weight.data)
 
     def score(self, x):
         lhs = self.ent(x[:, 0])
@@ -319,18 +449,18 @@ class TuckEr(KBCModel):
         W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
-        return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs)
+        return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs, self.W)
 
     def forward(self, x, predict_lhs = False):
         lhs = self.ent(x[:, 0])
         rel = self.rel(x[:, 1])
         rhs = self.ent(x[:, 2])
 
-        x = self.bn0(lhs)
-        x2 = self.bn0(rhs)
+        # x = self.bn0(lhs)
+        # x2 = self.bn0(rhs)
 
-        x = self.input_dropout(x)
-        x2 = self.input_dropout(x2)
+        # x = self.input_dropout(x)
+        # x2 = self.input_dropout(x2)
 
         x = x.view(-1, 1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1), 1)
@@ -339,7 +469,7 @@ class TuckEr(KBCModel):
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
         #THIS HIDDEN DROPOUT I NEED TO UNDERSTAND BETTER
-        W_mat = self.hidden_dropout1(W_mat)
+        # W_mat = self.hidden_dropout1(W_mat)
 
 
         x = torch.bmm(x, W_mat)
@@ -348,20 +478,20 @@ class TuckEr(KBCModel):
         x = x.view(-1, lhs.size(1))
         x2 = x2.view(-1, rhs.size(1))
 
-        x = self.bn1(x)
-        x2 = self.bn1(x2)
+        # x = self.bn1(x)
+        # x2 = self.bn1(x2)
 
-        x = self.hidden_dropout2(x)
-        x2 = self.hidden_dropout2(x2)
+        # x = self.hidden_dropout2(x)
+        # x2 = self.hidden_dropout2(x2)
 
         x = torch.mm(x, self.ent.weight.transpose(1,0))
         x2 = torch.mm(x2, self.ent.weight.transpose(1,0))
 
-        pred_sp = torch.sigmoid(x)
-        pred_po = torch.sigmoid(x2)
+        # pred_sp = torch.sigmoid(x)
+        # pred_po = torch.sigmoid(x2)
 
 
-        return pred_sp, pred_po, (lsh, rel, rhs) #unsure whether should add w?
+        return x, x2, (lsh, rel, rhs, self.W) #unsure whether should add w?
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.ent.weight.data[
@@ -439,6 +569,10 @@ class DistMult(KBCModel):
     def compute_loss(self, scores, pos_size, reduction_type='sum'):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
+
+
+
+
 class ComplEx(KBCModel):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int, loss: str, device: torch.device, optimiser_name: str, *args, init_size: float = 1e-3):
@@ -456,7 +590,7 @@ class ComplEx(KBCModel):
 
 
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 2 * rank) #REMOVED SPARSE TRUE
+            nn.Embedding(s, 2 * rank, sparse=sparse_) #REMOVED SPARSE TRUE
             for s in sizes[:2]
         ])
 
@@ -469,15 +603,10 @@ class ComplEx(KBCModel):
         self.loss = loss
         self.device = device
         self.args = args
-        self.init_size = init_size
 
     def init(self):
-        if self.loss == 'pw_square':
-            self.embeddings[0].weight.data *= self.init_size
-            self.embeddings[1].weight.data *= self.init_size
-        else:
-            nn.init.xavier_normal_(self.embeddings[0].weight)
-            nn.init.xavier_normal_(self.embeddings[1].weight)
+        nn.init.xavier_normal_(self.embeddings[0].weight)
+        nn.init.xavier_normal_(self.embeddings[1].weight)
 
     def score(self, x):
         lhs = self.embeddings[0](x[:, 0])
