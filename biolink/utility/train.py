@@ -132,8 +132,6 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             
             optimiser.zero_grad()
             loss.backward()
-            if args.loss == 'pw_square':
-                torch.nn.utils.clip_grad_norm(model.parameters(), 0.1)
             optimiser.step()
 
             epoch_loss_values.append(loss.item())
@@ -142,6 +140,12 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss.item():.6f}')
 
             batch_start += batch_size
+            
+           
+        del input_all
+        del scores
+        del factors
+        torch.cuda.empty_cache()
 
         # print(epoch_loss_values)
         # print(type(epoch_loss_values))
@@ -151,7 +155,15 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
 
         if (((epoch+1) % valid_every) == 0) and valid:
             logger.info(f'Validating')
-            val_metrics = evaluate(model, valid_data, all_data, batch_size, device, validate=True)
+            if args.model == 'rotate':
+                val_batch_size = 150
+            else:
+                if batch_size < 2048:
+                    val_batch_size = 2048
+                else:
+                    val_batch_size = batch_size
+            print('val_batch_size', val_batch_size)
+            val_metrics = evaluate(model, valid_data, all_data, val_batch_size, device, validate=True)
             if best_val_mrr is None:
                 best_val_mrr = val_metrics['MRR']
             elif best_val_mrr >= val_metrics['MRR']:
@@ -208,7 +220,7 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
     logger.info(f'is tucker {tucker}')
 #     logger.info(f'settin tucker to FALSE')
-#     tucker=False
+    tucker=False
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
