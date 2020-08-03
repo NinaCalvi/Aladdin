@@ -37,7 +37,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 #     print(neg_scores.shape)
 #     predictions = torch.cat((pos_scores, neg_scores),dim=0)
 #     print(predictions.shape)
-    
+
     #setting the targets in this way is needed for the different losses we will be workign with
     targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
 #     print(targets.shape)
@@ -58,7 +58,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     elif loss == 'ce':
         return cross_entropy_neg_sampling(predictions, reduction_type, device)
     elif loss == 'bce':
-        targets = (targets + 1)/2
+        pw_targets = (pw_targets + 1)/2
         return bce_loss(predictions, pw_targets, reduction_type)
 
 def bce_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
