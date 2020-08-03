@@ -26,9 +26,10 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     # print(predictions.shape)
     scrs = torch.split(predictions, [pos_size, int(predictions.shape[0]-pos_size)], dim=0)
 
-#     print(scrs[0].shape)
+#     print('scrs shape', scrs[0].shape)
 
     pw_targets = torch.cat((torch.ones(scrs[0].shape), -1*torch.ones(scrs[1].shape)), dim=0)
+#     print('pw shape', pw_targets.shape)
 
     pos_scores = scrs[0].repeat(int(predictions.shape[0]/pos_size)-1, 1)
     neg_scores = scrs[1]
@@ -39,7 +40,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 #     print(predictions.shape)
 
     #setting the targets in this way is needed for the different losses we will be workign with
-    targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
+#     targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
 #     print(targets.shape)
 
 
