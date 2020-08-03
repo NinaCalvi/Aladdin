@@ -57,7 +57,7 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
         return pointwise_square_loss(predictions, pw_targets, reduction_type, device)
     elif loss == 'rotate_loss':
         reduction_type = 'avg'
-        return rotate_loss(pos_scores, neg_scores, reduction_type, device)
+        return rotate_loss(scrs[0], neg_scores, reduction_type, device, margin_value)
     elif loss == 'ce':
         return cross_entropy_neg_sampling(predictions, reduction_type, device)
     elif loss == 'bce':
@@ -103,12 +103,15 @@ def pairwise_logistic_loss(pos_predictions: torch.Tensor, neg_predictions: torch
 
 
 def rotate_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Tensor, reduction_type: str, device: torch.device,  margin_value: float = 0.0):
-    neg_predictions = torch.reshape(neg_predictions, (pos_predictions.shape[0], -1)) #
-    logsigmoid = nn.LogSigmoid()
-    neg_score = -logsigmoid(-neg_predictions).mean(dim=1).reshape((-1, 1))
-    pos_score = -logsigmoid(pos_predictions)
+#     print('neg preds', neg_predictions.shape)
+#     print('pos preds', pos_predictions.shape)
     
-    return reduce_loss(pos_score + neg_score, reduction_type)
+    neg_predictions = torch.reshape(neg_predictions, (-1, pos_predictions.shape[0])).t() #
+    logsigmoid = nn.LogSigmoid()
+    neg_score = -logsigmoid(-neg_predictions-margin_value).mean(dim=1).reshape((-1, 1))
+    pos_score = -logsigmoid(margin_value + pos_predictions)
+    
+    return reduce_loss((pos_score + neg_score)/2, reduction_type)
 
 
 

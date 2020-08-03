@@ -291,15 +291,30 @@ class RotatE(KBCModel):
         self.loss = loss
 
     def init(self):
-        nn.init.uniform_(self.embeddings.weight.data, a = -1, b=1)
-        nn.init.uniform_(self.rels.weight.data, a = -1, b=1)
-
+#         if self.loss == 'rotate_loss':
+#             nn.init.xavier_normal_(self.embeddings.weight.data)
+#             nn.init.normal_(self.rels.weight.data)
+#         else:  
+#             nn.init.uniform_(self.embeddings.weight.data, a = -1, b=1)
+#             nn.init.uniform_(self.rels.weight.data, a = -1, b=1)
+        
+#         nn.init.uniform_(self.embeddings.weight.data, a = -1, b=1)
+#         nn.init.uniform_(self.rels.weight.data, a = -1, b=1)
+        
+        nn.init.xavier_normal_(self.embeddings.weight.data)
+        nn.init.uniform_(self.rels.weight.data, a = 0, b=1)
+#         nn.init.normal_(self.rels.weight.data)
 
     def score(self, x):
         lhs = self.embeddings(x[:, 0])
         ph_rel = self.rels(x[:, 1])
-        pi = 3.14159265358979323846
-        rel = ph_rel*pi
+#         pi = 3.14159265358979323846
+#         if self.loss == 'rotate_loss':
+#             rel = ph_rel * 2 * np.pi
+#         else:
+#             rel = ph_rel*np.pi
+            
+        rel = ph_rel*np.pi*2
         rhs = self.embeddings(x[:, 2])
 
         lhs = lhs[:, :self.rank], lhs[:, self.rank:]
@@ -325,7 +340,6 @@ class RotatE(KBCModel):
 
         return -torch.norm(score_sp_re, dim=1, p=1, keepdim=True), (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
-           
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
@@ -335,8 +349,8 @@ class RotatE(KBCModel):
         ph_rel = self.rels(x[:, 1])
         rhs = self.embeddings(x[:, 2])
         
-        pi = 3.14159265358979323846
-        rel = ph_rel*pi
+#         pi = 3.14159265358979323846
+        rel = ph_rel*np.pi*2
 
         lhs = lhs[:, :self.rank], lhs[:, self.rank:]
         # rel = rel[:, :self.rank], rel[:, self.rank:]
@@ -361,7 +375,7 @@ class RotatE(KBCModel):
         del score_sp_im
         
 
-        # print('score_sp shape', score_sp.shape)
+#         print('score_sp shape', score_sp.shape)
 
         score_po_re = to_score[0].unsqueeze(1) * rel_re - to_score[1].unsqueeze(1) * rel_im
         score_po_im = to_score[0].unsqueeze(1) * rel_im + to_score[1].unsqueeze(1) * rel_re
@@ -377,11 +391,10 @@ class RotatE(KBCModel):
         torch.cuda.empty_cache()
         
 
-        # print('score po, ', score_po.shape)
+#         print('score po, ', score_po.shape)
 
         return -score_sp, -score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
-    
             torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
         )
 
