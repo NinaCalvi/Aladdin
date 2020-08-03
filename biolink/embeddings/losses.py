@@ -105,10 +105,9 @@ def pairwise_logistic_loss(pos_predictions: torch.Tensor, neg_predictions: torch
 def rotate_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Tensor, reduction_type: str, device: torch.device,  margin_value: float = 0.0):
     neg_predictions = torch.reshape(neg_predictions, (pos_predictions.shape[0], -1)) #
     logsigmoid = nn.LogSigmoid()
-    neg_score = -logsigmoid(-neg_predictions).mean(dim=1)
+    neg_score = -logsigmoid(-neg_predictions).mean(dim=1).reshape((-1, 1))
     pos_score = -logsigmoid(pos_predictions)
-    print(pos_score.shape)
-    print(neg_score.shape)
+    
     return reduce_loss(pos_score + neg_score, reduction_type)
 
 
