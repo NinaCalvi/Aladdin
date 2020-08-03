@@ -285,7 +285,11 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
 
         if ((epoch+1) == 50) and valid:
             logger.info(f'Validating')
-            val_metrics = evaluate(model, valid_data, all_data, batch_size, device, validate=True)
+            if args.data == 'pse':
+                val_batch_size = 2048
+            else:
+                val_batch_size = batch_size
+            val_metrics = evaluate(model, valid_data, all_data, val_batch_size, device, validate=True)
 
             mrr = val_metrics['MRR']
             if mrr < 0.06:
