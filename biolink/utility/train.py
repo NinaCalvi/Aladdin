@@ -156,7 +156,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
         if (((epoch+1) % valid_every) == 0) and valid:
             logger.info(f'Validating')
             if args.model == 'rotate':
-                val_batch_size = 150
+                val_batch_size = 200
             else:
                 if batch_size < 2048:
                     val_batch_size = 2048
