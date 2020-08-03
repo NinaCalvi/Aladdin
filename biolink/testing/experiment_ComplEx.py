@@ -224,7 +224,7 @@ def main(argv, bayesian=False):
                 if data == 'covid':
                     batch_size = 2048
                 if args.model == 'rotate':
-                    batch_size = 150
+                    batch_size = 200
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'Error \t{dataset_name} results\t{metrics_to_str(metrics)}')
 
