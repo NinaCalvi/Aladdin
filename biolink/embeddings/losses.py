@@ -107,7 +107,9 @@ def rotate_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Tensor, re
     logsigmoid = nn.LogSigmoid()
     neg_score = -logsigmoid(-neg_predictions).mean(dim=1)
     pos_score = -logsigmoid(pos_predictions)
-    return reduce_loss(pos_score + neg_score)
+    print(pos_score.shape)
+    print(neg_score.shape)
+    return reduce_loss(pos_score + neg_score, reduction_type)
 
 
 
