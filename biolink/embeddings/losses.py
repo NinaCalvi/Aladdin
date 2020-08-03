@@ -26,10 +26,9 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
     # print(predictions.shape)
     scrs = torch.split(predictions, [pos_size, int(predictions.shape[0]-pos_size)], dim=0)
 
-#     print('scrs shape', scrs[0].shape)
+#     print(scrs[0].shape)
 
     pw_targets = torch.cat((torch.ones(scrs[0].shape), -1*torch.ones(scrs[1].shape)), dim=0)
-#     print('pw shape', pw_targets.shape)
 
     pos_scores = scrs[0].repeat(int(predictions.shape[0]/pos_size)-1, 1)
     neg_scores = scrs[1]
@@ -38,9 +37,9 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
 #     print(neg_scores.shape)
 #     predictions = torch.cat((pos_scores, neg_scores),dim=0)
 #     print(predictions.shape)
-    
+
     #setting the targets in this way is needed for the different losses we will be workign with
-#     targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
+    targets = torch.cat((torch.ones(pos_scores.shape), -1*torch.ones(neg_scores.shape)), dim=0)
 #     print(targets.shape)
 
 
@@ -56,10 +55,13 @@ def compute_kge_loss(predictions: torch.Tensor, loss: str, device: torch.device,
         #targets need to be bingary
         pw_targets = (pw_targets + 1)/2
         return pointwise_square_loss(predictions, pw_targets, reduction_type, device)
+    elif loss == 'rotate_loss':
+        reduction_type = 'avg'
+        return rotate_loss(pos_scores, neg_scores, reduction_type, device)
     elif loss == 'ce':
         return cross_entropy_neg_sampling(predictions, reduction_type, device)
     elif loss == 'bce':
-        targets = (targets + 1)/2
+        pw_targets = (pw_targets + 1)/2
         return bce_loss(predictions, pw_targets, reduction_type)
 
 def bce_loss(predictions: torch.Tensor, targets: torch.Tensor, reduction_type: str):
@@ -98,6 +100,14 @@ def pairwise_logistic_loss(pos_predictions: torch.Tensor, neg_predictions: torch
 
     loss = softplus(neg_predictions - pos_predictions)
     return reduce_loss(loss, reduction_type)
+
+
+def rotate_loss(pos_predictions: torch.Tensor, neg_predictions: torch.Tensor, reduction_type: str, device: torch.device,  margin_value: float = 0.0):
+    neg_predictions = torch.reshape(neg_predictions, (pos_predictions.shape[0], -1)) #
+    logsigmoid = nn.LogSigmoid()
+    neg_score = -logsigmoid(-neg_predictions).mean(dim=1)
+    pos_score = -logsigmoid(pos_predictions)
+    return reduce_loss(pos_score + neg_score)
 
 
 
