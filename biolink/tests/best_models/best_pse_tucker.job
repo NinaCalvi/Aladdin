@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#$ -cwd
+#$ -S /bin/bash
+#$ -o $HOME/save_pse_tucker.out
+#$ -e $HOME/save_pse_tucker.err
+#$ -t 1-1
+#$ -l tmem=15G
+#$ -l h_rt=18:00:00
+#$ -l gpu=true
+conda activate libkge_new
+export LANG="en_US.utf8"
+export LANGUAGE="en_US:en"
+cd $HOME/Dissertation/Aladdin/biolink/
+
+test $SGE_TASK_ID -eq 1 && sleep 10 && PYTHONPATH=. python ./test2.py --data pse --mcl True --model tucker --batch-size 128 --epochs 100 --embedding-size 200 --rel-emb-size 50 --learning-rate 0.038 --regulariser n3 --reg-weight 0.054 --tucker-reg-weight 5.370e-09 --optimizer adagrad --quiet --save_model_name TuckEr_batch128_es_200_rs_50_reg_n3_rw_0.054_trw_537_pse
