@@ -294,13 +294,13 @@ class RotatE(KBCModel):
 #         if self.loss == 'rotate_loss':
 #             nn.init.xavier_normal_(self.embeddings.weight.data)
 #             nn.init.normal_(self.rels.weight.data)
-#         else:  
+#         else:
 #             nn.init.uniform_(self.embeddings.weight.data, a = -1, b=1)
 #             nn.init.uniform_(self.rels.weight.data, a = -1, b=1)
-        
+
 #         nn.init.uniform_(self.embeddings.weight.data, a = -1, b=1)
 #         nn.init.uniform_(self.rels.weight.data, a = -1, b=1)
-        
+
         nn.init.xavier_normal_(self.embeddings.weight.data)
         nn.init.uniform_(self.rels.weight.data, a = 0, b=1)
 #         nn.init.normal_(self.rels.weight.data)
@@ -313,7 +313,7 @@ class RotatE(KBCModel):
 #             rel = ph_rel * 2 * np.pi
 #         else:
 #             rel = ph_rel*np.pi
-            
+
         rel = ph_rel*np.pi*2
         rhs = self.embeddings(x[:, 2])
 
@@ -327,16 +327,16 @@ class RotatE(KBCModel):
 
         score_sp_re = score_sp_re - rhs[0]
         score_sp_im = score_sp_im - rhs[1]
-        
+
 #         print('score sp re shape', score_sp_re.shape)
 #         print('score sp im shape', score_sp_im.shape)
 
         score_sp_re = torch.stack((score_sp_re, score_sp_im), dim=0)
-        
+
 #         print('stacked score sp shape', score_sp_re.shape)
-        
+
         score_sp_re = torch.norm(score_sp_re, dim=0)
-        
+
 
         return -torch.norm(score_sp_re, dim=1, p=1, keepdim=True), (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
@@ -348,7 +348,7 @@ class RotatE(KBCModel):
         lhs = self.embeddings(x[:, 0])
         ph_rel = self.rels(x[:, 1])
         rhs = self.embeddings(x[:, 2])
-        
+
 #         pi = 3.14159265358979323846
         rel = ph_rel*np.pi*2
 
@@ -370,10 +370,10 @@ class RotatE(KBCModel):
         # print('sc sp shape after toscore', score_sp_re.shape)
         score_sp = torch.stack([score_sp_re, score_sp_im], dim=0)
         score_sp = torch.norm(torch.norm(score_sp, dim=0), dim=2, p=1)
-        
+
         del score_sp_re
         del score_sp_im
-        
+
 
 #         print('score_sp shape', score_sp.shape)
 
@@ -385,11 +385,11 @@ class RotatE(KBCModel):
         # print('sc po after diff', score_po_re.shape)
         score_po = torch.stack([score_po_re, score_po_im], dim=0)
         score_po = torch.norm(torch.norm(score_po, dim=0), dim=2, p=1).t()
-        
+
         del score_po_re
         del score_po_im
         torch.cuda.empty_cache()
-        
+
 
 #         print('score po, ', score_po.shape)
 
@@ -481,7 +481,13 @@ class TuckEr(KBCModel):
         W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
 
-        return torch.sum(lhs * rel * rhs, 1, keepdim=True), (lhs, rel, rhs, self.W)
+        x = lhs.unsqueeze(1)
+        x = torch.bmm(x, W_mat).view(-1, lhs.size(1))
+
+        pred = x * rhs
+        print(pred.shape)
+
+        return pred.sum(dim=-1), (lhs, rel, rhs, self.W)
 
     def forward(self, x, predict_lhs = False):
         lhs = self.ent(x[:, 0])
