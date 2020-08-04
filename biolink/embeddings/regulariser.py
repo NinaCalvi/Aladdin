@@ -34,11 +34,14 @@ class N3(Regularizer):
     def forward(self, factors):
         norm = 0
         for i,f in enumerate(factors):
-            if (self.tucker_weight is None) and (i == 3):
-                norm += self.tucker_weight * torch.sum(
-                    torch.abs(f) ** 3)
-            else:
-                norm += self.weight * torch.sum(
+            # if not (self.tucker_weight is None) and (i == 3):
+            #     norm += self.tucker_weight * torch.sum(
+            #         torch.abs(f) ** 3)
+            # else:
+            #     norm += self.weight * torch.sum(
+            #         torch.abs(f) ** 3
+            #     )
+            norm += self.weight * torch.sum(
                     torch.abs(f) ** 3
                 )
 
