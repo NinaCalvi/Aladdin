@@ -179,7 +179,13 @@ def main(argv, bayesian=False):
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
                 if data == 'pse':
                     batch_size = 5000
+                    test_batch_size = 2048
+                metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
+                logger.info(f'TEST RESULTS')
+                logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test)}')
+                logger.info(f'===========')
+                logger.info('CLASSIFICATION METRICS')
                 logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
                 return
 
