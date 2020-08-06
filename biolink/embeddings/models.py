@@ -340,7 +340,8 @@ class RotatE(KBCModel):
 
         return -torch.norm(score_sp_re, dim=1, p=1, keepdim=True), (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
-            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2),
+            torch.sqrt(rel_re**2 + rel_im**2)
         )
 
     def forward(self, x):
@@ -395,7 +396,8 @@ class RotatE(KBCModel):
 
         return -score_sp, -score_po, (
             torch.sqrt(lhs[0] ** 2 + lhs[1] ** 2),
-            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2)
+            torch.sqrt(rhs[0] ** 2 + rhs[1] ** 2),
+            torch.sqrt(rel_re**2 + rel_im**2)
         )
 
 
@@ -485,7 +487,7 @@ class TuckEr(KBCModel):
         x = torch.bmm(x, W_mat).view(-1, lhs.size(1))
 
         pred = x * rhs
-        print(pred.shape)
+#         print(pred.shape)
 
         return pred.sum(dim=-1), (lhs, rel, rhs, self.W)
 
@@ -529,7 +531,7 @@ class TuckEr(KBCModel):
         # pred_po = torch.sigmoid(x2)
 
 
-        return x, x2, (lsh, rel, rhs, self.W) #unsure whether should add w?
+        return x, x2, (lhs, rel, rhs, self.W) #unsure whether should add w?
 
     def get_rhs(self, chunk_begin: int, chunk_size: int):
         return self.ent.weight.data[
@@ -539,7 +541,7 @@ class TuckEr(KBCModel):
     def get_queries(self, queries: torch.Tensor):
         return self.ent(queries[:, 0]).data * self.rel(queries[:, 1]).data
 
-    def compute_loss(self, scores, pos_size, reduction_type='avg'):
+    def compute_loss(self, scores, pos_size, reduction_type='sum'):
         return compute_kge_loss(scores, self.loss, self.device, pos_size, reduction_type, self.args[0].loss_margin)
 
 
