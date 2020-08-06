@@ -500,8 +500,8 @@ class TuckEr(KBCModel):
         # x = self.input_dropout(x)
         # x2 = self.input_dropout(x2)
 
-        x = x.view(-1, 1, lhs.size(1))
-        x2 = x2.view(-1, rhs.size(1), 1)
+        x = lhs.view(-1, 1, lhs.size(1))
+        x2 = rhs.view(-1, rhs.size(1), 1)
 
         W_mat = torch.mm(rel, self.W.view(rel.size(1), -1))
         W_mat = W_mat.view(-1, lhs.size(1), lhs.size(1))
