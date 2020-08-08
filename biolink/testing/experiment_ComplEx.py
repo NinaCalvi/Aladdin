@@ -73,6 +73,7 @@ def main(argv, bayesian=False):
     parser.add_argument('--seed', action='store', type=int, default=5)
     parser.add_argument('--valid', action='store_true', default=False)
     parser.add_argument('--auc', action='store_true', default=False)
+    parser.add_argument('--harder', action='store_true', default=False)
     parser.add_argument('--valid-stp', action='store', type=int, default=50)
     parser.add_argument('--label-smoothing', action='store', type=float, default=0.0)
 
@@ -124,6 +125,8 @@ def main(argv, bayesian=False):
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
 
+    torch.set_num_threads(4)
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
 
@@ -174,17 +177,25 @@ def main(argv, bayesian=False):
     if args.auc and args.load:
         logger.info('auc and lod happening')
         for dataset_name, data in dataset.data.items():
-            logger.info('dataset name \t{dataset_name}')
+            logger.info(f'dataset name \t{dataset_name}')
             if dataset_name == 'test':
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
-                if data == 'pse':
+                if args.data == 'pse':
                     batch_size = 5000
                     test_batch_size = 2048
                 metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
-                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'TEST RESULTS')
                 logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test)}')
                 logger.info(f'===========')
+                if args.harder:
+                    metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder)
+                    logger.info('CLASSIFICATION METRICS FIVE')
+                    logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_five)}')
+                    logger.info('CLASSIFICATION METRICS TEN')
+                    logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_ten)}')
+                    return
+
+                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info('CLASSIFICATION METRICS')
                 logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
                 return

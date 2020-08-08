@@ -91,28 +91,28 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             input_batch = inputs[batch_start:batch_end]
 
             #need to generate negatives
-          
+
             corruptions = generate_neg_instances(input_batch, nb_negs, nb_ents, seed)
-         
-            
+
+
             #ensuring you can split between positive and negative examples through the middle
             # input_batch = input_batch.repeat(nb_negs, 1)
             # input_all = torch.cat((input_batch.repeat(nb_negs, 1), corruptions), axis=0).to(device)
-            
+
             input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
-            
+
             # input_all = torch.cat((input_batch, corruptions), axis=0).to(device)
 
             # pos_input = input_batch.to(device)
             # neg_input = corruptions.to(device)
 
-           
-           
-            scores, factors = model.score(input_all)
-           
 
-            
-            
+
+            scores, factors = model.score(input_all)
+
+
+
+
 #             if torch.sum(torch.isnan(scores)) > 0:
 #                 break
             # scores_pos, factors_pos = model.score(pos_input)
@@ -129,7 +129,7 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
             reg = regulariser.forward(factors)
             # reg = regulariser.forward(torch.cat((factors_pos, factors_neg), axis=0))
             loss += reg
-            
+
             optimiser.zero_grad()
             loss.backward()
             optimiser.step()
@@ -140,8 +140,8 @@ def train_not_mc(model: KBCModel, regulariser_str: str, optimiser: optim.Optimiz
                 logger.info(f'Epoch {epoch + 1}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss.item():.6f}')
 
             batch_start += batch_size
-            
-           
+
+
         del input_all
         del scores
         del factors
@@ -213,15 +213,20 @@ def train_mc(model: KBCModelMCL, regulariser_str: str, optimiser: optim.Optimize
     # if torch.cuda.is_available():
     #     torch.cuda.manual_seed(seed)
 
-    if isinstance(model, TuckEr_MC):
-        tucker = True
-    else:
-        tucker = False
+    # if isinstance(model, TuckEr_MC):
+    #     tucker = True
+    # else:
+    #     tucker = False
 
-    logger.info(f'is tucker {tucker}')
+
 
     logger.info(f'settin tucker to FALSE')
-    tucker=False
+    if args.mcl and args.loss == 'bce':
+        tucker = True
+    else:
+        tucker = False #ensure that bce is implemented
+
+    logger.info(f'is tucker {tucker}')
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
