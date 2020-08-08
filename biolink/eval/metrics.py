@@ -134,7 +134,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
 
     batch_size=2028
-    
+
 #     batch_size=1024
 
     if isinstance(model, TransE):
@@ -142,7 +142,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     elif not isinstance(model, RotatE):
         batch_size = 1024
     print(batch_size)
-        
+
 
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance.numpy()
@@ -222,7 +222,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
         del batch_tensor
         torch.cuda.empty_cache()
-        
+
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
             s_idx, p_idx, o_idx = el.numpy()
@@ -258,7 +258,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
         #calculate the two mrr
         rank_object = rank(scores_sp, batch_input[:, 2])
         mrr_object = np.mean(1/rank_object)
-     
+
         hits_rate(rank_object, hits, hits_at)
 
         rank_subject = rank(scores_po, batch_input[:, 0])
@@ -514,7 +514,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
 
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance.numpy()
-        if training_instance is in test_triples:
+        if training_instance in test_triples:
             if p_idx in test_by_relation.keys():
                 test_by_relation[p_idx] = torch.cat((test_by_relation[p_idx], training_instance), dim=0)
             else:
