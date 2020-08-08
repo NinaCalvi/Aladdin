@@ -242,10 +242,10 @@ def main(argv, bayesian=False):
                 #     logger.info('CLASSIFICATION METRICS TEN')
                 #     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_ten)}')
                 #     return
-
-                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
-                logger.info('CLASSIFICATION METRICS')
-                logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
+                if args.auc:
+                    metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
+                    logger.info('CLASSIFICATION METRICS')
+                    logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
                 return
 
         return
