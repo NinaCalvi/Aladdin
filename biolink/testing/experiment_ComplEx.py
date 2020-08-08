@@ -127,7 +127,7 @@ def main(argv, bayesian=False):
         torch.cuda.manual_seed(seed)
     torch.set_num_threads(4)
 
-    torch.set_num_threads(4)
+
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
