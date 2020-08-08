@@ -83,6 +83,7 @@ def main(argv, bayesian=False):
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
     parser.add_argument('--load', action='store_true', default=False)
+    parser.add_argument('--pret', action='store_true', default=False)
     parser.add_argument('--save_model_name', action='store', type=str, default='Empty')
 
 
@@ -144,7 +145,7 @@ def main(argv, bayesian=False):
     # if parser.model == 'complex':
     if args.mcl:
         model_dict = {
-            'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
+            'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, args.pret),
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
             'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
