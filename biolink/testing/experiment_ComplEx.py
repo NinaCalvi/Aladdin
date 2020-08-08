@@ -224,6 +224,30 @@ def main(argv, bayesian=False):
     if args.save_model_name != 'Empty':
         torch.save(model.state_dict(), SAVE_PATH + args.save_model_name + '.pt')
         logger.info(f'Save model in {SAVE_PATH + args.save_model_name}')
+        for dataset_name, data in dataset.data.items():
+            logger.info(f'dataset name \t{dataset_name}')
+            if dataset_name == 'test':
+                logger.info(f'in evalute for dataset: \t{dataset_name}')
+                if args.data == 'pse':
+                    batch_size = 5000
+                    test_batch_size = 2048
+                metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
+                logger.info(f'TEST RESULTS')
+                logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test)}')
+                logger.info(f'===========')
+                # if args.harder:
+                #     metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder)
+                #     logger.info('CLASSIFICATION METRICS FIVE')
+                #     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_five)}')
+                #     logger.info('CLASSIFICATION METRICS TEN')
+                #     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_ten)}')
+                #     return
+
+                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
+                logger.info('CLASSIFICATION METRICS')
+                logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
+                return
+
         return
 
     # if args.mcl:
