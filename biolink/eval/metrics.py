@@ -109,19 +109,19 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 
-def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False, mode: str = None):
     if auc:
         return evaluate_auc(model, test_triples, all_triples, batch_size, device, harder)
 
     if isinstance(model, KBCModelMCL):
-        return evaluate_mc(model, test_triples, all_triples, batch_size, device)
+        return evaluate_mc(model, test_triples, all_triples, batch_size, device, mode)
     elif isinstance(model, KBCModel):
-        return evaluate_non_mc(model, test_triples, all_triples, batch_size, device, validate)
+        return evaluate_non_mc(model, test_triples, all_triples, batch_size, device, validate, mode)
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
 
 
-def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool):
+def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool, mode: str = None):
     '''
     Evaluation method immediately returns the metrics wanted for non mc
     Parameters:
@@ -185,7 +185,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
 
     while batch_start < test_triples.shape[0]:
-        counter += 2
+
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
         counter_hits += 2*min(batch_size, batch_end - batch_start)
         batch_input = test_triples[batch_start:batch_end]
@@ -198,26 +198,8 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
             scores_sp, scores_po, factors = model.forward(batch_tensor)
             #slightly confused as to whether I should be attempting to score
 
-
-            # logger.info(f'socre_sp shape \t{scores_sp.shape}, score_po shape \t{scores_po.shape}')
-
-            #remove them from device
-            #need to have probability scores for auc calculations
-            # if not validate:
-            #     prob_scores_sp = softmax(scores_sp.cpu()).numpy()
-            #     prob_scores_po = softmax(scores_po.cpu()).numpy()
-
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
-
-        # # logger.info(f'in evaluate:')
-        # if not validate:
-        #     if prediction_subject is not None:
-        #         prediction_subject = np.vstack((prediction_subject, prob_scores_po))
-        #         prediction_object = np.vstack((prediction_object, prob_scores_sp))
-        #     else:
-        #         prediction_subject = prob_scores_po
-        #         prediction_object = prob_scores_sp
 
 
         del batch_tensor
@@ -245,29 +227,23 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
                     # if not validate:
                     #     prob_scores_po[i, tmp_s_idx] = 0
 
-         # logger.info(f'gone through batch input')
-        #
-        # if not validate:
-        #     if prediction_subject_filtered is not None:
-        #         prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
-        #         prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
-        #     else:
-        #         prediction_subject_filtered = prob_scores_po
-        #         prediction_object_filtered = prob_scores_sp
-
         #calculate the two mrr
-        rank_object = rank(scores_sp, batch_input[:, 2])
-        mrr_object = np.mean(1/rank_object)
+        if (mode is None) or (mode == 'head'):
+            counter += 1
+            counter_hits += min(batch_size, batch_end - batch_start)
+            rank_subject = rank(scores_po, batch_input[:, 0])
+            mrr_subject = np.mean(1/rank_subject)
+            # mrr_subject = mrr(scores_po, batch_input[:, 0])
+            hits_rate(rank_subject, hits, hits_at)
+            mrr_val += mrr_subject
+        if (mode is None) or (mode == 'tail'):
+            counter += 1
+            counter_hits += min(batch_size, batch_end - batch_start)
+            rank_object = rank(scores_sp, batch_input[:, 2])
+            mrr_object = np.mean(1/rank_object)
 
-        hits_rate(rank_object, hits, hits_at)
-
-        rank_subject = rank(scores_po, batch_input[:, 0])
-        mrr_subject = np.mean(1/rank_subject)
-        # mrr_subject = mrr(scores_po, batch_input[:, 0])
-        hits_rate(rank_subject, hits, hits_at)
-
-        mrr_val += mrr_object
-        mrr_val += mrr_subject
+            hits_rate(rank_object, hits, hits_at)
+            mrr_val += mrr_object
 
 
         batch_start += batch_size
@@ -288,18 +264,6 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
     metrics['AU-ROC_raw'] = -1
     metrics['AU-ROC_fil'] = -1
-
-    # if not validate:
-    #     auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
-    #     auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
-    #
-    #     logger.info('done not filtered aucroc')
-    #
-    #     auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
-    #     auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
-    #
-    #     metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
-    #     metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
     logger.info('metrics done')
 
     return metrics
@@ -308,7 +272,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
 def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
-            batch_size: int, device: torch.device):
+            batch_size: int, device: torch.device, mode: str = None):
     '''
     Evaluation method immediately returns the metrics wanted
     Parameters:
@@ -428,29 +392,23 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
                     scores_po[i, tmp_s_idx] = - np.infty
                     # prob_scores_po[i, tmp_s_idx] = 0
 
-         # logger.info(f'gone through batch input')
-        #
-        # if prediction_subject_filtered is not None:
-        #     prediction_subject_filtered = np.vstack((prediction_subject_filtered, prob_scores_po))
-        #     prediction_object_filtered = np.vstack((prediction_object_filtered, prob_scores_sp))
-        # else:
-        #     prediction_subject_filtered = prob_scores_po
-        #     prediction_object_filtered = prob_scores_sp
-
         #calculate the two mrr
-        rank_object = rank(scores_sp, batch_input[:, 2])
-        mrr_object = np.mean(1/rank_object)
-        # mrr_object = mrr(scores_sp, batch_input[:, 2])
-        # rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
-        hits_rate(rank_object, hits, hits_at)
+        if (mode is None) or (mode == 'head'):
+            counter += 1
+            counter_hits += min(batch_size, batch_end - batch_start)
+            rank_subject = rank(scores_po, batch_input[:, 0])
+            mrr_subject = np.mean(1/rank_subject)
+            # mrr_subject = mrr(scores_po, batch_input[:, 0])
+            hits_rate(rank_subject, hits, hits_at)
+            mrr_val += mrr_subject
+        if (mode is None) or (mode == 'tail'):
+            counter += 1
+            counter_hits += min(batch_size, batch_end - batch_start)
+            rank_object = rank(scores_sp, batch_input[:, 2])
+            mrr_object = np.mean(1/rank_object)
 
-        rank_subject = rank(scores_po, batch_input[:, 0])
-        mrr_subject = np.mean(1/rank_subject)
-        # mrr_subject = mrr(scores_po, batch_input[:, 0])
-        hits_rate(rank_subject, hits, hits_at)
-
-        mrr_val += mrr_object
-        mrr_val += mrr_subject
+            hits_rate(rank_object, hits, hits_at)
+            mrr_val += mrr_object
 
 
         batch_start += batch_size
@@ -468,19 +426,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     metrics['H@10'] = hits[10]
 
     logger.info('done')
-    #
-    # auc_roc_raw_subj = auc_roc(prediction_subject, test_triples[:, 0])
-    # auc_roc_raw_obj = auc_roc(prediction_object, test_triples[:, 2])
 
-    # logger.info('done not filtered aucroc')
-
-    # auc_roc_filt_subj = auc_roc(prediction_subject_filtered, test_triples[:, 0])
-    # auc_roc_filt_obj = auc_roc(prediction_object_filtered, test_triples[:, 2])
-    # #
-    # metrics['AU-ROC_raw'] = (auc_roc_raw_obj + auc_roc_raw_subj)/2
-    # metrics['AU-ROC_fil'] = (auc_roc_filt_obj + auc_roc_filt_subj)/2
-
-        #
     metrics['AU-ROC_raw'] = -1
     metrics['AU-ROC_fil'] =  -1
     logger.info('metrics done')
