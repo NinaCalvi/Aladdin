@@ -123,6 +123,7 @@ def main(argv, bayesian=False):
 
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
+    torch.set_num_threads(4)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
@@ -177,9 +178,9 @@ def main(argv, bayesian=False):
             logger.info('dataset name \t{dataset_name}')
             if dataset_name == 'test':
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
-                if data == 'pse':
+                if args.data == 'pse':
                     batch_size = 5000
-                    test_batch_size = 2048
+                test_batch_size = 2048
                 metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
                 metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                 logger.info(f'TEST RESULTS')

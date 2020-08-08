@@ -132,7 +132,8 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     sp_to_o = {}
     po_to_s = {}
 
-    batch_size=1024
+    batch_size=2028
+    
 
     if isinstance(model, TransE):
         batch_size = 90
