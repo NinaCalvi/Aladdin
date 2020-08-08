@@ -5,7 +5,7 @@ import torch
 from torch import nn
 import itertools
 
-from biolink.embeddings import KBCModel, KBCModelMCL, TransE
+from biolink.embeddings import KBCModel, KBCModelMCL, TransE, RotatE
 import logging
 import os
 import sys
@@ -132,11 +132,17 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
     sp_to_o = {}
     po_to_s = {}
 
+
     batch_size=2028
     
+#     batch_size=1024
 
     if isinstance(model, TransE):
         batch_size = 90
+    elif not isinstance(model, RotatE):
+        batch_size = 1024
+    print(batch_size)
+        
 
     for training_instance in all_triples:
         s_idx, p_idx, o_idx = training_instance.numpy()
@@ -214,7 +220,9 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
         #         prediction_object = prob_scores_sp
 
 
-
+        del batch_tensor
+        torch.cuda.empty_cache()
+        
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
             s_idx, p_idx, o_idx = el.numpy()
@@ -250,8 +258,7 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
         #calculate the two mrr
         rank_object = rank(scores_sp, batch_input[:, 2])
         mrr_object = np.mean(1/rank_object)
-        # mrr_object = mrr(scores_sp, batch_input[:, 2])
-        # rank_object = rank(scores_sp, batch_input[:, 2]) #redundancy in that i am doing this also inside mrr
+     
         hits_rate(rank_object, hits, hits_at)
 
         rank_subject = rank(scores_po, batch_input[:, 0])
