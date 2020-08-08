@@ -109,14 +109,14 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 
-def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False, mode: str = None):
     if auc:
         return evaluate_auc(model, test_triples, all_triples, batch_size, device, harder)
 
     if isinstance(model, KBCModelMCL):
-        return evaluate_mc(model, test_triples, all_triples, batch_size, device)
+        return evaluate_mc(model, test_triples, all_triples, batch_size, device, mode)
     elif isinstance(model, KBCModel):
-        return evaluate_non_mc(model, test_triples, all_triples, batch_size, device, validate)
+        return evaluate_non_mc(model, test_triples, all_triples, batch_size, device, validate, mode)
     else:
         raise ValueError("Incorrect model instance given (%s)" %type(model))
 
@@ -426,7 +426,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     metrics['H@10'] = hits[10]
 
     logger.info('done')
-    
+
     metrics['AU-ROC_raw'] = -1
     metrics['AU-ROC_fil'] =  -1
     logger.info('metrics done')
