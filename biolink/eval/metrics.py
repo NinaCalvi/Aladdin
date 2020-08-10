@@ -5,7 +5,7 @@ import torch
 from torch import nn
 import itertools
 
-from biolink.embeddings import KBCModel, KBCModelMCL, TransE
+from biolink.embeddings import KBCModel, KBCModelMCL, TransE, RotatE
 import logging
 import os
 import sys
@@ -340,9 +340,9 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     # logger.info(f'whole_rh shape \t{whole_rhs.shape}')
     model.eval()
     while batch_start < test_triples.shape[0]:
-        counter += 2
+#         counter += 2
         batch_end = min(batch_start + batch_size, test_triples.shape[0])
-        counter_hits += 2*min(batch_size, batch_end - batch_start)
+#         counter_hits += 2*min(batch_size, batch_end - batch_start)
         batch_input = test_triples[batch_start:batch_end]
         with torch.no_grad():
             batch_tensor = batch_input.to(device)
