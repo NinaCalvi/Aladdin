@@ -582,12 +582,12 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
                 if (batch_start % 10000) == 0:
                     logger.info(f'batch start \t{batch_start}')
 
-            mrr_val_relations[rel] /= counter_rel
-            logger.info(f'INFO RELATION \t{rel}')
-            for n in hits_at:
-                hits_relation[n] /= counter_hits_relation
-
-            logger.info(f'MRR \t{mrr_val_relations[rel]}, H@1 \t{hits_relation[1]}, H@3 \t{hits_relation[3]}, H@10 \t{hits_relation[10]}')
+            # mrr_val_relations[rel] /= counter_rel
+            # logger.info(f'INFO RELATION \t{rel}')
+            # for n in hits_at:
+            #     hits_relation[n] /= counter_hits_relation
+            #
+            # logger.info(f'MRR \t{mrr_val_relations[rel]}, H@1 \t{hits_relation[1]}, H@3 \t{hits_relation[3]}, H@10 \t{hits_relation[10]}')
         else:
             counter_hits += 2*test_rels.shape[0]
             conter += 2
