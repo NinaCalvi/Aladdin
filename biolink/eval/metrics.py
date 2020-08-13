@@ -5,7 +5,7 @@ import torch
 from torch import nn
 import itertools
 
-from biolink.embeddings import KBCModel, KBCModelMCL, TransE
+from biolink.embeddings import KBCModel, KBCModelMCL, TransE, RotatE
 import logging
 import os
 import sys

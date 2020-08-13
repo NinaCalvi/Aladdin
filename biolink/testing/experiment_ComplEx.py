@@ -39,7 +39,7 @@ def metrics_str_auc(metrics):
 
 def main(argv, bayesian=False):
     parser = argparse.ArgumentParser('BioLinkPred', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2', 'wn18rr', 'wn18', 'covid'])
+    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2', 'wn18rr', 'wn18', 'covid', 'pathme'])
 
     #model params
     parser.add_argument('--model', '-m', action='store', type=str, default='complex',
@@ -121,13 +121,14 @@ def main(argv, bayesian=False):
     # set the seeds
     np.random.seed(seed)
     random_state = np.random.RandomState(seed)
+    torch.set_num_threads(4)
     torch.manual_seed(seed)
 
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
-    torch.set_num_threads(4)
+    #torch.set_num_threads(1)
 
-    torch.set_num_threads(4)
+    #torch.set_num_threads(4)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
