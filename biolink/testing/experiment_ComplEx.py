@@ -89,6 +89,8 @@ def main(argv, bayesian=False):
     parser.add_argument('--load', action='store_true', default=False)
     parser.add_argument('--pret', action='store_true', default=False) #use pretrained embeddings
     parser.add_argument('--save_model_name', action='store', type=str, default='Empty')
+    parser.add_argument('--testrel', action='store', type=str, default='Empty')
+    
 
 
 
@@ -179,7 +181,7 @@ def main(argv, bayesian=False):
     model.to(device)
 
     ###if AUC then we are just testing to see this performance##
-    if args.auc and args.load:
+    if args.load:
         logger.info('auc and lod happening')
         for dataset_name, data in dataset.data.items():
             logger.info(f'dataset name \t{dataset_name}')
@@ -192,17 +194,79 @@ def main(argv, bayesian=False):
                 logger.info(f'TEST RESULTS')
                 logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test)}')
                 logger.info(f'===========')
-                if args.harder:
+                
+                if args.rare:
+
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
+
+                    dataset.load_triples(rare_head, tag='rare_head')
+                    dataset.load_triples(rare_tail, tag='rare_tail')
+
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'RARE RESULTS')
+                    logger.info(f'Error RARE HEAD results \t{metrics_to_str(metrics_head)}')
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+
+
+                    midrare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/midrare_head.txt.gz'))
+                    midrare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/midrare_tail.txt.gz'))
+
+                    del dataset.data['rare_head']
+                    del dataset.data['rare_tail']
+
+                    dataset.load_triples(midrare_head, tag='rare_head')
+                    dataset.load_triples(midrare_tail, tag='rare_tail')
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'MIDRARE RESULTS')
+                    logger.info(f'Error MID-RARE HEAD results \t{metrics_to_str(metrics_head)}')
+
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error MID-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+
+                    notrare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/notrare_head.txt.gz'))
+                    notrare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/notrare_tail.txt.gz'))
+
+                    del dataset.data['rare_head']
+                    del dataset.data['rare_tail']
+
+                    dataset.load_triples(notrare_head, tag='rare_head')
+                    dataset.load_triples(notrare_tail, tag='rare_tail')
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'NOTRARE RESULTS')
+                    logger.info(f'Error NOT-RARE HEAD results \t{metrics_to_str(metrics_head)}')
+
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error NOT-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+                
+                if args.testrel != 'Empty':
+                    metrics_rel = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False, rel_file = args.testrel)
+                
+                
+                
+                
+                if args.auc and args.harder:
                     metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder)
                     logger.info('CLASSIFICATION METRICS FIVE')
                     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_five)}')
                     logger.info('CLASSIFICATION METRICS TEN')
                     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_ten)}')
-                    return
-
-                metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
-                logger.info('CLASSIFICATION METRICS')
-                logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
+#                     return
+                
+                if args.auc:
+                    metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
+                    logger.info('CLASSIFICATION METRICS')
+                    logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
                 return
 
 
@@ -304,6 +368,9 @@ def main(argv, bayesian=False):
 
                     metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
                     logger.info(f'Error NOT-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+                
+                if args.testrel != 'Empty':
+                    metrics_rel = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False, rel_file = args.testrel)
 
 
 
@@ -321,9 +388,9 @@ def main(argv, bayesian=False):
         for dataset_name, data in dataset.data.items():
             if (dataset_name == 'test') or (dataset_name == 'valid'):
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
-                if data == 'pse':
+                if args.data == 'pse':
                     batch_size = 2048
-                if data == 'covid':
+                if args.data == 'covid':
                     batch_size = 2048
                 if args.model == 'rotate':
                     batch_size = 200
