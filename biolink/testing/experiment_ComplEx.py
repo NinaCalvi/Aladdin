@@ -12,6 +12,8 @@ from biolink.embeddings import *
 from biolink.eval import evaluate
 # from biolink.utility train import *
 from libkge import KgDataset
+from libkge.io import load_kg_file
+
 from torch import optim
 import torch
 from torch.optim.lr_scheduler import ExponentialLR
@@ -73,7 +75,8 @@ def main(argv, bayesian=False):
     parser.add_argument('--seed', action='store', type=int, default=5)
     parser.add_argument('--valid', action='store_true', default=False)
     parser.add_argument('--auc', action='store_true', default=False)
-    parser.add_argument('--harder', action='store_true', default=False)
+    parser.add_argument('--harder', action='store_true', default=False) #harder auc - i.e. 10:1 and 5:1 neg-to-pos
+    parser.add_argument('--rare', action='store_true', default=False) #test mrr etc on rare entties
     parser.add_argument('--valid-stp', action='store', type=int, default=50)
     parser.add_argument('--label-smoothing', action='store', type=float, default=0.0)
 
@@ -84,7 +87,7 @@ def main(argv, bayesian=False):
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
     parser.add_argument('--load', action='store_true', default=False)
-    parser.add_argument('--pret', action='store_true', default=False)
+    parser.add_argument('--pret', action='store_true', default=False) #use pretrained embeddings
     parser.add_argument('--save_model_name', action='store', type=str, default='Empty')
 
 
@@ -129,7 +132,6 @@ def main(argv, bayesian=False):
     #torch.set_num_threads(1)
 
     #torch.set_num_threads(4)
-
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
 
@@ -233,7 +235,7 @@ def main(argv, bayesian=False):
                 logger.info(f'in evalute for dataset: \t{dataset_name}')
                 if args.data == 'pse':
                     batch_size = 5000
-                    test_batch_size = 2048
+                test_batch_size = 2048
                 metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
                 logger.info(f'TEST RESULTS')
                 logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test)}')
@@ -249,6 +251,62 @@ def main(argv, bayesian=False):
                     metrics = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc)
                     logger.info('CLASSIFICATION METRICS')
                     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics)}')
+                if args.rare:
+
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
+
+                    dataset.load_triples(rare_head, tag='rare_head')
+                    dataset.load_triples(rare_tail, tag='rare_tail')
+
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'RARE RESULTS')
+                    logger.info(f'Error RARE HEAD results \t{metrics_to_str(metrics_head)}')
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+
+
+                    midrare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/midrare_head.txt.gz'))
+                    midrare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/midrare_tail.txt.gz'))
+
+                    del dataset.data['rare_head']
+                    del dataset.data['rare_tail']
+
+                    dataset.load_triples(midrare_head, tag='rare_head')
+                    dataset.load_triples(midrare_tail, tag='rare_tail')
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'MIDRARE RESULTS')
+                    logger.info(f'Error MID-RARE HEAD results \t{metrics_to_str(metrics_head)}')
+
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error MID-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+
+                    notrare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/notrare_head.txt.gz'))
+                    notrare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/notrare_tail.txt.gz'))
+
+                    del dataset.data['rare_head']
+                    del dataset.data['rare_tail']
+
+                    dataset.load_triples(notrare_head, tag='rare_head')
+                    dataset.load_triples(notrare_tail, tag='rare_tail')
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'NOTRARE RESULTS')
+                    logger.info(f'Error NOT-RARE HEAD results \t{metrics_to_str(metrics_head)}')
+
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error NOT-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+
+
+
                 return
 
         return
