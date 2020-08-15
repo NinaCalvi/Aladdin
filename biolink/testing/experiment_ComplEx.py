@@ -196,9 +196,28 @@ def main(argv, bayesian=False):
                 logger.info(f'===========')
                 
                 if args.rare:
+                    
+                    very_rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/very_rare_head.txt.gz'))
+                    very_rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/very_rare_tail.txt.gz'))
 
-                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
-                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
+                    dataset.load_triples(very_rare_head, tag='rare_head')
+                    dataset.load_triples(very_rare_tail, tag='rare_tail')
+
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'VERY RARE RESULTS')
+                    logger.info(f'Error VERYRARE HEAD results \t{metrics_to_str(metrics_head)}')
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error VERYRARE TAIL results \t{metrics_to_str(metrics_tail)}')
+
+
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head_2.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail_2.txt.gz'))
+
+                    del dataset.data['rare_head']
+                    del dataset.data['rare_tail']
 
                     dataset.load_triples(rare_head, tag='rare_head')
                     dataset.load_triples(rare_tail, tag='rare_tail')
@@ -213,41 +232,59 @@ def main(argv, bayesian=False):
                     logger.info(f'Error RARE TAIL results \t{metrics_to_str(metrics_tail)}')
 
 
-                    midrare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/midrare_head.txt.gz'))
-                    midrare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/midrare_tail.txt.gz'))
+                    common_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/common_head.txt.gz'))
+                    common_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/common_tail.txt.gz'))
 
                     del dataset.data['rare_head']
                     del dataset.data['rare_tail']
 
-                    dataset.load_triples(midrare_head, tag='rare_head')
-                    dataset.load_triples(midrare_tail, tag='rare_tail')
+                    dataset.load_triples(common_head, tag='rare_head')
+                    dataset.load_triples(common_tail, tag='rare_tail')
                     rare_head = torch.tensor(dataset.data['rare_head'])
                     rare_tail = torch.tensor(dataset.data['rare_tail'])
 
                     metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
-                    logger.info(f'MIDRARE RESULTS')
-                    logger.info(f'Error MID-RARE HEAD results \t{metrics_to_str(metrics_head)}')
+                    logger.info(f'COMMON RESULTS')
+                    logger.info(f'Error COMMON- HEAD results \t{metrics_to_str(metrics_head)}')
 
                     metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
-                    logger.info(f'Error MID-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+                    logger.info(f'Error COMMON- TAIL results \t{metrics_to_str(metrics_tail)}')
 
-                    notrare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/notrare_head.txt.gz'))
-                    notrare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/notrare_tail.txt.gz'))
+                    very_common_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/very_common_head.txt.gz'))
+                    very_common_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/very_common_tail.txt.gz'))
 
                     del dataset.data['rare_head']
                     del dataset.data['rare_tail']
 
-                    dataset.load_triples(notrare_head, tag='rare_head')
-                    dataset.load_triples(notrare_tail, tag='rare_tail')
+                    dataset.load_triples(very_common_head, tag='rare_head')
+                    dataset.load_triples(very_common_tail, tag='rare_tail')
                     rare_head = torch.tensor(dataset.data['rare_head'])
                     rare_tail = torch.tensor(dataset.data['rare_tail'])
 
                     metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
-                    logger.info(f'NOTRARE RESULTS')
-                    logger.info(f'Error NOT-RARE HEAD results \t{metrics_to_str(metrics_head)}')
+                    logger.info(f'VERYCOMMON RESULTS')
+                    logger.info(f'Error VERY-COMMON HEAD results \t{metrics_to_str(metrics_head)}')
 
                     metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
-                    logger.info(f'Error NOT-RARE TAIL results \t{metrics_to_str(metrics_tail)}')
+                    logger.info(f'Error VERY-COMMON TAIL results \t{metrics_to_str(metrics_tail)}')
+                    
+                    very_very_common_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/very_very_common_head.txt.gz'))
+                    very_very_common_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/very_very_common_tail.txt.gz'))
+
+                    del dataset.data['rare_head']
+                    del dataset.data['rare_tail']
+
+                    dataset.load_triples(very_very_common_head, tag='rare_head')
+                    dataset.load_triples(very_very_common_tail, tag='rare_tail')
+                    rare_head = torch.tensor(dataset.data['rare_head'])
+                    rare_tail = torch.tensor(dataset.data['rare_tail'])
+
+                    metrics_head = evaluate(model, rare_head, bench_idx_data, test_batch_size, device, mode='head')
+                    logger.info(f'VERYVERYCOMMON RESULTS')
+                    logger.info(f'Error VERYVERY-COMMON HEAD results \t{metrics_to_str(metrics_head)}')
+
+                    metrics_tail = evaluate(model, rare_tail, bench_idx_data, test_batch_size, device, mode='tail')
+                    logger.info(f'Error VERYVERY-COMMON TAIL results \t{metrics_to_str(metrics_tail)}')
                 
                 if args.testrel != 'Empty':
                     metrics_rel = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False, rel_file = args.testrel)
