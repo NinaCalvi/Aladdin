@@ -1,0 +1,688 @@
+['--model', 'complex', '--data', 'covid', '--loss', 'pw_logistic', '--epochs', '600', '--learning-rate', '0.278', '--batch-size', '2048', '--reg-weight', '7.01e-08', '--embedding-size', '200', '--nb-negs', '50', '--quiet', '--save_model_name', 'cplex_covid_PW_lr_278_bsize_2048_rw_7010_es_200_nbneg_50_forREL', '--testrel', 'best_cplex_covidPW_rel.csv']
+MCL False
+INFO:best_cplex_covid_PW.py:Valid: False
+INFO:best_cplex_covid_PW.py:Device: cuda
+INFO:best_cplex_covid_PW.py:NOT MC
+INFO:best_cplex_covid_PW.py:Device: cuda
+INFO:best_cplex_covid_PW.py:valid: False
+INFO:best_cplex_covid_PW.py:Epoch 1/600	Loss 9735.6833 ± 13250.8740
+INFO:best_cplex_covid_PW.py:Epoch 2/600	Loss 4597.4733 ± 159.2149
+INFO:best_cplex_covid_PW.py:Epoch 3/600	Loss 3404.1325 ± 151.9844
+INFO:best_cplex_covid_PW.py:Epoch 4/600	Loss 2789.7034 ± 146.7370
+INFO:best_cplex_covid_PW.py:Epoch 5/600	Loss 2467.7199 ± 138.0487
+INFO:best_cplex_covid_PW.py:Epoch 6/600	Loss 2262.4786 ± 131.4986
+INFO:best_cplex_covid_PW.py:Epoch 7/600	Loss 2124.6426 ± 125.6958
+INFO:best_cplex_covid_PW.py:Epoch 8/600	Loss 2023.1374 ± 121.0591
+INFO:best_cplex_covid_PW.py:Epoch 9/600	Loss 1938.1192 ± 115.9754
+INFO:best_cplex_covid_PW.py:Epoch 10/600	Loss 1873.1090 ± 111.7882
+INFO:best_cplex_covid_PW.py:Epoch 11/600	Loss 1816.3051 ± 105.7805
+INFO:best_cplex_covid_PW.py:Epoch 12/600	Loss 1769.3705 ± 107.7702
+INFO:best_cplex_covid_PW.py:Epoch 13/600	Loss 1734.7694 ± 99.9196
+INFO:best_cplex_covid_PW.py:Epoch 14/600	Loss 1703.3373 ± 100.7750
+INFO:best_cplex_covid_PW.py:Epoch 15/600	Loss 1669.9472 ± 89.8254
+INFO:best_cplex_covid_PW.py:Epoch 16/600	Loss 1645.6544 ± 93.5130
+INFO:best_cplex_covid_PW.py:Epoch 17/600	Loss 1618.3803 ± 91.7095
+INFO:best_cplex_covid_PW.py:Epoch 18/600	Loss 1601.0102 ± 87.0082
+INFO:best_cplex_covid_PW.py:Epoch 19/600	Loss 1581.2933 ± 88.2674
+INFO:best_cplex_covid_PW.py:Epoch 20/600	Loss 1563.2464 ± 82.3412
+INFO:best_cplex_covid_PW.py:Epoch 21/600	Loss 1546.6959 ± 87.1566
+INFO:best_cplex_covid_PW.py:Epoch 22/600	Loss 1528.9165 ± 86.3684
+INFO:best_cplex_covid_PW.py:Epoch 23/600	Loss 1508.4585 ± 88.2912
+INFO:best_cplex_covid_PW.py:Epoch 24/600	Loss 1495.8769 ± 79.1014
+INFO:best_cplex_covid_PW.py:Epoch 25/600	Loss 1485.9458 ± 84.5858
+INFO:best_cplex_covid_PW.py:Epoch 26/600	Loss 1480.0576 ± 86.0654
+INFO:best_cplex_covid_PW.py:Epoch 27/600	Loss 1463.0337 ± 83.2130
+INFO:best_cplex_covid_PW.py:Epoch 28/600	Loss 1450.3782 ± 77.9787
+INFO:best_cplex_covid_PW.py:Epoch 29/600	Loss 1445.2074 ± 74.2895
+INFO:best_cplex_covid_PW.py:Epoch 30/600	Loss 1431.5919 ± 78.9690
+INFO:best_cplex_covid_PW.py:Epoch 31/600	Loss 1424.7494 ± 78.0749
+INFO:best_cplex_covid_PW.py:Epoch 32/600	Loss 1413.1514 ± 74.6753
+INFO:best_cplex_covid_PW.py:Epoch 33/600	Loss 1408.8294 ± 76.1693
+INFO:best_cplex_covid_PW.py:Epoch 34/600	Loss 1395.7992 ± 71.9209
+INFO:best_cplex_covid_PW.py:Epoch 35/600	Loss 1398.3158 ± 74.8057
+INFO:best_cplex_covid_PW.py:Epoch 36/600	Loss 1392.4980 ± 71.9222
+INFO:best_cplex_covid_PW.py:Epoch 37/600	Loss 1378.5735 ± 76.1183
+INFO:best_cplex_covid_PW.py:Epoch 38/600	Loss 1377.9024 ± 73.5129
+INFO:best_cplex_covid_PW.py:Epoch 39/600	Loss 1365.4060 ± 68.1677
+INFO:best_cplex_covid_PW.py:Epoch 40/600	Loss 1362.1144 ± 72.7036
+INFO:best_cplex_covid_PW.py:Epoch 41/600	Loss 1365.8224 ± 77.0566
+INFO:best_cplex_covid_PW.py:Epoch 42/600	Loss 1348.8533 ± 69.2830
+INFO:best_cplex_covid_PW.py:Epoch 43/600	Loss 1346.1177 ± 63.7865
+INFO:best_cplex_covid_PW.py:Epoch 44/600	Loss 1343.6024 ± 72.8174
+INFO:best_cplex_covid_PW.py:Epoch 45/600	Loss 1339.2098 ± 72.0685
+INFO:best_cplex_covid_PW.py:Epoch 46/600	Loss 1334.0388 ± 69.5071
+INFO:best_cplex_covid_PW.py:Epoch 47/600	Loss 1321.5302 ± 72.2608
+INFO:best_cplex_covid_PW.py:Epoch 48/600	Loss 1322.9860 ± 69.2611
+INFO:best_cplex_covid_PW.py:Epoch 49/600	Loss 1327.3332 ± 70.1494
+INFO:best_cplex_covid_PW.py:Epoch 50/600	Loss 1314.2545 ± 68.3501
+INFO:best_cplex_covid_PW.py:Epoch 51/600	Loss 1314.8619 ± 66.0313
+INFO:best_cplex_covid_PW.py:Epoch 52/600	Loss 1311.1710 ± 68.9424
+INFO:best_cplex_covid_PW.py:Epoch 53/600	Loss 1304.2998 ± 70.1773
+INFO:best_cplex_covid_PW.py:Epoch 54/600	Loss 1300.1034 ± 62.5166
+INFO:best_cplex_covid_PW.py:Epoch 55/600	Loss 1293.8076 ± 67.9027
+INFO:best_cplex_covid_PW.py:Epoch 56/600	Loss 1291.8249 ± 70.5481
+INFO:best_cplex_covid_PW.py:Epoch 57/600	Loss 1290.2258 ± 68.0837
+INFO:best_cplex_covid_PW.py:Epoch 58/600	Loss 1283.9664 ± 69.4258
+INFO:best_cplex_covid_PW.py:Epoch 59/600	Loss 1288.6685 ± 63.4559
+INFO:best_cplex_covid_PW.py:Epoch 60/600	Loss 1281.6030 ± 69.7718
+INFO:best_cplex_covid_PW.py:Epoch 61/600	Loss 1272.7582 ± 63.3760
+INFO:best_cplex_covid_PW.py:Epoch 62/600	Loss 1270.7307 ± 66.6251
+INFO:best_cplex_covid_PW.py:Epoch 63/600	Loss 1269.9099 ± 68.7222
+INFO:best_cplex_covid_PW.py:Epoch 64/600	Loss 1267.0221 ± 70.7454
+INFO:best_cplex_covid_PW.py:Epoch 65/600	Loss 1263.6909 ± 69.7823
+INFO:best_cplex_covid_PW.py:Epoch 66/600	Loss 1265.8142 ± 63.2126
+INFO:best_cplex_covid_PW.py:Epoch 67/600	Loss 1261.0575 ± 62.3475
+INFO:best_cplex_covid_PW.py:Epoch 68/600	Loss 1255.4341 ± 60.0280
+INFO:best_cplex_covid_PW.py:Epoch 69/600	Loss 1254.8375 ± 62.7401
+INFO:best_cplex_covid_PW.py:Epoch 70/600	Loss 1254.5112 ± 70.5387
+INFO:best_cplex_covid_PW.py:Epoch 71/600	Loss 1253.0108 ± 64.2388
+INFO:best_cplex_covid_PW.py:Epoch 72/600	Loss 1253.6385 ± 65.0925
+INFO:best_cplex_covid_PW.py:Epoch 73/600	Loss 1251.7843 ± 62.5803
+INFO:best_cplex_covid_PW.py:Epoch 74/600	Loss 1240.8406 ± 62.7639
+INFO:best_cplex_covid_PW.py:Epoch 75/600	Loss 1240.2158 ± 68.2300
+INFO:best_cplex_covid_PW.py:Epoch 76/600	Loss 1242.2983 ± 62.2229
+INFO:best_cplex_covid_PW.py:Epoch 77/600	Loss 1233.8662 ± 62.6436
+INFO:best_cplex_covid_PW.py:Epoch 78/600	Loss 1239.0922 ± 62.7988
+INFO:best_cplex_covid_PW.py:Epoch 79/600	Loss 1229.7571 ± 62.3497
+INFO:best_cplex_covid_PW.py:Epoch 80/600	Loss 1228.6983 ± 62.0785
+INFO:best_cplex_covid_PW.py:Epoch 81/600	Loss 1227.9373 ± 66.7975
+INFO:best_cplex_covid_PW.py:Epoch 82/600	Loss 1228.6582 ± 65.1282
+INFO:best_cplex_covid_PW.py:Epoch 83/600	Loss 1224.8079 ± 63.3353
+INFO:best_cplex_covid_PW.py:Epoch 84/600	Loss 1222.6523 ± 58.7211
+INFO:best_cplex_covid_PW.py:Epoch 85/600	Loss 1221.7849 ± 60.8278
+INFO:best_cplex_covid_PW.py:Epoch 86/600	Loss 1221.2347 ± 65.6594
+INFO:best_cplex_covid_PW.py:Epoch 87/600	Loss 1217.6219 ± 59.9624
+INFO:best_cplex_covid_PW.py:Epoch 88/600	Loss 1216.6795 ± 62.0529
+INFO:best_cplex_covid_PW.py:Epoch 89/600	Loss 1214.8243 ± 66.9923
+INFO:best_cplex_covid_PW.py:Epoch 90/600	Loss 1209.8587 ± 55.4805
+INFO:best_cplex_covid_PW.py:Epoch 91/600	Loss 1208.2518 ± 60.5994
+INFO:best_cplex_covid_PW.py:Epoch 92/600	Loss 1207.3325 ± 67.9141
+INFO:best_cplex_covid_PW.py:Epoch 93/600	Loss 1211.5063 ± 55.5136
+INFO:best_cplex_covid_PW.py:Epoch 94/600	Loss 1203.0780 ± 61.7333
+INFO:best_cplex_covid_PW.py:Epoch 95/600	Loss 1201.6507 ± 56.4824
+INFO:best_cplex_covid_PW.py:Epoch 96/600	Loss 1200.1095 ± 62.3858
+INFO:best_cplex_covid_PW.py:Epoch 97/600	Loss 1200.5803 ± 62.6846
+INFO:best_cplex_covid_PW.py:Epoch 98/600	Loss 1198.2931 ± 59.0544
+INFO:best_cplex_covid_PW.py:Epoch 99/600	Loss 1200.4003 ± 59.4727
+INFO:best_cplex_covid_PW.py:Epoch 100/600	Loss 1196.8482 ± 63.7349
+INFO:best_cplex_covid_PW.py:Epoch 101/600	Loss 1201.3192 ± 57.6961
+INFO:best_cplex_covid_PW.py:Epoch 102/600	Loss 1192.8061 ± 62.7342
+INFO:best_cplex_covid_PW.py:Epoch 103/600	Loss 1190.7095 ± 56.7637
+INFO:best_cplex_covid_PW.py:Epoch 104/600	Loss 1192.9576 ± 59.2139
+INFO:best_cplex_covid_PW.py:Epoch 105/600	Loss 1190.9050 ± 56.2053
+INFO:best_cplex_covid_PW.py:Epoch 106/600	Loss 1182.2032 ± 58.8691
+INFO:best_cplex_covid_PW.py:Epoch 107/600	Loss 1187.8334 ± 61.3440
+INFO:best_cplex_covid_PW.py:Epoch 108/600	Loss 1184.6788 ± 61.7812
+INFO:best_cplex_covid_PW.py:Epoch 109/600	Loss 1183.9007 ± 63.1791
+INFO:best_cplex_covid_PW.py:Epoch 110/600	Loss 1181.6443 ± 57.0018
+INFO:best_cplex_covid_PW.py:Epoch 111/600	Loss 1183.7360 ± 62.1571
+INFO:best_cplex_covid_PW.py:Epoch 112/600	Loss 1184.2119 ± 63.5199
+INFO:best_cplex_covid_PW.py:Epoch 113/600	Loss 1181.6346 ± 60.1575
+INFO:best_cplex_covid_PW.py:Epoch 114/600	Loss 1178.9987 ± 58.6091
+INFO:best_cplex_covid_PW.py:Epoch 115/600	Loss 1174.7896 ± 58.9812
+INFO:best_cplex_covid_PW.py:Epoch 116/600	Loss 1176.4588 ± 56.2833
+INFO:best_cplex_covid_PW.py:Epoch 117/600	Loss 1175.7226 ± 60.1076
+INFO:best_cplex_covid_PW.py:Epoch 118/600	Loss 1177.1290 ± 62.2921
+INFO:best_cplex_covid_PW.py:Epoch 119/600	Loss 1172.7602 ± 57.4067
+INFO:best_cplex_covid_PW.py:Epoch 120/600	Loss 1176.1651 ± 56.5049
+INFO:best_cplex_covid_PW.py:Epoch 121/600	Loss 1175.5418 ± 58.9515
+INFO:best_cplex_covid_PW.py:Epoch 122/600	Loss 1168.5692 ± 61.8067
+INFO:best_cplex_covid_PW.py:Epoch 123/600	Loss 1170.2279 ± 53.6524
+INFO:best_cplex_covid_PW.py:Epoch 124/600	Loss 1161.8412 ± 59.9277
+INFO:best_cplex_covid_PW.py:Epoch 125/600	Loss 1168.8673 ± 58.1500
+INFO:best_cplex_covid_PW.py:Epoch 126/600	Loss 1170.0497 ± 57.0303
+INFO:best_cplex_covid_PW.py:Epoch 127/600	Loss 1161.8531 ± 60.2299
+INFO:best_cplex_covid_PW.py:Epoch 128/600	Loss 1164.3168 ± 58.1170
+INFO:best_cplex_covid_PW.py:Epoch 129/600	Loss 1162.5148 ± 54.3163
+INFO:best_cplex_covid_PW.py:Epoch 130/600	Loss 1158.5850 ± 59.5762
+INFO:best_cplex_covid_PW.py:Epoch 131/600	Loss 1158.2882 ± 57.3608
+INFO:best_cplex_covid_PW.py:Epoch 132/600	Loss 1158.7436 ± 58.6941
+INFO:best_cplex_covid_PW.py:Epoch 133/600	Loss 1157.0116 ± 52.2768
+INFO:best_cplex_covid_PW.py:Epoch 134/600	Loss 1157.6711 ± 53.7658
+INFO:best_cplex_covid_PW.py:Epoch 135/600	Loss 1156.1270 ± 55.7099
+INFO:best_cplex_covid_PW.py:Epoch 136/600	Loss 1152.7408 ± 56.8803
+INFO:best_cplex_covid_PW.py:Epoch 137/600	Loss 1159.1389 ± 58.0186
+INFO:best_cplex_covid_PW.py:Epoch 138/600	Loss 1155.3258 ± 55.2747
+INFO:best_cplex_covid_PW.py:Epoch 139/600	Loss 1155.0667 ± 56.5274
+INFO:best_cplex_covid_PW.py:Epoch 140/600	Loss 1153.3510 ± 57.9342
+INFO:best_cplex_covid_PW.py:Epoch 141/600	Loss 1156.2530 ± 55.6211
+INFO:best_cplex_covid_PW.py:Epoch 142/600	Loss 1154.9112 ± 57.7963
+INFO:best_cplex_covid_PW.py:Epoch 143/600	Loss 1147.4210 ± 57.6049
+INFO:best_cplex_covid_PW.py:Epoch 144/600	Loss 1156.6430 ± 53.8125
+INFO:best_cplex_covid_PW.py:Epoch 145/600	Loss 1146.7071 ± 54.2313
+INFO:best_cplex_covid_PW.py:Epoch 146/600	Loss 1145.3379 ± 57.0802
+INFO:best_cplex_covid_PW.py:Epoch 147/600	Loss 1145.9215 ± 56.8810
+INFO:best_cplex_covid_PW.py:Epoch 148/600	Loss 1141.5794 ± 62.5141
+INFO:best_cplex_covid_PW.py:Epoch 149/600	Loss 1145.8231 ± 57.4244
+INFO:best_cplex_covid_PW.py:Epoch 150/600	Loss 1144.9788 ± 53.6612
+INFO:best_cplex_covid_PW.py:Epoch 151/600	Loss 1141.6288 ± 57.0153
+INFO:best_cplex_covid_PW.py:Epoch 152/600	Loss 1146.7866 ± 53.9664
+INFO:best_cplex_covid_PW.py:Epoch 153/600	Loss 1141.4119 ± 57.8800
+INFO:best_cplex_covid_PW.py:Epoch 154/600	Loss 1142.4601 ± 60.0048
+INFO:best_cplex_covid_PW.py:Epoch 155/600	Loss 1139.5208 ± 55.4617
+INFO:best_cplex_covid_PW.py:Epoch 156/600	Loss 1141.7707 ± 59.0367
+INFO:best_cplex_covid_PW.py:Epoch 157/600	Loss 1143.2107 ± 59.9078
+INFO:best_cplex_covid_PW.py:Epoch 158/600	Loss 1143.3706 ± 57.4813
+INFO:best_cplex_covid_PW.py:Epoch 159/600	Loss 1138.2586 ± 55.9637
+INFO:best_cplex_covid_PW.py:Epoch 160/600	Loss 1139.2979 ± 54.1051
+INFO:best_cplex_covid_PW.py:Epoch 161/600	Loss 1137.1005 ± 55.7276
+INFO:best_cplex_covid_PW.py:Epoch 162/600	Loss 1133.8708 ± 53.3412
+INFO:best_cplex_covid_PW.py:Epoch 163/600	Loss 1135.2511 ± 54.3676
+INFO:best_cplex_covid_PW.py:Epoch 164/600	Loss 1132.2343 ± 54.7910
+INFO:best_cplex_covid_PW.py:Epoch 165/600	Loss 1132.8636 ± 57.8909
+INFO:best_cplex_covid_PW.py:Epoch 166/600	Loss 1128.7271 ± 53.9230
+INFO:best_cplex_covid_PW.py:Epoch 167/600	Loss 1129.2870 ± 54.7167
+INFO:best_cplex_covid_PW.py:Epoch 168/600	Loss 1131.4552 ± 54.7827
+INFO:best_cplex_covid_PW.py:Epoch 169/600	Loss 1129.3489 ± 55.9395
+INFO:best_cplex_covid_PW.py:Epoch 170/600	Loss 1131.0707 ± 56.0108
+INFO:best_cplex_covid_PW.py:Epoch 171/600	Loss 1134.4688 ± 57.2432
+INFO:best_cplex_covid_PW.py:Epoch 172/600	Loss 1133.7414 ± 55.9558
+INFO:best_cplex_covid_PW.py:Epoch 173/600	Loss 1131.4755 ± 58.1266
+INFO:best_cplex_covid_PW.py:Epoch 174/600	Loss 1129.5395 ± 54.8206
+INFO:best_cplex_covid_PW.py:Epoch 175/600	Loss 1129.3236 ± 60.1175
+INFO:best_cplex_covid_PW.py:Epoch 176/600	Loss 1129.1238 ± 56.2568
+INFO:best_cplex_covid_PW.py:Epoch 177/600	Loss 1127.7165 ± 55.6110
+INFO:best_cplex_covid_PW.py:Epoch 178/600	Loss 1126.1658 ± 54.1044
+INFO:best_cplex_covid_PW.py:Epoch 179/600	Loss 1122.6437 ± 57.7253
+INFO:best_cplex_covid_PW.py:Epoch 180/600	Loss 1125.3349 ± 56.2431
+INFO:best_cplex_covid_PW.py:Epoch 181/600	Loss 1125.6468 ± 51.1571
+INFO:best_cplex_covid_PW.py:Epoch 182/600	Loss 1125.6088 ± 53.2667
+INFO:best_cplex_covid_PW.py:Epoch 183/600	Loss 1125.8854 ± 52.2164
+INFO:best_cplex_covid_PW.py:Epoch 184/600	Loss 1120.3881 ± 55.4910
+INFO:best_cplex_covid_PW.py:Epoch 185/600	Loss 1122.6148 ± 50.1004
+INFO:best_cplex_covid_PW.py:Epoch 186/600	Loss 1125.9830 ± 56.7279
+INFO:best_cplex_covid_PW.py:Epoch 187/600	Loss 1119.7442 ± 52.9328
+INFO:best_cplex_covid_PW.py:Epoch 188/600	Loss 1123.3390 ± 53.2413
+INFO:best_cplex_covid_PW.py:Epoch 189/600	Loss 1123.0180 ± 53.3784
+INFO:best_cplex_covid_PW.py:Epoch 190/600	Loss 1125.7164 ± 49.9716
+INFO:best_cplex_covid_PW.py:Epoch 191/600	Loss 1117.1394 ± 53.0315
+INFO:best_cplex_covid_PW.py:Epoch 192/600	Loss 1121.0180 ± 52.4258
+INFO:best_cplex_covid_PW.py:Epoch 193/600	Loss 1115.2200 ± 56.3996
+INFO:best_cplex_covid_PW.py:Epoch 194/600	Loss 1113.9359 ± 52.7937
+INFO:best_cplex_covid_PW.py:Epoch 195/600	Loss 1116.1663 ± 54.4089
+INFO:best_cplex_covid_PW.py:Epoch 196/600	Loss 1115.0272 ± 53.1306
+INFO:best_cplex_covid_PW.py:Epoch 197/600	Loss 1113.5102 ± 46.7945
+INFO:best_cplex_covid_PW.py:Epoch 198/600	Loss 1111.2845 ± 56.9178
+INFO:best_cplex_covid_PW.py:Epoch 199/600	Loss 1114.4552 ± 53.3654
+INFO:best_cplex_covid_PW.py:Epoch 200/600	Loss 1113.4602 ± 55.3055
+INFO:best_cplex_covid_PW.py:Epoch 201/600	Loss 1114.3085 ± 53.4922
+INFO:best_cplex_covid_PW.py:Epoch 202/600	Loss 1111.8832 ± 59.0918
+INFO:best_cplex_covid_PW.py:Epoch 203/600	Loss 1113.6835 ± 53.8206
+INFO:best_cplex_covid_PW.py:Epoch 204/600	Loss 1104.1920 ± 54.9303
+INFO:best_cplex_covid_PW.py:Epoch 205/600	Loss 1114.3327 ± 57.3448
+INFO:best_cplex_covid_PW.py:Epoch 206/600	Loss 1111.3697 ± 55.2286
+INFO:best_cplex_covid_PW.py:Epoch 207/600	Loss 1107.4301 ± 54.0387
+INFO:best_cplex_covid_PW.py:Epoch 208/600	Loss 1105.3488 ± 53.6394
+INFO:best_cplex_covid_PW.py:Epoch 209/600	Loss 1113.3953 ± 51.7568
+INFO:best_cplex_covid_PW.py:Epoch 210/600	Loss 1107.7114 ± 57.1826
+INFO:best_cplex_covid_PW.py:Epoch 211/600	Loss 1106.8863 ± 55.1174
+INFO:best_cplex_covid_PW.py:Epoch 212/600	Loss 1105.0292 ± 54.4937
+INFO:best_cplex_covid_PW.py:Epoch 213/600	Loss 1109.4100 ± 51.1544
+INFO:best_cplex_covid_PW.py:Epoch 214/600	Loss 1104.4280 ± 54.9276
+INFO:best_cplex_covid_PW.py:Epoch 215/600	Loss 1111.3414 ± 51.2902
+INFO:best_cplex_covid_PW.py:Epoch 216/600	Loss 1105.3458 ± 56.1441
+INFO:best_cplex_covid_PW.py:Epoch 217/600	Loss 1105.0694 ± 51.9519
+INFO:best_cplex_covid_PW.py:Epoch 218/600	Loss 1102.3303 ± 51.7668
+INFO:best_cplex_covid_PW.py:Epoch 219/600	Loss 1109.4286 ± 54.3948
+INFO:best_cplex_covid_PW.py:Epoch 220/600	Loss 1107.1188 ± 54.5350
+INFO:best_cplex_covid_PW.py:Epoch 221/600	Loss 1100.2748 ± 53.1464
+INFO:best_cplex_covid_PW.py:Epoch 222/600	Loss 1106.1078 ± 53.9479
+INFO:best_cplex_covid_PW.py:Epoch 223/600	Loss 1102.9676 ± 54.3773
+INFO:best_cplex_covid_PW.py:Epoch 224/600	Loss 1102.0253 ± 59.1316
+INFO:best_cplex_covid_PW.py:Epoch 225/600	Loss 1101.6255 ± 55.0000
+INFO:best_cplex_covid_PW.py:Epoch 226/600	Loss 1102.5678 ± 54.5602
+INFO:best_cplex_covid_PW.py:Epoch 227/600	Loss 1099.9527 ± 55.2869
+INFO:best_cplex_covid_PW.py:Epoch 228/600	Loss 1101.7238 ± 53.6385
+INFO:best_cplex_covid_PW.py:Epoch 229/600	Loss 1099.3494 ± 53.1304
+INFO:best_cplex_covid_PW.py:Epoch 230/600	Loss 1104.0950 ± 52.4641
+INFO:best_cplex_covid_PW.py:Epoch 231/600	Loss 1099.1006 ± 59.6733
+INFO:best_cplex_covid_PW.py:Epoch 232/600	Loss 1098.5378 ± 52.9368
+INFO:best_cplex_covid_PW.py:Epoch 233/600	Loss 1099.6709 ± 51.9651
+INFO:best_cplex_covid_PW.py:Epoch 234/600	Loss 1104.9554 ± 57.3227
+INFO:best_cplex_covid_PW.py:Epoch 235/600	Loss 1095.7300 ± 54.4898
+INFO:best_cplex_covid_PW.py:Epoch 236/600	Loss 1097.0428 ± 50.3722
+INFO:best_cplex_covid_PW.py:Epoch 237/600	Loss 1098.6286 ± 54.2620
+INFO:best_cplex_covid_PW.py:Epoch 238/600	Loss 1104.4430 ± 55.3949
+INFO:best_cplex_covid_PW.py:Epoch 239/600	Loss 1098.7674 ± 48.6437
+INFO:best_cplex_covid_PW.py:Epoch 240/600	Loss 1093.1382 ± 52.0076
+INFO:best_cplex_covid_PW.py:Epoch 241/600	Loss 1098.1904 ± 53.8837
+INFO:best_cplex_covid_PW.py:Epoch 242/600	Loss 1096.5639 ± 53.3018
+INFO:best_cplex_covid_PW.py:Epoch 243/600	Loss 1095.5778 ± 53.5786
+INFO:best_cplex_covid_PW.py:Epoch 244/600	Loss 1093.8175 ± 50.4311
+INFO:best_cplex_covid_PW.py:Epoch 245/600	Loss 1094.4263 ± 51.3434
+INFO:best_cplex_covid_PW.py:Epoch 246/600	Loss 1093.8650 ± 52.3318
+INFO:best_cplex_covid_PW.py:Epoch 247/600	Loss 1092.4708 ± 52.5986
+INFO:best_cplex_covid_PW.py:Epoch 248/600	Loss 1096.4829 ± 49.0975
+INFO:best_cplex_covid_PW.py:Epoch 249/600	Loss 1096.7916 ± 52.9080
+INFO:best_cplex_covid_PW.py:Epoch 250/600	Loss 1095.6449 ± 52.7682
+INFO:best_cplex_covid_PW.py:Epoch 251/600	Loss 1097.6476 ± 57.8743
+INFO:best_cplex_covid_PW.py:Epoch 252/600	Loss 1095.3344 ± 53.6568
+INFO:best_cplex_covid_PW.py:Epoch 253/600	Loss 1093.8893 ± 54.9522
+INFO:best_cplex_covid_PW.py:Epoch 254/600	Loss 1098.2778 ± 54.6331
+INFO:best_cplex_covid_PW.py:Epoch 255/600	Loss 1091.7896 ± 54.6326
+INFO:best_cplex_covid_PW.py:Epoch 256/600	Loss 1093.6489 ± 56.1459
+INFO:best_cplex_covid_PW.py:Epoch 257/600	Loss 1091.7419 ± 50.1909
+INFO:best_cplex_covid_PW.py:Epoch 258/600	Loss 1083.3288 ± 54.9046
+INFO:best_cplex_covid_PW.py:Epoch 259/600	Loss 1092.8670 ± 50.8206
+INFO:best_cplex_covid_PW.py:Epoch 260/600	Loss 1094.0429 ± 55.8239
+INFO:best_cplex_covid_PW.py:Epoch 261/600	Loss 1088.5642 ± 51.7391
+INFO:best_cplex_covid_PW.py:Epoch 262/600	Loss 1091.5751 ± 51.4137
+INFO:best_cplex_covid_PW.py:Epoch 263/600	Loss 1085.9676 ± 50.8757
+INFO:best_cplex_covid_PW.py:Epoch 264/600	Loss 1088.7521 ± 55.3866
+INFO:best_cplex_covid_PW.py:Epoch 265/600	Loss 1085.6710 ± 50.2043
+INFO:best_cplex_covid_PW.py:Epoch 266/600	Loss 1087.3488 ± 52.0790
+INFO:best_cplex_covid_PW.py:Epoch 267/600	Loss 1085.3663 ± 48.8181
+INFO:best_cplex_covid_PW.py:Epoch 268/600	Loss 1087.2072 ± 51.6038
+INFO:best_cplex_covid_PW.py:Epoch 269/600	Loss 1086.2816 ± 51.3745
+INFO:best_cplex_covid_PW.py:Epoch 270/600	Loss 1089.9767 ± 53.7820
+INFO:best_cplex_covid_PW.py:Epoch 271/600	Loss 1088.5556 ± 53.3429
+INFO:best_cplex_covid_PW.py:Epoch 272/600	Loss 1088.7377 ± 51.6816
+INFO:best_cplex_covid_PW.py:Epoch 273/600	Loss 1083.0448 ± 54.1588
+INFO:best_cplex_covid_PW.py:Epoch 274/600	Loss 1085.3637 ± 52.4187
+INFO:best_cplex_covid_PW.py:Epoch 275/600	Loss 1088.2156 ± 50.0287
+INFO:best_cplex_covid_PW.py:Epoch 276/600	Loss 1085.0596 ± 51.4862
+INFO:best_cplex_covid_PW.py:Epoch 277/600	Loss 1087.2240 ± 52.1802
+INFO:best_cplex_covid_PW.py:Epoch 278/600	Loss 1083.9495 ± 52.6666
+INFO:best_cplex_covid_PW.py:Epoch 279/600	Loss 1085.9059 ± 55.9796
+INFO:best_cplex_covid_PW.py:Epoch 280/600	Loss 1080.8217 ± 53.3852
+INFO:best_cplex_covid_PW.py:Epoch 281/600	Loss 1085.7704 ± 54.7392
+INFO:best_cplex_covid_PW.py:Epoch 282/600	Loss 1080.9098 ± 49.9828
+INFO:best_cplex_covid_PW.py:Epoch 283/600	Loss 1077.5363 ± 50.0633
+INFO:best_cplex_covid_PW.py:Epoch 284/600	Loss 1081.5181 ± 52.1360
+INFO:best_cplex_covid_PW.py:Epoch 285/600	Loss 1083.1187 ± 48.5140
+INFO:best_cplex_covid_PW.py:Epoch 286/600	Loss 1079.1398 ± 54.7740
+INFO:best_cplex_covid_PW.py:Epoch 287/600	Loss 1086.1232 ± 52.6342
+INFO:best_cplex_covid_PW.py:Epoch 288/600	Loss 1083.6986 ± 48.2264
+INFO:best_cplex_covid_PW.py:Epoch 289/600	Loss 1084.6751 ± 47.7498
+INFO:best_cplex_covid_PW.py:Epoch 290/600	Loss 1083.4425 ± 52.0939
+INFO:best_cplex_covid_PW.py:Epoch 291/600	Loss 1082.3943 ± 55.1084
+INFO:best_cplex_covid_PW.py:Epoch 292/600	Loss 1080.4985 ± 56.3375
+INFO:best_cplex_covid_PW.py:Epoch 293/600	Loss 1080.7121 ± 50.2891
+INFO:best_cplex_covid_PW.py:Epoch 294/600	Loss 1077.6702 ± 55.5911
+INFO:best_cplex_covid_PW.py:Epoch 295/600	Loss 1077.7245 ± 50.8587
+INFO:best_cplex_covid_PW.py:Epoch 296/600	Loss 1078.2555 ± 51.2744
+INFO:best_cplex_covid_PW.py:Epoch 297/600	Loss 1079.6696 ± 50.9666
+INFO:best_cplex_covid_PW.py:Epoch 298/600	Loss 1079.3985 ± 49.2975
+INFO:best_cplex_covid_PW.py:Epoch 299/600	Loss 1081.5567 ± 56.8218
+INFO:best_cplex_covid_PW.py:Epoch 300/600	Loss 1083.6564 ± 51.7980
+INFO:best_cplex_covid_PW.py:Epoch 301/600	Loss 1076.1624 ± 56.0750
+INFO:best_cplex_covid_PW.py:Epoch 302/600	Loss 1080.1795 ± 51.8364
+INFO:best_cplex_covid_PW.py:Epoch 303/600	Loss 1075.5822 ± 52.3653
+INFO:best_cplex_covid_PW.py:Epoch 304/600	Loss 1079.3086 ± 55.5596
+INFO:best_cplex_covid_PW.py:Epoch 305/600	Loss 1077.3059 ± 52.5315
+INFO:best_cplex_covid_PW.py:Epoch 306/600	Loss 1082.3650 ± 52.9625
+INFO:best_cplex_covid_PW.py:Epoch 307/600	Loss 1074.7039 ± 52.3385
+INFO:best_cplex_covid_PW.py:Epoch 308/600	Loss 1080.7793 ± 53.5173
+INFO:best_cplex_covid_PW.py:Epoch 309/600	Loss 1074.3362 ± 54.7566
+INFO:best_cplex_covid_PW.py:Epoch 310/600	Loss 1078.2185 ± 47.8464
+INFO:best_cplex_covid_PW.py:Epoch 311/600	Loss 1078.8960 ± 49.4943
+INFO:best_cplex_covid_PW.py:Epoch 312/600	Loss 1073.6627 ± 50.2037
+INFO:best_cplex_covid_PW.py:Epoch 313/600	Loss 1068.0209 ± 52.1489
+INFO:best_cplex_covid_PW.py:Epoch 314/600	Loss 1071.0010 ± 51.5571
+INFO:best_cplex_covid_PW.py:Epoch 315/600	Loss 1078.1914 ± 49.2000
+INFO:best_cplex_covid_PW.py:Epoch 316/600	Loss 1069.7126 ± 54.1055
+INFO:best_cplex_covid_PW.py:Epoch 317/600	Loss 1070.7121 ± 55.1899
+INFO:best_cplex_covid_PW.py:Epoch 318/600	Loss 1074.7371 ± 50.4545
+INFO:best_cplex_covid_PW.py:Epoch 319/600	Loss 1069.4453 ± 53.7237
+INFO:best_cplex_covid_PW.py:Epoch 320/600	Loss 1070.5462 ± 53.5004
+INFO:best_cplex_covid_PW.py:Epoch 321/600	Loss 1072.9219 ± 50.4826
+INFO:best_cplex_covid_PW.py:Epoch 322/600	Loss 1075.5044 ± 54.1711
+INFO:best_cplex_covid_PW.py:Epoch 323/600	Loss 1071.2447 ± 53.7045
+INFO:best_cplex_covid_PW.py:Epoch 324/600	Loss 1069.3413 ± 49.4573
+INFO:best_cplex_covid_PW.py:Epoch 325/600	Loss 1071.6217 ± 49.1494
+INFO:best_cplex_covid_PW.py:Epoch 326/600	Loss 1065.0915 ± 49.9963
+INFO:best_cplex_covid_PW.py:Epoch 327/600	Loss 1072.3360 ± 50.5458
+INFO:best_cplex_covid_PW.py:Epoch 328/600	Loss 1068.8316 ± 53.2467
+INFO:best_cplex_covid_PW.py:Epoch 329/600	Loss 1075.5002 ± 49.2366
+INFO:best_cplex_covid_PW.py:Epoch 330/600	Loss 1073.9325 ± 52.5105
+INFO:best_cplex_covid_PW.py:Epoch 331/600	Loss 1071.9385 ± 50.8385
+INFO:best_cplex_covid_PW.py:Epoch 332/600	Loss 1072.3368 ± 48.9078
+INFO:best_cplex_covid_PW.py:Epoch 333/600	Loss 1072.4539 ± 53.4135
+INFO:best_cplex_covid_PW.py:Epoch 334/600	Loss 1069.8318 ± 51.2860
+INFO:best_cplex_covid_PW.py:Epoch 335/600	Loss 1068.9876 ± 51.8393
+INFO:best_cplex_covid_PW.py:Epoch 336/600	Loss 1069.8624 ± 53.0384
+INFO:best_cplex_covid_PW.py:Epoch 337/600	Loss 1069.0065 ± 51.5237
+INFO:best_cplex_covid_PW.py:Epoch 338/600	Loss 1067.1132 ± 54.7948
+INFO:best_cplex_covid_PW.py:Epoch 339/600	Loss 1068.5150 ± 53.6378
+INFO:best_cplex_covid_PW.py:Epoch 340/600	Loss 1066.9499 ± 52.5360
+INFO:best_cplex_covid_PW.py:Epoch 341/600	Loss 1069.3896 ± 53.1650
+INFO:best_cplex_covid_PW.py:Epoch 342/600	Loss 1069.9696 ± 46.9218
+INFO:best_cplex_covid_PW.py:Epoch 343/600	Loss 1063.4980 ± 56.2190
+INFO:best_cplex_covid_PW.py:Epoch 344/600	Loss 1067.1499 ± 50.0219
+INFO:best_cplex_covid_PW.py:Epoch 345/600	Loss 1065.8796 ± 50.4686
+INFO:best_cplex_covid_PW.py:Epoch 346/600	Loss 1068.5653 ± 49.4394
+INFO:best_cplex_covid_PW.py:Epoch 347/600	Loss 1067.3290 ± 52.4806
+INFO:best_cplex_covid_PW.py:Epoch 348/600	Loss 1068.8670 ± 52.1196
+INFO:best_cplex_covid_PW.py:Epoch 349/600	Loss 1065.4070 ± 46.1715
+INFO:best_cplex_covid_PW.py:Epoch 350/600	Loss 1068.7453 ± 51.6487
+INFO:best_cplex_covid_PW.py:Epoch 351/600	Loss 1066.2868 ± 53.8788
+INFO:best_cplex_covid_PW.py:Epoch 352/600	Loss 1068.2497 ± 51.3571
+INFO:best_cplex_covid_PW.py:Epoch 353/600	Loss 1066.1296 ± 51.0913
+INFO:best_cplex_covid_PW.py:Epoch 354/600	Loss 1065.3570 ± 51.3714
+INFO:best_cplex_covid_PW.py:Epoch 355/600	Loss 1064.8778 ± 48.2449
+INFO:best_cplex_covid_PW.py:Epoch 356/600	Loss 1067.2787 ± 54.0724
+INFO:best_cplex_covid_PW.py:Epoch 357/600	Loss 1070.0834 ± 48.7108
+INFO:best_cplex_covid_PW.py:Epoch 358/600	Loss 1070.6092 ± 53.4798
+INFO:best_cplex_covid_PW.py:Epoch 359/600	Loss 1063.0622 ± 53.5667
+INFO:best_cplex_covid_PW.py:Epoch 360/600	Loss 1067.1445 ± 55.6671
+INFO:best_cplex_covid_PW.py:Epoch 361/600	Loss 1063.6985 ± 53.7836
+INFO:best_cplex_covid_PW.py:Epoch 362/600	Loss 1066.4045 ± 53.5085
+INFO:best_cplex_covid_PW.py:Epoch 363/600	Loss 1060.6323 ± 50.4778
+INFO:best_cplex_covid_PW.py:Epoch 364/600	Loss 1058.2652 ± 50.3336
+INFO:best_cplex_covid_PW.py:Epoch 365/600	Loss 1067.2155 ± 50.1740
+INFO:best_cplex_covid_PW.py:Epoch 366/600	Loss 1060.0261 ± 48.9159
+INFO:best_cplex_covid_PW.py:Epoch 367/600	Loss 1059.8502 ± 50.7385
+INFO:best_cplex_covid_PW.py:Epoch 368/600	Loss 1063.9265 ± 48.6003
+INFO:best_cplex_covid_PW.py:Epoch 369/600	Loss 1066.6830 ± 46.7397
+INFO:best_cplex_covid_PW.py:Epoch 370/600	Loss 1065.5169 ± 51.2893
+INFO:best_cplex_covid_PW.py:Epoch 371/600	Loss 1064.1116 ± 55.9639
+INFO:best_cplex_covid_PW.py:Epoch 372/600	Loss 1064.3542 ± 49.3257
+INFO:best_cplex_covid_PW.py:Epoch 373/600	Loss 1061.1100 ± 50.7863
+INFO:best_cplex_covid_PW.py:Epoch 374/600	Loss 1056.0733 ± 50.7665
+INFO:best_cplex_covid_PW.py:Epoch 375/600	Loss 1061.0217 ± 52.3987
+INFO:best_cplex_covid_PW.py:Epoch 376/600	Loss 1054.6532 ± 52.6084
+INFO:best_cplex_covid_PW.py:Epoch 377/600	Loss 1058.5668 ± 46.5215
+INFO:best_cplex_covid_PW.py:Epoch 378/600	Loss 1058.3611 ± 54.4331
+INFO:best_cplex_covid_PW.py:Epoch 379/600	Loss 1057.1414 ± 54.7338
+INFO:best_cplex_covid_PW.py:Epoch 380/600	Loss 1060.4517 ± 47.8290
+INFO:best_cplex_covid_PW.py:Epoch 381/600	Loss 1054.8203 ± 49.0170
+INFO:best_cplex_covid_PW.py:Epoch 382/600	Loss 1063.6365 ± 54.1828
+INFO:best_cplex_covid_PW.py:Epoch 383/600	Loss 1062.3796 ± 47.9109
+INFO:best_cplex_covid_PW.py:Epoch 384/600	Loss 1057.3856 ± 52.1041
+INFO:best_cplex_covid_PW.py:Epoch 385/600	Loss 1060.9532 ± 49.0202
+INFO:best_cplex_covid_PW.py:Epoch 386/600	Loss 1060.3019 ± 52.9237
+INFO:best_cplex_covid_PW.py:Epoch 387/600	Loss 1061.2608 ± 52.0261
+INFO:best_cplex_covid_PW.py:Epoch 388/600	Loss 1062.0127 ± 47.7175
+INFO:best_cplex_covid_PW.py:Epoch 389/600	Loss 1060.7501 ± 43.3135
+INFO:best_cplex_covid_PW.py:Epoch 390/600	Loss 1054.1457 ± 50.6739
+INFO:best_cplex_covid_PW.py:Epoch 391/600	Loss 1054.0652 ± 50.8092
+INFO:best_cplex_covid_PW.py:Epoch 392/600	Loss 1058.4527 ± 51.3720
+INFO:best_cplex_covid_PW.py:Epoch 393/600	Loss 1054.0993 ± 47.0551
+INFO:best_cplex_covid_PW.py:Epoch 394/600	Loss 1061.2028 ± 54.3421
+INFO:best_cplex_covid_PW.py:Epoch 395/600	Loss 1057.9092 ± 53.3704
+INFO:best_cplex_covid_PW.py:Epoch 396/600	Loss 1056.5981 ± 52.0658
+INFO:best_cplex_covid_PW.py:Epoch 397/600	Loss 1055.3274 ± 47.7025
+INFO:best_cplex_covid_PW.py:Epoch 398/600	Loss 1061.7469 ± 49.8218
+INFO:best_cplex_covid_PW.py:Epoch 399/600	Loss 1055.9899 ± 51.8628
+INFO:best_cplex_covid_PW.py:Epoch 400/600	Loss 1059.3878 ± 51.4121
+INFO:best_cplex_covid_PW.py:Epoch 401/600	Loss 1053.4076 ± 52.3195
+INFO:best_cplex_covid_PW.py:Epoch 402/600	Loss 1061.9132 ± 52.0626
+INFO:best_cplex_covid_PW.py:Epoch 403/600	Loss 1059.0247 ± 52.1957
+INFO:best_cplex_covid_PW.py:Epoch 404/600	Loss 1055.0582 ± 50.9274
+INFO:best_cplex_covid_PW.py:Epoch 405/600	Loss 1056.2845 ± 50.7955
+INFO:best_cplex_covid_PW.py:Epoch 406/600	Loss 1055.6614 ± 53.2960
+INFO:best_cplex_covid_PW.py:Epoch 407/600	Loss 1053.0103 ± 49.7873
+INFO:best_cplex_covid_PW.py:Epoch 408/600	Loss 1056.9651 ± 53.3293
+INFO:best_cplex_covid_PW.py:Epoch 409/600	Loss 1055.8757 ± 52.0158
+INFO:best_cplex_covid_PW.py:Epoch 410/600	Loss 1057.7120 ± 52.3250
+INFO:best_cplex_covid_PW.py:Epoch 411/600	Loss 1050.2428 ± 49.7756
+INFO:best_cplex_covid_PW.py:Epoch 412/600	Loss 1059.7024 ± 51.5217
+INFO:best_cplex_covid_PW.py:Epoch 413/600	Loss 1054.0629 ± 50.0097
+INFO:best_cplex_covid_PW.py:Epoch 414/600	Loss 1057.4831 ± 50.1750
+INFO:best_cplex_covid_PW.py:Epoch 415/600	Loss 1051.0154 ± 50.1072
+INFO:best_cplex_covid_PW.py:Epoch 416/600	Loss 1051.0595 ± 50.1846
+INFO:best_cplex_covid_PW.py:Epoch 417/600	Loss 1052.8805 ± 54.7708
+INFO:best_cplex_covid_PW.py:Epoch 418/600	Loss 1057.0185 ± 52.3543
+INFO:best_cplex_covid_PW.py:Epoch 419/600	Loss 1046.5204 ± 48.9971
+INFO:best_cplex_covid_PW.py:Epoch 420/600	Loss 1051.6810 ± 49.1815
+INFO:best_cplex_covid_PW.py:Epoch 421/600	Loss 1048.1982 ± 50.1245
+INFO:best_cplex_covid_PW.py:Epoch 422/600	Loss 1049.4153 ± 50.4774
+INFO:best_cplex_covid_PW.py:Epoch 423/600	Loss 1053.2959 ± 51.3388
+INFO:best_cplex_covid_PW.py:Epoch 424/600	Loss 1051.7892 ± 52.5731
+INFO:best_cplex_covid_PW.py:Epoch 425/600	Loss 1051.3395 ± 48.2706
+INFO:best_cplex_covid_PW.py:Epoch 426/600	Loss 1055.1522 ± 48.9189
+INFO:best_cplex_covid_PW.py:Epoch 427/600	Loss 1049.9274 ± 49.3398
+INFO:best_cplex_covid_PW.py:Epoch 428/600	Loss 1056.0380 ± 52.1622
+INFO:best_cplex_covid_PW.py:Epoch 429/600	Loss 1051.8159 ± 54.8641
+INFO:best_cplex_covid_PW.py:Epoch 430/600	Loss 1050.3530 ± 51.5544
+INFO:best_cplex_covid_PW.py:Epoch 431/600	Loss 1049.2008 ± 49.5735
+INFO:best_cplex_covid_PW.py:Epoch 432/600	Loss 1051.9207 ± 45.1989
+INFO:best_cplex_covid_PW.py:Epoch 433/600	Loss 1052.3136 ± 50.4743
+INFO:best_cplex_covid_PW.py:Epoch 434/600	Loss 1051.7164 ± 49.9656
+INFO:best_cplex_covid_PW.py:Epoch 435/600	Loss 1045.5390 ± 51.3184
+INFO:best_cplex_covid_PW.py:Epoch 436/600	Loss 1052.4506 ± 50.0317
+INFO:best_cplex_covid_PW.py:Epoch 437/600	Loss 1052.4580 ± 47.7641
+INFO:best_cplex_covid_PW.py:Epoch 438/600	Loss 1049.0244 ± 49.5390
+INFO:best_cplex_covid_PW.py:Epoch 439/600	Loss 1049.4292 ± 48.4210
+INFO:best_cplex_covid_PW.py:Epoch 440/600	Loss 1048.1867 ± 50.5453
+INFO:best_cplex_covid_PW.py:Epoch 441/600	Loss 1049.4202 ± 54.8101
+INFO:best_cplex_covid_PW.py:Epoch 442/600	Loss 1048.4365 ± 49.5070
+INFO:best_cplex_covid_PW.py:Epoch 443/600	Loss 1050.1784 ± 49.3089
+INFO:best_cplex_covid_PW.py:Epoch 444/600	Loss 1046.6575 ± 51.7997
+INFO:best_cplex_covid_PW.py:Epoch 445/600	Loss 1048.5548 ± 49.7957
+INFO:best_cplex_covid_PW.py:Epoch 446/600	Loss 1045.7590 ± 49.5942
+INFO:best_cplex_covid_PW.py:Epoch 447/600	Loss 1047.7203 ± 52.0540
+INFO:best_cplex_covid_PW.py:Epoch 448/600	Loss 1045.2843 ± 52.9448
+INFO:best_cplex_covid_PW.py:Epoch 449/600	Loss 1043.6695 ± 51.1165
+INFO:best_cplex_covid_PW.py:Epoch 450/600	Loss 1047.7807 ± 47.2103
+INFO:best_cplex_covid_PW.py:Epoch 451/600	Loss 1045.8097 ± 49.6394
+INFO:best_cplex_covid_PW.py:Epoch 452/600	Loss 1049.5850 ± 52.6175
+INFO:best_cplex_covid_PW.py:Epoch 453/600	Loss 1050.1808 ± 50.2567
+INFO:best_cplex_covid_PW.py:Epoch 454/600	Loss 1049.3316 ± 51.0665
+INFO:best_cplex_covid_PW.py:Epoch 455/600	Loss 1048.5532 ± 49.3941
+INFO:best_cplex_covid_PW.py:Epoch 456/600	Loss 1048.9617 ± 46.2428
+INFO:best_cplex_covid_PW.py:Epoch 457/600	Loss 1048.8327 ± 47.4925
+INFO:best_cplex_covid_PW.py:Epoch 458/600	Loss 1046.2242 ± 51.5720
+INFO:best_cplex_covid_PW.py:Epoch 459/600	Loss 1044.8218 ± 52.8324
+INFO:best_cplex_covid_PW.py:Epoch 460/600	Loss 1044.5942 ± 47.7926
+INFO:best_cplex_covid_PW.py:Epoch 461/600	Loss 1045.4688 ± 46.2325
+INFO:best_cplex_covid_PW.py:Epoch 462/600	Loss 1048.1678 ± 44.7877
+INFO:best_cplex_covid_PW.py:Epoch 463/600	Loss 1042.8206 ± 52.2332
+INFO:best_cplex_covid_PW.py:Epoch 464/600	Loss 1041.8498 ± 44.0471
+INFO:best_cplex_covid_PW.py:Epoch 465/600	Loss 1045.5516 ± 50.9262
+INFO:best_cplex_covid_PW.py:Epoch 466/600	Loss 1045.7651 ± 47.1400
+INFO:best_cplex_covid_PW.py:Epoch 467/600	Loss 1044.7122 ± 48.4155
+INFO:best_cplex_covid_PW.py:Epoch 468/600	Loss 1046.6757 ± 46.9153
+INFO:best_cplex_covid_PW.py:Epoch 469/600	Loss 1046.9055 ± 49.1657
+INFO:best_cplex_covid_PW.py:Epoch 470/600	Loss 1047.2352 ± 50.0739
+INFO:best_cplex_covid_PW.py:Epoch 471/600	Loss 1048.8588 ± 47.5440
+INFO:best_cplex_covid_PW.py:Epoch 472/600	Loss 1046.1653 ± 50.2175
+INFO:best_cplex_covid_PW.py:Epoch 473/600	Loss 1044.3684 ± 51.8968
+INFO:best_cplex_covid_PW.py:Epoch 474/600	Loss 1049.0744 ± 51.5215
+INFO:best_cplex_covid_PW.py:Epoch 475/600	Loss 1040.9966 ± 51.5956
+INFO:best_cplex_covid_PW.py:Epoch 476/600	Loss 1047.5101 ± 48.2528
+INFO:best_cplex_covid_PW.py:Epoch 477/600	Loss 1042.8994 ± 49.6806
+INFO:best_cplex_covid_PW.py:Epoch 478/600	Loss 1048.0423 ± 51.6481
+INFO:best_cplex_covid_PW.py:Epoch 479/600	Loss 1042.3335 ± 51.2829
+INFO:best_cplex_covid_PW.py:Epoch 480/600	Loss 1045.2281 ± 48.4186
+INFO:best_cplex_covid_PW.py:Epoch 481/600	Loss 1041.3014 ± 47.8631
+INFO:best_cplex_covid_PW.py:Epoch 482/600	Loss 1045.5083 ± 51.9292
+INFO:best_cplex_covid_PW.py:Epoch 483/600	Loss 1042.7410 ± 47.8560
+INFO:best_cplex_covid_PW.py:Epoch 484/600	Loss 1044.8143 ± 52.1750
+INFO:best_cplex_covid_PW.py:Epoch 485/600	Loss 1044.7910 ± 47.8966
+INFO:best_cplex_covid_PW.py:Epoch 486/600	Loss 1039.7186 ± 49.6557
+INFO:best_cplex_covid_PW.py:Epoch 487/600	Loss 1047.9209 ± 49.8339
+INFO:best_cplex_covid_PW.py:Epoch 488/600	Loss 1045.5035 ± 50.4916
+INFO:best_cplex_covid_PW.py:Epoch 489/600	Loss 1040.4106 ± 44.2105
+INFO:best_cplex_covid_PW.py:Epoch 490/600	Loss 1044.8200 ± 47.9441
+INFO:best_cplex_covid_PW.py:Epoch 491/600	Loss 1040.8779 ± 47.8935
+INFO:best_cplex_covid_PW.py:Epoch 492/600	Loss 1042.5960 ± 50.8069
+INFO:best_cplex_covid_PW.py:Epoch 493/600	Loss 1040.9549 ± 51.2416
+INFO:best_cplex_covid_PW.py:Epoch 494/600	Loss 1043.4655 ± 53.6412
+INFO:best_cplex_covid_PW.py:Epoch 495/600	Loss 1039.7914 ± 49.9104
+INFO:best_cplex_covid_PW.py:Epoch 496/600	Loss 1041.3487 ± 48.2717
+INFO:best_cplex_covid_PW.py:Epoch 497/600	Loss 1046.7171 ± 50.0407
+INFO:best_cplex_covid_PW.py:Epoch 498/600	Loss 1041.6472 ± 48.6904
+INFO:best_cplex_covid_PW.py:Epoch 499/600	Loss 1040.2064 ± 52.1438
+INFO:best_cplex_covid_PW.py:Epoch 500/600	Loss 1042.6296 ± 49.6081
+INFO:best_cplex_covid_PW.py:Epoch 501/600	Loss 1044.4650 ± 49.0509
+INFO:best_cplex_covid_PW.py:Epoch 502/600	Loss 1043.7414 ± 49.4963
+INFO:best_cplex_covid_PW.py:Epoch 503/600	Loss 1041.0622 ± 49.3434
+INFO:best_cplex_covid_PW.py:Epoch 504/600	Loss 1040.2969 ± 50.2092
+INFO:best_cplex_covid_PW.py:Epoch 505/600	Loss 1042.7360 ± 54.8171
+INFO:best_cplex_covid_PW.py:Epoch 506/600	Loss 1042.8951 ± 49.8856
+INFO:best_cplex_covid_PW.py:Epoch 507/600	Loss 1040.9758 ± 51.5130
+INFO:best_cplex_covid_PW.py:Epoch 508/600	Loss 1042.8060 ± 53.2365
+INFO:best_cplex_covid_PW.py:Epoch 509/600	Loss 1040.5016 ± 53.5654
+INFO:best_cplex_covid_PW.py:Epoch 510/600	Loss 1039.9407 ± 47.5795
+INFO:best_cplex_covid_PW.py:Epoch 511/600	Loss 1040.3101 ± 49.3851
+INFO:best_cplex_covid_PW.py:Epoch 512/600	Loss 1041.8721 ± 50.0775
+INFO:best_cplex_covid_PW.py:Epoch 513/600	Loss 1040.2761 ± 46.9132
+INFO:best_cplex_covid_PW.py:Epoch 514/600	Loss 1044.2190 ± 47.9676
+INFO:best_cplex_covid_PW.py:Epoch 515/600	Loss 1038.4239 ± 50.3253
+INFO:best_cplex_covid_PW.py:Epoch 516/600	Loss 1042.2861 ± 53.3827
+INFO:best_cplex_covid_PW.py:Epoch 517/600	Loss 1039.5543 ± 47.1919
+INFO:best_cplex_covid_PW.py:Epoch 518/600	Loss 1039.2760 ± 49.7879
+INFO:best_cplex_covid_PW.py:Epoch 519/600	Loss 1034.9316 ± 48.7649
+INFO:best_cplex_covid_PW.py:Epoch 520/600	Loss 1038.7888 ± 51.7940
+INFO:best_cplex_covid_PW.py:Epoch 521/600	Loss 1038.1115 ± 47.7977
+INFO:best_cplex_covid_PW.py:Epoch 522/600	Loss 1038.5297 ± 52.3364
+INFO:best_cplex_covid_PW.py:Epoch 523/600	Loss 1038.4012 ± 48.1896
+INFO:best_cplex_covid_PW.py:Epoch 524/600	Loss 1038.8853 ± 45.9961
+INFO:best_cplex_covid_PW.py:Epoch 525/600	Loss 1040.5545 ± 47.4209
+INFO:best_cplex_covid_PW.py:Epoch 526/600	Loss 1039.8356 ± 48.8941
+INFO:best_cplex_covid_PW.py:Epoch 527/600	Loss 1037.7383 ± 51.3890
+INFO:best_cplex_covid_PW.py:Epoch 528/600	Loss 1041.6676 ± 47.2799
+INFO:best_cplex_covid_PW.py:Epoch 529/600	Loss 1037.3007 ± 48.3559
+INFO:best_cplex_covid_PW.py:Epoch 530/600	Loss 1034.9140 ± 48.7966
+INFO:best_cplex_covid_PW.py:Epoch 531/600	Loss 1037.3003 ± 50.6542
+INFO:best_cplex_covid_PW.py:Epoch 532/600	Loss 1039.4948 ± 51.6483
+INFO:best_cplex_covid_PW.py:Epoch 533/600	Loss 1040.0214 ± 51.4824
+INFO:best_cplex_covid_PW.py:Epoch 534/600	Loss 1039.4927 ± 46.2983
+INFO:best_cplex_covid_PW.py:Epoch 535/600	Loss 1036.4188 ± 50.1603
+INFO:best_cplex_covid_PW.py:Epoch 536/600	Loss 1037.8101 ± 48.2124
+INFO:best_cplex_covid_PW.py:Epoch 537/600	Loss 1043.9715 ± 49.0416
+INFO:best_cplex_covid_PW.py:Epoch 538/600	Loss 1040.2549 ± 52.4464
+INFO:best_cplex_covid_PW.py:Epoch 539/600	Loss 1037.4775 ± 49.4785
+INFO:best_cplex_covid_PW.py:Epoch 540/600	Loss 1041.2214 ± 46.4538
+INFO:best_cplex_covid_PW.py:Epoch 541/600	Loss 1036.0537 ± 48.5003
+INFO:best_cplex_covid_PW.py:Epoch 542/600	Loss 1033.7546 ± 49.4525
+INFO:best_cplex_covid_PW.py:Epoch 543/600	Loss 1037.7024 ± 50.3877
+INFO:best_cplex_covid_PW.py:Epoch 544/600	Loss 1032.7687 ± 47.2680
+INFO:best_cplex_covid_PW.py:Epoch 545/600	Loss 1037.0569 ± 50.2975
+INFO:best_cplex_covid_PW.py:Epoch 546/600	Loss 1041.4538 ± 51.7444
+INFO:best_cplex_covid_PW.py:Epoch 547/600	Loss 1035.9381 ± 49.7770
+INFO:best_cplex_covid_PW.py:Epoch 548/600	Loss 1035.2833 ± 48.8836
+INFO:best_cplex_covid_PW.py:Epoch 549/600	Loss 1033.3473 ± 50.4545
+INFO:best_cplex_covid_PW.py:Epoch 550/600	Loss 1041.8527 ± 49.5667
+INFO:best_cplex_covid_PW.py:Epoch 551/600	Loss 1036.5652 ± 47.6792
+INFO:best_cplex_covid_PW.py:Epoch 552/600	Loss 1037.2175 ± 48.5007
+INFO:best_cplex_covid_PW.py:Epoch 553/600	Loss 1035.7113 ± 48.6393
+INFO:best_cplex_covid_PW.py:Epoch 554/600	Loss 1040.4146 ± 50.7404
+INFO:best_cplex_covid_PW.py:Epoch 555/600	Loss 1034.4582 ± 50.9210
+INFO:best_cplex_covid_PW.py:Epoch 556/600	Loss 1034.7950 ± 46.9146
+INFO:best_cplex_covid_PW.py:Epoch 557/600	Loss 1033.4763 ± 50.1266
+INFO:best_cplex_covid_PW.py:Epoch 558/600	Loss 1036.5722 ± 51.1260
+INFO:best_cplex_covid_PW.py:Epoch 559/600	Loss 1034.3483 ± 53.5323
+INFO:best_cplex_covid_PW.py:Epoch 560/600	Loss 1033.2146 ± 45.8846
+INFO:best_cplex_covid_PW.py:Epoch 561/600	Loss 1033.3094 ± 50.3246
+INFO:best_cplex_covid_PW.py:Epoch 562/600	Loss 1039.0068 ± 47.8461
+INFO:best_cplex_covid_PW.py:Epoch 563/600	Loss 1032.9241 ± 49.3938
+INFO:best_cplex_covid_PW.py:Epoch 564/600	Loss 1031.9094 ± 52.4341
+INFO:best_cplex_covid_PW.py:Epoch 565/600	Loss 1037.6726 ± 46.1566
+INFO:best_cplex_covid_PW.py:Epoch 566/600	Loss 1033.6090 ± 50.1969
+INFO:best_cplex_covid_PW.py:Epoch 567/600	Loss 1032.3644 ± 47.6393
+INFO:best_cplex_covid_PW.py:Epoch 568/600	Loss 1036.3862 ± 49.4493
+INFO:best_cplex_covid_PW.py:Epoch 569/600	Loss 1032.2373 ± 46.2600
+INFO:best_cplex_covid_PW.py:Epoch 570/600	Loss 1034.1936 ± 51.0326
+INFO:best_cplex_covid_PW.py:Epoch 571/600	Loss 1037.4030 ± 48.2288
+INFO:best_cplex_covid_PW.py:Epoch 572/600	Loss 1034.5482 ± 50.4472
+INFO:best_cplex_covid_PW.py:Epoch 573/600	Loss 1036.3979 ± 52.5959
+INFO:best_cplex_covid_PW.py:Epoch 574/600	Loss 1037.6503 ± 48.7350
+INFO:best_cplex_covid_PW.py:Epoch 575/600	Loss 1032.9104 ± 48.2722
+INFO:best_cplex_covid_PW.py:Epoch 576/600	Loss 1028.3185 ± 45.3172
+INFO:best_cplex_covid_PW.py:Epoch 577/600	Loss 1031.0316 ± 44.2397
+INFO:best_cplex_covid_PW.py:Epoch 578/600	Loss 1030.4001 ± 51.0858
+INFO:best_cplex_covid_PW.py:Epoch 579/600	Loss 1031.1997 ± 49.7978
+INFO:best_cplex_covid_PW.py:Epoch 580/600	Loss 1037.3629 ± 51.6519
+INFO:best_cplex_covid_PW.py:Epoch 581/600	Loss 1032.1152 ± 45.4178
+INFO:best_cplex_covid_PW.py:Epoch 582/600	Loss 1032.9432 ± 50.2442
+INFO:best_cplex_covid_PW.py:Epoch 583/600	Loss 1030.8835 ± 49.8629
+INFO:best_cplex_covid_PW.py:Epoch 584/600	Loss 1030.9860 ± 47.8131
+INFO:best_cplex_covid_PW.py:Epoch 585/600	Loss 1033.4524 ± 52.6826
+INFO:best_cplex_covid_PW.py:Epoch 586/600	Loss 1033.6237 ± 50.2098
+INFO:best_cplex_covid_PW.py:Epoch 587/600	Loss 1028.6899 ± 51.3040
+INFO:best_cplex_covid_PW.py:Epoch 588/600	Loss 1031.8939 ± 48.2638
+INFO:best_cplex_covid_PW.py:Epoch 589/600	Loss 1030.1869 ± 49.2011
+INFO:best_cplex_covid_PW.py:Epoch 590/600	Loss 1034.8304 ± 51.9179
+INFO:best_cplex_covid_PW.py:Epoch 591/600	Loss 1032.0663 ± 49.4035
+INFO:best_cplex_covid_PW.py:Epoch 592/600	Loss 1032.8274 ± 51.7120
+INFO:best_cplex_covid_PW.py:Epoch 593/600	Loss 1028.0881 ± 46.1113
+INFO:best_cplex_covid_PW.py:Epoch 594/600	Loss 1030.0248 ± 49.9579
+INFO:best_cplex_covid_PW.py:Epoch 595/600	Loss 1033.3233 ± 44.8874
+INFO:best_cplex_covid_PW.py:Epoch 596/600	Loss 1029.8355 ± 45.0434
+INFO:best_cplex_covid_PW.py:Epoch 597/600	Loss 1035.1549 ± 44.3011
+INFO:best_cplex_covid_PW.py:Epoch 598/600	Loss 1031.3987 ± 48.3175
+INFO:best_cplex_covid_PW.py:Epoch 599/600	Loss 1033.9491 ± 53.4081
+INFO:best_cplex_covid_PW.py:Epoch 600/600	Loss 1035.6138 ± 49.5937
+INFO:best_cplex_covid_PW.py:is bad performing False
+INFO:best_cplex_covid_PW.py:Save model in /app/Antonia/Aladdin/biolink/best_models/covid/cplex_covid_PW_lr_278_bsize_2048_rw_7010_es_200_nbneg_50_forREL
+INFO:best_cplex_covid_PW.py:dataset name 	train
+INFO:best_cplex_covid_PW.py:dataset name 	valid
+INFO:best_cplex_covid_PW.py:dataset name 	test
+INFO:best_cplex_covid_PW.py:in evalute for dataset: 	test
+1024
+INFO:best_cplex_covid_PW.py:done
+INFO:best_cplex_covid_PW.py:metrics done
+INFO:best_cplex_covid_PW.py:TEST RESULTS
+INFO:best_cplex_covid_PW.py:Error 	test results 	MRR 0.185764	H@1 0.122954	H@3 0.208140	H@10 0.301003	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_cplex_covid_PW.py:===========
+TEST SIZE RELATION 53154
+INFO:best_cplex_covid_PW.py:INFO RELATION 	8
+INFO:best_cplex_covid_PW.py:MRR 	0.03369681299043256, H@1 	0.006507858546168959, H@3 	0.02443516699410609, H@10 	0.06999017681728881
+INFO:best_cplex_covid_PW.py:INFO RELATION 	1
+INFO:best_cplex_covid_PW.py:MRR 	0.03593645676992256, H@1 	0.011943189154293092, H@3 	0.028728211749515817, H@10 	0.07617817947062622
+INFO:best_cplex_covid_PW.py:INFO RELATION 	7
+INFO:best_cplex_covid_PW.py:MRR 	0.24357815859910836, H@1 	0.1498440285204991, H@3 	0.2799688057040998, H@10 	0.40641711229946526
+INFO:best_cplex_covid_PW.py:INFO RELATION 	3
+INFO:best_cplex_covid_PW.py:MRR 	0.020052468922437706, H@1 	0.003234152652005175, H@3 	0.01034928848641656, H@10 	0.040103492884864166
+INFO:best_cplex_covid_PW.py:INFO RELATION 	9
+INFO:best_cplex_covid_PW.py:MRR 	0.5897725323022637, H@1 	0.38535575048732945, H@3 	0.5576267056530214, H@10 	0.6759259259259259
+INFO:best_cplex_covid_PW.py:INFO RELATION 	10
+INFO:best_cplex_covid_PW.py:MRR 	0.4794637957781614, H@1 	0.35569322794274727, H@3 	0.5633411664174321, H@10 	0.6920529801324503
+INFO:best_cplex_covid_PW.py:INFO RELATION 	14
+INFO:best_cplex_covid_PW.py:MRR 	0.17465892989707887, H@1 	0.07521468759253776, H@3 	0.1832987859046491, H@10 	0.4065738821439147
+INFO:best_cplex_covid_PW.py:INFO RELATION 	0
+INFO:best_cplex_covid_PW.py:MRR 	0.06851262482963176, H@1 	0.02497305066475027, H@3 	0.06665468918433345, H@10 	0.15181458857348185
+INFO:best_cplex_covid_PW.py:INFO RELATION 	5
+INFO:best_cplex_covid_PW.py:MRR 	0.04066015112416423, H@1 	0.011571952337305225, H@3 	0.03230980751604033, H@10 	0.08146196150320807
+INFO:best_cplex_covid_PW.py:INFO RELATION 	19
+INFO:best_cplex_covid_PW.py:MRR 	0.02698207020660897, H@1 	0.007920792079207921, H@3 	0.020792079207920793, H@10 	0.0594059405940594
+INFO:best_cplex_covid_PW.py:INFO RELATION 	4
+INFO:best_cplex_covid_PW.py:MRR 	0.02244435488980401, H@1 	0.0027137042062415195, H@3 	0.013907734056987787, H@10 	0.04613297150610583
+INFO:best_cplex_covid_PW.py:INFO RELATION 	13
+INFO:best_cplex_covid_PW.py:MRR 	0.4951538294531922, H@1 	0.3744728703964015, H@3 	0.5840596007871802, H@10 	0.7076187798706776
+INFO:best_cplex_covid_PW.py:INFO RELATION 	11
+INFO:best_cplex_covid_PW.py:MRR 	0.030110405773965367, H@1 	0.006773028296207104, H@3 	0.020319084888621313, H@10 	0.06321493076459964
+INFO:best_cplex_covid_PW.py:INFO RELATION 	12
+INFO:best_cplex_covid_PW.py:MRR 	0.06977279083114393, H@1 	0.03360957642725598, H@3 	0.06936771025168816, H@10 	0.14195825659914058
+INFO:best_cplex_covid_PW.py:INFO RELATION 	2
+INFO:best_cplex_covid_PW.py:MRR 	0.035928949173048105, H@1 	0.009146341463414634, H@3 	0.028201219512195123, H@10 	0.08307926829268293
+INFO:best_cplex_covid_PW.py:INFO RELATION 	6
+INFO:best_cplex_covid_PW.py:MRR 	0.34426115010289843, H@1 	0.23476394849785406, H@3 	0.3982832618025751, H@10 	0.5203862660944206
+INFO:best_cplex_covid_PW.py:INFO RELATION 	21
+INFO:best_cplex_covid_PW.py:MRR 	0.04664300517381691, H@1 	0.008710801393728223, H@3 	0.0313588850174216, H@10 	0.12020905923344948
+INFO:best_cplex_covid_PW.py:INFO RELATION 	16
+INFO:best_cplex_covid_PW.py:MRR 	0.04596455166198399, H@1 	0.019940915805022157, H@3 	0.03692762186115214, H@10 	0.08124076809453472
+INFO:best_cplex_covid_PW.py:INFO RELATION 	23
+INFO:best_cplex_covid_PW.py:MRR 	0.07765021592111288, H@1 	0.02127659574468085, H@3 	0.09042553191489362, H@10 	0.18085106382978725
+INFO:best_cplex_covid_PW.py:INFO RELATION 	17
+INFO:best_cplex_covid_PW.py:MRR 	0.023977895332641018, H@1 	0.006289308176100629, H@3 	0.0110062893081761, H@10 	0.055031446540880505
+INFO:best_cplex_covid_PW.py:INFO RELATION 	18
+INFO:best_cplex_covid_PW.py:MRR 	0.029113420424965293, H@1 	0.010101010101010102, H@3 	0.016414141414141416, H@10 	0.06186868686868687
+INFO:best_cplex_covid_PW.py:INFO RELATION 	22
+INFO:best_cplex_covid_PW.py:MRR 	0.019652384179033682, H@1 	0.0, H@3 	0.012048192771084338, H@10 	0.05421686746987952
+INFO:best_cplex_covid_PW.py:INFO RELATION 	15
+INFO:best_cplex_covid_PW.py:MRR 	0.03862102602824311, H@1 	0.018604651162790697, H@3 	0.030232558139534883, H@10 	0.06744186046511629
+INFO:best_cplex_covid_PW.py:INFO RELATION 	25
+INFO:best_cplex_covid_PW.py:MRR 	0.046677913038611754, H@1 	0.0375, H@3 	0.0375, H@10 	0.0625
+INFO:best_cplex_covid_PW.py:INFO RELATION 	26
+INFO:best_cplex_covid_PW.py:MRR 	0.503945526282296, H@1 	0.5, H@3 	0.5, H@10 	0.5
+INFO:best_cplex_covid_PW.py:INFO RELATION 	20
+INFO:best_cplex_covid_PW.py:MRR 	0.013078326926331561, H@1 	0.0, H@3 	0.0038461538461538464, H@10 	0.03076923076923077
+INFO:best_cplex_covid_PW.py:INFO RELATION 	24
+INFO:best_cplex_covid_PW.py:MRR 	0.02772820575324414, H@1 	0.009433962264150943, H@3 	0.02830188679245283, H@10 	0.04716981132075472
+INFO:best_cplex_covid_PW.py:done
+INFO:best_cplex_covid_PW.py:metrics done
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])

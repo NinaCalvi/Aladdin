@@ -1,0 +1,72 @@
+['--model', 'tucker', '--data', 'covid', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.382', '--batch-size', '128', '--reg-weight', '0.064', '--embedding-size', '200', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tucker_covid_mcl_lr_382_bsize_128_rw_064_es_200_rs_150_forREL', '--rare', '--load']
+MCL True
+INFO:best_tucker_covid.py:Valid: False
+INFO:best_tucker_covid.py:Device: cuda
+INFO:best_tucker_covid.py:auc and lod happening
+INFO:best_tucker_covid.py:dataset name 	train
+INFO:best_tucker_covid.py:dataset name 	valid
+INFO:best_tucker_covid.py:dataset name 	test
+INFO:best_tucker_covid.py:in evalute for dataset: 	test
+NEW MRR: 0.143916063024921
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:TEST RESULTS
+INFO:best_tucker_covid.py:Error 	test results 	MRR 0.143916	H@1 0.077718	H@3 0.152651	H@10 0.273357	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_tucker_covid.py:===========
+NEW MRR: 0.5543074461652021
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:VERY RARE RESULTS
+INFO:best_tucker_covid.py:Error VERYRARE HEAD results 	MRR 0.554307	H@1 0.534819	H@3 0.562674	H@10 0.596100	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.5705629828504045
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:Error VERYRARE TAIL results 	MRR 0.570563	H@1 0.546392	H@3 0.590206	H@10 0.615979	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.13056430428559448
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:RARE RESULTS
+INFO:best_tucker_covid.py:Error RARE HEAD results 	MRR 0.130564	H@1 0.080008	H@3 0.140825	H@10 0.227649	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.13668273434724545
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:Error RARE TAIL results 	MRR 0.136683	H@1 0.080546	H@3 0.149154	H@10 0.244589	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.14298966867726376
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:COMMON RESULTS
+INFO:best_tucker_covid.py:Error COMMON- HEAD results 	MRR 0.142990	H@1 0.080369	H@3 0.149056	H@10 0.261777	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.14432918912131473
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:Error COMMON- TAIL results 	MRR 0.144329	H@1 0.079293	H@3 0.152134	H@10 0.270186	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.16249597335726249
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:VERYCOMMON RESULTS
+INFO:best_tucker_covid.py:Error VERY-COMMON HEAD results 	MRR 0.162496	H@1 0.080949	H@3 0.170605	H@10 0.324834	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.159249475189324
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:Error VERY-COMMON TAIL results 	MRR 0.159249	H@1 0.081794	H@3 0.162853	H@10 0.317710	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.29969905669348756
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:VERYVERYCOMMON RESULTS
+INFO:best_tucker_covid.py:Error VERYVERY-COMMON HEAD results 	MRR 0.299699	H@1 0.180667	H@3 0.338539	H@10 0.542001	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.27275682799104956
+INFO:best_tucker_covid.py:done
+INFO:best_tucker_covid.py:metrics done
+INFO:best_tucker_covid.py:Error VERYVERY-COMMON TAIL results 	MRR 0.272757	H@1 0.161164	H@3 0.293239	H@10 0.510220	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])

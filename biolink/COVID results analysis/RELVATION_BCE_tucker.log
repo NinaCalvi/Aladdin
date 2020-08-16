@@ -1,0 +1,187 @@
+['--model', 'tucker', '--data', 'covid', '--loss', 'bce', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.045', '--batch-size', '128', '--reg-weight', '2.301e-07', '--embedding-size', '200', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tucker_covid_mcl_lr_045_bsize_128_rw_2301_es_200_rs_150_BCE_forREL', '--testrel', 'best_tucker_BCE_covid_rel']
+MCL True
+INFO:best_tucker_covid_BCE.py:Valid: False
+INFO:best_tucker_covid_BCE.py:Device: cuda
+INFO:best_tucker_covid_BCE.py:settin tucker to FALSE
+INFO:best_tucker_covid_BCE.py:is tucker True
+INFO:best_tucker_covid_BCE.py:Device: cuda
+INFO:best_tucker_covid_BCE.py:Epoch 1/100	Loss 0.0060 ± 0.0340
+INFO:best_tucker_covid_BCE.py:Epoch 2/100	Loss 0.0042 ± 0.0001
+INFO:best_tucker_covid_BCE.py:Epoch 3/100	Loss 0.0039 ± 0.0001
+INFO:best_tucker_covid_BCE.py:Epoch 4/100	Loss 0.0037 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 5/100	Loss 0.0035 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 6/100	Loss 0.0034 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 7/100	Loss 0.0033 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 8/100	Loss 0.0032 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 9/100	Loss 0.0031 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 10/100	Loss 0.0030 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 11/100	Loss 0.0030 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 12/100	Loss 0.0029 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 13/100	Loss 0.0029 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 14/100	Loss 0.0028 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 15/100	Loss 0.0028 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 16/100	Loss 0.0027 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 17/100	Loss 0.0027 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 18/100	Loss 0.0027 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 19/100	Loss 0.0026 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 20/100	Loss 0.0026 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 21/100	Loss 0.0026 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 22/100	Loss 0.0026 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 23/100	Loss 0.0025 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 24/100	Loss 0.0025 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 25/100	Loss 0.0025 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 26/100	Loss 0.0025 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 27/100	Loss 0.0025 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 28/100	Loss 0.0025 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 29/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 30/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 31/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 32/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 33/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 34/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 35/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 36/100	Loss 0.0024 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 37/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 38/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 39/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 40/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 41/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 42/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 43/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 44/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 45/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 46/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 47/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 48/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 49/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 50/100	Loss 0.0023 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 51/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 52/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 53/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 54/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 55/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 56/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 57/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 58/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 59/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 60/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 61/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 62/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 63/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 64/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 65/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 66/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 67/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 68/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 69/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 70/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 71/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 72/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 73/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 74/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 75/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 76/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 77/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 78/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 79/100	Loss 0.0022 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 80/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 81/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 82/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 83/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 84/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 85/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 86/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 87/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 88/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 89/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 90/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 91/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 92/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 93/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 94/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 95/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 96/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 97/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 98/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 99/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:Epoch 100/100	Loss 0.0021 ± 0.0000
+INFO:best_tucker_covid_BCE.py:is bad performing False
+INFO:best_tucker_covid_BCE.py:Save model in /app/Antonia/Aladdin/biolink/best_models/covid/tucker_covid_mcl_lr_045_bsize_128_rw_2301_es_200_rs_150_BCE_forREL
+INFO:best_tucker_covid_BCE.py:dataset name 	train
+INFO:best_tucker_covid_BCE.py:dataset name 	valid
+INFO:best_tucker_covid_BCE.py:dataset name 	test
+INFO:best_tucker_covid_BCE.py:in evalute for dataset: 	test
+INFO:best_tucker_covid_BCE.py:done
+INFO:best_tucker_covid_BCE.py:metrics done
+INFO:best_tucker_covid_BCE.py:TEST RESULTS
+INFO:best_tucker_covid_BCE.py:Error 	test results 	MRR 0.119121	H@1 0.063664	H@3 0.128156	H@10 0.224226	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_tucker_covid_BCE.py:===========
+TEST SIZE RELATION 53154
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	8
+INFO:best_tucker_covid_BCE.py:MRR 	0.042518646905397736, H@1 	0.01731335952848723, H@3 	0.03425834970530452, H@10 	0.08177799607072692
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	1
+INFO:best_tucker_covid_BCE.py:MRR 	0.058854714666795566, H@1 	0.03001936733376372, H@3 	0.05455132343447385, H@10 	0.11233053582956747
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	7
+INFO:best_tucker_covid_BCE.py:MRR 	0.06005872720857355, H@1 	0.022950089126559714, H@3 	0.052807486631016046, H@10 	0.11998663101604277
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	3
+INFO:best_tucker_covid_BCE.py:MRR 	0.0332241751779376, H@1 	0.01164294954721863, H@3 	0.022639068564036222, H@10 	0.06791720569210867
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	9
+INFO:best_tucker_covid_BCE.py:MRR 	0.2171368357858633, H@1 	0.09904970760233918, H@3 	0.2172270955165692, H@10 	0.3557504873294347
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	10
+INFO:best_tucker_covid_BCE.py:MRR 	0.17317405799503185, H@1 	0.10692159794915616, H@3 	0.1892757957701346, H@10 	0.3001495406964324
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	14
+INFO:best_tucker_covid_BCE.py:MRR 	0.38506671221031036, H@1 	0.249185667752443, H@3 	0.4505478235119929, H@10 	0.6612377850162866
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	0
+INFO:best_tucker_covid_BCE.py:MRR 	0.12797263798760178, H@1 	0.06174392142771589, H@3 	0.14905976763684273, H@10 	0.2732063720206013
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	5
+INFO:best_tucker_covid_BCE.py:MRR 	0.058098820329271085, H@1 	0.022341888175985335, H@3 	0.05453712190650779, H@10 	0.12901008249312557
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	19
+INFO:best_tucker_covid_BCE.py:MRR 	0.039297196305522905, H@1 	0.01485148514851485, H@3 	0.030693069306930693, H@10 	0.08316831683168317
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	4
+INFO:best_tucker_covid_BCE.py:MRR 	0.032568439179601616, H@1 	0.008141112618724558, H@3 	0.021370420624151967, H@10 	0.07259158751696065
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	13
+INFO:best_tucker_covid_BCE.py:MRR 	0.13775142114223501, H@1 	0.06719145347202699, H@3 	0.15209446162496487, H@10 	0.2728422828226033
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	11
+INFO:best_tucker_covid_BCE.py:MRR 	0.03694741879206987, H@1 	0.011288380493678507, H@3 	0.02679108970499699, H@10 	0.07916917519566526
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	12
+INFO:best_tucker_covid_BCE.py:MRR 	0.12466895399397647, H@1 	0.0798035604665439, H@3 	0.13259668508287292, H@10 	0.214548802946593
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	2
+INFO:best_tucker_covid_BCE.py:MRR 	0.06590893187106092, H@1 	0.040396341463414635, H@3 	0.06097560975609756, H@10 	0.10746951219512195
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	6
+INFO:best_tucker_covid_BCE.py:MRR 	0.10750183718955866, H@1 	0.056223175965665236, H@3 	0.11545064377682404, H@10 	0.20515021459227467
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	21
+INFO:best_tucker_covid_BCE.py:MRR 	0.07797785264928654, H@1 	0.047038327526132406, H@3 	0.06794425087108014, H@10 	0.11672473867595819
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	16
+INFO:best_tucker_covid_BCE.py:MRR 	0.08085883446060926, H@1 	0.05465288035450517, H@3 	0.07385524372230429, H@10 	0.1240768094534712
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	23
+INFO:best_tucker_covid_BCE.py:MRR 	0.16353237345179922, H@1 	0.0851063829787234, H@3 	0.19148936170212766, H@10 	0.324468085106383
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	17
+INFO:best_tucker_covid_BCE.py:MRR 	0.01761180147030618, H@1 	0.0031446540880503146, H@3 	0.012578616352201259, H@10 	0.03773584905660377
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	18
+INFO:best_tucker_covid_BCE.py:MRR 	0.04708836009300958, H@1 	0.020202020202020204, H@3 	0.03535353535353535, H@10 	0.0946969696969697
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	22
+INFO:best_tucker_covid_BCE.py:MRR 	0.0724698682621113, H@1 	0.04216867469879518, H@3 	0.0783132530120482, H@10 	0.12650602409638553
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	15
+INFO:best_tucker_covid_BCE.py:MRR 	0.0369894604409475, H@1 	0.011627906976744186, H@3 	0.037209302325581395, H@10 	0.08139534883720931
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	25
+INFO:best_tucker_covid_BCE.py:MRR 	0.07196875007231927, H@1 	0.025, H@3 	0.1, H@10 	0.125
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	26
+INFO:best_tucker_covid_BCE.py:MRR 	0.33338928859484074, H@1 	0.25, H@3 	0.5, H@10 	0.5
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	20
+INFO:best_tucker_covid_BCE.py:MRR 	0.050939192199192636, H@1 	0.026923076923076925, H@3 	0.05, H@10 	0.09615384615384616
+INFO:best_tucker_covid_BCE.py:INFO RELATION 	24
+INFO:best_tucker_covid_BCE.py:MRR 	0.04988947456592342, H@1 	0.02830188679245283, H@3 	0.04716981132075472, H@10 	0.08490566037735849
+INFO:best_tucker_covid_BCE.py:done
+INFO:best_tucker_covid_BCE.py:metrics done
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
