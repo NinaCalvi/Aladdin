@@ -1,0 +1,187 @@
+['--model', 'complex', '--data', 'covid', '--loss', 'bce', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.394', '--batch-size', '268', '--reg-weight', '3.238e-10', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_covid_mcl_lr_394_bsize_268_rw_3238_es_200_BCE_forREL', '--testrel', 'best_cplex_covid_rel_BCE.csv']
+MCL True
+INFO:best_cplex_covid_BCE.py:Valid: False
+INFO:best_cplex_covid_BCE.py:Device: cuda
+INFO:best_cplex_covid_BCE.py:settin tucker to FALSE
+INFO:best_cplex_covid_BCE.py:is tucker True
+INFO:best_cplex_covid_BCE.py:Device: cuda
+INFO:best_cplex_covid_BCE.py:Epoch 1/100	Loss 0.0053 ± 0.0488
+INFO:best_cplex_covid_BCE.py:Epoch 2/100	Loss 0.0023 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 3/100	Loss 0.0022 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 4/100	Loss 0.0022 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 5/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 6/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 7/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 8/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 9/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 10/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 11/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 12/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 13/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 14/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 15/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 16/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 17/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 18/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 19/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 20/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 21/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 22/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 23/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 24/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 25/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 26/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 27/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 28/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 29/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 30/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 31/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 32/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 33/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 34/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 35/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 36/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 37/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 38/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 39/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 40/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 41/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 42/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 43/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 44/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 45/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 46/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 47/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 48/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 49/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 50/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 51/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 52/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 53/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 54/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 55/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 56/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 57/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 58/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 59/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 60/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 61/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 62/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 63/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 64/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 65/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 66/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 67/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 68/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 69/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 70/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 71/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 72/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 73/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 74/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 75/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 76/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 77/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 78/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 79/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 80/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 81/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 82/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 83/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 84/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 85/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 86/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 87/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 88/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 89/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 90/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 91/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 92/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 93/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 94/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 95/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 96/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 97/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 98/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 99/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 100/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:is bad performing False
+INFO:best_cplex_covid_BCE.py:Save model in /app/Antonia/Aladdin/biolink/best_models/covid/cplex_covid_mcl_lr_394_bsize_268_rw_3238_es_200_BCE_forREL
+INFO:best_cplex_covid_BCE.py:dataset name 	train
+INFO:best_cplex_covid_BCE.py:dataset name 	valid
+INFO:best_cplex_covid_BCE.py:dataset name 	test
+INFO:best_cplex_covid_BCE.py:in evalute for dataset: 	test
+INFO:best_cplex_covid_BCE.py:done
+INFO:best_cplex_covid_BCE.py:metrics done
+INFO:best_cplex_covid_BCE.py:TEST RESULTS
+INFO:best_cplex_covid_BCE.py:Error 	test results 	MRR 0.182380	H@1 0.119652	H@3 0.201104	H@10 0.302254	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_cplex_covid_BCE.py:===========
+TEST SIZE RELATION 53154
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	8
+INFO:best_cplex_covid_BCE.py:MRR 	0.035863127331979945, H@1 	0.015348722986247544, H@3 	0.028364440078585462, H@10 	0.06569253438113949
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	1
+INFO:best_cplex_covid_BCE.py:MRR 	0.04485752330157104, H@1 	0.022272433828276306, H@3 	0.04293092317624274, H@10 	0.08005164622336991
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	7
+INFO:best_cplex_covid_BCE.py:MRR 	0.17251444201459662, H@1 	0.10149286987522281, H@3 	0.17825311942959002, H@10 	0.2787433155080214
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	3
+INFO:best_cplex_covid_BCE.py:MRR 	0.02110795094888543, H@1 	0.005821474773609315, H@3 	0.014877102199223804, H@10 	0.03816300129366106
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	9
+INFO:best_cplex_covid_BCE.py:MRR 	0.5071456230679386, H@1 	0.3279727095516569, H@3 	0.4852582846003899, H@10 	0.6235380116959064
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	10
+INFO:best_cplex_covid_BCE.py:MRR 	0.39133670505438795, H@1 	0.28434095278786586, H@3 	0.4503311258278146, H@10 	0.5855586413159581
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	14
+INFO:best_cplex_covid_BCE.py:MRR 	0.3198228278655757, H@1 	0.18833283979863785, H@3 	0.3642286052709505, H@10 	0.6051228901391768
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	0
+INFO:best_cplex_covid_BCE.py:MRR 	0.13678655754576113, H@1 	0.07234399329260989, H@3 	0.155467720685112, H@10 	0.27901545095220986
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	5
+INFO:best_cplex_covid_BCE.py:MRR 	0.04860937044302647, H@1 	0.01695692025664528, H@3 	0.03975710357470211, H@10 	0.10632447296058661
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	19
+INFO:best_cplex_covid_BCE.py:MRR 	0.029646286755119412, H@1 	0.01089108910891089, H@3 	0.0297029702970297, H@10 	0.05841584158415842
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	4
+INFO:best_cplex_covid_BCE.py:MRR 	0.022890417594715412, H@1 	0.004409769335142469, H@3 	0.015603799185888738, H@10 	0.04511533242876527
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	13
+INFO:best_cplex_covid_BCE.py:MRR 	0.36641522605381693, H@1 	0.2670789991565926, H@3 	0.41087995501827385, H@10 	0.5559460219285915
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	11
+INFO:best_cplex_covid_BCE.py:MRR 	0.0285426106487172, H@1 	0.009030704394942806, H@3 	0.019416014449127033, H@10 	0.05930162552679109
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	12
+INFO:best_cplex_covid_BCE.py:MRR 	0.13092835259158292, H@1 	0.08686310620012277, H@3 	0.14119091467157766, H@10 	0.21961325966850828
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	2
+INFO:best_cplex_covid_BCE.py:MRR 	0.04414630000731015, H@1 	0.018292682926829267, H@3 	0.040396341463414635, H@10 	0.0861280487804878
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	6
+INFO:best_cplex_covid_BCE.py:MRR 	0.2834250413567217, H@1 	0.2055793991416309, H@3 	0.3240343347639485, H@10 	0.4446351931330472
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	21
+INFO:best_cplex_covid_BCE.py:MRR 	0.04944230827033143, H@1 	0.01916376306620209, H@3 	0.047038327526132406, H@10 	0.10104529616724739
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	16
+INFO:best_cplex_covid_BCE.py:MRR 	0.06238278949290694, H@1 	0.03545051698670606, H@3 	0.061299852289512555, H@10 	0.11447562776957164
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	23
+INFO:best_cplex_covid_BCE.py:MRR 	0.08387195163039414, H@1 	0.047872340425531915, H@3 	0.0851063829787234, H@10 	0.13829787234042554
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	17
+INFO:best_cplex_covid_BCE.py:MRR 	0.017526417106821665, H@1 	0.0015723270440251573, H@3 	0.012578616352201259, H@10 	0.03773584905660377
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	18
+INFO:best_cplex_covid_BCE.py:MRR 	0.02578803652897648, H@1 	0.007575757575757576, H@3 	0.022727272727272728, H@10 	0.050505050505050504
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	22
+INFO:best_cplex_covid_BCE.py:MRR 	0.0281035422000687, H@1 	0.012048192771084338, H@3 	0.024096385542168676, H@10 	0.060240963855421686
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	15
+INFO:best_cplex_covid_BCE.py:MRR 	0.040922595155751765, H@1 	0.02558139534883721, H@3 	0.03488372093023256, H@10 	0.06744186046511629
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	25
+INFO:best_cplex_covid_BCE.py:MRR 	0.0008727835022914181, H@1 	0.0, H@3 	0.0, H@10 	0.0
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	26
+INFO:best_cplex_covid_BCE.py:MRR 	8.810641368201879e-05, H@1 	0.0, H@3 	0.0, H@10 	0.0
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	20
+INFO:best_cplex_covid_BCE.py:MRR 	0.02966548848603544, H@1 	0.015384615384615385, H@3 	0.026923076923076925, H@10 	0.05
+INFO:best_cplex_covid_BCE.py:INFO RELATION 	24
+INFO:best_cplex_covid_BCE.py:MRR 	0.007990726407844546, H@1 	0.0, H@3 	0.009433962264150943, H@10 	0.018867924528301886
+INFO:best_cplex_covid_BCE.py:done
+INFO:best_cplex_covid_BCE.py:metrics done
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])

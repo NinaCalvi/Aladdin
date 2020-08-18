@@ -1,0 +1,70 @@
+['--model', 'complex', '--data', 'covid', '--loss', 'bce', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.394', '--batch-size', '268', '--reg-weight', '3.238e-10', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_covid_mcl_lr_394_bsize_268_rw_3238_es_200_BCE_forREL', '--testrel', 'best_cplex_covid_rel_BCE.csv']
+MCL True
+INFO:best_cplex_covid_BCE.py:Valid: False
+INFO:best_cplex_covid_BCE.py:Device: cuda
+INFO:best_cplex_covid_BCE.py:settin tucker to FALSE
+INFO:best_cplex_covid_BCE.py:is tucker True
+INFO:best_cplex_covid_BCE.py:Device: cuda
+INFO:best_cplex_covid_BCE.py:Epoch 1/100	Loss 0.0053 ± 0.0488
+INFO:best_cplex_covid_BCE.py:Epoch 2/100	Loss 0.0023 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 3/100	Loss 0.0022 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 4/100	Loss 0.0022 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 5/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 6/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 7/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 8/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 9/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 10/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 11/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 12/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 13/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 14/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 15/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 16/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 17/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 18/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 19/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 20/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 21/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 22/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 23/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 24/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 25/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 26/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 27/100	Loss 0.0021 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 28/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 29/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 30/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 31/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 32/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 33/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 34/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 35/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 36/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 37/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 38/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 39/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 40/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 41/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 42/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 43/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 44/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 45/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 46/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 47/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 48/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 49/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 50/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 51/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 52/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 53/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 54/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 55/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 56/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 57/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 58/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 59/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 60/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 61/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 62/100	Loss 0.0020 ± 0.0000
+INFO:best_cplex_covid_BCE.py:Epoch 63/100	Loss 0.0020 ± 0.0000

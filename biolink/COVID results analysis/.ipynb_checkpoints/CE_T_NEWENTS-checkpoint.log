@@ -1,0 +1,139 @@
+['--model', 'tucker', '--data', 'covid', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.382', '--batch-size', '128', '--reg-weight', '0.064', '--embedding-size', '200', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tucker_covid_mcl_lr_382_bsize_128_rw_064_es_200_rs_150_forREL', '--rare']
+MCL True
+INFO:best_tucker_covid.py:Valid: False
+INFO:best_tucker_covid.py:Device: cuda
+INFO:best_tucker_covid.py:settin tucker to FALSE
+INFO:best_tucker_covid.py:is tucker False
+INFO:best_tucker_covid.py:Device: cuda
+INFO:best_tucker_covid.py:Epoch 1/100	Loss 192.6347 ± 2369.8232
+INFO:best_tucker_covid.py:Epoch 2/100	Loss 18.4048 ± 0.8072
+INFO:best_tucker_covid.py:Epoch 3/100	Loss 16.4701 ± 0.4052
+INFO:best_tucker_covid.py:Epoch 4/100	Loss 15.3899 ± 0.3276
+INFO:best_tucker_covid.py:Epoch 5/100	Loss 14.6533 ± 0.3102
+INFO:best_tucker_covid.py:Epoch 6/100	Loss 14.1165 ± 0.3163
+INFO:best_tucker_covid.py:Epoch 7/100	Loss 13.7017 ± 0.3180
+INFO:best_tucker_covid.py:Epoch 8/100	Loss 13.3652 ± 0.3281
+INFO:best_tucker_covid.py:Epoch 9/100	Loss 13.0879 ± 0.3424
+INFO:best_tucker_covid.py:Epoch 10/100	Loss 12.8519 ± 0.3467
+INFO:best_tucker_covid.py:Epoch 11/100	Loss 12.6455 ± 0.3491
+INFO:best_tucker_covid.py:Epoch 12/100	Loss 12.4648 ± 0.3535
+INFO:best_tucker_covid.py:Epoch 13/100	Loss 12.3044 ± 0.3623
+INFO:best_tucker_covid.py:Epoch 14/100	Loss 12.1617 ± 0.3686
+INFO:best_tucker_covid.py:Epoch 15/100	Loss 12.0308 ± 0.3758
+INFO:best_tucker_covid.py:Epoch 16/100	Loss 11.9119 ± 0.3707
+INFO:best_tucker_covid.py:Epoch 17/100	Loss 11.8056 ± 0.3722
+INFO:best_tucker_covid.py:Epoch 18/100	Loss 11.7075 ± 0.3831
+INFO:best_tucker_covid.py:Epoch 19/100	Loss 11.6160 ± 0.3784
+INFO:best_tucker_covid.py:Epoch 20/100	Loss 11.5317 ± 0.3812
+INFO:best_tucker_covid.py:Epoch 21/100	Loss 11.4519 ± 0.3878
+INFO:best_tucker_covid.py:Epoch 22/100	Loss 11.3781 ± 0.3910
+INFO:best_tucker_covid.py:Epoch 23/100	Loss 11.3080 ± 0.3846
+INFO:best_tucker_covid.py:Epoch 24/100	Loss 11.2454 ± 0.3871
+INFO:best_tucker_covid.py:Epoch 25/100	Loss 11.1838 ± 0.3873
+INFO:best_tucker_covid.py:Epoch 26/100	Loss 11.1259 ± 0.3872
+INFO:best_tucker_covid.py:Epoch 27/100	Loss 11.0701 ± 0.3891
+INFO:best_tucker_covid.py:Epoch 28/100	Loss 11.0179 ± 0.3882
+INFO:best_tucker_covid.py:Epoch 29/100	Loss 10.9696 ± 0.3892
+INFO:best_tucker_covid.py:Epoch 30/100	Loss 10.9204 ± 0.3914
+INFO:best_tucker_covid.py:Epoch 31/100	Loss 10.8776 ± 0.3966
+INFO:best_tucker_covid.py:Epoch 32/100	Loss 10.8344 ± 0.4001
+INFO:best_tucker_covid.py:Epoch 33/100	Loss 10.7915 ± 0.3905
+INFO:best_tucker_covid.py:Epoch 34/100	Loss 10.7545 ± 0.3914
+INFO:best_tucker_covid.py:Epoch 35/100	Loss 10.7156 ± 0.3987
+INFO:best_tucker_covid.py:Epoch 36/100	Loss 10.6815 ± 0.3978
+INFO:best_tucker_covid.py:Epoch 37/100	Loss 10.6443 ± 0.4007
+INFO:best_tucker_covid.py:Epoch 38/100	Loss 10.6108 ± 0.3997
+INFO:best_tucker_covid.py:Epoch 39/100	Loss 10.5786 ± 0.3961
+INFO:best_tucker_covid.py:Epoch 40/100	Loss 10.5474 ± 0.4008
+INFO:best_tucker_covid.py:Epoch 41/100	Loss 10.5181 ± 0.4041
+INFO:best_tucker_covid.py:Epoch 42/100	Loss 10.4880 ± 0.3997
+INFO:best_tucker_covid.py:Epoch 43/100	Loss 10.4611 ± 0.3980
+INFO:best_tucker_covid.py:Epoch 44/100	Loss 10.4321 ± 0.3991
+INFO:best_tucker_covid.py:Epoch 45/100	Loss 10.4057 ± 0.3978
+INFO:best_tucker_covid.py:Epoch 46/100	Loss 10.3783 ± 0.4054
+INFO:best_tucker_covid.py:Epoch 47/100	Loss 10.3548 ± 0.4028
+INFO:best_tucker_covid.py:Epoch 48/100	Loss 10.3297 ± 0.3973
+INFO:best_tucker_covid.py:Epoch 49/100	Loss 10.3063 ± 0.4006
+INFO:best_tucker_covid.py:Epoch 50/100	Loss 10.2844 ± 0.3989
+INFO:best_tucker_covid.py:Epoch 51/100	Loss 10.2622 ± 0.4012
+INFO:best_tucker_covid.py:Epoch 52/100	Loss 10.2411 ± 0.4051
+INFO:best_tucker_covid.py:Epoch 53/100	Loss 10.2179 ± 0.4032
+INFO:best_tucker_covid.py:Epoch 54/100	Loss 10.1977 ± 0.4028
+INFO:best_tucker_covid.py:Epoch 55/100	Loss 10.1767 ± 0.3948
+INFO:best_tucker_covid.py:Epoch 56/100	Loss 10.1586 ± 0.4016
+INFO:best_tucker_covid.py:Epoch 57/100	Loss 10.1374 ± 0.4024
+INFO:best_tucker_covid.py:Epoch 58/100	Loss 10.1204 ± 0.4002
+INFO:best_tucker_covid.py:Epoch 59/100	Loss 10.0993 ± 0.4060
+INFO:best_tucker_covid.py:Epoch 60/100	Loss 10.0818 ± 0.4014
+INFO:best_tucker_covid.py:Epoch 61/100	Loss 10.0648 ± 0.4000
+INFO:best_tucker_covid.py:Epoch 62/100	Loss 10.0482 ± 0.4040
+INFO:best_tucker_covid.py:Epoch 63/100	Loss 10.0301 ± 0.3988
+INFO:best_tucker_covid.py:Epoch 64/100	Loss 10.0131 ± 0.4081
+INFO:best_tucker_covid.py:Epoch 65/100	Loss 9.9987 ± 0.4060
+INFO:best_tucker_covid.py:Epoch 66/100	Loss 9.9819 ± 0.4073
+INFO:best_tucker_covid.py:Epoch 67/100	Loss 9.9658 ± 0.4015
+INFO:best_tucker_covid.py:Epoch 68/100	Loss 9.9525 ± 0.4003
+INFO:best_tucker_covid.py:Epoch 69/100	Loss 9.9370 ± 0.4057
+INFO:best_tucker_covid.py:Epoch 70/100	Loss 9.9227 ± 0.4019
+INFO:best_tucker_covid.py:Epoch 71/100	Loss 9.9069 ± 0.4013
+INFO:best_tucker_covid.py:Epoch 72/100	Loss 9.8929 ± 0.4009
+INFO:best_tucker_covid.py:Epoch 73/100	Loss 9.8800 ± 0.4045
+INFO:best_tucker_covid.py:Epoch 74/100	Loss 9.8662 ± 0.4056
+INFO:best_tucker_covid.py:Epoch 75/100	Loss 9.8527 ± 0.3964
+INFO:best_tucker_covid.py:Epoch 76/100	Loss 9.8394 ± 0.4032
+INFO:best_tucker_covid.py:Epoch 77/100	Loss 9.8262 ± 0.4011
+INFO:best_tucker_covid.py:Epoch 78/100	Loss 9.8140 ± 0.4044
+INFO:best_tucker_covid.py:Epoch 79/100	Loss 9.8003 ± 0.4104
+INFO:best_tucker_covid.py:Epoch 80/100	Loss 9.7894 ± 0.4022
+INFO:best_tucker_covid.py:Epoch 81/100	Loss 9.7772 ± 0.3966
+INFO:best_tucker_covid.py:Epoch 82/100	Loss 9.7654 ± 0.4018
+INFO:best_tucker_covid.py:Epoch 83/100	Loss 9.7546 ± 0.4007
+INFO:best_tucker_covid.py:Epoch 84/100	Loss 9.7431 ± 0.4045
+INFO:best_tucker_covid.py:Epoch 85/100	Loss 9.7308 ± 0.4042
+INFO:best_tucker_covid.py:Epoch 86/100	Loss 9.7197 ± 0.4021
+INFO:best_tucker_covid.py:Epoch 87/100	Loss 9.7091 ± 0.4019
+INFO:best_tucker_covid.py:Epoch 88/100	Loss 9.6964 ± 0.3987
+INFO:best_tucker_covid.py:Epoch 89/100	Loss 9.6862 ± 0.4049
+INFO:best_tucker_covid.py:Epoch 90/100	Loss 9.6761 ± 0.3996
+INFO:best_tucker_covid.py:Epoch 91/100	Loss 9.6650 ± 0.4050
+INFO:best_tucker_covid.py:Epoch 92/100	Loss 9.6565 ± 0.4014
+INFO:best_tucker_covid.py:Epoch 93/100	Loss 9.6456 ± 0.3992
+INFO:best_tucker_covid.py:Epoch 94/100	Loss 9.6357 ± 0.4058
+INFO:best_tucker_covid.py:Epoch 95/100	Loss 9.6267 ± 0.4028
+INFO:best_tucker_covid.py:Epoch 96/100	Loss 9.6157 ± 0.4059
+INFO:best_tucker_covid.py:Epoch 97/100	Loss 9.6066 ± 0.3999
+INFO:best_tucker_covid.py:Epoch 98/100	Loss 9.5977 ± 0.3989
+INFO:best_tucker_covid.py:Epoch 99/100	Loss 9.5886 ± 0.4046
+INFO:best_tucker_covid.py:Epoch 100/100	Loss 9.5795 ± 0.3955
+INFO:best_tucker_covid.py:is bad performing False
+INFO:best_tucker_covid.py:Save model in /app/Antonia/Aladdin/biolink/best_models/covid/tucker_covid_mcl_lr_382_bsize_128_rw_064_es_200_rs_150_forREL
+INFO:best_tucker_covid.py:dataset name 	train
+INFO:best_tucker_covid.py:dataset name 	valid
+INFO:best_tucker_covid.py:dataset name 	test
+INFO:best_tucker_covid.py:in evalute for dataset: 	test
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Traceback (most recent call last):
+  File "tests/best_models/best_tucker_covid.py", line 69, in <module>
+    main()
+  File "tests/best_models/best_tucker_covid.py", line 64, in main
+    experiment_ComplEx.main(args)
+  File "/app/Antonia/Aladdin/biolink/testing/experiment_ComplEx.py", line 340, in main
+    metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
+  File "/app/Antonia/Aladdin/biolink/eval/metrics.py", line 120, in evaluate
+    return evaluate_mc(model, test_triples, all_triples, batch_size, device, mode)
+  File "/app/Antonia/Aladdin/biolink/eval/metrics.py", line 364, in evaluate_mc
+    scores_sp, scores_po, factors = model.forward(batch_tensor)
+  File "/app/Antonia/Aladdin/biolink/embeddings/models_mc.py", line 631, in forward
+    x2 = torch.mm(x2, self.ent.weight.transpose(1,0))
+RuntimeError: CUDA out of memory. Tried to allocate 122.00 MiB (GPU 0; 23.65 GiB total capacity; 549.10 MiB already allocated; 25.44 MiB free; 680.00 MiB reserved in total by PyTorch)
