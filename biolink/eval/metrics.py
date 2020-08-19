@@ -635,7 +635,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
         counter_hits += counter_hits_relation
         
             
-        mrr_val_relations[rel] /= counter_rel
+#        mrr_val_relations[rel] /= counter_rel
         logger.info(f'INFO RELATION \t{rel}')
         for n in hits_at:
             hits_relation[n] /= counter_hits_relation
