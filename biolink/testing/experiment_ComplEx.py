@@ -217,8 +217,8 @@ def main(argv, bayesian=False):
                     logger.info(f'Error VERYRARE TAIL results \t{metrics_to_str(metrics_tail)}')
 
 
-                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head_2.txt.gz'))
-                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail_2.txt.gz'))
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
 
                     del dataset.data['rare_head']
                     del dataset.data['rare_tail']
@@ -412,8 +412,8 @@ def main(argv, bayesian=False):
                     logger.info(f'Error VERYRARE TAIL results \t{metrics_to_str(metrics_tail)}')
 
 
-                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head_2.txt.gz'))
-                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail_2.txt.gz'))
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
 
                     del dataset.data['rare_head']
                     del dataset.data['rare_tail']
