@@ -110,9 +110,9 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 
-def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False, mode: str = None, rel_file: str = None):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False, mode: str = None, rel_file: str = None, rel_type = None, neg_by_type = None, dataset_dict=None):
     if auc:
-        return evaluate_auc(model, test_triples, all_triples, batch_size, device, harder)
+        return evaluate_auc(model, test_triples, all_triples, batch_size, device, harder, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset_dict)
     if rel_file != None:
         return evaluate_per_relation(model, test_triples, all_triples, batch_size, device, rel_file)
 
@@ -635,7 +635,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
         counter_hits += counter_hits_relation
         
             
-        mrr_val_relations[rel] /= counter_rel
+#         mrr_val_relations[rel] /= counter_rel
         logger.info(f'INFO RELATION \t{rel}')
         for n in hits_at:
             hits_relation[n] /= counter_hits_relation
@@ -736,12 +736,14 @@ def average_precision(y_true: np.array, y_pred:np.array, pos_label=1.0):
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
 def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
-            batch_size: int, device: torch.device, harder: bool = False):
+            batch_size: int, device: torch.device, harder: bool = False, rel_type: dict = None, neg_by_type: dict = False, dataset_dict=None):
     '''
     Evaluation method immediately returns the metrics wanted
     Parameters:
     ---------------
     all_triples: all triples in train/test/dev for calculaing filtered options
+    rel_type: dictionary {relation: type}
+    neg_by_type: dictionary {rel_tpe: {head_ents: [pool of accepted head entities], tail_ents: [pool of accepted tail entities]}}
     '''
 
     #store the labels for subject_predicate and predicte_object that were seen in training
@@ -797,7 +799,15 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         predicate_p50_list = []
 
     entities = list(set(list(np.concatenate([all_triples[:, 0], all_triples[:, 2]]))))
-    ents_combinations =  np.array([[d1, d2] for d1, d2 in list(itertools.product(entities, entities)) if d1 != d2])
+    if neg_by_type is not None and rel_type is not None:
+        ents_combinations = dict()
+        for r, rt in rel_type.items():
+#             head_ents = neg_by_type[rt]['head']
+#             tail_ents = neg_by_type[rt]['tail']
+#             ent_combinations[r] = np.array([[d1, d2] for d1, d2 in list(itertools.product(head_ents, tail_ents)) if d1 != d2])
+            ents_combinations[dataset_dict.rel_mappings[r]] = neg_by_type[rt]
+    else:
+        ents_combinations =  np.array([[d1, d2] for d1, d2 in list(itertools.product(entities, entities)) if d1 != d2])
 
     # softmax = nn.Softmax(dim=1)
 
@@ -812,25 +822,61 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
             predicate_test_facts_pos = test_triples_pred[pred]
         else:
             logger.info(f'\t{pred} not in test_triples_pred')
+            continue
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
         print('length pred pos', predicate_test_facts_pos_size)
-        se_test_facts_neg = np.array([[d1, pred, d2] for d1, d2 in ents_combinations
-                                      if (d1, pred, d2) not in predicate_all_facts_set
-                                      and (d2, pred, d1) not in predicate_all_facts_set])
+        if type(ents_combinations) is dict: #covid in this case
+            if harder:
+                #fix
+                se_test_facts_neg_five = []
+                se_test_facts_neg_ten = []
+                while len(se_test_facts_neg_five) < predicate_test_facts_pos_size*5:
+                    h = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['head'])]
+                    t = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['tail'])]
+                    if (h, pred, t) not in predicate_all_facts_set:
+                        se_test_facts_neg_five.append([h,pred,t])
+                while len(se_test_facts_neg_ten) < predicate_test_facts_pos_size*10:
+                    h = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['head'])]
+                    t = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['tail'])]
+                    if (h, pred, t) not in predicate_all_facts_set:
+                        se_test_facts_neg_ten.append([h,pred,t])
+            else:
+                se_test_facts_neg = []
+                while len(se_test_facts_neg) < predicate_test_facts_pos_size:
+                    h = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['head'])]
+                    t = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['tail'])]
+                    if (h, pred, t) not in predicate_all_facts_set:
+                        se_test_facts_neg.append([h,pred,t])
+#                 se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
+#                 se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
 
-        #ensure it's 1:1 positive to negative
-        np.random.shuffle(se_test_facts_neg)
+        else:
+            se_test_facts_neg = np.array([[d1, pred, d2] for d1, d2 in ents_combinations
+                                          if (d1, pred, d2) not in predicate_all_facts_set
+                                          and (d2, pred, d1) not in predicate_all_facts_set])
+
+            #ensure it's 1:1 positive to negative
+            np.random.shuffle(se_test_facts_neg)
+            if harder:
+                se_test_facts_neg_five = se_test_facts_neg[:(predicate_test_facts_pos_size*5), :]
+                se_test_facts_neg_ten = se_test_facts_neg[:(predicate_test_facts_pos_size*10), :]
+                se_test_facts_all_five = np.concatenate([predicate_test_facts_pos, se_test_facts_neg_five])
+                se_test_facts_labels_five = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_five)])])
+                se_test_facts_all_ten = np.concatenate([predicate_test_facts_pos, se_test_facts_neg_ten])
+                se_test_facts_labels_ten = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_ten)])])
+            else:
+                se_test_facts_neg = se_test_facts_neg[:predicate_test_facts_pos_size, :]
+#                 se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
+#                 se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
+         
         if harder:
-            se_test_facts_neg_five = se_test_facts_neg[:(predicate_test_facts_pos_size*5), :]
-            se_test_facts_neg_ten = se_test_facts_neg[:(predicate_test_facts_pos_size*10), :]
             se_test_facts_all_five = np.concatenate([predicate_test_facts_pos, se_test_facts_neg_five])
             se_test_facts_labels_five = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_five)])])
             se_test_facts_all_ten = np.concatenate([predicate_test_facts_pos, se_test_facts_neg_ten])
             se_test_facts_labels_ten = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_ten)])])
         else:
-            se_test_facts_neg = se_test_facts_neg[:predicate_test_facts_pos_size, :]
             se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
             se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
 
