@@ -173,10 +173,10 @@ def evaluate_non_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: t
 
     batch_start = 0
     mrr_val = 0.0
-    
-    
-    
-    
+
+
+
+
     counter = 0
     counter_hits = 0
 
@@ -334,7 +334,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
     # logger.info(f'test triples type \t{type(test_triples)}')
     # logger.info(f'test triples shape \t{test_triples.shape}')
 
-    
+
     NEW_MC = []
 
     prediction_subject = None
@@ -368,7 +368,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
             scores_sp = scores_sp.cpu().numpy()
             scores_po = scores_po.cpu().numpy()
 
-  
+
         #remove scores given to filtered labels
         for i, el in enumerate(batch_input):
             s_idx, p_idx, o_idx = el.numpy()
@@ -381,7 +381,7 @@ def evaluate_mc(model: nn.Module, test_triples: torch.Tensor, all_triples: torch
             for tmp_o_idx in o_to_remove:
                 if tmp_o_idx != o_idx:
                     scores_sp[i, tmp_o_idx] = - np.infty
-           
+
             for tmp_s_idx in s_to_remove:
                 if tmp_s_idx != s_idx:
                     scores_po[i, tmp_s_idx] = - np.infty
@@ -453,8 +453,8 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
     writer = csv.writer(of_connection)
     writer.writerow(['Relation', 'MRR', 'h@1', 'h@3', 'h@10'])
     of_connection.close()
-    
-    
+
+
     # logger.info(f'all tiples \t{all_triples.size()}')
     logger.info(f'test triples shape \t{test_triples.size()}')
 
@@ -486,7 +486,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
             po_to_s[po_key] = [s_idx]
         else:
             po_to_s[po_key].append(s_idx)
-            
+
     if test_triples.shape[0] < 400000:
         size_test = 0
         for rel, v in test_by_relation.items():
@@ -497,7 +497,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
     hits = dict()
     hits_at = [1, 3, 10]
 
-    
+
     for hits_at_value in hits_at:
         hits[hits_at_value] = 0.0
 
@@ -514,7 +514,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
         counter_rel = 0
         hits_relation = dict()
         counter_hits_relation = 0
-        
+
         mrr_RELATION = []
 
         for hits_at_value in hits_at:
@@ -556,7 +556,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
                 #calculate the two mrr
                 rank_object = rank(scores_sp, batch_input[:, 2])
                 mrr_object = np.mean(1/rank_object)
-               
+
                 hits_rate(rank_object, hits, hits_at)
                 hits_rate(rank_object, hits_relation, hits_at)
 
@@ -565,8 +565,8 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
 
                 hits_rate(rank_subject, hits, hits_at)
                 hits_rate(rank_subject, hits_relation, hits_at)
-                
-                
+
+
                 mrr_RELATION += (1/rank_subject).tolist()
                 mrr_RELATION += (1/rank_object).tolist()
 
@@ -582,7 +582,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
                 if (batch_start % 10000) == 0:
                     logger.info(f'batch start \t{batch_start}')
 
-    
+
         else:
             counter_hits_relation += 2*test_rels.shape[0]
             counter_rel += 2
@@ -603,24 +603,24 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
                 for tmp_o_idx in o_to_remove:
                     if tmp_o_idx != o_idx:
                         scores_sp[i, tmp_o_idx] = - np.infty
-                     
+
                 for tmp_s_idx in s_to_remove:
                     if tmp_s_idx != s_idx:
                         scores_po[i, tmp_s_idx] = - np.infty
 
             rank_object = rank(scores_sp, test_rels[:, 2])
             mrr_object = np.mean(1/rank_object)
-            
+
             hits_rate(rank_object, hits, hits_at)
             hits_rate(rank_object, hits_relation, hits_at)
 
             rank_subject = rank(scores_po, test_rels[:, 0])
             mrr_subject = np.mean(1/rank_subject)
-            
+
             hits_rate(rank_subject, hits, hits_at)
             hits_rate(rank_subject, hits_relation, hits_at)
-            
-            
+
+
             mrr_RELATION += (1/rank_subject).tolist()
             mrr_RELATION += (1/rank_object).tolist()
 
@@ -633,6 +633,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
 
         counter += counter_rel
         counter_hits += counter_hits_relation
+
         
             
 
@@ -641,7 +642,7 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
         logger.info(f'INFO RELATION \t{rel}')
         for n in hits_at:
             hits_relation[n] /= counter_hits_relation
-        
+
         with open(output_file_name, 'a+') as f:
             writer = csv.writer(f)
             writer.writerow([rel, np.mean(mrr_RELATION), hits_relation[1],hits_relation[3], hits_relation[10]])
@@ -873,7 +874,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                 se_test_facts_neg = se_test_facts_neg[:predicate_test_facts_pos_size, :]
 #                 se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
 #                 se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
-         
+
         if harder:
             se_test_facts_all_five = np.concatenate([predicate_test_facts_pos, se_test_facts_neg_five])
             se_test_facts_labels_five = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_five)])])
@@ -886,13 +887,13 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
         with torch.no_grad():
             if harder:
-               
+
                 if se_test_facts_all_five.shape[0] > 40000:
                     batch_start = 0
                     batch_size = 40000
                     se_test_facts_scores_five = None
                     while batch_start < se_test_facts_all_five.shape[0]:
-                        batch_end = min(batch_start + batch_size, se_test_facts_all_five.shape[0]-batch_start)
+                        batch_end = min(batch_start + batch_size, se_test_facts_all_five.shape[0])
                         se_test_facts_all_five_inp = torch.from_numpy(se_test_facts_all_five[batch_start:batch_end]).to(device)
                         se_test_facts_scores_five_tmp = model.score(se_test_facts_all_five_inp)
                         if type(se_test_facts_scores_five_tm) is tuple:
@@ -900,9 +901,10 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                         else:
                             se_test_facts_scores_five_tmp =  se_test_facts_scores_five_tmp.cpu().numpy()
                         if se_test_facts_scores_five is None:
-                            se_test_facts_scores_five = se_test_facts_scores_five_tmp
+                            se_test_facts_scores_five = se_test_facts_scores_five_tmp.reshape(-)
                         else:
                             se_test_facts_scores_five = np.concatenate([se_test_facts_scores_five, se_test_facts_scores_five_tmp], axis=0)
+                        logger.info(f'SCORES FIVE SHAPE {se_facts_scores_five.shape[0]}')
                         batch_start += batch_end
                 else:
                     se_test_facts_all_five = torch.from_numpy(se_test_facts_all_five).to(device)
@@ -913,14 +915,14 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                         se_test_facts_scores_five =  se_test_facts_scores_five.cpu().numpy()
 #                     se_test_facts_scores_five = se_test_facts_scores_five.cpu().numpy()
                 logger.info('scores five done')
-                
-                
+
+
                 if se_test_facts_all_ten.shape[0] > 40000:
                     batch_start = 0
                     batch_size = 40000
                     se_test_facts_scores_ten = None
                     while batch_start < se_test_facts_all_ten.shape[0]:
-                        batch_end = min(batch_start + batch_size, se_test_facts_all_ten.shape[0]-batch_start)
+                        batch_end = min(batch_start + batch_size, se_test_facts_all_ten.shape[0])
                         se_test_facts_all_ten_inp = torch.from_numpy(se_test_facts_all_ten[batch_start:batch_end]).to(device)
                         se_test_facts_scores_ten_tmp = model.score(se_test_facts_all_ten_inp)
                         if type(se_test_facts_scores_ten_tm) is tuple:
