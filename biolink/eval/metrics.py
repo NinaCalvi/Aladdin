@@ -826,7 +826,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
         predicate_test_facts_pos_size = len(predicate_test_facts_pos)
 
         #get negative samples
-        print('length pred pos', predicate_test_facts_pos_size)
+        logger.info(f'length pred pos \t{predicate_test_facts_pos_size}')
         if type(ents_combinations) is dict: #covid in this case
             if harder:
                 #fix
@@ -835,22 +835,23 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                 while len(se_test_facts_neg_five) < predicate_test_facts_pos_size*5:
                     h = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['head'])]
                     t = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['tail'])]
-                    if (h, pred, t) not in predicate_all_facts_set:
+                    if (h, pred, t) not in predicate_all_facts_set and (t, pred, h) not in  predicate_all_facts_set:
                         se_test_facts_neg_five.append([h,pred,t])
                 while len(se_test_facts_neg_ten) < predicate_test_facts_pos_size*10:
                     h = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['head'])]
                     t = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['tail'])]
-                    if (h, pred, t) not in predicate_all_facts_set:
+                    if (h, pred, t) not in predicate_all_facts_set and (t, pred, h) not in  predicate_all_facts_set:
                         se_test_facts_neg_ten.append([h,pred,t])
             else:
                 se_test_facts_neg = []
                 while len(se_test_facts_neg) < predicate_test_facts_pos_size:
                     h = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['head'])]
                     t = dataset_dict.ent_mappings[np.random.choice(ents_combinations[pred]['tail'])]
-                    if (h, pred, t) not in predicate_all_facts_set:
+                    if (h, pred, t) not in predicate_all_facts_set and (t, pred, h) not in predicate_all_facts_set:
                         se_test_facts_neg.append([h,pred,t])
 #                 se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
 #                 se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
+            logger.info('retrieved negative samples')
 
         else:
             se_test_facts_neg = np.array([[d1, pred, d2] for d1, d2 in ents_combinations
@@ -876,19 +877,52 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
             se_test_facts_labels_five = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_five)])])
             se_test_facts_all_ten = np.concatenate([predicate_test_facts_pos, se_test_facts_neg_ten])
             se_test_facts_labels_ten = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg_ten)])])
+            logger.info('Done concatenation')
         else:
             se_test_facts_all = np.concatenate([predicate_test_facts_pos, se_test_facts_neg])
             se_test_facts_labels = np.concatenate([np.ones([len(predicate_test_facts_pos)]), np.zeros([len(se_test_facts_neg)])])
 
         with torch.no_grad():
             if harder:
-                se_test_facts_all_five = torch.from_numpy(se_test_facts_all_five).to(device)
-                se_test_facts_scores_five = model.score(se_test_facts_all_five)
-                se_test_facts_scores_five = se_test_facts_scores_five.cpu().numpy()
-
-                se_test_facts_all_ten = torch.from_numpy(se_test_facts_all_ten).to(device)
-                se_test_facts_scores_ten = model.score(se_test_facts_all_ten)
-                se_test_facts_scores_ten = se_test_facts_scores_ten.cpu().numpy()
+               
+                if se_test_facts_all_five.shape[0] > 40000:
+                    batch_start = 0
+                    batch_size = 40000
+                    se_test_facts_scores_five = None
+                    while batch_start < se_test_facts_all_five.shape[0]:
+                        batch_end = min(batch_start + batch_size, se_test_facts_all_five.shape[0]-batch_start)
+                        se_test_facts_all_five_inp = torch.from_numpy(se_test_facts_all_five[batch_start:batch_end]).to(device)
+                        se_test_facts_scores_five_tmp = model.score(se_test_facts_all_five_inp).cpu().numpy()
+                        if se_test_facts_scores_five is None:
+                            se_test_facts_scores_five = se_test_facts_scores_five_tmp
+                        else:
+                            se_test_facts_scores_five = np.concatenate([se_test_facts_scores_five, se_test_facts_scores_five_tmp], axis=0)
+                        batch_start += batch_end
+                else:
+                    se_test_facts_all_five = torch.from_numpy(se_test_facts_all_five).to(device)
+                    se_test_facts_scores_five = model.score(se_test_facts_all_five)
+                    se_test_facts_scores_five = se_test_facts_scores_five.cpu().numpy()
+                logger.info('scores five done')
+                
+                
+                if se_test_facts_all_ten.shape[0] > 40000:
+                    batch_start = 0
+                    batch_size = 40000
+                    se_test_facts_scores_ten = None
+                    while batch_start < se_test_facts_all_ten.shape[0]:
+                        batch_end = min(batch_start + batch_size, se_test_facts_all_five.shape[0]-batch_start)
+                        se_test_facts_all_ten_inp = torch.from_numpy(se_test_facts_all_ten[batch_start:batch_end]).to(device)
+                        se_test_facts_scores_ten_tmp = model.score(se_test_facts_all_ten_inp).cpu().numpy()
+                        if se_test_facts_scores_ten is None:
+                            se_test_facts_scores_ten = se_test_facts_scores_ten_tmp
+                        else:
+                            se_test_facts_scores_ten = np.concatenate([se_test_facts_scores_ten, se_test_facts_scores_ten_tmp], axis=0)
+                        batch_start += batch_end
+                else:
+                    se_test_facts_all_ten = torch.from_numpy(se_test_facts_all_ten).to(device)
+                    se_test_facts_scores_ten = model.score(se_test_facts_all_ten)
+                    se_test_facts_scores_ten = se_test_facts_scores_ten.cpu().numpy()
+                logger.info('scores ten done')
             else:
                 se_test_facts_all = torch.from_numpy(se_test_facts_all).to(device)
                 se_test_facts_scores = model.score(se_test_facts_all)
@@ -897,6 +931,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
         # se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
         if harder:
+            logger.info('in the harder set')
             se_ap_five = average_precision(se_test_facts_labels_five, se_test_facts_scores_five)
             se_p50_five = precision_at_k(se_test_facts_labels_five, se_test_facts_scores_five, k=50)
             se_auc_pr_five = average_precision_score(se_test_facts_labels_five, se_test_facts_scores_five)
@@ -919,11 +954,11 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
             predicate_p50_list_ten.append(se_p50_ten)
 
             # metrics_per_se[pred] = {"ap": se_ap, "auc-roc": se_auc_roc, "auc-pr": se_auc_pr, "p@50": se_p50}
-            print('AUC FIVE NEGS')
+            logger.info('AUC FIVE NEGS')
             print("AP: %1.4f - AUC-ROC: %1.4f - AUC-PR: %1.4f - P@50: %1.4f > %s" %
                   (se_ap_five, se_auc_roc_five, se_auc_pr_five, se_p50_five, pred), flush=True)
 
-            print('AUC TEN NEGS')
+            logger.info('AUC TEN NEGS')
             print("AP: %1.4f - AUC-ROC: %1.4f - AUC-PR: %1.4f - P@50: %1.4f > %s" %
                   (se_ap_ten, se_auc_roc_ten, se_auc_pr_ten, se_p50_ten, pred), flush=True)
         else:
