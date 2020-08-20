@@ -380,10 +380,9 @@ def main(argv, bayesian=False):
                                 rel_type = json.load(f)
                             ent_type = pd.read_csv(args.ent_type)
                             neg_by_type = utils.process_relation_entities(rel_type, ent_type)
-                            
-                        else:
-                            neg_by_type = None
-                            rel_type = None
+                    else:
+                        neg_by_type = None
+                        rel_type = None
                             
                     metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder, rel_type = rel_type, neg_by_type = neg_by_type)
                     logger.info('CLASSIFICATION METRICS FIVE')
