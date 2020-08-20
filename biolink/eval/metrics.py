@@ -898,7 +898,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                         else:
                             se_test_facts_scores_five_tmp =  se_test_facts_scores_five_tmp.cpu().numpy()
                         if se_test_facts_scores_five is None:
-                            se_test_facts_scores_five = se_test_facts_scores_five_tmp.reshape(-)
+                            se_test_facts_scores_five = se_test_facts_scores_five_tmp
                         else:
                             se_test_facts_scores_five = np.concatenate([se_test_facts_scores_five, se_test_facts_scores_five_tmp], axis=0)
                         logger.info(f'SCORES FIVE SHAPE {se_facts_scores_five.shape[0]}')
