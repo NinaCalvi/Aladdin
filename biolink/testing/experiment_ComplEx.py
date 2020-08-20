@@ -380,6 +380,11 @@ def main(argv, bayesian=False):
                                 rel_type = json.load(f)
                             ent_type = pd.read_csv(args.ent_type)
                             neg_by_type = utils.process_relation_entities(rel_type, ent_type)
+                        else:
+                            logger.info('NEED TO SUPPLY REL TYPE AND ENT TYPE FILE')
+                            return
+                            
+
                     else:
                         neg_by_type = None
                         rel_type = None
