@@ -934,6 +934,8 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                             se_test_facts_scores_ten = se_test_facts_scores_ten_tmp
                         else:
                             se_test_facts_scores_ten = np.concatenate([se_test_facts_scores_ten, se_test_facts_scores_ten_tmp], axis=0)
+                        batch_start += batch_size
+                else:
                     se_test_facts_all_ten = torch.from_numpy(se_test_facts_all_ten).to(device)
                     se_test_facts_scores_ten = model.score(se_test_facts_all_ten)
                     if type(se_test_facts_scores_ten) is tuple:
