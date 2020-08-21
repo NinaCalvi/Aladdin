@@ -907,7 +907,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                 else:
                     se_test_facts_all_five = torch.from_numpy(se_test_facts_all_five).to(device)
                     se_test_facts_scores_five = model.score(se_test_facts_all_five)
-                    if type(set_test_facts_scores_five) is tuple:
+                    if type(se_test_facts_scores_five) is tuple:
                         se_test_facts_scores_five =  se_test_facts_scores_five[0].cpu().numpy()
                     else:
                         se_test_facts_scores_five =  se_test_facts_scores_five.cpu().numpy()
@@ -933,7 +933,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                             se_test_facts_scores_ten = np.concatenate([se_test_facts_scores_ten, se_test_facts_scores_ten_tmp], axis=0)
                     se_test_facts_all_ten = torch.from_numpy(se_test_facts_all_ten).to(device)
                     se_test_facts_scores_ten = model.score(se_test_facts_all_ten)
-                    if type(set_test_facts_scores_ten) is tuple:
+                    if type(se_test_facts_scores_ten) is tuple:
                         se_test_facts_scores_ten =  se_test_facts_scores_ten[0].cpu().numpy()
                     else:
                         se_test_facts_scores_ten =  se_test_facts_scores_ten.cpu().numpy()
