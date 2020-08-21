@@ -886,6 +886,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
             if harder:
 
                 if se_test_facts_all_five.shape[0] > 40000:
+                    logger.info(f'all se five facts{se_test_facts_all_five.shape}')
                     batch_start = 0
                     batch_size = 40000
                     se_test_facts_scores_five = None
@@ -902,7 +903,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                         else:
                             se_test_facts_scores_five = np.concatenate([se_test_facts_scores_five, se_test_facts_scores_five_tmp], axis=0)
                         logger.info(f'SCORES FIVE SHAPE {se_test_facts_scores_five.shape}')
-                        batch_start += batch_end
+                        batch_start += batch_size
                 else:
                     se_test_facts_all_five = torch.from_numpy(se_test_facts_all_five).to(device)
                     se_test_facts_scores_five = model.score(se_test_facts_all_five)
@@ -930,7 +931,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                             se_test_facts_scores_ten = se_test_facts_scores_ten_tmp
                         else:
                             se_test_facts_scores_ten = np.concatenate([se_test_facts_scores_ten, se_test_facts_scores_ten_tmp], axis=0)
-                        batch_start += batch_end
+                        batch_start += batch_size
                 else:
                     se_test_facts_all_ten = torch.from_numpy(se_test_facts_all_ten).to(device)
                     se_test_facts_scores_ten = model.score(se_test_facts_all_ten)
