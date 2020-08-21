@@ -893,7 +893,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                         batch_end = min(batch_start + batch_size, se_test_facts_all_five.shape[0])
                         se_test_facts_all_five_inp = torch.from_numpy(se_test_facts_all_five[batch_start:batch_end]).to(device)
                         se_test_facts_scores_five_tmp = model.score(se_test_facts_all_five_inp)
-                        if type(se_test_facts_scores_five_tm) is tuple:
+                        if type(se_test_facts_scores_five_tmp) is tuple:
                             se_test_facts_scores_five_tmp =  se_test_facts_scores_five_tmp[0].cpu().numpy()
                         else:
                             se_test_facts_scores_five_tmp =  se_test_facts_scores_five_tmp.cpu().numpy()
@@ -901,7 +901,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                             se_test_facts_scores_five = se_test_facts_scores_five_tmp
                         else:
                             se_test_facts_scores_five = np.concatenate([se_test_facts_scores_five, se_test_facts_scores_five_tmp], axis=0)
-                        logger.info(f'SCORES FIVE SHAPE {se_facts_scores_five.shape[0]}')
+                        logger.info(f'SCORES FIVE SHAPE {se_test_facts_scores_five.shape}')
                         batch_start += batch_end
                 else:
                     se_test_facts_all_five = torch.from_numpy(se_test_facts_all_five).to(device)
@@ -922,7 +922,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
                         batch_end = min(batch_start + batch_size, se_test_facts_all_ten.shape[0])
                         se_test_facts_all_ten_inp = torch.from_numpy(se_test_facts_all_ten[batch_start:batch_end]).to(device)
                         se_test_facts_scores_ten_tmp = model.score(se_test_facts_all_ten_inp)
-                        if type(se_test_facts_scores_ten_tm) is tuple:
+                        if type(se_test_facts_scores_ten_tmp) is tuple:
                             se_test_facts_scores_ten_tmp =  se_test_facts_scores_ten_tmp[0].cpu().numpy()
                         else:
                             se_test_facts_scores_ten_tmp =  se_test_facts_scores_ten_tmp.cpu().numpy()
