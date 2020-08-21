@@ -125,3 +125,48 @@ def generate_neg_instances(triples: torch.Tensor, nb_corrs: int, nb_ents: int, s
     sub_corr = torch.randint(0, nb_ents, sub.shape)
 
     return torch.cat((torch.cat((sub_pred, obj_corr), axis=1), torch.cat((sub_corr ,obj_pred), axis=1)), axis=0)
+
+
+
+def df_to_dict(df, key_label, value_label):
+    dict_ = dict()
+    for i,r in df.iterrows():
+        dict_[r[key_label]] = r[value_label]
+    return dict_
+
+
+def process_relation_entities(rel_type, ent_type):
+    ent_type = ent_type.groupby('type')['Entity'].unique().reset_index()
+    ent_type = df_to_dict(ent_type, 'type', 'Entity')
+    neg_by_type = dict()
+    for rel, t in rel_type.items():
+        #relations are of form head_tail
+        #head and tails could have + if multiple entities involved
+        #or 'Any' if all types invovled
+        head, tail = t.split('_')
+        head = head.split('+')
+        tail = tail.split('+')
+        head_vals = []
+        tail_vals = []
+        
+        for h in head:
+            if h == 'Any':
+                for t_ent, ents in ent_type.items():
+                    head_vals += ents.tolist()
+            else:
+                head_vals += ent_type[h].tolist()
+        
+        
+        for tl in tail:
+            if tl == 'Any':
+                for t_ent, ents in ent_type.items():
+                    tail_vals += ents.tolist()
+            else:
+                tail_vals += ent_type[tl].tolist()
+        if t not in neg_by_type:
+            neg_by_type[t] = {'head': head_vals, 'tail': tail_vals}
+        
+       
+    return neg_by_type
+         
+        
