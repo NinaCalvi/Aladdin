@@ -1,0 +1,39 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'pathme', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.091', '--batch-size', '2048', '--reg-weight', '0.046', '--embedding-size', '200', '--rel-emb-size', '100', '--quiet', '--load', '--save_model_name', 'TuckEr_batch2048_es_200_rs_100_reg_n3_rw_0046_lr_091_pathme', '--testrel', 'tucker_pathme_RELATION.csv']
+MCL True
+INFO:best_pathme_tuck.py:Valid: False
+INFO:best_pathme_tuck.py:Device: cuda
+INFO:best_pathme_tuck.py:auc and lod happening
+INFO:best_pathme_tuck.py:dataset name 	train
+INFO:best_pathme_tuck.py:dataset name 	valid
+INFO:best_pathme_tuck.py:dataset name 	test
+INFO:best_pathme_tuck.py:in evalute for dataset: 	test
+NEW MRR: 0.4159988351638264
+INFO:best_pathme_tuck.py:done
+INFO:best_pathme_tuck.py:metrics done
+INFO:best_pathme_tuck.py:TEST RESULTS
+INFO:best_pathme_tuck.py:Error 	test results 	MRR 0.415999	H@1 0.283207	H@3 0.474604	H@10 0.708660	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathme_tuck.py:===========
+INFO:best_pathme_tuck.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+INFO:best_pathme_tuck.py:INFO RELATION 	1
+INFO:best_pathme_tuck.py:MRR 	0.31627111662408575, H@1 	0.16132967368100032, H@3 	0.35879841415065566, H@10 	0.6994510521500458
+INFO:best_pathme_tuck.py:INFO RELATION 	4
+INFO:best_pathme_tuck.py:MRR 	0.4119661174432993, H@1 	0.3241758241758242, H@3 	0.46153846153846156, H@10 	0.5796703296703297
+INFO:best_pathme_tuck.py:INFO RELATION 	2
+INFO:best_pathme_tuck.py:MRR 	0.6668531467735294, H@1 	0.5918803418803419, H@3 	0.717948717948718, H@10 	0.7905982905982906
+INFO:best_pathme_tuck.py:INFO RELATION 	0
+INFO:best_pathme_tuck.py:MRR 	0.4892025949164126, H@1 	0.3516562650024004, H@3 	0.5765722515602496, H@10 	0.7537205952952473
+INFO:best_pathme_tuck.py:INFO RELATION 	6
+INFO:best_pathme_tuck.py:MRR 	0.3197578860535532, H@1 	0.23177083333333334, H@3 	0.3697916666666667, H@10 	0.4869791666666667
+INFO:best_pathme_tuck.py:INFO RELATION 	3
+INFO:best_pathme_tuck.py:MRR 	0.6132736524570531, H@1 	0.5134408602150538, H@3 	0.7016129032258065, H@10 	0.7876344086021505
+INFO:best_pathme_tuck.py:INFO RELATION 	5
+INFO:best_pathme_tuck.py:MRR 	0.32573817624789186, H@1 	0.24630541871921183, H@3 	0.37192118226600984, H@10 	0.4802955665024631
+MMR VAL 0.4292546014812414
+INFO:best_pathme_tuck.py:done
+INFO:best_pathme_tuck.py:metrics done
+GPU Epilog Script v0.30

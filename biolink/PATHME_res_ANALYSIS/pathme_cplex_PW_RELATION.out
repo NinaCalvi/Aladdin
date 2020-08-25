@@ -1,0 +1,138 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 7
+['--model', 'complex', '--data', 'pathme', '--loss', 'pw_logistic', '--epochs', '50', '--learning-rate', '0.04', '--nb-negs', '200', '--batch-size', '2048', '--reg-weight', '0.036', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPW_batch2048_es_200_reg_n3_rw_036_lr_040_nbn_200_pathme', '--testrel', 'cplexPW_PATHME_relation.csv', '--rare']
+MCL False
+INFO:pathme_cp_PW.py:Valid: False
+INFO:pathme_cp_PW.py:Device: cuda
+INFO:pathme_cp_PW.py:NOT MC
+INFO:pathme_cp_PW.py:Device: cuda
+INFO:pathme_cp_PW.py:valid: False
+INFO:pathme_cp_PW.py:Epoch 1/50	Loss 87708.5606 ± 104621.1314
+INFO:pathme_cp_PW.py:Epoch 2/50	Loss 11737.2540 ± 1265.5019
+INFO:pathme_cp_PW.py:Epoch 3/50	Loss 10304.0278 ± 1082.8198
+INFO:pathme_cp_PW.py:Epoch 4/50	Loss 9062.0447 ± 950.8000
+INFO:pathme_cp_PW.py:Epoch 5/50	Loss 7897.6891 ± 838.8868
+INFO:pathme_cp_PW.py:Epoch 6/50	Loss 6836.9799 ± 682.8669
+INFO:pathme_cp_PW.py:Epoch 7/50	Loss 5985.2928 ± 601.9635
+INFO:pathme_cp_PW.py:Epoch 8/50	Loss 5335.9047 ± 529.3185
+INFO:pathme_cp_PW.py:Epoch 9/50	Loss 4835.9970 ± 466.6291
+INFO:pathme_cp_PW.py:Epoch 10/50	Loss 4432.9183 ± 424.3605
+INFO:pathme_cp_PW.py:Epoch 11/50	Loss 4110.2964 ± 396.8894
+INFO:pathme_cp_PW.py:Epoch 12/50	Loss 3852.3451 ± 355.7373
+INFO:pathme_cp_PW.py:Epoch 13/50	Loss 3634.6081 ± 344.5263
+INFO:pathme_cp_PW.py:Epoch 14/50	Loss 3466.9134 ± 320.2184
+INFO:pathme_cp_PW.py:Epoch 15/50	Loss 3313.4643 ± 308.1099
+INFO:pathme_cp_PW.py:Epoch 16/50	Loss 3196.0960 ± 296.7005
+INFO:pathme_cp_PW.py:Epoch 17/50	Loss 3094.4395 ± 298.0278
+INFO:pathme_cp_PW.py:Epoch 18/50	Loss 3007.9513 ± 287.2508
+INFO:pathme_cp_PW.py:Epoch 19/50	Loss 2933.4595 ± 274.6223
+INFO:pathme_cp_PW.py:Epoch 20/50	Loss 2864.3920 ± 269.2721
+INFO:pathme_cp_PW.py:Epoch 21/50	Loss 2824.1275 ± 252.7404
+INFO:pathme_cp_PW.py:Epoch 22/50	Loss 2781.2792 ± 248.5410
+INFO:pathme_cp_PW.py:Epoch 23/50	Loss 2732.0998 ± 243.3350
+INFO:pathme_cp_PW.py:Epoch 24/50	Loss 2688.9004 ± 255.8641
+INFO:pathme_cp_PW.py:Epoch 25/50	Loss 2660.6347 ± 246.0463
+INFO:pathme_cp_PW.py:Epoch 26/50	Loss 2629.6831 ± 254.1300
+INFO:pathme_cp_PW.py:Epoch 27/50	Loss 2594.9216 ± 243.5306
+INFO:pathme_cp_PW.py:Epoch 28/50	Loss 2573.1736 ± 242.9460
+INFO:pathme_cp_PW.py:Epoch 29/50	Loss 2541.3082 ± 229.8682
+INFO:pathme_cp_PW.py:Epoch 30/50	Loss 2529.6077 ± 228.3127
+INFO:pathme_cp_PW.py:Epoch 31/50	Loss 2522.4289 ± 229.2634
+INFO:pathme_cp_PW.py:Epoch 32/50	Loss 2493.2342 ± 231.8704
+INFO:pathme_cp_PW.py:Epoch 33/50	Loss 2475.8495 ± 226.9902
+INFO:pathme_cp_PW.py:Epoch 34/50	Loss 2466.1894 ± 237.9625
+INFO:pathme_cp_PW.py:Epoch 35/50	Loss 2468.4551 ± 231.0251
+INFO:pathme_cp_PW.py:Epoch 36/50	Loss 2433.2102 ± 226.9879
+INFO:pathme_cp_PW.py:Epoch 37/50	Loss 2428.5612 ± 240.3059
+INFO:pathme_cp_PW.py:Epoch 38/50	Loss 2425.5739 ± 229.2293
+INFO:pathme_cp_PW.py:Epoch 39/50	Loss 2403.4362 ± 229.0778
+INFO:pathme_cp_PW.py:Epoch 40/50	Loss 2408.0062 ± 230.5728
+INFO:pathme_cp_PW.py:Epoch 41/50	Loss 2384.8279 ± 218.4308
+INFO:pathme_cp_PW.py:Epoch 42/50	Loss 2384.7018 ± 223.1245
+INFO:pathme_cp_PW.py:Epoch 43/50	Loss 2368.0390 ± 225.0924
+INFO:pathme_cp_PW.py:Epoch 44/50	Loss 2376.3088 ± 210.5040
+INFO:pathme_cp_PW.py:Epoch 45/50	Loss 2358.8902 ± 214.3554
+INFO:pathme_cp_PW.py:Epoch 46/50	Loss 2345.0218 ± 220.8851
+INFO:pathme_cp_PW.py:Epoch 47/50	Loss 2352.5529 ± 223.4427
+INFO:pathme_cp_PW.py:Epoch 48/50	Loss 2360.2727 ± 226.8596
+INFO:pathme_cp_PW.py:Epoch 49/50	Loss 2343.6862 ± 228.4684
+INFO:pathme_cp_PW.py:Epoch 50/50	Loss 2325.1805 ± 221.2463
+INFO:pathme_cp_PW.py:is bad performing False
+INFO:pathme_cp_PW.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplexPW_batch2048_es_200_reg_n3_rw_036_lr_040_nbn_200_pathme
+INFO:pathme_cp_PW.py:dataset name 	train
+INFO:pathme_cp_PW.py:dataset name 	valid
+INFO:pathme_cp_PW.py:dataset name 	test
+INFO:pathme_cp_PW.py:in evalute for dataset: 	test
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:TEST RESULTS
+INFO:pathme_cp_PW.py:Error 	test results 	MRR 0.378109	H@1 0.244971	H@3 0.433585	H@10 0.678770	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PW.py:===========
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:VERY RARE RESULTS
+INFO:pathme_cp_PW.py:Error VERYRARE HEAD results 	MRR 0.061279	H@1 0.034582	H@3 0.072046	H@10 0.103746	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:Error VERYRARE TAIL results 	MRR 0.040257	H@1 0.006969	H@3 0.031359	H@10 0.142857	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:RARE RESULTS
+INFO:pathme_cp_PW.py:Error RARE HEAD results 	MRR 0.361503	H@1 0.244369	H@3 0.421164	H@10 0.610285	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:Error RARE TAIL results 	MRR 0.345353	H@1 0.243731	H@3 0.398195	H@10 0.552658	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:COMMON RESULTS
+INFO:pathme_cp_PW.py:Error COMMON- HEAD results 	MRR 0.366857	H@1 0.204819	H@3 0.432180	H@10 0.746211	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:Error COMMON- TAIL results 	MRR 0.394352	H@1 0.242105	H@3 0.454226	H@10 0.743222	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:VERYCOMMON RESULTS
+INFO:pathme_cp_PW.py:Error VERY-COMMON HEAD results 	MRR 0.380673	H@1 0.211359	H@3 0.443203	H@10 0.773743	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:Error VERY-COMMON TAIL results 	MRR 0.405727	H@1 0.247229	H@3 0.456948	H@10 0.778346	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:VERYVERYCOMMON RESULTS
+INFO:pathme_cp_PW.py:Error VERYVERY-COMMON HEAD results 	MRR 0.646225	H@1 0.558912	H@3 0.691843	H@10 0.838369	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+INFO:pathme_cp_PW.py:Error VERYVERY-COMMON TAIL results 	MRR 0.560692	H@1 0.442857	H@3 0.602381	H@10 0.835714	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PW.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+INFO:pathme_cp_PW.py:INFO RELATION 	1
+INFO:pathme_cp_PW.py:MRR 	0.3112285432833265, H@1 	0.15019823116803904, H@3 	0.35559621835925587, H@10 	0.7092101250381214
+INFO:pathme_cp_PW.py:INFO RELATION 	4
+INFO:pathme_cp_PW.py:MRR 	0.30620602920612217, H@1 	0.2129120879120879, H@3 	0.3489010989010989, H@10 	0.4848901098901099
+INFO:pathme_cp_PW.py:INFO RELATION 	2
+INFO:pathme_cp_PW.py:MRR 	0.634613413926044, H@1 	0.5626780626780626, H@3 	0.6823361823361823, H@10 	0.7549857549857549
+INFO:pathme_cp_PW.py:INFO RELATION 	0
+INFO:pathme_cp_PW.py:MRR 	0.42394535935828687, H@1 	0.2938070091214594, H@3 	0.5026404224675948, H@10 	0.6937109937590015
+INFO:pathme_cp_PW.py:INFO RELATION 	6
+INFO:pathme_cp_PW.py:MRR 	0.2180411861436283, H@1 	0.14583333333333334, H@3 	0.2552083333333333, H@10 	0.3515625
+INFO:pathme_cp_PW.py:INFO RELATION 	3
+INFO:pathme_cp_PW.py:MRR 	0.5372634226802043, H@1 	0.4381720430107527, H@3 	0.6129032258064516, H@10 	0.7123655913978495
+INFO:pathme_cp_PW.py:INFO RELATION 	5
+INFO:pathme_cp_PW.py:MRR 	0.2355644064666525, H@1 	0.15024630541871922, H@3 	0.28078817733990147, H@10 	0.39655172413793105
+MMR VAL 0.3607914623101346
+INFO:pathme_cp_PW.py:done
+INFO:pathme_cp_PW.py:metrics done
+GPU Epilog Script v0.30

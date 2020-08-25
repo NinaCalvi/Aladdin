@@ -1,0 +1,588 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 6
+['--model', 'complex', '--data', 'pathme', '--loss', 'pair_hinge', '--epochs', '500', '--learning-rate', '0.012', '--nb-negs', '6', '--batch-size', '1024', '--reg-weight', '8.181e-08', '--loss-margin', '4', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme', '--testrel', 'cplexPH_PATHME_relation.csv', '--rare']
+MCL False
+INFO:pathme_cp_PH.py:Valid: False
+INFO:pathme_cp_PH.py:Device: cuda
+INFO:pathme_cp_PH.py:NOT MC
+INFO:pathme_cp_PH.py:Device: cuda
+INFO:pathme_cp_PH.py:valid: False
+INFO:pathme_cp_PH.py:Epoch 1/500	Loss 23633.7690 ± 3202.3603
+INFO:pathme_cp_PH.py:Epoch 2/500	Loss 17328.4615 ± 3687.8871
+INFO:pathme_cp_PH.py:Epoch 3/500	Loss 10137.3279 ± 1789.9729
+INFO:pathme_cp_PH.py:Epoch 4/500	Loss 6898.5898 ± 1124.2635
+INFO:pathme_cp_PH.py:Epoch 5/500	Loss 4921.3741 ± 798.4964
+INFO:pathme_cp_PH.py:Epoch 6/500	Loss 3637.2189 ± 534.8446
+INFO:pathme_cp_PH.py:Epoch 7/500	Loss 2755.0186 ± 417.1630
+INFO:pathme_cp_PH.py:Epoch 8/500	Loss 2112.5315 ± 314.6913
+INFO:pathme_cp_PH.py:Epoch 9/500	Loss 1638.3898 ± 261.0237
+INFO:pathme_cp_PH.py:Epoch 10/500	Loss 1283.1661 ± 208.4879
+INFO:pathme_cp_PH.py:Epoch 11/500	Loss 1015.7489 ± 165.8793
+INFO:pathme_cp_PH.py:Epoch 12/500	Loss 816.1711 ± 127.3792
+INFO:pathme_cp_PH.py:Epoch 13/500	Loss 663.3579 ± 108.4817
+INFO:pathme_cp_PH.py:Epoch 14/500	Loss 555.7454 ± 92.7217
+INFO:pathme_cp_PH.py:Epoch 15/500	Loss 464.7893 ± 84.7430
+INFO:pathme_cp_PH.py:Epoch 16/500	Loss 410.5359 ± 74.1124
+INFO:pathme_cp_PH.py:Epoch 17/500	Loss 356.8966 ± 63.7332
+INFO:pathme_cp_PH.py:Epoch 18/500	Loss 314.5356 ± 56.2600
+INFO:pathme_cp_PH.py:Epoch 19/500	Loss 291.9503 ± 48.3705
+INFO:pathme_cp_PH.py:Epoch 20/500	Loss 274.6240 ± 48.8985
+INFO:pathme_cp_PH.py:Epoch 21/500	Loss 257.0027 ± 46.1968
+INFO:pathme_cp_PH.py:Epoch 22/500	Loss 245.5770 ± 44.9591
+INFO:pathme_cp_PH.py:Epoch 23/500	Loss 234.2772 ± 45.1534
+INFO:pathme_cp_PH.py:Epoch 24/500	Loss 229.4906 ± 44.4166
+INFO:pathme_cp_PH.py:Epoch 25/500	Loss 221.6772 ± 42.7936
+INFO:pathme_cp_PH.py:Epoch 26/500	Loss 213.0392 ± 37.9857
+INFO:pathme_cp_PH.py:Epoch 27/500	Loss 209.6302 ± 37.5305
+INFO:pathme_cp_PH.py:Epoch 28/500	Loss 205.4145 ± 37.1872
+INFO:pathme_cp_PH.py:Epoch 29/500	Loss 195.3019 ± 39.2356
+INFO:pathme_cp_PH.py:Epoch 30/500	Loss 195.0963 ± 35.5614
+INFO:pathme_cp_PH.py:Epoch 31/500	Loss 198.1652 ± 39.5586
+INFO:pathme_cp_PH.py:Epoch 32/500	Loss 201.0284 ± 40.9328
+INFO:pathme_cp_PH.py:Epoch 33/500	Loss 195.7861 ± 36.7738
+INFO:pathme_cp_PH.py:Epoch 34/500	Loss 188.0461 ± 35.5335
+INFO:pathme_cp_PH.py:Epoch 35/500	Loss 189.7936 ± 35.0506
+INFO:pathme_cp_PH.py:Epoch 36/500	Loss 193.9347 ± 36.4041
+INFO:pathme_cp_PH.py:Epoch 37/500	Loss 196.7890 ± 38.7530
+INFO:pathme_cp_PH.py:Epoch 38/500	Loss 188.6212 ± 34.4537
+INFO:pathme_cp_PH.py:Epoch 39/500	Loss 184.9753 ± 37.4110
+INFO:pathme_cp_PH.py:Epoch 40/500	Loss 185.0168 ± 33.9332
+INFO:pathme_cp_PH.py:Epoch 41/500	Loss 191.7628 ± 37.2769
+INFO:pathme_cp_PH.py:Epoch 42/500	Loss 183.9651 ± 39.4122
+INFO:pathme_cp_PH.py:Epoch 43/500	Loss 190.3613 ± 34.8434
+INFO:pathme_cp_PH.py:Epoch 44/500	Loss 190.9403 ± 37.7707
+INFO:pathme_cp_PH.py:Epoch 45/500	Loss 189.3963 ± 38.0225
+INFO:pathme_cp_PH.py:Epoch 46/500	Loss 179.7534 ± 34.2982
+INFO:pathme_cp_PH.py:Epoch 47/500	Loss 180.5764 ± 38.4757
+INFO:pathme_cp_PH.py:Epoch 48/500	Loss 181.6465 ± 36.2108
+INFO:pathme_cp_PH.py:Epoch 49/500	Loss 178.5341 ± 35.1185
+INFO:pathme_cp_PH.py:Epoch 50/500	Loss 182.9211 ± 37.7777
+INFO:pathme_cp_PH.py:Epoch 51/500	Loss 181.1228 ± 37.3409
+INFO:pathme_cp_PH.py:Epoch 52/500	Loss 176.9950 ± 36.1885
+INFO:pathme_cp_PH.py:Epoch 53/500	Loss 184.5013 ± 38.9128
+INFO:pathme_cp_PH.py:Epoch 54/500	Loss 178.7867 ± 36.9409
+INFO:pathme_cp_PH.py:Epoch 55/500	Loss 177.8975 ± 37.6880
+INFO:pathme_cp_PH.py:Epoch 56/500	Loss 173.7297 ± 33.3685
+INFO:pathme_cp_PH.py:Epoch 57/500	Loss 174.9861 ± 38.5485
+INFO:pathme_cp_PH.py:Epoch 58/500	Loss 173.5767 ± 34.6590
+INFO:pathme_cp_PH.py:Epoch 59/500	Loss 174.2215 ± 32.3994
+INFO:pathme_cp_PH.py:Epoch 60/500	Loss 170.5741 ± 36.7495
+INFO:pathme_cp_PH.py:Epoch 61/500	Loss 175.1073 ± 33.6988
+INFO:pathme_cp_PH.py:Epoch 62/500	Loss 174.1068 ± 37.5259
+INFO:pathme_cp_PH.py:Epoch 63/500	Loss 173.3680 ± 35.8835
+INFO:pathme_cp_PH.py:Epoch 64/500	Loss 172.7652 ± 37.1025
+INFO:pathme_cp_PH.py:Epoch 65/500	Loss 169.5759 ± 33.3324
+INFO:pathme_cp_PH.py:Epoch 66/500	Loss 171.7830 ± 35.9731
+INFO:pathme_cp_PH.py:Epoch 67/500	Loss 174.5150 ± 33.3737
+INFO:pathme_cp_PH.py:Epoch 68/500	Loss 166.8382 ± 35.7167
+INFO:pathme_cp_PH.py:Epoch 69/500	Loss 170.1734 ± 34.8597
+INFO:pathme_cp_PH.py:Epoch 70/500	Loss 168.4253 ± 33.0668
+INFO:pathme_cp_PH.py:Epoch 71/500	Loss 172.8161 ± 36.9165
+INFO:pathme_cp_PH.py:Epoch 72/500	Loss 163.7561 ± 33.3967
+INFO:pathme_cp_PH.py:Epoch 73/500	Loss 171.2552 ± 33.1344
+INFO:pathme_cp_PH.py:Epoch 74/500	Loss 168.7733 ± 31.7449
+INFO:pathme_cp_PH.py:Epoch 75/500	Loss 165.3102 ± 31.2621
+INFO:pathme_cp_PH.py:Epoch 76/500	Loss 174.0964 ± 35.3493
+INFO:pathme_cp_PH.py:Epoch 77/500	Loss 170.7396 ± 32.9346
+INFO:pathme_cp_PH.py:Epoch 78/500	Loss 165.4826 ± 34.5426
+INFO:pathme_cp_PH.py:Epoch 79/500	Loss 167.8282 ± 33.4381
+INFO:pathme_cp_PH.py:Epoch 80/500	Loss 171.4380 ± 35.9658
+INFO:pathme_cp_PH.py:Epoch 81/500	Loss 166.6996 ± 32.2625
+INFO:pathme_cp_PH.py:Epoch 82/500	Loss 166.4490 ± 34.3943
+INFO:pathme_cp_PH.py:Epoch 83/500	Loss 164.5238 ± 34.9605
+INFO:pathme_cp_PH.py:Epoch 84/500	Loss 157.2724 ± 28.2583
+INFO:pathme_cp_PH.py:Epoch 85/500	Loss 166.3488 ± 33.0318
+INFO:pathme_cp_PH.py:Epoch 86/500	Loss 170.7578 ± 31.2657
+INFO:pathme_cp_PH.py:Epoch 87/500	Loss 168.1594 ± 32.1031
+INFO:pathme_cp_PH.py:Epoch 88/500	Loss 157.3199 ± 33.8582
+INFO:pathme_cp_PH.py:Epoch 89/500	Loss 165.5133 ± 33.9652
+INFO:pathme_cp_PH.py:Epoch 90/500	Loss 162.5964 ± 35.8445
+INFO:pathme_cp_PH.py:Epoch 91/500	Loss 156.6564 ± 32.0882
+INFO:pathme_cp_PH.py:Epoch 92/500	Loss 163.5314 ± 33.7661
+INFO:pathme_cp_PH.py:Epoch 93/500	Loss 162.7961 ± 33.9312
+INFO:pathme_cp_PH.py:Epoch 94/500	Loss 163.2254 ± 34.6745
+INFO:pathme_cp_PH.py:Epoch 95/500	Loss 159.3880 ± 35.7742
+INFO:pathme_cp_PH.py:Epoch 96/500	Loss 160.8814 ± 34.6070
+INFO:pathme_cp_PH.py:Epoch 97/500	Loss 164.7107 ± 34.1804
+INFO:pathme_cp_PH.py:Epoch 98/500	Loss 163.2806 ± 31.1355
+INFO:pathme_cp_PH.py:Epoch 99/500	Loss 155.8027 ± 33.9262
+INFO:pathme_cp_PH.py:Epoch 100/500	Loss 155.7495 ± 31.4781
+INFO:pathme_cp_PH.py:Epoch 101/500	Loss 160.9994 ± 33.5472
+INFO:pathme_cp_PH.py:Epoch 102/500	Loss 156.0212 ± 33.6720
+INFO:pathme_cp_PH.py:Epoch 103/500	Loss 157.0858 ± 35.5544
+INFO:pathme_cp_PH.py:Epoch 104/500	Loss 157.4674 ± 29.7599
+INFO:pathme_cp_PH.py:Epoch 105/500	Loss 155.9455 ± 32.9576
+INFO:pathme_cp_PH.py:Epoch 106/500	Loss 160.6519 ± 29.6448
+INFO:pathme_cp_PH.py:Epoch 107/500	Loss 154.6603 ± 32.4268
+INFO:pathme_cp_PH.py:Epoch 108/500	Loss 166.8903 ± 33.6264
+INFO:pathme_cp_PH.py:Epoch 109/500	Loss 162.9593 ± 35.1533
+INFO:pathme_cp_PH.py:Epoch 110/500	Loss 155.1450 ± 33.6590
+INFO:pathme_cp_PH.py:Epoch 111/500	Loss 162.1048 ± 29.7988
+INFO:pathme_cp_PH.py:Epoch 112/500	Loss 159.8162 ± 30.7434
+INFO:pathme_cp_PH.py:Epoch 113/500	Loss 160.6614 ± 33.5267
+INFO:pathme_cp_PH.py:Epoch 114/500	Loss 164.8138 ± 38.2363
+INFO:pathme_cp_PH.py:Epoch 115/500	Loss 162.1103 ± 35.4030
+INFO:pathme_cp_PH.py:Epoch 116/500	Loss 160.1010 ± 31.5943
+INFO:pathme_cp_PH.py:Epoch 117/500	Loss 162.8163 ± 36.9908
+INFO:pathme_cp_PH.py:Epoch 118/500	Loss 161.1007 ± 37.6981
+INFO:pathme_cp_PH.py:Epoch 119/500	Loss 155.0044 ± 27.7679
+INFO:pathme_cp_PH.py:Epoch 120/500	Loss 154.6927 ± 32.6899
+INFO:pathme_cp_PH.py:Epoch 121/500	Loss 156.3727 ± 29.8435
+INFO:pathme_cp_PH.py:Epoch 122/500	Loss 154.0699 ± 30.6898
+INFO:pathme_cp_PH.py:Epoch 123/500	Loss 156.9390 ± 36.1081
+INFO:pathme_cp_PH.py:Epoch 124/500	Loss 152.9305 ± 34.0687
+INFO:pathme_cp_PH.py:Epoch 125/500	Loss 155.5006 ± 33.2389
+INFO:pathme_cp_PH.py:Epoch 126/500	Loss 157.4810 ± 35.1269
+INFO:pathme_cp_PH.py:Epoch 127/500	Loss 154.5606 ± 32.2105
+INFO:pathme_cp_PH.py:Epoch 128/500	Loss 157.5479 ± 34.3929
+INFO:pathme_cp_PH.py:Epoch 129/500	Loss 153.4129 ± 36.7985
+INFO:pathme_cp_PH.py:Epoch 130/500	Loss 157.7385 ± 37.4282
+INFO:pathme_cp_PH.py:Epoch 131/500	Loss 157.2497 ± 31.6972
+INFO:pathme_cp_PH.py:Epoch 132/500	Loss 157.3120 ± 32.7183
+INFO:pathme_cp_PH.py:Epoch 133/500	Loss 151.5753 ± 31.9609
+INFO:pathme_cp_PH.py:Epoch 134/500	Loss 157.2097 ± 32.5005
+INFO:pathme_cp_PH.py:Epoch 135/500	Loss 154.0104 ± 29.0493
+INFO:pathme_cp_PH.py:Epoch 136/500	Loss 151.8390 ± 27.7046
+INFO:pathme_cp_PH.py:Epoch 137/500	Loss 157.9968 ± 33.0858
+INFO:pathme_cp_PH.py:Epoch 138/500	Loss 148.1831 ± 29.4870
+INFO:pathme_cp_PH.py:Epoch 139/500	Loss 152.0721 ± 38.6824
+INFO:pathme_cp_PH.py:Epoch 140/500	Loss 145.8677 ± 29.5812
+INFO:pathme_cp_PH.py:Epoch 141/500	Loss 153.1463 ± 32.8216
+INFO:pathme_cp_PH.py:Epoch 142/500	Loss 150.4909 ± 29.9177
+INFO:pathme_cp_PH.py:Epoch 143/500	Loss 142.2172 ± 33.3369
+INFO:pathme_cp_PH.py:Epoch 144/500	Loss 150.9600 ± 32.4859
+INFO:pathme_cp_PH.py:Epoch 145/500	Loss 153.1642 ± 32.9034
+INFO:pathme_cp_PH.py:Epoch 146/500	Loss 154.4065 ± 34.8859
+INFO:pathme_cp_PH.py:Epoch 147/500	Loss 152.5274 ± 32.7375
+INFO:pathme_cp_PH.py:Epoch 148/500	Loss 151.1193 ± 32.7694
+INFO:pathme_cp_PH.py:Epoch 149/500	Loss 150.5909 ± 31.2070
+INFO:pathme_cp_PH.py:Epoch 150/500	Loss 154.1688 ± 33.2386
+INFO:pathme_cp_PH.py:Epoch 151/500	Loss 151.9373 ± 30.7178
+INFO:pathme_cp_PH.py:Epoch 152/500	Loss 148.4878 ± 31.8709
+INFO:pathme_cp_PH.py:Epoch 153/500	Loss 145.3258 ± 30.7176
+INFO:pathme_cp_PH.py:Epoch 154/500	Loss 151.9384 ± 31.4796
+INFO:pathme_cp_PH.py:Epoch 155/500	Loss 151.8103 ± 31.8284
+INFO:pathme_cp_PH.py:Epoch 156/500	Loss 153.7728 ± 32.8424
+INFO:pathme_cp_PH.py:Epoch 157/500	Loss 149.1383 ± 32.2340
+INFO:pathme_cp_PH.py:Epoch 158/500	Loss 149.4225 ± 30.9278
+INFO:pathme_cp_PH.py:Epoch 159/500	Loss 149.2513 ± 33.1056
+INFO:pathme_cp_PH.py:Epoch 160/500	Loss 149.9525 ± 31.7206
+INFO:pathme_cp_PH.py:Epoch 161/500	Loss 149.2371 ± 34.0962
+INFO:pathme_cp_PH.py:Epoch 162/500	Loss 157.1235 ± 31.2244
+INFO:pathme_cp_PH.py:Epoch 163/500	Loss 146.6865 ± 27.7244
+INFO:pathme_cp_PH.py:Epoch 164/500	Loss 150.8465 ± 30.4823
+INFO:pathme_cp_PH.py:Epoch 165/500	Loss 153.1240 ± 33.4987
+INFO:pathme_cp_PH.py:Epoch 166/500	Loss 152.2172 ± 30.9224
+INFO:pathme_cp_PH.py:Epoch 167/500	Loss 151.0484 ± 33.1136
+INFO:pathme_cp_PH.py:Epoch 168/500	Loss 146.7821 ± 31.3471
+INFO:pathme_cp_PH.py:Epoch 169/500	Loss 153.1703 ± 32.6959
+INFO:pathme_cp_PH.py:Epoch 170/500	Loss 146.7356 ± 34.7197
+INFO:pathme_cp_PH.py:Epoch 171/500	Loss 149.8450 ± 36.1168
+INFO:pathme_cp_PH.py:Epoch 172/500	Loss 149.6472 ± 33.5954
+INFO:pathme_cp_PH.py:Epoch 173/500	Loss 145.3467 ± 31.3036
+INFO:pathme_cp_PH.py:Epoch 174/500	Loss 145.4602 ± 31.2259
+INFO:pathme_cp_PH.py:Epoch 175/500	Loss 146.4040 ± 30.9176
+INFO:pathme_cp_PH.py:Epoch 176/500	Loss 148.7552 ± 35.1789
+INFO:pathme_cp_PH.py:Epoch 177/500	Loss 147.9755 ± 32.5444
+INFO:pathme_cp_PH.py:Epoch 178/500	Loss 145.0934 ± 32.0675
+INFO:pathme_cp_PH.py:Epoch 179/500	Loss 148.6991 ± 31.9576
+INFO:pathme_cp_PH.py:Epoch 180/500	Loss 147.7158 ± 30.6648
+INFO:pathme_cp_PH.py:Epoch 181/500	Loss 148.0740 ± 31.0793
+INFO:pathme_cp_PH.py:Epoch 182/500	Loss 151.7777 ± 30.9939
+INFO:pathme_cp_PH.py:Epoch 183/500	Loss 152.6325 ± 30.6412
+INFO:pathme_cp_PH.py:Epoch 184/500	Loss 145.3446 ± 26.6332
+INFO:pathme_cp_PH.py:Epoch 185/500	Loss 152.0912 ± 35.0339
+INFO:pathme_cp_PH.py:Epoch 186/500	Loss 141.0447 ± 31.2382
+INFO:pathme_cp_PH.py:Epoch 187/500	Loss 146.5851 ± 32.2851
+INFO:pathme_cp_PH.py:Epoch 188/500	Loss 145.5307 ± 32.2779
+INFO:pathme_cp_PH.py:Epoch 189/500	Loss 143.6774 ± 32.0775
+INFO:pathme_cp_PH.py:Epoch 190/500	Loss 143.8508 ± 29.5767
+INFO:pathme_cp_PH.py:Epoch 191/500	Loss 137.8905 ± 32.2091
+INFO:pathme_cp_PH.py:Epoch 192/500	Loss 144.8628 ± 26.6461
+INFO:pathme_cp_PH.py:Epoch 193/500	Loss 146.8108 ± 31.6448
+INFO:pathme_cp_PH.py:Epoch 194/500	Loss 154.2495 ± 34.0618
+INFO:pathme_cp_PH.py:Epoch 195/500	Loss 145.7989 ± 29.7893
+INFO:pathme_cp_PH.py:Epoch 196/500	Loss 153.7628 ± 33.8567
+INFO:pathme_cp_PH.py:Epoch 197/500	Loss 149.5091 ± 32.1309
+INFO:pathme_cp_PH.py:Epoch 198/500	Loss 143.5587 ± 31.7176
+INFO:pathme_cp_PH.py:Epoch 199/500	Loss 142.7926 ± 32.7638
+INFO:pathme_cp_PH.py:Epoch 200/500	Loss 141.3121 ± 27.9318
+INFO:pathme_cp_PH.py:Epoch 201/500	Loss 138.8449 ± 32.6946
+INFO:pathme_cp_PH.py:Epoch 202/500	Loss 150.0083 ± 32.6118
+INFO:pathme_cp_PH.py:Epoch 203/500	Loss 140.2349 ± 31.1019
+INFO:pathme_cp_PH.py:Epoch 204/500	Loss 150.8113 ± 31.8018
+INFO:pathme_cp_PH.py:Epoch 205/500	Loss 140.3978 ± 28.8009
+INFO:pathme_cp_PH.py:Epoch 206/500	Loss 146.3227 ± 34.6569
+INFO:pathme_cp_PH.py:Epoch 207/500	Loss 149.9031 ± 32.5626
+INFO:pathme_cp_PH.py:Epoch 208/500	Loss 141.6135 ± 32.0520
+INFO:pathme_cp_PH.py:Epoch 209/500	Loss 144.9415 ± 33.1605
+INFO:pathme_cp_PH.py:Epoch 210/500	Loss 144.5022 ± 32.1107
+INFO:pathme_cp_PH.py:Epoch 211/500	Loss 141.5612 ± 31.0838
+INFO:pathme_cp_PH.py:Epoch 212/500	Loss 147.0314 ± 28.6670
+INFO:pathme_cp_PH.py:Epoch 213/500	Loss 150.3908 ± 32.8362
+INFO:pathme_cp_PH.py:Epoch 214/500	Loss 140.5721 ± 28.5477
+INFO:pathme_cp_PH.py:Epoch 215/500	Loss 143.9453 ± 31.9623
+INFO:pathme_cp_PH.py:Epoch 216/500	Loss 138.0316 ± 30.8715
+INFO:pathme_cp_PH.py:Epoch 217/500	Loss 139.9356 ± 32.4972
+INFO:pathme_cp_PH.py:Epoch 218/500	Loss 149.1888 ± 31.0842
+INFO:pathme_cp_PH.py:Epoch 219/500	Loss 141.1115 ± 30.3000
+INFO:pathme_cp_PH.py:Epoch 220/500	Loss 146.7213 ± 30.9513
+INFO:pathme_cp_PH.py:Epoch 221/500	Loss 140.3786 ± 34.5460
+INFO:pathme_cp_PH.py:Epoch 222/500	Loss 143.4125 ± 30.4580
+INFO:pathme_cp_PH.py:Epoch 223/500	Loss 143.6365 ± 26.3284
+INFO:pathme_cp_PH.py:Epoch 224/500	Loss 137.6717 ± 27.4589
+INFO:pathme_cp_PH.py:Epoch 225/500	Loss 140.4577 ± 28.5623
+INFO:pathme_cp_PH.py:Epoch 226/500	Loss 145.7706 ± 32.1164
+INFO:pathme_cp_PH.py:Epoch 227/500	Loss 137.8439 ± 29.6710
+INFO:pathme_cp_PH.py:Epoch 228/500	Loss 143.4648 ± 34.7567
+INFO:pathme_cp_PH.py:Epoch 229/500	Loss 145.2985 ± 30.9176
+INFO:pathme_cp_PH.py:Epoch 230/500	Loss 142.4508 ± 38.6285
+INFO:pathme_cp_PH.py:Epoch 231/500	Loss 134.7789 ± 25.8326
+INFO:pathme_cp_PH.py:Epoch 232/500	Loss 144.1927 ± 34.0109
+INFO:pathme_cp_PH.py:Epoch 233/500	Loss 136.4804 ± 31.1604
+INFO:pathme_cp_PH.py:Epoch 234/500	Loss 135.7569 ± 29.3146
+INFO:pathme_cp_PH.py:Epoch 235/500	Loss 148.4080 ± 31.1463
+INFO:pathme_cp_PH.py:Epoch 236/500	Loss 144.1082 ± 31.2109
+INFO:pathme_cp_PH.py:Epoch 237/500	Loss 141.1810 ± 32.9385
+INFO:pathme_cp_PH.py:Epoch 238/500	Loss 138.6502 ± 33.0975
+INFO:pathme_cp_PH.py:Epoch 239/500	Loss 139.9833 ± 28.1282
+INFO:pathme_cp_PH.py:Epoch 240/500	Loss 145.3887 ± 30.6520
+INFO:pathme_cp_PH.py:Epoch 241/500	Loss 142.6069 ± 32.0865
+INFO:pathme_cp_PH.py:Epoch 242/500	Loss 140.0564 ± 32.2129
+INFO:pathme_cp_PH.py:Epoch 243/500	Loss 142.6276 ± 33.4568
+INFO:pathme_cp_PH.py:Epoch 244/500	Loss 141.8771 ± 29.6305
+INFO:pathme_cp_PH.py:Epoch 245/500	Loss 140.2527 ± 30.2976
+INFO:pathme_cp_PH.py:Epoch 246/500	Loss 148.3313 ± 31.8838
+INFO:pathme_cp_PH.py:Epoch 247/500	Loss 146.2660 ± 30.3511
+INFO:pathme_cp_PH.py:Epoch 248/500	Loss 141.7220 ± 32.6675
+INFO:pathme_cp_PH.py:Epoch 249/500	Loss 137.1001 ± 31.7504
+INFO:pathme_cp_PH.py:Epoch 250/500	Loss 141.0825 ± 30.6988
+INFO:pathme_cp_PH.py:Epoch 251/500	Loss 139.3428 ± 26.3937
+INFO:pathme_cp_PH.py:Epoch 252/500	Loss 137.7292 ± 30.0006
+INFO:pathme_cp_PH.py:Epoch 253/500	Loss 141.0939 ± 32.4868
+INFO:pathme_cp_PH.py:Epoch 254/500	Loss 140.2130 ± 33.0438
+INFO:pathme_cp_PH.py:Epoch 255/500	Loss 140.8682 ± 28.9873
+INFO:pathme_cp_PH.py:Epoch 256/500	Loss 142.7615 ± 33.2713
+INFO:pathme_cp_PH.py:Epoch 257/500	Loss 142.9725 ± 31.8567
+INFO:pathme_cp_PH.py:Epoch 258/500	Loss 139.6506 ± 28.3569
+INFO:pathme_cp_PH.py:Epoch 259/500	Loss 140.4934 ± 32.9550
+INFO:pathme_cp_PH.py:Epoch 260/500	Loss 141.4783 ± 30.0899
+INFO:pathme_cp_PH.py:Epoch 261/500	Loss 143.6696 ± 26.5518
+INFO:pathme_cp_PH.py:Epoch 262/500	Loss 134.5813 ± 32.6864
+INFO:pathme_cp_PH.py:Epoch 263/500	Loss 145.4868 ± 27.9796
+INFO:pathme_cp_PH.py:Epoch 264/500	Loss 139.6162 ± 32.8004
+INFO:pathme_cp_PH.py:Epoch 265/500	Loss 140.5729 ± 31.1106
+INFO:pathme_cp_PH.py:Epoch 266/500	Loss 138.0544 ± 30.8563
+INFO:pathme_cp_PH.py:Epoch 267/500	Loss 132.7783 ± 31.6776
+INFO:pathme_cp_PH.py:Epoch 268/500	Loss 140.1480 ± 26.9102
+INFO:pathme_cp_PH.py:Epoch 269/500	Loss 141.1719 ± 33.3148
+INFO:pathme_cp_PH.py:Epoch 270/500	Loss 142.2454 ± 29.9564
+INFO:pathme_cp_PH.py:Epoch 271/500	Loss 135.7914 ± 29.0943
+INFO:pathme_cp_PH.py:Epoch 272/500	Loss 142.0645 ± 31.7717
+INFO:pathme_cp_PH.py:Epoch 273/500	Loss 136.5242 ± 26.8885
+INFO:pathme_cp_PH.py:Epoch 274/500	Loss 142.2225 ± 31.2238
+INFO:pathme_cp_PH.py:Epoch 275/500	Loss 139.3778 ± 32.7464
+INFO:pathme_cp_PH.py:Epoch 276/500	Loss 139.0879 ± 35.1747
+INFO:pathme_cp_PH.py:Epoch 277/500	Loss 137.0394 ± 29.5989
+INFO:pathme_cp_PH.py:Epoch 278/500	Loss 140.0924 ± 31.1853
+INFO:pathme_cp_PH.py:Epoch 279/500	Loss 134.5373 ± 30.5940
+INFO:pathme_cp_PH.py:Epoch 280/500	Loss 137.5547 ± 28.5716
+INFO:pathme_cp_PH.py:Epoch 281/500	Loss 145.1141 ± 28.0744
+INFO:pathme_cp_PH.py:Epoch 282/500	Loss 136.5388 ± 33.6589
+INFO:pathme_cp_PH.py:Epoch 283/500	Loss 144.3129 ± 35.0263
+INFO:pathme_cp_PH.py:Epoch 284/500	Loss 140.7328 ± 32.2635
+INFO:pathme_cp_PH.py:Epoch 285/500	Loss 139.5512 ± 31.7238
+INFO:pathme_cp_PH.py:Epoch 286/500	Loss 142.6438 ± 30.5438
+INFO:pathme_cp_PH.py:Epoch 287/500	Loss 137.2510 ± 31.2687
+INFO:pathme_cp_PH.py:Epoch 288/500	Loss 135.7514 ± 33.3378
+INFO:pathme_cp_PH.py:Epoch 289/500	Loss 136.1510 ± 28.8236
+INFO:pathme_cp_PH.py:Epoch 290/500	Loss 136.6021 ± 32.5486
+INFO:pathme_cp_PH.py:Epoch 291/500	Loss 137.7832 ± 30.8694
+INFO:pathme_cp_PH.py:Epoch 292/500	Loss 138.7193 ± 33.3553
+INFO:pathme_cp_PH.py:Epoch 293/500	Loss 143.3535 ± 32.9199
+INFO:pathme_cp_PH.py:Epoch 294/500	Loss 137.4473 ± 29.3244
+INFO:pathme_cp_PH.py:Epoch 295/500	Loss 135.9200 ± 29.2049
+INFO:pathme_cp_PH.py:Epoch 296/500	Loss 140.7627 ± 33.1442
+INFO:pathme_cp_PH.py:Epoch 297/500	Loss 131.3525 ± 28.0731
+INFO:pathme_cp_PH.py:Epoch 298/500	Loss 141.2645 ± 33.3430
+INFO:pathme_cp_PH.py:Epoch 299/500	Loss 137.2459 ± 28.0038
+INFO:pathme_cp_PH.py:Epoch 300/500	Loss 138.3928 ± 30.5523
+INFO:pathme_cp_PH.py:Epoch 301/500	Loss 140.1185 ± 31.6539
+INFO:pathme_cp_PH.py:Epoch 302/500	Loss 133.6543 ± 26.3928
+INFO:pathme_cp_PH.py:Epoch 303/500	Loss 138.6857 ± 26.4167
+INFO:pathme_cp_PH.py:Epoch 304/500	Loss 139.9643 ± 30.1578
+INFO:pathme_cp_PH.py:Epoch 305/500	Loss 136.3909 ± 29.9449
+INFO:pathme_cp_PH.py:Epoch 306/500	Loss 140.4517 ± 35.3323
+INFO:pathme_cp_PH.py:Epoch 307/500	Loss 128.7349 ± 32.8936
+INFO:pathme_cp_PH.py:Epoch 308/500	Loss 137.8312 ± 29.6647
+INFO:pathme_cp_PH.py:Epoch 309/500	Loss 135.7664 ± 30.1119
+INFO:pathme_cp_PH.py:Epoch 310/500	Loss 137.1599 ± 27.7003
+INFO:pathme_cp_PH.py:Epoch 311/500	Loss 135.2102 ± 31.9155
+INFO:pathme_cp_PH.py:Epoch 312/500	Loss 135.5993 ± 32.0092
+INFO:pathme_cp_PH.py:Epoch 313/500	Loss 134.8047 ± 32.4208
+INFO:pathme_cp_PH.py:Epoch 314/500	Loss 134.8632 ± 32.3106
+INFO:pathme_cp_PH.py:Epoch 315/500	Loss 140.7194 ± 33.1444
+INFO:pathme_cp_PH.py:Epoch 316/500	Loss 136.3022 ± 31.5519
+INFO:pathme_cp_PH.py:Epoch 317/500	Loss 133.2023 ± 31.8683
+INFO:pathme_cp_PH.py:Epoch 318/500	Loss 134.6123 ± 33.1483
+INFO:pathme_cp_PH.py:Epoch 319/500	Loss 134.5346 ± 30.1114
+INFO:pathme_cp_PH.py:Epoch 320/500	Loss 134.0174 ± 23.2473
+INFO:pathme_cp_PH.py:Epoch 321/500	Loss 132.6333 ± 27.1152
+INFO:pathme_cp_PH.py:Epoch 322/500	Loss 135.8783 ± 29.9199
+INFO:pathme_cp_PH.py:Epoch 323/500	Loss 129.5530 ± 23.5078
+INFO:pathme_cp_PH.py:Epoch 324/500	Loss 139.2613 ± 28.3526
+INFO:pathme_cp_PH.py:Epoch 325/500	Loss 129.8444 ± 31.5332
+INFO:pathme_cp_PH.py:Epoch 326/500	Loss 130.7729 ± 29.4083
+INFO:pathme_cp_PH.py:Epoch 327/500	Loss 138.8907 ± 29.7745
+INFO:pathme_cp_PH.py:Epoch 328/500	Loss 135.3873 ± 29.7236
+INFO:pathme_cp_PH.py:Epoch 329/500	Loss 137.8605 ± 30.8226
+INFO:pathme_cp_PH.py:Epoch 330/500	Loss 144.5707 ± 32.2245
+INFO:pathme_cp_PH.py:Epoch 331/500	Loss 132.0205 ± 30.8915
+INFO:pathme_cp_PH.py:Epoch 332/500	Loss 137.1506 ± 29.6886
+INFO:pathme_cp_PH.py:Epoch 333/500	Loss 134.9245 ± 29.5397
+INFO:pathme_cp_PH.py:Epoch 334/500	Loss 139.1115 ± 31.0034
+INFO:pathme_cp_PH.py:Epoch 335/500	Loss 135.6565 ± 32.5235
+INFO:pathme_cp_PH.py:Epoch 336/500	Loss 132.7689 ± 28.5459
+INFO:pathme_cp_PH.py:Epoch 337/500	Loss 129.6206 ± 32.5400
+INFO:pathme_cp_PH.py:Epoch 338/500	Loss 134.9125 ± 29.3594
+INFO:pathme_cp_PH.py:Epoch 339/500	Loss 135.4100 ± 29.9291
+INFO:pathme_cp_PH.py:Epoch 340/500	Loss 134.3508 ± 32.8933
+INFO:pathme_cp_PH.py:Epoch 341/500	Loss 139.2561 ± 36.1956
+INFO:pathme_cp_PH.py:Epoch 342/500	Loss 132.7248 ± 31.1592
+INFO:pathme_cp_PH.py:Epoch 343/500	Loss 133.8262 ± 31.3256
+INFO:pathme_cp_PH.py:Epoch 344/500	Loss 135.1824 ± 28.9084
+INFO:pathme_cp_PH.py:Epoch 345/500	Loss 136.0603 ± 30.2297
+INFO:pathme_cp_PH.py:Epoch 346/500	Loss 135.8023 ± 33.3032
+INFO:pathme_cp_PH.py:Epoch 347/500	Loss 140.0490 ± 35.2114
+INFO:pathme_cp_PH.py:Epoch 348/500	Loss 126.9681 ± 32.2734
+INFO:pathme_cp_PH.py:Epoch 349/500	Loss 127.8835 ± 29.2300
+INFO:pathme_cp_PH.py:Epoch 350/500	Loss 133.6813 ± 29.6791
+INFO:pathme_cp_PH.py:Epoch 351/500	Loss 133.0358 ± 28.3017
+INFO:pathme_cp_PH.py:Epoch 352/500	Loss 140.5153 ± 29.9415
+INFO:pathme_cp_PH.py:Epoch 353/500	Loss 137.4433 ± 32.4877
+INFO:pathme_cp_PH.py:Epoch 354/500	Loss 137.3281 ± 32.9297
+INFO:pathme_cp_PH.py:Epoch 355/500	Loss 138.5793 ± 31.9356
+INFO:pathme_cp_PH.py:Epoch 356/500	Loss 130.1378 ± 30.4504
+INFO:pathme_cp_PH.py:Epoch 357/500	Loss 138.7719 ± 32.0153
+INFO:pathme_cp_PH.py:Epoch 358/500	Loss 135.8748 ± 32.3208
+INFO:pathme_cp_PH.py:Epoch 359/500	Loss 129.5562 ± 29.8478
+INFO:pathme_cp_PH.py:Epoch 360/500	Loss 126.5172 ± 28.4504
+INFO:pathme_cp_PH.py:Epoch 361/500	Loss 133.8665 ± 31.1175
+INFO:pathme_cp_PH.py:Epoch 362/500	Loss 137.4390 ± 36.1872
+INFO:pathme_cp_PH.py:Epoch 363/500	Loss 130.0899 ± 29.8489
+INFO:pathme_cp_PH.py:Epoch 364/500	Loss 135.8381 ± 32.2799
+INFO:pathme_cp_PH.py:Epoch 365/500	Loss 137.2253 ± 29.7740
+INFO:pathme_cp_PH.py:Epoch 366/500	Loss 140.0943 ± 33.8134
+INFO:pathme_cp_PH.py:Epoch 367/500	Loss 139.4781 ± 34.9872
+INFO:pathme_cp_PH.py:Epoch 368/500	Loss 141.7958 ± 33.9510
+INFO:pathme_cp_PH.py:Epoch 369/500	Loss 134.7729 ± 30.2804
+INFO:pathme_cp_PH.py:Epoch 370/500	Loss 129.7403 ± 33.5729
+INFO:pathme_cp_PH.py:Epoch 371/500	Loss 129.4133 ± 30.4000
+INFO:pathme_cp_PH.py:Epoch 372/500	Loss 133.3045 ± 25.9523
+INFO:pathme_cp_PH.py:Epoch 373/500	Loss 133.8846 ± 31.5369
+INFO:pathme_cp_PH.py:Epoch 374/500	Loss 128.7877 ± 27.3960
+INFO:pathme_cp_PH.py:Epoch 375/500	Loss 134.0406 ± 27.4145
+INFO:pathme_cp_PH.py:Epoch 376/500	Loss 133.5899 ± 29.7427
+INFO:pathme_cp_PH.py:Epoch 377/500	Loss 132.2538 ± 28.1935
+INFO:pathme_cp_PH.py:Epoch 378/500	Loss 132.8354 ± 31.1838
+INFO:pathme_cp_PH.py:Epoch 379/500	Loss 134.9957 ± 30.8156
+INFO:pathme_cp_PH.py:Epoch 380/500	Loss 127.2813 ± 28.2020
+INFO:pathme_cp_PH.py:Epoch 381/500	Loss 135.7430 ± 30.0296
+INFO:pathme_cp_PH.py:Epoch 382/500	Loss 130.5092 ± 28.0553
+INFO:pathme_cp_PH.py:Epoch 383/500	Loss 134.6827 ± 32.7585
+INFO:pathme_cp_PH.py:Epoch 384/500	Loss 136.0289 ± 26.9491
+INFO:pathme_cp_PH.py:Epoch 385/500	Loss 134.3196 ± 29.2388
+INFO:pathme_cp_PH.py:Epoch 386/500	Loss 133.1650 ± 31.2936
+INFO:pathme_cp_PH.py:Epoch 387/500	Loss 130.7130 ± 26.1840
+INFO:pathme_cp_PH.py:Epoch 388/500	Loss 133.1150 ± 28.3471
+INFO:pathme_cp_PH.py:Epoch 389/500	Loss 137.0337 ± 30.1022
+INFO:pathme_cp_PH.py:Epoch 390/500	Loss 134.7022 ± 30.9816
+INFO:pathme_cp_PH.py:Epoch 391/500	Loss 134.3179 ± 32.5449
+INFO:pathme_cp_PH.py:Epoch 392/500	Loss 125.9404 ± 28.6677
+INFO:pathme_cp_PH.py:Epoch 393/500	Loss 137.4839 ± 29.9834
+INFO:pathme_cp_PH.py:Epoch 394/500	Loss 130.8782 ± 27.4301
+INFO:pathme_cp_PH.py:Epoch 395/500	Loss 132.0417 ± 28.1105
+INFO:pathme_cp_PH.py:Epoch 396/500	Loss 133.4898 ± 30.1474
+INFO:pathme_cp_PH.py:Epoch 397/500	Loss 128.5432 ± 27.3381
+INFO:pathme_cp_PH.py:Epoch 398/500	Loss 134.4633 ± 30.4105
+INFO:pathme_cp_PH.py:Epoch 399/500	Loss 133.3114 ± 24.5245
+INFO:pathme_cp_PH.py:Epoch 400/500	Loss 133.2703 ± 31.8092
+INFO:pathme_cp_PH.py:Epoch 401/500	Loss 128.8758 ± 27.5410
+INFO:pathme_cp_PH.py:Epoch 402/500	Loss 131.9000 ± 31.9582
+INFO:pathme_cp_PH.py:Epoch 403/500	Loss 135.2103 ± 30.4977
+INFO:pathme_cp_PH.py:Epoch 404/500	Loss 132.8507 ± 33.6473
+INFO:pathme_cp_PH.py:Epoch 405/500	Loss 136.4544 ± 26.7670
+INFO:pathme_cp_PH.py:Epoch 406/500	Loss 140.6805 ± 29.5742
+INFO:pathme_cp_PH.py:Epoch 407/500	Loss 134.3840 ± 31.8333
+INFO:pathme_cp_PH.py:Epoch 408/500	Loss 133.2093 ± 33.3201
+INFO:pathme_cp_PH.py:Epoch 409/500	Loss 134.3103 ± 27.4028
+INFO:pathme_cp_PH.py:Epoch 410/500	Loss 129.8118 ± 31.6977
+INFO:pathme_cp_PH.py:Epoch 411/500	Loss 136.8237 ± 28.0275
+INFO:pathme_cp_PH.py:Epoch 412/500	Loss 133.9859 ± 29.6895
+INFO:pathme_cp_PH.py:Epoch 413/500	Loss 129.1325 ± 27.4766
+INFO:pathme_cp_PH.py:Epoch 414/500	Loss 130.2420 ± 30.6150
+INFO:pathme_cp_PH.py:Epoch 415/500	Loss 133.5283 ± 29.4517
+INFO:pathme_cp_PH.py:Epoch 416/500	Loss 126.5862 ± 29.4791
+INFO:pathme_cp_PH.py:Epoch 417/500	Loss 131.4061 ± 28.6196
+INFO:pathme_cp_PH.py:Epoch 418/500	Loss 129.8476 ± 30.5487
+INFO:pathme_cp_PH.py:Epoch 419/500	Loss 131.9146 ± 27.0617
+INFO:pathme_cp_PH.py:Epoch 420/500	Loss 127.4688 ± 30.0836
+INFO:pathme_cp_PH.py:Epoch 421/500	Loss 137.7744 ± 28.2553
+INFO:pathme_cp_PH.py:Epoch 422/500	Loss 130.3320 ± 28.2489
+INFO:pathme_cp_PH.py:Epoch 423/500	Loss 122.6683 ± 29.1974
+INFO:pathme_cp_PH.py:Epoch 424/500	Loss 128.0588 ± 27.7107
+INFO:pathme_cp_PH.py:Epoch 425/500	Loss 135.2069 ± 33.7170
+INFO:pathme_cp_PH.py:Epoch 426/500	Loss 134.2288 ± 31.0880
+INFO:pathme_cp_PH.py:Epoch 427/500	Loss 138.2706 ± 28.6666
+INFO:pathme_cp_PH.py:Epoch 428/500	Loss 128.7840 ± 29.1238
+INFO:pathme_cp_PH.py:Epoch 429/500	Loss 135.2016 ± 27.2619
+INFO:pathme_cp_PH.py:Epoch 430/500	Loss 126.8551 ± 28.8931
+INFO:pathme_cp_PH.py:Epoch 431/500	Loss 126.5618 ± 26.0229
+INFO:pathme_cp_PH.py:Epoch 432/500	Loss 135.4187 ± 29.4702
+INFO:pathme_cp_PH.py:Epoch 433/500	Loss 135.2269 ± 30.4722
+INFO:pathme_cp_PH.py:Epoch 434/500	Loss 131.8228 ± 27.6162
+INFO:pathme_cp_PH.py:Epoch 435/500	Loss 127.8194 ± 33.1175
+INFO:pathme_cp_PH.py:Epoch 436/500	Loss 130.0762 ± 29.9410
+INFO:pathme_cp_PH.py:Epoch 437/500	Loss 131.2976 ± 28.3930
+INFO:pathme_cp_PH.py:Epoch 438/500	Loss 126.6849 ± 26.0174
+INFO:pathme_cp_PH.py:Epoch 439/500	Loss 136.4791 ± 31.3011
+INFO:pathme_cp_PH.py:Epoch 440/500	Loss 129.0896 ± 33.5093
+INFO:pathme_cp_PH.py:Epoch 441/500	Loss 128.5579 ± 29.1357
+INFO:pathme_cp_PH.py:Epoch 442/500	Loss 131.0030 ± 29.3288
+INFO:pathme_cp_PH.py:Epoch 443/500	Loss 133.1710 ± 30.1335
+INFO:pathme_cp_PH.py:Epoch 444/500	Loss 129.1969 ± 34.3284
+INFO:pathme_cp_PH.py:Epoch 445/500	Loss 126.5967 ± 26.2530
+INFO:pathme_cp_PH.py:Epoch 446/500	Loss 134.3250 ± 30.0840
+INFO:pathme_cp_PH.py:Epoch 447/500	Loss 129.8814 ± 29.4612
+INFO:pathme_cp_PH.py:Epoch 448/500	Loss 128.4493 ± 28.6482
+INFO:pathme_cp_PH.py:Epoch 449/500	Loss 127.7301 ± 28.4439
+INFO:pathme_cp_PH.py:Epoch 450/500	Loss 131.8757 ± 30.2681
+INFO:pathme_cp_PH.py:Epoch 451/500	Loss 130.9869 ± 26.2745
+INFO:pathme_cp_PH.py:Epoch 452/500	Loss 130.8057 ± 29.4084
+INFO:pathme_cp_PH.py:Epoch 453/500	Loss 133.0783 ± 32.4111
+INFO:pathme_cp_PH.py:Epoch 454/500	Loss 129.3563 ± 29.0880
+INFO:pathme_cp_PH.py:Epoch 455/500	Loss 131.6608 ± 30.1580
+INFO:pathme_cp_PH.py:Epoch 456/500	Loss 126.8038 ± 27.9790
+INFO:pathme_cp_PH.py:Epoch 457/500	Loss 129.6015 ± 28.7505
+INFO:pathme_cp_PH.py:Epoch 458/500	Loss 126.7427 ± 27.0389
+INFO:pathme_cp_PH.py:Epoch 459/500	Loss 124.6010 ± 26.4763
+INFO:pathme_cp_PH.py:Epoch 460/500	Loss 133.0238 ± 26.2155
+INFO:pathme_cp_PH.py:Epoch 461/500	Loss 127.0743 ± 31.5334
+INFO:pathme_cp_PH.py:Epoch 462/500	Loss 134.4242 ± 27.4208
+INFO:pathme_cp_PH.py:Epoch 463/500	Loss 129.9298 ± 28.7231
+INFO:pathme_cp_PH.py:Epoch 464/500	Loss 126.4896 ± 32.0505
+INFO:pathme_cp_PH.py:Epoch 465/500	Loss 125.9679 ± 24.8827
+INFO:pathme_cp_PH.py:Epoch 466/500	Loss 135.7505 ± 31.2740
+INFO:pathme_cp_PH.py:Epoch 467/500	Loss 122.6357 ± 27.8061
+INFO:pathme_cp_PH.py:Epoch 468/500	Loss 122.2808 ± 26.1074
+INFO:pathme_cp_PH.py:Epoch 469/500	Loss 127.7754 ± 28.7972
+INFO:pathme_cp_PH.py:Epoch 470/500	Loss 124.1549 ± 33.5377
+INFO:pathme_cp_PH.py:Epoch 471/500	Loss 131.2377 ± 29.6212
+INFO:pathme_cp_PH.py:Epoch 472/500	Loss 125.5782 ± 31.0800
+INFO:pathme_cp_PH.py:Epoch 473/500	Loss 130.6388 ± 33.6914
+INFO:pathme_cp_PH.py:Epoch 474/500	Loss 131.6898 ± 28.8714
+INFO:pathme_cp_PH.py:Epoch 475/500	Loss 125.6582 ± 32.7603
+INFO:pathme_cp_PH.py:Epoch 476/500	Loss 135.5673 ± 29.6396
+INFO:pathme_cp_PH.py:Epoch 477/500	Loss 134.8692 ± 28.5171
+INFO:pathme_cp_PH.py:Epoch 478/500	Loss 123.8871 ± 25.9343
+INFO:pathme_cp_PH.py:Epoch 479/500	Loss 126.3046 ± 24.7458
+INFO:pathme_cp_PH.py:Epoch 480/500	Loss 126.9771 ± 31.7509
+INFO:pathme_cp_PH.py:Epoch 481/500	Loss 127.5498 ± 27.8981
+INFO:pathme_cp_PH.py:Epoch 482/500	Loss 121.8740 ± 28.7340
+INFO:pathme_cp_PH.py:Epoch 483/500	Loss 134.1242 ± 29.3781
+INFO:pathme_cp_PH.py:Epoch 484/500	Loss 130.8802 ± 30.0516
+INFO:pathme_cp_PH.py:Epoch 485/500	Loss 131.1045 ± 29.1144
+INFO:pathme_cp_PH.py:Epoch 486/500	Loss 137.0284 ± 33.8290
+INFO:pathme_cp_PH.py:Epoch 487/500	Loss 129.6472 ± 33.0055
+INFO:pathme_cp_PH.py:Epoch 488/500	Loss 135.2167 ± 33.0189
+INFO:pathme_cp_PH.py:Epoch 489/500	Loss 129.8632 ± 29.6958
+INFO:pathme_cp_PH.py:Epoch 490/500	Loss 128.8099 ± 29.2609
+INFO:pathme_cp_PH.py:Epoch 491/500	Loss 132.0906 ± 28.5948
+INFO:pathme_cp_PH.py:Epoch 492/500	Loss 130.0243 ± 30.9276
+INFO:pathme_cp_PH.py:Epoch 493/500	Loss 130.2831 ± 33.6656
+INFO:pathme_cp_PH.py:Epoch 494/500	Loss 128.4994 ± 28.4763
+INFO:pathme_cp_PH.py:Epoch 495/500	Loss 134.1372 ± 34.8947
+INFO:pathme_cp_PH.py:Epoch 496/500	Loss 130.6562 ± 32.1949
+INFO:pathme_cp_PH.py:Epoch 497/500	Loss 133.0428 ± 33.5470
+INFO:pathme_cp_PH.py:Epoch 498/500	Loss 123.3992 ± 28.9055
+INFO:pathme_cp_PH.py:Epoch 499/500	Loss 128.7486 ± 26.5496
+INFO:pathme_cp_PH.py:Epoch 500/500	Loss 128.7699 ± 32.1738
+INFO:pathme_cp_PH.py:is bad performing False
+INFO:pathme_cp_PH.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme
+INFO:pathme_cp_PH.py:dataset name 	train
+INFO:pathme_cp_PH.py:dataset name 	valid
+INFO:pathme_cp_PH.py:dataset name 	test
+INFO:pathme_cp_PH.py:in evalute for dataset: 	test
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:TEST RESULTS
+INFO:pathme_cp_PH.py:Error 	test results 	MRR 0.410590	H@1 0.278356	H@3 0.468469	H@10 0.706378	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PH.py:===========
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:VERY RARE RESULTS
+INFO:pathme_cp_PH.py:Error VERYRARE HEAD results 	MRR 0.074654	H@1 0.046110	H@3 0.083573	H@10 0.123919	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:Error VERYRARE TAIL results 	MRR 0.071548	H@1 0.013937	H@3 0.069686	H@10 0.254355	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:RARE RESULTS
+INFO:pathme_cp_PH.py:Error RARE HEAD results 	MRR 0.390703	H@1 0.273693	H@3 0.445814	H@10 0.633659	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:Error RARE TAIL results 	MRR 0.359739	H@1 0.259278	H@3 0.404213	H@10 0.573721	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:COMMON RESULTS
+INFO:pathme_cp_PH.py:Error COMMON- HEAD results 	MRR 0.373738	H@1 0.217645	H@3 0.432958	H@10 0.746211	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:Error COMMON- TAIL results 	MRR 0.408590	H@1 0.255821	H@3 0.474003	H@10 0.753748	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:VERYCOMMON RESULTS
+INFO:pathme_cp_PH.py:Error VERY-COMMON HEAD results 	MRR 0.456185	H@1 0.287709	H@3 0.536313	H@10 0.835196	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:Error VERY-COMMON TAIL results 	MRR 0.488492	H@1 0.329071	H@3 0.562660	H@10 0.848252	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:VERYVERYCOMMON RESULTS
+INFO:pathme_cp_PH.py:Error VERYVERY-COMMON HEAD results 	MRR 0.736353	H@1 0.646526	H@3 0.791541	H@10 0.907855	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:Error VERYVERY-COMMON TAIL results 	MRR 0.665718	H@1 0.561905	H@3 0.721429	H@10 0.892857	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PH.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+INFO:pathme_cp_PH.py:INFO RELATION 	1
+INFO:pathme_cp_PH.py:MRR 	0.32117259524536446, H@1 	0.16361695638914303, H@3 	0.3720646538578835, H@10 	0.6999085086916743
+INFO:pathme_cp_PH.py:INFO RELATION 	4
+INFO:pathme_cp_PH.py:MRR 	0.37361378928404765, H@1 	0.28708791208791207, H@3 	0.41346153846153844, H@10 	0.5480769230769231
+INFO:pathme_cp_PH.py:INFO RELATION 	2
+INFO:pathme_cp_PH.py:MRR 	0.6671763905156597, H@1 	0.5933048433048433, H@3 	0.7293447293447294, H@10 	0.7863247863247863
+INFO:pathme_cp_PH.py:INFO RELATION 	0
+INFO:pathme_cp_PH.py:MRR 	0.475334342315853, H@1 	0.34229476716274604, H@3 	0.5492078732597215, H@10 	0.7587614018242919
+INFO:pathme_cp_PH.py:INFO RELATION 	6
+INFO:pathme_cp_PH.py:MRR 	0.3174045500410945, H@1 	0.22916666666666666, H@3 	0.3645833333333333, H@10 	0.4739583333333333
+INFO:pathme_cp_PH.py:INFO RELATION 	3
+INFO:pathme_cp_PH.py:MRR 	0.5729740747423856, H@1 	0.4731182795698925, H@3 	0.6424731182795699, H@10 	0.7473118279569892
+INFO:pathme_cp_PH.py:INFO RELATION 	5
+INFO:pathme_cp_PH.py:MRR 	0.3089188701432603, H@1 	0.23891625615763548, H@3 	0.33251231527093594, H@10 	0.4630541871921182
+MMR VAL 0.4105398334160166
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+GPU Epilog Script v0.30
