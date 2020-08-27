@@ -300,7 +300,7 @@ class TransE_MC(KBCModelMCL):
 class ComplEx_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            optimiser_name: str, init_size: float = 1e-3):
+            optimiser_name: str, pret: bool, init_size: float = 1e-3):
         super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
