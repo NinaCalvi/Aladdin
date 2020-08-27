@@ -142,6 +142,8 @@ def main(argv, bayesian=False):
     logger.info(f'Device: {device}')
 
     dataset = utils.load_pse_dataset(data)
+    if data == 'pathme':
+        logger.info(f'relation \t{dataset.rel_mappings}')
 
 
     train_data = torch.tensor(dataset.data["train"])
@@ -389,7 +391,7 @@ def main(argv, bayesian=False):
                         neg_by_type = None
                         rel_type = None
                             
-                    metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder, rel_type = rel_type, neg_by_type = neg_by_type)
+                    metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset)
                     logger.info('CLASSIFICATION METRICS FIVE')
                     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_five)}')
                     logger.info('CLASSIFICATION METRICS TEN')
