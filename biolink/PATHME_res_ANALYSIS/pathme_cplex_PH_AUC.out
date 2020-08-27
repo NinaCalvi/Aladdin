@@ -1,0 +1,276 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 0
+['--model', 'complex', '--data', 'pathme', '--loss', 'pair_hinge', '--epochs', '500', '--learning-rate', '0.012', '--nb-negs', '6', '--batch-size', '1024', '--reg-weight', '8.181e-08', '--loss-margin', '4', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', 'True', '--harder', '--load']
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'complex', '--data', 'pathme', '--loss', 'pair_hinge', '--epochs', '500', '--learning-rate', '0.012', '--nb-negs', '6', '--batch-size', '1024', '--reg-weight', '8.181e-08', '--loss-margin', '4', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_cp_PH.py:Valid: False
+INFO:pathme_cp_PH.py:Device: cuda
+INFO:pathme_cp_PH.py:auc and lod happening
+INFO:pathme_cp_PH.py:dataset name 	train
+INFO:pathme_cp_PH.py:dataset name 	valid
+INFO:pathme_cp_PH.py:dataset name 	test
+INFO:pathme_cp_PH.py:in evalute for dataset: 	test
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:TEST RESULTS
+INFO:pathme_cp_PH.py:Error 	test results 	MRR 0.410590	H@1 0.278356	H@3 0.468469	H@10 0.706378	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PH.py:===========
+INFO:pathme_cp_PH.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 0
+['--model', 'complex', '--data', 'pathme', '--loss', 'pair_hinge', '--epochs', '500', '--learning-rate', '0.012', '--nb-negs', '6', '--batch-size', '1024', '--reg-weight', '8.181e-08', '--loss-margin', '4', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_cp_PH.py:Valid: False
+INFO:pathme_cp_PH.py:Device: cuda
+INFO:pathme_cp_PH.py:auc and lod happening
+INFO:pathme_cp_PH.py:dataset name 	train
+INFO:pathme_cp_PH.py:dataset name 	valid
+INFO:pathme_cp_PH.py:dataset name 	test
+INFO:pathme_cp_PH.py:in evalute for dataset: 	test
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:TEST RESULTS
+INFO:pathme_cp_PH.py:Error 	test results 	MRR 0.410590	H@1 0.278356	H@3 0.468469	H@10 0.706378	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PH.py:===========
+INFO:pathme_cp_PH.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'complex', '--data', 'pathme', '--loss', 'pair_hinge', '--epochs', '500', '--learning-rate', '0.012', '--nb-negs', '6', '--batch-size', '1024', '--reg-weight', '8.181e-08', '--loss-margin', '4', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_cp_PH.py:Valid: False
+INFO:pathme_cp_PH.py:Device: cuda
+INFO:pathme_cp_PH.py:auc and lod happening
+INFO:pathme_cp_PH.py:dataset name 	train
+INFO:pathme_cp_PH.py:dataset name 	valid
+INFO:pathme_cp_PH.py:dataset name 	test
+INFO:pathme_cp_PH.py:in evalute for dataset: 	test
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:TEST RESULTS
+INFO:pathme_cp_PH.py:Error 	test results 	MRR 0.410590	H@1 0.278356	H@3 0.468469	H@10 0.706378	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PH.py:===========
+INFO:pathme_cp_PH.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:pathme_cp_PH.py:length predicate_instanes 	7
+INFO:pathme_cp_PH.py:predicate instances done
+INFO:pathme_cp_PH.py:all tiples 	torch.Size([64266, 3])
+INFO:pathme_cp_PH.py:make test triples numpy
+INFO:pathme_cp_PH.py:about to start predicting
+INFO:pathme_cp_PH.py:length pred pos 	21046
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:all se five facts(126276, 3)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (126276, 1)
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9874 - P@50: 1.0000 > 0
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9914 - AUC-PR: 0.9842 - P@50: 1.0000 > 0
+INFO:pathme_cp_PH.py:length pred pos 	27535
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:all se five facts(165210, 3)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (165210, 1)
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9927 - AUC-PR: 0.9890 - P@50: 1.0000 > 1
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9927 - AUC-PR: 0.9862 - P@50: 1.0000 > 1
+INFO:pathme_cp_PH.py:length pred pos 	6939
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:all se five facts(41634, 3)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (41634, 1)
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9906 - AUC-PR: 0.9870 - P@50: 1.0000 > 2
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9905 - AUC-PR: 0.9840 - P@50: 1.0000 > 2
+INFO:pathme_cp_PH.py:length pred pos 	1959
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'complex', '--data', 'pathme', '--loss', 'pair_hinge', '--epochs', '500', '--learning-rate', '0.012', '--nb-negs', '6', '--batch-size', '1024', '--reg-weight', '8.181e-08', '--loss-margin', '4', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplexPH_batch1024_es_200_reg_n3_rw_8181_lr_012_m_4_nbn_6_pathme', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_cp_PH.py:Valid: False
+INFO:pathme_cp_PH.py:Device: cuda
+INFO:pathme_cp_PH.py:relation 	bidict({'increases_ppi': 0, 'association_ppi': 1, 'decreases_ppi': 2, 'drug_increases_protein': 3, 'drug_decreases_protein': 4, 'drug_association_protein': 5, 'protein_association_drug': 6})
+INFO:pathme_cp_PH.py:auc and lod happening
+INFO:pathme_cp_PH.py:dataset name 	train
+INFO:pathme_cp_PH.py:dataset name 	valid
+INFO:pathme_cp_PH.py:dataset name 	test
+INFO:pathme_cp_PH.py:in evalute for dataset: 	test
+1024
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:TEST RESULTS
+INFO:pathme_cp_PH.py:Error 	test results 	MRR 0.410590	H@1 0.278356	H@3 0.468469	H@10 0.706378	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_cp_PH.py:===========
+INFO:pathme_cp_PH.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:pathme_cp_PH.py:length predicate_instanes 	7
+INFO:pathme_cp_PH.py:predicate instances done
+INFO:pathme_cp_PH.py:all tiples 	torch.Size([64266, 3])
+INFO:pathme_cp_PH.py:make test triples numpy
+INFO:pathme_cp_PH.py:about to start predicting
+INFO:pathme_cp_PH.py:length pred pos 	21046
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:all se five facts(126276, 3)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (126276, 1)
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9874 - P@50: 1.0000 > 0
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9914 - AUC-PR: 0.9842 - P@50: 1.0000 > 0
+INFO:pathme_cp_PH.py:length pred pos 	27535
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:all se five facts(165210, 3)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (165210, 1)
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9927 - AUC-PR: 0.9890 - P@50: 1.0000 > 1
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9927 - AUC-PR: 0.9862 - P@50: 1.0000 > 1
+INFO:pathme_cp_PH.py:length pred pos 	6939
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:all se five facts(41634, 3)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pathme_cp_PH.py:SCORES FIVE SHAPE (41634, 1)
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9906 - AUC-PR: 0.9870 - P@50: 1.0000 > 2
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9905 - AUC-PR: 0.9840 - P@50: 1.0000 > 2
+INFO:pathme_cp_PH.py:length pred pos 	1959
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9893 - AUC-PR: 0.9827 - P@50: 1.0000 > 3
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9895 - AUC-PR: 0.9780 - P@50: 1.0000 > 3
+INFO:pathme_cp_PH.py:length pred pos 	3579
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9858 - AUC-PR: 0.9759 - P@50: 1.0000 > 4
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9860 - AUC-PR: 0.9697 - P@50: 1.0000 > 4
+INFO:pathme_cp_PH.py:length pred pos 	1617
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9615 - AUC-PR: 0.9488 - P@50: 1.0000 > 5
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9619 - AUC-PR: 0.9381 - P@50: 1.0000 > 5
+INFO:pathme_cp_PH.py:length pred pos 	1591
+INFO:pathme_cp_PH.py:retrieved negative samples
+INFO:pathme_cp_PH.py:Done concatenation
+INFO:pathme_cp_PH.py:scores five done
+INFO:pathme_cp_PH.py:scores ten done
+INFO:pathme_cp_PH.py:in the harder set
+INFO:pathme_cp_PH.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9640 - AUC-PR: 0.9531 - P@50: 1.0000 > 6
+INFO:pathme_cp_PH.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9642 - AUC-PR: 0.9428 - P@50: 1.0000 > 6
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:AUC_ROC five 	0.9821774419416924
+INFO:pathme_cp_PH.py:AUC_ROC ten 	0.9823190050264728
+INFO:pathme_cp_PH.py:CLASSIFICATION METRICS FIVE
+INFO:pathme_cp_PH.py:Error 	test results	AUC-ROC 0.982177	AP 1.000000	P@50 1.000000	AUC_PR 0.953100
+INFO:pathme_cp_PH.py:CLASSIFICATION METRICS TEN
+INFO:pathme_cp_PH.py:Error 	test results	AUC-ROC 0.982319	AP 1.000000	P@50 1.000000	AUC_PR 0.942843
+INFO:pathme_cp_PH.py:length predicate_instanes 	7
+INFO:pathme_cp_PH.py:predicate instances done
+INFO:pathme_cp_PH.py:all tiples 	torch.Size([64266, 3])
+INFO:pathme_cp_PH.py:make test triples numpy
+INFO:pathme_cp_PH.py:about to start predicting
+INFO:pathme_cp_PH.py:length pred pos 	21046
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9945 - P@50: 1.0000 > 0
+INFO:pathme_cp_PH.py:length pred pos 	27535
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9927 - AUC-PR: 0.9953 - P@50: 1.0000 > 1
+INFO:pathme_cp_PH.py:length pred pos 	6939
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9905 - AUC-PR: 0.9940 - P@50: 1.0000 > 2
+INFO:pathme_cp_PH.py:length pred pos 	1959
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9897 - AUC-PR: 0.9932 - P@50: 1.0000 > 3
+INFO:pathme_cp_PH.py:length pred pos 	3579
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9862 - AUC-PR: 0.9906 - P@50: 1.0000 > 4
+INFO:pathme_cp_PH.py:length pred pos 	1617
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9624 - AUC-PR: 0.9765 - P@50: 1.0000 > 5
+INFO:pathme_cp_PH.py:length pred pos 	1591
+INFO:pathme_cp_PH.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9637 - AUC-PR: 0.9775 - P@50: 1.0000 > 6
+INFO:pathme_cp_PH.py:done
+INFO:pathme_cp_PH.py:metrics done
+INFO:pathme_cp_PH.py:AUC_ROC 	0.9823382178908763
+INFO:pathme_cp_PH.py:CLASSIFICATION METRICS
+INFO:pathme_cp_PH.py:Error 	test results	AUC-ROC 0.982338	AP 1.000000	P@50 1.000000	AUC_PR 0.977535
+GPU Epilog Script v0.30

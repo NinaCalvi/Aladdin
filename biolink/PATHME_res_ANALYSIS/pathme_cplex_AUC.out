@@ -1,0 +1,150 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.136', '--batch-size', '2048', '--reg-weight', '0.062', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme', '--auc', '--load', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder']
+MCL True
+INFO:best_pathmes_cplex.py:Valid: False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:relation 	bidict({'increases_ppi': 0, 'association_ppi': 1, 'decreases_ppi': 2, 'drug_increases_protein': 3, 'drug_decreases_protein': 4, 'drug_association_protein': 5, 'protein_association_drug': 6})
+INFO:best_pathmes_cplex.py:auc and lod happening
+INFO:best_pathmes_cplex.py:dataset name 	train
+INFO:best_pathmes_cplex.py:dataset name 	valid
+INFO:best_pathmes_cplex.py:dataset name 	test
+INFO:best_pathmes_cplex.py:in evalute for dataset: 	test
+NEW MRR: 0.44003426254176187
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:TEST RESULTS
+INFO:best_pathmes_cplex.py:Error 	test results 	MRR 0.440034	H@1 0.306748	H@3 0.500856	H@10 0.737837	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathmes_cplex.py:===========
+INFO:best_pathmes_cplex.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:best_pathmes_cplex.py:length predicate_instanes 	7
+INFO:best_pathmes_cplex.py:predicate instances done
+INFO:best_pathmes_cplex.py:all tiples 	torch.Size([64266, 3])
+INFO:best_pathmes_cplex.py:make test triples numpy
+INFO:best_pathmes_cplex.py:about to start predicting
+INFO:best_pathmes_cplex.py:length pred pos 	21046
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:all se five facts(126276, 3)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (126276, 1)
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9885 - P@50: 1.0000 > 0
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9856 - P@50: 1.0000 > 0
+INFO:best_pathmes_cplex.py:length pred pos 	27535
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:all se five facts(165210, 3)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (165210, 1)
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9928 - AUC-PR: 0.9909 - P@50: 1.0000 > 1
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9928 - AUC-PR: 0.9887 - P@50: 1.0000 > 1
+INFO:best_pathmes_cplex.py:length pred pos 	6939
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:all se five facts(41634, 3)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pathmes_cplex.py:SCORES FIVE SHAPE (41634, 1)
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9897 - AUC-PR: 0.9868 - P@50: 1.0000 > 2
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9897 - AUC-PR: 0.9841 - P@50: 1.0000 > 2
+INFO:best_pathmes_cplex.py:length pred pos 	1959
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9838 - AUC-PR: 0.9794 - P@50: 1.0000 > 3
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9840 - AUC-PR: 0.9764 - P@50: 1.0000 > 3
+INFO:best_pathmes_cplex.py:length pred pos 	3579
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9803 - AUC-PR: 0.9737 - P@50: 1.0000 > 4
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9803 - AUC-PR: 0.9676 - P@50: 1.0000 > 4
+INFO:best_pathmes_cplex.py:length pred pos 	1617
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9679 - AUC-PR: 0.9565 - P@50: 1.0000 > 5
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9676 - AUC-PR: 0.9434 - P@50: 1.0000 > 5
+INFO:best_pathmes_cplex.py:length pred pos 	1591
+INFO:best_pathmes_cplex.py:retrieved negative samples
+INFO:best_pathmes_cplex.py:Done concatenation
+INFO:best_pathmes_cplex.py:scores five done
+INFO:best_pathmes_cplex.py:scores ten done
+INFO:best_pathmes_cplex.py:in the harder set
+INFO:best_pathmes_cplex.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9712 - AUC-PR: 0.9607 - P@50: 1.0000 > 6
+INFO:best_pathmes_cplex.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9710 - AUC-PR: 0.9506 - P@50: 1.0000 > 6
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:AUC_ROC five 	0.9824380975439887
+INFO:best_pathmes_cplex.py:AUC_ROC ten 	0.9823824185114267
+INFO:best_pathmes_cplex.py:CLASSIFICATION METRICS FIVE
+INFO:best_pathmes_cplex.py:Error 	test results	AUC-ROC 0.982438	AP 1.000000	P@50 1.000000	AUC_PR 0.960741
+INFO:best_pathmes_cplex.py:CLASSIFICATION METRICS TEN
+INFO:best_pathmes_cplex.py:Error 	test results	AUC-ROC 0.982382	AP 1.000000	P@50 1.000000	AUC_PR 0.950595
+INFO:best_pathmes_cplex.py:length predicate_instanes 	7
+INFO:best_pathmes_cplex.py:predicate instances done
+INFO:best_pathmes_cplex.py:all tiples 	torch.Size([64266, 3])
+INFO:best_pathmes_cplex.py:make test triples numpy
+INFO:best_pathmes_cplex.py:about to start predicting
+INFO:best_pathmes_cplex.py:length pred pos 	21046
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9947 - P@50: 1.0000 > 0
+INFO:best_pathmes_cplex.py:length pred pos 	27535
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9929 - AUC-PR: 0.9958 - P@50: 1.0000 > 1
+INFO:best_pathmes_cplex.py:length pred pos 	6939
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9898 - AUC-PR: 0.9938 - P@50: 1.0000 > 2
+INFO:best_pathmes_cplex.py:length pred pos 	1959
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9840 - AUC-PR: 0.9905 - P@50: 1.0000 > 3
+INFO:best_pathmes_cplex.py:length pred pos 	3579
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9803 - AUC-PR: 0.9879 - P@50: 1.0000 > 4
+INFO:best_pathmes_cplex.py:length pred pos 	1617
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9680 - AUC-PR: 0.9803 - P@50: 1.0000 > 5
+INFO:best_pathmes_cplex.py:length pred pos 	1591
+INFO:best_pathmes_cplex.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9713 - AUC-PR: 0.9823 - P@50: 1.0000 > 6
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:AUC_ROC 	0.9825010586580215
+INFO:best_pathmes_cplex.py:CLASSIFICATION METRICS
+INFO:best_pathmes_cplex.py:Error 	test results	AUC-ROC 0.982501	AP 1.000000	P@50 1.000000	AUC_PR 0.982279
+GPU Epilog Script v0.30
