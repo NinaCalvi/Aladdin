@@ -1,0 +1,445 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.136', '--batch-size', '2048', '--reg-weight', '0.062', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme', '--testrel', 'cplex_PATHME_realtion.csv', '--rare']
+MCL True
+INFO:best_pathmes_cplex.py:Valid: False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:settin tucker to FALSE
+INFO:best_pathmes_cplex.py:is tucker False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:Epoch 1/100	Loss 15.8346 ± 1.8353
+INFO:best_pathmes_cplex.py:Epoch 2/100	Loss 11.4249 ± 0.1829
+INFO:best_pathmes_cplex.py:Epoch 3/100	Loss 10.1038 ± 0.1509
+INFO:best_pathmes_cplex.py:Epoch 4/100	Loss 9.6146 ± 0.1624
+INFO:best_pathmes_cplex.py:Epoch 5/100	Loss 9.3819 ± 0.1671
+INFO:best_pathmes_cplex.py:Epoch 6/100	Loss 9.2399 ± 0.1700
+INFO:best_pathmes_cplex.py:Epoch 7/100	Loss 9.1396 ± 0.1715
+INFO:best_pathmes_cplex.py:Epoch 8/100	Loss 9.0668 ± 0.1587
+INFO:best_pathmes_cplex.py:Epoch 9/100	Loss 9.0093 ± 0.1692
+INFO:best_pathmes_cplex.py:Epoch 10/100	Loss 8.9637 ± 0.1644
+INFO:best_pathmes_cplex.py:Epoch 11/100	Loss 8.9213 ± 0.1324
+INFO:best_pathmes_cplex.py:Epoch 12/100	Loss 8.8912 ± 0.1681
+INFO:best_pathmes_cplex.py:Epoch 13/100	Loss 8.8613 ± 0.1376
+INFO:best_pathmes_cplex.py:Epoch 14/100	Loss 8.8356 ± 0.1533
+INFO:best_pathmes_cplex.py:Epoch 15/100	Loss 8.8125 ± 0.1264
+INFO:best_pathmes_cplex.py:Epoch 16/100	Loss 8.7913 ± 0.1386
+INFO:best_pathmes_cplex.py:Epoch 17/100	Loss 8.7766 ± 0.1507
+INFO:best_pathmes_cplex.py:Epoch 18/100	Loss 8.7578 ± 0.1431
+INFO:best_pathmes_cplex.py:Epoch 19/100	Loss 8.7421 ± 0.1348
+INFO:best_pathmes_cplex.py:Epoch 20/100	Loss 8.7299 ± 0.1499
+INFO:best_pathmes_cplex.py:Epoch 21/100	Loss 8.7167 ± 0.1441
+INFO:best_pathmes_cplex.py:Epoch 22/100	Loss 8.7033 ± 0.1223
+INFO:best_pathmes_cplex.py:Epoch 23/100	Loss 8.6941 ± 0.1333
+INFO:best_pathmes_cplex.py:Epoch 24/100	Loss 8.6811 ± 0.1232
+INFO:best_pathmes_cplex.py:Epoch 25/100	Loss 8.6728 ± 0.1185
+INFO:best_pathmes_cplex.py:Epoch 26/100	Loss 8.6652 ± 0.1072
+INFO:best_pathmes_cplex.py:Epoch 27/100	Loss 8.6547 ± 0.1318
+INFO:best_pathmes_cplex.py:Epoch 28/100	Loss 8.6491 ± 0.1202
+INFO:best_pathmes_cplex.py:Epoch 29/100	Loss 8.6389 ± 0.1058
+INFO:best_pathmes_cplex.py:Epoch 30/100	Loss 8.6320 ± 0.1216
+INFO:best_pathmes_cplex.py:Epoch 31/100	Loss 8.6266 ± 0.1288
+INFO:best_pathmes_cplex.py:Epoch 32/100	Loss 8.6200 ± 0.1065
+INFO:best_pathmes_cplex.py:Epoch 33/100	Loss 8.6137 ± 0.1220
+INFO:best_pathmes_cplex.py:Epoch 34/100	Loss 8.6075 ± 0.1225
+INFO:best_pathmes_cplex.py:Epoch 35/100	Loss 8.6009 ± 0.1096
+INFO:best_pathmes_cplex.py:Epoch 36/100	Loss 8.5959 ± 0.1235
+INFO:best_pathmes_cplex.py:Epoch 37/100	Loss 8.5915 ± 0.0996
+INFO:best_pathmes_cplex.py:Epoch 38/100	Loss 8.5872 ± 0.1053
+INFO:best_pathmes_cplex.py:Epoch 39/100	Loss 8.5817 ± 0.1174
+INFO:best_pathmes_cplex.py:Epoch 40/100	Loss 8.5771 ± 0.1028
+INFO:best_pathmes_cplex.py:Epoch 41/100	Loss 8.5735 ± 0.1018
+INFO:best_pathmes_cplex.py:Epoch 42/100	Loss 8.5680 ± 0.1066
+INFO:best_pathmes_cplex.py:Epoch 43/100	Loss 8.5639 ± 0.0894
+INFO:best_pathmes_cplex.py:Epoch 44/100	Loss 8.5596 ± 0.1123
+INFO:best_pathmes_cplex.py:Epoch 45/100	Loss 8.5570 ± 0.1131
+INFO:best_pathmes_cplex.py:Epoch 46/100	Loss 8.5516 ± 0.1003
+INFO:best_pathmes_cplex.py:Epoch 47/100	Loss 8.5490 ± 0.1180
+INFO:best_pathmes_cplex.py:Epoch 48/100	Loss 8.5457 ± 0.0884
+INFO:best_pathmes_cplex.py:Epoch 49/100	Loss 8.5418 ± 0.1072
+INFO:best_pathmes_cplex.py:Epoch 50/100	Loss 8.5386 ± 0.1093
+INFO:best_pathmes_cplex.py:Epoch 51/100	Loss 8.5341 ± 0.0974
+INFO:best_pathmes_cplex.py:Epoch 52/100	Loss 8.5344 ± 0.0897
+INFO:best_pathmes_cplex.py:Epoch 53/100	Loss 8.5301 ± 0.0887
+INFO:best_pathmes_cplex.py:Epoch 54/100	Loss 8.5282 ± 0.0975
+INFO:best_pathmes_cplex.py:Epoch 55/100	Loss 8.5251 ± 0.1194
+INFO:best_pathmes_cplex.py:Epoch 56/100	Loss 8.5203 ± 0.1045
+INFO:best_pathmes_cplex.py:Epoch 57/100	Loss 8.5194 ± 0.0877
+INFO:best_pathmes_cplex.py:Epoch 58/100	Loss 8.5160 ± 0.0801
+INFO:best_pathmes_cplex.py:Epoch 59/100	Loss 8.5165 ± 0.1073
+INFO:best_pathmes_cplex.py:Epoch 60/100	Loss 8.5113 ± 0.1039
+INFO:best_pathmes_cplex.py:Epoch 61/100	Loss 8.5079 ± 0.0946
+INFO:best_pathmes_cplex.py:Epoch 62/100	Loss 8.5084 ± 0.1101
+INFO:best_pathmes_cplex.py:Epoch 63/100	Loss 8.5072 ± 0.1016
+INFO:best_pathmes_cplex.py:Epoch 64/100	Loss 8.5034 ± 0.0963
+INFO:best_pathmes_cplex.py:Epoch 65/100	Loss 8.5008 ± 0.0972
+INFO:best_pathmes_cplex.py:Epoch 66/100	Loss 8.4972 ± 0.0920
+INFO:best_pathmes_cplex.py:Epoch 67/100	Loss 8.4956 ± 0.0889
+INFO:best_pathmes_cplex.py:Epoch 68/100	Loss 8.4939 ± 0.0971
+INFO:best_pathmes_cplex.py:Epoch 69/100	Loss 8.4924 ± 0.0819
+INFO:best_pathmes_cplex.py:Epoch 70/100	Loss 8.4914 ± 0.0882
+INFO:best_pathmes_cplex.py:Epoch 71/100	Loss 8.4885 ± 0.0892
+INFO:best_pathmes_cplex.py:Epoch 72/100	Loss 8.4864 ± 0.0962
+INFO:best_pathmes_cplex.py:Epoch 73/100	Loss 8.4840 ± 0.0869
+INFO:best_pathmes_cplex.py:Epoch 74/100	Loss 8.4815 ± 0.0966
+INFO:best_pathmes_cplex.py:Epoch 75/100	Loss 8.4799 ± 0.0861
+INFO:best_pathmes_cplex.py:Epoch 76/100	Loss 8.4800 ± 0.1056
+INFO:best_pathmes_cplex.py:Epoch 77/100	Loss 8.4798 ± 0.0950
+INFO:best_pathmes_cplex.py:Epoch 78/100	Loss 8.4765 ± 0.1021
+INFO:best_pathmes_cplex.py:Epoch 79/100	Loss 8.4733 ± 0.0770
+INFO:best_pathmes_cplex.py:Epoch 80/100	Loss 8.4717 ± 0.0834
+INFO:best_pathmes_cplex.py:Epoch 81/100	Loss 8.4710 ± 0.0702
+INFO:best_pathmes_cplex.py:Epoch 82/100	Loss 8.4684 ± 0.0650
+INFO:best_pathmes_cplex.py:Epoch 83/100	Loss 8.4685 ± 0.0804
+INFO:best_pathmes_cplex.py:Epoch 84/100	Loss 8.4653 ± 0.0754
+INFO:best_pathmes_cplex.py:Epoch 85/100	Loss 8.4662 ± 0.0862
+INFO:best_pathmes_cplex.py:Epoch 86/100	Loss 8.4648 ± 0.0835
+INFO:best_pathmes_cplex.py:Epoch 87/100	Loss 8.4616 ± 0.0881
+INFO:best_pathmes_cplex.py:Epoch 88/100	Loss 8.4614 ± 0.0733
+INFO:best_pathmes_cplex.py:Epoch 89/100	Loss 8.4613 ± 0.0959
+INFO:best_pathmes_cplex.py:Epoch 90/100	Loss 8.4603 ± 0.0861
+INFO:best_pathmes_cplex.py:Epoch 91/100	Loss 8.4560 ± 0.0985
+INFO:best_pathmes_cplex.py:Epoch 92/100	Loss 8.4578 ± 0.0835
+INFO:best_pathmes_cplex.py:Epoch 93/100	Loss 8.4534 ± 0.0993
+INFO:best_pathmes_cplex.py:Epoch 94/100	Loss 8.4536 ± 0.0751
+INFO:best_pathmes_cplex.py:Epoch 95/100	Loss 8.4512 ± 0.0908
+INFO:best_pathmes_cplex.py:Epoch 96/100	Loss 8.4527 ± 0.0853
+INFO:best_pathmes_cplex.py:Epoch 97/100	Loss 8.4508 ± 0.0723
+INFO:best_pathmes_cplex.py:Epoch 98/100	Loss 8.4501 ± 0.0840
+INFO:best_pathmes_cplex.py:Epoch 99/100	Loss 8.4466 ± 0.0812
+INFO:best_pathmes_cplex.py:Epoch 100/100	Loss 8.4463 ± 0.0916
+INFO:best_pathmes_cplex.py:is bad performing False
+INFO:best_pathmes_cplex.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme
+INFO:best_pathmes_cplex.py:dataset name 	train
+INFO:best_pathmes_cplex.py:dataset name 	valid
+INFO:best_pathmes_cplex.py:dataset name 	test
+INFO:best_pathmes_cplex.py:in evalute for dataset: 	test
+NEW MRR: 0.4400342903286376
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:TEST RESULTS
+INFO:best_pathmes_cplex.py:Error 	test results 	MRR 0.440034	H@1 0.306748	H@3 0.500856	H@10 0.737837	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathmes_cplex.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.136', '--batch-size', '2048', '--reg-weight', '0.062', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme', '--testrel', 'cplex_PATHME_realtion.csv', '--rare']
+MCL True
+INFO:best_pathmes_cplex.py:Valid: False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:settin tucker to FALSE
+INFO:best_pathmes_cplex.py:is tucker False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:Epoch 1/100	Loss 15.8346 ± 1.8353
+INFO:best_pathmes_cplex.py:Epoch 2/100	Loss 11.4249 ± 0.1829
+INFO:best_pathmes_cplex.py:Epoch 3/100	Loss 10.1038 ± 0.1509
+INFO:best_pathmes_cplex.py:Epoch 4/100	Loss 9.6146 ± 0.1624
+INFO:best_pathmes_cplex.py:Epoch 5/100	Loss 9.3819 ± 0.1671
+INFO:best_pathmes_cplex.py:Epoch 6/100	Loss 9.2399 ± 0.1700
+INFO:best_pathmes_cplex.py:Epoch 7/100	Loss 9.1396 ± 0.1715
+INFO:best_pathmes_cplex.py:Epoch 8/100	Loss 9.0668 ± 0.1587
+INFO:best_pathmes_cplex.py:Epoch 9/100	Loss 9.0093 ± 0.1692
+INFO:best_pathmes_cplex.py:Epoch 10/100	Loss 8.9637 ± 0.1644
+INFO:best_pathmes_cplex.py:Epoch 11/100	Loss 8.9213 ± 0.1324
+INFO:best_pathmes_cplex.py:Epoch 12/100	Loss 8.8912 ± 0.1681
+INFO:best_pathmes_cplex.py:Epoch 13/100	Loss 8.8613 ± 0.1376
+INFO:best_pathmes_cplex.py:Epoch 14/100	Loss 8.8356 ± 0.1533
+INFO:best_pathmes_cplex.py:Epoch 15/100	Loss 8.8125 ± 0.1264
+INFO:best_pathmes_cplex.py:Epoch 16/100	Loss 8.7913 ± 0.1386
+INFO:best_pathmes_cplex.py:Epoch 17/100	Loss 8.7766 ± 0.1507
+INFO:best_pathmes_cplex.py:Epoch 18/100	Loss 8.7578 ± 0.1431
+INFO:best_pathmes_cplex.py:Epoch 19/100	Loss 8.7421 ± 0.1348
+INFO:best_pathmes_cplex.py:Epoch 20/100	Loss 8.7299 ± 0.1499
+INFO:best_pathmes_cplex.py:Epoch 21/100	Loss 8.7167 ± 0.1441
+INFO:best_pathmes_cplex.py:Epoch 22/100	Loss 8.7033 ± 0.1223
+INFO:best_pathmes_cplex.py:Epoch 23/100	Loss 8.6941 ± 0.1333
+INFO:best_pathmes_cplex.py:Epoch 24/100	Loss 8.6811 ± 0.1232
+INFO:best_pathmes_cplex.py:Epoch 25/100	Loss 8.6728 ± 0.1185
+INFO:best_pathmes_cplex.py:Epoch 26/100	Loss 8.6652 ± 0.1072
+INFO:best_pathmes_cplex.py:Epoch 27/100	Loss 8.6547 ± 0.1318
+INFO:best_pathmes_cplex.py:Epoch 28/100	Loss 8.6491 ± 0.1202
+INFO:best_pathmes_cplex.py:Epoch 29/100	Loss 8.6389 ± 0.1058
+INFO:best_pathmes_cplex.py:Epoch 30/100	Loss 8.6320 ± 0.1216
+INFO:best_pathmes_cplex.py:Epoch 31/100	Loss 8.6266 ± 0.1288
+INFO:best_pathmes_cplex.py:Epoch 32/100	Loss 8.6200 ± 0.1065
+INFO:best_pathmes_cplex.py:Epoch 33/100	Loss 8.6137 ± 0.1220
+INFO:best_pathmes_cplex.py:Epoch 34/100	Loss 8.6075 ± 0.1225
+INFO:best_pathmes_cplex.py:Epoch 35/100	Loss 8.6009 ± 0.1096
+INFO:best_pathmes_cplex.py:Epoch 36/100	Loss 8.5959 ± 0.1235
+INFO:best_pathmes_cplex.py:Epoch 37/100	Loss 8.5915 ± 0.0996
+INFO:best_pathmes_cplex.py:Epoch 38/100	Loss 8.5872 ± 0.1053
+INFO:best_pathmes_cplex.py:Epoch 39/100	Loss 8.5817 ± 0.1174
+INFO:best_pathmes_cplex.py:Epoch 40/100	Loss 8.5771 ± 0.1028
+INFO:best_pathmes_cplex.py:Epoch 41/100	Loss 8.5735 ± 0.1018
+INFO:best_pathmes_cplex.py:Epoch 42/100	Loss 8.5680 ± 0.1066
+INFO:best_pathmes_cplex.py:Epoch 43/100	Loss 8.5639 ± 0.0894
+INFO:best_pathmes_cplex.py:Epoch 44/100	Loss 8.5596 ± 0.1123
+INFO:best_pathmes_cplex.py:Epoch 45/100	Loss 8.5570 ± 0.1131
+INFO:best_pathmes_cplex.py:Epoch 46/100	Loss 8.5516 ± 0.1003
+INFO:best_pathmes_cplex.py:Epoch 47/100	Loss 8.5490 ± 0.1180
+INFO:best_pathmes_cplex.py:Epoch 48/100	Loss 8.5457 ± 0.0884
+INFO:best_pathmes_cplex.py:Epoch 49/100	Loss 8.5418 ± 0.1072
+INFO:best_pathmes_cplex.py:Epoch 50/100	Loss 8.5386 ± 0.1093
+INFO:best_pathmes_cplex.py:Epoch 51/100	Loss 8.5341 ± 0.0974
+INFO:best_pathmes_cplex.py:Epoch 52/100	Loss 8.5344 ± 0.0897
+INFO:best_pathmes_cplex.py:Epoch 53/100	Loss 8.5301 ± 0.0887
+INFO:best_pathmes_cplex.py:Epoch 54/100	Loss 8.5282 ± 0.0975
+INFO:best_pathmes_cplex.py:Epoch 55/100	Loss 8.5251 ± 0.1194
+INFO:best_pathmes_cplex.py:Epoch 56/100	Loss 8.5203 ± 0.1045
+INFO:best_pathmes_cplex.py:Epoch 57/100	Loss 8.5194 ± 0.0877
+INFO:best_pathmes_cplex.py:Epoch 58/100	Loss 8.5160 ± 0.0801
+INFO:best_pathmes_cplex.py:Epoch 59/100	Loss 8.5165 ± 0.1073
+INFO:best_pathmes_cplex.py:Epoch 60/100	Loss 8.5113 ± 0.1039
+INFO:best_pathmes_cplex.py:Epoch 61/100	Loss 8.5079 ± 0.0946
+INFO:best_pathmes_cplex.py:Epoch 62/100	Loss 8.5084 ± 0.1101
+INFO:best_pathmes_cplex.py:Epoch 63/100	Loss 8.5072 ± 0.1016
+INFO:best_pathmes_cplex.py:Epoch 64/100	Loss 8.5034 ± 0.0963
+INFO:best_pathmes_cplex.py:Epoch 65/100	Loss 8.5008 ± 0.0972
+INFO:best_pathmes_cplex.py:Epoch 66/100	Loss 8.4972 ± 0.0920
+INFO:best_pathmes_cplex.py:Epoch 67/100	Loss 8.4956 ± 0.0889
+INFO:best_pathmes_cplex.py:Epoch 68/100	Loss 8.4939 ± 0.0971
+INFO:best_pathmes_cplex.py:Epoch 69/100	Loss 8.4924 ± 0.0819
+INFO:best_pathmes_cplex.py:Epoch 70/100	Loss 8.4914 ± 0.0882
+INFO:best_pathmes_cplex.py:Epoch 71/100	Loss 8.4885 ± 0.0892
+INFO:best_pathmes_cplex.py:Epoch 72/100	Loss 8.4864 ± 0.0962
+INFO:best_pathmes_cplex.py:Epoch 73/100	Loss 8.4840 ± 0.0869
+INFO:best_pathmes_cplex.py:Epoch 74/100	Loss 8.4815 ± 0.0966
+INFO:best_pathmes_cplex.py:Epoch 75/100	Loss 8.4799 ± 0.0861
+INFO:best_pathmes_cplex.py:Epoch 76/100	Loss 8.4800 ± 0.1056
+INFO:best_pathmes_cplex.py:Epoch 77/100	Loss 8.4798 ± 0.0950
+INFO:best_pathmes_cplex.py:Epoch 78/100	Loss 8.4765 ± 0.1021
+INFO:best_pathmes_cplex.py:Epoch 79/100	Loss 8.4733 ± 0.0770
+INFO:best_pathmes_cplex.py:Epoch 80/100	Loss 8.4717 ± 0.0834
+INFO:best_pathmes_cplex.py:Epoch 81/100	Loss 8.4710 ± 0.0702
+INFO:best_pathmes_cplex.py:Epoch 82/100	Loss 8.4684 ± 0.0650
+INFO:best_pathmes_cplex.py:Epoch 83/100	Loss 8.4685 ± 0.0804
+INFO:best_pathmes_cplex.py:Epoch 84/100	Loss 8.4653 ± 0.0754
+INFO:best_pathmes_cplex.py:Epoch 85/100	Loss 8.4662 ± 0.0862
+INFO:best_pathmes_cplex.py:Epoch 86/100	Loss 8.4648 ± 0.0835
+INFO:best_pathmes_cplex.py:Epoch 87/100	Loss 8.4616 ± 0.0881
+INFO:best_pathmes_cplex.py:Epoch 88/100	Loss 8.4614 ± 0.0733
+INFO:best_pathmes_cplex.py:Epoch 89/100	Loss 8.4613 ± 0.0959
+INFO:best_pathmes_cplex.py:Epoch 90/100	Loss 8.4603 ± 0.0861
+INFO:best_pathmes_cplex.py:Epoch 91/100	Loss 8.4560 ± 0.0985
+INFO:best_pathmes_cplex.py:Epoch 92/100	Loss 8.4578 ± 0.0835
+INFO:best_pathmes_cplex.py:Epoch 93/100	Loss 8.4534 ± 0.0993
+INFO:best_pathmes_cplex.py:Epoch 94/100	Loss 8.4536 ± 0.0751
+INFO:best_pathmes_cplex.py:Epoch 95/100	Loss 8.4512 ± 0.0908
+INFO:best_pathmes_cplex.py:Epoch 96/100	Loss 8.4527 ± 0.0853
+INFO:best_pathmes_cplex.py:Epoch 97/100	Loss 8.4508 ± 0.0723
+INFO:best_pathmes_cplex.py:Epoch 98/100	Loss 8.4501 ± 0.0840
+INFO:best_pathmes_cplex.py:Epoch 99/100	Loss 8.4466 ± 0.0812
+INFO:best_pathmes_cplex.py:Epoch 100/100	Loss 8.4463 ± 0.0916
+INFO:best_pathmes_cplex.py:is bad performing False
+INFO:best_pathmes_cplex.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme
+INFO:best_pathmes_cplex.py:dataset name 	train
+INFO:best_pathmes_cplex.py:dataset name 	valid
+INFO:best_pathmes_cplex.py:dataset name 	test
+INFO:best_pathmes_cplex.py:in evalute for dataset: 	test
+NEW MRR: 0.4400356331958189
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:TEST RESULTS
+INFO:best_pathmes_cplex.py:Error 	test results 	MRR 0.440036	H@1 0.306748	H@3 0.500856	H@10 0.737837	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathmes_cplex.py:===========
+NEW MRR: 0.4384488416475246
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:RARE RESULTS
+INFO:best_pathmes_cplex.py:Error RARE HEAD results 	MRR 0.438449	H@1 0.323417	H@3 0.499788	H@10 0.679133	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4043613797246677
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:Error RARE TAIL results 	MRR 0.404361	H@1 0.298395	H@3 0.454865	H@10 0.621866	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.136', '--batch-size', '2048', '--reg-weight', '0.062', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme', '--testrel', 'cplex_PATHME_realtion.csv', '--rare']
+MCL True
+INFO:best_pathmes_cplex.py:Valid: False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:settin tucker to FALSE
+INFO:best_pathmes_cplex.py:is tucker False
+INFO:best_pathmes_cplex.py:Device: cuda
+INFO:best_pathmes_cplex.py:Epoch 1/100	Loss 15.8346 ± 1.8353
+INFO:best_pathmes_cplex.py:Epoch 2/100	Loss 11.4249 ± 0.1829
+INFO:best_pathmes_cplex.py:Epoch 3/100	Loss 10.1038 ± 0.1509
+INFO:best_pathmes_cplex.py:Epoch 4/100	Loss 9.6146 ± 0.1624
+INFO:best_pathmes_cplex.py:Epoch 5/100	Loss 9.3819 ± 0.1671
+INFO:best_pathmes_cplex.py:Epoch 6/100	Loss 9.2399 ± 0.1700
+INFO:best_pathmes_cplex.py:Epoch 7/100	Loss 9.1396 ± 0.1715
+INFO:best_pathmes_cplex.py:Epoch 8/100	Loss 9.0668 ± 0.1587
+INFO:best_pathmes_cplex.py:Epoch 9/100	Loss 9.0093 ± 0.1692
+INFO:best_pathmes_cplex.py:Epoch 10/100	Loss 8.9637 ± 0.1644
+INFO:best_pathmes_cplex.py:Epoch 11/100	Loss 8.9213 ± 0.1324
+INFO:best_pathmes_cplex.py:Epoch 12/100	Loss 8.8912 ± 0.1681
+INFO:best_pathmes_cplex.py:Epoch 13/100	Loss 8.8613 ± 0.1376
+INFO:best_pathmes_cplex.py:Epoch 14/100	Loss 8.8356 ± 0.1533
+INFO:best_pathmes_cplex.py:Epoch 15/100	Loss 8.8125 ± 0.1264
+INFO:best_pathmes_cplex.py:Epoch 16/100	Loss 8.7913 ± 0.1386
+INFO:best_pathmes_cplex.py:Epoch 17/100	Loss 8.7766 ± 0.1507
+INFO:best_pathmes_cplex.py:Epoch 18/100	Loss 8.7578 ± 0.1431
+INFO:best_pathmes_cplex.py:Epoch 19/100	Loss 8.7421 ± 0.1348
+INFO:best_pathmes_cplex.py:Epoch 20/100	Loss 8.7299 ± 0.1499
+INFO:best_pathmes_cplex.py:Epoch 21/100	Loss 8.7167 ± 0.1441
+INFO:best_pathmes_cplex.py:Epoch 22/100	Loss 8.7033 ± 0.1223
+INFO:best_pathmes_cplex.py:Epoch 23/100	Loss 8.6941 ± 0.1333
+INFO:best_pathmes_cplex.py:Epoch 24/100	Loss 8.6811 ± 0.1232
+INFO:best_pathmes_cplex.py:Epoch 25/100	Loss 8.6728 ± 0.1185
+INFO:best_pathmes_cplex.py:Epoch 26/100	Loss 8.6652 ± 0.1072
+INFO:best_pathmes_cplex.py:Epoch 27/100	Loss 8.6547 ± 0.1318
+INFO:best_pathmes_cplex.py:Epoch 28/100	Loss 8.6491 ± 0.1202
+INFO:best_pathmes_cplex.py:Epoch 29/100	Loss 8.6389 ± 0.1058
+INFO:best_pathmes_cplex.py:Epoch 30/100	Loss 8.6320 ± 0.1216
+INFO:best_pathmes_cplex.py:Epoch 31/100	Loss 8.6266 ± 0.1288
+INFO:best_pathmes_cplex.py:Epoch 32/100	Loss 8.6200 ± 0.1065
+INFO:best_pathmes_cplex.py:Epoch 33/100	Loss 8.6137 ± 0.1220
+INFO:best_pathmes_cplex.py:Epoch 34/100	Loss 8.6075 ± 0.1225
+INFO:best_pathmes_cplex.py:Epoch 35/100	Loss 8.6009 ± 0.1096
+INFO:best_pathmes_cplex.py:Epoch 36/100	Loss 8.5959 ± 0.1235
+INFO:best_pathmes_cplex.py:Epoch 37/100	Loss 8.5915 ± 0.0996
+INFO:best_pathmes_cplex.py:Epoch 38/100	Loss 8.5872 ± 0.1053
+INFO:best_pathmes_cplex.py:Epoch 39/100	Loss 8.5817 ± 0.1174
+INFO:best_pathmes_cplex.py:Epoch 40/100	Loss 8.5771 ± 0.1028
+INFO:best_pathmes_cplex.py:Epoch 41/100	Loss 8.5735 ± 0.1018
+INFO:best_pathmes_cplex.py:Epoch 42/100	Loss 8.5680 ± 0.1066
+INFO:best_pathmes_cplex.py:Epoch 43/100	Loss 8.5639 ± 0.0894
+INFO:best_pathmes_cplex.py:Epoch 44/100	Loss 8.5596 ± 0.1123
+INFO:best_pathmes_cplex.py:Epoch 45/100	Loss 8.5570 ± 0.1131
+INFO:best_pathmes_cplex.py:Epoch 46/100	Loss 8.5516 ± 0.1003
+INFO:best_pathmes_cplex.py:Epoch 47/100	Loss 8.5490 ± 0.1180
+INFO:best_pathmes_cplex.py:Epoch 48/100	Loss 8.5457 ± 0.0884
+INFO:best_pathmes_cplex.py:Epoch 49/100	Loss 8.5418 ± 0.1072
+INFO:best_pathmes_cplex.py:Epoch 50/100	Loss 8.5386 ± 0.1093
+INFO:best_pathmes_cplex.py:Epoch 51/100	Loss 8.5341 ± 0.0974
+INFO:best_pathmes_cplex.py:Epoch 52/100	Loss 8.5344 ± 0.0897
+INFO:best_pathmes_cplex.py:Epoch 53/100	Loss 8.5301 ± 0.0887
+INFO:best_pathmes_cplex.py:Epoch 54/100	Loss 8.5282 ± 0.0975
+INFO:best_pathmes_cplex.py:Epoch 55/100	Loss 8.5251 ± 0.1194
+INFO:best_pathmes_cplex.py:Epoch 56/100	Loss 8.5203 ± 0.1045
+INFO:best_pathmes_cplex.py:Epoch 57/100	Loss 8.5194 ± 0.0877
+INFO:best_pathmes_cplex.py:Epoch 58/100	Loss 8.5160 ± 0.0801
+INFO:best_pathmes_cplex.py:Epoch 59/100	Loss 8.5165 ± 0.1073
+INFO:best_pathmes_cplex.py:Epoch 60/100	Loss 8.5113 ± 0.1039
+INFO:best_pathmes_cplex.py:Epoch 61/100	Loss 8.5079 ± 0.0946
+INFO:best_pathmes_cplex.py:Epoch 62/100	Loss 8.5084 ± 0.1101
+INFO:best_pathmes_cplex.py:Epoch 63/100	Loss 8.5072 ± 0.1016
+INFO:best_pathmes_cplex.py:Epoch 64/100	Loss 8.5034 ± 0.0963
+INFO:best_pathmes_cplex.py:Epoch 65/100	Loss 8.5008 ± 0.0972
+INFO:best_pathmes_cplex.py:Epoch 66/100	Loss 8.4972 ± 0.0920
+INFO:best_pathmes_cplex.py:Epoch 67/100	Loss 8.4956 ± 0.0889
+INFO:best_pathmes_cplex.py:Epoch 68/100	Loss 8.4939 ± 0.0971
+INFO:best_pathmes_cplex.py:Epoch 69/100	Loss 8.4924 ± 0.0819
+INFO:best_pathmes_cplex.py:Epoch 70/100	Loss 8.4914 ± 0.0882
+INFO:best_pathmes_cplex.py:Epoch 71/100	Loss 8.4885 ± 0.0892
+INFO:best_pathmes_cplex.py:Epoch 72/100	Loss 8.4864 ± 0.0962
+INFO:best_pathmes_cplex.py:Epoch 73/100	Loss 8.4840 ± 0.0869
+INFO:best_pathmes_cplex.py:Epoch 74/100	Loss 8.4815 ± 0.0966
+INFO:best_pathmes_cplex.py:Epoch 75/100	Loss 8.4799 ± 0.0861
+INFO:best_pathmes_cplex.py:Epoch 76/100	Loss 8.4800 ± 0.1056
+INFO:best_pathmes_cplex.py:Epoch 77/100	Loss 8.4798 ± 0.0950
+INFO:best_pathmes_cplex.py:Epoch 78/100	Loss 8.4765 ± 0.1021
+INFO:best_pathmes_cplex.py:Epoch 79/100	Loss 8.4733 ± 0.0770
+INFO:best_pathmes_cplex.py:Epoch 80/100	Loss 8.4717 ± 0.0834
+INFO:best_pathmes_cplex.py:Epoch 81/100	Loss 8.4710 ± 0.0702
+INFO:best_pathmes_cplex.py:Epoch 82/100	Loss 8.4684 ± 0.0650
+INFO:best_pathmes_cplex.py:Epoch 83/100	Loss 8.4685 ± 0.0804
+INFO:best_pathmes_cplex.py:Epoch 84/100	Loss 8.4653 ± 0.0754
+INFO:best_pathmes_cplex.py:Epoch 85/100	Loss 8.4662 ± 0.0862
+INFO:best_pathmes_cplex.py:Epoch 86/100	Loss 8.4648 ± 0.0835
+INFO:best_pathmes_cplex.py:Epoch 87/100	Loss 8.4616 ± 0.0881
+INFO:best_pathmes_cplex.py:Epoch 88/100	Loss 8.4614 ± 0.0733
+INFO:best_pathmes_cplex.py:Epoch 89/100	Loss 8.4613 ± 0.0959
+INFO:best_pathmes_cplex.py:Epoch 90/100	Loss 8.4603 ± 0.0861
+INFO:best_pathmes_cplex.py:Epoch 91/100	Loss 8.4560 ± 0.0985
+INFO:best_pathmes_cplex.py:Epoch 92/100	Loss 8.4578 ± 0.0835
+INFO:best_pathmes_cplex.py:Epoch 93/100	Loss 8.4534 ± 0.0993
+INFO:best_pathmes_cplex.py:Epoch 94/100	Loss 8.4536 ± 0.0751
+INFO:best_pathmes_cplex.py:Epoch 95/100	Loss 8.4512 ± 0.0908
+INFO:best_pathmes_cplex.py:Epoch 96/100	Loss 8.4527 ± 0.0853
+INFO:best_pathmes_cplex.py:Epoch 97/100	Loss 8.4509 ± 0.0723
+INFO:best_pathmes_cplex.py:Epoch 98/100	Loss 8.4501 ± 0.0840
+INFO:best_pathmes_cplex.py:Epoch 99/100	Loss 8.4466 ± 0.0812
+INFO:best_pathmes_cplex.py:Epoch 100/100	Loss 8.4463 ± 0.0916
+INFO:best_pathmes_cplex.py:is bad performing False
+INFO:best_pathmes_cplex.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplex_batch2048_es_200_reg_n3_rw_062_lr_136_pathme
+INFO:best_pathmes_cplex.py:dataset name 	train
+INFO:best_pathmes_cplex.py:dataset name 	valid
+INFO:best_pathmes_cplex.py:dataset name 	test
+INFO:best_pathmes_cplex.py:in evalute for dataset: 	test
+NEW MRR: 0.44003426254176187
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:TEST RESULTS
+INFO:best_pathmes_cplex.py:Error 	test results 	MRR 0.440034	H@1 0.306748	H@3 0.500856	H@10 0.737837	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathmes_cplex.py:===========
+NEW MRR: 0.09835202523273669
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:VERY RARE RESULTS
+INFO:best_pathmes_cplex.py:Error VERYRARE HEAD results 	MRR 0.098352	H@1 0.072046	H@3 0.112392	H@10 0.149856	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.12217219789463873
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:Error VERYRARE TAIL results 	MRR 0.122172	H@1 0.048780	H@3 0.153310	H@10 0.271777	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.43844840868476587
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:RARE RESULTS
+INFO:best_pathmes_cplex.py:Error RARE HEAD results 	MRR 0.438448	H@1 0.323417	H@3 0.499788	H@10 0.679133	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4043612007765377
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:Error RARE TAIL results 	MRR 0.404361	H@1 0.298395	H@3 0.454865	H@10 0.621866	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4038333170164917
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:COMMON RESULTS
+INFO:best_pathmes_cplex.py:Error COMMON- HEAD results 	MRR 0.403833	H@1 0.243684	H@3 0.469491	H@10 0.774582	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4306459901755887
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:Error COMMON- TAIL results 	MRR 0.430646	H@1 0.277512	H@3 0.491228	H@10 0.782775	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4664801172668636
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:VERYCOMMON RESULTS
+INFO:best_pathmes_cplex.py:Error VERY-COMMON HEAD results 	MRR 0.466480	H@1 0.292365	H@3 0.558659	H@10 0.860335	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4904952442633842
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:Error VERY-COMMON TAIL results 	MRR 0.490495	H@1 0.329923	H@3 0.566922	H@10 0.863598	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.7607352388930297
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:VERYVERYCOMMON RESULTS
+INFO:best_pathmes_cplex.py:Error VERYVERY-COMMON HEAD results 	MRR 0.760735	H@1 0.690332	H@3 0.800604	H@10 0.913897	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.6955899506632786
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+INFO:best_pathmes_cplex.py:Error VERYVERY-COMMON TAIL results 	MRR 0.695590	H@1 0.595238	H@3 0.742857	H@10 0.919048	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathmes_cplex.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+INFO:best_pathmes_cplex.py:INFO RELATION 	1
+INFO:best_pathmes_cplex.py:MRR 	0.3412824703349838, H@1 	0.17764562366575176, H@3 	0.3931076547727966, H@10 	0.7436718511741385
+INFO:best_pathmes_cplex.py:INFO RELATION 	4
+INFO:best_pathmes_cplex.py:MRR 	0.42426293740362764, H@1 	0.35027472527472525, H@3 	0.45604395604395603, H@10 	0.5741758241758241
+INFO:best_pathmes_cplex.py:INFO RELATION 	2
+INFO:best_pathmes_cplex.py:MRR 	0.6998108251000292, H@1 	0.6317663817663818, H@3 	0.7528490028490028, H@10 	0.8076923076923077
+INFO:best_pathmes_cplex.py:INFO RELATION 	0
+INFO:best_pathmes_cplex.py:MRR 	0.5147417878442824, H@1 	0.38382141142582815, H@3 	0.599135861737878, H@10 	0.7772443590974556
+INFO:best_pathmes_cplex.py:INFO RELATION 	6
+INFO:best_pathmes_cplex.py:MRR 	0.3310586814513188, H@1 	0.23958333333333334, H@3 	0.3880208333333333, H@10 	0.4817708333333333
+INFO:best_pathmes_cplex.py:INFO RELATION 	3
+INFO:best_pathmes_cplex.py:MRR 	0.6246811359775276, H@1 	0.5376344086021505, H@3 	0.6881720430107527, H@10 	0.7795698924731183
+INFO:best_pathmes_cplex.py:INFO RELATION 	5
+INFO:best_pathmes_cplex.py:MRR 	0.33238874522927475, H@1 	0.2512315270935961, H@3 	0.3768472906403941, H@10 	0.49507389162561577
+MMR VAL 0.4399146789471511
+INFO:best_pathmes_cplex.py:done
+INFO:best_pathmes_cplex.py:metrics done
+GPU Epilog Script v0.30

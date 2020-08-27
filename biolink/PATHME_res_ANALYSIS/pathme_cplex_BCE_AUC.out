@@ -1,0 +1,150 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 3
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.296', '--batch-size', '2048', '--reg-weight', '1.165e-05', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme', '--auc', '--load', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder']
+MCL True
+INFO:best_pme_cp_BCE.py:Valid: False
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:relation 	bidict({'increases_ppi': 0, 'association_ppi': 1, 'decreases_ppi': 2, 'drug_increases_protein': 3, 'drug_decreases_protein': 4, 'drug_association_protein': 5, 'protein_association_drug': 6})
+INFO:best_pme_cp_BCE.py:auc and lod happening
+INFO:best_pme_cp_BCE.py:dataset name 	train
+INFO:best_pme_cp_BCE.py:dataset name 	valid
+INFO:best_pme_cp_BCE.py:dataset name 	test
+INFO:best_pme_cp_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.4157974725722251
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:TEST RESULTS
+INFO:best_pme_cp_BCE.py:Error 	test results 	MRR 0.415797	H@1 0.276573	H@3 0.477101	H@10 0.724925	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pme_cp_BCE.py:===========
+INFO:best_pme_cp_BCE.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:best_pme_cp_BCE.py:length predicate_instanes 	7
+INFO:best_pme_cp_BCE.py:predicate instances done
+INFO:best_pme_cp_BCE.py:all tiples 	torch.Size([64266, 3])
+INFO:best_pme_cp_BCE.py:make test triples numpy
+INFO:best_pme_cp_BCE.py:about to start predicting
+INFO:best_pme_cp_BCE.py:length pred pos 	21046
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:all se five facts(126276, 3)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (126276, 1)
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9914 - AUC-PR: 0.9869 - P@50: 1.0000 > 0
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9914 - AUC-PR: 0.9831 - P@50: 1.0000 > 0
+INFO:best_pme_cp_BCE.py:length pred pos 	27535
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:all se five facts(165210, 3)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (165210, 1)
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9931 - AUC-PR: 0.9898 - P@50: 1.0000 > 1
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9931 - AUC-PR: 0.9875 - P@50: 1.0000 > 1
+INFO:best_pme_cp_BCE.py:length pred pos 	6939
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:all se five facts(41634, 3)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pme_cp_BCE.py:SCORES FIVE SHAPE (41634, 1)
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9909 - AUC-PR: 0.9865 - P@50: 1.0000 > 2
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9908 - AUC-PR: 0.9830 - P@50: 1.0000 > 2
+INFO:best_pme_cp_BCE.py:length pred pos 	1959
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9861 - AUC-PR: 0.9783 - P@50: 1.0000 > 3
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9860 - AUC-PR: 0.9732 - P@50: 1.0000 > 3
+INFO:best_pme_cp_BCE.py:length pred pos 	3579
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9829 - AUC-PR: 0.9710 - P@50: 1.0000 > 4
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9827 - AUC-PR: 0.9632 - P@50: 1.0000 > 4
+INFO:best_pme_cp_BCE.py:length pred pos 	1617
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9727 - AUC-PR: 0.9538 - P@50: 1.0000 > 5
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9725 - AUC-PR: 0.9411 - P@50: 1.0000 > 5
+INFO:best_pme_cp_BCE.py:length pred pos 	1591
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+INFO:best_pme_cp_BCE.py:Done concatenation
+INFO:best_pme_cp_BCE.py:scores five done
+INFO:best_pme_cp_BCE.py:scores ten done
+INFO:best_pme_cp_BCE.py:in the harder set
+INFO:best_pme_cp_BCE.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9749 - AUC-PR: 0.9568 - P@50: 1.0000 > 6
+INFO:best_pme_cp_BCE.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9747 - AUC-PR: 0.9444 - P@50: 1.0000 > 6
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:AUC_ROC five 	0.9845515274725
+INFO:best_pme_cp_BCE.py:AUC_ROC ten 	0.9844672828795691
+INFO:best_pme_cp_BCE.py:CLASSIFICATION METRICS FIVE
+INFO:best_pme_cp_BCE.py:Error 	test results	AUC-ROC 0.984552	AP 1.000000	P@50 1.000000	AUC_PR 0.956843
+INFO:best_pme_cp_BCE.py:CLASSIFICATION METRICS TEN
+INFO:best_pme_cp_BCE.py:Error 	test results	AUC-ROC 0.984467	AP 1.000000	P@50 1.000000	AUC_PR 0.944407
+INFO:best_pme_cp_BCE.py:length predicate_instanes 	7
+INFO:best_pme_cp_BCE.py:predicate instances done
+INFO:best_pme_cp_BCE.py:all tiples 	torch.Size([64266, 3])
+INFO:best_pme_cp_BCE.py:make test triples numpy
+INFO:best_pme_cp_BCE.py:about to start predicting
+INFO:best_pme_cp_BCE.py:length pred pos 	21046
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9914 - AUC-PR: 0.9944 - P@50: 1.0000 > 0
+INFO:best_pme_cp_BCE.py:length pred pos 	27535
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9931 - AUC-PR: 0.9955 - P@50: 1.0000 > 1
+INFO:best_pme_cp_BCE.py:length pred pos 	6939
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9909 - AUC-PR: 0.9941 - P@50: 1.0000 > 2
+INFO:best_pme_cp_BCE.py:length pred pos 	1959
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9860 - AUC-PR: 0.9907 - P@50: 1.0000 > 3
+INFO:best_pme_cp_BCE.py:length pred pos 	3579
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9827 - AUC-PR: 0.9880 - P@50: 1.0000 > 4
+INFO:best_pme_cp_BCE.py:length pred pos 	1617
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9724 - AUC-PR: 0.9808 - P@50: 1.0000 > 5
+INFO:best_pme_cp_BCE.py:length pred pos 	1591
+INFO:best_pme_cp_BCE.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9750 - AUC-PR: 0.9822 - P@50: 1.0000 > 6
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:AUC_ROC 	0.9845024562341019
+INFO:best_pme_cp_BCE.py:CLASSIFICATION METRICS
+INFO:best_pme_cp_BCE.py:Error 	test results	AUC-ROC 0.984502	AP 1.000000	P@50 1.000000	AUC_PR 0.982198
+GPU Epilog Script v0.30

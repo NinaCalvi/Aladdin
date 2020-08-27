@@ -1,0 +1,150 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 3
+['--model', 'tucker', '--data', 'pathme', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.091', '--batch-size', '2048', '--reg-weight', '0.046', '--embedding-size', '200', '--rel-emb-size', '100', '--quiet', '--load', '--save_model_name', 'TuckEr_batch2048_es_200_rs_100_reg_n3_rw_0046_lr_091_pathme', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder']
+MCL True
+INFO:best_pathme_tuck.py:Valid: False
+INFO:best_pathme_tuck.py:Device: cuda
+INFO:best_pathme_tuck.py:relation 	bidict({'increases_ppi': 0, 'association_ppi': 1, 'decreases_ppi': 2, 'drug_increases_protein': 3, 'drug_decreases_protein': 4, 'drug_association_protein': 5, 'protein_association_drug': 6})
+INFO:best_pathme_tuck.py:auc and lod happening
+INFO:best_pathme_tuck.py:dataset name 	train
+INFO:best_pathme_tuck.py:dataset name 	valid
+INFO:best_pathme_tuck.py:dataset name 	test
+INFO:best_pathme_tuck.py:in evalute for dataset: 	test
+NEW MRR: 0.4159988351638264
+INFO:best_pathme_tuck.py:done
+INFO:best_pathme_tuck.py:metrics done
+INFO:best_pathme_tuck.py:TEST RESULTS
+INFO:best_pathme_tuck.py:Error 	test results 	MRR 0.415999	H@1 0.283207	H@3 0.474604	H@10 0.708660	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathme_tuck.py:===========
+INFO:best_pathme_tuck.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:best_pathme_tuck.py:length predicate_instanes 	7
+INFO:best_pathme_tuck.py:predicate instances done
+INFO:best_pathme_tuck.py:all tiples 	torch.Size([64266, 3])
+INFO:best_pathme_tuck.py:make test triples numpy
+INFO:best_pathme_tuck.py:about to start predicting
+INFO:best_pathme_tuck.py:length pred pos 	21046
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:all se five facts(126276, 3)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (126276, 1)
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9933 - AUC-PR: 0.9896 - P@50: 1.0000 > 0
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9933 - AUC-PR: 0.9867 - P@50: 1.0000 > 0
+INFO:best_pathme_tuck.py:length pred pos 	27535
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:all se five facts(165210, 3)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (165210, 1)
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9936 - AUC-PR: 0.9909 - P@50: 1.0000 > 1
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9936 - AUC-PR: 0.9885 - P@50: 1.0000 > 1
+INFO:best_pathme_tuck.py:length pred pos 	6939
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:all se five facts(41634, 3)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_pathme_tuck.py:SCORES FIVE SHAPE (41634, 1)
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9921 - AUC-PR: 0.9890 - P@50: 1.0000 > 2
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9921 - AUC-PR: 0.9864 - P@50: 1.0000 > 2
+INFO:best_pathme_tuck.py:length pred pos 	1959
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9912 - AUC-PR: 0.9858 - P@50: 1.0000 > 3
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9912 - AUC-PR: 0.9819 - P@50: 1.0000 > 3
+INFO:best_pathme_tuck.py:length pred pos 	3579
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9875 - AUC-PR: 0.9793 - P@50: 1.0000 > 4
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9875 - AUC-PR: 0.9726 - P@50: 1.0000 > 4
+INFO:best_pathme_tuck.py:length pred pos 	1617
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9755 - AUC-PR: 0.9618 - P@50: 1.0000 > 5
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9759 - AUC-PR: 0.9515 - P@50: 1.0000 > 5
+INFO:best_pathme_tuck.py:length pred pos 	1591
+INFO:best_pathme_tuck.py:retrieved negative samples
+INFO:best_pathme_tuck.py:Done concatenation
+INFO:best_pathme_tuck.py:scores five done
+INFO:best_pathme_tuck.py:scores ten done
+INFO:best_pathme_tuck.py:in the harder set
+INFO:best_pathme_tuck.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9765 - AUC-PR: 0.9627 - P@50: 1.0000 > 6
+INFO:best_pathme_tuck.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9764 - AUC-PR: 0.9518 - P@50: 1.0000 > 6
+INFO:best_pathme_tuck.py:done
+INFO:best_pathme_tuck.py:metrics done
+INFO:best_pathme_tuck.py:AUC_ROC five 	0.9871114515062546
+INFO:best_pathme_tuck.py:AUC_ROC ten 	0.987143285317116
+INFO:best_pathme_tuck.py:CLASSIFICATION METRICS FIVE
+INFO:best_pathme_tuck.py:Error 	test results	AUC-ROC 0.987111	AP 1.000000	P@50 1.000000	AUC_PR 0.962675
+INFO:best_pathme_tuck.py:CLASSIFICATION METRICS TEN
+INFO:best_pathme_tuck.py:Error 	test results	AUC-ROC 0.987143	AP 1.000000	P@50 1.000000	AUC_PR 0.951766
+INFO:best_pathme_tuck.py:length predicate_instanes 	7
+INFO:best_pathme_tuck.py:predicate instances done
+INFO:best_pathme_tuck.py:all tiples 	torch.Size([64266, 3])
+INFO:best_pathme_tuck.py:make test triples numpy
+INFO:best_pathme_tuck.py:about to start predicting
+INFO:best_pathme_tuck.py:length pred pos 	21046
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9932 - AUC-PR: 0.9956 - P@50: 1.0000 > 0
+INFO:best_pathme_tuck.py:length pred pos 	27535
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9936 - AUC-PR: 0.9960 - P@50: 1.0000 > 1
+INFO:best_pathme_tuck.py:length pred pos 	6939
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9921 - AUC-PR: 0.9950 - P@50: 1.0000 > 2
+INFO:best_pathme_tuck.py:length pred pos 	1959
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9941 - P@50: 1.0000 > 3
+INFO:best_pathme_tuck.py:length pred pos 	3579
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9875 - AUC-PR: 0.9916 - P@50: 1.0000 > 4
+INFO:best_pathme_tuck.py:length pred pos 	1617
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9755 - AUC-PR: 0.9839 - P@50: 1.0000 > 5
+INFO:best_pathme_tuck.py:length pred pos 	1591
+INFO:best_pathme_tuck.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9764 - AUC-PR: 0.9842 - P@50: 1.0000 > 6
+INFO:best_pathme_tuck.py:done
+INFO:best_pathme_tuck.py:metrics done
+INFO:best_pathme_tuck.py:AUC_ROC 	0.9871165313123041
+INFO:best_pathme_tuck.py:CLASSIFICATION METRICS
+INFO:best_pathme_tuck.py:Error 	test results	AUC-ROC 0.987117	AP 1.000000	P@50 1.000000	AUC_PR 0.984243
+GPU Epilog Script v0.30

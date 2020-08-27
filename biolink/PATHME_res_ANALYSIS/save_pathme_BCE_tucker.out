@@ -1,0 +1,295 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.057', '--batch-size', '268', '--reg-weight', '7.187e-09', '--embedding-size', '100', '--rel-emb-size', '200', '--quiet', '--rare', '--save_model_name', 'TuckEr_batch2048_es_100_rs_200_reg_n3_rw_7187_lr_057_bce_pathme', '--testrel', 'tucker_pathme_BCE_RELATION.csv']
+MCL True
+INFO:best_pathme_tuck_BCE.py:Valid: False
+INFO:best_pathme_tuck_BCE.py:Device: cuda
+INFO:best_pathme_tuck_BCE.py:settin tucker to FALSE
+INFO:best_pathme_tuck_BCE.py:is tucker True
+INFO:best_pathme_tuck_BCE.py:Device: cuda
+INFO:best_pathme_tuck_BCE.py:Epoch 1/100	Loss 0.0194 ± 0.1386
+INFO:best_pathme_tuck_BCE.py:Epoch 2/100	Loss 0.0042 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 3/100	Loss 0.0041 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 4/100	Loss 0.0040 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 5/100	Loss 0.0039 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 6/100	Loss 0.0039 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 7/100	Loss 0.0038 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 8/100	Loss 0.0038 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 9/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 10/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 11/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 12/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 13/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 14/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 15/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 16/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 17/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 18/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 19/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 20/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 21/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 22/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 23/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 24/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 25/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 26/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 27/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 28/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 29/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 30/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 31/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 32/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 33/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 34/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 35/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 36/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 37/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 38/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 39/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 40/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 41/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 42/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 43/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 44/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 45/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 46/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 47/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 48/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 49/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 50/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 51/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 52/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 53/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 54/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 55/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 56/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 57/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 58/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 59/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 60/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 61/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 62/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 63/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 64/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 65/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 66/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 67/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 68/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 69/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 70/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 71/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 72/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 73/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 74/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 75/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 76/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 77/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 78/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 79/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 80/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 81/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 82/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 83/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 84/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 85/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 86/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 87/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 88/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 89/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 90/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 91/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 92/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 93/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 94/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 95/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 96/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 97/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 98/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 99/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 100/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:is bad performing False
+INFO:best_pathme_tuck_BCE.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/TuckEr_batch2048_es_100_rs_200_reg_n3_rw_7187_lr_057_bce_pathme
+INFO:best_pathme_tuck_BCE.py:dataset name 	train
+INFO:best_pathme_tuck_BCE.py:dataset name 	valid
+INFO:best_pathme_tuck_BCE.py:dataset name 	test
+INFO:best_pathme_tuck_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.39338324981729916
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:TEST RESULTS
+INFO:best_pathme_tuck_BCE.py:Error 	test results 	MRR 0.393383	H@1 0.263019	H@3 0.450278	H@10 0.681410	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathme_tuck_BCE.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.057', '--batch-size', '268', '--reg-weight', '7.187e-09', '--embedding-size', '100', '--rel-emb-size', '200', '--quiet', '--rare', '--save_model_name', 'TuckEr_batch2048_es_100_rs_200_reg_n3_rw_7187_lr_057_bce_pathme', '--testrel', 'tucker_pathme_BCE_RELATION.csv']
+MCL True
+INFO:best_pathme_tuck_BCE.py:Valid: False
+INFO:best_pathme_tuck_BCE.py:Device: cuda
+INFO:best_pathme_tuck_BCE.py:settin tucker to FALSE
+INFO:best_pathme_tuck_BCE.py:is tucker True
+INFO:best_pathme_tuck_BCE.py:Device: cuda
+INFO:best_pathme_tuck_BCE.py:Epoch 1/100	Loss 0.0194 ± 0.1386
+INFO:best_pathme_tuck_BCE.py:Epoch 2/100	Loss 0.0042 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 3/100	Loss 0.0041 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 4/100	Loss 0.0040 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 5/100	Loss 0.0039 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 6/100	Loss 0.0039 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 7/100	Loss 0.0038 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 8/100	Loss 0.0038 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 9/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 10/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 11/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 12/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 13/100	Loss 0.0037 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 14/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 15/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 16/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 17/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 18/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 19/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 20/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 21/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 22/100	Loss 0.0036 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 23/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 24/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 25/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 26/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 27/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 28/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 29/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 30/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 31/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 32/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 33/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 34/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 35/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 36/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 37/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 38/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 39/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 40/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 41/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 42/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 43/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 44/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 45/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 46/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 47/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 48/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 49/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 50/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 51/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 52/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 53/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 54/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 55/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 56/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 57/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 58/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 59/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 60/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 61/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 62/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 63/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 64/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 65/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 66/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 67/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 68/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 69/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 70/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 71/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 72/100	Loss 0.0035 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 73/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 74/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 75/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 76/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 77/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 78/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 79/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 80/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 81/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 82/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 83/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 84/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 85/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 86/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 87/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 88/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 89/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 90/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 91/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 92/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 93/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 94/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 95/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 96/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 97/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 98/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 99/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:Epoch 100/100	Loss 0.0034 ± 0.0000
+INFO:best_pathme_tuck_BCE.py:is bad performing False
+INFO:best_pathme_tuck_BCE.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/TuckEr_batch2048_es_100_rs_200_reg_n3_rw_7187_lr_057_bce_pathme
+INFO:best_pathme_tuck_BCE.py:dataset name 	train
+INFO:best_pathme_tuck_BCE.py:dataset name 	valid
+INFO:best_pathme_tuck_BCE.py:dataset name 	test
+INFO:best_pathme_tuck_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.3933832494083886
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:TEST RESULTS
+INFO:best_pathme_tuck_BCE.py:Error 	test results 	MRR 0.393383	H@1 0.263019	H@3 0.450278	H@10 0.681410	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathme_tuck_BCE.py:===========
+NEW MRR: 0.09553067117340507
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:VERY RARE RESULTS
+INFO:best_pathme_tuck_BCE.py:Error VERYRARE HEAD results 	MRR 0.095531	H@1 0.069164	H@3 0.112392	H@10 0.141210	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.056376347676338534
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:Error VERYRARE TAIL results 	MRR 0.056376	H@1 0.006969	H@3 0.052265	H@10 0.209059	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.3994876241213594
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:RARE RESULTS
+INFO:best_pathme_tuck_BCE.py:Error RARE HEAD results 	MRR 0.399488	H@1 0.274118	H@3 0.470038	H@10 0.645984	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.3816950273933512
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:Error RARE TAIL results 	MRR 0.381695	H@1 0.277834	H@3 0.434303	H@10 0.582748	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.3741022803287058
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:COMMON RESULTS
+INFO:best_pathme_tuck_BCE.py:Error COMMON- HEAD results 	MRR 0.374102	H@1 0.212592	H@3 0.446172	H@10 0.737660	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.40828458000102524
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:Error COMMON- TAIL results 	MRR 0.408285	H@1 0.263796	H@3 0.465072	H@10 0.739394	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.3688386508001421
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:VERYCOMMON RESULTS
+INFO:best_pathme_tuck_BCE.py:Error VERY-COMMON HEAD results 	MRR 0.368839	H@1 0.210428	H@3 0.427374	H@10 0.756983	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4004889322667367
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:Error VERY-COMMON TAIL results 	MRR 0.400489	H@1 0.258312	H@3 0.447570	H@10 0.734868	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.631263461017272
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:VERYVERYCOMMON RESULTS
+INFO:best_pathme_tuck_BCE.py:Error VERYVERY-COMMON HEAD results 	MRR 0.631263	H@1 0.545317	H@3 0.675227	H@10 0.808157	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.5659119191808707
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:Error VERYVERY-COMMON TAIL results 	MRR 0.565912	H@1 0.471429	H@3 0.592857	H@10 0.797619	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathme_tuck_BCE.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+GPU Epilog Script v0.30

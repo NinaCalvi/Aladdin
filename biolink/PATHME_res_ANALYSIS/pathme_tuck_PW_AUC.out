@@ -1,0 +1,221 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'pathme', '--loss', 'pw_logistic', '--epochs', '200', '--learning-rate', '0.112', '--nb-negs', '50', '--batch-size', '512', '--reg-weight', '2.336e-08', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tuckerPW_batch512_es_150_rs_150_reg_n3_rw_2336_lr_112_nbn_50_pathme', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_t_PW.py:Valid: False
+INFO:pathme_t_PW.py:Device: cuda
+INFO:pathme_t_PW.py:auc and lod happening
+INFO:pathme_t_PW.py:dataset name 	train
+INFO:pathme_t_PW.py:dataset name 	valid
+INFO:pathme_t_PW.py:dataset name 	test
+INFO:pathme_t_PW.py:in evalute for dataset: 	test
+1024
+INFO:pathme_t_PW.py:done
+INFO:pathme_t_PW.py:metrics done
+INFO:pathme_t_PW.py:TEST RESULTS
+INFO:pathme_t_PW.py:Error 	test results 	MRR 0.327131	H@1 0.205093	H@3 0.375660	H@10 0.596875	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_t_PW.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 3
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'tucker', '--data', 'pathme', '--loss', 'pw_logistic', '--epochs', '200', '--learning-rate', '0.112', '--nb-negs', '50', '--batch-size', '512', '--reg-weight', '2.336e-08', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tuckerPW_batch512_es_150_rs_150_reg_n3_rw_2336_lr_112_nbn_50_pathme', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_t_PW.py:Valid: False
+INFO:pathme_t_PW.py:Device: cuda
+INFO:pathme_t_PW.py:auc and lod happening
+INFO:pathme_t_PW.py:dataset name 	train
+INFO:pathme_t_PW.py:dataset name 	valid
+INFO:pathme_t_PW.py:dataset name 	test
+INFO:pathme_t_PW.py:in evalute for dataset: 	test
+1024
+INFO:pathme_t_PW.py:done
+INFO:pathme_t_PW.py:metrics done
+INFO:pathme_t_PW.py:TEST RESULTS
+INFO:pathme_t_PW.py:Error 	test results 	MRR 0.327131	H@1 0.205093	H@3 0.375660	H@10 0.596875	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_t_PW.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'tucker', '--data', 'pathme', '--loss', 'pw_logistic', '--epochs', '200', '--learning-rate', '0.112', '--nb-negs', '50', '--batch-size', '512', '--reg-weight', '2.336e-08', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tuckerPW_batch512_es_150_rs_150_reg_n3_rw_2336_lr_112_nbn_50_pathme', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_t_PW.py:Valid: False
+INFO:pathme_t_PW.py:Device: cuda
+INFO:pathme_t_PW.py:relation 	bidict({'increases_ppi': 0, 'association_ppi': 1, 'decreases_ppi': 2, 'drug_increases_protein': 3, 'drug_decreases_protein': 4, 'drug_association_protein': 5, 'protein_association_drug': 6})
+INFO:pathme_t_PW.py:auc and lod happening
+INFO:pathme_t_PW.py:dataset name 	train
+INFO:pathme_t_PW.py:dataset name 	valid
+INFO:pathme_t_PW.py:dataset name 	test
+INFO:pathme_t_PW.py:in evalute for dataset: 	test
+1024
+INFO:pathme_t_PW.py:done
+INFO:pathme_t_PW.py:metrics done
+INFO:pathme_t_PW.py:TEST RESULTS
+INFO:pathme_t_PW.py:Error 	test results 	MRR 0.327131	H@1 0.205093	H@3 0.375660	H@10 0.596875	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_t_PW.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 0
+['--model', 'tucker', '--data', 'pathme', '--loss', 'pw_logistic', '--epochs', '200', '--learning-rate', '0.112', '--nb-negs', '50', '--batch-size', '512', '--reg-weight', '2.336e-08', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--auc', '--save_model_name', 'tuckerPW_batch512_es_150_rs_150_reg_n3_rw_2336_lr_112_nbn_50_pathme', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/re_type_pathme.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/pathme/ent_type_pathme.csv', '--neg_by_type', '--harder', '--load']
+MCL False
+INFO:pathme_t_PW.py:Valid: False
+INFO:pathme_t_PW.py:Device: cuda
+INFO:pathme_t_PW.py:relation 	bidict({'increases_ppi': 0, 'association_ppi': 1, 'decreases_ppi': 2, 'drug_increases_protein': 3, 'drug_decreases_protein': 4, 'drug_association_protein': 5, 'protein_association_drug': 6})
+INFO:pathme_t_PW.py:auc and lod happening
+INFO:pathme_t_PW.py:dataset name 	train
+INFO:pathme_t_PW.py:dataset name 	valid
+INFO:pathme_t_PW.py:dataset name 	test
+INFO:pathme_t_PW.py:in evalute for dataset: 	test
+1024
+INFO:pathme_t_PW.py:done
+INFO:pathme_t_PW.py:metrics done
+INFO:pathme_t_PW.py:TEST RESULTS
+INFO:pathme_t_PW.py:Error 	test results 	MRR 0.327131	H@1 0.205093	H@3 0.375660	H@10 0.596875	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pathme_t_PW.py:===========
+INFO:pathme_t_PW.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:pathme_t_PW.py:length predicate_instanes 	7
+INFO:pathme_t_PW.py:predicate instances done
+INFO:pathme_t_PW.py:all tiples 	torch.Size([64266, 3])
+INFO:pathme_t_PW.py:make test triples numpy
+INFO:pathme_t_PW.py:about to start predicting
+INFO:pathme_t_PW.py:length pred pos 	21046
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:all se five facts(126276, 3)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (40000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (80000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (120000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (126276,)
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9840 - AUC-ROC: 0.9892 - AUC-PR: 0.9840 - P@50: 1.0000 > 0
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9797 - AUC-ROC: 0.9892 - AUC-PR: 0.9797 - P@50: 1.0000 > 0
+INFO:pathme_t_PW.py:length pred pos 	27535
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:all se five facts(165210, 3)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (40000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (80000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (120000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (160000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (165210,)
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9859 - AUC-ROC: 0.9905 - AUC-PR: 0.9859 - P@50: 1.0000 > 1
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9821 - AUC-ROC: 0.9905 - AUC-PR: 0.9821 - P@50: 1.0000 > 1
+INFO:pathme_t_PW.py:length pred pos 	6939
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:all se five facts(41634, 3)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (40000,)
+INFO:pathme_t_PW.py:SCORES FIVE SHAPE (41634,)
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9843 - AUC-ROC: 0.9881 - AUC-PR: 0.9843 - P@50: 1.0000 > 2
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9807 - AUC-ROC: 0.9882 - AUC-PR: 0.9807 - P@50: 1.0000 > 2
+INFO:pathme_t_PW.py:length pred pos 	1959
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9714 - AUC-ROC: 0.9809 - AUC-PR: 0.9714 - P@50: 1.0000 > 3
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9647 - AUC-ROC: 0.9809 - AUC-PR: 0.9647 - P@50: 1.0000 > 3
+INFO:pathme_t_PW.py:length pred pos 	3579
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9658 - AUC-ROC: 0.9772 - AUC-PR: 0.9658 - P@50: 1.0000 > 4
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9572 - AUC-ROC: 0.9772 - AUC-PR: 0.9572 - P@50: 1.0000 > 4
+INFO:pathme_t_PW.py:length pred pos 	1617
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9452 - AUC-ROC: 0.9653 - AUC-PR: 0.9452 - P@50: 1.0000 > 5
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9297 - AUC-ROC: 0.9653 - AUC-PR: 0.9297 - P@50: 1.0000 > 5
+INFO:pathme_t_PW.py:length pred pos 	1591
+INFO:pathme_t_PW.py:retrieved negative samples
+INFO:pathme_t_PW.py:Done concatenation
+INFO:pathme_t_PW.py:scores five done
+INFO:pathme_t_PW.py:scores ten done
+INFO:pathme_t_PW.py:in the harder set
+INFO:pathme_t_PW.py:AUC FIVE NEGS
+AP: 0.9475 - AUC-ROC: 0.9681 - AUC-PR: 0.9475 - P@50: 1.0000 > 6
+INFO:pathme_t_PW.py:AUC TEN NEGS
+AP: 0.9328 - AUC-ROC: 0.9685 - AUC-PR: 0.9328 - P@50: 1.0000 > 6
+INFO:pathme_t_PW.py:done
+INFO:pathme_t_PW.py:metrics done
+INFO:pathme_t_PW.py:AUC_ROC five 	0.9799131413524805
+INFO:pathme_t_PW.py:AUC_ROC ten 	0.9799658423988825
+INFO:pathme_t_PW.py:CLASSIFICATION METRICS FIVE
+INFO:pathme_t_PW.py:Error 	test results	AUC-ROC 0.979913	AP 0.947456	P@50 1.000000	AUC_PR 0.947456
+INFO:pathme_t_PW.py:CLASSIFICATION METRICS TEN
+INFO:pathme_t_PW.py:Error 	test results	AUC-ROC 0.979966	AP 0.932846	P@50 1.000000	AUC_PR 0.932846
+INFO:pathme_t_PW.py:length predicate_instanes 	7
+INFO:pathme_t_PW.py:predicate instances done
+INFO:pathme_t_PW.py:all tiples 	torch.Size([64266, 3])
+INFO:pathme_t_PW.py:make test triples numpy
+INFO:pathme_t_PW.py:about to start predicting
+INFO:pathme_t_PW.py:length pred pos 	21046
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9931 - AUC-ROC: 0.9892 - AUC-PR: 0.9931 - P@50: 1.0000 > 0
+INFO:pathme_t_PW.py:length pred pos 	27535
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9940 - AUC-ROC: 0.9905 - AUC-PR: 0.9940 - P@50: 1.0000 > 1
+INFO:pathme_t_PW.py:length pred pos 	6939
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9928 - AUC-ROC: 0.9883 - AUC-PR: 0.9928 - P@50: 1.0000 > 2
+INFO:pathme_t_PW.py:length pred pos 	1959
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9876 - AUC-ROC: 0.9811 - AUC-PR: 0.9876 - P@50: 1.0000 > 3
+INFO:pathme_t_PW.py:length pred pos 	3579
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9851 - AUC-ROC: 0.9772 - AUC-PR: 0.9851 - P@50: 1.0000 > 4
+INFO:pathme_t_PW.py:length pred pos 	1617
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9764 - AUC-ROC: 0.9645 - AUC-PR: 0.9764 - P@50: 1.0000 > 5
+INFO:pathme_t_PW.py:length pred pos 	1591
+INFO:pathme_t_PW.py:retrieved negative samples
+AP: 0.9783 - AUC-ROC: 0.9682 - AUC-PR: 0.9783 - P@50: 1.0000 > 6
+INFO:pathme_t_PW.py:done
+INFO:pathme_t_PW.py:metrics done
+INFO:pathme_t_PW.py:AUC_ROC 	0.9798559540061709
+INFO:pathme_t_PW.py:CLASSIFICATION METRICS
+INFO:pathme_t_PW.py:Error 	test results	AUC-ROC 0.979856	AP 0.978265	P@50 1.000000	AUC_PR 0.978265
+GPU Epilog Script v0.30

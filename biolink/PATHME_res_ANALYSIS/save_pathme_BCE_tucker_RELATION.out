@@ -1,0 +1,39 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.057', '--batch-size', '268', '--reg-weight', '7.187e-09', '--embedding-size', '100', '--rel-emb-size', '200', '--quiet', '--load', '--save_model_name', 'TuckEr_batch2048_es_100_rs_200_reg_n3_rw_7187_lr_057_bce_pathme', '--testrel', 'tucker_pathme_BCE_RELATION.csv']
+MCL True
+INFO:best_pathme_tuck_BCE.py:Valid: False
+INFO:best_pathme_tuck_BCE.py:Device: cuda
+INFO:best_pathme_tuck_BCE.py:auc and lod happening
+INFO:best_pathme_tuck_BCE.py:dataset name 	train
+INFO:best_pathme_tuck_BCE.py:dataset name 	valid
+INFO:best_pathme_tuck_BCE.py:dataset name 	test
+INFO:best_pathme_tuck_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.3933832494083886
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+INFO:best_pathme_tuck_BCE.py:TEST RESULTS
+INFO:best_pathme_tuck_BCE.py:Error 	test results 	MRR 0.393383	H@1 0.263019	H@3 0.450278	H@10 0.681410	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pathme_tuck_BCE.py:===========
+INFO:best_pathme_tuck_BCE.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	1
+INFO:best_pathme_tuck_BCE.py:MRR 	0.31516676684966743, H@1 	0.16087221713937175, H@3 	0.35757853003964624, H@10 	0.694571515706008
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	4
+INFO:best_pathme_tuck_BCE.py:MRR 	0.3150561255313157, H@1 	0.22939560439560439, H@3 	0.36126373626373626, H@10 	0.47115384615384615
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	2
+INFO:best_pathme_tuck_BCE.py:MRR 	0.6524886838386312, H@1 	0.5754985754985755, H@3 	0.7094017094017094, H@10 	0.7763532763532763
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	0
+INFO:best_pathme_tuck_BCE.py:MRR 	0.45994263462222756, H@1 	0.328372539606337, H@3 	0.5439270283245319, H@10 	0.7208353336533846
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	6
+INFO:best_pathme_tuck_BCE.py:MRR 	0.2151822921307768, H@1 	0.14583333333333334, H@3 	0.25, H@10 	0.3359375
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	3
+INFO:best_pathme_tuck_BCE.py:MRR 	0.5555599872533418, H@1 	0.45161290322580644, H@3 	0.6263440860215054, H@10 	0.7365591397849462
+INFO:best_pathme_tuck_BCE.py:INFO RELATION 	5
+INFO:best_pathme_tuck_BCE.py:MRR 	0.23819810452653603, H@1 	0.16009852216748768, H@3 	0.27832512315270935, H@10 	0.3891625615763547
+MMR VAL 0.37791953749347984
+INFO:best_pathme_tuck_BCE.py:done
+INFO:best_pathme_tuck_BCE.py:metrics done
+GPU Epilog Script v0.30

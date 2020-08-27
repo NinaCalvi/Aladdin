@@ -1,0 +1,445 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.296', '--batch-size', '2048', '--reg-weight', '1.165e-05', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme', '--testrel', 'cplex_bce_PATHME_realtion.csv', '--rare']
+MCL True
+INFO:best_pme_cp_BCE.py:Valid: False
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:settin tucker to FALSE
+INFO:best_pme_cp_BCE.py:is tucker True
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:Epoch 1/100	Loss 0.1179 ± 0.3731
+INFO:best_pme_cp_BCE.py:Epoch 2/100	Loss 0.0048 ± 0.0001
+INFO:best_pme_cp_BCE.py:Epoch 3/100	Loss 0.0045 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 4/100	Loss 0.0044 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 5/100	Loss 0.0043 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 6/100	Loss 0.0043 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 7/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 8/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 9/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 10/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 11/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 12/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 13/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 14/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 15/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 16/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 17/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 18/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 19/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 20/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 21/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 22/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 23/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 24/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 25/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 26/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 27/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 28/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 29/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 30/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 31/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 32/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 33/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 34/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 35/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 36/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 37/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 38/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 39/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 40/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 41/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 42/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 43/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 44/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 45/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 46/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 47/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 48/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 49/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 50/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 51/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 52/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 53/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 54/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 55/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 56/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 57/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 58/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 59/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 60/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 61/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 62/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 63/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 64/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 65/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 66/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 67/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 68/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 69/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 70/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 71/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 72/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 73/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 74/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 75/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 76/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 77/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 78/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 79/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 80/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 81/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 82/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 83/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 84/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 85/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 86/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 87/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 88/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 89/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 90/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 91/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 92/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 93/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 94/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 95/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 96/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 97/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 98/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 99/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 100/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:is bad performing False
+INFO:best_pme_cp_BCE.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme
+INFO:best_pme_cp_BCE.py:dataset name 	train
+INFO:best_pme_cp_BCE.py:dataset name 	valid
+INFO:best_pme_cp_BCE.py:dataset name 	test
+INFO:best_pme_cp_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.4157974725018207
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:TEST RESULTS
+INFO:best_pme_cp_BCE.py:Error 	test results 	MRR 0.415797	H@1 0.276573	H@3 0.477101	H@10 0.724925	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pme_cp_BCE.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.296', '--batch-size', '2048', '--reg-weight', '1.165e-05', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme', '--testrel', 'cplex_bce_PATHME_realtion.csv', '--rare']
+MCL True
+INFO:best_pme_cp_BCE.py:Valid: False
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:settin tucker to FALSE
+INFO:best_pme_cp_BCE.py:is tucker True
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:Epoch 1/100	Loss 0.1179 ± 0.3731
+INFO:best_pme_cp_BCE.py:Epoch 2/100	Loss 0.0048 ± 0.0001
+INFO:best_pme_cp_BCE.py:Epoch 3/100	Loss 0.0045 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 4/100	Loss 0.0044 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 5/100	Loss 0.0043 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 6/100	Loss 0.0043 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 7/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 8/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 9/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 10/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 11/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 12/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 13/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 14/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 15/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 16/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 17/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 18/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 19/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 20/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 21/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 22/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 23/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 24/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 25/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 26/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 27/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 28/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 29/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 30/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 31/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 32/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 33/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 34/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 35/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 36/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 37/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 38/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 39/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 40/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 41/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 42/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 43/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 44/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 45/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 46/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 47/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 48/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 49/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 50/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 51/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 52/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 53/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 54/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 55/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 56/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 57/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 58/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 59/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 60/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 61/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 62/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 63/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 64/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 65/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 66/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 67/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 68/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 69/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 70/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 71/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 72/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 73/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 74/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 75/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 76/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 77/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 78/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 79/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 80/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 81/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 82/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 83/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 84/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 85/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 86/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 87/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 88/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 89/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 90/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 91/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 92/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 93/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 94/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 95/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 96/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 97/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 98/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 99/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 100/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:is bad performing False
+INFO:best_pme_cp_BCE.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme
+INFO:best_pme_cp_BCE.py:dataset name 	train
+INFO:best_pme_cp_BCE.py:dataset name 	valid
+INFO:best_pme_cp_BCE.py:dataset name 	test
+INFO:best_pme_cp_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.41579747249777205
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:TEST RESULTS
+INFO:best_pme_cp_BCE.py:Error 	test results 	MRR 0.415797	H@1 0.276573	H@3 0.477101	H@10 0.724925	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pme_cp_BCE.py:===========
+NEW MRR: 0.44349182188383374
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:RARE RESULTS
+INFO:best_pme_cp_BCE.py:Error RARE HEAD results 	MRR 0.443492	H@1 0.317042	H@3 0.513387	H@10 0.698683	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.42270612378130645
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:Error RARE TAIL results 	MRR 0.422706	H@1 0.317452	H@3 0.473420	H@10 0.641926	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pathme', '--mcl', 'True', '--loss', 'bce', '--epochs', '100', '--learning-rate', '0.296', '--batch-size', '2048', '--reg-weight', '1.165e-05', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme', '--testrel', 'cplex_bce_PATHME_realtion.csv', '--rare']
+MCL True
+INFO:best_pme_cp_BCE.py:Valid: False
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:settin tucker to FALSE
+INFO:best_pme_cp_BCE.py:is tucker True
+INFO:best_pme_cp_BCE.py:Device: cuda
+INFO:best_pme_cp_BCE.py:Epoch 1/100	Loss 0.1179 ± 0.3731
+INFO:best_pme_cp_BCE.py:Epoch 2/100	Loss 0.0048 ± 0.0001
+INFO:best_pme_cp_BCE.py:Epoch 3/100	Loss 0.0045 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 4/100	Loss 0.0044 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 5/100	Loss 0.0043 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 6/100	Loss 0.0043 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 7/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 8/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 9/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 10/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 11/100	Loss 0.0042 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 12/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 13/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 14/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 15/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 16/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 17/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 18/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 19/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 20/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 21/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 22/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 23/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 24/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 25/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 26/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 27/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 28/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 29/100	Loss 0.0041 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 30/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 31/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 32/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 33/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 34/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 35/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 36/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 37/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 38/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 39/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 40/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 41/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 42/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 43/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 44/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 45/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 46/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 47/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 48/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 49/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 50/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 51/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 52/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 53/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 54/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 55/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 56/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 57/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 58/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 59/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 60/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 61/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 62/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 63/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 64/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 65/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 66/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 67/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 68/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 69/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 70/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 71/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 72/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 73/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 74/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 75/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 76/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 77/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 78/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 79/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 80/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 81/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 82/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 83/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 84/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 85/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 86/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 87/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 88/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 89/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 90/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 91/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 92/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 93/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 94/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 95/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 96/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 97/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 98/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 99/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:Epoch 100/100	Loss 0.0040 ± 0.0000
+INFO:best_pme_cp_BCE.py:is bad performing False
+INFO:best_pme_cp_BCE.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/pathme/cplex_batch2048_es_200_reg_n3_rw_1165_lr_296_BCE_pathme
+INFO:best_pme_cp_BCE.py:dataset name 	train
+INFO:best_pme_cp_BCE.py:dataset name 	valid
+INFO:best_pme_cp_BCE.py:dataset name 	test
+INFO:best_pme_cp_BCE.py:in evalute for dataset: 	test
+NEW MRR: 0.4157974725722251
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:TEST RESULTS
+INFO:best_pme_cp_BCE.py:Error 	test results 	MRR 0.415797	H@1 0.276573	H@3 0.477101	H@10 0.724925	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pme_cp_BCE.py:===========
+NEW MRR: 0.11484173436264337
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:VERY RARE RESULTS
+INFO:best_pme_cp_BCE.py:Error VERYRARE HEAD results 	MRR 0.114842	H@1 0.086455	H@3 0.129683	H@10 0.172911	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.11248767189150309
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:Error VERYRARE TAIL results 	MRR 0.112488	H@1 0.038328	H@3 0.156794	H@10 0.278746	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.44349182199581627
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:RARE RESULTS
+INFO:best_pme_cp_BCE.py:Error RARE HEAD results 	MRR 0.443492	H@1 0.317042	H@3 0.513387	H@10 0.698683	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.4227061236084285
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:Error RARE TAIL results 	MRR 0.422706	H@1 0.317452	H@3 0.473420	H@10 0.641926	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.39685314637468777
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:COMMON RESULTS
+INFO:best_pme_cp_BCE.py:Error COMMON- HEAD results 	MRR 0.396853	H@1 0.225418	H@3 0.473377	H@10 0.783133	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.42703911338864065
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:Error COMMON- TAIL results 	MRR 0.427039	H@1 0.270813	H@3 0.491547	H@10 0.784689	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.3813733618673533
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:VERYCOMMON RESULTS
+INFO:best_pme_cp_BCE.py:Error VERY-COMMON HEAD results 	MRR 0.381373	H@1 0.211359	H@3 0.444134	H@10 0.768156	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.40068461832506325
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:Error VERY-COMMON TAIL results 	MRR 0.400685	H@1 0.244672	H@3 0.447570	H@10 0.789429	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.6023962433620716
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:VERYVERYCOMMON RESULTS
+INFO:best_pme_cp_BCE.py:Error VERYVERY-COMMON HEAD results 	MRR 0.602396	H@1 0.500000	H@3 0.654079	H@10 0.794562	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+NEW MRR: 0.552017933541435
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+INFO:best_pme_cp_BCE.py:Error VERYVERY-COMMON TAIL results 	MRR 0.552018	H@1 0.435714	H@3 0.600000	H@10 0.823810	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pme_cp_BCE.py:test triples shape 	torch.Size([7009, 3])
+TEST SIZE RELATION 7009
+INFO:best_pme_cp_BCE.py:INFO RELATION 	1
+INFO:best_pme_cp_BCE.py:MRR 	0.3318913424244539, H@1 	0.16575175358340957, H@3 	0.38273863982921624, H@10 	0.7380298871607197
+INFO:best_pme_cp_BCE.py:INFO RELATION 	4
+INFO:best_pme_cp_BCE.py:MRR 	0.3538741091227508, H@1 	0.2623626373626374, H@3 	0.3942307692307692, H@10 	0.5467032967032966
+INFO:best_pme_cp_BCE.py:INFO RELATION 	2
+INFO:best_pme_cp_BCE.py:MRR 	0.6746641220128183, H@1 	0.5990028490028491, H@3 	0.7329059829059829, H@10 	0.7841880341880342
+INFO:best_pme_cp_BCE.py:INFO RELATION 	0
+INFO:best_pme_cp_BCE.py:MRR 	0.47786823987179966, H@1 	0.3372539606337014, H@3 	0.5621699471915507, H@10 	0.7611617858857417
+INFO:best_pme_cp_BCE.py:INFO RELATION 	6
+INFO:best_pme_cp_BCE.py:MRR 	0.27604032928407757, H@1 	0.16666666666666666, H@3 	0.3463541666666667, H@10 	0.4817708333333333
+INFO:best_pme_cp_BCE.py:INFO RELATION 	3
+INFO:best_pme_cp_BCE.py:MRR 	0.6304844782826187, H@1 	0.553763440860215, H@3 	0.6827956989247311, H@10 	0.7634408602150538
+INFO:best_pme_cp_BCE.py:INFO RELATION 	5
+INFO:best_pme_cp_BCE.py:MRR 	0.28551223779637547, H@1 	0.2044334975369458, H@3 	0.3275862068965517, H@10 	0.45073891625615764
+MMR VAL 0.410446686693885
+INFO:best_pme_cp_BCE.py:done
+INFO:best_pme_cp_BCE.py:metrics done
+GPU Epilog Script v0.30
