@@ -95,6 +95,8 @@ def main(argv, bayesian=False):
     parser.add_argument('--ent_type', action='store', type=str, default='Empty', help='path of csv with entity-to-type')
     parser.add_argument('--neg_by_type', action='store_true', default=False, help='if want to use entity types for AUC. AUC, ent_type and rel_type must be submitted')
     
+    parser.add_argument('--transe_pret', action='store', type=str, default=None)
+    
 
 
 
