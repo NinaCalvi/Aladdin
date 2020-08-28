@@ -336,7 +336,7 @@ class ComplEx_MC(KBCModelMCL):
                 self.embeddings[1].weight.data *= self.init_size
                 print('rels shape', self.embeddings[1].weight.data.shape)
             else:
-                transe_model = TransE((self.sizes[0], self.size[1], self.sizes[0]), 200, 'pair_hinge', None, 'adagrad', None, 'l2')
+                transe_model = TransE((self.sizes[0], self.sizes[1], self.sizes[0]), 200, 'pair_hinge', None, 'adagrad', None, 'l2')
                 transe_model.load_state_dict(torch.load(self.transe + '.pt'))
                 self.embeddings[0] = self.embeddings[0].from_pretrained(transe_model.lhs.weight.data)
                 self.emebddings[1] = self.embeddigns[1].from_pretrained(transe_model.rel.weight.data)

@@ -162,7 +162,7 @@ def main(argv, bayesian=False):
     # if parser.model == 'complex':
     if args.mcl:
         model_dict = {
-            'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, args.pret),
+            'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, args.pret, args.transe_pret),
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
             'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
