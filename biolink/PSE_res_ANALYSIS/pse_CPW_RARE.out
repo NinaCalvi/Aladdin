@@ -1,0 +1,148 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pse', '--epochs', '600', '--learning-rate', '0.254', '--loss', 'pw_logistic', '--batch-size', '2048', '--reg-weight', '3.813e-08', '--embedding-size', '200', '--quiet', '--load', '--save_model_name', 'cplexPW_batch2048_es_200_reg_n3_rw_3813_lr_254_ng_50_pse', '--nb-negs', '50', '--valid', '--auc', '--rare', '--harder']
+MCL False
+INFO:best_pse_cp_PW.py:Valid: True
+INFO:best_pse_cp_PW.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+INFO:best_pse_cp_PW.py:auc and lod happening
+INFO:best_pse_cp_PW.py:dataset name 	train
+INFO:best_pse_cp_PW.py:dataset name 	valid
+INFO:best_pse_cp_PW.py:dataset name 	test
+INFO:best_pse_cp_PW.py:in evalute for dataset: 	test
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:TEST RESULTS
+INFO:best_pse_cp_PW.py:Error 	test results 	MRR 0.128235	H@1 0.051659	H@3 0.118334	H@10 0.275858	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pse_cp_PW.py:===========
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:VERY RARE RESULTS
+INFO:best_pse_cp_PW.py:Error VERYRARE HEAD results 	MRR 0.115326	H@1 0.065934	H@3 0.115385	H@10 0.192308	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error VERYRARE TAIL results 	MRR 0.051450	H@1 0.021858	H@3 0.038251	H@10 0.103825	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:RARE RESULTS
+INFO:best_pse_cp_PW.py:Error RARE HEAD results 	MRR 0.128467	H@1 0.080756	H@3 0.121993	H@10 0.207904	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error RARE TAIL results 	MRR 0.115816	H@1 0.070529	H@3 0.120907	H@10 0.184719	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:COMMON RESULTS
+INFO:best_pse_cp_PW.py:Error COMMON- HEAD results 	MRR 0.167027	H@1 0.093209	H@3 0.175385	H@10 0.305680	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error COMMON- TAIL results 	MRR 0.142086	H@1 0.074633	H@3 0.146581	H@10 0.265355	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:VERYCOMMON RESULTS
+INFO:best_pse_cp_PW.py:Error VERY-COMMON HEAD results 	MRR 0.126140	H@1 0.048736	H@3 0.115486	H@10 0.274573	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error VERY-COMMON TAIL results 	MRR 0.121288	H@1 0.047317	H@3 0.110032	H@10 0.261764	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:VERYVERYCOMMON RESULTS
+INFO:best_pse_cp_PW.py:Error VERYVERY-COMMON HEAD results 	MRR 0.118076	H@1 0.035184	H@3 0.097654	H@10 0.285284	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error VERYVERY-COMMON TAIL results 	MRR 0.126357	H@1 0.040979	H@3 0.108334	H@10 0.299618	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pse_cp_PW.py:length predicate_instanes 	963
+INFO:best_pse_cp_PW.py:predicate instances done
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'complex', '--data', 'pse', '--epochs', '600', '--learning-rate', '0.254', '--loss', 'pw_logistic', '--batch-size', '2048', '--reg-weight', '3.813e-08', '--embedding-size', '200', '--quiet', '--load', '--save_model_name', 'cplexPW_batch2048_es_200_reg_n3_rw_3813_lr_254_ng_50_pse', '--nb-negs', '50', '--valid', '--auc', '--rare', '--harder']
+MCL False
+INFO:best_pse_cp_PW.py:Valid: True
+INFO:best_pse_cp_PW.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+INFO:best_pse_cp_PW.py:auc and lod happening
+INFO:best_pse_cp_PW.py:dataset name 	train
+INFO:best_pse_cp_PW.py:dataset name 	valid
+INFO:best_pse_cp_PW.py:dataset name 	test
+INFO:best_pse_cp_PW.py:in evalute for dataset: 	test
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:TEST RESULTS
+INFO:best_pse_cp_PW.py:Error 	test results 	MRR 0.128235	H@1 0.051659	H@3 0.118334	H@10 0.275858	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pse_cp_PW.py:===========
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:VERY RARE RESULTS
+INFO:best_pse_cp_PW.py:Error VERYRARE HEAD results 	MRR 0.115326	H@1 0.065934	H@3 0.115385	H@10 0.192308	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error VERYRARE TAIL results 	MRR 0.051450	H@1 0.021858	H@3 0.038251	H@10 0.103825	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:RARE RESULTS
+INFO:best_pse_cp_PW.py:Error RARE HEAD results 	MRR 0.128467	H@1 0.080756	H@3 0.121993	H@10 0.207904	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error RARE TAIL results 	MRR 0.115816	H@1 0.070529	H@3 0.120907	H@10 0.184719	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:COMMON RESULTS
+INFO:best_pse_cp_PW.py:Error COMMON- HEAD results 	MRR 0.167027	H@1 0.093209	H@3 0.175385	H@10 0.305680	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error COMMON- TAIL results 	MRR 0.142086	H@1 0.074633	H@3 0.146581	H@10 0.265355	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:VERYCOMMON RESULTS
+INFO:best_pse_cp_PW.py:Error VERY-COMMON HEAD results 	MRR 0.126140	H@1 0.048736	H@3 0.115486	H@10 0.274573	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error VERY-COMMON TAIL results 	MRR 0.121288	H@1 0.047317	H@3 0.110032	H@10 0.261764	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:VERYVERYCOMMON RESULTS
+INFO:best_pse_cp_PW.py:Error VERYVERY-COMMON HEAD results 	MRR 0.118076	H@1 0.035184	H@3 0.097654	H@10 0.285284	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:best_pse_cp_PW.py:done
+INFO:best_pse_cp_PW.py:metrics done
+INFO:best_pse_cp_PW.py:Error VERYVERY-COMMON TAIL results 	MRR 0.126357	H@1 0.040979	H@3 0.108334	H@10 0.299618	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pse_cp_PW.py:length predicate_instanes 	963
+INFO:best_pse_cp_PW.py:predicate instances done
+INFO:best_pse_cp_PW.py:all tiples 	torch.Size([4576287, 3])
+INFO:best_pse_cp_PW.py:make test triples numpy
+INFO:best_pse_cp_PW.py:about to start predicting
+INFO:best_pse_cp_PW.py:length pred pos 	1602
+INFO:best_pse_cp_PW.py:Done concatenation
+GPU Epilog Script v0.30

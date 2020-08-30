@@ -1,0 +1,1014 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'complex', '--data', 'covid', '--loss', 'pair_hinge', '--epochs', '600', '--learning-rate', '0.38', '--batch-size', '1024', '--reg-weight', '0.005', '--embedding-size', '150', '--quiet', '--nb-negs', '200', '--loss-margin', '5', '--save_model_name', 'PH_complex_covid_lr_380_bsize_1024_rw_005_es_150_forREL_COVID', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--harder', '--testrel', 'best_PH_COMPLEX_COVID.csv', '--rare']
+MCL False
+INFO:ph_complex_covid.py:Valid: False
+INFO:ph_complex_covid.py:Device: cuda
+INFO:ph_complex_covid.py:NOT MC
+INFO:ph_complex_covid.py:Device: cuda
+INFO:ph_complex_covid.py:valid: False
+INFO:ph_complex_covid.py:Epoch 1/600	Loss 322479.4614 ± 301922.0201
+INFO:ph_complex_covid.py:Epoch 2/600	Loss 68181.8913 ± 5669.6467
+INFO:ph_complex_covid.py:Epoch 3/600	Loss 43739.0556 ± 2334.9280
+INFO:ph_complex_covid.py:Epoch 4/600	Loss 34293.0020 ± 1830.3430
+INFO:ph_complex_covid.py:Epoch 5/600	Loss 28886.2367 ± 1533.2885
+INFO:ph_complex_covid.py:Epoch 6/600	Loss 25310.7630 ± 1368.1452
+INFO:ph_complex_covid.py:Epoch 7/600	Loss 22737.2030 ± 1271.1251
+INFO:ph_complex_covid.py:Epoch 8/600	Loss 20684.0428 ± 1145.7365
+INFO:ph_complex_covid.py:Epoch 9/600	Loss 19127.2154 ± 1076.9517
+INFO:ph_complex_covid.py:Epoch 10/600	Loss 17858.3317 ± 1016.2779
+INFO:ph_complex_covid.py:Epoch 11/600	Loss 16739.2376 ± 953.0984
+INFO:ph_complex_covid.py:Epoch 12/600	Loss 15872.7995 ± 935.7952
+INFO:ph_complex_covid.py:Epoch 13/600	Loss 15077.1774 ± 890.5600
+INFO:ph_complex_covid.py:Epoch 14/600	Loss 14397.0726 ± 859.7645
+INFO:ph_complex_covid.py:Epoch 15/600	Loss 13751.3443 ± 808.1701
+INFO:ph_complex_covid.py:Epoch 16/600	Loss 13259.1594 ± 749.9952
+INFO:ph_complex_covid.py:Epoch 17/600	Loss 12788.6896 ± 774.6593
+INFO:ph_complex_covid.py:Epoch 18/600	Loss 12359.1862 ± 734.3261
+INFO:ph_complex_covid.py:Epoch 19/600	Loss 11985.9316 ± 714.0230
+INFO:ph_complex_covid.py:Epoch 20/600	Loss 11624.8459 ± 691.3379
+INFO:ph_complex_covid.py:Epoch 21/600	Loss 11313.4733 ± 670.6146
+INFO:ph_complex_covid.py:Epoch 22/600	Loss 11049.4256 ± 674.7717
+INFO:ph_complex_covid.py:Epoch 23/600	Loss 10782.8067 ± 635.8311
+INFO:ph_complex_covid.py:Epoch 24/600	Loss 10541.4640 ± 658.6903
+INFO:ph_complex_covid.py:Epoch 25/600	Loss 10335.9613 ± 616.4557
+INFO:ph_complex_covid.py:Epoch 26/600	Loss 10103.7240 ± 657.6780
+INFO:ph_complex_covid.py:Epoch 27/600	Loss 9904.5799 ± 622.5686
+INFO:ph_complex_covid.py:Epoch 28/600	Loss 9759.2006 ± 620.0678
+INFO:ph_complex_covid.py:Epoch 29/600	Loss 9592.0521 ± 615.8052
+INFO:ph_complex_covid.py:Epoch 30/600	Loss 9396.4411 ± 583.2742
+INFO:ph_complex_covid.py:Epoch 31/600	Loss 9279.3236 ± 599.3512
+INFO:ph_complex_covid.py:Epoch 32/600	Loss 9129.2620 ± 568.8049
+INFO:ph_complex_covid.py:Epoch 33/600	Loss 9000.4824 ± 598.4487
+INFO:ph_complex_covid.py:Epoch 34/600	Loss 8873.3470 ± 558.2288
+INFO:ph_complex_covid.py:Epoch 35/600	Loss 8778.2042 ± 557.0252
+INFO:ph_complex_covid.py:Epoch 36/600	Loss 8646.1720 ± 548.9388
+INFO:ph_complex_covid.py:Epoch 37/600	Loss 8529.7846 ± 573.3894
+INFO:ph_complex_covid.py:Epoch 38/600	Loss 8436.6353 ± 539.9155
+INFO:ph_complex_covid.py:Epoch 39/600	Loss 8371.9576 ± 532.1426
+INFO:ph_complex_covid.py:Epoch 40/600	Loss 8247.2278 ± 526.3826
+INFO:ph_complex_covid.py:Epoch 41/600	Loss 8186.5346 ± 542.0233
+INFO:ph_complex_covid.py:Epoch 42/600	Loss 8080.1136 ± 511.2452
+INFO:ph_complex_covid.py:Epoch 43/600	Loss 8042.2403 ± 562.6398
+INFO:ph_complex_covid.py:Epoch 44/600	Loss 7940.1249 ± 545.5110
+INFO:ph_complex_covid.py:Epoch 45/600	Loss 7861.3994 ± 482.4145
+INFO:ph_complex_covid.py:Epoch 46/600	Loss 7810.5378 ± 508.7695
+INFO:ph_complex_covid.py:Epoch 47/600	Loss 7735.0917 ± 510.2596
+INFO:ph_complex_covid.py:Epoch 48/600	Loss 7687.3398 ± 502.9730
+INFO:ph_complex_covid.py:Epoch 49/600	Loss 7607.6269 ± 499.1722
+INFO:ph_complex_covid.py:Epoch 50/600	Loss 7561.5732 ± 492.7236
+INFO:ph_complex_covid.py:Epoch 51/600	Loss 7480.1802 ± 500.9847
+INFO:ph_complex_covid.py:Epoch 52/600	Loss 7452.9224 ± 502.0276
+INFO:ph_complex_covid.py:Epoch 53/600	Loss 7389.0018 ± 485.0292
+INFO:ph_complex_covid.py:Epoch 54/600	Loss 7336.1279 ± 491.2556
+INFO:ph_complex_covid.py:Epoch 55/600	Loss 7287.2660 ± 483.7171
+INFO:ph_complex_covid.py:Epoch 56/600	Loss 7238.3054 ± 495.0005
+INFO:ph_complex_covid.py:Epoch 57/600	Loss 7194.7788 ± 469.6407
+INFO:ph_complex_covid.py:Epoch 58/600	Loss 7148.6336 ± 491.2846
+INFO:ph_complex_covid.py:Epoch 59/600	Loss 7102.9220 ± 478.7242
+INFO:ph_complex_covid.py:Epoch 60/600	Loss 7075.2884 ± 459.9028
+INFO:ph_complex_covid.py:Epoch 61/600	Loss 7010.3882 ± 464.1645
+INFO:ph_complex_covid.py:Epoch 62/600	Loss 6994.9827 ± 455.1055
+INFO:ph_complex_covid.py:Epoch 63/600	Loss 6956.1304 ± 476.3087
+INFO:ph_complex_covid.py:Epoch 64/600	Loss 6898.4013 ± 431.6304
+INFO:ph_complex_covid.py:Epoch 65/600	Loss 6881.0442 ± 446.1347
+INFO:ph_complex_covid.py:Epoch 66/600	Loss 6845.3446 ± 449.5211
+INFO:ph_complex_covid.py:Epoch 67/600	Loss 6798.2293 ± 456.9415
+INFO:ph_complex_covid.py:Epoch 68/600	Loss 6794.7303 ± 445.2936
+INFO:ph_complex_covid.py:Epoch 69/600	Loss 6743.7692 ± 444.2972
+INFO:ph_complex_covid.py:Epoch 70/600	Loss 6686.1173 ± 447.3948
+INFO:ph_complex_covid.py:Epoch 71/600	Loss 6675.1281 ± 456.5549
+INFO:ph_complex_covid.py:Epoch 72/600	Loss 6645.9928 ± 446.2897
+INFO:ph_complex_covid.py:Epoch 73/600	Loss 6612.7242 ± 462.1375
+INFO:ph_complex_covid.py:Epoch 74/600	Loss 6594.9937 ± 464.4711
+INFO:ph_complex_covid.py:Epoch 75/600	Loss 6562.4618 ± 445.5496
+INFO:ph_complex_covid.py:Epoch 76/600	Loss 6534.6035 ± 420.3968
+INFO:ph_complex_covid.py:Epoch 77/600	Loss 6511.9658 ± 448.4658
+INFO:ph_complex_covid.py:Epoch 78/600	Loss 6524.0740 ± 459.1599
+INFO:ph_complex_covid.py:Epoch 79/600	Loss 6476.3533 ± 453.6032
+INFO:ph_complex_covid.py:Epoch 80/600	Loss 6474.2174 ± 432.1036
+INFO:ph_complex_covid.py:Epoch 81/600	Loss 6408.6424 ± 443.9460
+INFO:ph_complex_covid.py:Epoch 82/600	Loss 6392.8240 ± 443.5839
+INFO:ph_complex_covid.py:Epoch 83/600	Loss 6372.9525 ± 455.4470
+INFO:ph_complex_covid.py:Epoch 84/600	Loss 6348.3689 ± 430.4737
+INFO:ph_complex_covid.py:Epoch 85/600	Loss 6328.8719 ± 443.0913
+INFO:ph_complex_covid.py:Epoch 86/600	Loss 6286.6481 ± 457.5070
+INFO:ph_complex_covid.py:Epoch 87/600	Loss 6272.4299 ± 430.0094
+INFO:ph_complex_covid.py:Epoch 88/600	Loss 6293.7263 ± 432.4306
+INFO:ph_complex_covid.py:Epoch 89/600	Loss 6261.9066 ± 428.1842
+INFO:ph_complex_covid.py:Epoch 90/600	Loss 6213.5288 ± 419.7114
+INFO:ph_complex_covid.py:Epoch 91/600	Loss 6193.8529 ± 421.3073
+INFO:ph_complex_covid.py:Epoch 92/600	Loss 6187.0242 ± 439.6093
+INFO:ph_complex_covid.py:Epoch 93/600	Loss 6161.1562 ± 418.3085
+INFO:ph_complex_covid.py:Epoch 94/600	Loss 6151.9533 ± 439.2864
+INFO:ph_complex_covid.py:Epoch 95/600	Loss 6135.7275 ± 441.9817
+INFO:ph_complex_covid.py:Epoch 96/600	Loss 6133.0317 ± 417.8466
+INFO:ph_complex_covid.py:Epoch 97/600	Loss 6097.1935 ± 409.7447
+INFO:ph_complex_covid.py:Epoch 98/600	Loss 6076.6530 ± 430.4846
+INFO:ph_complex_covid.py:Epoch 99/600	Loss 6067.6602 ± 430.1393
+INFO:ph_complex_covid.py:Epoch 100/600	Loss 6042.2927 ± 408.2457
+INFO:ph_complex_covid.py:Epoch 101/600	Loss 6041.1421 ± 421.8570
+INFO:ph_complex_covid.py:Epoch 102/600	Loss 6016.4291 ± 417.7755
+INFO:ph_complex_covid.py:Epoch 103/600	Loss 6003.4243 ± 428.8963
+INFO:ph_complex_covid.py:Epoch 104/600	Loss 5978.0570 ± 439.8460
+INFO:ph_complex_covid.py:Epoch 105/600	Loss 5968.3008 ± 416.4093
+INFO:ph_complex_covid.py:Epoch 106/600	Loss 5959.8056 ± 417.9188
+INFO:ph_complex_covid.py:Epoch 107/600	Loss 5927.2506 ± 404.4802
+INFO:ph_complex_covid.py:Epoch 108/600	Loss 5931.3105 ± 415.0516
+INFO:ph_complex_covid.py:Epoch 109/600	Loss 5909.4745 ± 404.3669
+INFO:ph_complex_covid.py:Epoch 110/600	Loss 5897.8835 ± 414.4237
+INFO:ph_complex_covid.py:Epoch 111/600	Loss 5895.1976 ± 409.7477
+INFO:ph_complex_covid.py:Epoch 112/600	Loss 5866.4026 ± 413.7036
+INFO:ph_complex_covid.py:Epoch 113/600	Loss 5860.8659 ± 391.6235
+INFO:ph_complex_covid.py:Epoch 114/600	Loss 5826.6268 ± 400.2928
+INFO:ph_complex_covid.py:Epoch 115/600	Loss 5818.0522 ± 417.3776
+INFO:ph_complex_covid.py:Epoch 116/600	Loss 5813.1370 ± 401.5797
+INFO:ph_complex_covid.py:Epoch 117/600	Loss 5809.1795 ± 395.6756
+INFO:ph_complex_covid.py:Epoch 118/600	Loss 5800.6333 ± 420.8388
+INFO:ph_complex_covid.py:Epoch 119/600	Loss 5767.7791 ± 421.8813
+INFO:ph_complex_covid.py:Epoch 120/600	Loss 5753.7192 ± 410.9318
+INFO:ph_complex_covid.py:Epoch 121/600	Loss 5758.1060 ± 398.7176
+INFO:ph_complex_covid.py:Epoch 122/600	Loss 5750.8841 ± 408.2896
+INFO:ph_complex_covid.py:Epoch 123/600	Loss 5748.4376 ± 410.7070
+INFO:ph_complex_covid.py:Epoch 124/600	Loss 5715.1756 ± 409.1081
+INFO:ph_complex_covid.py:Epoch 125/600	Loss 5728.0952 ± 401.8868
+INFO:ph_complex_covid.py:Epoch 126/600	Loss 5726.7381 ± 398.4435
+INFO:ph_complex_covid.py:Epoch 127/600	Loss 5682.9884 ± 406.2216
+INFO:ph_complex_covid.py:Epoch 128/600	Loss 5696.3239 ± 422.5586
+INFO:ph_complex_covid.py:Epoch 129/600	Loss 5684.7883 ± 398.3206
+INFO:ph_complex_covid.py:Epoch 130/600	Loss 5672.5318 ± 412.4615
+INFO:ph_complex_covid.py:Epoch 131/600	Loss 5660.8257 ± 414.6652
+INFO:ph_complex_covid.py:Epoch 132/600	Loss 5631.5810 ± 401.8612
+INFO:ph_complex_covid.py:Epoch 133/600	Loss 5646.6633 ± 402.9087
+INFO:ph_complex_covid.py:Epoch 134/600	Loss 5650.4464 ± 398.8847
+INFO:ph_complex_covid.py:Epoch 135/600	Loss 5613.5602 ± 407.5964
+INFO:ph_complex_covid.py:Epoch 136/600	Loss 5590.4391 ± 389.0669
+INFO:ph_complex_covid.py:Epoch 137/600	Loss 5594.1982 ± 395.5783
+INFO:ph_complex_covid.py:Epoch 138/600	Loss 5583.1146 ± 404.7774
+INFO:ph_complex_covid.py:Epoch 139/600	Loss 5592.3199 ± 390.7825
+INFO:ph_complex_covid.py:Epoch 140/600	Loss 5571.4553 ± 392.3108
+INFO:ph_complex_covid.py:Epoch 141/600	Loss 5565.7619 ± 389.8100
+INFO:ph_complex_covid.py:Epoch 142/600	Loss 5556.0387 ± 381.8158
+INFO:ph_complex_covid.py:Epoch 143/600	Loss 5547.9379 ± 397.1705
+INFO:ph_complex_covid.py:Epoch 144/600	Loss 5527.6491 ± 399.4278
+INFO:ph_complex_covid.py:Epoch 145/600	Loss 5547.1744 ± 385.7731
+INFO:ph_complex_covid.py:Epoch 146/600	Loss 5545.0120 ± 412.7332
+INFO:ph_complex_covid.py:Epoch 147/600	Loss 5532.8366 ± 393.7043
+INFO:ph_complex_covid.py:Epoch 148/600	Loss 5490.9680 ± 402.4861
+INFO:ph_complex_covid.py:Epoch 149/600	Loss 5513.6368 ± 380.7185
+INFO:ph_complex_covid.py:Epoch 150/600	Loss 5505.2163 ± 394.6481
+INFO:ph_complex_covid.py:Epoch 151/600	Loss 5479.3249 ± 387.9525
+INFO:ph_complex_covid.py:Epoch 152/600	Loss 5486.0784 ± 385.7189
+INFO:ph_complex_covid.py:Epoch 153/600	Loss 5468.9498 ± 391.4542
+INFO:ph_complex_covid.py:Epoch 154/600	Loss 5461.5155 ± 397.1446
+INFO:ph_complex_covid.py:Epoch 155/600	Loss 5469.1629 ± 389.2800
+INFO:ph_complex_covid.py:Epoch 156/600	Loss 5453.4233 ± 372.4240
+INFO:ph_complex_covid.py:Epoch 157/600	Loss 5450.0645 ± 404.6104
+INFO:ph_complex_covid.py:Epoch 158/600	Loss 5412.3543 ± 391.2180
+INFO:ph_complex_covid.py:Epoch 159/600	Loss 5429.5967 ± 380.7532
+INFO:ph_complex_covid.py:Epoch 160/600	Loss 5419.7448 ± 384.3781
+INFO:ph_complex_covid.py:Epoch 161/600	Loss 5422.5191 ± 376.8533
+INFO:ph_complex_covid.py:Epoch 162/600	Loss 5397.8010 ± 394.3271
+INFO:ph_complex_covid.py:Epoch 163/600	Loss 5400.6605 ± 383.8180
+INFO:ph_complex_covid.py:Epoch 164/600	Loss 5383.6237 ± 380.0480
+INFO:ph_complex_covid.py:Epoch 165/600	Loss 5407.2284 ± 381.8422
+INFO:ph_complex_covid.py:Epoch 166/600	Loss 5368.8057 ± 385.9651
+INFO:ph_complex_covid.py:Epoch 167/600	Loss 5383.4794 ± 398.3896
+INFO:ph_complex_covid.py:Epoch 168/600	Loss 5376.9064 ± 378.0632
+INFO:ph_complex_covid.py:Epoch 169/600	Loss 5368.0067 ± 388.1681
+INFO:ph_complex_covid.py:Epoch 170/600	Loss 5354.5852 ± 392.7232
+INFO:ph_complex_covid.py:Epoch 171/600	Loss 5339.4507 ± 368.4416
+INFO:ph_complex_covid.py:Epoch 172/600	Loss 5351.4140 ± 362.9755
+INFO:ph_complex_covid.py:Epoch 173/600	Loss 5344.1950 ± 392.4057
+INFO:ph_complex_covid.py:Epoch 174/600	Loss 5337.9247 ± 393.5605
+INFO:ph_complex_covid.py:Epoch 175/600	Loss 5332.3452 ± 382.7634
+INFO:ph_complex_covid.py:Epoch 176/600	Loss 5317.3990 ± 391.1473
+INFO:ph_complex_covid.py:Epoch 177/600	Loss 5319.6396 ± 354.4383
+INFO:ph_complex_covid.py:Epoch 178/600	Loss 5307.6476 ± 386.4619
+INFO:ph_complex_covid.py:Epoch 179/600	Loss 5305.8550 ± 390.9791
+INFO:ph_complex_covid.py:Epoch 180/600	Loss 5298.0279 ± 398.8743
+INFO:ph_complex_covid.py:Epoch 181/600	Loss 5285.0127 ± 381.6228
+INFO:ph_complex_covid.py:Epoch 182/600	Loss 5287.0896 ± 385.3221
+INFO:ph_complex_covid.py:Epoch 183/600	Loss 5283.7604 ± 369.6911
+INFO:ph_complex_covid.py:Epoch 184/600	Loss 5282.7970 ± 382.4452
+INFO:ph_complex_covid.py:Epoch 185/600	Loss 5308.0230 ± 378.2899
+INFO:ph_complex_covid.py:Epoch 186/600	Loss 5263.5401 ± 382.5231
+INFO:ph_complex_covid.py:Epoch 187/600	Loss 5266.2468 ± 376.2125
+INFO:ph_complex_covid.py:Epoch 188/600	Loss 5263.8429 ± 385.9647
+INFO:ph_complex_covid.py:Epoch 189/600	Loss 5276.3073 ± 372.8398
+INFO:ph_complex_covid.py:Epoch 190/600	Loss 5246.8084 ± 397.1452
+INFO:ph_complex_covid.py:Epoch 191/600	Loss 5268.3282 ± 367.3733
+INFO:ph_complex_covid.py:Epoch 192/600	Loss 5243.0535 ± 390.4130
+INFO:ph_complex_covid.py:Epoch 193/600	Loss 5217.7410 ± 361.5568
+INFO:ph_complex_covid.py:Epoch 194/600	Loss 5257.8124 ± 351.5730
+INFO:ph_complex_covid.py:Epoch 195/600	Loss 5226.5841 ± 357.6334
+INFO:ph_complex_covid.py:Epoch 196/600	Loss 5217.1450 ± 368.0571
+INFO:ph_complex_covid.py:Epoch 197/600	Loss 5232.1166 ± 380.4816
+INFO:ph_complex_covid.py:Epoch 198/600	Loss 5212.6067 ± 350.5718
+INFO:ph_complex_covid.py:Epoch 199/600	Loss 5209.9390 ± 370.7416
+INFO:ph_complex_covid.py:Epoch 200/600	Loss 5195.7772 ± 391.4380
+INFO:ph_complex_covid.py:Epoch 201/600	Loss 5192.9944 ± 374.4433
+INFO:ph_complex_covid.py:Epoch 202/600	Loss 5196.2225 ± 375.9147
+INFO:ph_complex_covid.py:Epoch 203/600	Loss 5199.9002 ± 382.4515
+INFO:ph_complex_covid.py:Epoch 204/600	Loss 5169.0249 ± 382.0019
+INFO:ph_complex_covid.py:Epoch 205/600	Loss 5184.5686 ± 369.1302
+INFO:ph_complex_covid.py:Epoch 206/600	Loss 5177.0914 ± 373.5978
+INFO:ph_complex_covid.py:Epoch 207/600	Loss 5157.7749 ± 370.6948
+INFO:ph_complex_covid.py:Epoch 208/600	Loss 5154.7394 ± 380.5167
+INFO:ph_complex_covid.py:Epoch 209/600	Loss 5165.7481 ± 385.1940
+INFO:ph_complex_covid.py:Epoch 210/600	Loss 5182.5283 ± 378.3016
+INFO:ph_complex_covid.py:Epoch 211/600	Loss 5167.1098 ± 363.9299
+INFO:ph_complex_covid.py:Epoch 212/600	Loss 5152.9094 ± 367.2673
+INFO:ph_complex_covid.py:Epoch 213/600	Loss 5149.8951 ± 365.7526
+INFO:ph_complex_covid.py:Epoch 214/600	Loss 5136.6819 ± 379.1217
+INFO:ph_complex_covid.py:Epoch 215/600	Loss 5129.8915 ± 364.7142
+INFO:ph_complex_covid.py:Epoch 216/600	Loss 5138.7641 ± 376.2135
+INFO:ph_complex_covid.py:Epoch 217/600	Loss 5133.7880 ± 374.6557
+INFO:ph_complex_covid.py:Epoch 218/600	Loss 5129.3072 ± 358.3112
+INFO:ph_complex_covid.py:Epoch 219/600	Loss 5130.5926 ± 371.9761
+INFO:ph_complex_covid.py:Epoch 220/600	Loss 5109.9786 ± 366.7696
+INFO:ph_complex_covid.py:Epoch 221/600	Loss 5126.6757 ± 380.2622
+INFO:ph_complex_covid.py:Epoch 222/600	Loss 5116.0185 ± 370.2165
+INFO:ph_complex_covid.py:Epoch 223/600	Loss 5095.3771 ± 364.9506
+INFO:ph_complex_covid.py:Epoch 224/600	Loss 5095.3902 ± 359.8240
+INFO:ph_complex_covid.py:Epoch 225/600	Loss 5097.4242 ± 379.6566
+INFO:ph_complex_covid.py:Epoch 226/600	Loss 5106.6876 ± 372.2269
+INFO:ph_complex_covid.py:Epoch 227/600	Loss 5093.1358 ± 374.1817
+INFO:ph_complex_covid.py:Epoch 228/600	Loss 5114.0697 ± 375.2379
+INFO:ph_complex_covid.py:Epoch 229/600	Loss 5083.2051 ± 371.0199
+INFO:ph_complex_covid.py:Epoch 230/600	Loss 5087.5297 ± 365.7617
+INFO:ph_complex_covid.py:Epoch 231/600	Loss 5102.6623 ± 357.5894
+INFO:ph_complex_covid.py:Epoch 232/600	Loss 5069.3158 ± 373.5610
+INFO:ph_complex_covid.py:Epoch 233/600	Loss 5058.1498 ± 386.0436
+INFO:ph_complex_covid.py:Epoch 234/600	Loss 5077.1544 ± 374.5274
+INFO:ph_complex_covid.py:Epoch 235/600	Loss 5050.4453 ± 361.0763
+INFO:ph_complex_covid.py:Epoch 236/600	Loss 5058.1366 ± 371.9674
+INFO:ph_complex_covid.py:Epoch 237/600	Loss 5054.9762 ± 360.5510
+INFO:ph_complex_covid.py:Epoch 238/600	Loss 5059.2287 ± 358.7975
+INFO:ph_complex_covid.py:Epoch 239/600	Loss 5052.1154 ± 395.4083
+INFO:ph_complex_covid.py:Epoch 240/600	Loss 5047.9354 ± 366.4144
+INFO:ph_complex_covid.py:Epoch 241/600	Loss 5057.3849 ± 394.5561
+INFO:ph_complex_covid.py:Epoch 242/600	Loss 5045.0308 ± 369.6850
+INFO:ph_complex_covid.py:Epoch 243/600	Loss 5057.4085 ± 364.6048
+INFO:ph_complex_covid.py:Epoch 244/600	Loss 5039.1158 ± 365.5462
+INFO:ph_complex_covid.py:Epoch 245/600	Loss 5052.1208 ± 377.4038
+INFO:ph_complex_covid.py:Epoch 246/600	Loss 5029.5865 ± 381.3687
+INFO:ph_complex_covid.py:Epoch 247/600	Loss 5024.0511 ± 363.8370
+INFO:ph_complex_covid.py:Epoch 248/600	Loss 5040.1377 ± 375.4262
+INFO:ph_complex_covid.py:Epoch 249/600	Loss 5009.2114 ± 367.9917
+INFO:ph_complex_covid.py:Epoch 250/600	Loss 5007.9735 ± 382.1825
+INFO:ph_complex_covid.py:Epoch 251/600	Loss 5021.0127 ± 362.6419
+INFO:ph_complex_covid.py:Epoch 252/600	Loss 5037.6418 ± 367.2589
+INFO:ph_complex_covid.py:Epoch 253/600	Loss 5015.1157 ± 375.9871
+INFO:ph_complex_covid.py:Epoch 254/600	Loss 4996.0389 ± 362.1087
+INFO:ph_complex_covid.py:Epoch 255/600	Loss 5007.9963 ± 348.7754
+INFO:ph_complex_covid.py:Epoch 256/600	Loss 5003.2877 ± 365.5046
+INFO:ph_complex_covid.py:Epoch 257/600	Loss 4998.6931 ± 344.4069
+INFO:ph_complex_covid.py:Epoch 258/600	Loss 5004.4561 ± 348.6611
+INFO:ph_complex_covid.py:Epoch 259/600	Loss 4994.9065 ± 381.2319
+INFO:ph_complex_covid.py:Epoch 260/600	Loss 5015.3078 ± 374.6049
+INFO:ph_complex_covid.py:Epoch 261/600	Loss 4988.6889 ± 367.6364
+INFO:ph_complex_covid.py:Epoch 262/600	Loss 4959.3745 ± 365.1832
+INFO:ph_complex_covid.py:Epoch 263/600	Loss 4980.1792 ± 378.6107
+INFO:ph_complex_covid.py:Epoch 264/600	Loss 4986.3694 ± 370.7040
+INFO:ph_complex_covid.py:Epoch 265/600	Loss 4981.4847 ± 373.8111
+INFO:ph_complex_covid.py:Epoch 266/600	Loss 4967.3336 ± 354.2663
+INFO:ph_complex_covid.py:Epoch 267/600	Loss 4986.8830 ± 374.6784
+INFO:ph_complex_covid.py:Epoch 268/600	Loss 4970.5532 ± 374.0738
+INFO:ph_complex_covid.py:Epoch 269/600	Loss 4963.2157 ± 364.3334
+INFO:ph_complex_covid.py:Epoch 270/600	Loss 4937.7882 ± 363.0639
+INFO:ph_complex_covid.py:Epoch 271/600	Loss 4971.3217 ± 352.0011
+INFO:ph_complex_covid.py:Epoch 272/600	Loss 4956.7460 ± 366.5604
+INFO:ph_complex_covid.py:Epoch 273/600	Loss 4961.6794 ± 363.4240
+INFO:ph_complex_covid.py:Epoch 274/600	Loss 4939.1702 ± 354.1604
+INFO:ph_complex_covid.py:Epoch 275/600	Loss 4939.8553 ± 363.9824
+INFO:ph_complex_covid.py:Epoch 276/600	Loss 4953.6423 ± 374.5783
+INFO:ph_complex_covid.py:Epoch 277/600	Loss 4948.4407 ± 359.2332
+INFO:ph_complex_covid.py:Epoch 278/600	Loss 4935.1326 ± 356.4170
+INFO:ph_complex_covid.py:Epoch 279/600	Loss 4932.1454 ± 365.5417
+INFO:ph_complex_covid.py:Epoch 280/600	Loss 4940.5630 ± 368.5625
+INFO:ph_complex_covid.py:Epoch 281/600	Loss 4930.8376 ± 362.0135
+INFO:ph_complex_covid.py:Epoch 282/600	Loss 4932.0859 ± 364.9427
+INFO:ph_complex_covid.py:Epoch 283/600	Loss 4922.2980 ± 349.7514
+INFO:ph_complex_covid.py:Epoch 284/600	Loss 4929.0550 ± 369.8539
+INFO:ph_complex_covid.py:Epoch 285/600	Loss 4928.8349 ± 364.7804
+INFO:ph_complex_covid.py:Epoch 286/600	Loss 4932.5791 ± 364.3383
+INFO:ph_complex_covid.py:Epoch 287/600	Loss 4923.3778 ± 376.3905
+INFO:ph_complex_covid.py:Epoch 288/600	Loss 4919.8098 ± 353.0796
+INFO:ph_complex_covid.py:Epoch 289/600	Loss 4920.9842 ± 348.4826
+INFO:ph_complex_covid.py:Epoch 290/600	Loss 4911.5807 ± 374.1473
+INFO:ph_complex_covid.py:Epoch 291/600	Loss 4916.6335 ± 365.7583
+INFO:ph_complex_covid.py:Epoch 292/600	Loss 4889.9662 ± 349.8035
+INFO:ph_complex_covid.py:Epoch 293/600	Loss 4909.9714 ± 354.2997
+INFO:ph_complex_covid.py:Epoch 294/600	Loss 4920.1339 ± 353.5026
+INFO:ph_complex_covid.py:Epoch 295/600	Loss 4921.9081 ± 367.2362
+INFO:ph_complex_covid.py:Epoch 296/600	Loss 4906.3401 ± 353.8933
+INFO:ph_complex_covid.py:Epoch 297/600	Loss 4898.5711 ± 384.2476
+INFO:ph_complex_covid.py:Epoch 298/600	Loss 4906.7455 ± 356.8768
+INFO:ph_complex_covid.py:Epoch 299/600	Loss 4896.9890 ± 355.1383
+INFO:ph_complex_covid.py:Epoch 300/600	Loss 4901.8621 ± 359.9961
+INFO:ph_complex_covid.py:Epoch 301/600	Loss 4896.3818 ± 348.1090
+INFO:ph_complex_covid.py:Epoch 302/600	Loss 4909.2245 ± 357.5285
+INFO:ph_complex_covid.py:Epoch 303/600	Loss 4864.1827 ± 343.2874
+INFO:ph_complex_covid.py:Epoch 304/600	Loss 4869.9157 ± 363.7548
+INFO:ph_complex_covid.py:Epoch 305/600	Loss 4884.4020 ± 354.7283
+INFO:ph_complex_covid.py:Epoch 306/600	Loss 4864.6350 ± 358.8014
+INFO:ph_complex_covid.py:Epoch 307/600	Loss 4891.6468 ± 350.1478
+INFO:ph_complex_covid.py:Epoch 308/600	Loss 4870.4233 ± 337.2879
+INFO:ph_complex_covid.py:Epoch 309/600	Loss 4863.1205 ± 338.1387
+INFO:ph_complex_covid.py:Epoch 310/600	Loss 4871.5514 ± 363.2153
+INFO:ph_complex_covid.py:Epoch 311/600	Loss 4889.0222 ± 371.5668
+INFO:ph_complex_covid.py:Epoch 312/600	Loss 4849.6583 ± 357.4231
+INFO:ph_complex_covid.py:Epoch 313/600	Loss 4859.7219 ± 350.0302
+INFO:ph_complex_covid.py:Epoch 314/600	Loss 4859.9506 ± 371.9761
+INFO:ph_complex_covid.py:Epoch 315/600	Loss 4858.3968 ± 358.7807
+INFO:ph_complex_covid.py:Epoch 316/600	Loss 4860.6179 ± 375.6392
+INFO:ph_complex_covid.py:Epoch 317/600	Loss 4852.4874 ± 363.5083
+INFO:ph_complex_covid.py:Epoch 318/600	Loss 4857.2272 ± 338.6980
+INFO:ph_complex_covid.py:Epoch 319/600	Loss 4846.3663 ± 368.9653
+INFO:ph_complex_covid.py:Epoch 320/600	Loss 4841.0618 ± 354.5991
+INFO:ph_complex_covid.py:Epoch 321/600	Loss 4842.0539 ± 358.5958
+INFO:ph_complex_covid.py:Epoch 322/600	Loss 4846.5398 ± 356.3124
+INFO:ph_complex_covid.py:Epoch 323/600	Loss 4831.2046 ± 346.3336
+INFO:ph_complex_covid.py:Epoch 324/600	Loss 4844.6022 ± 349.9445
+INFO:ph_complex_covid.py:Epoch 325/600	Loss 4844.7984 ± 356.5441
+INFO:ph_complex_covid.py:Epoch 326/600	Loss 4850.1349 ± 362.1451
+INFO:ph_complex_covid.py:Epoch 327/600	Loss 4819.4694 ± 353.8848
+INFO:ph_complex_covid.py:Epoch 328/600	Loss 4849.4461 ± 354.0771
+INFO:ph_complex_covid.py:Epoch 329/600	Loss 4821.2916 ± 347.3516
+INFO:ph_complex_covid.py:Epoch 330/600	Loss 4834.4653 ± 362.2642
+INFO:ph_complex_covid.py:Epoch 331/600	Loss 4827.3199 ± 358.0309
+INFO:ph_complex_covid.py:Epoch 332/600	Loss 4835.0244 ± 351.7531
+INFO:ph_complex_covid.py:Epoch 333/600	Loss 4839.7286 ± 365.5790
+INFO:ph_complex_covid.py:Epoch 334/600	Loss 4820.0563 ± 341.4126
+INFO:ph_complex_covid.py:Epoch 335/600	Loss 4838.6140 ± 349.5090
+INFO:ph_complex_covid.py:Epoch 336/600	Loss 4816.3131 ± 352.9343
+INFO:ph_complex_covid.py:Epoch 337/600	Loss 4823.5609 ± 355.6381
+INFO:ph_complex_covid.py:Epoch 338/600	Loss 4821.1763 ± 353.7388
+INFO:ph_complex_covid.py:Epoch 339/600	Loss 4813.1275 ± 354.8440
+INFO:ph_complex_covid.py:Epoch 340/600	Loss 4828.8507 ± 353.6830
+INFO:ph_complex_covid.py:Epoch 341/600	Loss 4812.1028 ± 353.4364
+INFO:ph_complex_covid.py:Epoch 342/600	Loss 4798.2236 ± 365.6741
+INFO:ph_complex_covid.py:Epoch 343/600	Loss 4824.2835 ± 339.6250
+INFO:ph_complex_covid.py:Epoch 344/600	Loss 4805.3351 ± 342.4824
+INFO:ph_complex_covid.py:Epoch 345/600	Loss 4811.7602 ± 375.6073
+INFO:ph_complex_covid.py:Epoch 346/600	Loss 4803.0453 ± 350.5943
+INFO:ph_complex_covid.py:Epoch 347/600	Loss 4801.0535 ± 352.1809
+INFO:ph_complex_covid.py:Epoch 348/600	Loss 4798.3555 ± 363.7810
+INFO:ph_complex_covid.py:Epoch 349/600	Loss 4794.9955 ± 351.7741
+INFO:ph_complex_covid.py:Epoch 350/600	Loss 4802.3452 ± 356.8907
+INFO:ph_complex_covid.py:Epoch 351/600	Loss 4796.6958 ± 353.6881
+INFO:ph_complex_covid.py:Epoch 352/600	Loss 4787.8158 ± 342.7051
+INFO:ph_complex_covid.py:Epoch 353/600	Loss 4798.0875 ± 341.5019
+INFO:ph_complex_covid.py:Epoch 354/600	Loss 4780.9602 ± 358.4957
+INFO:ph_complex_covid.py:Epoch 355/600	Loss 4785.6445 ± 353.6739
+INFO:ph_complex_covid.py:Epoch 356/600	Loss 4790.2479 ± 343.4203
+INFO:ph_complex_covid.py:Epoch 357/600	Loss 4787.2421 ± 334.7500
+INFO:ph_complex_covid.py:Epoch 358/600	Loss 4783.8946 ± 351.3523
+INFO:ph_complex_covid.py:Epoch 359/600	Loss 4774.6991 ± 341.5405
+INFO:ph_complex_covid.py:Epoch 360/600	Loss 4794.8976 ± 344.7087
+INFO:ph_complex_covid.py:Epoch 361/600	Loss 4778.5883 ± 340.9776
+INFO:ph_complex_covid.py:Epoch 362/600	Loss 4786.3528 ± 337.6107
+INFO:ph_complex_covid.py:Epoch 363/600	Loss 4778.1534 ± 353.6620
+INFO:ph_complex_covid.py:Epoch 364/600	Loss 4764.6010 ± 353.3260
+INFO:ph_complex_covid.py:Epoch 365/600	Loss 4770.1686 ± 329.3451
+INFO:ph_complex_covid.py:Epoch 366/600	Loss 4787.8945 ± 352.7544
+INFO:ph_complex_covid.py:Epoch 367/600	Loss 4766.5809 ± 375.3879
+INFO:ph_complex_covid.py:Epoch 368/600	Loss 4776.1994 ± 365.0364
+INFO:ph_complex_covid.py:Epoch 369/600	Loss 4765.8382 ± 344.3094
+INFO:ph_complex_covid.py:Epoch 370/600	Loss 4776.4731 ± 360.5378
+INFO:ph_complex_covid.py:Epoch 371/600	Loss 4773.2371 ± 356.3680
+INFO:ph_complex_covid.py:Epoch 372/600	Loss 4762.3572 ± 338.7591
+INFO:ph_complex_covid.py:Epoch 373/600	Loss 4762.1173 ± 343.3000
+INFO:ph_complex_covid.py:Epoch 374/600	Loss 4763.9535 ± 355.5566
+INFO:ph_complex_covid.py:Epoch 375/600	Loss 4765.9297 ± 329.7699
+INFO:ph_complex_covid.py:Epoch 376/600	Loss 4772.1224 ± 347.8944
+INFO:ph_complex_covid.py:Epoch 377/600	Loss 4767.0776 ± 344.1206
+INFO:ph_complex_covid.py:Epoch 378/600	Loss 4752.9331 ± 366.8055
+INFO:ph_complex_covid.py:Epoch 379/600	Loss 4755.6327 ± 358.7616
+INFO:ph_complex_covid.py:Epoch 380/600	Loss 4748.1067 ± 352.8851
+INFO:ph_complex_covid.py:Epoch 381/600	Loss 4750.7992 ± 345.6147
+INFO:ph_complex_covid.py:Epoch 382/600	Loss 4747.9917 ± 338.3516
+INFO:ph_complex_covid.py:Epoch 383/600	Loss 4741.9628 ± 338.6837
+INFO:ph_complex_covid.py:Epoch 384/600	Loss 4751.3244 ± 356.2058
+INFO:ph_complex_covid.py:Epoch 385/600	Loss 4741.8385 ± 355.0301
+INFO:ph_complex_covid.py:Epoch 386/600	Loss 4723.0402 ± 345.0347
+INFO:ph_complex_covid.py:Epoch 387/600	Loss 4755.6393 ± 345.8785
+INFO:ph_complex_covid.py:Epoch 388/600	Loss 4737.7727 ± 337.1024
+INFO:ph_complex_covid.py:Epoch 389/600	Loss 4733.2635 ± 346.5611
+INFO:ph_complex_covid.py:Epoch 390/600	Loss 4739.7482 ± 329.9629
+INFO:ph_complex_covid.py:Epoch 391/600	Loss 4735.4357 ± 345.6976
+INFO:ph_complex_covid.py:Epoch 392/600	Loss 4746.7072 ± 341.6007
+INFO:ph_complex_covid.py:Epoch 393/600	Loss 4729.7191 ± 353.5084
+INFO:ph_complex_covid.py:Epoch 394/600	Loss 4742.5947 ± 345.8337
+INFO:ph_complex_covid.py:Epoch 395/600	Loss 4739.8083 ± 340.2288
+INFO:ph_complex_covid.py:Epoch 396/600	Loss 4736.6044 ± 350.5872
+INFO:ph_complex_covid.py:Epoch 397/600	Loss 4721.6104 ± 338.8568
+INFO:ph_complex_covid.py:Epoch 398/600	Loss 4729.0593 ± 341.3445
+INFO:ph_complex_covid.py:Epoch 399/600	Loss 4722.6446 ± 335.2119
+INFO:ph_complex_covid.py:Epoch 400/600	Loss 4713.7704 ± 347.1028
+INFO:ph_complex_covid.py:Epoch 401/600	Loss 4737.2284 ± 336.4651
+INFO:ph_complex_covid.py:Epoch 402/600	Loss 4720.1139 ± 342.3891
+INFO:ph_complex_covid.py:Epoch 403/600	Loss 4727.6074 ± 350.7508
+INFO:ph_complex_covid.py:Epoch 404/600	Loss 4720.9779 ± 340.0030
+INFO:ph_complex_covid.py:Epoch 405/600	Loss 4709.9182 ± 340.5211
+INFO:ph_complex_covid.py:Epoch 406/600	Loss 4727.3985 ± 336.4706
+INFO:ph_complex_covid.py:Epoch 407/600	Loss 4718.0643 ± 355.7526
+INFO:ph_complex_covid.py:Epoch 408/600	Loss 4726.6383 ± 338.5202
+INFO:ph_complex_covid.py:Epoch 409/600	Loss 4710.1789 ± 348.9538
+INFO:ph_complex_covid.py:Epoch 410/600	Loss 4700.4658 ± 344.9211
+INFO:ph_complex_covid.py:Epoch 411/600	Loss 4709.8479 ± 343.9213
+INFO:ph_complex_covid.py:Epoch 412/600	Loss 4712.3909 ± 346.8099
+INFO:ph_complex_covid.py:Epoch 413/600	Loss 4716.0538 ± 360.6904
+INFO:ph_complex_covid.py:Epoch 414/600	Loss 4700.6064 ± 343.2216
+INFO:ph_complex_covid.py:Epoch 415/600	Loss 4715.1072 ± 362.8216
+INFO:ph_complex_covid.py:Epoch 416/600	Loss 4707.6847 ± 340.7427
+INFO:ph_complex_covid.py:Epoch 417/600	Loss 4704.0547 ± 337.0380
+INFO:ph_complex_covid.py:Epoch 418/600	Loss 4700.5735 ± 353.4704
+INFO:ph_complex_covid.py:Epoch 419/600	Loss 4700.3066 ± 357.8048
+INFO:ph_complex_covid.py:Epoch 420/600	Loss 4695.9874 ± 350.7850
+INFO:ph_complex_covid.py:Epoch 421/600	Loss 4683.1769 ± 333.4076
+INFO:ph_complex_covid.py:Epoch 422/600	Loss 4699.4058 ± 348.7485
+INFO:ph_complex_covid.py:Epoch 423/600	Loss 4697.6059 ± 347.2664
+INFO:ph_complex_covid.py:Epoch 424/600	Loss 4697.4832 ± 357.0879
+INFO:ph_complex_covid.py:Epoch 425/600	Loss 4692.8371 ± 357.9231
+INFO:ph_complex_covid.py:Epoch 426/600	Loss 4686.8191 ± 360.6025
+INFO:ph_complex_covid.py:Epoch 427/600	Loss 4696.4704 ± 329.3132
+INFO:ph_complex_covid.py:Epoch 428/600	Loss 4695.9391 ± 357.8994
+INFO:ph_complex_covid.py:Epoch 429/600	Loss 4696.5345 ± 331.8099
+INFO:ph_complex_covid.py:Epoch 430/600	Loss 4669.3207 ± 319.3937
+INFO:ph_complex_covid.py:Epoch 431/600	Loss 4706.0801 ± 349.0827
+INFO:ph_complex_covid.py:Epoch 432/600	Loss 4691.0427 ± 354.5722
+INFO:ph_complex_covid.py:Epoch 433/600	Loss 4700.4643 ± 349.8876
+INFO:ph_complex_covid.py:Epoch 434/600	Loss 4674.0528 ± 352.8518
+INFO:ph_complex_covid.py:Epoch 435/600	Loss 4682.1042 ± 340.2349
+INFO:ph_complex_covid.py:Epoch 436/600	Loss 4679.0795 ± 336.0671
+INFO:ph_complex_covid.py:Epoch 437/600	Loss 4668.3488 ± 347.4909
+INFO:ph_complex_covid.py:Epoch 438/600	Loss 4664.7000 ± 348.1143
+INFO:ph_complex_covid.py:Epoch 439/600	Loss 4687.3223 ± 354.4469
+INFO:ph_complex_covid.py:Epoch 440/600	Loss 4677.5315 ± 334.9168
+INFO:ph_complex_covid.py:Epoch 441/600	Loss 4684.0097 ± 358.7981
+INFO:ph_complex_covid.py:Epoch 442/600	Loss 4668.9973 ± 345.2417
+INFO:ph_complex_covid.py:Epoch 443/600	Loss 4667.0908 ± 342.8304
+INFO:ph_complex_covid.py:Epoch 444/600	Loss 4675.2619 ± 364.4596
+INFO:ph_complex_covid.py:Epoch 445/600	Loss 4670.1222 ± 345.4564
+INFO:ph_complex_covid.py:Epoch 446/600	Loss 4654.3389 ± 356.6049
+INFO:ph_complex_covid.py:Epoch 447/600	Loss 4660.3208 ± 345.7273
+INFO:ph_complex_covid.py:Epoch 448/600	Loss 4666.9941 ± 352.3627
+INFO:ph_complex_covid.py:Epoch 449/600	Loss 4658.1655 ± 328.9151
+INFO:ph_complex_covid.py:Epoch 450/600	Loss 4675.9710 ± 334.6977
+INFO:ph_complex_covid.py:Epoch 451/600	Loss 4665.6683 ± 345.5546
+INFO:ph_complex_covid.py:Epoch 452/600	Loss 4671.3502 ± 351.2332
+INFO:ph_complex_covid.py:Epoch 453/600	Loss 4669.9816 ± 326.3975
+INFO:ph_complex_covid.py:Epoch 454/600	Loss 4673.1070 ± 363.3757
+INFO:ph_complex_covid.py:Epoch 455/600	Loss 4663.0472 ± 338.6690
+INFO:ph_complex_covid.py:Epoch 456/600	Loss 4665.5908 ± 340.6907
+INFO:ph_complex_covid.py:Epoch 457/600	Loss 4652.0494 ± 354.9859
+INFO:ph_complex_covid.py:Epoch 458/600	Loss 4662.4688 ± 346.1926
+INFO:ph_complex_covid.py:Epoch 459/600	Loss 4661.2180 ± 330.6004
+INFO:ph_complex_covid.py:Epoch 460/600	Loss 4665.2698 ± 338.2277
+INFO:ph_complex_covid.py:Epoch 461/600	Loss 4664.0840 ± 333.6121
+INFO:ph_complex_covid.py:Epoch 462/600	Loss 4665.0437 ± 346.0773
+INFO:ph_complex_covid.py:Epoch 463/600	Loss 4655.6012 ± 344.9285
+INFO:ph_complex_covid.py:Epoch 464/600	Loss 4657.9112 ± 340.4296
+INFO:ph_complex_covid.py:Epoch 465/600	Loss 4651.6036 ± 335.9402
+INFO:ph_complex_covid.py:Epoch 466/600	Loss 4670.6755 ± 360.6653
+INFO:ph_complex_covid.py:Epoch 467/600	Loss 4646.7544 ± 337.0931
+INFO:ph_complex_covid.py:Epoch 468/600	Loss 4652.0252 ± 347.9014
+INFO:ph_complex_covid.py:Epoch 469/600	Loss 4634.6178 ± 343.5357
+INFO:ph_complex_covid.py:Epoch 470/600	Loss 4652.2083 ± 343.1985
+INFO:ph_complex_covid.py:Epoch 471/600	Loss 4639.0295 ± 341.2119
+INFO:ph_complex_covid.py:Epoch 472/600	Loss 4653.6776 ± 353.3326
+INFO:ph_complex_covid.py:Epoch 473/600	Loss 4640.0431 ± 356.0406
+INFO:ph_complex_covid.py:Epoch 474/600	Loss 4640.6318 ± 334.4034
+INFO:ph_complex_covid.py:Epoch 475/600	Loss 4642.1228 ± 364.9861
+INFO:ph_complex_covid.py:Epoch 476/600	Loss 4622.7520 ± 331.5691
+INFO:ph_complex_covid.py:Epoch 477/600	Loss 4644.7344 ± 346.7655
+INFO:ph_complex_covid.py:Epoch 478/600	Loss 4639.2407 ± 330.1636
+INFO:ph_complex_covid.py:Epoch 479/600	Loss 4632.1809 ± 349.4940
+INFO:ph_complex_covid.py:Epoch 480/600	Loss 4641.6237 ± 346.0044
+INFO:ph_complex_covid.py:Epoch 481/600	Loss 4649.1754 ± 367.8050
+INFO:ph_complex_covid.py:Epoch 482/600	Loss 4611.3183 ± 340.9568
+INFO:ph_complex_covid.py:Epoch 483/600	Loss 4648.1218 ± 356.1236
+INFO:ph_complex_covid.py:Epoch 484/600	Loss 4648.0177 ± 352.7663
+INFO:ph_complex_covid.py:Epoch 485/600	Loss 4638.4436 ± 363.3307
+INFO:ph_complex_covid.py:Epoch 486/600	Loss 4624.5897 ± 328.4636
+INFO:ph_complex_covid.py:Epoch 487/600	Loss 4645.9394 ± 342.2866
+INFO:ph_complex_covid.py:Epoch 488/600	Loss 4641.1834 ± 350.8984
+INFO:ph_complex_covid.py:Epoch 489/600	Loss 4632.5379 ± 337.1163
+INFO:ph_complex_covid.py:Epoch 490/600	Loss 4629.1589 ± 356.3853
+INFO:ph_complex_covid.py:Epoch 491/600	Loss 4641.9454 ± 360.6443
+INFO:ph_complex_covid.py:Epoch 492/600	Loss 4624.9538 ± 343.3238
+INFO:ph_complex_covid.py:Epoch 493/600	Loss 4637.9277 ± 345.5202
+INFO:ph_complex_covid.py:Epoch 494/600	Loss 4635.2022 ± 344.8180
+INFO:ph_complex_covid.py:Epoch 495/600	Loss 4627.4983 ± 333.5355
+INFO:ph_complex_covid.py:Epoch 496/600	Loss 4608.5160 ± 359.0459
+INFO:ph_complex_covid.py:Epoch 497/600	Loss 4618.7496 ± 336.3590
+INFO:ph_complex_covid.py:Epoch 498/600	Loss 4620.9703 ± 334.5016
+INFO:ph_complex_covid.py:Epoch 499/600	Loss 4627.5935 ± 360.5473
+INFO:ph_complex_covid.py:Epoch 500/600	Loss 4622.4289 ± 336.7326
+INFO:ph_complex_covid.py:Epoch 501/600	Loss 4625.6396 ± 331.5439
+INFO:ph_complex_covid.py:Epoch 502/600	Loss 4602.5680 ± 339.1925
+INFO:ph_complex_covid.py:Epoch 503/600	Loss 4609.7031 ± 332.1587
+INFO:ph_complex_covid.py:Epoch 504/600	Loss 4618.7833 ± 339.4177
+INFO:ph_complex_covid.py:Epoch 505/600	Loss 4613.4086 ± 347.8311
+INFO:ph_complex_covid.py:Epoch 506/600	Loss 4609.2814 ± 345.0348
+INFO:ph_complex_covid.py:Epoch 507/600	Loss 4623.3947 ± 350.7771
+INFO:ph_complex_covid.py:Epoch 508/600	Loss 4630.5199 ± 345.1389
+INFO:ph_complex_covid.py:Epoch 509/600	Loss 4605.0394 ± 340.5204
+INFO:ph_complex_covid.py:Epoch 510/600	Loss 4614.6941 ± 344.1384
+INFO:ph_complex_covid.py:Epoch 511/600	Loss 4599.5347 ± 334.4042
+INFO:ph_complex_covid.py:Epoch 512/600	Loss 4598.1911 ± 336.3439
+INFO:ph_complex_covid.py:Epoch 513/600	Loss 4619.1311 ± 353.8697
+INFO:ph_complex_covid.py:Epoch 514/600	Loss 4600.8857 ± 339.9426
+INFO:ph_complex_covid.py:Epoch 515/600	Loss 4608.8202 ± 327.8204
+INFO:ph_complex_covid.py:Epoch 516/600	Loss 4609.3225 ± 341.0283
+INFO:ph_complex_covid.py:Epoch 517/600	Loss 4606.2615 ± 339.6714
+INFO:ph_complex_covid.py:Epoch 518/600	Loss 4600.3362 ± 344.8329
+INFO:ph_complex_covid.py:Epoch 519/600	Loss 4584.0827 ± 343.5958
+INFO:ph_complex_covid.py:Epoch 520/600	Loss 4618.7018 ± 334.8983
+INFO:ph_complex_covid.py:Epoch 521/600	Loss 4601.2773 ± 343.5462
+INFO:ph_complex_covid.py:Epoch 522/600	Loss 4603.8680 ± 355.4643
+INFO:ph_complex_covid.py:Epoch 523/600	Loss 4594.5682 ± 331.5594
+INFO:ph_complex_covid.py:Epoch 524/600	Loss 4585.6801 ± 328.8213
+INFO:ph_complex_covid.py:Epoch 525/600	Loss 4600.7825 ± 346.4858
+INFO:ph_complex_covid.py:Epoch 526/600	Loss 4583.5758 ± 341.7860
+INFO:ph_complex_covid.py:Epoch 527/600	Loss 4615.5319 ± 333.8203
+INFO:ph_complex_covid.py:Epoch 528/600	Loss 4598.7979 ± 342.8867
+INFO:ph_complex_covid.py:Epoch 529/600	Loss 4600.3743 ± 352.8292
+INFO:ph_complex_covid.py:Epoch 530/600	Loss 4598.8602 ± 337.4198
+INFO:ph_complex_covid.py:Epoch 531/600	Loss 4595.7722 ± 327.7122
+INFO:ph_complex_covid.py:Epoch 532/600	Loss 4583.0018 ± 332.4709
+INFO:ph_complex_covid.py:Epoch 533/600	Loss 4583.8374 ± 345.7038
+INFO:ph_complex_covid.py:Epoch 534/600	Loss 4600.8824 ± 339.7012
+INFO:ph_complex_covid.py:Epoch 535/600	Loss 4579.7588 ± 351.1554
+INFO:ph_complex_covid.py:Epoch 536/600	Loss 4602.1419 ± 345.2352
+INFO:ph_complex_covid.py:Epoch 537/600	Loss 4589.1576 ± 335.4468
+INFO:ph_complex_covid.py:Epoch 538/600	Loss 4587.4616 ± 345.0827
+INFO:ph_complex_covid.py:Epoch 539/600	Loss 4594.2792 ± 350.2524
+INFO:ph_complex_covid.py:Epoch 540/600	Loss 4587.1133 ± 339.1583
+INFO:ph_complex_covid.py:Epoch 541/600	Loss 4599.8821 ± 331.1379
+INFO:ph_complex_covid.py:Epoch 542/600	Loss 4586.0957 ± 344.0492
+INFO:ph_complex_covid.py:Epoch 543/600	Loss 4586.4106 ± 347.9547
+INFO:ph_complex_covid.py:Epoch 544/600	Loss 4588.9785 ± 364.1409
+INFO:ph_complex_covid.py:Epoch 545/600	Loss 4592.0271 ± 338.5242
+INFO:ph_complex_covid.py:Epoch 546/600	Loss 4566.5477 ± 330.9202
+INFO:ph_complex_covid.py:Epoch 547/600	Loss 4588.3181 ± 332.4653
+INFO:ph_complex_covid.py:Epoch 548/600	Loss 4586.0265 ± 345.6583
+INFO:ph_complex_covid.py:Epoch 549/600	Loss 4567.7675 ± 318.0288
+INFO:ph_complex_covid.py:Epoch 550/600	Loss 4580.6659 ± 333.8033
+INFO:ph_complex_covid.py:Epoch 551/600	Loss 4576.2923 ± 345.4491
+INFO:ph_complex_covid.py:Epoch 552/600	Loss 4576.3647 ± 344.0120
+INFO:ph_complex_covid.py:Epoch 553/600	Loss 4581.6446 ± 350.9936
+INFO:ph_complex_covid.py:Epoch 554/600	Loss 4571.8896 ± 324.5974
+INFO:ph_complex_covid.py:Epoch 555/600	Loss 4576.8251 ± 331.4199
+INFO:ph_complex_covid.py:Epoch 556/600	Loss 4562.6847 ± 341.2627
+INFO:ph_complex_covid.py:Epoch 557/600	Loss 4586.5584 ± 329.4451
+INFO:ph_complex_covid.py:Epoch 558/600	Loss 4574.0112 ± 318.9708
+INFO:ph_complex_covid.py:Epoch 559/600	Loss 4581.5762 ± 344.4405
+INFO:ph_complex_covid.py:Epoch 560/600	Loss 4559.4515 ± 318.2824
+INFO:ph_complex_covid.py:Epoch 561/600	Loss 4589.0681 ± 353.2361
+INFO:ph_complex_covid.py:Epoch 562/600	Loss 4571.2083 ± 332.4805
+INFO:ph_complex_covid.py:Epoch 563/600	Loss 4573.9230 ± 340.6049
+INFO:ph_complex_covid.py:Epoch 564/600	Loss 4554.8834 ± 326.6786
+INFO:ph_complex_covid.py:Epoch 565/600	Loss 4572.3808 ± 322.9014
+INFO:ph_complex_covid.py:Epoch 566/600	Loss 4561.1791 ± 340.9298
+INFO:ph_complex_covid.py:Epoch 567/600	Loss 4581.0380 ± 346.0701
+INFO:ph_complex_covid.py:Epoch 568/600	Loss 4568.4948 ± 330.3486
+INFO:ph_complex_covid.py:Epoch 569/600	Loss 4563.9330 ± 336.7532
+INFO:ph_complex_covid.py:Epoch 570/600	Loss 4573.2302 ± 337.8867
+INFO:ph_complex_covid.py:Epoch 571/600	Loss 4574.4173 ± 335.8557
+INFO:ph_complex_covid.py:Epoch 572/600	Loss 4561.5271 ± 328.0381
+INFO:ph_complex_covid.py:Epoch 573/600	Loss 4568.4276 ± 333.2410
+INFO:ph_complex_covid.py:Epoch 574/600	Loss 4559.5405 ± 355.5004
+INFO:ph_complex_covid.py:Epoch 575/600	Loss 4560.1668 ± 339.4949
+INFO:ph_complex_covid.py:Epoch 576/600	Loss 4556.8231 ± 345.2975
+INFO:ph_complex_covid.py:Epoch 577/600	Loss 4570.1159 ± 341.6271
+INFO:ph_complex_covid.py:Epoch 578/600	Loss 4554.2665 ± 339.6352
+INFO:ph_complex_covid.py:Epoch 579/600	Loss 4567.6532 ± 331.1283
+INFO:ph_complex_covid.py:Epoch 580/600	Loss 4552.1188 ± 330.1486
+INFO:ph_complex_covid.py:Epoch 581/600	Loss 4562.9619 ± 336.9073
+INFO:ph_complex_covid.py:Epoch 582/600	Loss 4545.7450 ± 349.0146
+INFO:ph_complex_covid.py:Epoch 583/600	Loss 4560.8801 ± 357.5385
+INFO:ph_complex_covid.py:Epoch 584/600	Loss 4561.9738 ± 315.7225
+INFO:ph_complex_covid.py:Epoch 585/600	Loss 4546.4915 ± 336.7404
+INFO:ph_complex_covid.py:Epoch 586/600	Loss 4564.6509 ± 335.6888
+INFO:ph_complex_covid.py:Epoch 587/600	Loss 4572.5569 ± 337.0341
+INFO:ph_complex_covid.py:Epoch 588/600	Loss 4546.1851 ± 338.7638
+INFO:ph_complex_covid.py:Epoch 589/600	Loss 4553.3245 ± 343.7463
+INFO:ph_complex_covid.py:Epoch 590/600	Loss 4558.8507 ± 352.3714
+INFO:ph_complex_covid.py:Epoch 591/600	Loss 4560.6665 ± 341.6263
+INFO:ph_complex_covid.py:Epoch 592/600	Loss 4557.5674 ± 350.5977
+INFO:ph_complex_covid.py:Epoch 593/600	Loss 4544.3643 ± 345.2427
+INFO:ph_complex_covid.py:Epoch 594/600	Loss 4544.4384 ± 344.6586
+INFO:ph_complex_covid.py:Epoch 595/600	Loss 4548.7381 ± 344.3452
+INFO:ph_complex_covid.py:Epoch 596/600	Loss 4544.2765 ± 330.8373
+INFO:ph_complex_covid.py:Epoch 597/600	Loss 4549.3335 ± 339.2580
+INFO:ph_complex_covid.py:Epoch 598/600	Loss 4562.9500 ± 325.3357
+INFO:ph_complex_covid.py:Epoch 599/600	Loss 4542.0152 ± 322.5971
+INFO:ph_complex_covid.py:Epoch 600/600	Loss 4539.2900 ± 323.2189
+INFO:ph_complex_covid.py:is bad performing False
+INFO:ph_complex_covid.py:Save model in /home/acalvi/Dissertation/Aladdin/biolink/best_models/covid/PH_complex_covid_lr_380_bsize_1024_rw_005_es_150_forREL_COVID
+INFO:ph_complex_covid.py:dataset name 	train
+INFO:ph_complex_covid.py:dataset name 	valid
+INFO:ph_complex_covid.py:dataset name 	test
+INFO:ph_complex_covid.py:in evalute for dataset: 	test
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:TEST RESULTS
+INFO:ph_complex_covid.py:Error 	test results 	MRR 0.148965	H@1 0.088055	H@3 0.166065	H@10 0.263856	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_complex_covid.py:===========
+INFO:ph_complex_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:ph_complex_covid.py:length predicate_instanes 	27
+INFO:ph_complex_covid.py:predicate instances done
+INFO:ph_complex_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_complex_covid.py:make test triples numpy
+INFO:ph_complex_covid.py:about to start predicting
+INFO:ph_complex_covid.py:length pred pos 	83421
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(500526, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (280000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (320000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (360000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (400000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (440000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (480000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (500526, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9874 - AUC-PR: 0.9674 - P@50: 1.0000 > 0
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9873 - AUC-PR: 0.9519 - P@50: 1.0000 > 0
+INFO:ph_complex_covid.py:length pred pos 	16167
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(97002, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (97002, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9883 - AUC-PR: 0.9700 - P@50: 1.0000 > 1
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9884 - AUC-PR: 0.9567 - P@50: 1.0000 > 1
+INFO:ph_complex_covid.py:length pred pos 	6598
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9949 - AUC-PR: 0.9841 - P@50: 1.0000 > 2
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9948 - AUC-PR: 0.9731 - P@50: 1.0000 > 2
+INFO:ph_complex_covid.py:length pred pos 	7376
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(44256, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (44256, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9825 - P@50: 1.0000 > 3
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9689 - P@50: 1.0000 > 3
+INFO:ph_complex_covid.py:length pred pos 	15087
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(90522, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (90522, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9958 - AUC-PR: 0.9842 - P@50: 1.0000 > 4
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9958 - AUC-PR: 0.9738 - P@50: 1.0000 > 4
+INFO:ph_complex_covid.py:length pred pos 	44117
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(264702, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (264702, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9964 - AUC-PR: 0.9861 - P@50: 1.0000 > 5
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9770 - P@50: 1.0000 > 5
+INFO:ph_complex_covid.py:length pred pos 	22427
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(134562, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (134562, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9932 - AUC-PR: 0.9836 - P@50: 1.0000 > 6
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9932 - AUC-PR: 0.9766 - P@50: 1.0000 > 6
+INFO:ph_complex_covid.py:length pred pos 	44637
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(267822, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (267822, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9954 - AUC-PR: 0.9866 - P@50: 1.0000 > 7
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9796 - P@50: 1.0000 > 7
+INFO:ph_complex_covid.py:length pred pos 	41643
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(249858, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (249858, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9847 - P@50: 1.0000 > 8
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9753 - P@50: 1.0000 > 8
+INFO:ph_complex_covid.py:length pred pos 	41765
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(250590, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (250590, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9887 - P@50: 1.0000 > 9
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9835 - P@50: 1.0000 > 9
+INFO:ph_complex_covid.py:length pred pos 	46730
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(280380, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (280000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (280380, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9957 - AUC-PR: 0.9896 - P@50: 1.0000 > 10
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9957 - AUC-PR: 0.9846 - P@50: 1.0000 > 10
+INFO:ph_complex_covid.py:length pred pos 	33370
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(200220, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200220, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9834 - P@50: 1.0000 > 11
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9951 - AUC-PR: 0.9727 - P@50: 1.0000 > 11
+INFO:ph_complex_covid.py:length pred pos 	36708
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(220248, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (220248, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9812 - AUC-PR: 0.9636 - P@50: 1.0000 > 12
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9812 - AUC-PR: 0.9509 - P@50: 1.0000 > 12
+INFO:ph_complex_covid.py:length pred pos 	35963
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(215778, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (215778, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9960 - AUC-PR: 0.9907 - P@50: 1.0000 > 13
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9960 - AUC-PR: 0.9861 - P@50: 1.0000 > 13
+INFO:ph_complex_covid.py:length pred pos 	33640
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(201840, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (201840, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9994 - AUC-PR: 0.9975 - P@50: 1.0000 > 14
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9994 - AUC-PR: 0.9951 - P@50: 1.0000 > 14
+INFO:ph_complex_covid.py:length pred pos 	2385
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9946 - AUC-PR: 0.9825 - P@50: 1.0000 > 15
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9944 - AUC-PR: 0.9730 - P@50: 1.0000 > 15
+INFO:ph_complex_covid.py:length pred pos 	6840
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:all se five facts(41040, 3)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:ph_complex_covid.py:SCORES FIVE SHAPE (41040, 1)
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9904 - AUC-PR: 0.9782 - P@50: 1.0000 > 16
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9904 - AUC-PR: 0.9683 - P@50: 1.0000 > 16
+INFO:ph_complex_covid.py:length pred pos 	3199
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9962 - AUC-PR: 0.9861 - P@50: 1.0000 > 17
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9960 - AUC-PR: 0.9731 - P@50: 1.0000 > 17
+INFO:ph_complex_covid.py:length pred pos 	3827
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9940 - AUC-PR: 0.9818 - P@50: 1.0000 > 18
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9939 - AUC-PR: 0.9711 - P@50: 1.0000 > 18
+INFO:ph_complex_covid.py:length pred pos 	5222
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9922 - AUC-PR: 0.9775 - P@50: 1.0000 > 19
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9921 - AUC-PR: 0.9649 - P@50: 1.0000 > 19
+INFO:ph_complex_covid.py:length pred pos 	1359
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9905 - AUC-PR: 0.9716 - P@50: 1.0000 > 20
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9907 - AUC-PR: 0.9588 - P@50: 1.0000 > 20
+INFO:ph_complex_covid.py:length pred pos 	2993
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9974 - AUC-PR: 0.9888 - P@50: 1.0000 > 21
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9974 - AUC-PR: 0.9834 - P@50: 1.0000 > 21
+INFO:ph_complex_covid.py:length pred pos 	728
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9862 - AUC-PR: 0.9681 - P@50: 1.0000 > 22
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9859 - AUC-PR: 0.9527 - P@50: 1.0000 > 22
+INFO:ph_complex_covid.py:length pred pos 	802
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9975 - AUC-PR: 0.9901 - P@50: 1.0000 > 23
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9968 - AUC-PR: 0.9773 - P@50: 1.0000 > 23
+INFO:ph_complex_covid.py:length pred pos 	528
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9936 - AUC-PR: 0.9797 - P@50: 1.0000 > 24
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9934 - AUC-PR: 0.9678 - P@50: 1.0000 > 24
+INFO:ph_complex_covid.py:length pred pos 	502
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9882 - AUC-PR: 0.9699 - P@50: 1.0000 > 25
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9886 - AUC-PR: 0.9555 - P@50: 1.0000 > 25
+INFO:ph_complex_covid.py:length pred pos 	30
+INFO:ph_complex_covid.py:retrieved negative samples
+INFO:ph_complex_covid.py:Done concatenation
+INFO:ph_complex_covid.py:scores five done
+INFO:ph_complex_covid.py:scores ten done
+INFO:ph_complex_covid.py:in the harder set
+INFO:ph_complex_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9909 - AUC-PR: 0.9789 - P@50: 1.0000 > 26
+INFO:ph_complex_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9899 - AUC-PR: 0.9718 - P@50: 1.0000 > 26
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:AUC_ROC five 	0.993203302376052
+INFO:ph_complex_covid.py:AUC_ROC ten 	0.9931136377200636
+INFO:ph_complex_covid.py:CLASSIFICATION METRICS FIVE
+INFO:ph_complex_covid.py:Error 	test results	AUC-ROC 0.993203	AP 1.000000	P@50 1.000000	AUC_PR 0.978899
+INFO:ph_complex_covid.py:CLASSIFICATION METRICS TEN
+INFO:ph_complex_covid.py:Error 	test results	AUC-ROC 0.993114	AP 1.000000	P@50 1.000000	AUC_PR 0.971841
+INFO:ph_complex_covid.py:length predicate_instanes 	27
+INFO:ph_complex_covid.py:predicate instances done
+INFO:ph_complex_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_complex_covid.py:make test triples numpy
+GPU Epilog Script v0.30

@@ -1,0 +1,1958 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 7
+['--model', 'tucker', '--data', 'pse', '--epochs', '450', '--learning-rate', '0.516', '--batch-size', '2048', '--loss', 'pair_hinge', '--reg-weight', '0.043', '--embedding-size', '200', '--rel-emb-size', '100', '--quiet', '--load', '--save_model_name', 'tuckerPH_batch2048_es_200_rs_100_reg_n3_rw_0043_lr_516_ng_6_m_2_pse', '--nb-negs', '6', '--loss-margin', '2', '--auc']
+MCL False
+INFO:best_pse_tuck_PH.py:Valid: False
+INFO:best_pse_tuck_PH.py:Device: cuda
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+INFO:best_pse_tuck_PH.py:auc and lod happening
+INFO:best_pse_tuck_PH.py:dataset name 	train
+INFO:best_pse_tuck_PH.py:dataset name 	valid
+INFO:best_pse_tuck_PH.py:dataset name 	test
+INFO:best_pse_tuck_PH.py:in evalute for dataset: 	test
+1024
+INFO:best_pse_tuck_PH.py:done
+INFO:best_pse_tuck_PH.py:metrics done
+INFO:best_pse_tuck_PH.py:TEST RESULTS
+INFO:best_pse_tuck_PH.py:Error 	test results 	MRR 0.144147	H@1 0.060410	H@3 0.139202	H@10 0.312552	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_pse_tuck_PH.py:===========
+INFO:best_pse_tuck_PH.py:length predicate_instanes 	963
+INFO:best_pse_tuck_PH.py:predicate instances done
+INFO:best_pse_tuck_PH.py:all tiples 	torch.Size([4576287, 3])
+INFO:best_pse_tuck_PH.py:make test triples numpy
+INFO:best_pse_tuck_PH.py:about to start predicting
+INFO:best_pse_tuck_PH.py:length pred pos 	1602
+AP: 0.9827 - AUC-ROC: 0.9886 - AUC-PR: 0.9827 - P@50: 0.9800 > 0
+INFO:best_pse_tuck_PH.py:length pred pos 	548
+AP: 0.9897 - AUC-ROC: 0.9918 - AUC-PR: 0.9897 - P@50: 1.0000 > 1
+INFO:best_pse_tuck_PH.py:length pred pos 	21410
+AP: 0.9688 - AUC-ROC: 0.9777 - AUC-PR: 0.9688 - P@50: 0.9800 > 2
+INFO:best_pse_tuck_PH.py:length pred pos 	9254
+AP: 0.9744 - AUC-ROC: 0.9814 - AUC-PR: 0.9744 - P@50: 1.0000 > 3
+INFO:best_pse_tuck_PH.py:length pred pos 	13364
+AP: 0.9621 - AUC-ROC: 0.9741 - AUC-PR: 0.9621 - P@50: 0.9800 > 4
+INFO:best_pse_tuck_PH.py:length pred pos 	6246
+AP: 0.9770 - AUC-ROC: 0.9840 - AUC-PR: 0.9770 - P@50: 1.0000 > 5
+INFO:best_pse_tuck_PH.py:length pred pos 	8827
+AP: 0.9734 - AUC-ROC: 0.9806 - AUC-PR: 0.9734 - P@50: 1.0000 > 6
+INFO:best_pse_tuck_PH.py:length pred pos 	16555
+AP: 0.9713 - AUC-ROC: 0.9791 - AUC-PR: 0.9713 - P@50: 1.0000 > 7
+INFO:best_pse_tuck_PH.py:length pred pos 	1178
+AP: 0.9836 - AUC-ROC: 0.9879 - AUC-PR: 0.9836 - P@50: 1.0000 > 8
+INFO:best_pse_tuck_PH.py:length pred pos 	1618
+AP: 0.9746 - AUC-ROC: 0.9847 - AUC-PR: 0.9746 - P@50: 0.9800 > 9
+INFO:best_pse_tuck_PH.py:length pred pos 	8170
+AP: 0.9707 - AUC-ROC: 0.9797 - AUC-PR: 0.9707 - P@50: 0.9600 > 10
+INFO:best_pse_tuck_PH.py:length pred pos 	6520
+AP: 0.9680 - AUC-ROC: 0.9776 - AUC-PR: 0.9680 - P@50: 1.0000 > 11
+INFO:best_pse_tuck_PH.py:length pred pos 	2038
+AP: 0.9772 - AUC-ROC: 0.9832 - AUC-PR: 0.9772 - P@50: 1.0000 > 12
+INFO:best_pse_tuck_PH.py:length pred pos 	3163
+AP: 0.9739 - AUC-ROC: 0.9814 - AUC-PR: 0.9739 - P@50: 0.9800 > 13
+INFO:best_pse_tuck_PH.py:length pred pos 	2145
+AP: 0.9816 - AUC-ROC: 0.9864 - AUC-PR: 0.9816 - P@50: 1.0000 > 14
+INFO:best_pse_tuck_PH.py:length pred pos 	2327
+AP: 0.9817 - AUC-ROC: 0.9866 - AUC-PR: 0.9817 - P@50: 1.0000 > 15
+INFO:best_pse_tuck_PH.py:length pred pos 	4812
+AP: 0.9778 - AUC-ROC: 0.9831 - AUC-PR: 0.9778 - P@50: 1.0000 > 16
+INFO:best_pse_tuck_PH.py:length pred pos 	27006
+AP: 0.9670 - AUC-ROC: 0.9769 - AUC-PR: 0.9670 - P@50: 0.9800 > 17
+INFO:best_pse_tuck_PH.py:length pred pos 	5165
+AP: 0.9754 - AUC-ROC: 0.9816 - AUC-PR: 0.9754 - P@50: 1.0000 > 18
+INFO:best_pse_tuck_PH.py:length pred pos 	862
+AP: 0.9853 - AUC-ROC: 0.9901 - AUC-PR: 0.9853 - P@50: 1.0000 > 19
+INFO:best_pse_tuck_PH.py:length pred pos 	1110
+AP: 0.9862 - AUC-ROC: 0.9898 - AUC-PR: 0.9862 - P@50: 1.0000 > 20
+INFO:best_pse_tuck_PH.py:length pred pos 	2572
+AP: 0.9830 - AUC-ROC: 0.9865 - AUC-PR: 0.9830 - P@50: 1.0000 > 21
+INFO:best_pse_tuck_PH.py:length pred pos 	2232
+AP: 0.9713 - AUC-ROC: 0.9808 - AUC-PR: 0.9713 - P@50: 0.9800 > 22
+INFO:best_pse_tuck_PH.py:length pred pos 	4030
+AP: 0.9656 - AUC-ROC: 0.9770 - AUC-PR: 0.9656 - P@50: 0.9800 > 23
+INFO:best_pse_tuck_PH.py:length pred pos 	4663
+AP: 0.9777 - AUC-ROC: 0.9833 - AUC-PR: 0.9777 - P@50: 1.0000 > 24
+INFO:best_pse_tuck_PH.py:length pred pos 	7126
+AP: 0.9662 - AUC-ROC: 0.9768 - AUC-PR: 0.9662 - P@50: 0.9800 > 25
+INFO:best_pse_tuck_PH.py:length pred pos 	4102
+AP: 0.9761 - AUC-ROC: 0.9820 - AUC-PR: 0.9761 - P@50: 1.0000 > 26
+INFO:best_pse_tuck_PH.py:length pred pos 	675
+AP: 0.9852 - AUC-ROC: 0.9880 - AUC-PR: 0.9852 - P@50: 1.0000 > 27
+INFO:best_pse_tuck_PH.py:length pred pos 	1224
+AP: 0.9870 - AUC-ROC: 0.9900 - AUC-PR: 0.9870 - P@50: 1.0000 > 28
+INFO:best_pse_tuck_PH.py:length pred pos 	9538
+AP: 0.9700 - AUC-ROC: 0.9786 - AUC-PR: 0.9700 - P@50: 1.0000 > 29
+INFO:best_pse_tuck_PH.py:length pred pos 	19930
+AP: 0.9749 - AUC-ROC: 0.9810 - AUC-PR: 0.9749 - P@50: 1.0000 > 30
+INFO:best_pse_tuck_PH.py:length pred pos 	3858
+AP: 0.9822 - AUC-ROC: 0.9860 - AUC-PR: 0.9822 - P@50: 1.0000 > 31
+INFO:best_pse_tuck_PH.py:length pred pos 	8979
+AP: 0.9755 - AUC-ROC: 0.9818 - AUC-PR: 0.9755 - P@50: 1.0000 > 32
+INFO:best_pse_tuck_PH.py:length pred pos 	12718
+AP: 0.9723 - AUC-ROC: 0.9800 - AUC-PR: 0.9723 - P@50: 0.9800 > 33
+INFO:best_pse_tuck_PH.py:length pred pos 	1172
+AP: 0.9894 - AUC-ROC: 0.9908 - AUC-PR: 0.9894 - P@50: 1.0000 > 34
+INFO:best_pse_tuck_PH.py:length pred pos 	2134
+AP: 0.9860 - AUC-ROC: 0.9891 - AUC-PR: 0.9860 - P@50: 1.0000 > 35
+INFO:best_pse_tuck_PH.py:length pred pos 	2019
+AP: 0.9780 - AUC-ROC: 0.9839 - AUC-PR: 0.9780 - P@50: 1.0000 > 36
+INFO:best_pse_tuck_PH.py:length pred pos 	923
+AP: 0.9792 - AUC-ROC: 0.9889 - AUC-PR: 0.9792 - P@50: 0.9800 > 37
+INFO:best_pse_tuck_PH.py:length pred pos 	6609
+AP: 0.9606 - AUC-ROC: 0.9748 - AUC-PR: 0.9606 - P@50: 0.9800 > 38
+INFO:best_pse_tuck_PH.py:length pred pos 	9869
+AP: 0.9684 - AUC-ROC: 0.9772 - AUC-PR: 0.9684 - P@50: 1.0000 > 39
+INFO:best_pse_tuck_PH.py:length pred pos 	5050
+AP: 0.9732 - AUC-ROC: 0.9814 - AUC-PR: 0.9732 - P@50: 1.0000 > 40
+INFO:best_pse_tuck_PH.py:length pred pos 	11445
+AP: 0.9689 - AUC-ROC: 0.9780 - AUC-PR: 0.9689 - P@50: 0.9800 > 41
+INFO:best_pse_tuck_PH.py:length pred pos 	2760
+AP: 0.9859 - AUC-ROC: 0.9889 - AUC-PR: 0.9859 - P@50: 1.0000 > 42
+INFO:best_pse_tuck_PH.py:length pred pos 	3662
+AP: 0.9777 - AUC-ROC: 0.9854 - AUC-PR: 0.9777 - P@50: 0.9800 > 43
+INFO:best_pse_tuck_PH.py:length pred pos 	656
+AP: 0.9863 - AUC-ROC: 0.9915 - AUC-PR: 0.9863 - P@50: 1.0000 > 44
+INFO:best_pse_tuck_PH.py:length pred pos 	1947
+AP: 0.9805 - AUC-ROC: 0.9853 - AUC-PR: 0.9805 - P@50: 1.0000 > 45
+INFO:best_pse_tuck_PH.py:length pred pos 	1842
+AP: 0.9731 - AUC-ROC: 0.9837 - AUC-PR: 0.9731 - P@50: 0.9600 > 46
+INFO:best_pse_tuck_PH.py:length pred pos 	696
+AP: 0.9896 - AUC-ROC: 0.9910 - AUC-PR: 0.9896 - P@50: 1.0000 > 47
+INFO:best_pse_tuck_PH.py:length pred pos 	858
+AP: 0.9919 - AUC-ROC: 0.9933 - AUC-PR: 0.9919 - P@50: 1.0000 > 48
+INFO:best_pse_tuck_PH.py:length pred pos 	5135
+AP: 0.9759 - AUC-ROC: 0.9832 - AUC-PR: 0.9759 - P@50: 0.9800 > 49
+INFO:best_pse_tuck_PH.py:length pred pos 	715
+AP: 0.9926 - AUC-ROC: 0.9938 - AUC-PR: 0.9926 - P@50: 1.0000 > 50
+INFO:best_pse_tuck_PH.py:length pred pos 	3243
+AP: 0.9814 - AUC-ROC: 0.9876 - AUC-PR: 0.9814 - P@50: 0.9800 > 51
+INFO:best_pse_tuck_PH.py:length pred pos 	821
+AP: 0.9934 - AUC-ROC: 0.9941 - AUC-PR: 0.9934 - P@50: 1.0000 > 52
+INFO:best_pse_tuck_PH.py:length pred pos 	700
+AP: 0.9914 - AUC-ROC: 0.9925 - AUC-PR: 0.9914 - P@50: 1.0000 > 53
+INFO:best_pse_tuck_PH.py:length pred pos 	2941
+AP: 0.9812 - AUC-ROC: 0.9862 - AUC-PR: 0.9812 - P@50: 1.0000 > 54
+INFO:best_pse_tuck_PH.py:length pred pos 	1387
+AP: 0.9752 - AUC-ROC: 0.9834 - AUC-PR: 0.9752 - P@50: 1.0000 > 55
+INFO:best_pse_tuck_PH.py:length pred pos 	2209
+AP: 0.9903 - AUC-ROC: 0.9921 - AUC-PR: 0.9903 - P@50: 1.0000 > 56
+INFO:best_pse_tuck_PH.py:length pred pos 	1021
+AP: 0.9891 - AUC-ROC: 0.9927 - AUC-PR: 0.9891 - P@50: 1.0000 > 57
+INFO:best_pse_tuck_PH.py:length pred pos 	12955
+AP: 0.9780 - AUC-ROC: 0.9836 - AUC-PR: 0.9780 - P@50: 1.0000 > 58
+INFO:best_pse_tuck_PH.py:length pred pos 	917
+AP: 0.9857 - AUC-ROC: 0.9904 - AUC-PR: 0.9857 - P@50: 1.0000 > 59
+INFO:best_pse_tuck_PH.py:length pred pos 	3787
+AP: 0.9795 - AUC-ROC: 0.9852 - AUC-PR: 0.9795 - P@50: 1.0000 > 60
+INFO:best_pse_tuck_PH.py:length pred pos 	1280
+AP: 0.9824 - AUC-ROC: 0.9872 - AUC-PR: 0.9824 - P@50: 0.9800 > 61
+INFO:best_pse_tuck_PH.py:length pred pos 	2692
+AP: 0.9829 - AUC-ROC: 0.9881 - AUC-PR: 0.9829 - P@50: 1.0000 > 62
+INFO:best_pse_tuck_PH.py:length pred pos 	2236
+AP: 0.9849 - AUC-ROC: 0.9875 - AUC-PR: 0.9849 - P@50: 1.0000 > 63
+INFO:best_pse_tuck_PH.py:length pred pos 	8465
+AP: 0.9745 - AUC-ROC: 0.9816 - AUC-PR: 0.9745 - P@50: 1.0000 > 64
+INFO:best_pse_tuck_PH.py:length pred pos 	1252
+AP: 0.9896 - AUC-ROC: 0.9917 - AUC-PR: 0.9896 - P@50: 1.0000 > 65
+INFO:best_pse_tuck_PH.py:length pred pos 	2894
+AP: 0.9777 - AUC-ROC: 0.9832 - AUC-PR: 0.9777 - P@50: 1.0000 > 66
+INFO:best_pse_tuck_PH.py:length pred pos 	918
+AP: 0.9915 - AUC-ROC: 0.9933 - AUC-PR: 0.9915 - P@50: 1.0000 > 67
+INFO:best_pse_tuck_PH.py:length pred pos 	739
+AP: 0.9799 - AUC-ROC: 0.9857 - AUC-PR: 0.9799 - P@50: 1.0000 > 68
+INFO:best_pse_tuck_PH.py:length pred pos 	1556
+AP: 0.9803 - AUC-ROC: 0.9866 - AUC-PR: 0.9803 - P@50: 1.0000 > 69
+INFO:best_pse_tuck_PH.py:length pred pos 	2992
+AP: 0.9755 - AUC-ROC: 0.9832 - AUC-PR: 0.9755 - P@50: 1.0000 > 70
+INFO:best_pse_tuck_PH.py:length pred pos 	776
+AP: 0.9905 - AUC-ROC: 0.9924 - AUC-PR: 0.9905 - P@50: 1.0000 > 71
+INFO:best_pse_tuck_PH.py:length pred pos 	1726
+AP: 0.9729 - AUC-ROC: 0.9806 - AUC-PR: 0.9729 - P@50: 1.0000 > 72
+INFO:best_pse_tuck_PH.py:length pred pos 	21322
+AP: 0.9751 - AUC-ROC: 0.9812 - AUC-PR: 0.9751 - P@50: 1.0000 > 73
+INFO:best_pse_tuck_PH.py:length pred pos 	3619
+AP: 0.9814 - AUC-ROC: 0.9862 - AUC-PR: 0.9814 - P@50: 0.9800 > 74
+INFO:best_pse_tuck_PH.py:length pred pos 	5265
+AP: 0.9723 - AUC-ROC: 0.9808 - AUC-PR: 0.9723 - P@50: 0.9600 > 75
+INFO:best_pse_tuck_PH.py:length pred pos 	6771
+AP: 0.9757 - AUC-ROC: 0.9818 - AUC-PR: 0.9757 - P@50: 0.9800 > 76
+INFO:best_pse_tuck_PH.py:length pred pos 	2511
+AP: 0.9709 - AUC-ROC: 0.9796 - AUC-PR: 0.9709 - P@50: 1.0000 > 77
+INFO:best_pse_tuck_PH.py:length pred pos 	1258
+AP: 0.9806 - AUC-ROC: 0.9854 - AUC-PR: 0.9806 - P@50: 1.0000 > 78
+INFO:best_pse_tuck_PH.py:length pred pos 	12443
+AP: 0.9656 - AUC-ROC: 0.9753 - AUC-PR: 0.9656 - P@50: 0.9800 > 79
+INFO:best_pse_tuck_PH.py:length pred pos 	2196
+AP: 0.9823 - AUC-ROC: 0.9868 - AUC-PR: 0.9823 - P@50: 1.0000 > 80
+INFO:best_pse_tuck_PH.py:length pred pos 	790
+AP: 0.9926 - AUC-ROC: 0.9942 - AUC-PR: 0.9926 - P@50: 1.0000 > 81
+INFO:best_pse_tuck_PH.py:length pred pos 	7763
+AP: 0.9694 - AUC-ROC: 0.9776 - AUC-PR: 0.9694 - P@50: 0.9800 > 82
+INFO:best_pse_tuck_PH.py:length pred pos 	13145
+AP: 0.9684 - AUC-ROC: 0.9771 - AUC-PR: 0.9684 - P@50: 1.0000 > 83
+INFO:best_pse_tuck_PH.py:length pred pos 	510
+AP: 0.9839 - AUC-ROC: 0.9880 - AUC-PR: 0.9839 - P@50: 1.0000 > 84
+INFO:best_pse_tuck_PH.py:length pred pos 	1487
+AP: 0.9733 - AUC-ROC: 0.9809 - AUC-PR: 0.9733 - P@50: 0.9800 > 85
+INFO:best_pse_tuck_PH.py:length pred pos 	1139
+AP: 0.9785 - AUC-ROC: 0.9840 - AUC-PR: 0.9785 - P@50: 1.0000 > 86
+INFO:best_pse_tuck_PH.py:length pred pos 	10616
+AP: 0.9710 - AUC-ROC: 0.9794 - AUC-PR: 0.9710 - P@50: 1.0000 > 87
+INFO:best_pse_tuck_PH.py:length pred pos 	1089
+AP: 0.9883 - AUC-ROC: 0.9912 - AUC-PR: 0.9883 - P@50: 1.0000 > 88
+INFO:best_pse_tuck_PH.py:length pred pos 	1056
+AP: 0.9835 - AUC-ROC: 0.9881 - AUC-PR: 0.9835 - P@50: 0.9800 > 89
+INFO:best_pse_tuck_PH.py:length pred pos 	4257
+AP: 0.9715 - AUC-ROC: 0.9802 - AUC-PR: 0.9715 - P@50: 0.9800 > 90
+INFO:best_pse_tuck_PH.py:length pred pos 	3355
+AP: 0.9769 - AUC-ROC: 0.9834 - AUC-PR: 0.9769 - P@50: 1.0000 > 91
+INFO:best_pse_tuck_PH.py:length pred pos 	858
+AP: 0.9824 - AUC-ROC: 0.9857 - AUC-PR: 0.9824 - P@50: 1.0000 > 92
+INFO:best_pse_tuck_PH.py:length pred pos 	3343
+AP: 0.9819 - AUC-ROC: 0.9872 - AUC-PR: 0.9819 - P@50: 1.0000 > 93
+INFO:best_pse_tuck_PH.py:length pred pos 	722
+AP: 0.9822 - AUC-ROC: 0.9876 - AUC-PR: 0.9822 - P@50: 1.0000 > 94
+INFO:best_pse_tuck_PH.py:length pred pos 	840
+AP: 0.9873 - AUC-ROC: 0.9909 - AUC-PR: 0.9873 - P@50: 1.0000 > 95
+INFO:best_pse_tuck_PH.py:length pred pos 	4673
+AP: 0.9686 - AUC-ROC: 0.9776 - AUC-PR: 0.9686 - P@50: 1.0000 > 96
+INFO:best_pse_tuck_PH.py:length pred pos 	6226
+AP: 0.9621 - AUC-ROC: 0.9749 - AUC-PR: 0.9621 - P@50: 0.9800 > 97
+INFO:best_pse_tuck_PH.py:length pred pos 	21981
+AP: 0.9712 - AUC-ROC: 0.9791 - AUC-PR: 0.9712 - P@50: 1.0000 > 98
+INFO:best_pse_tuck_PH.py:length pred pos 	1553
+AP: 0.9866 - AUC-ROC: 0.9893 - AUC-PR: 0.9866 - P@50: 1.0000 > 99
+INFO:best_pse_tuck_PH.py:length pred pos 	2110
+AP: 0.9832 - AUC-ROC: 0.9874 - AUC-PR: 0.9832 - P@50: 1.0000 > 100
+INFO:best_pse_tuck_PH.py:length pred pos 	1465
+AP: 0.9790 - AUC-ROC: 0.9831 - AUC-PR: 0.9790 - P@50: 1.0000 > 101
+INFO:best_pse_tuck_PH.py:length pred pos 	6101
+AP: 0.9628 - AUC-ROC: 0.9746 - AUC-PR: 0.9628 - P@50: 1.0000 > 102
+INFO:best_pse_tuck_PH.py:length pred pos 	21013
+AP: 0.9732 - AUC-ROC: 0.9797 - AUC-PR: 0.9732 - P@50: 1.0000 > 103
+INFO:best_pse_tuck_PH.py:length pred pos 	8054
+AP: 0.9784 - AUC-ROC: 0.9836 - AUC-PR: 0.9784 - P@50: 1.0000 > 104
+INFO:best_pse_tuck_PH.py:length pred pos 	11412
+AP: 0.9675 - AUC-ROC: 0.9765 - AUC-PR: 0.9675 - P@50: 1.0000 > 105
+INFO:best_pse_tuck_PH.py:length pred pos 	1310
+AP: 0.9737 - AUC-ROC: 0.9834 - AUC-PR: 0.9737 - P@50: 0.9600 > 106
+INFO:best_pse_tuck_PH.py:length pred pos 	1282
+AP: 0.9906 - AUC-ROC: 0.9920 - AUC-PR: 0.9906 - P@50: 1.0000 > 107
+INFO:best_pse_tuck_PH.py:length pred pos 	8441
+AP: 0.9735 - AUC-ROC: 0.9807 - AUC-PR: 0.9735 - P@50: 1.0000 > 108
+INFO:best_pse_tuck_PH.py:length pred pos 	1939
+AP: 0.9694 - AUC-ROC: 0.9786 - AUC-PR: 0.9694 - P@50: 1.0000 > 109
+INFO:best_pse_tuck_PH.py:length pred pos 	1353
+AP: 0.9832 - AUC-ROC: 0.9868 - AUC-PR: 0.9832 - P@50: 1.0000 > 110
+INFO:best_pse_tuck_PH.py:length pred pos 	1130
+AP: 0.9895 - AUC-ROC: 0.9914 - AUC-PR: 0.9895 - P@50: 1.0000 > 111
+INFO:best_pse_tuck_PH.py:length pred pos 	2917
+AP: 0.9736 - AUC-ROC: 0.9812 - AUC-PR: 0.9736 - P@50: 0.9800 > 112
+INFO:best_pse_tuck_PH.py:length pred pos 	1328
+AP: 0.9799 - AUC-ROC: 0.9836 - AUC-PR: 0.9799 - P@50: 1.0000 > 113
+INFO:best_pse_tuck_PH.py:length pred pos 	2598
+AP: 0.9804 - AUC-ROC: 0.9868 - AUC-PR: 0.9804 - P@50: 0.9800 > 114
+INFO:best_pse_tuck_PH.py:length pred pos 	1995
+AP: 0.9669 - AUC-ROC: 0.9795 - AUC-PR: 0.9669 - P@50: 0.9800 > 115
+INFO:best_pse_tuck_PH.py:length pred pos 	526
+AP: 0.9848 - AUC-ROC: 0.9881 - AUC-PR: 0.9848 - P@50: 1.0000 > 116
+INFO:best_pse_tuck_PH.py:length pred pos 	7441
+AP: 0.9721 - AUC-ROC: 0.9798 - AUC-PR: 0.9721 - P@50: 1.0000 > 117
+INFO:best_pse_tuck_PH.py:length pred pos 	6573
+AP: 0.9674 - AUC-ROC: 0.9768 - AUC-PR: 0.9674 - P@50: 0.9800 > 118
+INFO:best_pse_tuck_PH.py:length pred pos 	17567
+AP: 0.9602 - AUC-ROC: 0.9725 - AUC-PR: 0.9602 - P@50: 0.9800 > 119
+INFO:best_pse_tuck_PH.py:length pred pos 	646
+AP: 0.9870 - AUC-ROC: 0.9888 - AUC-PR: 0.9870 - P@50: 1.0000 > 120
+INFO:best_pse_tuck_PH.py:length pred pos 	3413
+AP: 0.9796 - AUC-ROC: 0.9843 - AUC-PR: 0.9796 - P@50: 1.0000 > 121
+INFO:best_pse_tuck_PH.py:length pred pos 	968
+AP: 0.9826 - AUC-ROC: 0.9862 - AUC-PR: 0.9826 - P@50: 1.0000 > 122
+INFO:best_pse_tuck_PH.py:length pred pos 	9159
+AP: 0.9689 - AUC-ROC: 0.9779 - AUC-PR: 0.9689 - P@50: 1.0000 > 123
+INFO:best_pse_tuck_PH.py:length pred pos 	617
+AP: 0.9853 - AUC-ROC: 0.9898 - AUC-PR: 0.9853 - P@50: 0.9800 > 124
+INFO:best_pse_tuck_PH.py:length pred pos 	1220
+AP: 0.9916 - AUC-ROC: 0.9929 - AUC-PR: 0.9916 - P@50: 1.0000 > 125
+INFO:best_pse_tuck_PH.py:length pred pos 	1076
+AP: 0.9826 - AUC-ROC: 0.9865 - AUC-PR: 0.9826 - P@50: 1.0000 > 126
+INFO:best_pse_tuck_PH.py:length pred pos 	7077
+AP: 0.9681 - AUC-ROC: 0.9775 - AUC-PR: 0.9681 - P@50: 0.9800 > 127
+INFO:best_pse_tuck_PH.py:length pred pos 	1013
+AP: 0.9874 - AUC-ROC: 0.9899 - AUC-PR: 0.9874 - P@50: 1.0000 > 128
+INFO:best_pse_tuck_PH.py:length pred pos 	5059
+AP: 0.9828 - AUC-ROC: 0.9873 - AUC-PR: 0.9828 - P@50: 1.0000 > 129
+INFO:best_pse_tuck_PH.py:length pred pos 	5255
+AP: 0.9623 - AUC-ROC: 0.9759 - AUC-PR: 0.9623 - P@50: 0.9800 > 130
+INFO:best_pse_tuck_PH.py:length pred pos 	3461
+AP: 0.9743 - AUC-ROC: 0.9821 - AUC-PR: 0.9743 - P@50: 0.9800 > 131
+INFO:best_pse_tuck_PH.py:length pred pos 	1655
+AP: 0.9848 - AUC-ROC: 0.9908 - AUC-PR: 0.9848 - P@50: 0.9800 > 132
+INFO:best_pse_tuck_PH.py:length pred pos 	3342
+AP: 0.9803 - AUC-ROC: 0.9854 - AUC-PR: 0.9803 - P@50: 1.0000 > 133
+INFO:best_pse_tuck_PH.py:length pred pos 	5660
+AP: 0.9809 - AUC-ROC: 0.9858 - AUC-PR: 0.9809 - P@50: 1.0000 > 134
+INFO:best_pse_tuck_PH.py:length pred pos 	2725
+AP: 0.9641 - AUC-ROC: 0.9760 - AUC-PR: 0.9641 - P@50: 0.9800 > 135
+INFO:best_pse_tuck_PH.py:length pred pos 	1236
+AP: 0.9747 - AUC-ROC: 0.9824 - AUC-PR: 0.9747 - P@50: 1.0000 > 136
+INFO:best_pse_tuck_PH.py:length pred pos 	4266
+AP: 0.9712 - AUC-ROC: 0.9788 - AUC-PR: 0.9712 - P@50: 1.0000 > 137
+INFO:best_pse_tuck_PH.py:length pred pos 	4760
+AP: 0.9749 - AUC-ROC: 0.9818 - AUC-PR: 0.9749 - P@50: 1.0000 > 138
+INFO:best_pse_tuck_PH.py:length pred pos 	3363
+AP: 0.9680 - AUC-ROC: 0.9802 - AUC-PR: 0.9680 - P@50: 0.9800 > 139
+INFO:best_pse_tuck_PH.py:length pred pos 	930
+AP: 0.9820 - AUC-ROC: 0.9877 - AUC-PR: 0.9820 - P@50: 0.9800 > 140
+INFO:best_pse_tuck_PH.py:length pred pos 	9377
+AP: 0.9619 - AUC-ROC: 0.9742 - AUC-PR: 0.9619 - P@50: 1.0000 > 141
+INFO:best_pse_tuck_PH.py:length pred pos 	3787
+AP: 0.9713 - AUC-ROC: 0.9813 - AUC-PR: 0.9713 - P@50: 0.9600 > 142
+INFO:best_pse_tuck_PH.py:length pred pos 	12590
+AP: 0.9641 - AUC-ROC: 0.9753 - AUC-PR: 0.9641 - P@50: 0.9800 > 143
+INFO:best_pse_tuck_PH.py:length pred pos 	574
+AP: 0.9926 - AUC-ROC: 0.9936 - AUC-PR: 0.9926 - P@50: 1.0000 > 144
+INFO:best_pse_tuck_PH.py:length pred pos 	3850
+AP: 0.9797 - AUC-ROC: 0.9850 - AUC-PR: 0.9797 - P@50: 1.0000 > 145
+INFO:best_pse_tuck_PH.py:length pred pos 	9600
+AP: 0.9789 - AUC-ROC: 0.9840 - AUC-PR: 0.9789 - P@50: 1.0000 > 146
+INFO:best_pse_tuck_PH.py:length pred pos 	1172
+AP: 0.9805 - AUC-ROC: 0.9863 - AUC-PR: 0.9805 - P@50: 0.9800 > 147
+INFO:best_pse_tuck_PH.py:length pred pos 	3348
+AP: 0.9881 - AUC-ROC: 0.9899 - AUC-PR: 0.9881 - P@50: 1.0000 > 148
+INFO:best_pse_tuck_PH.py:length pred pos 	2310
+AP: 0.9837 - AUC-ROC: 0.9880 - AUC-PR: 0.9837 - P@50: 1.0000 > 149
+INFO:best_pse_tuck_PH.py:length pred pos 	729
+AP: 0.9846 - AUC-ROC: 0.9885 - AUC-PR: 0.9846 - P@50: 1.0000 > 150
+INFO:best_pse_tuck_PH.py:length pred pos 	2174
+AP: 0.9827 - AUC-ROC: 0.9871 - AUC-PR: 0.9827 - P@50: 1.0000 > 151
+INFO:best_pse_tuck_PH.py:length pred pos 	3299
+AP: 0.9840 - AUC-ROC: 0.9889 - AUC-PR: 0.9840 - P@50: 1.0000 > 152
+INFO:best_pse_tuck_PH.py:length pred pos 	1056
+AP: 0.9914 - AUC-ROC: 0.9929 - AUC-PR: 0.9914 - P@50: 1.0000 > 153
+INFO:best_pse_tuck_PH.py:length pred pos 	2862
+AP: 0.9886 - AUC-ROC: 0.9903 - AUC-PR: 0.9886 - P@50: 1.0000 > 154
+INFO:best_pse_tuck_PH.py:length pred pos 	744
+AP: 0.9926 - AUC-ROC: 0.9938 - AUC-PR: 0.9926 - P@50: 1.0000 > 155
+INFO:best_pse_tuck_PH.py:length pred pos 	1840
+AP: 0.9881 - AUC-ROC: 0.9897 - AUC-PR: 0.9881 - P@50: 1.0000 > 156
+INFO:best_pse_tuck_PH.py:length pred pos 	1877
+AP: 0.9867 - AUC-ROC: 0.9896 - AUC-PR: 0.9867 - P@50: 1.0000 > 157
+INFO:best_pse_tuck_PH.py:length pred pos 	18892
+AP: 0.9648 - AUC-ROC: 0.9754 - AUC-PR: 0.9648 - P@50: 1.0000 > 158
+INFO:best_pse_tuck_PH.py:length pred pos 	2485
+AP: 0.9807 - AUC-ROC: 0.9855 - AUC-PR: 0.9807 - P@50: 1.0000 > 159
+INFO:best_pse_tuck_PH.py:length pred pos 	1670
+AP: 0.9913 - AUC-ROC: 0.9936 - AUC-PR: 0.9913 - P@50: 1.0000 > 160
+INFO:best_pse_tuck_PH.py:length pred pos 	24430
+AP: 0.9677 - AUC-ROC: 0.9771 - AUC-PR: 0.9677 - P@50: 0.9800 > 161
+INFO:best_pse_tuck_PH.py:length pred pos 	3677
+AP: 0.9772 - AUC-ROC: 0.9828 - AUC-PR: 0.9772 - P@50: 1.0000 > 162
+INFO:best_pse_tuck_PH.py:length pred pos 	612
+AP: 0.9917 - AUC-ROC: 0.9925 - AUC-PR: 0.9917 - P@50: 1.0000 > 163
+INFO:best_pse_tuck_PH.py:length pred pos 	8260
+AP: 0.9765 - AUC-ROC: 0.9831 - AUC-PR: 0.9765 - P@50: 1.0000 > 164
+INFO:best_pse_tuck_PH.py:length pred pos 	26037
+AP: 0.9677 - AUC-ROC: 0.9770 - AUC-PR: 0.9677 - P@50: 0.9800 > 165
+INFO:best_pse_tuck_PH.py:length pred pos 	3087
+AP: 0.9734 - AUC-ROC: 0.9802 - AUC-PR: 0.9734 - P@50: 1.0000 > 166
+INFO:best_pse_tuck_PH.py:length pred pos 	3101
+AP: 0.9832 - AUC-ROC: 0.9871 - AUC-PR: 0.9832 - P@50: 0.9800 > 167
+INFO:best_pse_tuck_PH.py:length pred pos 	6998
+AP: 0.9700 - AUC-ROC: 0.9797 - AUC-PR: 0.9700 - P@50: 0.9800 > 168
+INFO:best_pse_tuck_PH.py:length pred pos 	1697
+AP: 0.9741 - AUC-ROC: 0.9834 - AUC-PR: 0.9741 - P@50: 0.9800 > 169
+INFO:best_pse_tuck_PH.py:length pred pos 	833
+AP: 0.9867 - AUC-ROC: 0.9900 - AUC-PR: 0.9867 - P@50: 1.0000 > 170
+INFO:best_pse_tuck_PH.py:length pred pos 	15545
+AP: 0.9660 - AUC-ROC: 0.9748 - AUC-PR: 0.9660 - P@50: 0.9800 > 171
+INFO:best_pse_tuck_PH.py:length pred pos 	3764
+AP: 0.9792 - AUC-ROC: 0.9845 - AUC-PR: 0.9792 - P@50: 1.0000 > 172
+INFO:best_pse_tuck_PH.py:length pred pos 	515
+AP: 0.9908 - AUC-ROC: 0.9926 - AUC-PR: 0.9908 - P@50: 1.0000 > 173
+INFO:best_pse_tuck_PH.py:length pred pos 	6124
+AP: 0.9742 - AUC-ROC: 0.9812 - AUC-PR: 0.9742 - P@50: 0.9800 > 174
+INFO:best_pse_tuck_PH.py:length pred pos 	4636
+AP: 0.9827 - AUC-ROC: 0.9874 - AUC-PR: 0.9827 - P@50: 0.9800 > 175
+INFO:best_pse_tuck_PH.py:length pred pos 	6128
+AP: 0.9715 - AUC-ROC: 0.9794 - AUC-PR: 0.9715 - P@50: 1.0000 > 176
+INFO:best_pse_tuck_PH.py:length pred pos 	3265
+AP: 0.9770 - AUC-ROC: 0.9839 - AUC-PR: 0.9770 - P@50: 0.9800 > 177
+INFO:best_pse_tuck_PH.py:length pred pos 	2063
+AP: 0.9850 - AUC-ROC: 0.9878 - AUC-PR: 0.9850 - P@50: 1.0000 > 178
+INFO:best_pse_tuck_PH.py:length pred pos 	7251
+AP: 0.9672 - AUC-ROC: 0.9765 - AUC-PR: 0.9672 - P@50: 1.0000 > 179
+INFO:best_pse_tuck_PH.py:length pred pos 	3403
+AP: 0.9754 - AUC-ROC: 0.9828 - AUC-PR: 0.9754 - P@50: 1.0000 > 180
+INFO:best_pse_tuck_PH.py:length pred pos 	28568
+AP: 0.9677 - AUC-ROC: 0.9770 - AUC-PR: 0.9677 - P@50: 0.9800 > 181
+INFO:best_pse_tuck_PH.py:length pred pos 	1327
+AP: 0.9865 - AUC-ROC: 0.9885 - AUC-PR: 0.9865 - P@50: 1.0000 > 182
+INFO:best_pse_tuck_PH.py:length pred pos 	9212
+AP: 0.9679 - AUC-ROC: 0.9780 - AUC-PR: 0.9679 - P@50: 1.0000 > 183
+INFO:best_pse_tuck_PH.py:length pred pos 	8677
+AP: 0.9739 - AUC-ROC: 0.9811 - AUC-PR: 0.9739 - P@50: 1.0000 > 184
+INFO:best_pse_tuck_PH.py:length pred pos 	651
+AP: 0.9839 - AUC-ROC: 0.9876 - AUC-PR: 0.9839 - P@50: 1.0000 > 185
+INFO:best_pse_tuck_PH.py:length pred pos 	2848
+AP: 0.9769 - AUC-ROC: 0.9838 - AUC-PR: 0.9769 - P@50: 1.0000 > 186
+INFO:best_pse_tuck_PH.py:length pred pos 	3111
+AP: 0.9813 - AUC-ROC: 0.9854 - AUC-PR: 0.9813 - P@50: 1.0000 > 187
+INFO:best_pse_tuck_PH.py:length pred pos 	593
+AP: 0.9788 - AUC-ROC: 0.9842 - AUC-PR: 0.9788 - P@50: 1.0000 > 188
+INFO:best_pse_tuck_PH.py:length pred pos 	2062
+AP: 0.9844 - AUC-ROC: 0.9881 - AUC-PR: 0.9844 - P@50: 1.0000 > 189
+INFO:best_pse_tuck_PH.py:length pred pos 	2715
+AP: 0.9768 - AUC-ROC: 0.9825 - AUC-PR: 0.9768 - P@50: 1.0000 > 190
+INFO:best_pse_tuck_PH.py:length pred pos 	1670
+AP: 0.9714 - AUC-ROC: 0.9822 - AUC-PR: 0.9714 - P@50: 0.9600 > 191
+INFO:best_pse_tuck_PH.py:length pred pos 	1940
+AP: 0.9878 - AUC-ROC: 0.9909 - AUC-PR: 0.9878 - P@50: 1.0000 > 192
+INFO:best_pse_tuck_PH.py:length pred pos 	4259
+AP: 0.9795 - AUC-ROC: 0.9842 - AUC-PR: 0.9795 - P@50: 1.0000 > 193
+INFO:best_pse_tuck_PH.py:length pred pos 	5296
+AP: 0.9725 - AUC-ROC: 0.9811 - AUC-PR: 0.9725 - P@50: 1.0000 > 194
+INFO:best_pse_tuck_PH.py:length pred pos 	1006
+AP: 0.9807 - AUC-ROC: 0.9863 - AUC-PR: 0.9807 - P@50: 1.0000 > 195
+INFO:best_pse_tuck_PH.py:length pred pos 	14419
+AP: 0.9673 - AUC-ROC: 0.9763 - AUC-PR: 0.9673 - P@50: 1.0000 > 196
+INFO:best_pse_tuck_PH.py:length pred pos 	9889
+AP: 0.9718 - AUC-ROC: 0.9794 - AUC-PR: 0.9718 - P@50: 1.0000 > 197
+INFO:best_pse_tuck_PH.py:length pred pos 	8807
+AP: 0.9766 - AUC-ROC: 0.9823 - AUC-PR: 0.9766 - P@50: 1.0000 > 198
+INFO:best_pse_tuck_PH.py:length pred pos 	2578
+AP: 0.9760 - AUC-ROC: 0.9829 - AUC-PR: 0.9760 - P@50: 1.0000 > 199
+INFO:best_pse_tuck_PH.py:length pred pos 	2166
+AP: 0.9775 - AUC-ROC: 0.9830 - AUC-PR: 0.9775 - P@50: 1.0000 > 200
+INFO:best_pse_tuck_PH.py:length pred pos 	2310
+AP: 0.9910 - AUC-ROC: 0.9925 - AUC-PR: 0.9910 - P@50: 1.0000 > 201
+INFO:best_pse_tuck_PH.py:length pred pos 	1904
+AP: 0.9762 - AUC-ROC: 0.9843 - AUC-PR: 0.9762 - P@50: 0.9600 > 202
+INFO:best_pse_tuck_PH.py:length pred pos 	966
+AP: 0.9844 - AUC-ROC: 0.9889 - AUC-PR: 0.9844 - P@50: 1.0000 > 203
+INFO:best_pse_tuck_PH.py:length pred pos 	1119
+AP: 0.9875 - AUC-ROC: 0.9918 - AUC-PR: 0.9875 - P@50: 0.9800 > 204
+INFO:best_pse_tuck_PH.py:length pred pos 	5736
+AP: 0.9766 - AUC-ROC: 0.9834 - AUC-PR: 0.9766 - P@50: 0.9800 > 205
+INFO:best_pse_tuck_PH.py:length pred pos 	816
+AP: 0.9895 - AUC-ROC: 0.9916 - AUC-PR: 0.9895 - P@50: 1.0000 > 206
+INFO:best_pse_tuck_PH.py:length pred pos 	1965
+AP: 0.9702 - AUC-ROC: 0.9804 - AUC-PR: 0.9702 - P@50: 0.9800 > 207
+INFO:best_pse_tuck_PH.py:length pred pos 	2576
+AP: 0.9763 - AUC-ROC: 0.9833 - AUC-PR: 0.9763 - P@50: 0.9800 > 208
+INFO:best_pse_tuck_PH.py:length pred pos 	4758
+AP: 0.9740 - AUC-ROC: 0.9815 - AUC-PR: 0.9740 - P@50: 1.0000 > 209
+INFO:best_pse_tuck_PH.py:length pred pos 	1984
+AP: 0.9753 - AUC-ROC: 0.9825 - AUC-PR: 0.9753 - P@50: 1.0000 > 210
+INFO:best_pse_tuck_PH.py:length pred pos 	3096
+AP: 0.9794 - AUC-ROC: 0.9856 - AUC-PR: 0.9794 - P@50: 0.9800 > 211
+INFO:best_pse_tuck_PH.py:length pred pos 	4410
+AP: 0.9770 - AUC-ROC: 0.9834 - AUC-PR: 0.9770 - P@50: 1.0000 > 212
+INFO:best_pse_tuck_PH.py:length pred pos 	803
+AP: 0.9928 - AUC-ROC: 0.9939 - AUC-PR: 0.9928 - P@50: 1.0000 > 213
+INFO:best_pse_tuck_PH.py:length pred pos 	2730
+AP: 0.9772 - AUC-ROC: 0.9834 - AUC-PR: 0.9772 - P@50: 1.0000 > 214
+INFO:best_pse_tuck_PH.py:length pred pos 	7759
+AP: 0.9852 - AUC-ROC: 0.9883 - AUC-PR: 0.9852 - P@50: 1.0000 > 215
+INFO:best_pse_tuck_PH.py:length pred pos 	1612
+AP: 0.9794 - AUC-ROC: 0.9853 - AUC-PR: 0.9794 - P@50: 0.9800 > 216
+INFO:best_pse_tuck_PH.py:length pred pos 	600
+AP: 0.9953 - AUC-ROC: 0.9966 - AUC-PR: 0.9953 - P@50: 1.0000 > 217
+INFO:best_pse_tuck_PH.py:length pred pos 	14122
+AP: 0.9756 - AUC-ROC: 0.9825 - AUC-PR: 0.9756 - P@50: 0.9800 > 218
+INFO:best_pse_tuck_PH.py:length pred pos 	2491
+AP: 0.9955 - AUC-ROC: 0.9958 - AUC-PR: 0.9955 - P@50: 1.0000 > 219
+INFO:best_pse_tuck_PH.py:length pred pos 	4335
+AP: 0.9736 - AUC-ROC: 0.9818 - AUC-PR: 0.9736 - P@50: 1.0000 > 220
+INFO:best_pse_tuck_PH.py:length pred pos 	2018
+AP: 0.9878 - AUC-ROC: 0.9906 - AUC-PR: 0.9878 - P@50: 1.0000 > 221
+INFO:best_pse_tuck_PH.py:length pred pos 	600
+AP: 0.9924 - AUC-ROC: 0.9935 - AUC-PR: 0.9924 - P@50: 1.0000 > 222
+INFO:best_pse_tuck_PH.py:length pred pos 	2960
+AP: 0.9733 - AUC-ROC: 0.9806 - AUC-PR: 0.9733 - P@50: 1.0000 > 223
+INFO:best_pse_tuck_PH.py:length pred pos 	10677
+AP: 0.9717 - AUC-ROC: 0.9800 - AUC-PR: 0.9717 - P@50: 1.0000 > 224
+INFO:best_pse_tuck_PH.py:length pred pos 	9190
+AP: 0.9820 - AUC-ROC: 0.9860 - AUC-PR: 0.9820 - P@50: 1.0000 > 225
+INFO:best_pse_tuck_PH.py:length pred pos 	870
+AP: 0.9848 - AUC-ROC: 0.9880 - AUC-PR: 0.9848 - P@50: 1.0000 > 226
+INFO:best_pse_tuck_PH.py:length pred pos 	1756
+AP: 0.9919 - AUC-ROC: 0.9932 - AUC-PR: 0.9919 - P@50: 1.0000 > 227
+INFO:best_pse_tuck_PH.py:length pred pos 	8621
+AP: 0.9671 - AUC-ROC: 0.9762 - AUC-PR: 0.9671 - P@50: 1.0000 > 228
+INFO:best_pse_tuck_PH.py:length pred pos 	519
+AP: 0.9885 - AUC-ROC: 0.9907 - AUC-PR: 0.9885 - P@50: 1.0000 > 229
+INFO:best_pse_tuck_PH.py:length pred pos 	766
+AP: 0.9736 - AUC-ROC: 0.9856 - AUC-PR: 0.9736 - P@50: 0.9800 > 230
+INFO:best_pse_tuck_PH.py:length pred pos 	654
+AP: 0.9920 - AUC-ROC: 0.9934 - AUC-PR: 0.9920 - P@50: 1.0000 > 231
+INFO:best_pse_tuck_PH.py:length pred pos 	2977
+AP: 0.9830 - AUC-ROC: 0.9876 - AUC-PR: 0.9830 - P@50: 1.0000 > 232
+INFO:best_pse_tuck_PH.py:length pred pos 	5337
+AP: 0.9765 - AUC-ROC: 0.9824 - AUC-PR: 0.9765 - P@50: 1.0000 > 233
+INFO:best_pse_tuck_PH.py:length pred pos 	972
+AP: 0.9819 - AUC-ROC: 0.9872 - AUC-PR: 0.9819 - P@50: 1.0000 > 234
+INFO:best_pse_tuck_PH.py:length pred pos 	5342
+AP: 0.9743 - AUC-ROC: 0.9818 - AUC-PR: 0.9743 - P@50: 0.9800 > 235
+INFO:best_pse_tuck_PH.py:length pred pos 	1831
+AP: 0.9717 - AUC-ROC: 0.9803 - AUC-PR: 0.9717 - P@50: 0.9800 > 236
+INFO:best_pse_tuck_PH.py:length pred pos 	1217
+AP: 0.9844 - AUC-ROC: 0.9867 - AUC-PR: 0.9844 - P@50: 1.0000 > 237
+INFO:best_pse_tuck_PH.py:length pred pos 	2205
+AP: 0.9788 - AUC-ROC: 0.9835 - AUC-PR: 0.9788 - P@50: 1.0000 > 238
+INFO:best_pse_tuck_PH.py:length pred pos 	1715
+AP: 0.9813 - AUC-ROC: 0.9865 - AUC-PR: 0.9813 - P@50: 1.0000 > 239
+INFO:best_pse_tuck_PH.py:length pred pos 	832
+AP: 0.9855 - AUC-ROC: 0.9885 - AUC-PR: 0.9855 - P@50: 1.0000 > 240
+INFO:best_pse_tuck_PH.py:length pred pos 	4502
+AP: 0.9779 - AUC-ROC: 0.9838 - AUC-PR: 0.9779 - P@50: 0.9800 > 241
+INFO:best_pse_tuck_PH.py:length pred pos 	735
+AP: 0.9834 - AUC-ROC: 0.9882 - AUC-PR: 0.9834 - P@50: 1.0000 > 242
+INFO:best_pse_tuck_PH.py:length pred pos 	2609
+AP: 0.9806 - AUC-ROC: 0.9873 - AUC-PR: 0.9806 - P@50: 0.9600 > 243
+INFO:best_pse_tuck_PH.py:length pred pos 	598
+AP: 0.9928 - AUC-ROC: 0.9940 - AUC-PR: 0.9928 - P@50: 1.0000 > 244
+INFO:best_pse_tuck_PH.py:length pred pos 	9464
+AP: 0.9597 - AUC-ROC: 0.9721 - AUC-PR: 0.9597 - P@50: 1.0000 > 245
+INFO:best_pse_tuck_PH.py:length pred pos 	1791
+AP: 0.9864 - AUC-ROC: 0.9890 - AUC-PR: 0.9864 - P@50: 1.0000 > 246
+INFO:best_pse_tuck_PH.py:length pred pos 	5168
+AP: 0.9867 - AUC-ROC: 0.9898 - AUC-PR: 0.9867 - P@50: 1.0000 > 247
+INFO:best_pse_tuck_PH.py:length pred pos 	2125
+AP: 0.9924 - AUC-ROC: 0.9935 - AUC-PR: 0.9924 - P@50: 1.0000 > 248
+INFO:best_pse_tuck_PH.py:length pred pos 	1093
+AP: 0.9802 - AUC-ROC: 0.9858 - AUC-PR: 0.9802 - P@50: 1.0000 > 249
+INFO:best_pse_tuck_PH.py:length pred pos 	912
+AP: 0.9867 - AUC-ROC: 0.9895 - AUC-PR: 0.9867 - P@50: 1.0000 > 250
+INFO:best_pse_tuck_PH.py:length pred pos 	2982
+AP: 0.9877 - AUC-ROC: 0.9906 - AUC-PR: 0.9877 - P@50: 1.0000 > 251
+INFO:best_pse_tuck_PH.py:length pred pos 	5905
+AP: 0.9719 - AUC-ROC: 0.9805 - AUC-PR: 0.9719 - P@50: 0.9800 > 252
+INFO:best_pse_tuck_PH.py:length pred pos 	6629
+AP: 0.9738 - AUC-ROC: 0.9816 - AUC-PR: 0.9738 - P@50: 1.0000 > 253
+INFO:best_pse_tuck_PH.py:length pred pos 	9187
+AP: 0.9646 - AUC-ROC: 0.9750 - AUC-PR: 0.9646 - P@50: 1.0000 > 254
+INFO:best_pse_tuck_PH.py:length pred pos 	3257
+AP: 0.9745 - AUC-ROC: 0.9818 - AUC-PR: 0.9745 - P@50: 1.0000 > 255
+INFO:best_pse_tuck_PH.py:length pred pos 	3009
+AP: 0.9823 - AUC-ROC: 0.9884 - AUC-PR: 0.9823 - P@50: 1.0000 > 256
+INFO:best_pse_tuck_PH.py:length pred pos 	11027
+AP: 0.9748 - AUC-ROC: 0.9817 - AUC-PR: 0.9748 - P@50: 1.0000 > 257
+INFO:best_pse_tuck_PH.py:length pred pos 	8160
+AP: 0.9609 - AUC-ROC: 0.9732 - AUC-PR: 0.9609 - P@50: 1.0000 > 258
+INFO:best_pse_tuck_PH.py:length pred pos 	3331
+AP: 0.9829 - AUC-ROC: 0.9866 - AUC-PR: 0.9829 - P@50: 1.0000 > 259
+INFO:best_pse_tuck_PH.py:length pred pos 	3048
+AP: 0.9810 - AUC-ROC: 0.9870 - AUC-PR: 0.9810 - P@50: 1.0000 > 260
+INFO:best_pse_tuck_PH.py:length pred pos 	1217
+AP: 0.9843 - AUC-ROC: 0.9876 - AUC-PR: 0.9843 - P@50: 1.0000 > 261
+INFO:best_pse_tuck_PH.py:length pred pos 	1549
+AP: 0.9833 - AUC-ROC: 0.9867 - AUC-PR: 0.9833 - P@50: 1.0000 > 262
+INFO:best_pse_tuck_PH.py:length pred pos 	912
+AP: 0.9811 - AUC-ROC: 0.9870 - AUC-PR: 0.9811 - P@50: 0.9800 > 263
+INFO:best_pse_tuck_PH.py:length pred pos 	1536
+AP: 0.9732 - AUC-ROC: 0.9829 - AUC-PR: 0.9732 - P@50: 0.9800 > 264
+INFO:best_pse_tuck_PH.py:length pred pos 	1901
+AP: 0.9711 - AUC-ROC: 0.9808 - AUC-PR: 0.9711 - P@50: 1.0000 > 265
+INFO:best_pse_tuck_PH.py:length pred pos 	2804
+AP: 0.9771 - AUC-ROC: 0.9831 - AUC-PR: 0.9771 - P@50: 1.0000 > 266
+INFO:best_pse_tuck_PH.py:length pred pos 	747
+AP: 0.9906 - AUC-ROC: 0.9919 - AUC-PR: 0.9906 - P@50: 1.0000 > 267
+INFO:best_pse_tuck_PH.py:length pred pos 	2970
+AP: 0.9766 - AUC-ROC: 0.9835 - AUC-PR: 0.9766 - P@50: 1.0000 > 268
+INFO:best_pse_tuck_PH.py:length pred pos 	1525
+AP: 0.9864 - AUC-ROC: 0.9898 - AUC-PR: 0.9864 - P@50: 1.0000 > 269
+INFO:best_pse_tuck_PH.py:length pred pos 	5694
+AP: 0.9723 - AUC-ROC: 0.9800 - AUC-PR: 0.9723 - P@50: 0.9600 > 270
+INFO:best_pse_tuck_PH.py:length pred pos 	3418
+AP: 0.9701 - AUC-ROC: 0.9787 - AUC-PR: 0.9701 - P@50: 1.0000 > 271
+INFO:best_pse_tuck_PH.py:length pred pos 	1264
+AP: 0.9816 - AUC-ROC: 0.9871 - AUC-PR: 0.9816 - P@50: 1.0000 > 272
+INFO:best_pse_tuck_PH.py:length pred pos 	1476
+AP: 0.9867 - AUC-ROC: 0.9906 - AUC-PR: 0.9867 - P@50: 1.0000 > 273
+INFO:best_pse_tuck_PH.py:length pred pos 	3495
+AP: 0.9779 - AUC-ROC: 0.9829 - AUC-PR: 0.9779 - P@50: 1.0000 > 274
+INFO:best_pse_tuck_PH.py:length pred pos 	2508
+AP: 0.9825 - AUC-ROC: 0.9862 - AUC-PR: 0.9825 - P@50: 1.0000 > 275
+INFO:best_pse_tuck_PH.py:length pred pos 	4227
+AP: 0.9714 - AUC-ROC: 0.9790 - AUC-PR: 0.9714 - P@50: 1.0000 > 276
+INFO:best_pse_tuck_PH.py:length pred pos 	572
+AP: 0.9837 - AUC-ROC: 0.9859 - AUC-PR: 0.9837 - P@50: 1.0000 > 277
+INFO:best_pse_tuck_PH.py:length pred pos 	9907
+AP: 0.9699 - AUC-ROC: 0.9785 - AUC-PR: 0.9699 - P@50: 1.0000 > 278
+INFO:best_pse_tuck_PH.py:length pred pos 	3043
+AP: 0.9773 - AUC-ROC: 0.9843 - AUC-PR: 0.9773 - P@50: 1.0000 > 279
+INFO:best_pse_tuck_PH.py:length pred pos 	5327
+AP: 0.9724 - AUC-ROC: 0.9802 - AUC-PR: 0.9724 - P@50: 0.9800 > 280
+INFO:best_pse_tuck_PH.py:length pred pos 	18061
+AP: 0.9762 - AUC-ROC: 0.9820 - AUC-PR: 0.9762 - P@50: 1.0000 > 281
+INFO:best_pse_tuck_PH.py:length pred pos 	1190
+AP: 0.9848 - AUC-ROC: 0.9889 - AUC-PR: 0.9848 - P@50: 1.0000 > 282
+INFO:best_pse_tuck_PH.py:length pred pos 	2868
+AP: 0.9818 - AUC-ROC: 0.9863 - AUC-PR: 0.9818 - P@50: 1.0000 > 283
+INFO:best_pse_tuck_PH.py:length pred pos 	4427
+AP: 0.9789 - AUC-ROC: 0.9843 - AUC-PR: 0.9789 - P@50: 1.0000 > 284
+INFO:best_pse_tuck_PH.py:length pred pos 	921
+AP: 0.9843 - AUC-ROC: 0.9872 - AUC-PR: 0.9843 - P@50: 1.0000 > 285
+INFO:best_pse_tuck_PH.py:length pred pos 	1521
+AP: 0.9801 - AUC-ROC: 0.9858 - AUC-PR: 0.9801 - P@50: 1.0000 > 286
+INFO:best_pse_tuck_PH.py:length pred pos 	4121
+AP: 0.9692 - AUC-ROC: 0.9785 - AUC-PR: 0.9692 - P@50: 1.0000 > 287
+INFO:best_pse_tuck_PH.py:length pred pos 	1176
+AP: 0.9923 - AUC-ROC: 0.9928 - AUC-PR: 0.9923 - P@50: 1.0000 > 288
+INFO:best_pse_tuck_PH.py:length pred pos 	2686
+AP: 0.9854 - AUC-ROC: 0.9887 - AUC-PR: 0.9854 - P@50: 1.0000 > 289
+INFO:best_pse_tuck_PH.py:length pred pos 	2075
+AP: 0.9772 - AUC-ROC: 0.9826 - AUC-PR: 0.9772 - P@50: 1.0000 > 290
+INFO:best_pse_tuck_PH.py:length pred pos 	5199
+AP: 0.9828 - AUC-ROC: 0.9869 - AUC-PR: 0.9828 - P@50: 1.0000 > 291
+INFO:best_pse_tuck_PH.py:length pred pos 	13163
+AP: 0.9641 - AUC-ROC: 0.9746 - AUC-PR: 0.9641 - P@50: 1.0000 > 292
+INFO:best_pse_tuck_PH.py:length pred pos 	9808
+AP: 0.9713 - AUC-ROC: 0.9799 - AUC-PR: 0.9713 - P@50: 0.9600 > 293
+INFO:best_pse_tuck_PH.py:length pred pos 	3463
+AP: 0.9751 - AUC-ROC: 0.9819 - AUC-PR: 0.9751 - P@50: 1.0000 > 294
+INFO:best_pse_tuck_PH.py:length pred pos 	10960
+AP: 0.9647 - AUC-ROC: 0.9758 - AUC-PR: 0.9647 - P@50: 0.9800 > 295
+INFO:best_pse_tuck_PH.py:length pred pos 	1300
+AP: 0.9768 - AUC-ROC: 0.9845 - AUC-PR: 0.9768 - P@50: 1.0000 > 296
+INFO:best_pse_tuck_PH.py:length pred pos 	7893
+AP: 0.9747 - AUC-ROC: 0.9816 - AUC-PR: 0.9747 - P@50: 1.0000 > 297
+INFO:best_pse_tuck_PH.py:length pred pos 	7766
+AP: 0.9726 - AUC-ROC: 0.9804 - AUC-PR: 0.9726 - P@50: 1.0000 > 298
+INFO:best_pse_tuck_PH.py:length pred pos 	712
+AP: 0.9875 - AUC-ROC: 0.9902 - AUC-PR: 0.9875 - P@50: 1.0000 > 299
+INFO:best_pse_tuck_PH.py:length pred pos 	1468
+AP: 0.9801 - AUC-ROC: 0.9840 - AUC-PR: 0.9801 - P@50: 1.0000 > 300
+INFO:best_pse_tuck_PH.py:length pred pos 	2964
+AP: 0.9725 - AUC-ROC: 0.9804 - AUC-PR: 0.9725 - P@50: 1.0000 > 301
+INFO:best_pse_tuck_PH.py:length pred pos 	865
+AP: 0.9863 - AUC-ROC: 0.9910 - AUC-PR: 0.9863 - P@50: 0.9800 > 302
+INFO:best_pse_tuck_PH.py:length pred pos 	12309
+AP: 0.9692 - AUC-ROC: 0.9782 - AUC-PR: 0.9692 - P@50: 1.0000 > 303
+INFO:best_pse_tuck_PH.py:length pred pos 	5351
+AP: 0.9778 - AUC-ROC: 0.9835 - AUC-PR: 0.9778 - P@50: 1.0000 > 304
+INFO:best_pse_tuck_PH.py:length pred pos 	4521
+AP: 0.9704 - AUC-ROC: 0.9797 - AUC-PR: 0.9704 - P@50: 0.9800 > 305
+INFO:best_pse_tuck_PH.py:length pred pos 	4555
+AP: 0.9751 - AUC-ROC: 0.9816 - AUC-PR: 0.9751 - P@50: 1.0000 > 306
+INFO:best_pse_tuck_PH.py:length pred pos 	1487
+AP: 0.9739 - AUC-ROC: 0.9809 - AUC-PR: 0.9739 - P@50: 0.9800 > 307
+INFO:best_pse_tuck_PH.py:length pred pos 	9148
+AP: 0.9732 - AUC-ROC: 0.9798 - AUC-PR: 0.9732 - P@50: 1.0000 > 308
+INFO:best_pse_tuck_PH.py:length pred pos 	4414
+AP: 0.9789 - AUC-ROC: 0.9841 - AUC-PR: 0.9789 - P@50: 1.0000 > 309
+INFO:best_pse_tuck_PH.py:length pred pos 	6940
+AP: 0.9725 - AUC-ROC: 0.9809 - AUC-PR: 0.9725 - P@50: 1.0000 > 310
+INFO:best_pse_tuck_PH.py:length pred pos 	4028
+AP: 0.9758 - AUC-ROC: 0.9820 - AUC-PR: 0.9758 - P@50: 1.0000 > 311
+INFO:best_pse_tuck_PH.py:length pred pos 	6215
+AP: 0.9805 - AUC-ROC: 0.9860 - AUC-PR: 0.9805 - P@50: 1.0000 > 312
+INFO:best_pse_tuck_PH.py:length pred pos 	7308
+AP: 0.9766 - AUC-ROC: 0.9827 - AUC-PR: 0.9766 - P@50: 1.0000 > 313
+INFO:best_pse_tuck_PH.py:length pred pos 	5143
+AP: 0.9697 - AUC-ROC: 0.9775 - AUC-PR: 0.9697 - P@50: 1.0000 > 314
+INFO:best_pse_tuck_PH.py:length pred pos 	1343
+AP: 0.9794 - AUC-ROC: 0.9855 - AUC-PR: 0.9794 - P@50: 1.0000 > 315
+INFO:best_pse_tuck_PH.py:length pred pos 	2742
+AP: 0.9799 - AUC-ROC: 0.9853 - AUC-PR: 0.9799 - P@50: 1.0000 > 316
+INFO:best_pse_tuck_PH.py:length pred pos 	3928
+AP: 0.9688 - AUC-ROC: 0.9793 - AUC-PR: 0.9688 - P@50: 0.9800 > 317
+INFO:best_pse_tuck_PH.py:length pred pos 	14593
+AP: 0.9550 - AUC-ROC: 0.9699 - AUC-PR: 0.9550 - P@50: 1.0000 > 318
+INFO:best_pse_tuck_PH.py:length pred pos 	8455
+AP: 0.9745 - AUC-ROC: 0.9812 - AUC-PR: 0.9745 - P@50: 0.9800 > 319
+INFO:best_pse_tuck_PH.py:length pred pos 	3983
+AP: 0.9726 - AUC-ROC: 0.9813 - AUC-PR: 0.9726 - P@50: 0.9800 > 320
+INFO:best_pse_tuck_PH.py:length pred pos 	3335
+AP: 0.9785 - AUC-ROC: 0.9841 - AUC-PR: 0.9785 - P@50: 1.0000 > 321
+INFO:best_pse_tuck_PH.py:length pred pos 	1191
+AP: 0.9782 - AUC-ROC: 0.9849 - AUC-PR: 0.9782 - P@50: 1.0000 > 322
+INFO:best_pse_tuck_PH.py:length pred pos 	5855
+AP: 0.9650 - AUC-ROC: 0.9757 - AUC-PR: 0.9650 - P@50: 0.9800 > 323
+INFO:best_pse_tuck_PH.py:length pred pos 	9143
+AP: 0.9723 - AUC-ROC: 0.9797 - AUC-PR: 0.9723 - P@50: 1.0000 > 324
+INFO:best_pse_tuck_PH.py:length pred pos 	18980
+AP: 0.9763 - AUC-ROC: 0.9818 - AUC-PR: 0.9763 - P@50: 1.0000 > 325
+INFO:best_pse_tuck_PH.py:length pred pos 	2466
+AP: 0.9790 - AUC-ROC: 0.9841 - AUC-PR: 0.9790 - P@50: 1.0000 > 326
+INFO:best_pse_tuck_PH.py:length pred pos 	937
+AP: 0.9795 - AUC-ROC: 0.9861 - AUC-PR: 0.9795 - P@50: 1.0000 > 327
+INFO:best_pse_tuck_PH.py:length pred pos 	1696
+AP: 0.9872 - AUC-ROC: 0.9892 - AUC-PR: 0.9872 - P@50: 1.0000 > 328
+INFO:best_pse_tuck_PH.py:length pred pos 	2439
+AP: 0.9802 - AUC-ROC: 0.9863 - AUC-PR: 0.9802 - P@50: 0.9800 > 329
+INFO:best_pse_tuck_PH.py:length pred pos 	508
+AP: 0.9944 - AUC-ROC: 0.9952 - AUC-PR: 0.9944 - P@50: 1.0000 > 330
+INFO:best_pse_tuck_PH.py:length pred pos 	3737
+AP: 0.9659 - AUC-ROC: 0.9770 - AUC-PR: 0.9659 - P@50: 0.9800 > 331
+INFO:best_pse_tuck_PH.py:length pred pos 	1220
+AP: 0.9874 - AUC-ROC: 0.9906 - AUC-PR: 0.9874 - P@50: 1.0000 > 332
+INFO:best_pse_tuck_PH.py:length pred pos 	7154
+AP: 0.9787 - AUC-ROC: 0.9840 - AUC-PR: 0.9787 - P@50: 1.0000 > 333
+INFO:best_pse_tuck_PH.py:length pred pos 	2375
+AP: 0.9669 - AUC-ROC: 0.9801 - AUC-PR: 0.9669 - P@50: 0.9400 > 334
+INFO:best_pse_tuck_PH.py:length pred pos 	504
+AP: 0.9859 - AUC-ROC: 0.9886 - AUC-PR: 0.9859 - P@50: 1.0000 > 335
+INFO:best_pse_tuck_PH.py:length pred pos 	608
+AP: 0.9838 - AUC-ROC: 0.9873 - AUC-PR: 0.9838 - P@50: 1.0000 > 336
+INFO:best_pse_tuck_PH.py:length pred pos 	557
+AP: 0.9803 - AUC-ROC: 0.9868 - AUC-PR: 0.9803 - P@50: 1.0000 > 337
+INFO:best_pse_tuck_PH.py:length pred pos 	11410
+AP: 0.9652 - AUC-ROC: 0.9762 - AUC-PR: 0.9652 - P@50: 0.9800 > 338
+INFO:best_pse_tuck_PH.py:length pred pos 	978
+AP: 0.9904 - AUC-ROC: 0.9918 - AUC-PR: 0.9904 - P@50: 1.0000 > 339
+INFO:best_pse_tuck_PH.py:length pred pos 	3172
+AP: 0.9797 - AUC-ROC: 0.9843 - AUC-PR: 0.9797 - P@50: 1.0000 > 340
+INFO:best_pse_tuck_PH.py:length pred pos 	1153
+AP: 0.9929 - AUC-ROC: 0.9941 - AUC-PR: 0.9929 - P@50: 1.0000 > 341
+INFO:best_pse_tuck_PH.py:length pred pos 	3974
+AP: 0.9796 - AUC-ROC: 0.9843 - AUC-PR: 0.9796 - P@50: 1.0000 > 342
+INFO:best_pse_tuck_PH.py:length pred pos 	4247
+AP: 0.9795 - AUC-ROC: 0.9852 - AUC-PR: 0.9795 - P@50: 1.0000 > 343
+INFO:best_pse_tuck_PH.py:length pred pos 	2201
+AP: 0.9725 - AUC-ROC: 0.9810 - AUC-PR: 0.9725 - P@50: 1.0000 > 344
+INFO:best_pse_tuck_PH.py:length pred pos 	960
+AP: 0.9781 - AUC-ROC: 0.9856 - AUC-PR: 0.9781 - P@50: 0.9800 > 345
+INFO:best_pse_tuck_PH.py:length pred pos 	1966
+AP: 0.9769 - AUC-ROC: 0.9838 - AUC-PR: 0.9769 - P@50: 0.9800 > 346
+INFO:best_pse_tuck_PH.py:length pred pos 	3768
+AP: 0.9754 - AUC-ROC: 0.9820 - AUC-PR: 0.9754 - P@50: 1.0000 > 347
+INFO:best_pse_tuck_PH.py:length pred pos 	603
+AP: 0.9835 - AUC-ROC: 0.9894 - AUC-PR: 0.9835 - P@50: 1.0000 > 348
+INFO:best_pse_tuck_PH.py:length pred pos 	1186
+AP: 0.9848 - AUC-ROC: 0.9883 - AUC-PR: 0.9848 - P@50: 1.0000 > 349
+INFO:best_pse_tuck_PH.py:length pred pos 	5643
+AP: 0.9646 - AUC-ROC: 0.9759 - AUC-PR: 0.9646 - P@50: 1.0000 > 350
+INFO:best_pse_tuck_PH.py:length pred pos 	1123
+AP: 0.9890 - AUC-ROC: 0.9912 - AUC-PR: 0.9890 - P@50: 1.0000 > 351
+INFO:best_pse_tuck_PH.py:length pred pos 	5447
+AP: 0.9747 - AUC-ROC: 0.9825 - AUC-PR: 0.9747 - P@50: 0.9800 > 352
+INFO:best_pse_tuck_PH.py:length pred pos 	788
+AP: 0.9925 - AUC-ROC: 0.9936 - AUC-PR: 0.9925 - P@50: 1.0000 > 353
+INFO:best_pse_tuck_PH.py:length pred pos 	814
+AP: 0.9861 - AUC-ROC: 0.9882 - AUC-PR: 0.9861 - P@50: 1.0000 > 354
+INFO:best_pse_tuck_PH.py:length pred pos 	1593
+AP: 0.9718 - AUC-ROC: 0.9831 - AUC-PR: 0.9718 - P@50: 1.0000 > 355
+INFO:best_pse_tuck_PH.py:length pred pos 	7249
+AP: 0.9728 - AUC-ROC: 0.9809 - AUC-PR: 0.9728 - P@50: 1.0000 > 356
+INFO:best_pse_tuck_PH.py:length pred pos 	1145
+AP: 0.9893 - AUC-ROC: 0.9912 - AUC-PR: 0.9893 - P@50: 1.0000 > 357
+INFO:best_pse_tuck_PH.py:length pred pos 	3230
+AP: 0.9768 - AUC-ROC: 0.9847 - AUC-PR: 0.9768 - P@50: 0.9600 > 358
+INFO:best_pse_tuck_PH.py:length pred pos 	2293
+AP: 0.9802 - AUC-ROC: 0.9868 - AUC-PR: 0.9802 - P@50: 1.0000 > 359
+INFO:best_pse_tuck_PH.py:length pred pos 	1084
+AP: 0.9841 - AUC-ROC: 0.9881 - AUC-PR: 0.9841 - P@50: 1.0000 > 360
+INFO:best_pse_tuck_PH.py:length pred pos 	2054
+AP: 0.9831 - AUC-ROC: 0.9872 - AUC-PR: 0.9831 - P@50: 1.0000 > 361
+INFO:best_pse_tuck_PH.py:length pred pos 	636
+AP: 0.9840 - AUC-ROC: 0.9874 - AUC-PR: 0.9840 - P@50: 1.0000 > 362
+INFO:best_pse_tuck_PH.py:length pred pos 	1226
+AP: 0.9828 - AUC-ROC: 0.9883 - AUC-PR: 0.9828 - P@50: 0.9800 > 363
+INFO:best_pse_tuck_PH.py:length pred pos 	4883
+AP: 0.9709 - AUC-ROC: 0.9804 - AUC-PR: 0.9709 - P@50: 1.0000 > 364
+INFO:best_pse_tuck_PH.py:length pred pos 	2227
+AP: 0.9669 - AUC-ROC: 0.9792 - AUC-PR: 0.9669 - P@50: 0.9600 > 365
+INFO:best_pse_tuck_PH.py:length pred pos 	925
+AP: 0.9906 - AUC-ROC: 0.9924 - AUC-PR: 0.9906 - P@50: 1.0000 > 366
+INFO:best_pse_tuck_PH.py:length pred pos 	1251
+AP: 0.9805 - AUC-ROC: 0.9877 - AUC-PR: 0.9805 - P@50: 0.9600 > 367
+INFO:best_pse_tuck_PH.py:length pred pos 	10979
+AP: 0.9692 - AUC-ROC: 0.9788 - AUC-PR: 0.9692 - P@50: 0.9600 > 368
+INFO:best_pse_tuck_PH.py:length pred pos 	24260
+AP: 0.9703 - AUC-ROC: 0.9785 - AUC-PR: 0.9703 - P@50: 0.9600 > 369
+INFO:best_pse_tuck_PH.py:length pred pos 	17945
+AP: 0.9651 - AUC-ROC: 0.9755 - AUC-PR: 0.9651 - P@50: 1.0000 > 370
+INFO:best_pse_tuck_PH.py:length pred pos 	556
+AP: 0.9809 - AUC-ROC: 0.9891 - AUC-PR: 0.9809 - P@50: 0.9800 > 371
+INFO:best_pse_tuck_PH.py:length pred pos 	792
+AP: 0.9862 - AUC-ROC: 0.9897 - AUC-PR: 0.9862 - P@50: 1.0000 > 372
+INFO:best_pse_tuck_PH.py:length pred pos 	4802
+AP: 0.9718 - AUC-ROC: 0.9811 - AUC-PR: 0.9718 - P@50: 1.0000 > 373
+INFO:best_pse_tuck_PH.py:length pred pos 	2415
+AP: 0.9828 - AUC-ROC: 0.9886 - AUC-PR: 0.9828 - P@50: 1.0000 > 374
+INFO:best_pse_tuck_PH.py:length pred pos 	5732
+AP: 0.9682 - AUC-ROC: 0.9784 - AUC-PR: 0.9682 - P@50: 1.0000 > 375
+INFO:best_pse_tuck_PH.py:length pred pos 	23043
+AP: 0.9678 - AUC-ROC: 0.9773 - AUC-PR: 0.9678 - P@50: 1.0000 > 376
+INFO:best_pse_tuck_PH.py:length pred pos 	7246
+AP: 0.9785 - AUC-ROC: 0.9833 - AUC-PR: 0.9785 - P@50: 1.0000 > 377
+INFO:best_pse_tuck_PH.py:length pred pos 	4775
+AP: 0.9741 - AUC-ROC: 0.9819 - AUC-PR: 0.9741 - P@50: 1.0000 > 378
+INFO:best_pse_tuck_PH.py:length pred pos 	13749
+AP: 0.9627 - AUC-ROC: 0.9748 - AUC-PR: 0.9627 - P@50: 0.9800 > 379
+INFO:best_pse_tuck_PH.py:length pred pos 	2730
+AP: 0.9692 - AUC-ROC: 0.9783 - AUC-PR: 0.9692 - P@50: 0.9800 > 380
+INFO:best_pse_tuck_PH.py:length pred pos 	2982
+AP: 0.9821 - AUC-ROC: 0.9865 - AUC-PR: 0.9821 - P@50: 1.0000 > 381
+INFO:best_pse_tuck_PH.py:length pred pos 	7098
+AP: 0.9651 - AUC-ROC: 0.9763 - AUC-PR: 0.9651 - P@50: 1.0000 > 382
+INFO:best_pse_tuck_PH.py:length pred pos 	4591
+AP: 0.9765 - AUC-ROC: 0.9831 - AUC-PR: 0.9765 - P@50: 1.0000 > 383
+INFO:best_pse_tuck_PH.py:length pred pos 	890
+AP: 0.9790 - AUC-ROC: 0.9852 - AUC-PR: 0.9790 - P@50: 1.0000 > 384
+INFO:best_pse_tuck_PH.py:length pred pos 	3370
+AP: 0.9816 - AUC-ROC: 0.9862 - AUC-PR: 0.9816 - P@50: 1.0000 > 385
+INFO:best_pse_tuck_PH.py:length pred pos 	755
+AP: 0.9828 - AUC-ROC: 0.9905 - AUC-PR: 0.9828 - P@50: 0.9800 > 386
+INFO:best_pse_tuck_PH.py:length pred pos 	9754
+AP: 0.9737 - AUC-ROC: 0.9816 - AUC-PR: 0.9737 - P@50: 0.9800 > 387
+INFO:best_pse_tuck_PH.py:length pred pos 	6091
+AP: 0.9875 - AUC-ROC: 0.9901 - AUC-PR: 0.9875 - P@50: 1.0000 > 388
+INFO:best_pse_tuck_PH.py:length pred pos 	2076
+AP: 0.9782 - AUC-ROC: 0.9848 - AUC-PR: 0.9782 - P@50: 1.0000 > 389
+INFO:best_pse_tuck_PH.py:length pred pos 	8313
+AP: 0.9685 - AUC-ROC: 0.9778 - AUC-PR: 0.9685 - P@50: 0.9800 > 390
+INFO:best_pse_tuck_PH.py:length pred pos 	7161
+AP: 0.9695 - AUC-ROC: 0.9790 - AUC-PR: 0.9695 - P@50: 1.0000 > 391
+INFO:best_pse_tuck_PH.py:length pred pos 	1411
+AP: 0.9759 - AUC-ROC: 0.9827 - AUC-PR: 0.9759 - P@50: 1.0000 > 392
+INFO:best_pse_tuck_PH.py:length pred pos 	3018
+AP: 0.9661 - AUC-ROC: 0.9777 - AUC-PR: 0.9661 - P@50: 0.9800 > 393
+INFO:best_pse_tuck_PH.py:length pred pos 	1942
+AP: 0.9884 - AUC-ROC: 0.9907 - AUC-PR: 0.9884 - P@50: 1.0000 > 394
+INFO:best_pse_tuck_PH.py:length pred pos 	2677
+AP: 0.9851 - AUC-ROC: 0.9879 - AUC-PR: 0.9851 - P@50: 1.0000 > 395
+INFO:best_pse_tuck_PH.py:length pred pos 	1066
+AP: 0.9772 - AUC-ROC: 0.9845 - AUC-PR: 0.9772 - P@50: 0.9600 > 396
+INFO:best_pse_tuck_PH.py:length pred pos 	18177
+AP: 0.9666 - AUC-ROC: 0.9772 - AUC-PR: 0.9666 - P@50: 0.9800 > 397
+INFO:best_pse_tuck_PH.py:length pred pos 	6735
+AP: 0.9709 - AUC-ROC: 0.9796 - AUC-PR: 0.9709 - P@50: 1.0000 > 398
+INFO:best_pse_tuck_PH.py:length pred pos 	821
+AP: 0.9829 - AUC-ROC: 0.9881 - AUC-PR: 0.9829 - P@50: 1.0000 > 399
+INFO:best_pse_tuck_PH.py:length pred pos 	1454
+AP: 0.9936 - AUC-ROC: 0.9951 - AUC-PR: 0.9936 - P@50: 1.0000 > 400
+INFO:best_pse_tuck_PH.py:length pred pos 	13482
+AP: 0.9808 - AUC-ROC: 0.9853 - AUC-PR: 0.9808 - P@50: 1.0000 > 401
+INFO:best_pse_tuck_PH.py:length pred pos 	3164
+AP: 0.9776 - AUC-ROC: 0.9821 - AUC-PR: 0.9776 - P@50: 1.0000 > 402
+INFO:best_pse_tuck_PH.py:length pred pos 	8053
+AP: 0.9694 - AUC-ROC: 0.9775 - AUC-PR: 0.9694 - P@50: 1.0000 > 403
+INFO:best_pse_tuck_PH.py:length pred pos 	10749
+AP: 0.9661 - AUC-ROC: 0.9760 - AUC-PR: 0.9661 - P@50: 1.0000 > 404
+INFO:best_pse_tuck_PH.py:length pred pos 	3292
+AP: 0.9822 - AUC-ROC: 0.9873 - AUC-PR: 0.9822 - P@50: 0.9800 > 405
+INFO:best_pse_tuck_PH.py:length pred pos 	1359
+AP: 0.9843 - AUC-ROC: 0.9875 - AUC-PR: 0.9843 - P@50: 1.0000 > 406
+INFO:best_pse_tuck_PH.py:length pred pos 	5879
+AP: 0.9776 - AUC-ROC: 0.9832 - AUC-PR: 0.9776 - P@50: 1.0000 > 407
+INFO:best_pse_tuck_PH.py:length pred pos 	901
+AP: 0.9768 - AUC-ROC: 0.9854 - AUC-PR: 0.9768 - P@50: 1.0000 > 408
+INFO:best_pse_tuck_PH.py:length pred pos 	935
+AP: 0.9843 - AUC-ROC: 0.9899 - AUC-PR: 0.9843 - P@50: 0.9800 > 409
+INFO:best_pse_tuck_PH.py:length pred pos 	2005
+AP: 0.9828 - AUC-ROC: 0.9876 - AUC-PR: 0.9828 - P@50: 1.0000 > 410
+INFO:best_pse_tuck_PH.py:length pred pos 	5374
+AP: 0.9768 - AUC-ROC: 0.9829 - AUC-PR: 0.9768 - P@50: 1.0000 > 411
+INFO:best_pse_tuck_PH.py:length pred pos 	2107
+AP: 0.9832 - AUC-ROC: 0.9883 - AUC-PR: 0.9832 - P@50: 1.0000 > 412
+INFO:best_pse_tuck_PH.py:length pred pos 	7944
+AP: 0.9663 - AUC-ROC: 0.9765 - AUC-PR: 0.9663 - P@50: 1.0000 > 413
+INFO:best_pse_tuck_PH.py:length pred pos 	6345
+AP: 0.9711 - AUC-ROC: 0.9795 - AUC-PR: 0.9711 - P@50: 1.0000 > 414
+INFO:best_pse_tuck_PH.py:length pred pos 	21806
+AP: 0.9615 - AUC-ROC: 0.9738 - AUC-PR: 0.9615 - P@50: 1.0000 > 415
+INFO:best_pse_tuck_PH.py:length pred pos 	857
+AP: 0.9951 - AUC-ROC: 0.9956 - AUC-PR: 0.9951 - P@50: 1.0000 > 416
+INFO:best_pse_tuck_PH.py:length pred pos 	1955
+AP: 0.9831 - AUC-ROC: 0.9872 - AUC-PR: 0.9831 - P@50: 1.0000 > 417
+INFO:best_pse_tuck_PH.py:length pred pos 	3147
+AP: 0.9722 - AUC-ROC: 0.9822 - AUC-PR: 0.9722 - P@50: 0.9800 > 418
+INFO:best_pse_tuck_PH.py:length pred pos 	634
+AP: 0.9747 - AUC-ROC: 0.9839 - AUC-PR: 0.9747 - P@50: 0.9800 > 419
+INFO:best_pse_tuck_PH.py:length pred pos 	687
+AP: 0.9849 - AUC-ROC: 0.9895 - AUC-PR: 0.9849 - P@50: 1.0000 > 420
+INFO:best_pse_tuck_PH.py:length pred pos 	4031
+AP: 0.9829 - AUC-ROC: 0.9869 - AUC-PR: 0.9829 - P@50: 1.0000 > 421
+INFO:best_pse_tuck_PH.py:length pred pos 	3349
+AP: 0.9797 - AUC-ROC: 0.9850 - AUC-PR: 0.9797 - P@50: 1.0000 > 422
+INFO:best_pse_tuck_PH.py:length pred pos 	1034
+AP: 0.9830 - AUC-ROC: 0.9888 - AUC-PR: 0.9830 - P@50: 1.0000 > 423
+INFO:best_pse_tuck_PH.py:length pred pos 	1042
+AP: 0.9913 - AUC-ROC: 0.9925 - AUC-PR: 0.9913 - P@50: 1.0000 > 424
+INFO:best_pse_tuck_PH.py:length pred pos 	19100
+AP: 0.9676 - AUC-ROC: 0.9775 - AUC-PR: 0.9676 - P@50: 0.9800 > 425
+INFO:best_pse_tuck_PH.py:length pred pos 	3894
+AP: 0.9810 - AUC-ROC: 0.9860 - AUC-PR: 0.9810 - P@50: 1.0000 > 426
+INFO:best_pse_tuck_PH.py:length pred pos 	3156
+AP: 0.9623 - AUC-ROC: 0.9749 - AUC-PR: 0.9623 - P@50: 1.0000 > 427
+INFO:best_pse_tuck_PH.py:length pred pos 	1964
+AP: 0.9822 - AUC-ROC: 0.9861 - AUC-PR: 0.9822 - P@50: 1.0000 > 428
+INFO:best_pse_tuck_PH.py:length pred pos 	1119
+AP: 0.9907 - AUC-ROC: 0.9924 - AUC-PR: 0.9907 - P@50: 1.0000 > 429
+INFO:best_pse_tuck_PH.py:length pred pos 	7669
+AP: 0.9723 - AUC-ROC: 0.9795 - AUC-PR: 0.9723 - P@50: 1.0000 > 430
+INFO:best_pse_tuck_PH.py:length pred pos 	15171
+AP: 0.9666 - AUC-ROC: 0.9760 - AUC-PR: 0.9666 - P@50: 0.9800 > 431
+INFO:best_pse_tuck_PH.py:length pred pos 	3208
+AP: 0.9762 - AUC-ROC: 0.9830 - AUC-PR: 0.9762 - P@50: 1.0000 > 432
+INFO:best_pse_tuck_PH.py:length pred pos 	932
+AP: 0.9875 - AUC-ROC: 0.9900 - AUC-PR: 0.9875 - P@50: 1.0000 > 433
+INFO:best_pse_tuck_PH.py:length pred pos 	2540
+AP: 0.9748 - AUC-ROC: 0.9821 - AUC-PR: 0.9748 - P@50: 0.9800 > 434
+INFO:best_pse_tuck_PH.py:length pred pos 	5573
+AP: 0.9826 - AUC-ROC: 0.9867 - AUC-PR: 0.9826 - P@50: 1.0000 > 435
+INFO:best_pse_tuck_PH.py:length pred pos 	1384
+AP: 0.9847 - AUC-ROC: 0.9900 - AUC-PR: 0.9847 - P@50: 0.9800 > 436
+INFO:best_pse_tuck_PH.py:length pred pos 	714
+AP: 0.9862 - AUC-ROC: 0.9889 - AUC-PR: 0.9862 - P@50: 1.0000 > 437
+INFO:best_pse_tuck_PH.py:length pred pos 	4180
+AP: 0.9833 - AUC-ROC: 0.9877 - AUC-PR: 0.9833 - P@50: 1.0000 > 438
+INFO:best_pse_tuck_PH.py:length pred pos 	5424
+AP: 0.9795 - AUC-ROC: 0.9853 - AUC-PR: 0.9795 - P@50: 1.0000 > 439
+INFO:best_pse_tuck_PH.py:length pred pos 	791
+AP: 0.9848 - AUC-ROC: 0.9872 - AUC-PR: 0.9848 - P@50: 1.0000 > 440
+INFO:best_pse_tuck_PH.py:length pred pos 	720
+AP: 0.9925 - AUC-ROC: 0.9934 - AUC-PR: 0.9925 - P@50: 1.0000 > 441
+INFO:best_pse_tuck_PH.py:length pred pos 	653
+AP: 0.9917 - AUC-ROC: 0.9927 - AUC-PR: 0.9917 - P@50: 1.0000 > 442
+INFO:best_pse_tuck_PH.py:length pred pos 	1523
+AP: 0.9681 - AUC-ROC: 0.9788 - AUC-PR: 0.9681 - P@50: 0.9800 > 443
+INFO:best_pse_tuck_PH.py:length pred pos 	2510
+AP: 0.9725 - AUC-ROC: 0.9809 - AUC-PR: 0.9725 - P@50: 1.0000 > 444
+INFO:best_pse_tuck_PH.py:length pred pos 	11775
+AP: 0.9667 - AUC-ROC: 0.9763 - AUC-PR: 0.9667 - P@50: 1.0000 > 445
+INFO:best_pse_tuck_PH.py:length pred pos 	2946
+AP: 0.9779 - AUC-ROC: 0.9836 - AUC-PR: 0.9779 - P@50: 1.0000 > 446
+INFO:best_pse_tuck_PH.py:length pred pos 	3881
+AP: 0.9777 - AUC-ROC: 0.9830 - AUC-PR: 0.9777 - P@50: 1.0000 > 447
+INFO:best_pse_tuck_PH.py:length pred pos 	6163
+AP: 0.9787 - AUC-ROC: 0.9835 - AUC-PR: 0.9787 - P@50: 1.0000 > 448
+INFO:best_pse_tuck_PH.py:length pred pos 	769
+AP: 0.9808 - AUC-ROC: 0.9876 - AUC-PR: 0.9808 - P@50: 0.9800 > 449
+INFO:best_pse_tuck_PH.py:length pred pos 	3592
+AP: 0.9725 - AUC-ROC: 0.9801 - AUC-PR: 0.9725 - P@50: 1.0000 > 450
+INFO:best_pse_tuck_PH.py:length pred pos 	11940
+AP: 0.9683 - AUC-ROC: 0.9778 - AUC-PR: 0.9683 - P@50: 1.0000 > 451
+INFO:best_pse_tuck_PH.py:length pred pos 	661
+AP: 0.9820 - AUC-ROC: 0.9883 - AUC-PR: 0.9820 - P@50: 0.9800 > 452
+INFO:best_pse_tuck_PH.py:length pred pos 	15961
+AP: 0.9680 - AUC-ROC: 0.9770 - AUC-PR: 0.9680 - P@50: 1.0000 > 453
+INFO:best_pse_tuck_PH.py:length pred pos 	681
+AP: 0.9825 - AUC-ROC: 0.9886 - AUC-PR: 0.9825 - P@50: 0.9800 > 454
+INFO:best_pse_tuck_PH.py:length pred pos 	11805
+AP: 0.9701 - AUC-ROC: 0.9788 - AUC-PR: 0.9701 - P@50: 1.0000 > 455
+INFO:best_pse_tuck_PH.py:length pred pos 	13688
+AP: 0.9567 - AUC-ROC: 0.9707 - AUC-PR: 0.9567 - P@50: 0.9600 > 456
+INFO:best_pse_tuck_PH.py:length pred pos 	1536
+AP: 0.9845 - AUC-ROC: 0.9878 - AUC-PR: 0.9845 - P@50: 1.0000 > 457
+INFO:best_pse_tuck_PH.py:length pred pos 	9666
+AP: 0.9714 - AUC-ROC: 0.9790 - AUC-PR: 0.9714 - P@50: 1.0000 > 458
+INFO:best_pse_tuck_PH.py:length pred pos 	736
+AP: 0.9828 - AUC-ROC: 0.9873 - AUC-PR: 0.9828 - P@50: 1.0000 > 459
+INFO:best_pse_tuck_PH.py:length pred pos 	4409
+AP: 0.9709 - AUC-ROC: 0.9804 - AUC-PR: 0.9709 - P@50: 0.9600 > 460
+INFO:best_pse_tuck_PH.py:length pred pos 	17112
+AP: 0.9724 - AUC-ROC: 0.9794 - AUC-PR: 0.9724 - P@50: 1.0000 > 461
+INFO:best_pse_tuck_PH.py:length pred pos 	1939
+AP: 0.9809 - AUC-ROC: 0.9870 - AUC-PR: 0.9809 - P@50: 0.9800 > 462
+INFO:best_pse_tuck_PH.py:length pred pos 	1503
+AP: 0.9860 - AUC-ROC: 0.9883 - AUC-PR: 0.9860 - P@50: 1.0000 > 463
+INFO:best_pse_tuck_PH.py:length pred pos 	1024
+AP: 0.9873 - AUC-ROC: 0.9907 - AUC-PR: 0.9873 - P@50: 1.0000 > 464
+INFO:best_pse_tuck_PH.py:length pred pos 	17648
+AP: 0.9675 - AUC-ROC: 0.9767 - AUC-PR: 0.9675 - P@50: 1.0000 > 465
+INFO:best_pse_tuck_PH.py:length pred pos 	10352
+AP: 0.9781 - AUC-ROC: 0.9835 - AUC-PR: 0.9781 - P@50: 1.0000 > 466
+INFO:best_pse_tuck_PH.py:length pred pos 	6809
+AP: 0.9775 - AUC-ROC: 0.9839 - AUC-PR: 0.9775 - P@50: 1.0000 > 467
+INFO:best_pse_tuck_PH.py:length pred pos 	9621
+AP: 0.9786 - AUC-ROC: 0.9843 - AUC-PR: 0.9786 - P@50: 1.0000 > 468
+INFO:best_pse_tuck_PH.py:length pred pos 	1837
+AP: 0.9787 - AUC-ROC: 0.9852 - AUC-PR: 0.9787 - P@50: 1.0000 > 469
+INFO:best_pse_tuck_PH.py:length pred pos 	4279
+AP: 0.9631 - AUC-ROC: 0.9751 - AUC-PR: 0.9631 - P@50: 0.9800 > 470
+INFO:best_pse_tuck_PH.py:length pred pos 	3887
+AP: 0.9787 - AUC-ROC: 0.9848 - AUC-PR: 0.9787 - P@50: 1.0000 > 471
+INFO:best_pse_tuck_PH.py:length pred pos 	751
+AP: 0.9890 - AUC-ROC: 0.9910 - AUC-PR: 0.9890 - P@50: 1.0000 > 472
+INFO:best_pse_tuck_PH.py:length pred pos 	6835
+AP: 0.9688 - AUC-ROC: 0.9777 - AUC-PR: 0.9688 - P@50: 0.9800 > 473
+INFO:best_pse_tuck_PH.py:length pred pos 	583
+AP: 0.9792 - AUC-ROC: 0.9861 - AUC-PR: 0.9792 - P@50: 0.9800 > 474
+INFO:best_pse_tuck_PH.py:length pred pos 	7781
+AP: 0.9866 - AUC-ROC: 0.9897 - AUC-PR: 0.9866 - P@50: 1.0000 > 475
+INFO:best_pse_tuck_PH.py:length pred pos 	5649
+AP: 0.9839 - AUC-ROC: 0.9874 - AUC-PR: 0.9839 - P@50: 1.0000 > 476
+INFO:best_pse_tuck_PH.py:length pred pos 	2503
+AP: 0.9788 - AUC-ROC: 0.9844 - AUC-PR: 0.9788 - P@50: 1.0000 > 477
+INFO:best_pse_tuck_PH.py:length pred pos 	14665
+AP: 0.9650 - AUC-ROC: 0.9751 - AUC-PR: 0.9650 - P@50: 1.0000 > 478
+INFO:best_pse_tuck_PH.py:length pred pos 	2013
+AP: 0.9852 - AUC-ROC: 0.9880 - AUC-PR: 0.9852 - P@50: 1.0000 > 479
+INFO:best_pse_tuck_PH.py:length pred pos 	745
+AP: 0.9879 - AUC-ROC: 0.9907 - AUC-PR: 0.9879 - P@50: 1.0000 > 480
+INFO:best_pse_tuck_PH.py:length pred pos 	1792
+AP: 0.9839 - AUC-ROC: 0.9875 - AUC-PR: 0.9839 - P@50: 1.0000 > 481
+INFO:best_pse_tuck_PH.py:length pred pos 	3924
+AP: 0.9700 - AUC-ROC: 0.9803 - AUC-PR: 0.9700 - P@50: 0.9800 > 482
+INFO:best_pse_tuck_PH.py:length pred pos 	685
+AP: 0.9784 - AUC-ROC: 0.9850 - AUC-PR: 0.9784 - P@50: 1.0000 > 483
+INFO:best_pse_tuck_PH.py:length pred pos 	8438
+AP: 0.9675 - AUC-ROC: 0.9771 - AUC-PR: 0.9675 - P@50: 0.9800 > 484
+INFO:best_pse_tuck_PH.py:length pred pos 	2993
+AP: 0.9781 - AUC-ROC: 0.9845 - AUC-PR: 0.9781 - P@50: 1.0000 > 485
+INFO:best_pse_tuck_PH.py:length pred pos 	1482
+AP: 0.9734 - AUC-ROC: 0.9797 - AUC-PR: 0.9734 - P@50: 1.0000 > 486
+INFO:best_pse_tuck_PH.py:length pred pos 	4727
+AP: 0.9821 - AUC-ROC: 0.9860 - AUC-PR: 0.9821 - P@50: 1.0000 > 487
+INFO:best_pse_tuck_PH.py:length pred pos 	987
+AP: 0.9839 - AUC-ROC: 0.9878 - AUC-PR: 0.9839 - P@50: 1.0000 > 488
+INFO:best_pse_tuck_PH.py:length pred pos 	18785
+AP: 0.9663 - AUC-ROC: 0.9763 - AUC-PR: 0.9663 - P@50: 1.0000 > 489
+INFO:best_pse_tuck_PH.py:length pred pos 	20204
+AP: 0.9672 - AUC-ROC: 0.9769 - AUC-PR: 0.9672 - P@50: 0.9800 > 490
+INFO:best_pse_tuck_PH.py:length pred pos 	3225
+AP: 0.9832 - AUC-ROC: 0.9865 - AUC-PR: 0.9832 - P@50: 1.0000 > 491
+INFO:best_pse_tuck_PH.py:length pred pos 	1085
+AP: 0.9900 - AUC-ROC: 0.9912 - AUC-PR: 0.9900 - P@50: 1.0000 > 492
+INFO:best_pse_tuck_PH.py:length pred pos 	5934
+AP: 0.9728 - AUC-ROC: 0.9807 - AUC-PR: 0.9728 - P@50: 1.0000 > 493
+INFO:best_pse_tuck_PH.py:length pred pos 	2278
+AP: 0.9758 - AUC-ROC: 0.9813 - AUC-PR: 0.9758 - P@50: 1.0000 > 494
+INFO:best_pse_tuck_PH.py:length pred pos 	2256
+AP: 0.9834 - AUC-ROC: 0.9865 - AUC-PR: 0.9834 - P@50: 1.0000 > 495
+INFO:best_pse_tuck_PH.py:length pred pos 	5628
+AP: 0.9740 - AUC-ROC: 0.9806 - AUC-PR: 0.9740 - P@50: 1.0000 > 496
+INFO:best_pse_tuck_PH.py:length pred pos 	1792
+AP: 0.9869 - AUC-ROC: 0.9906 - AUC-PR: 0.9869 - P@50: 1.0000 > 497
+INFO:best_pse_tuck_PH.py:length pred pos 	13117
+AP: 0.9596 - AUC-ROC: 0.9722 - AUC-PR: 0.9596 - P@50: 0.9400 > 498
+INFO:best_pse_tuck_PH.py:length pred pos 	3541
+AP: 0.9774 - AUC-ROC: 0.9860 - AUC-PR: 0.9774 - P@50: 0.9600 > 499
+INFO:best_pse_tuck_PH.py:length pred pos 	3833
+AP: 0.9761 - AUC-ROC: 0.9827 - AUC-PR: 0.9761 - P@50: 0.9800 > 500
+INFO:best_pse_tuck_PH.py:length pred pos 	6670
+AP: 0.9801 - AUC-ROC: 0.9848 - AUC-PR: 0.9801 - P@50: 1.0000 > 501
+INFO:best_pse_tuck_PH.py:length pred pos 	1147
+AP: 0.9887 - AUC-ROC: 0.9912 - AUC-PR: 0.9887 - P@50: 1.0000 > 502
+INFO:best_pse_tuck_PH.py:length pred pos 	765
+AP: 0.9718 - AUC-ROC: 0.9823 - AUC-PR: 0.9718 - P@50: 1.0000 > 503
+INFO:best_pse_tuck_PH.py:length pred pos 	4407
+AP: 0.9728 - AUC-ROC: 0.9809 - AUC-PR: 0.9728 - P@50: 1.0000 > 504
+INFO:best_pse_tuck_PH.py:length pred pos 	6627
+AP: 0.9698 - AUC-ROC: 0.9795 - AUC-PR: 0.9698 - P@50: 0.9800 > 505
+INFO:best_pse_tuck_PH.py:length pred pos 	1012
+AP: 0.9880 - AUC-ROC: 0.9902 - AUC-PR: 0.9880 - P@50: 1.0000 > 506
+INFO:best_pse_tuck_PH.py:length pred pos 	4408
+AP: 0.9668 - AUC-ROC: 0.9796 - AUC-PR: 0.9668 - P@50: 0.9600 > 507
+INFO:best_pse_tuck_PH.py:length pred pos 	2311
+AP: 0.9851 - AUC-ROC: 0.9892 - AUC-PR: 0.9851 - P@50: 1.0000 > 508
+INFO:best_pse_tuck_PH.py:length pred pos 	6660
+AP: 0.9747 - AUC-ROC: 0.9817 - AUC-PR: 0.9747 - P@50: 1.0000 > 509
+INFO:best_pse_tuck_PH.py:length pred pos 	733
+AP: 0.9900 - AUC-ROC: 0.9920 - AUC-PR: 0.9900 - P@50: 1.0000 > 510
+INFO:best_pse_tuck_PH.py:length pred pos 	8775
+AP: 0.9735 - AUC-ROC: 0.9817 - AUC-PR: 0.9735 - P@50: 0.9800 > 511
+INFO:best_pse_tuck_PH.py:length pred pos 	3544
+AP: 0.9818 - AUC-ROC: 0.9864 - AUC-PR: 0.9818 - P@50: 1.0000 > 512
+INFO:best_pse_tuck_PH.py:length pred pos 	2062
+AP: 0.9769 - AUC-ROC: 0.9828 - AUC-PR: 0.9769 - P@50: 1.0000 > 513
+INFO:best_pse_tuck_PH.py:length pred pos 	1792
+AP: 0.9888 - AUC-ROC: 0.9913 - AUC-PR: 0.9888 - P@50: 1.0000 > 514
+INFO:best_pse_tuck_PH.py:length pred pos 	898
+AP: 0.9909 - AUC-ROC: 0.9927 - AUC-PR: 0.9909 - P@50: 1.0000 > 515
+INFO:best_pse_tuck_PH.py:length pred pos 	1489
+AP: 0.9908 - AUC-ROC: 0.9920 - AUC-PR: 0.9908 - P@50: 1.0000 > 516
+INFO:best_pse_tuck_PH.py:length pred pos 	1552
+AP: 0.9692 - AUC-ROC: 0.9812 - AUC-PR: 0.9692 - P@50: 0.9600 > 517
+INFO:best_pse_tuck_PH.py:length pred pos 	5785
+AP: 0.9775 - AUC-ROC: 0.9832 - AUC-PR: 0.9775 - P@50: 1.0000 > 518
+INFO:best_pse_tuck_PH.py:length pred pos 	5893
+AP: 0.9618 - AUC-ROC: 0.9733 - AUC-PR: 0.9618 - P@50: 1.0000 > 519
+INFO:best_pse_tuck_PH.py:length pred pos 	19803
+AP: 0.9687 - AUC-ROC: 0.9777 - AUC-PR: 0.9687 - P@50: 1.0000 > 520
+INFO:best_pse_tuck_PH.py:length pred pos 	4699
+AP: 0.9756 - AUC-ROC: 0.9839 - AUC-PR: 0.9756 - P@50: 0.9800 > 521
+INFO:best_pse_tuck_PH.py:length pred pos 	2783
+AP: 0.9728 - AUC-ROC: 0.9819 - AUC-PR: 0.9728 - P@50: 0.9800 > 522
+INFO:best_pse_tuck_PH.py:length pred pos 	879
+AP: 0.9888 - AUC-ROC: 0.9907 - AUC-PR: 0.9888 - P@50: 1.0000 > 523
+INFO:best_pse_tuck_PH.py:length pred pos 	6589
+AP: 0.9685 - AUC-ROC: 0.9774 - AUC-PR: 0.9685 - P@50: 1.0000 > 524
+INFO:best_pse_tuck_PH.py:length pred pos 	10348
+AP: 0.9713 - AUC-ROC: 0.9795 - AUC-PR: 0.9713 - P@50: 1.0000 > 525
+INFO:best_pse_tuck_PH.py:length pred pos 	10902
+AP: 0.9670 - AUC-ROC: 0.9776 - AUC-PR: 0.9670 - P@50: 0.9800 > 526
+INFO:best_pse_tuck_PH.py:length pred pos 	6816
+AP: 0.9758 - AUC-ROC: 0.9822 - AUC-PR: 0.9758 - P@50: 1.0000 > 527
+INFO:best_pse_tuck_PH.py:length pred pos 	589
+AP: 0.9760 - AUC-ROC: 0.9886 - AUC-PR: 0.9760 - P@50: 0.9800 > 528
+INFO:best_pse_tuck_PH.py:length pred pos 	533
+AP: 0.9910 - AUC-ROC: 0.9923 - AUC-PR: 0.9910 - P@50: 1.0000 > 529
+INFO:best_pse_tuck_PH.py:length pred pos 	8681
+AP: 0.9617 - AUC-ROC: 0.9728 - AUC-PR: 0.9617 - P@50: 0.9800 > 530
+INFO:best_pse_tuck_PH.py:length pred pos 	6573
+AP: 0.9793 - AUC-ROC: 0.9846 - AUC-PR: 0.9793 - P@50: 0.9800 > 531
+INFO:best_pse_tuck_PH.py:length pred pos 	25190
+AP: 0.9735 - AUC-ROC: 0.9808 - AUC-PR: 0.9735 - P@50: 0.9800 > 532
+INFO:best_pse_tuck_PH.py:length pred pos 	5936
+AP: 0.9688 - AUC-ROC: 0.9786 - AUC-PR: 0.9688 - P@50: 0.9800 > 533
+INFO:best_pse_tuck_PH.py:length pred pos 	1446
+AP: 0.9844 - AUC-ROC: 0.9886 - AUC-PR: 0.9844 - P@50: 1.0000 > 534
+INFO:best_pse_tuck_PH.py:length pred pos 	729
+AP: 0.9729 - AUC-ROC: 0.9826 - AUC-PR: 0.9729 - P@50: 0.9800 > 535
+INFO:best_pse_tuck_PH.py:length pred pos 	842
+AP: 0.9889 - AUC-ROC: 0.9913 - AUC-PR: 0.9889 - P@50: 1.0000 > 536
+INFO:best_pse_tuck_PH.py:length pred pos 	583
+AP: 0.9829 - AUC-ROC: 0.9907 - AUC-PR: 0.9829 - P@50: 0.9800 > 537
+INFO:best_pse_tuck_PH.py:length pred pos 	1330
+AP: 0.9808 - AUC-ROC: 0.9864 - AUC-PR: 0.9808 - P@50: 1.0000 > 538
+INFO:best_pse_tuck_PH.py:length pred pos 	9102
+AP: 0.9743 - AUC-ROC: 0.9813 - AUC-PR: 0.9743 - P@50: 1.0000 > 539
+INFO:best_pse_tuck_PH.py:length pred pos 	7692
+AP: 0.9649 - AUC-ROC: 0.9763 - AUC-PR: 0.9649 - P@50: 0.9600 > 540
+INFO:best_pse_tuck_PH.py:length pred pos 	1507
+AP: 0.9750 - AUC-ROC: 0.9860 - AUC-PR: 0.9750 - P@50: 0.9800 > 541
+INFO:best_pse_tuck_PH.py:length pred pos 	1905
+AP: 0.9832 - AUC-ROC: 0.9871 - AUC-PR: 0.9832 - P@50: 1.0000 > 542
+INFO:best_pse_tuck_PH.py:length pred pos 	6237
+AP: 0.9649 - AUC-ROC: 0.9757 - AUC-PR: 0.9649 - P@50: 0.9800 > 543
+INFO:best_pse_tuck_PH.py:length pred pos 	3523
+AP: 0.9771 - AUC-ROC: 0.9841 - AUC-PR: 0.9771 - P@50: 0.9800 > 544
+INFO:best_pse_tuck_PH.py:length pred pos 	3792
+AP: 0.9785 - AUC-ROC: 0.9834 - AUC-PR: 0.9785 - P@50: 1.0000 > 545
+INFO:best_pse_tuck_PH.py:length pred pos 	14071
+AP: 0.9766 - AUC-ROC: 0.9825 - AUC-PR: 0.9766 - P@50: 1.0000 > 546
+INFO:best_pse_tuck_PH.py:length pred pos 	17639
+AP: 0.9688 - AUC-ROC: 0.9769 - AUC-PR: 0.9688 - P@50: 1.0000 > 547
+INFO:best_pse_tuck_PH.py:length pred pos 	2523
+AP: 0.9809 - AUC-ROC: 0.9862 - AUC-PR: 0.9809 - P@50: 1.0000 > 548
+INFO:best_pse_tuck_PH.py:length pred pos 	3321
+AP: 0.9638 - AUC-ROC: 0.9759 - AUC-PR: 0.9638 - P@50: 1.0000 > 549
+INFO:best_pse_tuck_PH.py:length pred pos 	961
+AP: 0.9904 - AUC-ROC: 0.9922 - AUC-PR: 0.9904 - P@50: 1.0000 > 550
+INFO:best_pse_tuck_PH.py:length pred pos 	530
+AP: 0.9828 - AUC-ROC: 0.9873 - AUC-PR: 0.9828 - P@50: 1.0000 > 551
+INFO:best_pse_tuck_PH.py:length pred pos 	931
+AP: 0.9835 - AUC-ROC: 0.9874 - AUC-PR: 0.9835 - P@50: 1.0000 > 552
+INFO:best_pse_tuck_PH.py:length pred pos 	15450
+AP: 0.9734 - AUC-ROC: 0.9803 - AUC-PR: 0.9734 - P@50: 0.9800 > 553
+INFO:best_pse_tuck_PH.py:length pred pos 	1219
+AP: 0.9892 - AUC-ROC: 0.9912 - AUC-PR: 0.9892 - P@50: 1.0000 > 554
+INFO:best_pse_tuck_PH.py:length pred pos 	2385
+AP: 0.9851 - AUC-ROC: 0.9892 - AUC-PR: 0.9851 - P@50: 1.0000 > 555
+INFO:best_pse_tuck_PH.py:length pred pos 	4720
+AP: 0.9693 - AUC-ROC: 0.9788 - AUC-PR: 0.9693 - P@50: 1.0000 > 556
+INFO:best_pse_tuck_PH.py:length pred pos 	6848
+AP: 0.9715 - AUC-ROC: 0.9798 - AUC-PR: 0.9715 - P@50: 0.9800 > 557
+INFO:best_pse_tuck_PH.py:length pred pos 	14367
+AP: 0.9674 - AUC-ROC: 0.9765 - AUC-PR: 0.9674 - P@50: 1.0000 > 558
+INFO:best_pse_tuck_PH.py:length pred pos 	963
+AP: 0.9771 - AUC-ROC: 0.9838 - AUC-PR: 0.9771 - P@50: 1.0000 > 559
+INFO:best_pse_tuck_PH.py:length pred pos 	7119
+AP: 0.9684 - AUC-ROC: 0.9769 - AUC-PR: 0.9684 - P@50: 1.0000 > 560
+INFO:best_pse_tuck_PH.py:length pred pos 	1236
+AP: 0.9844 - AUC-ROC: 0.9877 - AUC-PR: 0.9844 - P@50: 1.0000 > 561
+INFO:best_pse_tuck_PH.py:length pred pos 	584
+AP: 0.9876 - AUC-ROC: 0.9909 - AUC-PR: 0.9876 - P@50: 1.0000 > 562
+INFO:best_pse_tuck_PH.py:length pred pos 	9525
+AP: 0.9645 - AUC-ROC: 0.9759 - AUC-PR: 0.9645 - P@50: 0.9800 > 563
+INFO:best_pse_tuck_PH.py:length pred pos 	970
+AP: 0.9910 - AUC-ROC: 0.9924 - AUC-PR: 0.9910 - P@50: 1.0000 > 564
+INFO:best_pse_tuck_PH.py:length pred pos 	14099
+AP: 0.9709 - AUC-ROC: 0.9783 - AUC-PR: 0.9709 - P@50: 1.0000 > 565
+INFO:best_pse_tuck_PH.py:length pred pos 	1020
+AP: 0.9903 - AUC-ROC: 0.9912 - AUC-PR: 0.9903 - P@50: 1.0000 > 566
+INFO:best_pse_tuck_PH.py:length pred pos 	7690
+AP: 0.9789 - AUC-ROC: 0.9841 - AUC-PR: 0.9789 - P@50: 1.0000 > 567
+INFO:best_pse_tuck_PH.py:length pred pos 	5489
+AP: 0.9797 - AUC-ROC: 0.9861 - AUC-PR: 0.9797 - P@50: 0.9800 > 568
+INFO:best_pse_tuck_PH.py:length pred pos 	2254
+AP: 0.9882 - AUC-ROC: 0.9904 - AUC-PR: 0.9882 - P@50: 1.0000 > 569
+INFO:best_pse_tuck_PH.py:length pred pos 	12369
+AP: 0.9662 - AUC-ROC: 0.9761 - AUC-PR: 0.9662 - P@50: 1.0000 > 570
+INFO:best_pse_tuck_PH.py:length pred pos 	1097
+AP: 0.9816 - AUC-ROC: 0.9862 - AUC-PR: 0.9816 - P@50: 1.0000 > 571
+INFO:best_pse_tuck_PH.py:length pred pos 	15575
+AP: 0.9690 - AUC-ROC: 0.9775 - AUC-PR: 0.9690 - P@50: 0.9800 > 572
+INFO:best_pse_tuck_PH.py:length pred pos 	5974
+AP: 0.9768 - AUC-ROC: 0.9825 - AUC-PR: 0.9768 - P@50: 1.0000 > 573
+INFO:best_pse_tuck_PH.py:length pred pos 	810
+AP: 0.9953 - AUC-ROC: 0.9963 - AUC-PR: 0.9953 - P@50: 1.0000 > 574
+INFO:best_pse_tuck_PH.py:length pred pos 	5743
+AP: 0.9742 - AUC-ROC: 0.9805 - AUC-PR: 0.9742 - P@50: 1.0000 > 575
+INFO:best_pse_tuck_PH.py:length pred pos 	634
+AP: 0.9901 - AUC-ROC: 0.9912 - AUC-PR: 0.9901 - P@50: 1.0000 > 576
+INFO:best_pse_tuck_PH.py:length pred pos 	665
+AP: 0.9883 - AUC-ROC: 0.9916 - AUC-PR: 0.9883 - P@50: 1.0000 > 577
+INFO:best_pse_tuck_PH.py:length pred pos 	650
+AP: 0.9795 - AUC-ROC: 0.9843 - AUC-PR: 0.9795 - P@50: 1.0000 > 578
+INFO:best_pse_tuck_PH.py:length pred pos 	1681
+AP: 0.9868 - AUC-ROC: 0.9887 - AUC-PR: 0.9868 - P@50: 1.0000 > 579
+INFO:best_pse_tuck_PH.py:length pred pos 	694
+AP: 0.9933 - AUC-ROC: 0.9947 - AUC-PR: 0.9933 - P@50: 1.0000 > 580
+INFO:best_pse_tuck_PH.py:length pred pos 	725
+AP: 0.9902 - AUC-ROC: 0.9910 - AUC-PR: 0.9902 - P@50: 1.0000 > 581
+INFO:best_pse_tuck_PH.py:length pred pos 	1828
+AP: 0.9735 - AUC-ROC: 0.9820 - AUC-PR: 0.9735 - P@50: 0.9800 > 582
+INFO:best_pse_tuck_PH.py:length pred pos 	7554
+AP: 0.9683 - AUC-ROC: 0.9776 - AUC-PR: 0.9683 - P@50: 1.0000 > 583
+INFO:best_pse_tuck_PH.py:length pred pos 	5455
+AP: 0.9821 - AUC-ROC: 0.9871 - AUC-PR: 0.9821 - P@50: 1.0000 > 584
+INFO:best_pse_tuck_PH.py:length pred pos 	826
+AP: 0.9889 - AUC-ROC: 0.9925 - AUC-PR: 0.9889 - P@50: 1.0000 > 585
+INFO:best_pse_tuck_PH.py:length pred pos 	13404
+AP: 0.9668 - AUC-ROC: 0.9764 - AUC-PR: 0.9668 - P@50: 1.0000 > 586
+INFO:best_pse_tuck_PH.py:length pred pos 	1475
+AP: 0.9847 - AUC-ROC: 0.9876 - AUC-PR: 0.9847 - P@50: 1.0000 > 587
+INFO:best_pse_tuck_PH.py:length pred pos 	775
+AP: 0.9927 - AUC-ROC: 0.9941 - AUC-PR: 0.9927 - P@50: 1.0000 > 588
+INFO:best_pse_tuck_PH.py:length pred pos 	1176
+AP: 0.9875 - AUC-ROC: 0.9898 - AUC-PR: 0.9875 - P@50: 1.0000 > 589
+INFO:best_pse_tuck_PH.py:length pred pos 	2824
+AP: 0.9822 - AUC-ROC: 0.9858 - AUC-PR: 0.9822 - P@50: 1.0000 > 590
+INFO:best_pse_tuck_PH.py:length pred pos 	3080
+AP: 0.9715 - AUC-ROC: 0.9791 - AUC-PR: 0.9715 - P@50: 1.0000 > 591
+INFO:best_pse_tuck_PH.py:length pred pos 	553
+AP: 0.9882 - AUC-ROC: 0.9916 - AUC-PR: 0.9882 - P@50: 1.0000 > 592
+INFO:best_pse_tuck_PH.py:length pred pos 	10213
+AP: 0.9762 - AUC-ROC: 0.9825 - AUC-PR: 0.9762 - P@50: 1.0000 > 593
+INFO:best_pse_tuck_PH.py:length pred pos 	9173
+AP: 0.9771 - AUC-ROC: 0.9831 - AUC-PR: 0.9771 - P@50: 1.0000 > 594
+INFO:best_pse_tuck_PH.py:length pred pos 	2716
+AP: 0.9731 - AUC-ROC: 0.9810 - AUC-PR: 0.9731 - P@50: 1.0000 > 595
+INFO:best_pse_tuck_PH.py:length pred pos 	4695
+AP: 0.9876 - AUC-ROC: 0.9902 - AUC-PR: 0.9876 - P@50: 1.0000 > 596
+INFO:best_pse_tuck_PH.py:length pred pos 	2798
+AP: 0.9783 - AUC-ROC: 0.9850 - AUC-PR: 0.9783 - P@50: 0.9800 > 597
+INFO:best_pse_tuck_PH.py:length pred pos 	2889
+AP: 0.9790 - AUC-ROC: 0.9845 - AUC-PR: 0.9790 - P@50: 1.0000 > 598
+INFO:best_pse_tuck_PH.py:length pred pos 	2063
+AP: 0.9739 - AUC-ROC: 0.9823 - AUC-PR: 0.9739 - P@50: 0.9800 > 599
+INFO:best_pse_tuck_PH.py:length pred pos 	2782
+AP: 0.9706 - AUC-ROC: 0.9786 - AUC-PR: 0.9706 - P@50: 0.9800 > 600
+INFO:best_pse_tuck_PH.py:length pred pos 	1962
+AP: 0.9835 - AUC-ROC: 0.9873 - AUC-PR: 0.9835 - P@50: 1.0000 > 601
+INFO:best_pse_tuck_PH.py:length pred pos 	827
+AP: 0.9863 - AUC-ROC: 0.9877 - AUC-PR: 0.9863 - P@50: 1.0000 > 602
+INFO:best_pse_tuck_PH.py:length pred pos 	3856
+AP: 0.9739 - AUC-ROC: 0.9826 - AUC-PR: 0.9739 - P@50: 0.9600 > 603
+INFO:best_pse_tuck_PH.py:length pred pos 	992
+AP: 0.9872 - AUC-ROC: 0.9903 - AUC-PR: 0.9872 - P@50: 1.0000 > 604
+INFO:best_pse_tuck_PH.py:length pred pos 	3323
+AP: 0.9802 - AUC-ROC: 0.9850 - AUC-PR: 0.9802 - P@50: 1.0000 > 605
+INFO:best_pse_tuck_PH.py:length pred pos 	2651
+AP: 0.9745 - AUC-ROC: 0.9815 - AUC-PR: 0.9745 - P@50: 0.9800 > 606
+INFO:best_pse_tuck_PH.py:length pred pos 	6715
+AP: 0.9806 - AUC-ROC: 0.9858 - AUC-PR: 0.9806 - P@50: 1.0000 > 607
+INFO:best_pse_tuck_PH.py:length pred pos 	4002
+AP: 0.9742 - AUC-ROC: 0.9804 - AUC-PR: 0.9742 - P@50: 1.0000 > 608
+INFO:best_pse_tuck_PH.py:length pred pos 	19376
+AP: 0.9691 - AUC-ROC: 0.9781 - AUC-PR: 0.9691 - P@50: 0.9600 > 609
+INFO:best_pse_tuck_PH.py:length pred pos 	653
+AP: 0.9808 - AUC-ROC: 0.9863 - AUC-PR: 0.9808 - P@50: 1.0000 > 610
+INFO:best_pse_tuck_PH.py:length pred pos 	14354
+AP: 0.9552 - AUC-ROC: 0.9699 - AUC-PR: 0.9552 - P@50: 0.9800 > 611
+INFO:best_pse_tuck_PH.py:length pred pos 	633
+AP: 0.9874 - AUC-ROC: 0.9899 - AUC-PR: 0.9874 - P@50: 1.0000 > 612
+INFO:best_pse_tuck_PH.py:length pred pos 	2183
+AP: 0.9765 - AUC-ROC: 0.9819 - AUC-PR: 0.9765 - P@50: 1.0000 > 613
+INFO:best_pse_tuck_PH.py:length pred pos 	1206
+AP: 0.9526 - AUC-ROC: 0.9733 - AUC-PR: 0.9526 - P@50: 0.9600 > 614
+INFO:best_pse_tuck_PH.py:length pred pos 	1956
+AP: 0.9874 - AUC-ROC: 0.9891 - AUC-PR: 0.9874 - P@50: 1.0000 > 615
+INFO:best_pse_tuck_PH.py:length pred pos 	3268
+AP: 0.9796 - AUC-ROC: 0.9835 - AUC-PR: 0.9796 - P@50: 1.0000 > 616
+INFO:best_pse_tuck_PH.py:length pred pos 	1974
+AP: 0.9906 - AUC-ROC: 0.9919 - AUC-PR: 0.9906 - P@50: 1.0000 > 617
+INFO:best_pse_tuck_PH.py:length pred pos 	3319
+AP: 0.9626 - AUC-ROC: 0.9745 - AUC-PR: 0.9626 - P@50: 0.9600 > 618
+INFO:best_pse_tuck_PH.py:length pred pos 	2750
+AP: 0.9802 - AUC-ROC: 0.9861 - AUC-PR: 0.9802 - P@50: 1.0000 > 619
+INFO:best_pse_tuck_PH.py:length pred pos 	1596
+AP: 0.9827 - AUC-ROC: 0.9880 - AUC-PR: 0.9827 - P@50: 0.9800 > 620
+INFO:best_pse_tuck_PH.py:length pred pos 	649
+AP: 0.9853 - AUC-ROC: 0.9899 - AUC-PR: 0.9853 - P@50: 1.0000 > 621
+INFO:best_pse_tuck_PH.py:length pred pos 	5599
+AP: 0.9802 - AUC-ROC: 0.9850 - AUC-PR: 0.9802 - P@50: 1.0000 > 622
+INFO:best_pse_tuck_PH.py:length pred pos 	1581
+AP: 0.9847 - AUC-ROC: 0.9885 - AUC-PR: 0.9847 - P@50: 1.0000 > 623
+INFO:best_pse_tuck_PH.py:length pred pos 	3420
+AP: 0.9740 - AUC-ROC: 0.9821 - AUC-PR: 0.9740 - P@50: 1.0000 > 624
+INFO:best_pse_tuck_PH.py:length pred pos 	4485
+AP: 0.9712 - AUC-ROC: 0.9797 - AUC-PR: 0.9712 - P@50: 1.0000 > 625
+INFO:best_pse_tuck_PH.py:length pred pos 	13144
+AP: 0.9657 - AUC-ROC: 0.9759 - AUC-PR: 0.9657 - P@50: 1.0000 > 626
+INFO:best_pse_tuck_PH.py:length pred pos 	1025
+AP: 0.9818 - AUC-ROC: 0.9859 - AUC-PR: 0.9818 - P@50: 1.0000 > 627
+INFO:best_pse_tuck_PH.py:length pred pos 	853
+AP: 0.9859 - AUC-ROC: 0.9903 - AUC-PR: 0.9859 - P@50: 0.9800 > 628
+INFO:best_pse_tuck_PH.py:length pred pos 	1613
+AP: 0.9844 - AUC-ROC: 0.9879 - AUC-PR: 0.9844 - P@50: 1.0000 > 629
+INFO:best_pse_tuck_PH.py:length pred pos 	788
+AP: 0.9900 - AUC-ROC: 0.9920 - AUC-PR: 0.9900 - P@50: 1.0000 > 630
+INFO:best_pse_tuck_PH.py:length pred pos 	8164
+AP: 0.9665 - AUC-ROC: 0.9771 - AUC-PR: 0.9665 - P@50: 1.0000 > 631
+INFO:best_pse_tuck_PH.py:length pred pos 	6472
+AP: 0.9746 - AUC-ROC: 0.9813 - AUC-PR: 0.9746 - P@50: 0.9800 > 632
+INFO:best_pse_tuck_PH.py:length pred pos 	8154
+AP: 0.9706 - AUC-ROC: 0.9790 - AUC-PR: 0.9706 - P@50: 1.0000 > 633
+INFO:best_pse_tuck_PH.py:length pred pos 	1555
+AP: 0.9789 - AUC-ROC: 0.9854 - AUC-PR: 0.9789 - P@50: 0.9800 > 634
+INFO:best_pse_tuck_PH.py:length pred pos 	11316
+AP: 0.9710 - AUC-ROC: 0.9797 - AUC-PR: 0.9710 - P@50: 0.9800 > 635
+INFO:best_pse_tuck_PH.py:length pred pos 	19365
+AP: 0.9618 - AUC-ROC: 0.9743 - AUC-PR: 0.9618 - P@50: 0.9600 > 636
+INFO:best_pse_tuck_PH.py:length pred pos 	16371
+AP: 0.9727 - AUC-ROC: 0.9791 - AUC-PR: 0.9727 - P@50: 1.0000 > 637
+INFO:best_pse_tuck_PH.py:length pred pos 	2455
+AP: 0.9824 - AUC-ROC: 0.9869 - AUC-PR: 0.9824 - P@50: 1.0000 > 638
+INFO:best_pse_tuck_PH.py:length pred pos 	10025
+AP: 0.9590 - AUC-ROC: 0.9725 - AUC-PR: 0.9590 - P@50: 0.9600 > 639
+INFO:best_pse_tuck_PH.py:length pred pos 	6050
+AP: 0.9714 - AUC-ROC: 0.9782 - AUC-PR: 0.9714 - P@50: 1.0000 > 640
+INFO:best_pse_tuck_PH.py:length pred pos 	2652
+AP: 0.9793 - AUC-ROC: 0.9855 - AUC-PR: 0.9793 - P@50: 1.0000 > 641
+INFO:best_pse_tuck_PH.py:length pred pos 	1751
+AP: 0.9770 - AUC-ROC: 0.9841 - AUC-PR: 0.9770 - P@50: 1.0000 > 642
+INFO:best_pse_tuck_PH.py:length pred pos 	7553
+AP: 0.9732 - AUC-ROC: 0.9806 - AUC-PR: 0.9732 - P@50: 1.0000 > 643
+INFO:best_pse_tuck_PH.py:length pred pos 	2828
+AP: 0.9732 - AUC-ROC: 0.9831 - AUC-PR: 0.9732 - P@50: 0.9800 > 644
+INFO:best_pse_tuck_PH.py:length pred pos 	4227
+AP: 0.9681 - AUC-ROC: 0.9775 - AUC-PR: 0.9681 - P@50: 0.9800 > 645
+INFO:best_pse_tuck_PH.py:length pred pos 	1997
+AP: 0.9772 - AUC-ROC: 0.9826 - AUC-PR: 0.9772 - P@50: 1.0000 > 646
+INFO:best_pse_tuck_PH.py:length pred pos 	646
+AP: 0.9915 - AUC-ROC: 0.9925 - AUC-PR: 0.9915 - P@50: 1.0000 > 647
+INFO:best_pse_tuck_PH.py:length pred pos 	14192
+AP: 0.9669 - AUC-ROC: 0.9756 - AUC-PR: 0.9669 - P@50: 1.0000 > 648
+INFO:best_pse_tuck_PH.py:length pred pos 	3308
+AP: 0.9737 - AUC-ROC: 0.9821 - AUC-PR: 0.9737 - P@50: 1.0000 > 649
+INFO:best_pse_tuck_PH.py:length pred pos 	1287
+AP: 0.9849 - AUC-ROC: 0.9880 - AUC-PR: 0.9849 - P@50: 1.0000 > 650
+INFO:best_pse_tuck_PH.py:length pred pos 	1109
+AP: 0.9849 - AUC-ROC: 0.9886 - AUC-PR: 0.9849 - P@50: 1.0000 > 651
+INFO:best_pse_tuck_PH.py:length pred pos 	1461
+AP: 0.9866 - AUC-ROC: 0.9903 - AUC-PR: 0.9866 - P@50: 0.9800 > 652
+INFO:best_pse_tuck_PH.py:length pred pos 	15235
+AP: 0.9711 - AUC-ROC: 0.9796 - AUC-PR: 0.9711 - P@50: 0.9600 > 653
+INFO:best_pse_tuck_PH.py:length pred pos 	502
+AP: 0.9845 - AUC-ROC: 0.9873 - AUC-PR: 0.9845 - P@50: 1.0000 > 654
+INFO:best_pse_tuck_PH.py:length pred pos 	516
+AP: 0.9806 - AUC-ROC: 0.9882 - AUC-PR: 0.9806 - P@50: 0.9800 > 655
+INFO:best_pse_tuck_PH.py:length pred pos 	3168
+AP: 0.9864 - AUC-ROC: 0.9895 - AUC-PR: 0.9864 - P@50: 1.0000 > 656
+INFO:best_pse_tuck_PH.py:length pred pos 	3528
+AP: 0.9853 - AUC-ROC: 0.9881 - AUC-PR: 0.9853 - P@50: 1.0000 > 657
+INFO:best_pse_tuck_PH.py:length pred pos 	2935
+AP: 0.9773 - AUC-ROC: 0.9833 - AUC-PR: 0.9773 - P@50: 1.0000 > 658
+INFO:best_pse_tuck_PH.py:length pred pos 	3331
+AP: 0.9807 - AUC-ROC: 0.9859 - AUC-PR: 0.9807 - P@50: 1.0000 > 659
+INFO:best_pse_tuck_PH.py:length pred pos 	989
+AP: 0.9900 - AUC-ROC: 0.9927 - AUC-PR: 0.9900 - P@50: 1.0000 > 660
+INFO:best_pse_tuck_PH.py:length pred pos 	5416
+AP: 0.9733 - AUC-ROC: 0.9805 - AUC-PR: 0.9733 - P@50: 1.0000 > 661
+INFO:best_pse_tuck_PH.py:length pred pos 	1371
+AP: 0.9657 - AUC-ROC: 0.9764 - AUC-PR: 0.9657 - P@50: 1.0000 > 662
+INFO:best_pse_tuck_PH.py:length pred pos 	514
+AP: 0.9822 - AUC-ROC: 0.9876 - AUC-PR: 0.9822 - P@50: 0.9800 > 663
+INFO:best_pse_tuck_PH.py:length pred pos 	5654
+AP: 0.9810 - AUC-ROC: 0.9853 - AUC-PR: 0.9810 - P@50: 1.0000 > 664
+INFO:best_pse_tuck_PH.py:length pred pos 	23515
+AP: 0.9702 - AUC-ROC: 0.9783 - AUC-PR: 0.9702 - P@50: 1.0000 > 665
+INFO:best_pse_tuck_PH.py:length pred pos 	3131
+AP: 0.9706 - AUC-ROC: 0.9788 - AUC-PR: 0.9706 - P@50: 1.0000 > 666
+INFO:best_pse_tuck_PH.py:length pred pos 	1355
+AP: 0.9884 - AUC-ROC: 0.9902 - AUC-PR: 0.9884 - P@50: 1.0000 > 667
+INFO:best_pse_tuck_PH.py:length pred pos 	1907
+AP: 0.9769 - AUC-ROC: 0.9838 - AUC-PR: 0.9769 - P@50: 1.0000 > 668
+INFO:best_pse_tuck_PH.py:length pred pos 	551
+AP: 0.9876 - AUC-ROC: 0.9902 - AUC-PR: 0.9876 - P@50: 1.0000 > 669
+INFO:best_pse_tuck_PH.py:length pred pos 	5661
+AP: 0.9755 - AUC-ROC: 0.9820 - AUC-PR: 0.9755 - P@50: 1.0000 > 670
+INFO:best_pse_tuck_PH.py:length pred pos 	516
+AP: 0.9727 - AUC-ROC: 0.9845 - AUC-PR: 0.9727 - P@50: 0.9600 > 671
+INFO:best_pse_tuck_PH.py:length pred pos 	17060
+AP: 0.9660 - AUC-ROC: 0.9753 - AUC-PR: 0.9660 - P@50: 1.0000 > 672
+INFO:best_pse_tuck_PH.py:length pred pos 	3209
+AP: 0.9801 - AUC-ROC: 0.9869 - AUC-PR: 0.9801 - P@50: 0.9800 > 673
+INFO:best_pse_tuck_PH.py:length pred pos 	12141
+AP: 0.9630 - AUC-ROC: 0.9739 - AUC-PR: 0.9630 - P@50: 1.0000 > 674
+INFO:best_pse_tuck_PH.py:length pred pos 	4048
+AP: 0.9801 - AUC-ROC: 0.9862 - AUC-PR: 0.9801 - P@50: 1.0000 > 675
+INFO:best_pse_tuck_PH.py:length pred pos 	2281
+AP: 0.9785 - AUC-ROC: 0.9847 - AUC-PR: 0.9785 - P@50: 1.0000 > 676
+INFO:best_pse_tuck_PH.py:length pred pos 	3586
+AP: 0.9750 - AUC-ROC: 0.9826 - AUC-PR: 0.9750 - P@50: 1.0000 > 677
+INFO:best_pse_tuck_PH.py:length pred pos 	12409
+AP: 0.9635 - AUC-ROC: 0.9744 - AUC-PR: 0.9635 - P@50: 0.9800 > 678
+INFO:best_pse_tuck_PH.py:length pred pos 	1473
+AP: 0.9913 - AUC-ROC: 0.9927 - AUC-PR: 0.9913 - P@50: 1.0000 > 679
+INFO:best_pse_tuck_PH.py:length pred pos 	23894
+AP: 0.9754 - AUC-ROC: 0.9821 - AUC-PR: 0.9754 - P@50: 0.9800 > 680
+INFO:best_pse_tuck_PH.py:length pred pos 	913
+AP: 0.9924 - AUC-ROC: 0.9944 - AUC-PR: 0.9924 - P@50: 1.0000 > 681
+INFO:best_pse_tuck_PH.py:length pred pos 	7359
+AP: 0.9722 - AUC-ROC: 0.9799 - AUC-PR: 0.9722 - P@50: 1.0000 > 682
+INFO:best_pse_tuck_PH.py:length pred pos 	1805
+AP: 0.9734 - AUC-ROC: 0.9829 - AUC-PR: 0.9734 - P@50: 1.0000 > 683
+INFO:best_pse_tuck_PH.py:length pred pos 	8355
+AP: 0.9706 - AUC-ROC: 0.9790 - AUC-PR: 0.9706 - P@50: 1.0000 > 684
+INFO:best_pse_tuck_PH.py:length pred pos 	3399
+AP: 0.9846 - AUC-ROC: 0.9888 - AUC-PR: 0.9846 - P@50: 1.0000 > 685
+INFO:best_pse_tuck_PH.py:length pred pos 	1553
+AP: 0.9865 - AUC-ROC: 0.9898 - AUC-PR: 0.9865 - P@50: 1.0000 > 686
+INFO:best_pse_tuck_PH.py:length pred pos 	991
+AP: 0.9888 - AUC-ROC: 0.9903 - AUC-PR: 0.9888 - P@50: 1.0000 > 687
+INFO:best_pse_tuck_PH.py:length pred pos 	516
+AP: 0.9917 - AUC-ROC: 0.9923 - AUC-PR: 0.9917 - P@50: 1.0000 > 688
+INFO:best_pse_tuck_PH.py:length pred pos 	2679
+AP: 0.9765 - AUC-ROC: 0.9835 - AUC-PR: 0.9765 - P@50: 1.0000 > 689
+INFO:best_pse_tuck_PH.py:length pred pos 	1691
+AP: 0.9820 - AUC-ROC: 0.9880 - AUC-PR: 0.9820 - P@50: 0.9800 > 690
+INFO:best_pse_tuck_PH.py:length pred pos 	1313
+AP: 0.9870 - AUC-ROC: 0.9908 - AUC-PR: 0.9870 - P@50: 0.9800 > 691
+INFO:best_pse_tuck_PH.py:length pred pos 	7720
+AP: 0.9645 - AUC-ROC: 0.9743 - AUC-PR: 0.9645 - P@50: 1.0000 > 692
+INFO:best_pse_tuck_PH.py:length pred pos 	1685
+AP: 0.9747 - AUC-ROC: 0.9811 - AUC-PR: 0.9747 - P@50: 1.0000 > 693
+INFO:best_pse_tuck_PH.py:length pred pos 	9583
+AP: 0.9694 - AUC-ROC: 0.9793 - AUC-PR: 0.9694 - P@50: 1.0000 > 694
+INFO:best_pse_tuck_PH.py:length pred pos 	17808
+AP: 0.9723 - AUC-ROC: 0.9795 - AUC-PR: 0.9723 - P@50: 0.9400 > 695
+INFO:best_pse_tuck_PH.py:length pred pos 	2763
+AP: 0.9769 - AUC-ROC: 0.9836 - AUC-PR: 0.9769 - P@50: 1.0000 > 696
+INFO:best_pse_tuck_PH.py:length pred pos 	624
+AP: 0.9919 - AUC-ROC: 0.9935 - AUC-PR: 0.9919 - P@50: 1.0000 > 697
+INFO:best_pse_tuck_PH.py:length pred pos 	530
+AP: 0.9700 - AUC-ROC: 0.9817 - AUC-PR: 0.9700 - P@50: 0.9800 > 698
+INFO:best_pse_tuck_PH.py:length pred pos 	3528
+AP: 0.9789 - AUC-ROC: 0.9847 - AUC-PR: 0.9789 - P@50: 1.0000 > 699
+INFO:best_pse_tuck_PH.py:length pred pos 	1552
+AP: 0.9917 - AUC-ROC: 0.9929 - AUC-PR: 0.9917 - P@50: 1.0000 > 700
+INFO:best_pse_tuck_PH.py:length pred pos 	4026
+AP: 0.9834 - AUC-ROC: 0.9872 - AUC-PR: 0.9834 - P@50: 1.0000 > 701
+INFO:best_pse_tuck_PH.py:length pred pos 	3117
+AP: 0.9832 - AUC-ROC: 0.9867 - AUC-PR: 0.9832 - P@50: 1.0000 > 702
+INFO:best_pse_tuck_PH.py:length pred pos 	7710
+AP: 0.9687 - AUC-ROC: 0.9786 - AUC-PR: 0.9687 - P@50: 0.9800 > 703
+INFO:best_pse_tuck_PH.py:length pred pos 	17658
+AP: 0.9673 - AUC-ROC: 0.9772 - AUC-PR: 0.9673 - P@50: 0.9800 > 704
+INFO:best_pse_tuck_PH.py:length pred pos 	5053
+AP: 0.9777 - AUC-ROC: 0.9845 - AUC-PR: 0.9777 - P@50: 1.0000 > 705
+INFO:best_pse_tuck_PH.py:length pred pos 	1060
+AP: 0.9963 - AUC-ROC: 0.9966 - AUC-PR: 0.9963 - P@50: 1.0000 > 706
+INFO:best_pse_tuck_PH.py:length pred pos 	3881
+AP: 0.9786 - AUC-ROC: 0.9840 - AUC-PR: 0.9786 - P@50: 1.0000 > 707
+INFO:best_pse_tuck_PH.py:length pred pos 	7111
+AP: 0.9626 - AUC-ROC: 0.9753 - AUC-PR: 0.9626 - P@50: 0.9800 > 708
+INFO:best_pse_tuck_PH.py:length pred pos 	568
+AP: 0.9827 - AUC-ROC: 0.9846 - AUC-PR: 0.9827 - P@50: 1.0000 > 709
+INFO:best_pse_tuck_PH.py:length pred pos 	1719
+AP: 0.9821 - AUC-ROC: 0.9868 - AUC-PR: 0.9821 - P@50: 1.0000 > 710
+INFO:best_pse_tuck_PH.py:length pred pos 	848
+AP: 0.9828 - AUC-ROC: 0.9872 - AUC-PR: 0.9828 - P@50: 1.0000 > 711
+INFO:best_pse_tuck_PH.py:length pred pos 	4595
+AP: 0.9859 - AUC-ROC: 0.9889 - AUC-PR: 0.9859 - P@50: 1.0000 > 712
+INFO:best_pse_tuck_PH.py:length pred pos 	12518
+AP: 0.9690 - AUC-ROC: 0.9768 - AUC-PR: 0.9690 - P@50: 1.0000 > 713
+INFO:best_pse_tuck_PH.py:length pred pos 	12906
+AP: 0.9594 - AUC-ROC: 0.9731 - AUC-PR: 0.9594 - P@50: 0.9800 > 714
+INFO:best_pse_tuck_PH.py:length pred pos 	2862
+AP: 0.9770 - AUC-ROC: 0.9828 - AUC-PR: 0.9770 - P@50: 1.0000 > 715
+INFO:best_pse_tuck_PH.py:length pred pos 	8257
+AP: 0.9775 - AUC-ROC: 0.9842 - AUC-PR: 0.9775 - P@50: 0.9800 > 716
+INFO:best_pse_tuck_PH.py:length pred pos 	2993
+AP: 0.9770 - AUC-ROC: 0.9838 - AUC-PR: 0.9770 - P@50: 1.0000 > 717
+INFO:best_pse_tuck_PH.py:length pred pos 	2319
+AP: 0.9815 - AUC-ROC: 0.9855 - AUC-PR: 0.9815 - P@50: 1.0000 > 718
+INFO:best_pse_tuck_PH.py:length pred pos 	2464
+AP: 0.9878 - AUC-ROC: 0.9905 - AUC-PR: 0.9878 - P@50: 1.0000 > 719
+INFO:best_pse_tuck_PH.py:length pred pos 	1872
+AP: 0.9793 - AUC-ROC: 0.9871 - AUC-PR: 0.9793 - P@50: 0.9600 > 720
+INFO:best_pse_tuck_PH.py:length pred pos 	1030
+AP: 0.9902 - AUC-ROC: 0.9927 - AUC-PR: 0.9902 - P@50: 1.0000 > 721
+INFO:best_pse_tuck_PH.py:length pred pos 	9240
+AP: 0.9770 - AUC-ROC: 0.9832 - AUC-PR: 0.9770 - P@50: 1.0000 > 722
+INFO:best_pse_tuck_PH.py:length pred pos 	685
+AP: 0.9876 - AUC-ROC: 0.9904 - AUC-PR: 0.9876 - P@50: 1.0000 > 723
+INFO:best_pse_tuck_PH.py:length pred pos 	555
+AP: 0.9703 - AUC-ROC: 0.9808 - AUC-PR: 0.9703 - P@50: 0.9800 > 724
+INFO:best_pse_tuck_PH.py:length pred pos 	9215
+AP: 0.9668 - AUC-ROC: 0.9759 - AUC-PR: 0.9668 - P@50: 0.9800 > 725
+INFO:best_pse_tuck_PH.py:length pred pos 	1016
+AP: 0.9738 - AUC-ROC: 0.9829 - AUC-PR: 0.9738 - P@50: 0.9800 > 726
+INFO:best_pse_tuck_PH.py:length pred pos 	972
+AP: 0.9875 - AUC-ROC: 0.9907 - AUC-PR: 0.9875 - P@50: 1.0000 > 727
+INFO:best_pse_tuck_PH.py:length pred pos 	10633
+AP: 0.9689 - AUC-ROC: 0.9782 - AUC-PR: 0.9689 - P@50: 0.9800 > 728
+INFO:best_pse_tuck_PH.py:length pred pos 	1244
+AP: 0.9772 - AUC-ROC: 0.9832 - AUC-PR: 0.9772 - P@50: 1.0000 > 729
+INFO:best_pse_tuck_PH.py:length pred pos 	12062
+AP: 0.9731 - AUC-ROC: 0.9809 - AUC-PR: 0.9731 - P@50: 1.0000 > 730
+INFO:best_pse_tuck_PH.py:length pred pos 	8928
+AP: 0.9726 - AUC-ROC: 0.9805 - AUC-PR: 0.9726 - P@50: 0.9800 > 731
+INFO:best_pse_tuck_PH.py:length pred pos 	18779
+AP: 0.9646 - AUC-ROC: 0.9750 - AUC-PR: 0.9646 - P@50: 1.0000 > 732
+INFO:best_pse_tuck_PH.py:length pred pos 	760
+AP: 0.9872 - AUC-ROC: 0.9904 - AUC-PR: 0.9872 - P@50: 1.0000 > 733
+INFO:best_pse_tuck_PH.py:length pred pos 	1072
+AP: 0.9870 - AUC-ROC: 0.9889 - AUC-PR: 0.9870 - P@50: 1.0000 > 734
+INFO:best_pse_tuck_PH.py:length pred pos 	6437
+AP: 0.9713 - AUC-ROC: 0.9797 - AUC-PR: 0.9713 - P@50: 1.0000 > 735
+INFO:best_pse_tuck_PH.py:length pred pos 	7225
+AP: 0.9744 - AUC-ROC: 0.9813 - AUC-PR: 0.9744 - P@50: 1.0000 > 736
+INFO:best_pse_tuck_PH.py:length pred pos 	11070
+AP: 0.9694 - AUC-ROC: 0.9788 - AUC-PR: 0.9694 - P@50: 0.9800 > 737
+INFO:best_pse_tuck_PH.py:length pred pos 	783
+AP: 0.9825 - AUC-ROC: 0.9870 - AUC-PR: 0.9825 - P@50: 0.9800 > 738
+INFO:best_pse_tuck_PH.py:length pred pos 	9201
+AP: 0.9654 - AUC-ROC: 0.9761 - AUC-PR: 0.9654 - P@50: 0.9800 > 739
+INFO:best_pse_tuck_PH.py:length pred pos 	6052
+AP: 0.9726 - AUC-ROC: 0.9806 - AUC-PR: 0.9726 - P@50: 0.9800 > 740
+INFO:best_pse_tuck_PH.py:length pred pos 	14143
+AP: 0.9542 - AUC-ROC: 0.9689 - AUC-PR: 0.9542 - P@50: 1.0000 > 741
+INFO:best_pse_tuck_PH.py:length pred pos 	657
+AP: 0.9864 - AUC-ROC: 0.9894 - AUC-PR: 0.9864 - P@50: 1.0000 > 742
+INFO:best_pse_tuck_PH.py:length pred pos 	634
+AP: 0.9897 - AUC-ROC: 0.9916 - AUC-PR: 0.9897 - P@50: 1.0000 > 743
+INFO:best_pse_tuck_PH.py:length pred pos 	507
+AP: 0.9810 - AUC-ROC: 0.9853 - AUC-PR: 0.9810 - P@50: 1.0000 > 744
+INFO:best_pse_tuck_PH.py:length pred pos 	1528
+AP: 0.9886 - AUC-ROC: 0.9916 - AUC-PR: 0.9886 - P@50: 0.9800 > 745
+INFO:best_pse_tuck_PH.py:length pred pos 	1986
+AP: 0.9825 - AUC-ROC: 0.9870 - AUC-PR: 0.9825 - P@50: 1.0000 > 746
+INFO:best_pse_tuck_PH.py:length pred pos 	6782
+AP: 0.9755 - AUC-ROC: 0.9815 - AUC-PR: 0.9755 - P@50: 1.0000 > 747
+INFO:best_pse_tuck_PH.py:length pred pos 	667
+AP: 0.9949 - AUC-ROC: 0.9952 - AUC-PR: 0.9949 - P@50: 1.0000 > 748
+INFO:best_pse_tuck_PH.py:length pred pos 	5447
+AP: 0.9623 - AUC-ROC: 0.9748 - AUC-PR: 0.9623 - P@50: 0.9800 > 749
+INFO:best_pse_tuck_PH.py:length pred pos 	6854
+AP: 0.9749 - AUC-ROC: 0.9819 - AUC-PR: 0.9749 - P@50: 1.0000 > 750
+INFO:best_pse_tuck_PH.py:length pred pos 	3448
+AP: 0.9832 - AUC-ROC: 0.9873 - AUC-PR: 0.9832 - P@50: 1.0000 > 751
+INFO:best_pse_tuck_PH.py:length pred pos 	2461
+AP: 0.9798 - AUC-ROC: 0.9840 - AUC-PR: 0.9798 - P@50: 1.0000 > 752
+INFO:best_pse_tuck_PH.py:length pred pos 	1711
+AP: 0.9831 - AUC-ROC: 0.9877 - AUC-PR: 0.9831 - P@50: 1.0000 > 753
+INFO:best_pse_tuck_PH.py:length pred pos 	21781
+AP: 0.9709 - AUC-ROC: 0.9787 - AUC-PR: 0.9709 - P@50: 0.9800 > 754
+INFO:best_pse_tuck_PH.py:length pred pos 	3479
+AP: 0.9689 - AUC-ROC: 0.9782 - AUC-PR: 0.9689 - P@50: 1.0000 > 755
+INFO:best_pse_tuck_PH.py:length pred pos 	1215
+AP: 0.9832 - AUC-ROC: 0.9881 - AUC-PR: 0.9832 - P@50: 1.0000 > 756
+INFO:best_pse_tuck_PH.py:length pred pos 	13602
+AP: 0.9744 - AUC-ROC: 0.9806 - AUC-PR: 0.9744 - P@50: 1.0000 > 757
+INFO:best_pse_tuck_PH.py:length pred pos 	4757
+AP: 0.9822 - AUC-ROC: 0.9863 - AUC-PR: 0.9822 - P@50: 1.0000 > 758
+INFO:best_pse_tuck_PH.py:length pred pos 	6410
+AP: 0.9750 - AUC-ROC: 0.9818 - AUC-PR: 0.9750 - P@50: 1.0000 > 759
+INFO:best_pse_tuck_PH.py:length pred pos 	1669
+AP: 0.9865 - AUC-ROC: 0.9889 - AUC-PR: 0.9865 - P@50: 1.0000 > 760
+INFO:best_pse_tuck_PH.py:length pred pos 	912
+AP: 0.9911 - AUC-ROC: 0.9926 - AUC-PR: 0.9911 - P@50: 1.0000 > 761
+INFO:best_pse_tuck_PH.py:length pred pos 	1668
+AP: 0.9802 - AUC-ROC: 0.9839 - AUC-PR: 0.9802 - P@50: 1.0000 > 762
+INFO:best_pse_tuck_PH.py:length pred pos 	1358
+AP: 0.9853 - AUC-ROC: 0.9886 - AUC-PR: 0.9853 - P@50: 1.0000 > 763
+INFO:best_pse_tuck_PH.py:length pred pos 	2694
+AP: 0.9791 - AUC-ROC: 0.9850 - AUC-PR: 0.9791 - P@50: 1.0000 > 764
+INFO:best_pse_tuck_PH.py:length pred pos 	1695
+AP: 0.9917 - AUC-ROC: 0.9932 - AUC-PR: 0.9917 - P@50: 1.0000 > 765
+INFO:best_pse_tuck_PH.py:length pred pos 	18419
+AP: 0.9574 - AUC-ROC: 0.9712 - AUC-PR: 0.9574 - P@50: 0.9600 > 766
+INFO:best_pse_tuck_PH.py:length pred pos 	2307
+AP: 0.9834 - AUC-ROC: 0.9888 - AUC-PR: 0.9834 - P@50: 0.9800 > 767
+INFO:best_pse_tuck_PH.py:length pred pos 	1331
+AP: 0.9848 - AUC-ROC: 0.9897 - AUC-PR: 0.9848 - P@50: 1.0000 > 768
+INFO:best_pse_tuck_PH.py:length pred pos 	2619
+AP: 0.9857 - AUC-ROC: 0.9905 - AUC-PR: 0.9857 - P@50: 1.0000 > 769
+INFO:best_pse_tuck_PH.py:length pred pos 	3557
+AP: 0.9776 - AUC-ROC: 0.9832 - AUC-PR: 0.9776 - P@50: 1.0000 > 770
+INFO:best_pse_tuck_PH.py:length pred pos 	9356
+AP: 0.9717 - AUC-ROC: 0.9792 - AUC-PR: 0.9717 - P@50: 1.0000 > 771
+INFO:best_pse_tuck_PH.py:length pred pos 	847
+AP: 0.9849 - AUC-ROC: 0.9891 - AUC-PR: 0.9849 - P@50: 0.9800 > 772
+INFO:best_pse_tuck_PH.py:length pred pos 	1181
+AP: 0.9830 - AUC-ROC: 0.9881 - AUC-PR: 0.9830 - P@50: 1.0000 > 773
+INFO:best_pse_tuck_PH.py:length pred pos 	3016
+AP: 0.9785 - AUC-ROC: 0.9843 - AUC-PR: 0.9785 - P@50: 1.0000 > 774
+INFO:best_pse_tuck_PH.py:length pred pos 	810
+AP: 0.9696 - AUC-ROC: 0.9815 - AUC-PR: 0.9696 - P@50: 0.9800 > 775
+INFO:best_pse_tuck_PH.py:length pred pos 	565
+AP: 0.9890 - AUC-ROC: 0.9911 - AUC-PR: 0.9890 - P@50: 1.0000 > 776
+INFO:best_pse_tuck_PH.py:length pred pos 	670
+AP: 0.9918 - AUC-ROC: 0.9939 - AUC-PR: 0.9918 - P@50: 1.0000 > 777
+INFO:best_pse_tuck_PH.py:length pred pos 	3893
+AP: 0.9803 - AUC-ROC: 0.9845 - AUC-PR: 0.9803 - P@50: 1.0000 > 778
+INFO:best_pse_tuck_PH.py:length pred pos 	7411
+AP: 0.9721 - AUC-ROC: 0.9803 - AUC-PR: 0.9721 - P@50: 1.0000 > 779
+INFO:best_pse_tuck_PH.py:length pred pos 	3405
+AP: 0.9774 - AUC-ROC: 0.9832 - AUC-PR: 0.9774 - P@50: 1.0000 > 780
+INFO:best_pse_tuck_PH.py:length pred pos 	1703
+AP: 0.9815 - AUC-ROC: 0.9876 - AUC-PR: 0.9815 - P@50: 0.9800 > 781
+INFO:best_pse_tuck_PH.py:length pred pos 	7425
+AP: 0.9763 - AUC-ROC: 0.9829 - AUC-PR: 0.9763 - P@50: 0.9800 > 782
+INFO:best_pse_tuck_PH.py:length pred pos 	3382
+AP: 0.9726 - AUC-ROC: 0.9810 - AUC-PR: 0.9726 - P@50: 1.0000 > 783
+INFO:best_pse_tuck_PH.py:length pred pos 	2835
+AP: 0.9843 - AUC-ROC: 0.9880 - AUC-PR: 0.9843 - P@50: 1.0000 > 784
+INFO:best_pse_tuck_PH.py:length pred pos 	663
+AP: 0.9792 - AUC-ROC: 0.9914 - AUC-PR: 0.9792 - P@50: 0.9600 > 785
+INFO:best_pse_tuck_PH.py:length pred pos 	5599
+AP: 0.9711 - AUC-ROC: 0.9801 - AUC-PR: 0.9711 - P@50: 0.9800 > 786
+INFO:best_pse_tuck_PH.py:length pred pos 	1979
+AP: 0.9799 - AUC-ROC: 0.9848 - AUC-PR: 0.9799 - P@50: 1.0000 > 787
+INFO:best_pse_tuck_PH.py:length pred pos 	2197
+AP: 0.9695 - AUC-ROC: 0.9802 - AUC-PR: 0.9695 - P@50: 1.0000 > 788
+INFO:best_pse_tuck_PH.py:length pred pos 	4736
+AP: 0.9733 - AUC-ROC: 0.9813 - AUC-PR: 0.9733 - P@50: 0.9600 > 789
+INFO:best_pse_tuck_PH.py:length pred pos 	1564
+AP: 0.9791 - AUC-ROC: 0.9847 - AUC-PR: 0.9791 - P@50: 1.0000 > 790
+INFO:best_pse_tuck_PH.py:length pred pos 	13728
+AP: 0.9641 - AUC-ROC: 0.9751 - AUC-PR: 0.9641 - P@50: 1.0000 > 791
+INFO:best_pse_tuck_PH.py:length pred pos 	3470
+AP: 0.9782 - AUC-ROC: 0.9841 - AUC-PR: 0.9782 - P@50: 0.9800 > 792
+INFO:best_pse_tuck_PH.py:length pred pos 	1967
+AP: 0.9831 - AUC-ROC: 0.9873 - AUC-PR: 0.9831 - P@50: 0.9800 > 793
+INFO:best_pse_tuck_PH.py:length pred pos 	1147
+AP: 0.9769 - AUC-ROC: 0.9856 - AUC-PR: 0.9769 - P@50: 0.9800 > 794
+INFO:best_pse_tuck_PH.py:length pred pos 	7035
+AP: 0.9698 - AUC-ROC: 0.9791 - AUC-PR: 0.9698 - P@50: 1.0000 > 795
+INFO:best_pse_tuck_PH.py:length pred pos 	11687
+AP: 0.9651 - AUC-ROC: 0.9756 - AUC-PR: 0.9651 - P@50: 1.0000 > 796
+INFO:best_pse_tuck_PH.py:length pred pos 	2611
+AP: 0.9762 - AUC-ROC: 0.9827 - AUC-PR: 0.9762 - P@50: 1.0000 > 797
+INFO:best_pse_tuck_PH.py:length pred pos 	2142
+AP: 0.9815 - AUC-ROC: 0.9857 - AUC-PR: 0.9815 - P@50: 1.0000 > 798
+INFO:best_pse_tuck_PH.py:length pred pos 	11952
+AP: 0.9505 - AUC-ROC: 0.9670 - AUC-PR: 0.9505 - P@50: 0.9200 > 799
+INFO:best_pse_tuck_PH.py:length pred pos 	5215
+AP: 0.9810 - AUC-ROC: 0.9853 - AUC-PR: 0.9810 - P@50: 1.0000 > 800
+INFO:best_pse_tuck_PH.py:length pred pos 	1362
+AP: 0.9755 - AUC-ROC: 0.9834 - AUC-PR: 0.9755 - P@50: 1.0000 > 801
+INFO:best_pse_tuck_PH.py:length pred pos 	1147
+AP: 0.9857 - AUC-ROC: 0.9893 - AUC-PR: 0.9857 - P@50: 1.0000 > 802
+INFO:best_pse_tuck_PH.py:length pred pos 	8223
+AP: 0.9698 - AUC-ROC: 0.9789 - AUC-PR: 0.9698 - P@50: 1.0000 > 803
+INFO:best_pse_tuck_PH.py:length pred pos 	8902
+AP: 0.9655 - AUC-ROC: 0.9759 - AUC-PR: 0.9655 - P@50: 0.9800 > 804
+INFO:best_pse_tuck_PH.py:length pred pos 	2577
+AP: 0.9838 - AUC-ROC: 0.9888 - AUC-PR: 0.9838 - P@50: 1.0000 > 805
+INFO:best_pse_tuck_PH.py:length pred pos 	2645
+AP: 0.9718 - AUC-ROC: 0.9789 - AUC-PR: 0.9718 - P@50: 1.0000 > 806
+INFO:best_pse_tuck_PH.py:length pred pos 	23848
+AP: 0.9679 - AUC-ROC: 0.9770 - AUC-PR: 0.9679 - P@50: 0.9800 > 807
+INFO:best_pse_tuck_PH.py:length pred pos 	4288
+AP: 0.9760 - AUC-ROC: 0.9824 - AUC-PR: 0.9760 - P@50: 1.0000 > 808
+INFO:best_pse_tuck_PH.py:length pred pos 	5523
+AP: 0.9684 - AUC-ROC: 0.9787 - AUC-PR: 0.9684 - P@50: 0.9800 > 809
+INFO:best_pse_tuck_PH.py:length pred pos 	540
+AP: 0.9953 - AUC-ROC: 0.9960 - AUC-PR: 0.9953 - P@50: 1.0000 > 810
+INFO:best_pse_tuck_PH.py:length pred pos 	796
+AP: 0.9789 - AUC-ROC: 0.9849 - AUC-PR: 0.9789 - P@50: 1.0000 > 811
+INFO:best_pse_tuck_PH.py:length pred pos 	6764
+AP: 0.9717 - AUC-ROC: 0.9801 - AUC-PR: 0.9717 - P@50: 1.0000 > 812
+INFO:best_pse_tuck_PH.py:length pred pos 	13598
+AP: 0.9638 - AUC-ROC: 0.9747 - AUC-PR: 0.9638 - P@50: 1.0000 > 813
+INFO:best_pse_tuck_PH.py:length pred pos 	11142
+AP: 0.9721 - AUC-ROC: 0.9805 - AUC-PR: 0.9721 - P@50: 0.9800 > 814
+INFO:best_pse_tuck_PH.py:length pred pos 	6844
+AP: 0.9638 - AUC-ROC: 0.9762 - AUC-PR: 0.9638 - P@50: 0.9800 > 815
+INFO:best_pse_tuck_PH.py:length pred pos 	12715
+AP: 0.9682 - AUC-ROC: 0.9772 - AUC-PR: 0.9682 - P@50: 1.0000 > 816
+INFO:best_pse_tuck_PH.py:length pred pos 	7307
+AP: 0.9753 - AUC-ROC: 0.9823 - AUC-PR: 0.9753 - P@50: 1.0000 > 817
+INFO:best_pse_tuck_PH.py:length pred pos 	6238
+AP: 0.9700 - AUC-ROC: 0.9796 - AUC-PR: 0.9700 - P@50: 0.9800 > 818
+INFO:best_pse_tuck_PH.py:length pred pos 	1865
+AP: 0.9814 - AUC-ROC: 0.9867 - AUC-PR: 0.9814 - P@50: 1.0000 > 819
+INFO:best_pse_tuck_PH.py:length pred pos 	7956
+AP: 0.9846 - AUC-ROC: 0.9876 - AUC-PR: 0.9846 - P@50: 1.0000 > 820
+INFO:best_pse_tuck_PH.py:length pred pos 	756
+AP: 0.9912 - AUC-ROC: 0.9923 - AUC-PR: 0.9912 - P@50: 1.0000 > 821
+INFO:best_pse_tuck_PH.py:length pred pos 	826
+AP: 0.9909 - AUC-ROC: 0.9931 - AUC-PR: 0.9909 - P@50: 1.0000 > 822
+INFO:best_pse_tuck_PH.py:length pred pos 	2080
+AP: 0.9893 - AUC-ROC: 0.9913 - AUC-PR: 0.9893 - P@50: 1.0000 > 823
+INFO:best_pse_tuck_PH.py:length pred pos 	750
+AP: 0.9895 - AUC-ROC: 0.9923 - AUC-PR: 0.9895 - P@50: 1.0000 > 824
+INFO:best_pse_tuck_PH.py:length pred pos 	12501
+AP: 0.9616 - AUC-ROC: 0.9734 - AUC-PR: 0.9616 - P@50: 1.0000 > 825
+INFO:best_pse_tuck_PH.py:length pred pos 	6673
+AP: 0.9740 - AUC-ROC: 0.9824 - AUC-PR: 0.9740 - P@50: 0.9800 > 826
+INFO:best_pse_tuck_PH.py:length pred pos 	1861
+AP: 0.9888 - AUC-ROC: 0.9908 - AUC-PR: 0.9888 - P@50: 1.0000 > 827
+INFO:best_pse_tuck_PH.py:length pred pos 	3303
+AP: 0.9769 - AUC-ROC: 0.9833 - AUC-PR: 0.9769 - P@50: 1.0000 > 828
+INFO:best_pse_tuck_PH.py:length pred pos 	13302
+AP: 0.9579 - AUC-ROC: 0.9719 - AUC-PR: 0.9579 - P@50: 1.0000 > 829
+INFO:best_pse_tuck_PH.py:length pred pos 	6428
+AP: 0.9776 - AUC-ROC: 0.9840 - AUC-PR: 0.9776 - P@50: 1.0000 > 830
+INFO:best_pse_tuck_PH.py:length pred pos 	4849
+AP: 0.9653 - AUC-ROC: 0.9761 - AUC-PR: 0.9653 - P@50: 0.9800 > 831
+INFO:best_pse_tuck_PH.py:length pred pos 	563
+AP: 0.9910 - AUC-ROC: 0.9924 - AUC-PR: 0.9910 - P@50: 1.0000 > 832
+INFO:best_pse_tuck_PH.py:length pred pos 	507
+AP: 0.9837 - AUC-ROC: 0.9906 - AUC-PR: 0.9837 - P@50: 0.9800 > 833
+INFO:best_pse_tuck_PH.py:length pred pos 	5558
+AP: 0.9742 - AUC-ROC: 0.9809 - AUC-PR: 0.9742 - P@50: 1.0000 > 834
+INFO:best_pse_tuck_PH.py:length pred pos 	6859
+AP: 0.9755 - AUC-ROC: 0.9830 - AUC-PR: 0.9755 - P@50: 0.9800 > 835
+INFO:best_pse_tuck_PH.py:length pred pos 	4839
+AP: 0.9762 - AUC-ROC: 0.9829 - AUC-PR: 0.9762 - P@50: 1.0000 > 836
+INFO:best_pse_tuck_PH.py:length pred pos 	602
+AP: 0.9860 - AUC-ROC: 0.9885 - AUC-PR: 0.9860 - P@50: 1.0000 > 837
+INFO:best_pse_tuck_PH.py:length pred pos 	14377
+AP: 0.9714 - AUC-ROC: 0.9796 - AUC-PR: 0.9714 - P@50: 0.9600 > 838
+INFO:best_pse_tuck_PH.py:length pred pos 	4183
+AP: 0.9780 - AUC-ROC: 0.9852 - AUC-PR: 0.9780 - P@50: 0.9200 > 839
+INFO:best_pse_tuck_PH.py:length pred pos 	5272
+AP: 0.9798 - AUC-ROC: 0.9850 - AUC-PR: 0.9798 - P@50: 1.0000 > 840
+INFO:best_pse_tuck_PH.py:length pred pos 	991
+AP: 0.9775 - AUC-ROC: 0.9846 - AUC-PR: 0.9775 - P@50: 1.0000 > 841
+INFO:best_pse_tuck_PH.py:length pred pos 	1663
+AP: 0.9776 - AUC-ROC: 0.9841 - AUC-PR: 0.9776 - P@50: 1.0000 > 842
+INFO:best_pse_tuck_PH.py:length pred pos 	7954
+AP: 0.9775 - AUC-ROC: 0.9837 - AUC-PR: 0.9775 - P@50: 1.0000 > 843
+INFO:best_pse_tuck_PH.py:length pred pos 	15526
+AP: 0.9536 - AUC-ROC: 0.9685 - AUC-PR: 0.9536 - P@50: 0.9800 > 844
+INFO:best_pse_tuck_PH.py:length pred pos 	4269
+AP: 0.9747 - AUC-ROC: 0.9819 - AUC-PR: 0.9747 - P@50: 1.0000 > 845
+INFO:best_pse_tuck_PH.py:length pred pos 	4698
+AP: 0.9820 - AUC-ROC: 0.9866 - AUC-PR: 0.9820 - P@50: 1.0000 > 846
+INFO:best_pse_tuck_PH.py:length pred pos 	2553
+AP: 0.9687 - AUC-ROC: 0.9792 - AUC-PR: 0.9687 - P@50: 0.9800 > 847
+INFO:best_pse_tuck_PH.py:length pred pos 	1929
+AP: 0.9828 - AUC-ROC: 0.9877 - AUC-PR: 0.9828 - P@50: 1.0000 > 848
+INFO:best_pse_tuck_PH.py:length pred pos 	3524
+AP: 0.9818 - AUC-ROC: 0.9861 - AUC-PR: 0.9818 - P@50: 1.0000 > 849
+INFO:best_pse_tuck_PH.py:length pred pos 	1607
+AP: 0.9795 - AUC-ROC: 0.9862 - AUC-PR: 0.9795 - P@50: 1.0000 > 850
+INFO:best_pse_tuck_PH.py:length pred pos 	13801
+AP: 0.9698 - AUC-ROC: 0.9780 - AUC-PR: 0.9698 - P@50: 1.0000 > 851
+INFO:best_pse_tuck_PH.py:length pred pos 	1646
+AP: 0.9863 - AUC-ROC: 0.9892 - AUC-PR: 0.9863 - P@50: 1.0000 > 852
+INFO:best_pse_tuck_PH.py:length pred pos 	2052
+AP: 0.9662 - AUC-ROC: 0.9759 - AUC-PR: 0.9662 - P@50: 1.0000 > 853
+INFO:best_pse_tuck_PH.py:length pred pos 	1216
+AP: 0.9824 - AUC-ROC: 0.9880 - AUC-PR: 0.9824 - P@50: 0.9800 > 854
+INFO:best_pse_tuck_PH.py:length pred pos 	2171
+AP: 0.9774 - AUC-ROC: 0.9838 - AUC-PR: 0.9774 - P@50: 1.0000 > 855
+INFO:best_pse_tuck_PH.py:length pred pos 	17910
+AP: 0.9668 - AUC-ROC: 0.9771 - AUC-PR: 0.9668 - P@50: 0.9600 > 856
+INFO:best_pse_tuck_PH.py:length pred pos 	799
+AP: 0.9911 - AUC-ROC: 0.9924 - AUC-PR: 0.9911 - P@50: 1.0000 > 857
+INFO:best_pse_tuck_PH.py:length pred pos 	16575
+AP: 0.9670 - AUC-ROC: 0.9766 - AUC-PR: 0.9670 - P@50: 1.0000 > 858
+INFO:best_pse_tuck_PH.py:length pred pos 	6598
+AP: 0.9725 - AUC-ROC: 0.9798 - AUC-PR: 0.9725 - P@50: 1.0000 > 859
+INFO:best_pse_tuck_PH.py:length pred pos 	1507
+AP: 0.9764 - AUC-ROC: 0.9822 - AUC-PR: 0.9764 - P@50: 1.0000 > 860
+INFO:best_pse_tuck_PH.py:length pred pos 	676
+AP: 0.9862 - AUC-ROC: 0.9907 - AUC-PR: 0.9862 - P@50: 1.0000 > 861
+INFO:best_pse_tuck_PH.py:length pred pos 	7474
+AP: 0.9653 - AUC-ROC: 0.9763 - AUC-PR: 0.9653 - P@50: 0.9800 > 862
+INFO:best_pse_tuck_PH.py:length pred pos 	4816
+AP: 0.9850 - AUC-ROC: 0.9891 - AUC-PR: 0.9850 - P@50: 1.0000 > 863
+INFO:best_pse_tuck_PH.py:length pred pos 	689
+AP: 0.9848 - AUC-ROC: 0.9896 - AUC-PR: 0.9848 - P@50: 1.0000 > 864
+INFO:best_pse_tuck_PH.py:length pred pos 	5408
+AP: 0.9735 - AUC-ROC: 0.9813 - AUC-PR: 0.9735 - P@50: 1.0000 > 865
+INFO:best_pse_tuck_PH.py:length pred pos 	1145
+AP: 0.9812 - AUC-ROC: 0.9857 - AUC-PR: 0.9812 - P@50: 1.0000 > 866
+INFO:best_pse_tuck_PH.py:length pred pos 	10952
+AP: 0.9572 - AUC-ROC: 0.9708 - AUC-PR: 0.9572 - P@50: 0.9600 > 867
+INFO:best_pse_tuck_PH.py:length pred pos 	1001
+AP: 0.9806 - AUC-ROC: 0.9855 - AUC-PR: 0.9806 - P@50: 1.0000 > 868
+INFO:best_pse_tuck_PH.py:length pred pos 	3265
+AP: 0.9754 - AUC-ROC: 0.9828 - AUC-PR: 0.9754 - P@50: 1.0000 > 869
+INFO:best_pse_tuck_PH.py:length pred pos 	9133
+AP: 0.9734 - AUC-ROC: 0.9808 - AUC-PR: 0.9734 - P@50: 1.0000 > 870
+INFO:best_pse_tuck_PH.py:length pred pos 	8259
+AP: 0.9659 - AUC-ROC: 0.9769 - AUC-PR: 0.9659 - P@50: 1.0000 > 871
+INFO:best_pse_tuck_PH.py:length pred pos 	3816
+AP: 0.9747 - AUC-ROC: 0.9831 - AUC-PR: 0.9747 - P@50: 1.0000 > 872
+INFO:best_pse_tuck_PH.py:length pred pos 	1023
+AP: 0.9906 - AUC-ROC: 0.9928 - AUC-PR: 0.9906 - P@50: 1.0000 > 873
+INFO:best_pse_tuck_PH.py:length pred pos 	3450
+AP: 0.9774 - AUC-ROC: 0.9833 - AUC-PR: 0.9774 - P@50: 1.0000 > 874
+INFO:best_pse_tuck_PH.py:length pred pos 	8557
+AP: 0.9666 - AUC-ROC: 0.9766 - AUC-PR: 0.9666 - P@50: 1.0000 > 875
+INFO:best_pse_tuck_PH.py:length pred pos 	13438
+AP: 0.9698 - AUC-ROC: 0.9783 - AUC-PR: 0.9698 - P@50: 0.9800 > 876
+INFO:best_pse_tuck_PH.py:length pred pos 	1085
+AP: 0.9842 - AUC-ROC: 0.9885 - AUC-PR: 0.9842 - P@50: 1.0000 > 877
+INFO:best_pse_tuck_PH.py:length pred pos 	801
+AP: 0.9882 - AUC-ROC: 0.9918 - AUC-PR: 0.9882 - P@50: 0.9800 > 878
+INFO:best_pse_tuck_PH.py:length pred pos 	527
+AP: 0.9903 - AUC-ROC: 0.9925 - AUC-PR: 0.9903 - P@50: 1.0000 > 879
+INFO:best_pse_tuck_PH.py:length pred pos 	4875
+AP: 0.9722 - AUC-ROC: 0.9810 - AUC-PR: 0.9722 - P@50: 1.0000 > 880
+INFO:best_pse_tuck_PH.py:length pred pos 	4340
+AP: 0.9751 - AUC-ROC: 0.9822 - AUC-PR: 0.9751 - P@50: 1.0000 > 881
+INFO:best_pse_tuck_PH.py:length pred pos 	989
+AP: 0.9884 - AUC-ROC: 0.9905 - AUC-PR: 0.9884 - P@50: 1.0000 > 882
+INFO:best_pse_tuck_PH.py:length pred pos 	1905
+AP: 0.9818 - AUC-ROC: 0.9865 - AUC-PR: 0.9818 - P@50: 1.0000 > 883
+INFO:best_pse_tuck_PH.py:length pred pos 	9086
+AP: 0.9694 - AUC-ROC: 0.9777 - AUC-PR: 0.9694 - P@50: 1.0000 > 884
+INFO:best_pse_tuck_PH.py:length pred pos 	8479
+AP: 0.9706 - AUC-ROC: 0.9792 - AUC-PR: 0.9706 - P@50: 0.9800 > 885
+INFO:best_pse_tuck_PH.py:length pred pos 	11028
+AP: 0.9655 - AUC-ROC: 0.9757 - AUC-PR: 0.9655 - P@50: 0.9600 > 886
+INFO:best_pse_tuck_PH.py:length pred pos 	10666
+AP: 0.9822 - AUC-ROC: 0.9867 - AUC-PR: 0.9822 - P@50: 1.0000 > 887
+INFO:best_pse_tuck_PH.py:length pred pos 	853
+AP: 0.9935 - AUC-ROC: 0.9944 - AUC-PR: 0.9935 - P@50: 1.0000 > 888
+INFO:best_pse_tuck_PH.py:length pred pos 	7915
+AP: 0.9673 - AUC-ROC: 0.9774 - AUC-PR: 0.9673 - P@50: 1.0000 > 889
+INFO:best_pse_tuck_PH.py:length pred pos 	12173
+AP: 0.9639 - AUC-ROC: 0.9752 - AUC-PR: 0.9639 - P@50: 0.9800 > 890
+INFO:best_pse_tuck_PH.py:length pred pos 	1579
+AP: 0.9891 - AUC-ROC: 0.9911 - AUC-PR: 0.9891 - P@50: 1.0000 > 891
+INFO:best_pse_tuck_PH.py:length pred pos 	5165
+AP: 0.9761 - AUC-ROC: 0.9837 - AUC-PR: 0.9761 - P@50: 0.9800 > 892
+INFO:best_pse_tuck_PH.py:length pred pos 	1105
+AP: 0.9736 - AUC-ROC: 0.9814 - AUC-PR: 0.9736 - P@50: 1.0000 > 893
+INFO:best_pse_tuck_PH.py:length pred pos 	2984
+AP: 0.9791 - AUC-ROC: 0.9855 - AUC-PR: 0.9791 - P@50: 1.0000 > 894
+INFO:best_pse_tuck_PH.py:length pred pos 	1364
+AP: 0.9834 - AUC-ROC: 0.9887 - AUC-PR: 0.9834 - P@50: 1.0000 > 895
+INFO:best_pse_tuck_PH.py:length pred pos 	6664
+AP: 0.9787 - AUC-ROC: 0.9838 - AUC-PR: 0.9787 - P@50: 1.0000 > 896
+INFO:best_pse_tuck_PH.py:length pred pos 	5268
+AP: 0.9803 - AUC-ROC: 0.9851 - AUC-PR: 0.9803 - P@50: 1.0000 > 897
+INFO:best_pse_tuck_PH.py:length pred pos 	9279
+AP: 0.9771 - AUC-ROC: 0.9834 - AUC-PR: 0.9771 - P@50: 0.9800 > 898
+INFO:best_pse_tuck_PH.py:length pred pos 	1477
+AP: 0.9838 - AUC-ROC: 0.9880 - AUC-PR: 0.9838 - P@50: 1.0000 > 899
+INFO:best_pse_tuck_PH.py:length pred pos 	7040
+AP: 0.9673 - AUC-ROC: 0.9765 - AUC-PR: 0.9673 - P@50: 1.0000 > 900
+INFO:best_pse_tuck_PH.py:length pred pos 	4067
+AP: 0.9757 - AUC-ROC: 0.9818 - AUC-PR: 0.9757 - P@50: 1.0000 > 901
+INFO:best_pse_tuck_PH.py:length pred pos 	644
+AP: 0.9918 - AUC-ROC: 0.9930 - AUC-PR: 0.9918 - P@50: 1.0000 > 902
+INFO:best_pse_tuck_PH.py:length pred pos 	526
+AP: 0.9895 - AUC-ROC: 0.9930 - AUC-PR: 0.9895 - P@50: 1.0000 > 903
+INFO:best_pse_tuck_PH.py:length pred pos 	16899
+AP: 0.9698 - AUC-ROC: 0.9789 - AUC-PR: 0.9698 - P@50: 0.9800 > 904
+INFO:best_pse_tuck_PH.py:length pred pos 	14387
+AP: 0.9695 - AUC-ROC: 0.9779 - AUC-PR: 0.9695 - P@50: 1.0000 > 905
+INFO:best_pse_tuck_PH.py:length pred pos 	4215
+AP: 0.9727 - AUC-ROC: 0.9812 - AUC-PR: 0.9727 - P@50: 0.9800 > 906
+INFO:best_pse_tuck_PH.py:length pred pos 	11218
+AP: 0.9609 - AUC-ROC: 0.9734 - AUC-PR: 0.9609 - P@50: 1.0000 > 907
+INFO:best_pse_tuck_PH.py:length pred pos 	6027
+AP: 0.9600 - AUC-ROC: 0.9731 - AUC-PR: 0.9600 - P@50: 1.0000 > 908
+INFO:best_pse_tuck_PH.py:length pred pos 	997
+AP: 0.9828 - AUC-ROC: 0.9893 - AUC-PR: 0.9828 - P@50: 0.9800 > 909
+INFO:best_pse_tuck_PH.py:length pred pos 	620
+AP: 0.9893 - AUC-ROC: 0.9936 - AUC-PR: 0.9893 - P@50: 0.9800 > 910
+INFO:best_pse_tuck_PH.py:length pred pos 	12525
+AP: 0.9672 - AUC-ROC: 0.9776 - AUC-PR: 0.9672 - P@50: 0.9800 > 911
+INFO:best_pse_tuck_PH.py:length pred pos 	1182
+AP: 0.9817 - AUC-ROC: 0.9867 - AUC-PR: 0.9817 - P@50: 1.0000 > 912
+INFO:best_pse_tuck_PH.py:length pred pos 	11605
+AP: 0.9742 - AUC-ROC: 0.9817 - AUC-PR: 0.9742 - P@50: 1.0000 > 913
+INFO:best_pse_tuck_PH.py:length pred pos 	546
+AP: 0.9918 - AUC-ROC: 0.9937 - AUC-PR: 0.9918 - P@50: 1.0000 > 914
+INFO:best_pse_tuck_PH.py:length pred pos 	5484
+AP: 0.9672 - AUC-ROC: 0.9780 - AUC-PR: 0.9672 - P@50: 1.0000 > 915
+INFO:best_pse_tuck_PH.py:length pred pos 	593
+AP: 0.9858 - AUC-ROC: 0.9889 - AUC-PR: 0.9858 - P@50: 1.0000 > 916
+INFO:best_pse_tuck_PH.py:length pred pos 	2546
+AP: 0.9727 - AUC-ROC: 0.9802 - AUC-PR: 0.9727 - P@50: 1.0000 > 917
+INFO:best_pse_tuck_PH.py:length pred pos 	5708
+AP: 0.9653 - AUC-ROC: 0.9765 - AUC-PR: 0.9653 - P@50: 0.9800 > 918
+INFO:best_pse_tuck_PH.py:length pred pos 	931
+AP: 0.9860 - AUC-ROC: 0.9894 - AUC-PR: 0.9860 - P@50: 1.0000 > 919
+INFO:best_pse_tuck_PH.py:length pred pos 	746
+AP: 0.9927 - AUC-ROC: 0.9933 - AUC-PR: 0.9927 - P@50: 1.0000 > 920
+INFO:best_pse_tuck_PH.py:length pred pos 	5343
+AP: 0.9778 - AUC-ROC: 0.9847 - AUC-PR: 0.9778 - P@50: 1.0000 > 921
+INFO:best_pse_tuck_PH.py:length pred pos 	510
+AP: 0.9878 - AUC-ROC: 0.9899 - AUC-PR: 0.9878 - P@50: 1.0000 > 922
+INFO:best_pse_tuck_PH.py:length pred pos 	6526
+AP: 0.9732 - AUC-ROC: 0.9803 - AUC-PR: 0.9732 - P@50: 1.0000 > 923
+INFO:best_pse_tuck_PH.py:length pred pos 	715
+AP: 0.9751 - AUC-ROC: 0.9826 - AUC-PR: 0.9751 - P@50: 0.9800 > 924
+INFO:best_pse_tuck_PH.py:length pred pos 	3366
+AP: 0.9807 - AUC-ROC: 0.9846 - AUC-PR: 0.9807 - P@50: 1.0000 > 925
+INFO:best_pse_tuck_PH.py:length pred pos 	1838
+AP: 0.9871 - AUC-ROC: 0.9901 - AUC-PR: 0.9871 - P@50: 1.0000 > 926
+INFO:best_pse_tuck_PH.py:length pred pos 	2764
+AP: 0.9699 - AUC-ROC: 0.9802 - AUC-PR: 0.9699 - P@50: 0.9800 > 927
+INFO:best_pse_tuck_PH.py:length pred pos 	13172
+AP: 0.9634 - AUC-ROC: 0.9749 - AUC-PR: 0.9634 - P@50: 0.9800 > 928
+INFO:best_pse_tuck_PH.py:length pred pos 	2246
+AP: 0.9829 - AUC-ROC: 0.9882 - AUC-PR: 0.9829 - P@50: 1.0000 > 929
+INFO:best_pse_tuck_PH.py:length pred pos 	3664
+AP: 0.9846 - AUC-ROC: 0.9885 - AUC-PR: 0.9846 - P@50: 1.0000 > 930
+INFO:best_pse_tuck_PH.py:length pred pos 	10531
+AP: 0.9786 - AUC-ROC: 0.9846 - AUC-PR: 0.9786 - P@50: 0.9800 > 931
+INFO:best_pse_tuck_PH.py:length pred pos 	3675
+AP: 0.9786 - AUC-ROC: 0.9847 - AUC-PR: 0.9786 - P@50: 1.0000 > 932
+INFO:best_pse_tuck_PH.py:length pred pos 	981
+AP: 0.9836 - AUC-ROC: 0.9882 - AUC-PR: 0.9836 - P@50: 1.0000 > 933
+INFO:best_pse_tuck_PH.py:length pred pos 	7092
+AP: 0.9653 - AUC-ROC: 0.9750 - AUC-PR: 0.9653 - P@50: 1.0000 > 934
+INFO:best_pse_tuck_PH.py:length pred pos 	3348
+AP: 0.9861 - AUC-ROC: 0.9892 - AUC-PR: 0.9861 - P@50: 1.0000 > 935
+INFO:best_pse_tuck_PH.py:length pred pos 	6795
+AP: 0.9693 - AUC-ROC: 0.9779 - AUC-PR: 0.9693 - P@50: 1.0000 > 936
+INFO:best_pse_tuck_PH.py:length pred pos 	15332
+AP: 0.9724 - AUC-ROC: 0.9794 - AUC-PR: 0.9724 - P@50: 1.0000 > 937
+INFO:best_pse_tuck_PH.py:length pred pos 	2539
+AP: 0.9837 - AUC-ROC: 0.9882 - AUC-PR: 0.9837 - P@50: 1.0000 > 938
+INFO:best_pse_tuck_PH.py:length pred pos 	2896
+AP: 0.9682 - AUC-ROC: 0.9775 - AUC-PR: 0.9682 - P@50: 1.0000 > 939
+INFO:best_pse_tuck_PH.py:length pred pos 	941
+AP: 0.9899 - AUC-ROC: 0.9908 - AUC-PR: 0.9899 - P@50: 1.0000 > 940
+INFO:best_pse_tuck_PH.py:length pred pos 	5197
+AP: 0.9760 - AUC-ROC: 0.9824 - AUC-PR: 0.9760 - P@50: 1.0000 > 941
+INFO:best_pse_tuck_PH.py:length pred pos 	4155
+AP: 0.9726 - AUC-ROC: 0.9799 - AUC-PR: 0.9726 - P@50: 1.0000 > 942
+INFO:best_pse_tuck_PH.py:length pred pos 	4450
+AP: 0.9851 - AUC-ROC: 0.9886 - AUC-PR: 0.9851 - P@50: 1.0000 > 943
+INFO:best_pse_tuck_PH.py:length pred pos 	5076
+AP: 0.9797 - AUC-ROC: 0.9842 - AUC-PR: 0.9797 - P@50: 1.0000 > 944
+INFO:best_pse_tuck_PH.py:length pred pos 	2662
+AP: 0.9749 - AUC-ROC: 0.9828 - AUC-PR: 0.9749 - P@50: 0.9800 > 945
+INFO:best_pse_tuck_PH.py:length pred pos 	2262
+AP: 0.9802 - AUC-ROC: 0.9851 - AUC-PR: 0.9802 - P@50: 1.0000 > 946
+INFO:best_pse_tuck_PH.py:length pred pos 	882
+AP: 0.9870 - AUC-ROC: 0.9897 - AUC-PR: 0.9870 - P@50: 1.0000 > 947
+INFO:best_pse_tuck_PH.py:length pred pos 	4738
+AP: 0.9833 - AUC-ROC: 0.9876 - AUC-PR: 0.9833 - P@50: 0.9800 > 948
+INFO:best_pse_tuck_PH.py:length pred pos 	1587
+AP: 0.9737 - AUC-ROC: 0.9823 - AUC-PR: 0.9737 - P@50: 0.9600 > 949
+INFO:best_pse_tuck_PH.py:length pred pos 	1375
+AP: 0.9726 - AUC-ROC: 0.9808 - AUC-PR: 0.9726 - P@50: 0.9800 > 950
+INFO:best_pse_tuck_PH.py:length pred pos 	8398
+AP: 0.9771 - AUC-ROC: 0.9826 - AUC-PR: 0.9771 - P@50: 1.0000 > 951
+INFO:best_pse_tuck_PH.py:length pred pos 	5842
+AP: 0.9672 - AUC-ROC: 0.9773 - AUC-PR: 0.9672 - P@50: 1.0000 > 952
+INFO:best_pse_tuck_PH.py:length pred pos 	3932
+AP: 0.9800 - AUC-ROC: 0.9853 - AUC-PR: 0.9800 - P@50: 1.0000 > 953
+INFO:best_pse_tuck_PH.py:length pred pos 	509
+AP: 0.9949 - AUC-ROC: 0.9962 - AUC-PR: 0.9949 - P@50: 1.0000 > 954
+INFO:best_pse_tuck_PH.py:length pred pos 	6766
+AP: 0.9727 - AUC-ROC: 0.9806 - AUC-PR: 0.9727 - P@50: 1.0000 > 955
+INFO:best_pse_tuck_PH.py:length pred pos 	659
+AP: 0.9949 - AUC-ROC: 0.9951 - AUC-PR: 0.9949 - P@50: 1.0000 > 956
+INFO:best_pse_tuck_PH.py:length pred pos 	1154
+AP: 0.9928 - AUC-ROC: 0.9935 - AUC-PR: 0.9928 - P@50: 1.0000 > 957
+INFO:best_pse_tuck_PH.py:length pred pos 	709
+AP: 0.9824 - AUC-ROC: 0.9879 - AUC-PR: 0.9824 - P@50: 0.9800 > 958
+INFO:best_pse_tuck_PH.py:length pred pos 	2983
+AP: 0.9719 - AUC-ROC: 0.9822 - AUC-PR: 0.9719 - P@50: 0.9800 > 959
+INFO:best_pse_tuck_PH.py:length pred pos 	9358
+AP: 0.9607 - AUC-ROC: 0.9738 - AUC-PR: 0.9607 - P@50: 1.0000 > 960
+INFO:best_pse_tuck_PH.py:length pred pos 	2478
+AP: 0.9879 - AUC-ROC: 0.9918 - AUC-PR: 0.9879 - P@50: 0.9800 > 961
+INFO:best_pse_tuck_PH.py:length pred pos 	722
+AP: 0.9933 - AUC-ROC: 0.9938 - AUC-PR: 0.9933 - P@50: 1.0000 > 962
+INFO:best_pse_tuck_PH.py:done
+INFO:best_pse_tuck_PH.py:metrics done
+INFO:best_pse_tuck_PH.py:AUC_ROC 	0.9841827701417304
+INFO:best_pse_tuck_PH.py:CLASSIFICATION METRICS
+INFO:best_pse_tuck_PH.py:Error 	test results	AUC-ROC 0.984183	AP 0.993286	P@50 1.000000	AUC_PR 0.993286
+GPU Epilog Script v0.30

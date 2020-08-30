@@ -1,0 +1,601 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 3
+['--model', 'complex', '--data', 'covid', '--loss', 'pw_logistic', '--epochs', '600', '--learning-rate', '0.278', '--batch-size', '2048', '--reg-weight', '7.01e-08', '--embedding-size', '200', '--quiet', '--save_model_name', 'PW_cplex_covid_lr_278_bsize_2048_rw_7010_es_200_forREL_COVID', '--auc', '--nb-negs', '50', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--harder', '--testrel', 'best_PW_CPLEX_COVID.csv', '--rare', '--load']
+MCL False
+INFO:pw_covid.py:Valid: False
+INFO:pw_covid.py:Device: cuda
+INFO:pw_covid.py:auc and lod happening
+INFO:pw_covid.py:dataset name 	train
+INFO:pw_covid.py:dataset name 	valid
+INFO:pw_covid.py:dataset name 	test
+INFO:pw_covid.py:in evalute for dataset: 	test
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:TEST RESULTS
+INFO:pw_covid.py:Error 	test results 	MRR 0.185762	H@1 0.122954	H@3 0.208140	H@10 0.301003	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pw_covid.py:===========
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:VERY RARE RESULTS
+INFO:pw_covid.py:Error VERYRARE HEAD results 	MRR 0.586063	H@1 0.579387	H@3 0.587744	H@10 0.593315	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:Error VERYRARE TAIL results 	MRR 0.616257	H@1 0.613402	H@3 0.615979	H@10 0.618557	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:RARE RESULTS
+INFO:pw_covid.py:Error RARE HEAD results 	MRR 0.158584	H@1 0.116538	H@3 0.169479	H@10 0.235590	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:Error RARE TAIL results 	MRR 0.162824	H@1 0.118261	H@3 0.174931	H@10 0.242293	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:COMMON RESULTS
+INFO:pw_covid.py:Error COMMON- HEAD results 	MRR 0.197634	H@1 0.133619	H@3 0.221839	H@10 0.316241	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:Error COMMON- TAIL results 	MRR 0.208867	H@1 0.143906	H@3 0.234291	H@10 0.327337	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:VERYCOMMON RESULTS
+INFO:pw_covid.py:Error VERY-COMMON HEAD results 	MRR 0.219351	H@1 0.136609	H@3 0.253524	H@10 0.370232	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:Error VERY-COMMON TAIL results 	MRR 0.198726	H@1 0.120945	H@3 0.228288	H@10 0.342064	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:VERYVERYCOMMON RESULTS
+INFO:pw_covid.py:Error VERYVERY-COMMON HEAD results 	MRR 0.215103	H@1 0.116505	H@3 0.249050	H@10 0.397214	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:Error VERYVERY-COMMON TAIL results 	MRR 0.199247	H@1 0.103381	H@3 0.229167	H@10 0.384827	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:pw_covid.py:test triples shape 	torch.Size([53154, 3])
+TEST SIZE RELATION 53154
+INFO:pw_covid.py:INFO RELATION 	8
+INFO:pw_covid.py:MRR 	0.03368919468621211, H@1 	0.006507858546168959, H@3 	0.02443516699410609, H@10 	0.06999017681728881
+INFO:pw_covid.py:INFO RELATION 	1
+INFO:pw_covid.py:MRR 	0.03593645676992256, H@1 	0.011943189154293092, H@3 	0.028728211749515817, H@10 	0.07617817947062622
+INFO:pw_covid.py:INFO RELATION 	7
+INFO:pw_covid.py:MRR 	0.2351785450726302, H@1 	0.1498440285204991, H@3 	0.2799688057040998, H@10 	0.40641711229946526
+INFO:pw_covid.py:INFO RELATION 	3
+INFO:pw_covid.py:MRR 	0.02005246892243771, H@1 	0.003234152652005175, H@3 	0.01034928848641656, H@10 	0.040103492884864166
+INFO:pw_covid.py:INFO RELATION 	9
+INFO:pw_covid.py:MRR 	0.4891959680711602, H@1 	0.38535575048732945, H@3 	0.5576267056530214, H@10 	0.6759259259259259
+INFO:pw_covid.py:INFO RELATION 	10
+INFO:pw_covid.py:MRR 	0.47659635237487435, H@1 	0.35569322794274727, H@3 	0.5633411664174321, H@10 	0.6920529801324503
+INFO:pw_covid.py:INFO RELATION 	14
+INFO:pw_covid.py:MRR 	0.17687193599805504, H@1 	0.07521468759253776, H@3 	0.1832987859046491, H@10 	0.4065738821439147
+INFO:pw_covid.py:INFO RELATION 	0
+INFO:pw_covid.py:MRR 	0.06863648363781345, H@1 	0.02497305066475027, H@3 	0.06665468918433345, H@10 	0.15181458857348185
+INFO:pw_covid.py:INFO RELATION 	5
+INFO:pw_covid.py:MRR 	0.040662257071783774, H@1 	0.011571952337305225, H@3 	0.03230980751604033, H@10 	0.08146196150320807
+INFO:pw_covid.py:INFO RELATION 	19
+INFO:pw_covid.py:MRR 	0.02698207020660897, H@1 	0.007920792079207921, H@3 	0.020792079207920793, H@10 	0.0594059405940594
+INFO:pw_covid.py:INFO RELATION 	4
+INFO:pw_covid.py:MRR 	0.02244435488980401, H@1 	0.0027137042062415195, H@3 	0.013907734056987787, H@10 	0.04613297150610583
+INFO:pw_covid.py:INFO RELATION 	13
+INFO:pw_covid.py:MRR 	0.49428784845861845, H@1 	0.3744728703964015, H@3 	0.5840596007871802, H@10 	0.7076187798706776
+INFO:pw_covid.py:INFO RELATION 	11
+INFO:pw_covid.py:MRR 	0.02985492360831202, H@1 	0.006773028296207104, H@3 	0.020319084888621313, H@10 	0.06321493076459964
+INFO:pw_covid.py:INFO RELATION 	12
+INFO:pw_covid.py:MRR 	0.07007820308302043, H@1 	0.03360957642725598, H@3 	0.06936771025168816, H@10 	0.14195825659914058
+INFO:pw_covid.py:INFO RELATION 	2
+INFO:pw_covid.py:MRR 	0.035928949173048105, H@1 	0.009146341463414634, H@3 	0.028201219512195123, H@10 	0.08307926829268293
+INFO:pw_covid.py:INFO RELATION 	6
+INFO:pw_covid.py:MRR 	0.33513918615813904, H@1 	0.23476394849785406, H@3 	0.3982832618025751, H@10 	0.5203862660944206
+INFO:pw_covid.py:INFO RELATION 	21
+INFO:pw_covid.py:MRR 	0.04664300517381691, H@1 	0.008710801393728223, H@3 	0.0313588850174216, H@10 	0.12020905923344948
+INFO:pw_covid.py:INFO RELATION 	16
+INFO:pw_covid.py:MRR 	0.04596455166198399, H@1 	0.019940915805022157, H@3 	0.03692762186115214, H@10 	0.08124076809453472
+INFO:pw_covid.py:INFO RELATION 	23
+INFO:pw_covid.py:MRR 	0.07765021592111286, H@1 	0.02127659574468085, H@3 	0.09042553191489362, H@10 	0.18085106382978725
+INFO:pw_covid.py:INFO RELATION 	17
+INFO:pw_covid.py:MRR 	0.023977895332641018, H@1 	0.006289308176100629, H@3 	0.0110062893081761, H@10 	0.055031446540880505
+INFO:pw_covid.py:INFO RELATION 	18
+INFO:pw_covid.py:MRR 	0.029113420424965293, H@1 	0.010101010101010102, H@3 	0.016414141414141416, H@10 	0.06186868686868687
+INFO:pw_covid.py:INFO RELATION 	22
+INFO:pw_covid.py:MRR 	0.019652384179033682, H@1 	0.0, H@3 	0.012048192771084338, H@10 	0.05421686746987952
+INFO:pw_covid.py:INFO RELATION 	15
+INFO:pw_covid.py:MRR 	0.038621026028243126, H@1 	0.018604651162790697, H@3 	0.030232558139534883, H@10 	0.06744186046511629
+INFO:pw_covid.py:INFO RELATION 	25
+INFO:pw_covid.py:MRR 	0.046677913038611754, H@1 	0.0375, H@3 	0.0375, H@10 	0.0625
+INFO:pw_covid.py:INFO RELATION 	26
+INFO:pw_covid.py:MRR 	0.503945526282296, H@1 	0.5, H@3 	0.5, H@10 	0.5
+INFO:pw_covid.py:INFO RELATION 	20
+INFO:pw_covid.py:MRR 	0.013078326926331558, H@1 	0.0, H@3 	0.0038461538461538464, H@10 	0.03076923076923077
+INFO:pw_covid.py:INFO RELATION 	24
+INFO:pw_covid.py:MRR 	0.027728205753244136, H@1 	0.009433962264150943, H@3 	0.02830188679245283, H@10 	0.04716981132075472
+MMR VAL 0.17139314769646166
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:pw_covid.py:length predicate_instanes 	27
+INFO:pw_covid.py:predicate instances done
+INFO:pw_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:pw_covid.py:make test triples numpy
+INFO:pw_covid.py:about to start predicting
+INFO:pw_covid.py:length pred pos 	83421
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(500526, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (280000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (320000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (360000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (400000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (440000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (480000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (500526, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9859 - AUC-PR: 0.9685 - P@50: 1.0000 > 0
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9858 - AUC-PR: 0.9553 - P@50: 1.0000 > 0
+INFO:pw_covid.py:length pred pos 	16167
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(97002, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (97002, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9841 - AUC-PR: 0.9676 - P@50: 1.0000 > 1
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9841 - AUC-PR: 0.9544 - P@50: 1.0000 > 1
+INFO:pw_covid.py:length pred pos 	6598
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9879 - AUC-PR: 0.9743 - P@50: 1.0000 > 2
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9879 - AUC-PR: 0.9637 - P@50: 1.0000 > 2
+INFO:pw_covid.py:length pred pos 	7376
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(44256, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (44256, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9910 - AUC-PR: 0.9768 - P@50: 1.0000 > 3
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9910 - AUC-PR: 0.9650 - P@50: 1.0000 > 3
+INFO:pw_covid.py:length pred pos 	15087
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(90522, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (90522, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9945 - AUC-PR: 0.9829 - P@50: 1.0000 > 4
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9945 - AUC-PR: 0.9729 - P@50: 1.0000 > 4
+INFO:pw_covid.py:length pred pos 	44117
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(264702, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (264702, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9854 - P@50: 1.0000 > 5
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9954 - AUC-PR: 0.9769 - P@50: 1.0000 > 5
+INFO:pw_covid.py:length pred pos 	22427
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(134562, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (134562, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9893 - AUC-PR: 0.9795 - P@50: 1.0000 > 6
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9726 - P@50: 1.0000 > 6
+INFO:pw_covid.py:length pred pos 	44637
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(267822, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (267822, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9791 - P@50: 1.0000 > 7
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9711 - P@50: 1.0000 > 7
+INFO:pw_covid.py:length pred pos 	41643
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(249858, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (249858, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9929 - AUC-PR: 0.9823 - P@50: 1.0000 > 8
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9929 - AUC-PR: 0.9732 - P@50: 1.0000 > 8
+INFO:pw_covid.py:length pred pos 	41765
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(250590, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (250590, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9940 - AUC-PR: 0.9880 - P@50: 1.0000 > 9
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9940 - AUC-PR: 0.9831 - P@50: 1.0000 > 9
+INFO:pw_covid.py:length pred pos 	46730
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(280380, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (280000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (280380, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9933 - AUC-PR: 0.9871 - P@50: 1.0000 > 10
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9933 - AUC-PR: 0.9822 - P@50: 1.0000 > 10
+INFO:pw_covid.py:length pred pos 	33370
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(200220, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200220, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9910 - AUC-PR: 0.9782 - P@50: 1.0000 > 11
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9910 - AUC-PR: 0.9677 - P@50: 1.0000 > 11
+INFO:pw_covid.py:length pred pos 	36708
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(220248, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (220248, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9795 - AUC-PR: 0.9650 - P@50: 1.0000 > 12
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9795 - AUC-PR: 0.9540 - P@50: 1.0000 > 12
+INFO:pw_covid.py:length pred pos 	35963
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(215778, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (215778, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9946 - AUC-PR: 0.9891 - P@50: 1.0000 > 13
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9946 - AUC-PR: 0.9849 - P@50: 1.0000 > 13
+INFO:pw_covid.py:length pred pos 	33640
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(201840, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (201840, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9994 - AUC-PR: 0.9979 - P@50: 1.0000 > 14
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9994 - AUC-PR: 0.9961 - P@50: 1.0000 > 14
+INFO:pw_covid.py:length pred pos 	2385
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9874 - AUC-PR: 0.9748 - P@50: 1.0000 > 15
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9871 - AUC-PR: 0.9649 - P@50: 1.0000 > 15
+INFO:pw_covid.py:length pred pos 	6840
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:all se five facts(41040, 3)
+INFO:pw_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:pw_covid.py:SCORES FIVE SHAPE (41040, 1)
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9913 - AUC-PR: 0.9800 - P@50: 1.0000 > 16
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9912 - AUC-PR: 0.9710 - P@50: 1.0000 > 16
+INFO:pw_covid.py:length pred pos 	3199
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9781 - P@50: 1.0000 > 17
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9890 - AUC-PR: 0.9666 - P@50: 1.0000 > 17
+INFO:pw_covid.py:length pred pos 	3827
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9870 - AUC-PR: 0.9724 - P@50: 1.0000 > 18
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9871 - AUC-PR: 0.9633 - P@50: 1.0000 > 18
+INFO:pw_covid.py:length pred pos 	5222
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9858 - AUC-PR: 0.9677 - P@50: 1.0000 > 19
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9858 - AUC-PR: 0.9560 - P@50: 1.0000 > 19
+INFO:pw_covid.py:length pred pos 	1359
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9840 - AUC-PR: 0.9636 - P@50: 1.0000 > 20
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9839 - AUC-PR: 0.9474 - P@50: 1.0000 > 20
+INFO:pw_covid.py:length pred pos 	2993
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9938 - AUC-PR: 0.9853 - P@50: 1.0000 > 21
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9937 - AUC-PR: 0.9779 - P@50: 1.0000 > 21
+INFO:pw_covid.py:length pred pos 	728
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9860 - AUC-PR: 0.9674 - P@50: 1.0000 > 22
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9855 - AUC-PR: 0.9522 - P@50: 1.0000 > 22
+INFO:pw_covid.py:length pred pos 	802
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9901 - AUC-PR: 0.9794 - P@50: 1.0000 > 23
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9899 - AUC-PR: 0.9692 - P@50: 1.0000 > 23
+INFO:pw_covid.py:length pred pos 	528
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9818 - AUC-PR: 0.9627 - P@50: 1.0000 > 24
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9815 - AUC-PR: 0.9468 - P@50: 1.0000 > 24
+INFO:pw_covid.py:length pred pos 	502
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9761 - AUC-PR: 0.9537 - P@50: 1.0000 > 25
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9777 - AUC-PR: 0.9399 - P@50: 1.0000 > 25
+INFO:pw_covid.py:length pred pos 	30
+INFO:pw_covid.py:retrieved negative samples
+INFO:pw_covid.py:Done concatenation
+INFO:pw_covid.py:scores five done
+INFO:pw_covid.py:scores ten done
+INFO:pw_covid.py:in the harder set
+INFO:pw_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9998 - AUC-PR: 0.9989 - P@50: 1.0000 > 26
+INFO:pw_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9984 - AUC-PR: 0.9894 - P@50: 1.0000 > 26
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:AUC_ROC five 	0.9894330226257251
+INFO:pw_covid.py:AUC_ROC ten 	0.9893811168702905
+INFO:pw_covid.py:CLASSIFICATION METRICS FIVE
+INFO:pw_covid.py:Error 	test results	AUC-ROC 0.989433	AP 1.000000	P@50 1.000000	AUC_PR 0.998925
+INFO:pw_covid.py:CLASSIFICATION METRICS TEN
+INFO:pw_covid.py:Error 	test results	AUC-ROC 0.989381	AP 1.000000	P@50 1.000000	AUC_PR 0.989394
+INFO:pw_covid.py:length predicate_instanes 	27
+INFO:pw_covid.py:predicate instances done
+INFO:pw_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:pw_covid.py:make test triples numpy
+INFO:pw_covid.py:about to start predicting
+INFO:pw_covid.py:length pred pos 	83421
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9859 - AUC-PR: 0.9892 - P@50: 1.0000 > 0
+INFO:pw_covid.py:length pred pos 	16167
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9845 - AUC-PR: 0.9887 - P@50: 1.0000 > 1
+INFO:pw_covid.py:length pred pos 	6598
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9882 - AUC-PR: 0.9913 - P@50: 1.0000 > 2
+INFO:pw_covid.py:length pred pos 	7376
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9908 - AUC-PR: 0.9926 - P@50: 1.0000 > 3
+INFO:pw_covid.py:length pred pos 	15087
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9945 - AUC-PR: 0.9953 - P@50: 1.0000 > 4
+INFO:pw_covid.py:length pred pos 	44117
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9954 - AUC-PR: 0.9960 - P@50: 1.0000 > 5
+INFO:pw_covid.py:length pred pos 	22427
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9924 - P@50: 1.0000 > 6
+INFO:pw_covid.py:length pred pos 	44637
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9924 - P@50: 1.0000 > 7
+INFO:pw_covid.py:length pred pos 	41643
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9930 - AUC-PR: 0.9944 - P@50: 1.0000 > 8
+INFO:pw_covid.py:length pred pos 	41765
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9940 - AUC-PR: 0.9956 - P@50: 1.0000 > 9
+INFO:pw_covid.py:length pred pos 	46730
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9934 - AUC-PR: 0.9952 - P@50: 1.0000 > 10
+INFO:pw_covid.py:length pred pos 	33370
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9911 - AUC-PR: 0.9931 - P@50: 1.0000 > 11
+INFO:pw_covid.py:length pred pos 	36708
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9796 - AUC-PR: 0.9860 - P@50: 1.0000 > 12
+INFO:pw_covid.py:length pred pos 	35963
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9947 - AUC-PR: 0.9962 - P@50: 1.0000 > 13
+INFO:pw_covid.py:length pred pos 	33640
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9995 - AUC-PR: 0.9995 - P@50: 1.0000 > 14
+INFO:pw_covid.py:length pred pos 	2385
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9879 - AUC-PR: 0.9914 - P@50: 1.0000 > 15
+INFO:pw_covid.py:length pred pos 	6840
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9912 - AUC-PR: 0.9932 - P@50: 1.0000 > 16
+INFO:pw_covid.py:length pred pos 	3199
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9893 - AUC-PR: 0.9921 - P@50: 1.0000 > 17
+INFO:pw_covid.py:length pred pos 	3827
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9868 - AUC-PR: 0.9903 - P@50: 1.0000 > 18
+INFO:pw_covid.py:length pred pos 	5222
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9859 - AUC-PR: 0.9895 - P@50: 1.0000 > 19
+INFO:pw_covid.py:length pred pos 	1359
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9835 - AUC-PR: 0.9872 - P@50: 1.0000 > 20
+INFO:pw_covid.py:length pred pos 	2993
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9935 - AUC-PR: 0.9949 - P@50: 1.0000 > 21
+INFO:pw_covid.py:length pred pos 	728
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9845 - AUC-PR: 0.9880 - P@50: 1.0000 > 22
+INFO:pw_covid.py:length pred pos 	802
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9905 - AUC-PR: 0.9929 - P@50: 1.0000 > 23
+INFO:pw_covid.py:length pred pos 	528
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9825 - AUC-PR: 0.9873 - P@50: 1.0000 > 24
+INFO:pw_covid.py:length pred pos 	502
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9784 - AUC-PR: 0.9840 - P@50: 1.0000 > 25
+INFO:pw_covid.py:length pred pos 	30
+INFO:pw_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9989 - AUC-PR: 0.9989 - P@50: 1.0000 > 26
+INFO:pw_covid.py:done
+INFO:pw_covid.py:metrics done
+INFO:pw_covid.py:AUC_ROC 	0.989486293604316
+INFO:pw_covid.py:CLASSIFICATION METRICS
+INFO:pw_covid.py:Error 	test results	AUC-ROC 0.989486	AP 1.000000	P@50 1.000000	AUC_PR 0.998925
+GPU Epilog Script v0.30

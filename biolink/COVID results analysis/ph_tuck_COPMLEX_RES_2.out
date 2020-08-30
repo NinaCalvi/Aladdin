@@ -1,0 +1,216 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'complex', '--data', 'covid', '--loss', 'pair_hinge', '--epochs', '600', '--learning-rate', '0.38', '--batch-size', '1024', '--reg-weight', '0.005', '--embedding-size', '150', '--quiet', '--nb-negs', '200', '--loss-margin', '5', '--save_model_name', 'PH_complex_covid_lr_380_bsize_1024_rw_005_es_150_forREL_COVID', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--load', '--testrel', 'best_PH_COMPLEX_COVID.csv', '--rare']
+MCL False
+INFO:ph_complex_covid.py:Valid: False
+INFO:ph_complex_covid.py:Device: cuda
+INFO:ph_complex_covid.py:auc and lod happening
+INFO:ph_complex_covid.py:dataset name 	train
+INFO:ph_complex_covid.py:dataset name 	valid
+INFO:ph_complex_covid.py:dataset name 	test
+INFO:ph_complex_covid.py:in evalute for dataset: 	test
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:TEST RESULTS
+INFO:ph_complex_covid.py:Error 	test results 	MRR 0.148965	H@1 0.088055	H@3 0.166065	H@10 0.263856	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_complex_covid.py:===========
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:VERY RARE RESULTS
+INFO:ph_complex_covid.py:Error VERYRARE HEAD results 	MRR 0.547592	H@1 0.518106	H@3 0.576602	H@10 0.590529	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:Error VERYRARE TAIL results 	MRR 0.565180	H@1 0.530928	H@3 0.592784	H@10 0.608247	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:RARE RESULTS
+INFO:ph_complex_covid.py:Error RARE HEAD results 	MRR 0.124828	H@1 0.085434	H@3 0.136391	H@10 0.191318	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:Error RARE TAIL results 	MRR 0.128113	H@1 0.086121	H@3 0.139184	H@10 0.201823	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:COMMON RESULTS
+INFO:ph_complex_covid.py:Error COMMON- HEAD results 	MRR 0.153602	H@1 0.092695	H@3 0.169612	H@10 0.270083	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:Error COMMON- TAIL results 	MRR 0.163902	H@1 0.098653	H@3 0.183512	H@10 0.289304	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:VERYCOMMON RESULTS
+INFO:ph_complex_covid.py:Error VERY-COMMON HEAD results 	MRR 0.191481	H@1 0.109453	H@3 0.216211	H@10 0.351265	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:Error VERY-COMMON TAIL results 	MRR 0.170563	H@1 0.095396	H@3 0.192078	H@10 0.313482	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:VERYVERYCOMMON RESULTS
+INFO:ph_complex_covid.py:Error VERYVERY-COMMON HEAD results 	MRR 0.209803	H@1 0.106374	H@3 0.244829	H@10 0.403124	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:Error VERYVERY-COMMON TAIL results 	MRR 0.191070	H@1 0.100236	H@3 0.216195	H@10 0.375786	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_complex_covid.py:test triples shape 	torch.Size([53154, 3])
+TEST SIZE RELATION 53154
+INFO:ph_complex_covid.py:INFO RELATION 	8
+INFO:ph_complex_covid.py:MRR 	0.03944969658809172, H@1 	0.009823182711198428, H@3 	0.026031434184675836, H@10 	0.09049607072691553
+INFO:ph_complex_covid.py:INFO RELATION 	1
+INFO:ph_complex_covid.py:MRR 	0.03056703506274058, H@1 	0.007746933505487412, H@3 	0.02356358941252421, H@10 	0.0684312459651388
+INFO:ph_complex_covid.py:INFO RELATION 	7
+INFO:ph_complex_covid.py:MRR 	0.1802203831270288, H@1 	0.09514260249554367, H@3 	0.2123440285204991, H@10 	0.3589572192513369
+INFO:ph_complex_covid.py:INFO RELATION 	3
+INFO:ph_complex_covid.py:MRR 	0.020706400894642707, H@1 	0.003234152652005175, H@3 	0.009055627425614488, H@10 	0.04592496765847348
+INFO:ph_complex_covid.py:INFO RELATION 	9
+INFO:ph_complex_covid.py:MRR 	0.4259019646584868, H@1 	0.3098196881091618, H@3 	0.4987816764132554, H@10 	0.6426656920077972
+INFO:ph_complex_covid.py:INFO RELATION 	10
+INFO:ph_complex_covid.py:MRR 	0.4168253490719376, H@1 	0.2863704336680197, H@3 	0.4966887417218543, H@10 	0.6681264687032685
+INFO:ph_complex_covid.py:INFO RELATION 	14
+INFO:ph_complex_covid.py:MRR 	0.1008940307514633, H@1 	0.030648504589872668, H@3 	0.090316849274504, H@10 	0.2405981640509328
+INFO:ph_complex_covid.py:INFO RELATION 	0
+INFO:ph_complex_covid.py:MRR 	0.04489953219397995, H@1 	0.014313091388190202, H@3 	0.03713019523296203, H@10 	0.09635884537070308
+INFO:ph_complex_covid.py:INFO RELATION 	5
+INFO:ph_complex_covid.py:MRR 	0.028905226042552454, H@1 	0.006759853345554537, H@3 	0.019019248395967, H@10 	0.0592346471127406
+INFO:ph_complex_covid.py:INFO RELATION 	19
+INFO:ph_complex_covid.py:MRR 	0.028998803089754412, H@1 	0.005940594059405941, H@3 	0.026732673267326732, H@10 	0.060396039603960394
+INFO:ph_complex_covid.py:INFO RELATION 	4
+INFO:ph_complex_covid.py:MRR 	0.019113689956490352, H@1 	0.0013568521031207597, H@3 	0.008819538670284939, H@10 	0.041383989145183174
+INFO:ph_complex_covid.py:INFO RELATION 	13
+INFO:ph_complex_covid.py:MRR 	0.38931293806022593, H@1 	0.24754006184987348, H@3 	0.477509136913129, H@10 	0.6655889794770874
+INFO:ph_complex_covid.py:INFO RELATION 	11
+INFO:ph_complex_covid.py:MRR 	0.02896139083028407, H@1 	0.00526791089704997, H@3 	0.01836243226971704, H@10 	0.06652618904274533
+INFO:ph_complex_covid.py:INFO RELATION 	12
+INFO:ph_complex_covid.py:MRR 	0.04839799980951445, H@1 	0.01918354818907305, H@3 	0.04619398403928791, H@10 	0.10082872928176796
+INFO:ph_complex_covid.py:INFO RELATION 	2
+INFO:ph_complex_covid.py:MRR 	0.04633078488215181, H@1 	0.01753048780487805, H@3 	0.040396341463414635, H@10 	0.08841463414634146
+INFO:ph_complex_covid.py:INFO RELATION 	6
+INFO:ph_complex_covid.py:MRR 	0.23468324095563695, H@1 	0.14206008583690988, H@3 	0.2667381974248927, H@10 	0.43798283261802573
+INFO:ph_complex_covid.py:INFO RELATION 	21
+INFO:ph_complex_covid.py:MRR 	0.062369765155331436, H@1 	0.020905923344947737, H@3 	0.05574912891986063, H@10 	0.14111498257839722
+INFO:ph_complex_covid.py:INFO RELATION 	16
+INFO:ph_complex_covid.py:MRR 	0.0329209670214051, H@1 	0.007385524372230428, H@3 	0.0258493353028065, H@10 	0.06942392909896603
+INFO:ph_complex_covid.py:INFO RELATION 	23
+INFO:ph_complex_covid.py:MRR 	0.06134081112093393, H@1 	0.02127659574468085, H@3 	0.05851063829787234, H@10 	0.1276595744680851
+INFO:ph_complex_covid.py:INFO RELATION 	17
+INFO:ph_complex_covid.py:MRR 	0.03598791140236959, H@1 	0.009433962264150943, H@3 	0.029874213836477988, H@10 	0.08018867924528301
+INFO:ph_complex_covid.py:INFO RELATION 	18
+INFO:ph_complex_covid.py:MRR 	0.03377009079987197, H@1 	0.012626262626262626, H@3 	0.026515151515151516, H@10 	0.06186868686868687
+INFO:ph_complex_covid.py:INFO RELATION 	22
+INFO:ph_complex_covid.py:MRR 	0.011741195288583701, H@1 	0.0, H@3 	0.006024096385542169, H@10 	0.024096385542168676
+INFO:ph_complex_covid.py:INFO RELATION 	15
+INFO:ph_complex_covid.py:MRR 	0.038615390631984665, H@1 	0.01627906976744186, H@3 	0.023255813953488372, H@10 	0.07441860465116279
+INFO:ph_complex_covid.py:INFO RELATION 	25
+INFO:ph_complex_covid.py:MRR 	0.013321733927623633, H@1 	0.0, H@3 	0.0125, H@10 	0.0375
+INFO:ph_complex_covid.py:INFO RELATION 	26
+INFO:ph_complex_covid.py:MRR 	0.38558377896613194, H@1 	0.25, H@3 	0.5, H@10 	0.5
+INFO:ph_complex_covid.py:INFO RELATION 	20
+INFO:ph_complex_covid.py:MRR 	0.020102554987261975, H@1 	0.0038461538461538464, H@3 	0.015384615384615385, H@10 	0.03461538461538462
+INFO:ph_complex_covid.py:INFO RELATION 	24
+INFO:ph_complex_covid.py:MRR 	0.03374336836026453, H@1 	0.018867924528301886, H@3 	0.03773584905660377, H@10 	0.03773584905660377
+MMR VAL 0.13714778902032979
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:ph_complex_covid.py:length predicate_instanes 	27
+INFO:ph_complex_covid.py:predicate instances done
+INFO:ph_complex_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_complex_covid.py:make test triples numpy
+INFO:ph_complex_covid.py:about to start predicting
+INFO:ph_complex_covid.py:length pred pos 	83421
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9874 - AUC-PR: 0.9896 - P@50: 1.0000 > 0
+INFO:ph_complex_covid.py:length pred pos 	16167
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9887 - AUC-PR: 0.9909 - P@50: 1.0000 > 1
+INFO:ph_complex_covid.py:length pred pos 	6598
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9948 - AUC-PR: 0.9955 - P@50: 1.0000 > 2
+INFO:ph_complex_covid.py:length pred pos 	7376
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9954 - P@50: 1.0000 > 3
+INFO:ph_complex_covid.py:length pred pos 	15087
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9958 - AUC-PR: 0.9960 - P@50: 1.0000 > 4
+INFO:ph_complex_covid.py:length pred pos 	44117
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9966 - P@50: 1.0000 > 5
+INFO:ph_complex_covid.py:length pred pos 	22427
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9932 - AUC-PR: 0.9947 - P@50: 1.0000 > 6
+INFO:ph_complex_covid.py:length pred pos 	44637
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9960 - P@50: 1.0000 > 7
+INFO:ph_complex_covid.py:length pred pos 	41643
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9959 - P@50: 1.0000 > 8
+INFO:ph_complex_covid.py:length pred pos 	41765
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9953 - AUC-PR: 0.9964 - P@50: 1.0000 > 9
+INFO:ph_complex_covid.py:length pred pos 	46730
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9957 - AUC-PR: 0.9966 - P@50: 1.0000 > 10
+INFO:ph_complex_covid.py:length pred pos 	33370
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9957 - P@50: 1.0000 > 11
+INFO:ph_complex_covid.py:length pred pos 	36708
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9811 - AUC-PR: 0.9862 - P@50: 1.0000 > 12
+INFO:ph_complex_covid.py:length pred pos 	35963
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9959 - AUC-PR: 0.9968 - P@50: 1.0000 > 13
+INFO:ph_complex_covid.py:length pred pos 	33640
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9995 - AUC-PR: 0.9995 - P@50: 1.0000 > 14
+INFO:ph_complex_covid.py:length pred pos 	2385
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9946 - AUC-PR: 0.9954 - P@50: 1.0000 > 15
+INFO:ph_complex_covid.py:length pred pos 	6840
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9907 - AUC-PR: 0.9929 - P@50: 1.0000 > 16
+INFO:ph_complex_covid.py:length pred pos 	3199
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9960 - AUC-PR: 0.9963 - P@50: 1.0000 > 17
+INFO:ph_complex_covid.py:length pred pos 	3827
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9943 - AUC-PR: 0.9951 - P@50: 1.0000 > 18
+INFO:ph_complex_covid.py:length pred pos 	5222
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9921 - AUC-PR: 0.9932 - P@50: 1.0000 > 19
+INFO:ph_complex_covid.py:length pred pos 	1359
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9904 - AUC-PR: 0.9918 - P@50: 1.0000 > 20
+INFO:ph_complex_covid.py:length pred pos 	2993
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9972 - AUC-PR: 0.9973 - P@50: 1.0000 > 21
+INFO:ph_complex_covid.py:length pred pos 	728
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9864 - AUC-PR: 0.9896 - P@50: 1.0000 > 22
+INFO:ph_complex_covid.py:length pred pos 	802
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9961 - AUC-PR: 0.9962 - P@50: 1.0000 > 23
+INFO:ph_complex_covid.py:length pred pos 	528
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9945 - AUC-PR: 0.9952 - P@50: 1.0000 > 24
+INFO:ph_complex_covid.py:length pred pos 	502
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9882 - AUC-PR: 0.9905 - P@50: 1.0000 > 25
+INFO:ph_complex_covid.py:length pred pos 	30
+INFO:ph_complex_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9900 - AUC-PR: 0.9923 - P@50: 1.0000 > 26
+INFO:ph_complex_covid.py:done
+INFO:ph_complex_covid.py:metrics done
+INFO:ph_complex_covid.py:AUC_ROC 	0.993161705306241
+INFO:ph_complex_covid.py:CLASSIFICATION METRICS
+INFO:ph_complex_covid.py:Error 	test results	AUC-ROC 0.993162	AP 1.000000	P@50 1.000000	AUC_PR 0.992308
+GPU Epilog Script v0.30

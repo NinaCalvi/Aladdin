@@ -1,0 +1,504 @@
+['--model', 'complex', '--data', 'covid', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.7658927833259626', '--batch-size', '1024', '--reg-weight', '0.0054473415910223305', '--embedding-size', '200', '--quiet', '--save_model_name', 'cplex_covid_mcl_lr_766_bsize_1024_rw_005_es_200_forREL_', '--auc', '--rel_type', '/app/Antonia/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/app/Antonia/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--load', '--harder']
+MCL True
+INFO:best_cplex_covid_AUC.py:Valid: False
+INFO:best_cplex_covid_AUC.py:Device: cuda
+INFO:best_cplex_covid_AUC.py:auc and lod happening
+INFO:best_cplex_covid_AUC.py:dataset name 	train
+INFO:best_cplex_covid_AUC.py:dataset name 	valid
+INFO:best_cplex_covid_AUC.py:dataset name 	test
+INFO:best_cplex_covid_AUC.py:in evalute for dataset: 	test
+NEW MRR: 0.221646261444416
+INFO:best_cplex_covid_AUC.py:done
+INFO:best_cplex_covid_AUC.py:metrics done
+INFO:best_cplex_covid_AUC.py:TEST RESULTS
+INFO:best_cplex_covid_AUC.py:Error 	test results 	MRR 0.221646	H@1 0.146207	H@3 0.244074	H@10 0.368298	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:best_cplex_covid_AUC.py:===========
+INFO:best_cplex_covid_AUC.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:best_cplex_covid_AUC.py:length predicate_instanes 	27
+INFO:best_cplex_covid_AUC.py:predicate instances done
+INFO:best_cplex_covid_AUC.py:all tiples 	torch.Size([538064, 3])
+INFO:best_cplex_covid_AUC.py:make test triples numpy
+INFO:best_cplex_covid_AUC.py:about to start predicting
+INFO:best_cplex_covid_AUC.py:length pred pos 	83421
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(500526, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (240000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (280000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (320000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (360000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (400000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (440000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (480000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (500526, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9938 - AUC-PR: 0.9831 - P@50: 1.0000 > 0
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9937 - AUC-PR: 0.9742 - P@50: 1.0000 > 0
+INFO:best_cplex_covid_AUC.py:length pred pos 	16167
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(97002, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (97002, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9931 - AUC-PR: 0.9821 - P@50: 1.0000 > 1
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9932 - AUC-PR: 0.9729 - P@50: 1.0000 > 1
+INFO:best_cplex_covid_AUC.py:length pred pos 	6598
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9966 - AUC-PR: 0.9895 - P@50: 1.0000 > 2
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9824 - P@50: 1.0000 > 2
+INFO:best_cplex_covid_AUC.py:length pred pos 	7376
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(44256, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (44256, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9978 - AUC-PR: 0.9909 - P@50: 1.0000 > 3
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9835 - P@50: 1.0000 > 3
+INFO:best_cplex_covid_AUC.py:length pred pos 	15087
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(90522, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (90522, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9982 - AUC-PR: 0.9926 - P@50: 1.0000 > 4
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9983 - AUC-PR: 0.9869 - P@50: 1.0000 > 4
+INFO:best_cplex_covid_AUC.py:length pred pos 	44117
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(264702, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (240000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (264702, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9983 - AUC-PR: 0.9929 - P@50: 1.0000 > 5
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9983 - AUC-PR: 0.9876 - P@50: 1.0000 > 5
+INFO:best_cplex_covid_AUC.py:length pred pos 	22427
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(134562, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (134562, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9962 - AUC-PR: 0.9904 - P@50: 1.0000 > 6
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9962 - AUC-PR: 0.9854 - P@50: 1.0000 > 6
+INFO:best_cplex_covid_AUC.py:length pred pos 	44637
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(267822, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (240000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (267822, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9971 - AUC-PR: 0.9916 - P@50: 1.0000 > 7
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9971 - AUC-PR: 0.9868 - P@50: 1.0000 > 7
+INFO:best_cplex_covid_AUC.py:length pred pos 	41643
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(249858, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (240000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (249858, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9918 - P@50: 1.0000 > 8
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9859 - P@50: 1.0000 > 8
+INFO:best_cplex_covid_AUC.py:length pred pos 	41765
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(250590, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (240000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (250590, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9941 - P@50: 1.0000 > 9
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9909 - P@50: 1.0000 > 9
+INFO:best_cplex_covid_AUC.py:length pred pos 	46730
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(280380, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (240000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (280000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (280380, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9973 - AUC-PR: 0.9935 - P@50: 1.0000 > 10
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9973 - AUC-PR: 0.9902 - P@50: 1.0000 > 10
+INFO:best_cplex_covid_AUC.py:length pred pos 	33370
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(200220, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200220, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9973 - AUC-PR: 0.9907 - P@50: 1.0000 > 11
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9973 - AUC-PR: 0.9839 - P@50: 1.0000 > 11
+INFO:best_cplex_covid_AUC.py:length pred pos 	36708
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(220248, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (220248, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9854 - AUC-PR: 0.9797 - P@50: 1.0000 > 12
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9854 - AUC-PR: 0.9733 - P@50: 1.0000 > 12
+INFO:best_cplex_covid_AUC.py:length pred pos 	35963
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(215778, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (215778, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9979 - AUC-PR: 0.9946 - P@50: 1.0000 > 13
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9979 - AUC-PR: 0.9918 - P@50: 1.0000 > 13
+INFO:best_cplex_covid_AUC.py:length pred pos 	33640
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(201840, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (80000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (120000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (160000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (200000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (201840, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9998 - AUC-PR: 0.9992 - P@50: 1.0000 > 14
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9998 - AUC-PR: 0.9985 - P@50: 1.0000 > 14
+INFO:best_cplex_covid_AUC.py:length pred pos 	2385
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9889 - P@50: 1.0000 > 15
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9964 - AUC-PR: 0.9815 - P@50: 1.0000 > 15
+INFO:best_cplex_covid_AUC.py:length pred pos 	6840
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:all se five facts(41040, 3)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (40000, 1)
+INFO:best_cplex_covid_AUC.py:SCORES FIVE SHAPE (41040, 1)
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9963 - AUC-PR: 0.9833 - P@50: 1.0000 > 16
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9773 - P@50: 1.0000 > 16
+INFO:best_cplex_covid_AUC.py:length pred pos 	3199
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9980 - AUC-PR: 0.9926 - P@50: 1.0000 > 17
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9976 - AUC-PR: 0.9845 - P@50: 1.0000 > 17
+INFO:best_cplex_covid_AUC.py:length pred pos 	3827
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9889 - P@50: 1.0000 > 18
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9965 - AUC-PR: 0.9820 - P@50: 1.0000 > 18
+INFO:best_cplex_covid_AUC.py:length pred pos 	5222
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9945 - AUC-PR: 0.9848 - P@50: 1.0000 > 19
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9944 - AUC-PR: 0.9759 - P@50: 1.0000 > 19
+INFO:best_cplex_covid_AUC.py:length pred pos 	1359
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9941 - AUC-PR: 0.9827 - P@50: 1.0000 > 20
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9940 - AUC-PR: 0.9723 - P@50: 1.0000 > 20
+INFO:best_cplex_covid_AUC.py:length pred pos 	2993
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9985 - AUC-PR: 0.9941 - P@50: 1.0000 > 21
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9985 - AUC-PR: 0.9897 - P@50: 1.0000 > 21
+INFO:best_cplex_covid_AUC.py:length pred pos 	728
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9928 - AUC-PR: 0.9821 - P@50: 1.0000 > 22
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9926 - AUC-PR: 0.9731 - P@50: 1.0000 > 22
+INFO:best_cplex_covid_AUC.py:length pred pos 	802
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9978 - AUC-PR: 0.9929 - P@50: 1.0000 > 23
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9973 - AUC-PR: 0.9848 - P@50: 1.0000 > 23
+INFO:best_cplex_covid_AUC.py:length pred pos 	528
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9958 - AUC-PR: 0.9871 - P@50: 1.0000 > 24
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9758 - P@50: 1.0000 > 24
+INFO:best_cplex_covid_AUC.py:length pred pos 	502
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9894 - AUC-PR: 0.9782 - P@50: 1.0000 > 25
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9900 - AUC-PR: 0.9736 - P@50: 1.0000 > 25
+INFO:best_cplex_covid_AUC.py:length pred pos 	30
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+INFO:best_cplex_covid_AUC.py:Done concatenation
+INFO:best_cplex_covid_AUC.py:scores five done
+INFO:best_cplex_covid_AUC.py:scores ten done
+INFO:best_cplex_covid_AUC.py:in the harder set
+INFO:best_cplex_covid_AUC.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9998 - AUC-PR: 0.9989 - P@50: 1.0000 > 26
+INFO:best_cplex_covid_AUC.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9988 - AUC-PR: 0.9894 - P@50: 1.0000 > 26
+INFO:best_cplex_covid_AUC.py:done
+INFO:best_cplex_covid_AUC.py:metrics done
+INFO:best_cplex_covid_AUC.py:AUC_ROC five 	0.9960783823226388
+INFO:best_cplex_covid_AUC.py:AUC_ROC ten 	0.9959942771149889
+INFO:best_cplex_covid_AUC.py:CLASSIFICATION METRICS FIVE
+INFO:best_cplex_covid_AUC.py:Error 	test results	AUC-ROC 0.996078	AP 1.000000	P@50 1.000000	AUC_PR 0.998925
+INFO:best_cplex_covid_AUC.py:CLASSIFICATION METRICS TEN
+INFO:best_cplex_covid_AUC.py:Error 	test results	AUC-ROC 0.995994	AP 1.000000	P@50 1.000000	AUC_PR 0.989419
+INFO:best_cplex_covid_AUC.py:length predicate_instanes 	27
+INFO:best_cplex_covid_AUC.py:predicate instances done
+INFO:best_cplex_covid_AUC.py:all tiples 	torch.Size([538064, 3])
+INFO:best_cplex_covid_AUC.py:make test triples numpy
+INFO:best_cplex_covid_AUC.py:about to start predicting
+INFO:best_cplex_covid_AUC.py:length pred pos 	83421
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9938 - AUC-PR: 0.9949 - P@50: 1.0000 > 0
+INFO:best_cplex_covid_AUC.py:length pred pos 	16167
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9933 - AUC-PR: 0.9947 - P@50: 1.0000 > 1
+INFO:best_cplex_covid_AUC.py:length pred pos 	6598
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9967 - AUC-PR: 0.9972 - P@50: 1.0000 > 2
+INFO:best_cplex_covid_AUC.py:length pred pos 	7376
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9977 - P@50: 1.0000 > 3
+INFO:best_cplex_covid_AUC.py:length pred pos 	15087
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9984 - AUC-PR: 0.9984 - P@50: 1.0000 > 4
+INFO:best_cplex_covid_AUC.py:length pred pos 	44117
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9983 - AUC-PR: 0.9983 - P@50: 1.0000 > 5
+INFO:best_cplex_covid_AUC.py:length pred pos 	22427
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9962 - AUC-PR: 0.9970 - P@50: 1.0000 > 6
+INFO:best_cplex_covid_AUC.py:length pred pos 	44637
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9971 - AUC-PR: 0.9976 - P@50: 1.0000 > 7
+INFO:best_cplex_covid_AUC.py:length pred pos 	41643
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9977 - AUC-PR: 0.9979 - P@50: 1.0000 > 8
+INFO:best_cplex_covid_AUC.py:length pred pos 	41765
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9976 - AUC-PR: 0.9981 - P@50: 1.0000 > 9
+INFO:best_cplex_covid_AUC.py:length pred pos 	46730
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9974 - AUC-PR: 0.9980 - P@50: 1.0000 > 10
+INFO:best_cplex_covid_AUC.py:length pred pos 	33370
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9974 - AUC-PR: 0.9976 - P@50: 1.0000 > 11
+INFO:best_cplex_covid_AUC.py:length pred pos 	36708
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9854 - AUC-PR: 0.9911 - P@50: 1.0000 > 12
+INFO:best_cplex_covid_AUC.py:length pred pos 	35963
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9979 - AUC-PR: 0.9983 - P@50: 1.0000 > 13
+INFO:best_cplex_covid_AUC.py:length pred pos 	33640
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9998 - AUC-PR: 0.9998 - P@50: 1.0000 > 14
+INFO:best_cplex_covid_AUC.py:length pred pos 	2385
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9966 - AUC-PR: 0.9971 - P@50: 1.0000 > 15
+INFO:best_cplex_covid_AUC.py:length pred pos 	6840
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9966 - AUC-PR: 0.9965 - P@50: 1.0000 > 16
+INFO:best_cplex_covid_AUC.py:length pred pos 	3199
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9979 - AUC-PR: 0.9980 - P@50: 1.0000 > 17
+INFO:best_cplex_covid_AUC.py:length pred pos 	3827
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9964 - AUC-PR: 0.9969 - P@50: 1.0000 > 18
+INFO:best_cplex_covid_AUC.py:length pred pos 	5222
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9944 - AUC-PR: 0.9954 - P@50: 1.0000 > 19
+INFO:best_cplex_covid_AUC.py:length pred pos 	1359
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9939 - AUC-PR: 0.9949 - P@50: 1.0000 > 20
+INFO:best_cplex_covid_AUC.py:length pred pos 	2993
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9986 - AUC-PR: 0.9987 - P@50: 1.0000 > 21
+INFO:best_cplex_covid_AUC.py:length pred pos 	728
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9929 - AUC-PR: 0.9946 - P@50: 1.0000 > 22
+INFO:best_cplex_covid_AUC.py:length pred pos 	802
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9969 - AUC-PR: 0.9972 - P@50: 1.0000 > 23
+INFO:best_cplex_covid_AUC.py:length pred pos 	528
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9951 - AUC-PR: 0.9956 - P@50: 1.0000 > 24
+INFO:best_cplex_covid_AUC.py:length pred pos 	502
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9897 - AUC-PR: 0.9925 - P@50: 1.0000 > 25
+INFO:best_cplex_covid_AUC.py:length pred pos 	30
+INFO:best_cplex_covid_AUC.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 1.0000 - AUC-PR: 1.0000 - P@50: 1.0000 > 26
+INFO:best_cplex_covid_AUC.py:done
+INFO:best_cplex_covid_AUC.py:metrics done
+INFO:best_cplex_covid_AUC.py:AUC_ROC 	0.9960551138892795
+INFO:best_cplex_covid_AUC.py:CLASSIFICATION METRICS
+INFO:best_cplex_covid_AUC.py:Error 	test results	AUC-ROC 0.996055	AP 1.000000	P@50 1.000000	AUC_PR 1.000000
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/opt/miniconda/envs/nina/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])

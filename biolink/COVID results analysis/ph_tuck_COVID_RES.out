@@ -1,0 +1,537 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+['--model', 'tucker', '--data', 'covid', '--loss', 'pair_hinge', '--epochs', '600', '--valid', '--learning-rate', '0.012', '--batch-size', '1024', '--reg-weight', '4.602e-09', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--nb-negs', '50', '--loss-margin', '8', '--save_model_name', 'PH_tucker_covid_lr_012_bsize_1024_rw_4602_es_150_rw_150_forREL_COVID', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--harder', '--testrel', 'best_PH_TUCKER_COVID.csv', '--rare', '--load']
+MCL False
+INFO:ph_tuck_covid.py:Valid: True
+INFO:ph_tuck_covid.py:Device: cuda
+INFO:ph_tuck_covid.py:auc and lod happening
+INFO:ph_tuck_covid.py:dataset name 	train
+INFO:ph_tuck_covid.py:dataset name 	valid
+INFO:ph_tuck_covid.py:dataset name 	test
+INFO:ph_tuck_covid.py:in evalute for dataset: 	test
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:TEST RESULTS
+INFO:ph_tuck_covid.py:Error 	test results 	MRR 0.094434	H@1 0.041107	H@3 0.094941	H@10 0.195460	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_tuck_covid.py:===========
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'covid', '--loss', 'pair_hinge', '--epochs', '600', '--valid', '--learning-rate', '0.012', '--batch-size', '1024', '--reg-weight', '4.602e-09', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--nb-negs', '50', '--loss-margin', '8', '--save_model_name', 'PH_tucker_covid_lr_012_bsize_1024_rw_4602_es_150_rw_150_forREL_COVID', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--harder', '--testrel', 'best_PH_TUCKER_COVID.csv', '--rare', '--load']
+MCL False
+INFO:ph_tuck_covid.py:Valid: True
+INFO:ph_tuck_covid.py:Device: cuda
+INFO:ph_tuck_covid.py:auc and lod happening
+INFO:ph_tuck_covid.py:dataset name 	train
+INFO:ph_tuck_covid.py:dataset name 	valid
+INFO:ph_tuck_covid.py:dataset name 	test
+INFO:ph_tuck_covid.py:in evalute for dataset: 	test
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:TEST RESULTS
+INFO:ph_tuck_covid.py:Error 	test results 	MRR 0.094434	H@1 0.041107	H@3 0.094941	H@10 0.195460	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_tuck_covid.py:===========
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:VERY RARE RESULTS
+INFO:ph_tuck_covid.py:Error VERYRARE HEAD results 	MRR 0.366780	H@1 0.278552	H@3 0.440111	H@10 0.529248	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:Error VERYRARE TAIL results 	MRR 0.346292	H@1 0.250000	H@3 0.386598	H@10 0.541237	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:RARE RESULTS
+INFO:ph_tuck_covid.py:Error RARE HEAD results 	MRR 0.083414	H@1 0.042684	H@3 0.085964	H@10 0.159354	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:Error RARE TAIL results 	MRR 0.087942	H@1 0.042306	H@3 0.090975	H@10 0.171848	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:COMMON RESULTS
+INFO:ph_tuck_covid.py:Error COMMON- HEAD results 	MRR 0.098316	H@1 0.047561	H@3 0.098270	H@10 0.192938	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:Error COMMON- TAIL results 	MRR 0.097657	H@1 0.044446	H@3 0.097524	H@10 0.199524	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:VERYCOMMON RESULTS
+INFO:ph_tuck_covid.py:Error VERY-COMMON HEAD results 	MRR 0.112922	H@1 0.046124	H@3 0.112251	H@10 0.239324	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:Error VERY-COMMON TAIL results 	MRR 0.114303	H@1 0.047238	H@3 0.115247	H@10 0.243728	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:VERYVERYCOMMON RESULTS
+INFO:ph_tuck_covid.py:Error VERYVERY-COMMON HEAD results 	MRR 0.139501	H@1 0.054031	H@3 0.143098	H@10 0.311102	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:Error VERYVERY-COMMON TAIL results 	MRR 0.154526	H@1 0.069969	H@3 0.161164	H@10 0.325865	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_tuck_covid.py:test triples shape 	torch.Size([53154, 3])
+TEST SIZE RELATION 53154
+INFO:ph_tuck_covid.py:INFO RELATION 	8
+INFO:ph_tuck_covid.py:MRR 	0.07556410223584546, H@1 	0.030820235756385067, H@3 	0.06925343811394892, H@10 	0.15717092337917485
+INFO:ph_tuck_covid.py:INFO RELATION 	1
+INFO:ph_tuck_covid.py:MRR 	0.07701966805060796, H@1 	0.034538411878631374, H@3 	0.07617817947062622, H@10 	0.15300193673337636
+INFO:ph_tuck_covid.py:INFO RELATION 	7
+INFO:ph_tuck_covid.py:MRR 	0.060272920015783084, H@1 	0.021167557932263815, H@3 	0.0571524064171123, H@10 	0.12823083778966132
+INFO:ph_tuck_covid.py:INFO RELATION 	3
+INFO:ph_tuck_covid.py:MRR 	0.05157777252530347, H@1 	0.014230271668822769, H@3 	0.04333764553686934, H@10 	0.10866752910737387
+INFO:ph_tuck_covid.py:INFO RELATION 	9
+INFO:ph_tuck_covid.py:MRR 	0.08794400949548249, H@1 	0.02387914230019493, H@3 	0.09015594541910331, H@10 	0.20991715399610136
+INFO:ph_tuck_covid.py:INFO RELATION 	10
+INFO:ph_tuck_covid.py:MRR 	0.11720580236159596, H@1 	0.0684682760093997, H@3 	0.11503952146977142, H@10 	0.20711386455885494
+INFO:ph_tuck_covid.py:INFO RELATION 	14
+INFO:ph_tuck_covid.py:MRR 	0.2703000603059606, H@1 	0.15753627480011845, H@3 	0.30174711282203137, H@10 	0.5002961208172935
+INFO:ph_tuck_covid.py:INFO RELATION 	0
+INFO:ph_tuck_covid.py:MRR 	0.08136576177299376, H@1 	0.02611091148640556, H@3 	0.0846209126841538, H@10 	0.19014253203976525
+INFO:ph_tuck_covid.py:INFO RELATION 	5
+INFO:ph_tuck_covid.py:MRR 	0.06939406308835407, H@1 	0.024404216315307058, H@3 	0.06164069660861595, H@10 	0.15329972502291475
+INFO:ph_tuck_covid.py:INFO RELATION 	19
+INFO:ph_tuck_covid.py:MRR 	0.0684067156493329, H@1 	0.028712871287128714, H@3 	0.0594059405940594, H@10 	0.14554455445544554
+INFO:ph_tuck_covid.py:INFO RELATION 	4
+INFO:ph_tuck_covid.py:MRR 	0.06018181635039826, H@1 	0.017639077340569877, H@3 	0.052917232021709636, H@10 	0.14009497964721845
+INFO:ph_tuck_covid.py:INFO RELATION 	13
+INFO:ph_tuck_covid.py:MRR 	0.10744037931437159, H@1 	0.04709024458813607, H@3 	0.10837784649985943, H@10 	0.22223784087714366
+INFO:ph_tuck_covid.py:INFO RELATION 	11
+INFO:ph_tuck_covid.py:MRR 	0.07122707979109241, H@1 	0.028446718844069838, H@3 	0.06637567730282962, H@10 	0.1467489464178206
+INFO:ph_tuck_covid.py:INFO RELATION 	12
+INFO:ph_tuck_covid.py:MRR 	0.0893521159424331, H@1 	0.042050337630448124, H@3 	0.09468999386126457, H@10 	0.17786985880908532
+INFO:ph_tuck_covid.py:INFO RELATION 	2
+INFO:ph_tuck_covid.py:MRR 	0.08256288062070365, H@1 	0.03429878048780488, H@3 	0.08079268292682927, H@10 	0.17682926829268292
+INFO:ph_tuck_covid.py:INFO RELATION 	6
+INFO:ph_tuck_covid.py:MRR 	0.07251932259848631, H@1 	0.024892703862660945, H@3 	0.07081545064377683, H@10 	0.16072961373390557
+INFO:ph_tuck_covid.py:INFO RELATION 	21
+INFO:ph_tuck_covid.py:MRR 	0.1193477099928072, H@1 	0.06445993031358885, H@3 	0.11672473867595819, H@10 	0.21602787456445993
+INFO:ph_tuck_covid.py:INFO RELATION 	16
+INFO:ph_tuck_covid.py:MRR 	0.09659815660930353, H@1 	0.042097488921713444, H@3 	0.09601181683899557, H@10 	0.20014771048744462
+INFO:ph_tuck_covid.py:INFO RELATION 	23
+INFO:ph_tuck_covid.py:MRR 	0.1873231906786138, H@1 	0.10106382978723404, H@3 	0.20212765957446807, H@10 	0.3723404255319149
+INFO:ph_tuck_covid.py:INFO RELATION 	17
+INFO:ph_tuck_covid.py:MRR 	0.07455734273936823, H@1 	0.031446540880503145, H@3 	0.07075471698113207, H@10 	0.16352201257861634
+INFO:ph_tuck_covid.py:INFO RELATION 	18
+INFO:ph_tuck_covid.py:MRR 	0.10036496437523279, H@1 	0.05176767676767677, H@3 	0.09343434343434344, H@10 	0.19570707070707072
+INFO:ph_tuck_covid.py:INFO RELATION 	22
+INFO:ph_tuck_covid.py:MRR 	0.09091229908320365, H@1 	0.04216867469879518, H@3 	0.08433734939759036, H@10 	0.19879518072289157
+INFO:ph_tuck_covid.py:INFO RELATION 	15
+INFO:ph_tuck_covid.py:MRR 	0.0842024654722697, H@1 	0.03255813953488372, H@3 	0.08372093023255814, H@10 	0.1883720930232558
+INFO:ph_tuck_covid.py:INFO RELATION 	25
+INFO:ph_tuck_covid.py:MRR 	0.03504644715229212, H@1 	0.0125, H@3 	0.025, H@10 	0.0625
+INFO:ph_tuck_covid.py:INFO RELATION 	26
+INFO:ph_tuck_covid.py:MRR 	0.09871283135820345, H@1 	0.0, H@3 	0.25, H@10 	0.25
+INFO:ph_tuck_covid.py:INFO RELATION 	20
+INFO:ph_tuck_covid.py:MRR 	0.086957689253052, H@1 	0.05384615384615385, H@3 	0.06538461538461539, H@10 	0.1576923076923077
+INFO:ph_tuck_covid.py:INFO RELATION 	24
+INFO:ph_tuck_covid.py:MRR 	0.04020270499435043, H@1 	0.0, H@3 	0.018867924528301886, H@10 	0.10377358490566038
+MMR VAL 0.09072676488850877
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:ph_tuck_covid.py:length predicate_instanes 	27
+INFO:ph_tuck_covid.py:predicate instances done
+INFO:ph_tuck_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_tuck_covid.py:make test triples numpy
+INFO:ph_tuck_covid.py:about to start predicting
+INFO:ph_tuck_covid.py:length pred pos 	83421
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(500526, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (240000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (280000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (320000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (360000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (400000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (440000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (480000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (500526,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9694 - AUC-ROC: 0.9913 - AUC-PR: 0.9694 - P@50: 0.9800 > 0
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9489 - AUC-ROC: 0.9913 - AUC-PR: 0.9489 - P@50: 0.9600 > 0
+INFO:ph_tuck_covid.py:length pred pos 	16167
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(97002, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (97002,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9732 - AUC-ROC: 0.9918 - AUC-PR: 0.9732 - P@50: 1.0000 > 1
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9569 - AUC-ROC: 0.9918 - AUC-PR: 0.9569 - P@50: 1.0000 > 1
+INFO:ph_tuck_covid.py:length pred pos 	6598
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9840 - AUC-ROC: 0.9964 - AUC-PR: 0.9840 - P@50: 1.0000 > 2
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9748 - AUC-ROC: 0.9965 - AUC-PR: 0.9748 - P@50: 1.0000 > 2
+INFO:ph_tuck_covid.py:length pred pos 	7376
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(44256, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (44256,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9845 - AUC-ROC: 0.9972 - AUC-PR: 0.9845 - P@50: 1.0000 > 3
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9710 - AUC-ROC: 0.9972 - AUC-PR: 0.9710 - P@50: 1.0000 > 3
+INFO:ph_tuck_covid.py:length pred pos 	15087
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(90522, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (90522,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9869 - AUC-ROC: 0.9977 - AUC-PR: 0.9869 - P@50: 1.0000 > 4
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9759 - AUC-ROC: 0.9976 - AUC-PR: 0.9759 - P@50: 1.0000 > 4
+INFO:ph_tuck_covid.py:length pred pos 	44117
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(264702, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (240000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (264702,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9865 - AUC-ROC: 0.9974 - AUC-PR: 0.9865 - P@50: 1.0000 > 5
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9741 - AUC-ROC: 0.9974 - AUC-PR: 0.9741 - P@50: 1.0000 > 5
+INFO:ph_tuck_covid.py:length pred pos 	22427
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(134562, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (134562,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9812 - AUC-ROC: 0.9952 - AUC-PR: 0.9812 - P@50: 1.0000 > 6
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9655 - AUC-ROC: 0.9951 - AUC-PR: 0.9655 - P@50: 0.9800 > 6
+INFO:ph_tuck_covid.py:length pred pos 	44637
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(267822, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (240000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (267822,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9837 - AUC-ROC: 0.9959 - AUC-PR: 0.9837 - P@50: 0.9800 > 7
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9708 - AUC-ROC: 0.9958 - AUC-PR: 0.9708 - P@50: 1.0000 > 7
+INFO:ph_tuck_covid.py:length pred pos 	41643
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(249858, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (240000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (249858,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9852 - AUC-ROC: 0.9965 - AUC-PR: 0.9852 - P@50: 0.9800 > 8
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9725 - AUC-ROC: 0.9964 - AUC-PR: 0.9725 - P@50: 1.0000 > 8
+INFO:ph_tuck_covid.py:length pred pos 	41765
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(250590, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (240000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (250590,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9795 - AUC-ROC: 0.9953 - AUC-PR: 0.9795 - P@50: 0.9800 > 9
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9630 - AUC-ROC: 0.9952 - AUC-PR: 0.9630 - P@50: 0.9800 > 9
+INFO:ph_tuck_covid.py:length pred pos 	46730
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(280380, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (240000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (280000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (280380,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9790 - AUC-ROC: 0.9950 - AUC-PR: 0.9790 - P@50: 1.0000 > 10
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9633 - AUC-ROC: 0.9951 - AUC-PR: 0.9633 - P@50: 1.0000 > 10
+INFO:ph_tuck_covid.py:length pred pos 	33370
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(200220, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200220,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9838 - AUC-ROC: 0.9966 - AUC-PR: 0.9838 - P@50: 1.0000 > 11
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9713 - AUC-ROC: 0.9967 - AUC-PR: 0.9713 - P@50: 1.0000 > 11
+INFO:ph_tuck_covid.py:length pred pos 	36708
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(220248, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (220248,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9745 - AUC-ROC: 0.9871 - AUC-PR: 0.9745 - P@50: 1.0000 > 12
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9644 - AUC-ROC: 0.9870 - AUC-PR: 0.9644 - P@50: 1.0000 > 12
+INFO:ph_tuck_covid.py:length pred pos 	35963
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(215778, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (215778,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9833 - AUC-ROC: 0.9962 - AUC-PR: 0.9833 - P@50: 1.0000 > 13
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9701 - AUC-ROC: 0.9961 - AUC-PR: 0.9701 - P@50: 1.0000 > 13
+INFO:ph_tuck_covid.py:length pred pos 	33640
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(201840, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (80000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (120000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (160000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (200000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (201840,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9971 - AUC-ROC: 0.9995 - AUC-PR: 0.9971 - P@50: 1.0000 > 14
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9950 - AUC-ROC: 0.9995 - AUC-PR: 0.9950 - P@50: 1.0000 > 14
+INFO:ph_tuck_covid.py:length pred pos 	2385
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9807 - AUC-ROC: 0.9960 - AUC-PR: 0.9807 - P@50: 1.0000 > 15
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9715 - AUC-ROC: 0.9963 - AUC-PR: 0.9715 - P@50: 1.0000 > 15
+INFO:ph_tuck_covid.py:length pred pos 	6840
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:all se five facts(41040, 3)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (40000,)
+INFO:ph_tuck_covid.py:SCORES FIVE SHAPE (41040,)
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9980 - AUC-ROC: 0.9988 - AUC-PR: 0.9980 - P@50: 1.0000 > 16
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9974 - AUC-ROC: 0.9988 - AUC-PR: 0.9974 - P@50: 1.0000 > 16
+INFO:ph_tuck_covid.py:length pred pos 	3199
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9845 - AUC-ROC: 0.9972 - AUC-PR: 0.9845 - P@50: 1.0000 > 17
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9772 - AUC-ROC: 0.9975 - AUC-PR: 0.9772 - P@50: 1.0000 > 17
+INFO:ph_tuck_covid.py:length pred pos 	3827
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9865 - AUC-ROC: 0.9972 - AUC-PR: 0.9865 - P@50: 1.0000 > 18
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9741 - AUC-ROC: 0.9971 - AUC-PR: 0.9741 - P@50: 1.0000 > 18
+INFO:ph_tuck_covid.py:length pred pos 	5222
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9813 - AUC-ROC: 0.9956 - AUC-PR: 0.9813 - P@50: 1.0000 > 19
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9630 - AUC-ROC: 0.9953 - AUC-PR: 0.9630 - P@50: 1.0000 > 19
+INFO:ph_tuck_covid.py:length pred pos 	1359
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9808 - AUC-ROC: 0.9950 - AUC-PR: 0.9808 - P@50: 1.0000 > 20
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9737 - AUC-ROC: 0.9953 - AUC-PR: 0.9737 - P@50: 1.0000 > 20
+INFO:ph_tuck_covid.py:length pred pos 	2993
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9920 - AUC-ROC: 0.9983 - AUC-PR: 0.9920 - P@50: 1.0000 > 21
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9858 - AUC-ROC: 0.9984 - AUC-PR: 0.9858 - P@50: 1.0000 > 21
+INFO:ph_tuck_covid.py:length pred pos 	728
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9795 - AUC-ROC: 0.9934 - AUC-PR: 0.9795 - P@50: 1.0000 > 22
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9672 - AUC-ROC: 0.9938 - AUC-PR: 0.9672 - P@50: 1.0000 > 22
+INFO:ph_tuck_covid.py:length pred pos 	802
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9872 - AUC-ROC: 0.9974 - AUC-PR: 0.9872 - P@50: 1.0000 > 23
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9850 - AUC-ROC: 0.9979 - AUC-PR: 0.9850 - P@50: 1.0000 > 23
+INFO:ph_tuck_covid.py:length pred pos 	528
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9885 - AUC-ROC: 0.9979 - AUC-PR: 0.9885 - P@50: 0.9800 > 24
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9748 - AUC-ROC: 0.9971 - AUC-PR: 0.9748 - P@50: 1.0000 > 24
+INFO:ph_tuck_covid.py:length pred pos 	502
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9706 - AUC-ROC: 0.9902 - AUC-PR: 0.9706 - P@50: 1.0000 > 25
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9602 - AUC-ROC: 0.9907 - AUC-PR: 0.9602 - P@50: 1.0000 > 25
+INFO:ph_tuck_covid.py:length pred pos 	30
+INFO:ph_tuck_covid.py:retrieved negative samples
+INFO:ph_tuck_covid.py:Done concatenation
+INFO:ph_tuck_covid.py:scores five done
+INFO:ph_tuck_covid.py:scores ten done
+INFO:ph_tuck_covid.py:in the harder set
+INFO:ph_tuck_covid.py:AUC FIVE NEGS
+AP: 0.9967 - AUC-ROC: 0.9993 - AUC-PR: 0.9967 - P@50: 0.6000 > 26
+INFO:ph_tuck_covid.py:AUC TEN NEGS
+AP: 0.9967 - AUC-ROC: 0.9997 - AUC-PR: 0.9967 - P@50: 0.6000 > 26
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:AUC_ROC five 	0.9957492247841434
+INFO:ph_tuck_covid.py:AUC_ROC ten 	0.9958017508397846
+INFO:ph_tuck_covid.py:CLASSIFICATION METRICS FIVE
+INFO:ph_tuck_covid.py:Error 	test results	AUC-ROC 0.995749	AP 0.996664	P@50 0.600000	AUC_PR 0.996664
+INFO:ph_tuck_covid.py:CLASSIFICATION METRICS TEN
+INFO:ph_tuck_covid.py:Error 	test results	AUC-ROC 0.995802	AP 0.996664	P@50 0.600000	AUC_PR 0.996664
+INFO:ph_tuck_covid.py:length predicate_instanes 	27
+INFO:ph_tuck_covid.py:predicate instances done
+INFO:ph_tuck_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_tuck_covid.py:make test triples numpy
+INFO:ph_tuck_covid.py:about to start predicting
+INFO:ph_tuck_covid.py:length pred pos 	83421
+INFO:ph_tuck_covid.py:retrieved negative samples
+GPU Epilog Script v0.30
