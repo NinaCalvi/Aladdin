@@ -634,8 +634,8 @@ def evaluate_per_relation(model: nn.Module, test_triples: torch.Tensor, all_trip
         counter += counter_rel
         counter_hits += counter_hits_relation
 
-        
-            
+
+
 
 #        mrr_val_relations[rel] /= counter_rel
 
@@ -945,12 +945,30 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 #                     se_test_facts_scores_ten = se_test_facts_scores_ten.cpu().numpy()
                 logger.info('scores ten done')
             else:
-                se_test_facts_all = torch.from_numpy(se_test_facts_all).to(device)
-                se_test_facts_scores = model.score(se_test_facts_all)
-                if type(se_test_facts_scores) is tuple:
-                    se_test_facts_scores = se_test_facts_scores[0].cpu().numpy()
+                if se_test_facts_all.shape[0] > 40000:
+                    batch_start = 0
+                    batch_size = 40000
+                    se_test_facts_scores = None
+                    while batch_start < se_test_facts_all.shape[0]:
+                        batch_end = min(batch_start + batch_size, se_test_facts_all.shape[0])
+                        se_test_facts_all_inp = torch.from_numpy(se_test_facts_all[batch_start:batch_end]).to(device)
+                        se_test_facts_scores_tmp = model.score(se_test_facts_all_inp)
+                        if type(se_test_facts_scores_tmp) is tuple:
+                            se_test_facts_scores_tmp =  se_test_facts_scores_tmp[0].cpu().numpy()
+                        else:
+                            se_test_facts_scores_tmp =  se_test_facts_scores_tmp.cpu().numpy()
+                        if se_test_facts_scores is None:
+                            se_test_facts_scores = se_test_facts_scores_tmp
+                        else:
+                            se_test_facts_scores = np.concatenate([se_test_facts_scores, se_test_facts_scores_tmp], axis=0)
+                        batch_start += batch_size
                 else:
-                    se_test_facts_scores = se_test_facts_scores.cpu().numpy()
+                    se_test_facts_all = torch.from_numpy(se_test_facts_all).to(device)
+                    se_test_facts_scores = model.score(se_test_facts_all)
+                    if type(se_test_facts_scores) is tuple:
+                        se_test_facts_scores = se_test_facts_scores[0].cpu().numpy()
+                    else:
+                        se_test_facts_scores = se_test_facts_scores.cpu().numpy()
 
 
         # se_auc_pr = auc_pr(se_test_facts_labels, se_test_facts_scores)
