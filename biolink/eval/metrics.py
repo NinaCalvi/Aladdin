@@ -1004,14 +1004,14 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
     if harder:
 
         metrics_five['AUC-ROC'] = np.mean(predicate_auc_roc_list_five)
-        metrics_five['AP'] = np.mean(se_ap_five)
-        metrics_five['P@50'] = np.mean(se_p50_five)
-        metrics_five['AUC_PR'] = np.mean(se_auc_pr_five)
+        metrics_five['AP'] = np.mean(predicate_ap_list_five)
+        metrics_five['P@50'] = np.mean(predicate_p50_list_five)
+        metrics_five['AUC_PR'] = np.mean(predicate_auc_pr_list_five)
 
         metrics_ten['AUC-ROC'] = np.mean(predicate_auc_roc_list_ten)
         metrics_ten['AP'] = np.mean(se_ap_ten)
-        metrics_ten['P@50'] = np.mean(se_p50_ten)
-        metrics_ten['AUC_PR'] = np.mean(se_auc_pr_ten)
+        metrics_ten['P@50'] = np.mean(predicate_p50_list_ten)
+        metrics_ten['AUC_PR'] = np.mean(predicate_auc_pr_list_ten)
 
 
         logger.info('metrics done')
@@ -1022,9 +1022,9 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     else:
         metrics['AUC-ROC'] = np.mean(predicate_auc_roc_list)
-        metrics['AP'] = np.mean(se_ap)
-        metrics['P@50'] = np.mean(se_p50)
-        metrics['AUC_PR'] = np.mean(se_auc_pr)
+        metrics['AP'] = np.mean(predicate_ap_list)
+        metrics['P@50'] = np.mean(predicate_p50_list)
+        metrics['AUC_PR'] = np.mean(predicate_auc_pr_list)
 
 
 
