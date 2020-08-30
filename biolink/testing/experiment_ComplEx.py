@@ -42,7 +42,7 @@ def metrics_str_auc(metrics):
 
 def main(argv, bayesian=False):
     parser = argparse.ArgumentParser('BioLinkPred', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2', 'wn18rr', 'wn18', 'covid'])
+    parser.add_argument('--data', action='store', required=True, type=str, choices=['pse', 'fb15', 'fb15k2', 'wn18rr', 'wn18', 'covid', 'pathme'])
 
     #model params
     parser.add_argument('--model', '-m', action='store', type=str, default='complex',
@@ -95,6 +95,8 @@ def main(argv, bayesian=False):
     parser.add_argument('--ent_type', action='store', type=str, default='Empty', help='path of csv with entity-to-type')
     parser.add_argument('--neg_by_type', action='store_true', default=False, help='if want to use entity types for AUC. AUC, ent_type and rel_type must be submitted')
     
+    parser.add_argument('--transe_pret', action='store', type=str, default=None)
+    
 
 
 
@@ -130,18 +132,20 @@ def main(argv, bayesian=False):
     # set the seeds
     np.random.seed(seed)
     random_state = np.random.RandomState(seed)
+    torch.set_num_threads(4)
     torch.manual_seed(seed)
 
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
-    torch.set_num_threads(4)
+    #torch.set_num_threads(1)
 
-
-
+    #torch.set_num_threads(4)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
 
     dataset = utils.load_pse_dataset(data)
+    if data == 'pathme':
+        logger.info(f'relation \t{dataset.rel_mappings}')
 
 
     train_data = torch.tensor(dataset.data["train"])
@@ -158,7 +162,7 @@ def main(argv, bayesian=False):
     # if parser.model == 'complex':
     if args.mcl:
         model_dict = {
-            'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, args.pret),
+            'complex': lambda: ComplEx_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, args.pret, args.transe_pret),
             'transe': lambda: TransE_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name, norm_ = args.transe_norm),
             'distmult': lambda: DistMult_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
             'trivec': lambda: TriVec_MC((nb_ents, nb_rels, nb_ents), emb_size, optimizer_name),
@@ -217,8 +221,8 @@ def main(argv, bayesian=False):
                     logger.info(f'Error VERYRARE TAIL results \t{metrics_to_str(metrics_tail)}')
 
 
-                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head_2.txt.gz'))
-                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail_2.txt.gz'))
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
 
                     del dataset.data['rare_head']
                     del dataset.data['rare_tail']
@@ -384,11 +388,12 @@ def main(argv, bayesian=False):
                             logger.info('NEED TO SUPPLY REL TYPE AND ENT TYPE FILE')
                             return
                             
+
                     else:
                         neg_by_type = None
                         rel_type = None
                             
-                    metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder, rel_type = rel_type, neg_by_type = neg_by_type)
+                    metrics_five, metrics_ten = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, auc = args.auc, harder=args.harder, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset)
                     logger.info('CLASSIFICATION METRICS FIVE')
                     logger.info(f'Error \t{dataset_name} results\t{metrics_str_auc(metrics_five)}')
                     logger.info('CLASSIFICATION METRICS TEN')
@@ -418,8 +423,8 @@ def main(argv, bayesian=False):
                     logger.info(f'Error VERYRARE TAIL results \t{metrics_to_str(metrics_tail)}')
 
 
-                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head_2.txt.gz'))
-                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail_2.txt.gz'))
+                    rare_head = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_head.txt.gz'))
+                    rare_tail = load_kg_file(os.path.join(os.getcwd(), f'testing/data/{args.data}/rare_tail.txt.gz'))
 
                     del dataset.data['rare_head']
                     del dataset.data['rare_tail']

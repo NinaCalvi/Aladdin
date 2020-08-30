@@ -12,7 +12,9 @@ from torch import nn
 from .losses import mc_log_loss
 
 from torch.nn.init import xavier_normal_
+from biolink.embeddings import TransE
 import numpy as np
+import os
 
 
 class KBCModelMCL(nn.Module, ABC):
@@ -300,25 +302,47 @@ class TransE_MC(KBCModelMCL):
 class ComplEx_MC(KBCModelMCL):
     def __init__(
             self, sizes: Tuple[int, int, int], rank: int,
-            optimiser_name: str, init_size: float = 1e-3):
+            optimiser_name: str, pret: bool, transe: str = None, init_size: float = 1e-3):
+
         super(ComplEx_MC, self).__init__()
         self.sizes = sizes
         self.rank = rank
         self.init_size = init_size
+        self.transe = transe
 
         if optimiser_name == 'adam':
             sparse_ = False
         else:
             sparse_ = True
 
+        self.pret = pret
+        
+        if self.pret:
+            self.rank = 384
+            
         self.embeddings = nn.ModuleList([
-            nn.Embedding(s, 2 * rank, sparse=sparse_)
+            nn.Embedding(s, 2 * self.rank, sparse=sparse_)
             for s in sizes[:2]
         ])
 
     def init(self):
-        self.embeddings[0].weight.data *= self.init_size
-        self.embeddings[1].weight.data *= self.init_size
+        if self.pret:
+            if self.transe is None:
+                print('PRET')
+                embs = np.loadtxt(os.path.join(os.getcwd(), 'embeddings/correct_order.txt'))
+                print('embs shape', embs.shape)
+                self.embeddings[0] = self.embeddings[0].from_pretrained(torch.FloatTensor(embs), freeze=False)
+                print('ents shape', self.embeddings[0].weight.data.shape)
+                self.embeddings[1].weight.data *= self.init_size
+                print('rels shape', self.embeddings[1].weight.data.shape)
+            else:
+                transe_model = TransE((self.sizes[0], self.sizes[1], self.sizes[0]), 200, 'pair_hinge', None, 'adagrad', None, 'l2')
+                transe_model.load_state_dict(torch.load(self.transe + '.pt'))
+                self.embeddings[0] = self.embeddings[0].from_pretrained(transe_model.lhs.weight.data)
+                self.emebddings[1] = self.embeddigns[1].from_pretrained(transe_model.rel.weight.data)
+        else:   
+            self.embeddings[0].weight.data *= self.init_size
+            self.embeddings[1].weight.data *= self.init_size
 
 
 
@@ -336,6 +360,36 @@ class ComplEx_MC(KBCModelMCL):
             (lhs[0] * rel[1] + lhs[1] * rel[0]) * rhs[1],
             1, keepdim=True
         )
+    
+    
+    def predict(self, pred, head=None, tail=None):
+        if head is None and tail is None:
+            logger.info('Error, either add head or tail')
+            return
+        
+        to_score = self.embeddings[0].weight
+        to_score = to_score[:, :self.rank], to_score[:, self.rank:]
+        rel = self.embeddings[1](pred[:, 0])
+        rel = rel[:, :self.rank], rel[:, self.rank:]
+
+        if head is None:
+            rhs = self.embeddings[0](tail[:, 0])
+            rhs = rhs[:, :self.rank], rhs[:, self.rank:]
+            print(rhs[0].shape, rhs[1].shape)
+            score_po = (
+            (rhs[0] * rel[0] + rhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+            (rhs[1] * rel[0] - rhs[0] * rel[1]) @ to_score[1].transpose(0, 1)
+        )
+            return score_po
+        
+        else:
+            lhs = self.embeddings[0](head[:, 0])
+            lhs = lhs[:, :self.rank], lhs[:, self.rank:]
+            score_sp =  (
+            (lhs[0] * rel[0] - lhs[1] * rel[1]) @ to_score[0].transpose(0, 1) +
+            (lhs[0] * rel[1] + lhs[1] * rel[0]) @ to_score[1].transpose(0, 1))
+            return score_sp
+        
 
     def forward(self, x):
         lhs = self.embeddings[0](x[:, 0])
