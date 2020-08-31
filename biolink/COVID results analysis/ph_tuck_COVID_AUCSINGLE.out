@@ -1,0 +1,140 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+['--model', 'tucker', '--data', 'covid', '--loss', 'pair_hinge', '--epochs', '600', '--valid', '--learning-rate', '0.012', '--batch-size', '1024', '--reg-weight', '4.602e-09', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--nb-negs', '50', '--loss-margin', '8', '--save_model_name', 'PH_tucker_covid_lr_012_bsize_1024_rw_4602_es_150_rw_150_forREL_COVID', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--load']
+MCL False
+INFO:ph_tuck_covid.py:Valid: True
+INFO:ph_tuck_covid.py:Device: cuda
+INFO:ph_tuck_covid.py:auc and lod happening
+INFO:ph_tuck_covid.py:dataset name 	train
+INFO:ph_tuck_covid.py:dataset name 	valid
+INFO:ph_tuck_covid.py:dataset name 	test
+INFO:ph_tuck_covid.py:in evalute for dataset: 	test
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:TEST RESULTS
+INFO:ph_tuck_covid.py:Error 	test results 	MRR 0.094434	H@1 0.041107	H@3 0.094941	H@10 0.195460	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_tuck_covid.py:===========
+INFO:ph_tuck_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:ph_tuck_covid.py:length predicate_instanes 	27
+INFO:ph_tuck_covid.py:predicate instances done
+INFO:ph_tuck_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_tuck_covid.py:make test triples numpy
+INFO:ph_tuck_covid.py:about to start predicting
+INFO:ph_tuck_covid.py:length pred pos 	83421
+INFO:ph_tuck_covid.py:retrieved negative samples
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 7
+['--model', 'tucker', '--data', 'covid', '--loss', 'pair_hinge', '--epochs', '600', '--valid', '--learning-rate', '0.012', '--batch-size', '1024', '--reg-weight', '4.602e-09', '--embedding-size', '150', '--rel-emb-size', '150', '--quiet', '--nb-negs', '50', '--loss-margin', '8', '--save_model_name', 'PH_tucker_covid_lr_012_bsize_1024_rw_4602_es_150_rw_150_forREL_COVID', '--auc', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--load']
+MCL False
+INFO:ph_tuck_covid.py:Valid: True
+INFO:ph_tuck_covid.py:Device: cuda
+INFO:ph_tuck_covid.py:auc and lod happening
+INFO:ph_tuck_covid.py:dataset name 	train
+INFO:ph_tuck_covid.py:dataset name 	valid
+INFO:ph_tuck_covid.py:dataset name 	test
+INFO:ph_tuck_covid.py:in evalute for dataset: 	test
+1024
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:TEST RESULTS
+INFO:ph_tuck_covid.py:Error 	test results 	MRR 0.094434	H@1 0.041107	H@3 0.094941	H@10 0.195460	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:ph_tuck_covid.py:===========
+INFO:ph_tuck_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:ph_tuck_covid.py:length predicate_instanes 	27
+INFO:ph_tuck_covid.py:predicate instances done
+INFO:ph_tuck_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:ph_tuck_covid.py:make test triples numpy
+INFO:ph_tuck_covid.py:about to start predicting
+INFO:ph_tuck_covid.py:length pred pos 	83421
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9916 - AUC-ROC: 0.9912 - AUC-PR: 0.9916 - P@50: 1.0000 > 0
+INFO:ph_tuck_covid.py:length pred pos 	16167
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9928 - AUC-ROC: 0.9919 - AUC-PR: 0.9928 - P@50: 1.0000 > 1
+INFO:ph_tuck_covid.py:length pred pos 	6598
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9968 - AUC-ROC: 0.9967 - AUC-PR: 0.9968 - P@50: 1.0000 > 2
+INFO:ph_tuck_covid.py:length pred pos 	7376
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9977 - AUC-ROC: 0.9979 - AUC-PR: 0.9977 - P@50: 1.0000 > 3
+INFO:ph_tuck_covid.py:length pred pos 	15087
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9970 - AUC-ROC: 0.9976 - AUC-PR: 0.9970 - P@50: 1.0000 > 4
+INFO:ph_tuck_covid.py:length pred pos 	44117
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9970 - AUC-ROC: 0.9974 - AUC-PR: 0.9970 - P@50: 1.0000 > 5
+INFO:ph_tuck_covid.py:length pred pos 	22427
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9953 - AUC-ROC: 0.9952 - AUC-PR: 0.9953 - P@50: 1.0000 > 6
+INFO:ph_tuck_covid.py:length pred pos 	44637
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9961 - AUC-ROC: 0.9959 - AUC-PR: 0.9961 - P@50: 1.0000 > 7
+INFO:ph_tuck_covid.py:length pred pos 	41643
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9964 - AUC-ROC: 0.9965 - AUC-PR: 0.9964 - P@50: 1.0000 > 8
+INFO:ph_tuck_covid.py:length pred pos 	41765
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9949 - AUC-ROC: 0.9951 - AUC-PR: 0.9949 - P@50: 1.0000 > 9
+INFO:ph_tuck_covid.py:length pred pos 	46730
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9948 - AUC-ROC: 0.9950 - AUC-PR: 0.9948 - P@50: 1.0000 > 10
+INFO:ph_tuck_covid.py:length pred pos 	33370
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9966 - AUC-ROC: 0.9968 - AUC-PR: 0.9966 - P@50: 1.0000 > 11
+INFO:ph_tuck_covid.py:length pred pos 	36708
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9907 - AUC-ROC: 0.9871 - AUC-PR: 0.9907 - P@50: 1.0000 > 12
+INFO:ph_tuck_covid.py:length pred pos 	35963
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9959 - AUC-ROC: 0.9961 - AUC-PR: 0.9959 - P@50: 1.0000 > 13
+INFO:ph_tuck_covid.py:length pred pos 	33640
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9995 - AUC-ROC: 0.9996 - AUC-PR: 0.9995 - P@50: 1.0000 > 14
+INFO:ph_tuck_covid.py:length pred pos 	2385
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9974 - AUC-ROC: 0.9972 - AUC-PR: 0.9974 - P@50: 1.0000 > 15
+INFO:ph_tuck_covid.py:length pred pos 	6840
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9992 - AUC-ROC: 0.9987 - AUC-PR: 0.9992 - P@50: 1.0000 > 16
+INFO:ph_tuck_covid.py:length pred pos 	3199
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9973 - AUC-ROC: 0.9975 - AUC-PR: 0.9973 - P@50: 1.0000 > 17
+INFO:ph_tuck_covid.py:length pred pos 	3827
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9964 - AUC-ROC: 0.9968 - AUC-PR: 0.9964 - P@50: 1.0000 > 18
+INFO:ph_tuck_covid.py:length pred pos 	5222
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9931 - AUC-ROC: 0.9944 - AUC-PR: 0.9931 - P@50: 1.0000 > 19
+INFO:ph_tuck_covid.py:length pred pos 	1359
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9953 - AUC-ROC: 0.9948 - AUC-PR: 0.9953 - P@50: 1.0000 > 20
+INFO:ph_tuck_covid.py:length pred pos 	2993
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9971 - AUC-ROC: 0.9978 - AUC-PR: 0.9971 - P@50: 1.0000 > 21
+INFO:ph_tuck_covid.py:length pred pos 	728
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9937 - AUC-ROC: 0.9929 - AUC-PR: 0.9937 - P@50: 1.0000 > 22
+INFO:ph_tuck_covid.py:length pred pos 	802
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9982 - AUC-ROC: 0.9981 - AUC-PR: 0.9982 - P@50: 1.0000 > 23
+INFO:ph_tuck_covid.py:length pred pos 	528
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9980 - AUC-ROC: 0.9980 - AUC-PR: 0.9980 - P@50: 1.0000 > 24
+INFO:ph_tuck_covid.py:length pred pos 	502
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 0.9923 - AUC-ROC: 0.9908 - AUC-PR: 0.9923 - P@50: 1.0000 > 25
+INFO:ph_tuck_covid.py:length pred pos 	30
+INFO:ph_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 1.0000 - AUC-PR: 1.0000 - P@50: 0.6000 > 26
+INFO:ph_tuck_covid.py:done
+INFO:ph_tuck_covid.py:metrics done
+INFO:ph_tuck_covid.py:AUC_ROC 	0.9958155665700926
+INFO:ph_tuck_covid.py:CLASSIFICATION METRICS
+INFO:ph_tuck_covid.py:Error 	test results	AUC-ROC 0.995816	AP 0.995962	P@50 0.985185	AUC_PR 0.995962
+GPU Epilog Script v0.30

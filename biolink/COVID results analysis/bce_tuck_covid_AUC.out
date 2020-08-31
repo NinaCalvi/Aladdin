@@ -1,0 +1,497 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 3
+['--model', 'tucker', '--data', 'covid', '--loss', 'bce', '--mcl', 'True', '--epochs', '100', '--learning-rate', '0.045', '--batch-size', '128', '--reg-weight', '2.301e-07', '--embedding-size', '200', '--rel-emb-size', '150', '--quiet', '--save_model_name', 'tucker_covid_mcl_lr_045_bsize_128_rw_2301_es_200_rs_150_BCE_forREL', '--auc', '--harder', '--rel_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/rel_type_covid.json', '--ent_type', '/home/acalvi/Dissertation/Aladdin/biolink/testing/data/covid/ent_type_covid.csv', '--neg_by_type', '--load']
+MCL True
+INFO:bce_tuck_covid.py:Valid: False
+INFO:bce_tuck_covid.py:Device: cuda
+INFO:bce_tuck_covid.py:auc and lod happening
+INFO:bce_tuck_covid.py:dataset name 	train
+INFO:bce_tuck_covid.py:dataset name 	valid
+INFO:bce_tuck_covid.py:dataset name 	test
+INFO:bce_tuck_covid.py:in evalute for dataset: 	test
+NEW MRR: 0.11914747360958156
+INFO:bce_tuck_covid.py:done
+INFO:bce_tuck_covid.py:metrics done
+INFO:bce_tuck_covid.py:TEST RESULTS
+INFO:bce_tuck_covid.py:Error 	test results 	MRR 0.119147	H@1 0.063692	H@3 0.128194	H@10 0.224263	AU-ROC_raw -1.000000	AU-ROC_fil -1.000000
+INFO:bce_tuck_covid.py:===========
+INFO:bce_tuck_covid.py:APPLYING TYPE INFORMATION TO NEG SAMPLING
+INFO:bce_tuck_covid.py:length predicate_instanes 	27
+INFO:bce_tuck_covid.py:predicate instances done
+INFO:bce_tuck_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:bce_tuck_covid.py:make test triples numpy
+INFO:bce_tuck_covid.py:about to start predicting
+INFO:bce_tuck_covid.py:length pred pos 	83421
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(500526, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (280000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (320000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (360000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (400000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (440000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (480000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (500526, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9816 - AUC-PR: 0.9676 - P@50: 1.0000 > 0
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9816 - AUC-PR: 0.9554 - P@50: 1.0000 > 0
+INFO:bce_tuck_covid.py:length pred pos 	16167
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(97002, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (97002, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9705 - AUC-PR: 0.9550 - P@50: 1.0000 > 1
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9703 - AUC-PR: 0.9390 - P@50: 1.0000 > 1
+INFO:bce_tuck_covid.py:length pred pos 	6598
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9732 - AUC-PR: 0.9620 - P@50: 1.0000 > 2
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9731 - AUC-PR: 0.9510 - P@50: 1.0000 > 2
+INFO:bce_tuck_covid.py:length pred pos 	7376
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(44256, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (44256, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9805 - AUC-PR: 0.9707 - P@50: 1.0000 > 3
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9806 - AUC-PR: 0.9602 - P@50: 1.0000 > 3
+INFO:bce_tuck_covid.py:length pred pos 	15087
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(90522, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (90522, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9870 - AUC-PR: 0.9785 - P@50: 1.0000 > 4
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9871 - AUC-PR: 0.9695 - P@50: 1.0000 > 4
+INFO:bce_tuck_covid.py:length pred pos 	44117
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(264702, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (264702, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9908 - AUC-PR: 0.9829 - P@50: 1.0000 > 5
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9907 - AUC-PR: 0.9737 - P@50: 1.0000 > 5
+INFO:bce_tuck_covid.py:length pred pos 	22427
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(134562, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (134562, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9837 - AUC-PR: 0.9707 - P@50: 1.0000 > 6
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9835 - AUC-PR: 0.9573 - P@50: 1.0000 > 6
+INFO:bce_tuck_covid.py:length pred pos 	44637
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(267822, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (267822, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9824 - AUC-PR: 0.9635 - P@50: 1.0000 > 7
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9824 - AUC-PR: 0.9465 - P@50: 1.0000 > 7
+INFO:bce_tuck_covid.py:length pred pos 	41643
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(249858, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (249858, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9845 - AUC-PR: 0.9656 - P@50: 1.0000 > 8
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9844 - AUC-PR: 0.9463 - P@50: 1.0000 > 8
+INFO:bce_tuck_covid.py:length pred pos 	41765
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(250590, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (250590, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9905 - AUC-PR: 0.9793 - P@50: 1.0000 > 9
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9904 - AUC-PR: 0.9689 - P@50: 1.0000 > 9
+INFO:bce_tuck_covid.py:length pred pos 	46730
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(280380, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (240000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (280000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (280380, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9893 - AUC-PR: 0.9747 - P@50: 1.0000 > 10
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9893 - AUC-PR: 0.9611 - P@50: 1.0000 > 10
+INFO:bce_tuck_covid.py:length pred pos 	33370
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(200220, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200220, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9839 - AUC-PR: 0.9690 - P@50: 1.0000 > 11
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9840 - AUC-PR: 0.9547 - P@50: 1.0000 > 11
+INFO:bce_tuck_covid.py:length pred pos 	36708
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(220248, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (220248, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9721 - AUC-PR: 0.9595 - P@50: 1.0000 > 12
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9720 - AUC-PR: 0.9485 - P@50: 1.0000 > 12
+INFO:bce_tuck_covid.py:length pred pos 	35963
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(215778, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (215778, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9900 - AUC-PR: 0.9765 - P@50: 1.0000 > 13
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9899 - AUC-PR: 0.9639 - P@50: 1.0000 > 13
+INFO:bce_tuck_covid.py:length pred pos 	33640
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(201840, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (80000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (120000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (160000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (200000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (201840, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9992 - AUC-PR: 0.9983 - P@50: 1.0000 > 14
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9991 - AUC-PR: 0.9973 - P@50: 1.0000 > 14
+INFO:bce_tuck_covid.py:length pred pos 	2385
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9691 - AUC-PR: 0.9588 - P@50: 1.0000 > 15
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9690 - AUC-PR: 0.9465 - P@50: 1.0000 > 15
+INFO:bce_tuck_covid.py:length pred pos 	6840
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:all se five facts(41040, 3)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (40000, 1)
+INFO:bce_tuck_covid.py:SCORES FIVE SHAPE (41040, 1)
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9853 - AUC-PR: 0.9739 - P@50: 1.0000 > 16
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9855 - AUC-PR: 0.9650 - P@50: 1.0000 > 16
+INFO:bce_tuck_covid.py:length pred pos 	3199
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9618 - AUC-PR: 0.9509 - P@50: 1.0000 > 17
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9618 - AUC-PR: 0.9374 - P@50: 1.0000 > 17
+INFO:bce_tuck_covid.py:length pred pos 	3827
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9776 - AUC-PR: 0.9682 - P@50: 1.0000 > 18
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9777 - AUC-PR: 0.9583 - P@50: 1.0000 > 18
+INFO:bce_tuck_covid.py:length pred pos 	5222
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9744 - AUC-PR: 0.9630 - P@50: 1.0000 > 19
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9742 - AUC-PR: 0.9510 - P@50: 1.0000 > 19
+INFO:bce_tuck_covid.py:length pred pos 	1359
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9595 - AUC-PR: 0.9463 - P@50: 1.0000 > 20
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9587 - AUC-PR: 0.9305 - P@50: 1.0000 > 20
+INFO:bce_tuck_covid.py:length pred pos 	2993
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9896 - P@50: 1.0000 > 21
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9952 - AUC-PR: 0.9838 - P@50: 1.0000 > 21
+INFO:bce_tuck_covid.py:length pred pos 	728
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9592 - AUC-PR: 0.9478 - P@50: 1.0000 > 22
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9585 - AUC-PR: 0.9332 - P@50: 1.0000 > 22
+INFO:bce_tuck_covid.py:length pred pos 	802
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9661 - AUC-PR: 0.9618 - P@50: 1.0000 > 23
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9660 - AUC-PR: 0.9528 - P@50: 1.0000 > 23
+INFO:bce_tuck_covid.py:length pred pos 	528
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9646 - AUC-PR: 0.9557 - P@50: 1.0000 > 24
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9640 - AUC-PR: 0.9430 - P@50: 1.0000 > 24
+INFO:bce_tuck_covid.py:length pred pos 	502
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9820 - AUC-PR: 0.9724 - P@50: 1.0000 > 25
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9818 - AUC-PR: 0.9618 - P@50: 1.0000 > 25
+INFO:bce_tuck_covid.py:length pred pos 	30
+INFO:bce_tuck_covid.py:retrieved negative samples
+INFO:bce_tuck_covid.py:Done concatenation
+INFO:bce_tuck_covid.py:scores five done
+INFO:bce_tuck_covid.py:scores ten done
+INFO:bce_tuck_covid.py:in the harder set
+INFO:bce_tuck_covid.py:AUC FIVE NEGS
+AP: 1.0000 - AUC-ROC: 0.9662 - AUC-PR: 0.9607 - P@50: 1.0000 > 26
+INFO:bce_tuck_covid.py:AUC TEN NEGS
+AP: 1.0000 - AUC-ROC: 0.9674 - AUC-PR: 0.9506 - P@50: 1.0000 > 26
+INFO:bce_tuck_covid.py:done
+INFO:bce_tuck_covid.py:metrics done
+INFO:bce_tuck_covid.py:AUC_ROC five 	0.978525358365854
+INFO:bce_tuck_covid.py:AUC_ROC ten 	0.9784611315601368
+INFO:bce_tuck_covid.py:CLASSIFICATION METRICS FIVE
+INFO:bce_tuck_covid.py:Error 	test results	AUC-ROC 0.978525	AP 1.000000	P@50 1.000000	AUC_PR 0.967502
+INFO:bce_tuck_covid.py:CLASSIFICATION METRICS TEN
+INFO:bce_tuck_covid.py:Error 	test results	AUC-ROC 0.978461	AP 1.000000	P@50 1.000000	AUC_PR 0.955817
+INFO:bce_tuck_covid.py:length predicate_instanes 	27
+INFO:bce_tuck_covid.py:predicate instances done
+INFO:bce_tuck_covid.py:all tiples 	torch.Size([538064, 3])
+INFO:bce_tuck_covid.py:make test triples numpy
+INFO:bce_tuck_covid.py:about to start predicting
+INFO:bce_tuck_covid.py:length pred pos 	83421
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9815 - AUC-PR: 0.9874 - P@50: 1.0000 > 0
+INFO:bce_tuck_covid.py:length pred pos 	16167
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9705 - AUC-PR: 0.9810 - P@50: 1.0000 > 1
+INFO:bce_tuck_covid.py:length pred pos 	6598
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9731 - AUC-PR: 0.9833 - P@50: 1.0000 > 2
+INFO:bce_tuck_covid.py:length pred pos 	7376
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9807 - AUC-PR: 0.9879 - P@50: 1.0000 > 3
+INFO:bce_tuck_covid.py:length pred pos 	15087
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9869 - AUC-PR: 0.9916 - P@50: 1.0000 > 4
+INFO:bce_tuck_covid.py:length pred pos 	44117
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9907 - AUC-PR: 0.9938 - P@50: 1.0000 > 5
+INFO:bce_tuck_covid.py:length pred pos 	22427
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9834 - AUC-PR: 0.9886 - P@50: 1.0000 > 6
+INFO:bce_tuck_covid.py:length pred pos 	44637
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9823 - AUC-PR: 0.9872 - P@50: 1.0000 > 7
+INFO:bce_tuck_covid.py:length pred pos 	41643
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9845 - AUC-PR: 0.9886 - P@50: 1.0000 > 8
+INFO:bce_tuck_covid.py:length pred pos 	41765
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9904 - AUC-PR: 0.9929 - P@50: 1.0000 > 9
+INFO:bce_tuck_covid.py:length pred pos 	46730
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9892 - AUC-PR: 0.9918 - P@50: 1.0000 > 10
+INFO:bce_tuck_covid.py:length pred pos 	33370
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9841 - AUC-PR: 0.9890 - P@50: 1.0000 > 11
+INFO:bce_tuck_covid.py:length pred pos 	36708
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9721 - AUC-PR: 0.9822 - P@50: 1.0000 > 12
+INFO:bce_tuck_covid.py:length pred pos 	35963
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9899 - AUC-PR: 0.9922 - P@50: 1.0000 > 13
+INFO:bce_tuck_covid.py:length pred pos 	33640
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9991 - AUC-PR: 0.9994 - P@50: 1.0000 > 14
+INFO:bce_tuck_covid.py:length pred pos 	2385
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9688 - AUC-PR: 0.9808 - P@50: 1.0000 > 15
+INFO:bce_tuck_covid.py:length pred pos 	6840
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9858 - AUC-PR: 0.9902 - P@50: 1.0000 > 16
+INFO:bce_tuck_covid.py:length pred pos 	3199
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9621 - AUC-PR: 0.9772 - P@50: 1.0000 > 17
+INFO:bce_tuck_covid.py:length pred pos 	3827
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9778 - AUC-PR: 0.9864 - P@50: 1.0000 > 18
+INFO:bce_tuck_covid.py:length pred pos 	5222
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9742 - AUC-PR: 0.9836 - P@50: 1.0000 > 19
+INFO:bce_tuck_covid.py:length pred pos 	1359
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9581 - AUC-PR: 0.9745 - P@50: 1.0000 > 20
+INFO:bce_tuck_covid.py:length pred pos 	2993
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9956 - AUC-PR: 0.9969 - P@50: 1.0000 > 21
+INFO:bce_tuck_covid.py:length pred pos 	728
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9595 - AUC-PR: 0.9755 - P@50: 1.0000 > 22
+INFO:bce_tuck_covid.py:length pred pos 	802
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9658 - AUC-PR: 0.9808 - P@50: 1.0000 > 23
+INFO:bce_tuck_covid.py:length pred pos 	528
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9646 - AUC-PR: 0.9787 - P@50: 1.0000 > 24
+INFO:bce_tuck_covid.py:length pred pos 	502
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9826 - AUC-PR: 0.9891 - P@50: 1.0000 > 25
+INFO:bce_tuck_covid.py:length pred pos 	30
+INFO:bce_tuck_covid.py:retrieved negative samples
+AP: 1.0000 - AUC-ROC: 0.9678 - AUC-PR: 0.9808 - P@50: 1.0000 > 26
+INFO:bce_tuck_covid.py:done
+INFO:bce_tuck_covid.py:metrics done
+INFO:bce_tuck_covid.py:AUC_ROC 	0.9785621172943292
+INFO:bce_tuck_covid.py:CLASSIFICATION METRICS
+INFO:bce_tuck_covid.py:Error 	test results	AUC-ROC 0.978562	AP 1.000000	P@50 1.000000	AUC_PR 0.986344
+GPU Epilog Script v0.30
