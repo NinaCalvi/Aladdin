@@ -1,0 +1,134 @@
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 0
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 3
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+INFO:pred_pse.py:BEST PREDICTED SIDE EFFECTS from smallest to most likely top 10
+INFO:pred_pse.py:[638 420 373]
+INFO:pred_pse.py:[586   0 591]
+INFO:pred_pse.py:[613  44 615]
+INFO:pred_pse.py:[589 337 577]
+INFO:pred_pse.py:[524  48 609]
+INFO:pred_pse.py:[586 940 591]
+INFO:pred_pse.py:[543 888 609]
+INFO:pred_pse.py:[422 173 627]
+INFO:pred_pse.py:[586 514 591]
+INFO:pred_pse.py:[586 107 591]
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 2
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 1
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+GPU Epilog Script v0.30
+GPU Prolog Script v0.30
+This is a GPU node.
+Enough GPUs available.
+Allocating card 6
+curr directory /home/acalvi/Dissertation/Aladdin/biolink
+Importing dataset files ... 
+INFO:pred_pse.py:(390858366, 1)
+INFO:pred_pse.py:BEST PREDICTED SIDE EFFECTS from smallest to most likely top 10
+INFO:pred_pse.py:[586 677 591]
+INFO:pred_pse.py:score [27.20981]
+INFO:pred_pse.py:[609 111 337]
+INFO:pred_pse.py:score [27.23925]
+INFO:pred_pse.py:[559 188 277]
+INFO:pred_pse.py:score [27.99899]
+INFO:pred_pse.py:[619 933 563]
+INFO:pred_pse.py:score [28.95926]
+INFO:pred_pse.py:[561 571 543]
+INFO:pred_pse.py:score [30.14269]
+INFO:pred_pse.py:[640  81 634]
+INFO:pred_pse.py:score [30.78151]
+INFO:pred_pse.py:[557 419 627]
+INFO:pred_pse.py:score [31.11692]
+INFO:pred_pse.py:[609 400 337]
+INFO:pred_pse.py:score [31.48468]
+INFO:pred_pse.py:[609  92 543]
+INFO:pred_pse.py:score [31.53491]
+INFO:pred_pse.py:[329  48 609]
+INFO:pred_pse.py:score [31.93139]
+INFO:pred_pse.py:[638 420 373]
+INFO:pred_pse.py:score [33.93752]
+INFO:pred_pse.py:[586   0 591]
+INFO:pred_pse.py:score [35.29089]
+INFO:pred_pse.py:[613  44 615]
+INFO:pred_pse.py:score [35.42703]
+INFO:pred_pse.py:[589 337 577]
+INFO:pred_pse.py:score [38.48276]
+INFO:pred_pse.py:[524  48 609]
+INFO:pred_pse.py:score [39.9712]
+INFO:pred_pse.py:[586 940 591]
+INFO:pred_pse.py:score [43.8712]
+INFO:pred_pse.py:[543 888 609]
+INFO:pred_pse.py:score [46.36922]
+INFO:pred_pse.py:[422 173 627]
+INFO:pred_pse.py:score [62.43616]
+INFO:pred_pse.py:[586 514 591]
+INFO:pred_pse.py:score [69.87893]
+INFO:pred_pse.py:[586 107 591]
+INFO:pred_pse.py:score [74.01076]
+INFO:pred_pse.py:WORST PREDICTED SIDE EFFECTS from smallest to most likely top 10
+INFO:pred_pse.py:[561 330 531]
+INFO:pred_pse.py:score [-348.13705]
+INFO:pred_pse.py:[627 592 561]
+INFO:pred_pse.py:score [-340.16022]
+INFO:pred_pse.py:[543 529 627]
+INFO:pred_pse.py:score [-336.34918]
+INFO:pred_pse.py:[634 810 621]
+INFO:pred_pse.py:score [-335.90002]
+INFO:pred_pse.py:[627 537 557]
+INFO:pred_pse.py:score [-335.8838]
+INFO:pred_pse.py:[534 217 422]
+INFO:pred_pse.py:score [-335.01025]
+INFO:pred_pse.py:[639 832 543]
+INFO:pred_pse.py:score [-334.35147]
+INFO:pred_pse.py:[561 173 543]
+INFO:pred_pse.py:score [-331.5212]
+INFO:pred_pse.py:[621 810 641]
+INFO:pred_pse.py:score [-331.30475]
+INFO:pred_pse.py:[422 217 610]
+INFO:pred_pse.py:score [-331.1972]
+INFO:pred_pse.py:[637 832 614]
+INFO:pred_pse.py:score [-330.0473]
+INFO:pred_pse.py:[542 217 531]
+INFO:pred_pse.py:score [-329.59335]
+INFO:pred_pse.py:[561 217 576]
+INFO:pred_pse.py:score [-328.77304]
+INFO:pred_pse.py:[635 217 482]
+INFO:pred_pse.py:score [-327.07394]
+INFO:pred_pse.py:[641 810 621]
+INFO:pred_pse.py:score [-324.17206]
+INFO:pred_pse.py:[561 537 543]
+INFO:pred_pse.py:score [-323.76645]
+INFO:pred_pse.py:[482 217 531]
+INFO:pred_pse.py:score [-323.7111]
+INFO:pred_pse.py:[627 810 543]
+INFO:pred_pse.py:score [-321.62714]
+INFO:pred_pse.py:[543 155 531]
+INFO:pred_pse.py:score [-320.65393]
+INFO:pred_pse.py:[542 330 531]
+INFO:pred_pse.py:score [-320.18472]
+GPU Epilog Script v0.30
