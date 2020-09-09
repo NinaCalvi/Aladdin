@@ -110,9 +110,11 @@ def auc_pr(y_pred: np.array, true_idx: np.array):
 
 
 
-def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False, mode: str = None, rel_file: str = None, rel_type = None, neg_by_type = None, dataset_dict=None):
+def evaluate(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor, batch_size: int, device: torch.device, validate: bool = False, auc: bool = False, harder: bool = False, mode: str = None, rel_file: str = None, rel_type = None, neg_by_type = None, type=False, dataset_dict=None):
     if auc:
         return evaluate_auc(model, test_triples, all_triples, batch_size, device, harder, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset_dict)
+    if type:
+        return evaluate_type(model, test_triples, all_triples, batch_size, device, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset_dict)
     if rel_file != None:
         return evaluate_per_relation(model, test_triples, all_triples, batch_size, device, rel_file)
 
@@ -735,6 +737,154 @@ def average_precision(y_true: np.array, y_pred:np.array, pos_label=1.0):
         pk_list.append(precision_at_k(y_true, y_pred, k, pos_label=pos_label))
     return np.mean(pk_list)
 
+
+
+def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
+        batch_size: int, device: torch.device, rel_type: dict = None, neg_by_type: dict = False, dataset_dict=None, mode=None):
+
+
+    se_facts_full_dict = {se: set() for se in predicate_indeces}
+    metrics = {}
+    sp_to_o = {}
+    po_to_s = {}
+
+    logger.info('predicate instances done')
+
+    hits = dict()
+    hits_at = [1, 3, 10]
+    # hits_at = [1, 3, 5, 10, 50, 100]
+
+    for hits_at_value in hits_at:
+        hits[hits_at_value] = 0.0
+
+
+
+    mrr_val = 0.0
+    counter = 0
+    counter_hits = 0
+    NEW_MC = []
+    test_triples_pred = {}
+
+    for instance in all_triples:
+        s, p, o = instance.numpy()
+        sp_key = (s, p)
+        po_key = (p, o)
+
+        if sp_key not in sp_to_o:
+            sp_to_o[sp_key] = [o_idx]
+        else:
+            sp_to_o[sp_key].append(o_idx)
+        if po_key not in po_to_s:
+            po_to_s[po_key] = [s_idx]
+        else:
+            po_to_s[po_key].append(s_idx)
+
+        if instance in test_triples:
+            if p in test_triples_pred:
+                test_triples_pred[p] = np.vstack((test_triples_pred[p], instance.numpy()))
+            else:
+                test_triples_pred[p] = instance.numpy()
+        se_facts_full_dict[p].add((s, p, o))
+
+
+    if neg_by_type is not None and rel_type is not None:
+        ents_combinations = dict()
+        for r, rt in rel_type.items():
+            ents_combinations[dataset_dict.rel_mappings[r]] = neg_by_type[rt]
+
+    for pred in predicate_indeces:
+        predicate_all_facts_set = se_facts_full_dict[pred]
+        # predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
+        if pred in test_triples_pred:
+            test_triples = test_triples_pred[pred]
+        else:
+            logger.info(f'\t{pred} not in test_triples_pred')
+            continue
+        predicate_test_facts_pos_size = len(test_triples)
+
+        #get negative samples
+        logger.info(f'length pred pos \t{predicate_test_facts_pos_size}')
+
+        #true corrupt head
+        head_ents_corr = [dataset_dict.ent_mappings[i] for i in ent_combinations[pred]['head']]
+        tail_ents_corr = [dataset_dict.ent_mappings[i] for i in ent_combinations[pred]['tail']]
+
+        batch_start = 0
+
+        model.eval()
+        while batch_start < test_triples.shape[0]:
+    #         counter += 2
+            batch_end = min(batch_start + batch_size, test_triples.shape[0])
+    #         counter_hits += 2*min(batch_size, batch_end - batch_start)
+            batch_input = test_triples[batch_start:batch_end]
+            with torch.no_grad():
+                batch_tensor = batch_input.to(device)
+
+
+                #CHANGED THE FOLLOWING LINE
+                scores_sp, scores_po, factors = model.forward(batch_tensor)
+                scores_sp = scores_sp.cpu().numpy()[tail_ents_corr]
+                scores_po = scores_po.cpu().numpy()[head_ents_corr]
+
+
+            #remove scores given to filtered labels
+            for i, el in enumerate(batch_input):
+                s_idx, p_idx, o_idx = el.numpy()
+                sp_key = (s_idx, p_idx)
+                po_key = (p_idx, o_idx)
+
+                o_to_remove = sp_to_o[sp_key]
+                s_to_remove = po_to_s[po_key]
+
+                for tmp_o_idx in o_to_remove:
+                    if tmp_o_idx != o_idx:
+                        scores_sp[i, tmp_o_idx] = - np.infty
+
+                for tmp_s_idx in s_to_remove:
+                    if tmp_s_idx != s_idx:
+                        scores_po[i, tmp_s_idx] = - np.infty
+
+            #calculate the two mrr
+            if (mode is None) or (mode == 'head'):
+                counter += 1
+                counter_hits += min(batch_size, batch_end - batch_start)
+                rank_subject = rank(scores_po, batch_input[:, 0])
+                mrr_subject = np.mean(1/rank_subject)
+                NEW_MC += (1/rank_subject).tolist()
+                # mrr_subject = mrr(scores_po, batch_input[:, 0])
+                hits_rate(rank_subject, hits, hits_at)
+                mrr_val += mrr_subject
+            if (mode is None) or (mode == 'tail'):
+                counter += 1
+                counter_hits += min(batch_size, batch_end - batch_start)
+                rank_object = rank(scores_sp, batch_input[:, 2])
+                mrr_object = np.mean(1/rank_object)
+                NEW_MC += (1/rank_object).tolist()
+
+                hits_rate(rank_object, hits, hits_at)
+                mrr_val += mrr_object
+
+
+            batch_start += batch_size
+            if (batch_start % 10000) == 0:
+                logger.info(f'batch start \t{batch_start}')
+
+    mrr_val /= counter
+    print('NEW MRR:', np.mean(NEW_MC))
+    for n in hits_at:
+        hits[n] /= counter_hits
+    metrics['MRR'] = np.mean(NEW_MC)
+    metrics['H@1'] = hits[1]
+    metrics['H@3'] = hits[3]
+    metrics['H@10'] = hits[10]
+
+    logger.info('done')
+
+    metrics['AU-ROC_raw'] = -1
+    metrics['AU-ROC_fil'] =  -1
+    logger.info('metrics done')
+
+    return metrics
 
 
 #   NOTE: NEED TO MAKE SURE THAT TRAIN TRIPLES ARE INDEED NP ARRAY AND NOT A TENSRO?
