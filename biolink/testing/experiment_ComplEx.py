@@ -200,6 +200,15 @@ def main(argv, bayesian=False):
                     batch_size = 5000
                 test_batch_size = 2048
                 if args.test_type:
+                    if args.rel_type != 'Empty' and args.ent_type != 'Empty':
+                        logger.info('APPLYING TYPE INFORMATION TO NEG SAMPLING')
+                        with open(args.rel_type, 'r') as f:
+                            rel_type = json.load(f)
+                        ent_type = pd.read_csv(args.ent_type)
+                        neg_by_type = utils.process_relation_entities(rel_type, ent_type)
+                    else:
+                        logger.info('NEED TO SUPPLY REL TYPE AND ENT TYPE FILE')
+                        return
                     metrics_test_types = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset, type=True)
                     logger.info(f'TYPE TEST RESULTS')
                     logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test_types)}')
