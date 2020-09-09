@@ -201,7 +201,9 @@ def main(argv, bayesian=False):
                 test_batch_size = 2048
                 if args.test_type:
                     metrics_test_types = evaluate(model, torch.tensor(data), bench_idx_data, batch_size, device, rel_type = rel_type, neg_by_type = neg_by_type, dataset_dict=dataset, type=True)
-                    return 
+                    logger.info(f'TYPE TEST RESULTS')
+                    logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test_types)}')
+                    return
                 metrics_test = evaluate(model, torch.tensor(data), bench_idx_data, test_batch_size, device, auc = False)
                 logger.info(f'TEST RESULTS')
                 logger.info(f'Error \t{dataset_name} results \t{metrics_to_str(metrics_test)}')
