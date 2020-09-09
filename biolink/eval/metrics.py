@@ -771,13 +771,13 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
         po_key = (p, o)
 
         if sp_key not in sp_to_o:
-            sp_to_o[sp_key] = [o_idx]
+            sp_to_o[sp_key] = [o]
         else:
-            sp_to_o[sp_key].append(o_idx)
+            sp_to_o[sp_key].append(o)
         if po_key not in po_to_s:
-            po_to_s[po_key] = [s_idx]
+            po_to_s[po_key] = [s]
         else:
-            po_to_s[po_key].append(s_idx)
+            po_to_s[po_key].append(s)
 
         if instance in test_triples:
             if p in test_triples_pred:
