@@ -742,7 +742,7 @@ def average_precision(y_true: np.array, y_pred:np.array, pos_label=1.0):
 def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: torch.Tensor,
         batch_size: int, device: torch.device, rel_type: dict = None, neg_by_type: dict = False, dataset_dict=None, mode=None):
 
-
+    predicate_indeces = list(set(all_triples[:, 1].numpy()))
     se_facts_full_dict = {se: set() for se in predicate_indeces}
     metrics = {}
     sp_to_o = {}
