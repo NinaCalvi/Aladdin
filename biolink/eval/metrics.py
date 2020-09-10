@@ -806,8 +806,8 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
         logger.info(f'length pred pos \t{predicate_test_facts_pos_size}')
 
         #true corrupt head
-        head_ents_corr = [dataset_dict.ent_mappings[i] for i in ent_combinations[pred]['head']]
-        tail_ents_corr = [dataset_dict.ent_mappings[i] for i in ent_combinations[pred]['tail']]
+        head_ents_corr = [dataset_dict.ent_mappings[i] for i in ents_combinations[pred]['head']]
+        tail_ents_corr = [dataset_dict.ent_mappings[i] for i in ents_combinations[pred]['tail']]
 
         batch_start = 0
 
