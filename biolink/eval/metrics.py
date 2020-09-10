@@ -818,7 +818,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
     #         counter_hits += 2*min(batch_size, batch_end - batch_start)
             batch_input = test_triples[batch_start:batch_end]
             with torch.no_grad():
-                batch_tensor = batch_input.to(device)
+                batch_tensor = torch.tensor(batch_input).to(device)
 
 
                 #CHANGED THE FOLLOWING LINE
