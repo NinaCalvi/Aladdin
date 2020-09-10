@@ -823,8 +823,8 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
 
                 #CHANGED THE FOLLOWING LINE
                 scores_sp, scores_po, factors = model.forward(batch_tensor)
-                scores_sp = scores_sp.cpu().numpy()[tail_ents_corr]
-                scores_po = scores_po.cpu().numpy()[head_ents_corr]
+                scores_sp = scores_sp.cpu().numpy()[:, tail_ents_corr]
+                scores_po = scores_po.cpu().numpy()[:, head_ents_corr]
 
 
             #remove scores given to filtered labels
