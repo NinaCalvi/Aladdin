@@ -35,7 +35,7 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
     #rank = 1 + np.sum(y_pred > scored_true.reshape(-1,1), axis=1)
     if remove_tail is not None:
         new_idx = np.zeros(y_pred.shape)
-        new_idx[:, remove_head] = 1
+        new_idx[:, remove_tail] = 1
         logger.info(f'true idx {true_idx}')
         for i, idx in enumerate(true_idx):
             true_idx[i] -= np.sum(new_idx[i, :idx])
