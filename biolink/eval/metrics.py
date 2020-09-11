@@ -15,7 +15,7 @@ import csv
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
-def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=None):
+def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=None, dataset_dict=None):
 
     '''
     y_pred: np.array 2-dim of predictions - num instances x num labels
@@ -38,7 +38,8 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
         remove_tail = np.sort(remove_tail)
         for el in true_idx.reshape(1, -1).squeeze():
             if el not in remove_tail:
-                logger.info(f'{el} not in remove tail')
+                logger.info(f'{dataset_dict.ent_mappings.inverse[el]} not in remove tail')
+                # logger.info(f'{})
                 return
         assert set(true_idx.reshape(1, -1).squeeze()).issubset(set(remove_tail))
 
@@ -53,7 +54,7 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
         remove_head = np.sort(remove_head)
         for el in true_idx.reshape(1, -1).squeeze():
             if el not in remove_head:
-                logger.info(f'{el} not in remove head')
+                logger.info(f'{dataset_dict.ent_mappings.inverse[el]} not in remove head')
                 return
         assert set(true_idx.reshape(1, -1).squeeze()).issubset(set(remove_head))
         new_idx = np.ones(y_pred.shape)
@@ -879,7 +880,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
             if (mode is None) or (mode == 'head'):
                 counter += 1
                 counter_hits += min(batch_size, batch_end - batch_start)
-                rank_subject = rank(scores_po, batch_input[:, 0], remove_head = head_ents_corr)
+                rank_subject = rank(scores_po, batch_input[:, 0], remove_head = head_ents_corr, dataset_dict=dataset_dict)
                 mrr_subject = np.mean(1/rank_subject)
                 NEW_MC += (1/rank_subject).tolist()
                 # mrr_subject = mrr(scores_po, batch_input[:, 0])
@@ -888,7 +889,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
             if (mode is None) or (mode == 'tail'):
                 counter += 1
                 counter_hits += min(batch_size, batch_end - batch_start)
-                rank_object = rank(scores_sp, batch_input[:, 2], remove_tail = tail_ents_corr)
+                rank_object = rank(scores_sp, batch_input[:, 2], remove_tail = tail_ents_corr, dataset_dict=dataset_dict)
                 mrr_object = np.mean(1/rank_object)
                 NEW_MC += (1/rank_object).tolist()
 
