@@ -829,7 +829,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
 
             #remove scores given to filtered labels
             for i, el in enumerate(batch_input):
-                s_idx, p_idx, o_idx = el.numpy()
+                s_idx, p_idx, o_idx = el
                 sp_key = (s_idx, p_idx)
                 po_key = (p_idx, o_idx)
 
