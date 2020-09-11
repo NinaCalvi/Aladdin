@@ -15,7 +15,7 @@ import csv
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 np.set_printoptions(linewidth=48, precision=5, suppress=True)
 
-def rank(y_pred: np.array, true_idx: np.array):
+def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=None):
 
     '''
     y_pred: np.array 2-dim of predictions - num instances x num labels
@@ -33,6 +33,16 @@ def rank(y_pred: np.array, true_idx: np.array):
 
     #scored_true = y_pred[np.arange(len(y_pred)), true_idx]
     #rank = 1 + np.sum(y_pred > scored_true.reshape(-1,1), axis=1)
+    if remove_tail is not None:
+        new_idx = np.zeros(y_pred.shape[1])
+        new_idx[remove_tail] = 1
+        true_idx -= np.sum(new_idx[:true_idx])
+        y_pred = y_pred[:, remove_tail]
+    elif remove_head is not None:
+        new_idx = np.zeros(y_pred.shape[1])
+        new_idx[remove_head] = 1
+        true_idx -= np.sum(new_idx[:true_idx])
+        y_pred = y_pred[:, remove_head]
     order_rank  = np.argsort(np.argsort(-y_pred))
     rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
     return rank
@@ -844,14 +854,11 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
                     if tmp_s_idx != s_idx:
                         scores_po[i, tmp_s_idx] = - np.infty
 
-            scores_sp = scores_sp[:, tail_ents_corr]
-            scores_po = scores_po[:, head_ents_corr]
-
             #calculate the two mrr
             if (mode is None) or (mode == 'head'):
                 counter += 1
                 counter_hits += min(batch_size, batch_end - batch_start)
-                rank_subject = rank(scores_po, batch_input[:, 0])
+                rank_subject = rank(scores_po, batch_input[:, 0], remove_head = head_ents_corr)
                 mrr_subject = np.mean(1/rank_subject)
                 NEW_MC += (1/rank_subject).tolist()
                 # mrr_subject = mrr(scores_po, batch_input[:, 0])
@@ -860,7 +867,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
             if (mode is None) or (mode == 'tail'):
                 counter += 1
                 counter_hits += min(batch_size, batch_end - batch_start)
-                rank_object = rank(scores_sp, batch_input[:, 2])
+                rank_object = rank(scores_sp, batch_input[:, 2], remove_tail = tail_ents_corr)
                 mrr_object = np.mean(1/rank_object)
                 NEW_MC += (1/rank_object).tolist()
 
