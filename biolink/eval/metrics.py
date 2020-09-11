@@ -810,7 +810,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
         else:
             po_to_s[po_key].append(s)
 
-        if instance in test_triples:
+        if (instance == test_triples).all(axis=1).any().item():
             if p in test_triples_pred:
                 test_triples_pred[p] = np.vstack((test_triples_pred[p], instance.numpy()))
             else:
@@ -955,7 +955,7 @@ def evaluate_auc(model: nn.Module, test_triples: torch.Tensor, all_triples: torc
 
     for instance in all_triples:
         s, p, o = instance.numpy()
-        if instance in test_triples:
+        if (instance == test_triples).all(axis=1).any().item():
             if p in test_triples_pred:
                 test_triples_pred[p] = np.vstack((test_triples_pred[p], instance.numpy()))
             else:
