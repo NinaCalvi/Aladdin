@@ -823,6 +823,7 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
             ents_combinations[dataset_dict.rel_mappings[r]] = neg_by_type[rt]
 
     for pred in predicate_indeces:
+        logger.info(f'pred {dataset_dict.rel_mappings.inverse[pred]}')
         predicate_all_facts_set = se_facts_full_dict[pred]
         # predicate_test_facts_pos = np.array([[s, p, o] for s, p, o in test_triples if p == pred])
         if pred in test_triples_pred:
