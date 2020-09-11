@@ -36,12 +36,15 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
     if remove_tail is not None:
         new_idx = np.zeros(y_pred.shape[1])
         new_idx[remove_tail] = 1
+        logger.info(f'true idx {true_idx}')
         true_idx -= np.sum(new_idx[:true_idx])
         y_pred = y_pred[:, remove_tail]
     elif remove_head is not None:
         new_idx = np.zeros(y_pred.shape[1])
         new_idx[remove_head] = 1
+        logger.info(f'true idx {true_idx}')
         true_idx -= np.sum(new_idx[:true_idx])
+
         y_pred = y_pred[:, remove_head]
     order_rank  = np.argsort(np.argsort(-y_pred))
     rank  = order_rank[np.arange(len(y_pred)), true_idx] + 1
