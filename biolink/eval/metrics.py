@@ -823,8 +823,8 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
 
                 #CHANGED THE FOLLOWING LINE
                 scores_sp, scores_po, factors = model.forward(batch_tensor)
-                scores_sp = scores_sp.cpu().numpy()[:, tail_ents_corr]
-                scores_po = scores_po.cpu().numpy()[:, head_ents_corr]
+                scores_sp = scores_sp.cpu().numpy()
+                scores_po = scores_po.cpu().numpy()
 
 
             #remove scores given to filtered labels
@@ -843,6 +843,9 @@ def evaluate_type(model: nn.Module, test_triples: torch.Tensor, all_triples: tor
                 for tmp_s_idx in s_to_remove:
                     if tmp_s_idx != s_idx:
                         scores_po[i, tmp_s_idx] = - np.infty
+
+            scores_sp = scores_sp[:, tail_ents_corr]
+            scores_po = scores_po[:, head_ents_corr]
 
             #calculate the two mrr
             if (mode is None) or (mode == 'head'):
