@@ -34,6 +34,8 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
     #scored_true = y_pred[np.arange(len(y_pred)), true_idx]
     #rank = 1 + np.sum(y_pred > scored_true.reshape(-1,1), axis=1)
     if remove_tail is not None:
+        #ensure that they are sorted
+        remove_tail = np.sort(remove_tail)
         new_idx = np.ones(y_pred.shape)
         new_idx[:, remove_tail] = 0
         logger.info(f'true idx {true_idx}')
@@ -42,6 +44,7 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
         logger.info(f'true idx {true_idx.shape}')
         y_pred = y_pred[:, remove_tail]
     elif remove_head is not None:
+        remove_head = np.sort(remove_head)
         new_idx = np.ones(y_pred.shape)
         new_idx[:, remove_head] = 0
         logger.info(f'true idx {true_idx}')
