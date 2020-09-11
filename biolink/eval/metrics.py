@@ -36,14 +36,15 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
     if remove_tail is not None:
         #ensure that they are sorted
         remove_tail = np.sort(remove_tail)
-        for i in y_pred.reshape(1, -1).squeeze():
-            if i in remove_tail:
-                continue
-            else:
-                logger.info(f'remove tail shape {remove_tail.shape}')
-                logger.info(f'{i} not in tail')
-                return
-        assert set(y_pred.reshape(1, -1).squeeze()).issubset(set(remove_tail))
+        # for i in y_pred.reshape(1, -1).squeeze():
+        #     if i in remove_tail:
+        #         continue
+        #     else:
+        #         logger.info(f'remove tail shape {remove_tail.shape}')
+        #         logger.info(f'{i} not in tail')
+        #         logger.info()
+        #         return
+        assert set(true_idx.reshape(1, -1).squeeze()).issubset(set(remove_tail))
         new_idx = np.ones(y_pred.shape)
         new_idx[:, remove_tail] = 0
         logger.info(f'true idx {true_idx}')
@@ -53,14 +54,14 @@ def rank(y_pred: np.array, true_idx: np.array, remove_tail=None, remove_head=Non
         y_pred = y_pred[:, remove_tail]
     elif remove_head is not None:
         remove_head = np.sort(remove_head)
-        for i in y_pred.reshape(1, -1).squeeze():
-            if i in remove_head:
-                continue
-            else:
-                logger.info(f'remove head shape {remove_head.shape}')
-                logger.info(f'{i} not in tail')
-                return
-        assert set(y_pred.reshape(1, -1).squeeze()).issubset(set(remove_head))
+        # for i in y_pred.reshape(1, -1).squeeze():
+        #     if i in remove_head:
+        #         continue
+        #     else:
+        #         logger.info(f'remove head shape {remove_head.shape}')
+        #         logger.info(f'{i} not in tail')
+        #         return
+        assert set(true_idx.reshape(1, -1).squeeze()).issubset(set(remove_head))
         new_idx = np.ones(y_pred.shape)
         new_idx[:, remove_head] = 0
         logger.info(f'true idx {true_idx}')
